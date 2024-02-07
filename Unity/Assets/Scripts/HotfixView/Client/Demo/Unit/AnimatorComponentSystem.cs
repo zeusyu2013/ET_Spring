@@ -1,4 +1,5 @@
 ﻿using System;
+using Animancer;
 using UnityEngine;
 
 namespace ET.Client
@@ -13,6 +14,7 @@ namespace ET.Client
 			self.animationClips = null;
 			self.Parameter = null;
 			self.Animator = null;
+			self.AnimancerComponent = null;
 		}
 			
 		[EntitySystem]
@@ -43,6 +45,8 @@ namespace ET.Client
 			{
 				self.Parameter.Add(animatorControllerParameter.name);
 			}
+
+			self.AnimancerComponent = self.GetParent<Unit>().GetComponent<GameObjectComponent>().GameObject.GetComponent<AnimancerComponent>();
 		}
 		
 		[EntitySystem]
@@ -60,6 +64,8 @@ namespace ET.Client
 
 			try
 			{
+				self.AnimancerComponent.Evaluate();
+				
 				self.Animator.SetFloat("MotionSpeed", self.MontionSpeed);
 
 				self.Animator.SetTrigger(self.MotionType.ToString());

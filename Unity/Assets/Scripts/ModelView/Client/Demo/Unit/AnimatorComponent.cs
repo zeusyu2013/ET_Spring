@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using Animancer;
 
 namespace ET.Client
 {
@@ -21,5 +22,6 @@ namespace ET.Client
 		public bool isStop;
 		public float stopSpeed;
 		public Animator Animator;
+		public AnimancerComponent AnimancerComponent;
 	}
 }
