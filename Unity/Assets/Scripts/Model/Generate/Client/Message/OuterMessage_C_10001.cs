@@ -609,12 +609,20 @@ namespace ET
 		[MemoryPackOrder(2)]
 		public string Password { get; set; }
 
+		[MemoryPackOrder(3)]
+		public string OpenId { get; set; }
+
+		[MemoryPackOrder(4)]
+		public string Platform { get; set; }
+
 		public override void Dispose() 
 		{
 			if (!this.IsFromPool) { return; }
 			this.RpcId = default;
 			this.Account = default;
 			this.Password = default;
+			this.OpenId = default;
+			this.Platform = default;
 			
 			ObjectPool.Instance.Recycle(this); 
 		}

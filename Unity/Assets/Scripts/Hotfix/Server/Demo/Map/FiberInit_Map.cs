@@ -1,9 +1,7 @@
-﻿using System.Net;
-
-namespace ET.Server
+﻿namespace ET.Server
 {
-    [Invoke((long)SceneType.Realm)]
-    public class FiberInit_Realm: AInvokeHandler<FiberInit, ETTask>
+    [Invoke((long)SceneType.Map)]
+    public class FiberInit_Map: AInvokeHandler<FiberInit, ETTask>
     {
         public override async ETTask Handle(FiberInit fiberInit)
         {
@@ -13,10 +11,6 @@ namespace ET.Server
             root.AddComponent<CoroutineLockComponent>();
             root.AddComponent<ProcessInnerSender>();
             root.AddComponent<MessageSender>();
-            StartSceneConfig startSceneConfig = StartSceneConfigCategory.Instance.Get(root.Fiber.Id);
-            root.AddComponent<NetComponent, IPEndPoint, NetworkProtocol>(startSceneConfig.InnerIPPort, NetworkProtocol.UDP);
-            root.AddComponent<AccountComponent>();
-            root.AddComponent<DBManagerComponent>();
 
             await ETTask.CompletedTask;
         }

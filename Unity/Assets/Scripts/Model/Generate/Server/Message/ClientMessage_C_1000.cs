@@ -26,6 +26,12 @@ namespace ET
 		[MemoryPackOrder(3)]
 		public string Password { get; set; }
 
+		[MemoryPackOrder(4)]
+		public string OpenId { get; set; }
+
+		[MemoryPackOrder(5)]
+		public string Platform { get; set; }
+
 		public override void Dispose() 
 		{
 			if (!this.IsFromPool) { return; }
@@ -33,6 +39,8 @@ namespace ET
 			this.OwnerFiberId = default;
 			this.Account = default;
 			this.Password = default;
+			this.OpenId = default;
+			this.Platform = default;
 			
 			ObjectPool.Instance.Recycle(this); 
 		}

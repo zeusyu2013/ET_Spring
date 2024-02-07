@@ -10,6 +10,8 @@ message Main2NetClient_Login // IRequest
 	int32 OwnerFiberId = 2;
 	string Account = 3;
 	string Password = 4;
+	string OpenId = 5;
+	string Platform = 6;
 }
 
 message NetClient2Main_Login // IResponse

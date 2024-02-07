@@ -146,8 +146,10 @@ message M2C_Reload // ISessionResponse
 message C2R_Login // ISessionRequest
 {
 	int32 RpcId = 1;
-	string  Account = 2;  // 帐号
-	string  Password = 3;  // 密码
+	string  Account = 2;	// 帐号
+	string  Password = 3;	// 密码
+	string OpenId = 4;		// open id
+	string Platform = 5;	// 平台
 }
 
 message R2C_Login // ISessionResponse
