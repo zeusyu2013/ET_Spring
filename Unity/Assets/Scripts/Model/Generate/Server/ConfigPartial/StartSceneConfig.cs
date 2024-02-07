@@ -63,9 +63,6 @@ namespace ET
                     case SceneType.Map:
                         this.Maps.Add(startSceneConfig);
                         break;
-                    case SceneType.Match:
-                        this.Match = startSceneConfig;
-                        break;
                     case SceneType.BenchmarkServer:
                         this.Benchmark = startSceneConfig;
                         break;

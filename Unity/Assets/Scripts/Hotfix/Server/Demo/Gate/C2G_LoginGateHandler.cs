@@ -8,7 +8,7 @@ namespace ET.Server
         protected override async ETTask Run(Session session, C2G_LoginGate request, G2C_LoginGate response)
         {
             Scene root = session.Root();
-            long accountId = root.GetComponent<GateSessionKeyComponent>().Get(request.AccountId);
+            long accountId = root.GetComponent<GateSessionKeyComponent>().Get(request.Key);
             if (accountId == -1)
             {
                 response.Error = ErrorCore.ERR_ConnectGateKeyError;
@@ -22,7 +22,7 @@ namespace ET.Server
             Player player = playerComponent.GetByAccount(accountId);
             if (player == null)
             {
-                player = playerComponent.AddChildWithId<Player>(request.AccountId);
+                player = playerComponent.AddChildWithId<Player>(accountId);
                 playerComponent.Add(player);
                 PlayerSessionComponent playerSessionComponent = player.AddComponent<PlayerSessionComponent>();
                 playerSessionComponent.AddComponent<MailBoxComponent, MailBoxType>(MailBoxType.GateSession);

@@ -18,6 +18,12 @@ namespace ET.Client
             go.transform.position = unit.Position;
             unit.AddComponent<GameObjectComponent>().GameObject = go;
             unit.AddComponent<AnimatorComponent>();
+            if (unit.Type() == UnitType.Player)
+            {
+                unit.AddComponent<CameraComponent>();
+                unit.AddComponent<InputComponent>();
+            }
+            
             await ETTask.CompletedTask;
         }
     }

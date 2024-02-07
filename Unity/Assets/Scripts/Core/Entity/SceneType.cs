@@ -18,12 +18,7 @@ namespace ET
 		Robot = 1 << 10,
 		BenchmarkClient = 1 << 11,
 		BenchmarkServer = 1 << 12,
-		Match = 1 << 14,
-		Room = 1 << 15,
-		LockStepClient = 1 << 16,
-		LockStepServer = 1 << 17,
-		RoomRoot = 1 << 18,
-		Watcher = 1 << 19,
+		Watcher = 1 << 13,
 
 		// 客户端
 		Demo = 1 << 30,

@@ -24,4 +24,5 @@ namespace ET.Server
             await ETTask.CompletedTask;
         }
     }
+#pragma warning restore ET0005
 }

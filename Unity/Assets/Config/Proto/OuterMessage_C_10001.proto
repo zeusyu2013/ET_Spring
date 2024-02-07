@@ -168,7 +168,6 @@ message C2G_LoginGate // ISessionRequest
 	int32 RpcId = 1;
 	int64 Key = 2;  // 帐号
 	int64 GateId = 3;
-	int64 AccountId = 4;
 }
 
 message G2C_LoginGate // ISessionResponse

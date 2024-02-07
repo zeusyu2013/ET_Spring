@@ -690,16 +690,12 @@ namespace ET
 		[MemoryPackOrder(2)]
 		public long GateId { get; set; }
 
-		[MemoryPackOrder(3)]
-		public long AccountId { get; set; }
-
 		public override void Dispose() 
 		{
 			if (!this.IsFromPool) { return; }
 			this.RpcId = default;
 			this.Key = default;
 			this.GateId = default;
-			this.AccountId = default;
 			
 			ObjectPool.Instance.Recycle(this); 
 		}

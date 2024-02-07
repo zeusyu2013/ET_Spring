@@ -17,9 +17,12 @@ namespace ET.Client
             {
                 this.gameObject = value;
                 this.Transform = value.transform;
+                this.CameraLookAt = value.transform.Find("CameraLookAt");
             }
         }
 
         public Transform Transform { get; private set; }
+        
+        public Transform CameraLookAt { get; private set; }
     }
 }
