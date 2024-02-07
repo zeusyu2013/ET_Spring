@@ -8,8 +8,8 @@ namespace ET.Server
         protected override async ETTask Run(Session session, C2G_LoginGate request, G2C_LoginGate response)
         {
             Scene root = session.Root();
-            string account = root.GetComponent<GateSessionKeyComponent>().Get(request.Key);
-            if (account == null)
+            long accountId = root.GetComponent<GateSessionKeyComponent>().Get(request.AccountId);
+            if (accountId == -1)
             {
                 response.Error = ErrorCore.ERR_ConnectGateKeyError;
                 response.Message = "Gate key验证失败!";
@@ -19,10 +19,10 @@ namespace ET.Server
             session.RemoveComponent<SessionAcceptTimeoutComponent>();
 
             PlayerComponent playerComponent = root.GetComponent<PlayerComponent>();
-            Player player = playerComponent.GetByAccount(account);
+            Player player = playerComponent.GetByAccount(accountId);
             if (player == null)
             {
-                player = playerComponent.AddChild<Player, string>(account);
+                player = playerComponent.AddChildWithId<Player>(request.AccountId);
                 playerComponent.Add(player);
                 PlayerSessionComponent playerSessionComponent = player.AddComponent<PlayerSessionComponent>();
                 playerSessionComponent.AddComponent<MailBoxComponent, MailBoxType>(MailBoxType.GateSession);

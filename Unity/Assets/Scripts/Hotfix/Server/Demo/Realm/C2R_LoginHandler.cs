@@ -1,7 +1,4 @@
-﻿using System;
-using System.Net;
-
-namespace ET.Server
+﻿namespace ET.Server
 {
     [MessageSessionHandler(SceneType.Realm)]
     public class C2R_LoginHandler: MessageSessionHandler<C2R_Login, R2C_Login>
@@ -10,7 +7,7 @@ namespace ET.Server
         {
             // 校验账号密码合法性
             AccountComponent accountComponent = session.Fiber().Root.GetComponent<AccountComponent>();
-            int errorCode = await accountComponent.CheckAccount(request.Account, request.Password, request.Platform);
+            var (errorCode, accountId) = await accountComponent.CheckAccount(request.Account, request.Password, request.Platform);
             if (errorCode != ErrorCode.ERR_Success)
             {
                 response.Error = errorCode;
@@ -23,7 +20,7 @@ namespace ET.Server
 
             // 向gate请求一个key,客户端可以拿着这个key连接gate
             R2G_GetLoginKey r2GGetLoginKey = R2G_GetLoginKey.Create();
-            r2GGetLoginKey.Account = request.Account;
+            r2GGetLoginKey.AccountId = accountId;
             G2R_GetLoginKey g2RGetLoginKey =
                     (G2R_GetLoginKey)await session.Fiber().Root.GetComponent<MessageSender>().Call(config.ActorId, r2GGetLoginKey);
 

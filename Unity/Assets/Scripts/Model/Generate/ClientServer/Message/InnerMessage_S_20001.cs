@@ -557,13 +557,13 @@ namespace ET
 		public int RpcId { get; set; }
 
 		[MemoryPackOrder(1)]
-		public string Account { get; set; }
+		public long AccountId { get; set; }
 
 		public override void Dispose() 
 		{
 			if (!this.IsFromPool) { return; }
 			this.RpcId = default;
-			this.Account = default;
+			this.AccountId = default;
 			
 			ObjectPool.Instance.Recycle(this); 
 		}

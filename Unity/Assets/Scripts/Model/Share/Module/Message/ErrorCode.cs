@@ -16,5 +16,8 @@ namespace ET
 
         public const int ERR_AccountOrPasswordEmpty = 200002;
         public const int ERR_PasswordNotMatch = 200003;
+        public const int ERR_OpenIdEmpty = 200004;
+        public const int ERR_SigntureEmpty = 200005;
+        public const int ERR_SigntureNotMatch = 200006;
     }
 }

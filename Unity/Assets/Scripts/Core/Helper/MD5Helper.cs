@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Security.Cryptography;
+using System.Text;
 
 namespace ET
 {
@@ -13,6 +14,13 @@ namespace ET
 	            MD5 md5 = MD5.Create();
 				retVal = md5.ComputeHash(file);
 			}
+			return retVal.ToHex("x2");
+		}
+
+		public static string SigntureMD5(string signture)
+		{
+			MD5 md5 = MD5.Create();
+			byte[] retVal = md5.ComputeHash(Encoding.UTF8.GetBytes(signture));
 			return retVal.ToHex("x2");
 		}
 	}
