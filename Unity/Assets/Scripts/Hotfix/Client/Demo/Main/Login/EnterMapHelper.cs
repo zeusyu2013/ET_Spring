@@ -21,20 +21,5 @@ namespace ET.Client
                 Log.Error(e);
             }	
         }
-<<<<<<< HEAD
-=======
-        
-        public static async ETTask Match(Fiber fiber)
-        {
-            try
-            {
-                G2C_Match g2CEnterMap = await fiber.Root.GetComponent<ClientSenderComponent>().Call(C2G_Match.Create()) as G2C_Match;
-            }
-            catch (Exception e)
-            {
-                Log.Error(e);
-            }	
-        }
->>>>>>> origin/release8.1
     }
 }
