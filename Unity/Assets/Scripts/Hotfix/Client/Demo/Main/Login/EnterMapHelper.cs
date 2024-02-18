@@ -9,7 +9,7 @@ namespace ET.Client
         {
             try
             {
-                G2C_EnterMap g2CEnterMap = await root.GetComponent<ClientSenderCompnent>().Call(C2G_EnterMap.Create()) as G2C_EnterMap;
+                G2C_EnterMap g2CEnterMap = await root.GetComponent<ClientSenderComponent>().Call(C2G_EnterMap.Create()) as G2C_EnterMap;
                 
                 // 等待场景切换完成
                 await root.GetComponent<ObjectWait>().Wait<Wait_SceneChangeFinish>();
@@ -21,5 +21,20 @@ namespace ET.Client
                 Log.Error(e);
             }	
         }
+<<<<<<< HEAD
+=======
+        
+        public static async ETTask Match(Fiber fiber)
+        {
+            try
+            {
+                G2C_Match g2CEnterMap = await fiber.Root.GetComponent<ClientSenderComponent>().Call(C2G_Match.Create()) as G2C_Match;
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
+            }	
+        }
+>>>>>>> origin/release8.1
     }
 }
