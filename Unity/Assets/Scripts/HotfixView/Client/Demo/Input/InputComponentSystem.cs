@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Unity.Mathematics;
+﻿using System.Linq;
 using UnityEngine;
 
 namespace ET.Client
@@ -43,12 +40,8 @@ namespace ET.Client
         [EntitySystem]
         private static void Update(this InputComponent self)
         {
-            float x = Input.GetAxis("Horizontal");
-            float y = Input.GetAxis("Vertical");
-            if (!x.Equals(0.0f) || !y.Equals(0.0f))
-            {
-                EventSystem.Instance.Publish(self.Scene(), new MoveDelta() { Unit = self.GetParent<Unit>(), X = x, Y = y });
-            }
+            self.MoveDirection.x = Input.GetAxis("Horizontal") > 0? 1 : 0;
+            self.MoveDirection.y = Input.GetAxis("Vertical") > 0? 1 : 0;
 
             foreach (KeyCode keyCode in self.KeyCodes.Where(Input.GetKeyDown))
             {

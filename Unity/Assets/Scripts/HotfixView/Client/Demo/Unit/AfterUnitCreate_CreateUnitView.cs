@@ -21,7 +21,6 @@ namespace ET.Client
             if (unit.Type() == UnitType.Player)
             {
                 unit.AddComponent<CameraComponent>();
-                unit.AddComponent<InputComponent>();
             }
             
             await ETTask.CompletedTask;

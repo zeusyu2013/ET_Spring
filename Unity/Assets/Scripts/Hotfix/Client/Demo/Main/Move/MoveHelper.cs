@@ -33,5 +33,11 @@ namespace ET.Client
             MoveComponent moveComponent = unit.GetComponent<MoveComponent>();
             await moveComponent.MoveToAsync(path, speed);
         }
+
+        public static void Stop(this Unit unit)
+        {
+            MoveComponent moveComponent = unit.GetComponent<MoveComponent>();
+            moveComponent.Stop(true);
+        }
     }
 }
