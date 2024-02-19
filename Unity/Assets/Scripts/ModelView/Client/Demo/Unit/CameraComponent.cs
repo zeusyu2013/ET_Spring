@@ -1,19 +1,28 @@
-﻿using UnityEngine;
+﻿using Cinemachine;
+using UnityEngine;
 
 namespace ET.Client
 {
-    [ComponentOf(typeof(Unit))]
-    public class CameraComponent: Entity, IAwake, ILateUpdate
+    [ComponentOf(typeof (Unit))]
+    public class CameraComponent: Entity, IAwake, IUpdate, IDestroy
     {
-        public Transform CameraTransform;
-        public Transform LookAt;
+        public Camera MainCamera;
 
-        public float Distance = 20.0f;
-        public float MaxDistance = 30.0f;
-        public float ScrollFactor = 8.0f;
-        public float RotateFactor = 5.0f;
+        public CinemachineBrain CinemachineBrain;
 
-        public float HorizontalAngle = 45.0f;
-        public float VerticalAngle = 45.0f;
+        public CinemachineVirtualCamera CinemachineVirtualCamera;
+
+        public CinemachineFramingTransposer CinemachineFramingTransposer;
+
+        public float CameraDistance;
+
+        public float CameraMinDistance;
+        public float CameraMaxDistance;
+
+        public float CinemachineTargetYaw;
+
+        public float CinemachineTargetPitch;
+
+        public bool IsEnableRotate = false;
     }
 }

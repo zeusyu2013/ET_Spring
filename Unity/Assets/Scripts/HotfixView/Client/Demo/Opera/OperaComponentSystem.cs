@@ -4,39 +4,31 @@ using UnityEngine;
 
 namespace ET.Client
 {
-    [EntitySystemOf(typeof(OperaComponent))]
-    [FriendOf(typeof(OperaComponent))]
-    [FriendOfAttribute(typeof(ET.Client.InputComponent))]
+    [EntitySystemOf(typeof (OperaComponent))]
+    [FriendOf(typeof (OperaComponent))]
+    [FriendOfAttribute(typeof (ET.Client.InputComponent))]
     public static partial class OperaComponentSystem
     {
         [EntitySystem]
         private static void Awake(this OperaComponent self)
         {
             self.mapMask = LayerMask.GetMask("Map");
+            self.InputComponent = self.Root().GetComponent<InputComponent>();
         }
 
         [EntitySystem]
         private static void Update(this OperaComponent self)
         {
-            // if (Input.GetMouseButtonDown(1))
-            // {
-            //     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            //     RaycastHit hit;
-            //     if (Physics.Raycast(ray, out hit, 1000, self.mapMask))
-            //     {
-            //         C2M_PathfindingResult c2MPathfindingResult = C2M_PathfindingResult.Create();
-            //         c2MPathfindingResult.Position = hit.point;
-            //         self.Root().GetComponent<ClientSenderComponent>().Send(c2MPathfindingResult);
-            //     }
-            // }
-
-            InputComponent inputComponent = self.Root().GetComponent<InputComponent>();
-            if (inputComponent.MoveDirection.x > 0 || inputComponent.MoveDirection.y > 0)
+            if (Input.GetMouseButtonDown(0))
             {
-                Unit unit = UnitHelper.GetMyUnitFromClientScene(self.Root());
-                float3 nextPoint = new(unit.Position.x + inputComponent.MoveDirection.x, unit.Position.y,
-                    unit.Position.z + inputComponent.MoveDirection.y);
-                unit.MoveToAsync(new List<float3>(){ nextPoint }).Coroutine();
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, 1000, self.mapMask))
+                {
+                    C2M_PathfindingResult c2MPathfindingResult = C2M_PathfindingResult.Create();
+                    c2MPathfindingResult.Position = hit.point;
+                    self.Root().GetComponent<ClientSenderComponent>().Send(c2MPathfindingResult);
+                }
             }
 
             if (Input.GetKeyDown(KeyCode.Q))
@@ -80,6 +72,7 @@ namespace ET.Client
             {
                 await self.Root().GetComponent<TimerComponent>().WaitAsync(1000);
             }
+
             Log.Debug($"Croutine 2 end2");
         }
     }

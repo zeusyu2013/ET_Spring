@@ -1,61 +1,99 @@
-﻿using UnityEngine;
+﻿using Cinemachine;
+using UnityEngine;
 
 namespace ET.Client
 {
-    [FriendOf(typeof(CameraComponent))]
+    [FriendOf(typeof (CameraComponent))]
     [EntitySystemOf(typeof (CameraComponent))]
     public static partial class CameraComponentSystem
     {
         [EntitySystem]
         private static void Awake(this CameraComponent self)
         {
-            Camera mainCamera = Camera.main;
-            if (mainCamera == null)
-            {
-                Log.Error("camera component: main camera is null");
-                return;
-            }
+            self.MainCamera = Camera.main;
+            self.CameraMinDistance = 5;
+            self.CameraMaxDistance = 20;
 
-            self.CameraTransform = mainCamera.transform;
-            self.LookAt = self.GetParent<Unit>().GetComponent<GameObjectComponent>().CameraLookAt;
+            self.CinemachineBrain = self.MainCamera.gameObject.AddOrGetComponent<CinemachineBrain>();
+            self.CinemachineVirtualCamera = self.MainCamera.gameObject.AddOrGetComponent<CinemachineVirtualCamera>();
+            self.CinemachineFramingTransposer = self.CinemachineVirtualCamera.AddCinemachineComponent<CinemachineFramingTransposer>();
+            self.CinemachineFramingTransposer.m_XDamping =
+                    self.CinemachineFramingTransposer.m_YDamping = self.CinemachineFramingTransposer.m_ZDamping = 0;
+
+            Unit unit = UnitHelper.GetMyUnitFromClientScene(self.Root());
+
+            // Transposer下只有follow起作用
+            self.CinemachineVirtualCamera.Follow = unit.GetComponent<GameObjectComponent>().CameraLookAt;
+
+            self.CameraRotation();
         }
 
         [EntitySystem]
-        private static void LateUpdate(this CameraComponent self)
+        private static void Update(this CameraComponent self)
         {
-            if (self.CameraTransform == null || self.LookAt == null)
+            if (Input.GetMouseButtonDown(1))
             {
-                return;
+                self.IsEnableRotate = true;
             }
 
-            // 滚轮
-            float scrollAmount = Input.GetAxis("Mouse ScrollWheel");
-            self.Distance -= scrollAmount * self.ScrollFactor;
-
-            // 限制相机距离
-            self.Distance = Mathf.Clamp(self.Distance, 0, self.MaxDistance);
-
-            bool isMouseLeftDown = Input.GetMouseButton(0);
-            bool isMouseRightDown = Input.GetMouseButton(1);
-            if (isMouseLeftDown || isMouseRightDown)
+            if (Input.GetMouseButtonUp(1))
             {
-                float axisX = Input.GetAxis("Mouse X");
-                float axisY = Input.GetAxis("Mouse Y");
-
-                self.HorizontalAngle += axisX * self.RotateFactor;
-                self.VerticalAngle += axisY * self.RotateFactor;
-                self.VerticalAngle = Mathf.Clamp(self.VerticalAngle, -80, 0);
-                if (isMouseRightDown)
-                {
-                    // 按住右键旋转相机时带动角色旋转
-                    self.GetParent<Unit>().Rotation = Quaternion.Euler(0, self.HorizontalAngle, 0);
-                }
+                self.IsEnableRotate = false;
             }
 
-            Quaternion rotation = Quaternion.Euler(-self.VerticalAngle, self.HorizontalAngle, 0);
-            Vector3 offset = rotation * Vector3.back * self.Distance;
-            self.CameraTransform.position = self.LookAt.position + offset;
-            self.CameraTransform.rotation = rotation;
+            if (self.IsEnableRotate)
+            {
+                self.CameraRotation();
+            }
+
+            self.CameraScroll();
+        }
+
+        private static void CameraRotation(this CameraComponent self)
+        {
+            float mouseX = Input.GetAxis("Mouse X") * 200;
+            float mouseY = Input.GetAxis("Mouse Y") * 200;
+
+            self.CinemachineTargetYaw += mouseX * Time.deltaTime;
+            self.CinemachineTargetPitch -= mouseY * Time.deltaTime;
+
+            self.CinemachineTargetYaw = self.ClampAngle(self.CinemachineTargetYaw, float.MinValue, float.MaxValue);
+            self.CinemachineTargetPitch = self.ClampAngle(self.CinemachineTargetPitch, 1, 80);
+
+            Quaternion targetRotation = Quaternion.Euler(self.CinemachineTargetPitch, self.CinemachineTargetYaw, 0);
+            self.MainCamera.transform.rotation = targetRotation;
+        }
+
+        private static void CameraScroll(this CameraComponent self)
+        {
+            self.CameraDistance -= Input.GetAxis("Mouse ScrollWheel") * 5;
+            self.CameraDistance = Mathf.Clamp(self.CameraDistance, self.CameraMinDistance, self.CameraMaxDistance);
+            self.CinemachineFramingTransposer.m_CameraDistance =
+                    Mathf.Lerp(self.CinemachineFramingTransposer.m_CameraDistance, self.CameraDistance, Time.deltaTime * 10);
+        }
+
+        private static float ClampAngle(this CameraComponent self, float angle, float min, float max)
+        {
+            if (angle < -360)
+            {
+                angle += 360;
+            }
+
+            if (angle > 360)
+            {
+                angle -= 360;
+            }
+
+            return Mathf.Clamp(angle, min, max);
+        }
+
+        [EntitySystem]
+        private static void Destroy(this ET.Client.CameraComponent self)
+        {
+            UnityEngine.Object.Destroy(self.CinemachineBrain);
+            UnityEngine.Object.Destroy(self.CinemachineVirtualCamera);
+
+            self.MainCamera = null;
         }
     }
 }

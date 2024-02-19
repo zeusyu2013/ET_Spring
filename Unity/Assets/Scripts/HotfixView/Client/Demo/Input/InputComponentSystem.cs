@@ -40,8 +40,8 @@ namespace ET.Client
         [EntitySystem]
         private static void Update(this InputComponent self)
         {
-            self.MoveDirection.x = Input.GetAxis("Horizontal") > 0? 1 : 0;
-            self.MoveDirection.y = Input.GetAxis("Vertical") > 0? 1 : 0;
+            self.MoveDirection.x = Input.GetAxis("Horizontal");
+            self.MoveDirection.y = Input.GetAxis("Vertical");
 
             foreach (KeyCode keyCode in self.KeyCodes.Where(Input.GetKeyDown))
             {
