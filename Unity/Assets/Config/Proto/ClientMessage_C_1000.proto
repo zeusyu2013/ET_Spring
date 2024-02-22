@@ -7,15 +7,10 @@ message Main2NetClient_Login // IRequest
 {
 	int32 RpcId = 1;
 	int32 OwnerFiberId = 2;
-<<<<<<< HEAD
 	string Account = 3;
 	string Password = 4;
 	string OpenId = 5;
 	string Platform = 6;
-=======
-	string Account = 3;		// 账号
-	string Password = 4; 	// 密码
->>>>>>> release8.1
 }
 
 message NetClient2Main_Login // IResponse
