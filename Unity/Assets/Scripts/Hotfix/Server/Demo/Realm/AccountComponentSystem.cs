@@ -48,6 +48,7 @@ namespace ET.Server
 
                     // 更新登录时间
                     accountInfo.LoginTime = TimeInfo.Instance.ToDateTime(TimeInfo.Instance.ServerNow());
+                    await dbComponent.Save(accountInfo);
                 }
 
                 return (ErrorCode.ERR_Success, accountInfo.AccountId);

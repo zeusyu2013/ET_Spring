@@ -8,11 +8,23 @@
             Scene currentScene = root.GetComponent<CurrentScenesComponent>().Scene;
             return currentScene.GetComponent<UnitComponent>().Get(playerComponent.MyId);
         }
-        
+
         public static Unit GetMyUnitFromCurrentScene(Scene currentScene)
         {
             PlayerComponent playerComponent = currentScene.Root().GetComponent<PlayerComponent>();
             return currentScene.GetComponent<UnitComponent>().Get(playerComponent.MyId);
+        }
+
+        public static bool IsMyUnit(this Unit unit)
+        {
+            if (unit == null || unit.IsDisposed)
+            {
+                return false;
+            }
+            
+            PlayerComponent playerComponent = unit.Root().GetComponent<PlayerComponent>();
+            
+            return playerComponent.MyId == unit.Id;
         }
     }
 }

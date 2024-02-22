@@ -41,7 +41,8 @@ namespace ET.Client
         private static void Update(this InputComponent self)
         {
             self.MoveDirection.x = Input.GetAxis("Horizontal");
-            self.MoveDirection.y = Input.GetAxis("Vertical");
+            self.MoveDirection.y = 0;
+            self.MoveDirection.z = Input.GetAxis("Vertical");
 
             foreach (KeyCode keyCode in self.KeyCodes.Where(Input.GetKeyDown))
             {

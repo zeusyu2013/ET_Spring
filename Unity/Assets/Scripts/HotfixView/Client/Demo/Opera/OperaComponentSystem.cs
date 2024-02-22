@@ -1,12 +1,14 @@
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 
 namespace ET.Client
 {
-    [EntitySystemOf(typeof (OperaComponent))]
-    [FriendOf(typeof (OperaComponent))]
-    [FriendOfAttribute(typeof (ET.Client.InputComponent))]
+    [EntitySystemOf(typeof(OperaComponent))]
+    [FriendOf(typeof(OperaComponent))]
+    [FriendOfAttribute(typeof(ET.Client.InputComponent))]
+    [FriendOfAttribute(typeof(ET.Client.CameraComponent))]
     public static partial class OperaComponentSystem
     {
         [EntitySystem]
@@ -19,16 +21,36 @@ namespace ET.Client
         [EntitySystem]
         private static void Update(this OperaComponent self)
         {
-            if (Input.GetMouseButtonDown(0))
+            // if (Input.GetMouseButtonDown(0))
+            // {
+            //     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            //     RaycastHit hit;
+            //     if (Physics.Raycast(ray, out hit, 1000, self.mapMask))
+            //     {
+            //         C2M_PathfindingResult c2MPathfindingResult = C2M_PathfindingResult.Create();
+            //         c2MPathfindingResult.Position = hit.point;
+            //         self.Root().GetComponent<ClientSenderComponent>().Send(c2MPathfindingResult);
+            //     }
+            // }
+
+            InputComponent inputComponent = self.Root().GetComponent<InputComponent>();
+            if (inputComponent.MoveDirection.x != 0 || inputComponent.MoveDirection.z != 0)
             {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit hit;
-                if (Physics.Raycast(ray, out hit, 1000, self.mapMask))
-                {
-                    C2M_PathfindingResult c2MPathfindingResult = C2M_PathfindingResult.Create();
-                    c2MPathfindingResult.Position = hit.point;
-                    self.Root().GetComponent<ClientSenderComponent>().Send(c2MPathfindingResult);
-                }
+                Vector3 moveDir = inputComponent.MoveDirection;
+                Unit unit = UnitHelper.GetMyUnitFromClientScene(self.Root());
+                Quaternion rotation = unit.GetComponent<CameraComponent>().MainCamera.transform.rotation;
+                Vector3 unitPos = unit.Position;
+                unitPos.y = 0;
+                Vector3 newPos = unitPos + (rotation * moveDir * 4f);
+
+                using ListComponent<float3> list = ListComponent<float3>.Create();
+                list.Add(unit.Position);
+                list.Add(newPos);
+                unit.MoveToAsync(list).Coroutine();
+
+                C2M_PathfindingResult c2MPathfindingResult = C2M_PathfindingResult.Create();
+                c2MPathfindingResult.Position = newPos;
+                self.Root().GetComponent<ClientSenderComponent>().Send(c2MPathfindingResult);
             }
 
             if (Input.GetKeyDown(KeyCode.Q))

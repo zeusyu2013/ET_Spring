@@ -62,6 +62,9 @@ namespace ET.Client
 
             Quaternion targetRotation = Quaternion.Euler(self.CinemachineTargetPitch, self.CinemachineTargetYaw, 0);
             self.MainCamera.transform.rotation = targetRotation;
+            
+            Unit unit = UnitHelper.GetMyUnitFromClientScene(self.Root());
+            unit.Rotation = targetRotation;
         }
 
         private static void CameraScroll(this CameraComponent self)
