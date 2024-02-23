@@ -21,3 +21,32 @@ message NetClient2Main_Login // IResponse
 
 	int64 PlayerId = 4;
 }
+
+message MapleInfo
+{
+	repeated DistrictInfo DistrictInfos = 1;
+}
+
+message DistrictInfo
+{
+	int32 district_id = 1;
+	string district_name = 2;
+	int32 district_group = 3;
+	repeated ServerInfo ServerInfos = 4;
+}
+
+message ServerInfo 
+{
+	string game_version = 1;
+	string district_id = 2;
+	int32 server_id = 3;
+	int32 server_type = 4;
+	int32 server_state = 5;
+	int32 server_white = 6;
+	int32 server_flag = 7;
+	string server_name = 8;
+	string server_addr = 9;
+	int32 server_port = 10;
+	int32 server_group = 11;
+	string platform = 12;
+}
