@@ -1096,6 +1096,109 @@ namespace ET
         }
     }
 
+    [MemoryPackable]
+    [Message(OuterMessage.GameRoleInfo)]
+    public partial class GameRoleInfo : MessageObject
+    {
+        public static GameRoleInfo Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(GameRoleInfo), isFromPool) as GameRoleInfo;
+        }
+
+        [MemoryPackOrder(0)]
+        public long PlayerId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public string RoleName { get; set; }
+
+        [MemoryPackOrder(2)]
+        public int RoleLevel { get; set; }
+
+        [MemoryPackOrder(3)]
+        public int RoleJob { get; set; }
+
+        [MemoryPackOrder(4)]
+        public string RoleModel { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.PlayerId = default;
+            this.RoleName = default;
+            this.RoleLevel = default;
+            this.RoleJob = default;
+            this.RoleModel = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.C2G_GetRoles)]
+    public partial class C2G_GetRoles : MessageObject, IRequest
+    {
+        public static C2G_GetRoles Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2G_GetRoles), isFromPool) as C2G_GetRoles;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.G2C_GetRoles)]
+    public partial class G2C_GetRoles : MessageObject, IResponse
+    {
+        public static G2C_GetRoles Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(G2C_GetRoles), isFromPool) as G2C_GetRoles;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        [MemoryPackOrder(3)]
+        public List<GameRoleInfo> Roles { get; set; } = new();
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+            this.Roles.Clear();
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
     public static class OuterMessage
     {
         public const ushort HttpGetRouterResponse = 10002;
@@ -1132,5 +1235,8 @@ namespace ET
         public const ushort M2C_TransferMap = 10033;
         public const ushort C2G_Benchmark = 10034;
         public const ushort G2C_Benchmark = 10035;
+        public const ushort GameRoleInfo = 10036;
+        public const ushort C2G_GetRoles = 10037;
+        public const ushort G2C_GetRoles = 10038;
     }
 }

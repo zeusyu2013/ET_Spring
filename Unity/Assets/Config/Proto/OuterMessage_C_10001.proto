@@ -235,3 +235,25 @@ message G2C_Benchmark // ISessionResponse
 	int32 Error = 2;
 	string Message = 3;
 }
+
+message GameRoleInfo
+{
+	int64 PlayerId = 1;
+	string RoleName = 2;
+	int32 RoleLevel = 3;
+	int32 RoleJob = 4;
+	string RoleModel = 5;
+}
+
+message C2G_GetRoles // IRequest
+{
+	int32 RpcId = 1;
+}
+
+message G2C_GetRoles // IResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+	repeated GameRoleInfo Roles = 4;
+}
