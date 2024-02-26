@@ -10,8 +10,11 @@ namespace ET
         public const int DB = 5;
         public const int Resources = 6;
         public const int ResourcesLoader = 7;
+        public const int DBCache = 8;
 
         public const int Login = 10;
+
+        public const int Bag = 21;
 
         public const int Max = 100; // 这个必须最大
     }

@@ -257,3 +257,27 @@ message G2C_GetRoles // IResponse
 	string Message = 3;
 	repeated GameRoleInfo Roles = 4;
 }
+
+message ItemInfo
+{
+	int32 ItemId = 1;
+	int64 ItemCount = 2;
+}
+
+// ResponseType M2C_UseItem
+message C2M_UseItem // ILocationRequest
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+	int32 ItemId = 4;
+	int64 ItemCount = 5;
+}
+
+message M2C_UseItem // ILocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+	repeated ItemInfo ItemInfos = 4;
+}

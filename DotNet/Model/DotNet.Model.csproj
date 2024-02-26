@@ -50,4 +50,9 @@
         <ProjectReference Include="..\Core\DotNet.Core.csproj" />
         <ProjectReference Include="..\ThirdParty\DotNet.ThirdParty.csproj" />
     </ItemGroup> 
+    <ItemGroup>
+      <Folder Include="..\..\Unity\Assets\Scripts\Model\Share\Module\Container\">
+        <Link>Share\Module\Container</Link>
+      </Folder>
+    </ItemGroup> 
 </Project>
