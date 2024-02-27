@@ -22,6 +22,15 @@ namespace ET.Server
         {
             self.TimerId = self.Root().GetComponent<TimerComponent>().NewRepeatedTimer(60 * 1000, TimerInvokeType.DBCacheTimer, self);
             self.CacheDict = new();
+            self.LRUDict = new();
+        }
+
+        [EntitySystem]
+        private static void Destroy(this ET.Server.DBCacheComponent self)
+        {
+            self.Root().GetComponent<TimerComponent>().Remove(ref self.TimerId);
+            self.CacheDict.Clear();
+            self.LRUDict.Clear();
         }
 
         public static async ETTask<T> Query<T>(this DBCacheComponent self, long playerId) where T : Entity
@@ -83,7 +92,7 @@ namespace ET.Server
             }
         }
 
-        private static void UpdateCache<T>(this DBCacheComponent self, long playerId, T entity) where T: Entity
+        private static void UpdateCache<T>(this DBCacheComponent self, long playerId, T entity) where T : Entity
         {
             if (self.CacheDict[playerId].ContainsKey(typeof(T)))
             {
@@ -97,7 +106,7 @@ namespace ET.Server
             self.LRUDict[playerId] = TimeInfo.Instance.ServerNow();
         }
 
-        public static void RemoveCache(this DBCacheComponent self, long playerId)
+        private static void RemoveCache(this DBCacheComponent self, long playerId)
         {
             if (!self.CacheDict.ContainsKey(playerId))
             {
@@ -112,7 +121,7 @@ namespace ET.Server
         {
             long time = TimeInfo.Instance.ServerNow();
             List<long> keys = self.LRUDict.Keys.ToList();
-            
+
             for (int i = keys.Count - 1; i > 0; --i)
             {
                 long lastSaveTime = self.LRUDict[keys[i]];
@@ -120,7 +129,7 @@ namespace ET.Server
                 {
                     continue;
                 }
-                
+
                 self.RemoveCache(keys[i]);
                 self.LRUDict.Remove(keys[i]);
             }

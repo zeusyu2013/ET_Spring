@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ET.Server
 {
-    public class DBCacheComponent: Entity, IAwake
+    public class DBCacheComponent: Entity, IAwake, IDestroy
     {
         public long TimerId;
 
