@@ -1,0 +1,22 @@
+<module name="Game">
+    <bean name="PlayerLevelExp">
+		<var name="level" type="int"/>
+		<var name="exp" type="int64"/>
+	</bean>
+    <bean name="ItemProp">
+		<var name="id" type="int"/>
+		<var name="type" type="int"/>
+		<var name="icon" type="string"/>
+		<var name="can_sell" type="bool"/>
+		<var name="sell_price" type="int"/>
+		<var name="compress" type="bool"/>
+		<var name="compress_items" type="list,Items"/>
+		<var name="quality" type="EItemQuality"/>
+		<var name="view_type" type="int"/>
+	</bean>
+    <bean name="Items">
+		<var name="id" type="int"/>
+		<var name="amount" type="int"/>
+		<var name="bind_type" type="int"/>
+	</bean>
+</module>

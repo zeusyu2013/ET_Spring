@@ -245,6 +245,7 @@ message GameRoleInfo
 	string RoleModel = 5;
 }
 
+// ResponseType G2C_GetRoles
 message C2G_GetRoles // IRequest
 {
 	int32 RpcId = 1;

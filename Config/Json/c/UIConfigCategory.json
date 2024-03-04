@@ -1,0 +1,26 @@
+[
+  {
+    "Id": 1,
+    "Name": "UILogin",
+    "UIType": 2,
+    "Layer": 1,
+    "FullScreen": false,
+    "RefitH": false
+  },
+  {
+    "Id": 2,
+    "Name": "UIJoystick",
+    "UIType": 1,
+    "Layer": 1,
+    "FullScreen": false,
+    "RefitH": false
+  },
+  {
+    "Id": 3,
+    "Name": "UIMain",
+    "UIType": 1,
+    "Layer": 1,
+    "FullScreen": false,
+    "RefitH": false
+  }
+]

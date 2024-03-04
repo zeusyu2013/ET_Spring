@@ -32,6 +32,34 @@
 
     <ItemGroup>
 
+        <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\Luban\BeanBase.cs">
+          <Link>Luban\BeanBase.cs</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\Luban\ByteBuf.cs">
+          <Link>Luban\ByteBuf.cs</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\Luban\SimpleJSON\SimpleJSON.cs">
+          <Link>Luban\SimpleJSON\SimpleJSON.cs</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\Luban\SimpleJSON\SimpleJSONBinary.cs">
+          <Link>Luban\SimpleJSON\SimpleJSONBinary.cs</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\Luban\SimpleJSON\SimpleJSONDotNetTypes.cs">
+          <Link>Luban\SimpleJSON\SimpleJSONDotNetTypes.cs</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\Luban\SimpleJSON\SimpleJSONUnity.cs">
+          <Link>Luban\SimpleJSON\SimpleJSONUnity.cs</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\Luban\StringUtil.cs">
+          <Link>Luban\StringUtil.cs</Link>
+        </Compile>
+
         <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\TrueSync\**\*.cs">
             <Link>TrueSync/%(RecursiveDir)%(FileName)%(Extension)</Link>
         </Compile>
@@ -67,5 +95,17 @@
         <PackageReference Include="SharpZipLib" Version="1.3.3" />
         <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.0.1" />
         <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\..\Unity\Assets\Scripts\ThirdParty\Luban\SimpleJSON\Changelog.txt">
+        <Link>Luban\SimpleJSON\Changelog.txt</Link>
+      </Content>
+      <Content Include="..\..\Unity\Assets\Scripts\ThirdParty\Luban\SimpleJSON\LICENSE">
+        <Link>Luban\SimpleJSON\LICENSE</Link>
+      </Content>
+      <Content Include="..\..\Unity\Assets\Scripts\ThirdParty\Luban\SimpleJSON\README">
+        <Link>Luban\SimpleJSON\README</Link>
+      </Content>
     </ItemGroup>
 </Project>

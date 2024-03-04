@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="6qczg918">
+  <resources>
+    <component id="hwto0" name="CommonButton.xml" path="/Button/" exported="true"/>
+    <component id="hwto1" name="RadioButton.xml" path="/Button/" exported="true"/>
+    <component id="hwto2" name="CheckButton.xml" path="/Button/" exported="true"/>
+    <image id="hwto3" name="btn_1_down.png" path="/Res/" exported="true"/>
+    <image id="hwto4" name="btn_1_on.png" path="/Res/" exported="true"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

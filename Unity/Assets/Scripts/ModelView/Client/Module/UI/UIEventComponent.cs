@@ -3,13 +3,10 @@ using System.Collections.Generic;
 
 namespace ET.Client
 {
-	/// <summary>
-	/// 管理所有UI GameObject
-	/// </summary>
-	[Code]
-	public class UIEventComponent: Singleton<UIEventComponent>, ISingletonAwake
-	{
-		public Dictionary<string, AUIEvent> UIEvents { get; } = new();
+    [Code]
+    public class UIEventComponent : Singleton<UIEventComponent>, ISingletonAwake
+    {
+        public Dictionary<string, AUIEvent> UIEvents { get; } = new();
 		
         public void Awake()
         {
@@ -24,8 +21,8 @@ namespace ET.Client
 
                 UIEventAttribute uiEventAttribute = attrs[0] as UIEventAttribute;
                 AUIEvent aUIEvent = Activator.CreateInstance(type) as AUIEvent;
-                this.UIEvents.Add(uiEventAttribute.UIType, aUIEvent);
+                this.UIEvents.Add(uiEventAttribute.PanelName, aUIEvent);
             }
         }
-	}
+    }
 }

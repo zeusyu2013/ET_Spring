@@ -1,14 +1,15 @@
-using System;
-
-namespace ET.Client
+﻿namespace ET.Client
 {
-    public class UIEventAttribute: BaseAttribute
+    /// <summary>
+    /// 用于收集AUIEvent
+    /// </summary>
+    public class UIEventAttribute : BaseAttribute
     {
-        public string UIType { get; }
+        public string PanelName { get; }
 
-        public UIEventAttribute(string uiType)
+        public UIEventAttribute(string panelName)
         {
-            this.UIType = uiType;
+            this.PanelName = panelName;
         }
     }
 }

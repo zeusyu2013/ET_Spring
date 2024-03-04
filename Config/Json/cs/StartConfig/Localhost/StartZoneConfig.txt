@@ -1,5 +1,0 @@
-{"dict": [
-[1, {"_t":"StartZoneConfig","_id":1,"DBConnection":"mongodb://127.0.0.1","DBName":"Account"}],
-[2, {"_t":"StartZoneConfig","_id":2,"DBConnection":"mongodb://127.0.0.1","DBName":"Game1"}],
-[3, {"_t":"StartZoneConfig","_id":3,"DBConnection":"mongodb://127.0.0.1","DBName":"Game2"}],
-]}

@@ -1139,6 +1139,7 @@ namespace ET
 
     [MemoryPackable]
     [Message(OuterMessage.C2G_GetRoles)]
+    [ResponseType(nameof(G2C_GetRoles))]
     public partial class C2G_GetRoles : MessageObject, IRequest
     {
         public static C2G_GetRoles Create(bool isFromPool = false)
