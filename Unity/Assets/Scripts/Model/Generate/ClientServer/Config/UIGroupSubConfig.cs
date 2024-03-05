@@ -20,7 +20,7 @@ namespace ET
             GroupId = _buf.ReadInt();
             PanelName = _buf.ReadString();
             Open = _buf.ReadBool();
-            Args = _buf.ReadInt();
+            Args = _buf.ReadString();
 
             PostInit();
         }
@@ -41,11 +41,6 @@ namespace ET
         public readonly int GroupId;
 
         /// <summary>
-        /// 组Id
-        /// </summary>
-        public UIGroupConfig GroupIdConfig => UIGroupConfigCategory.Instance.GetOrDefault(Args);
-
-        /// <summary>
         /// 界面名字
         /// </summary>
         public readonly string PanelName;
@@ -58,7 +53,7 @@ namespace ET
         /// <summary>
         /// 界面初始化参数
         /// </summary>
-        public readonly int Args;
+        public readonly string Args;
 
         public const int __ID__ = -412464745;
 

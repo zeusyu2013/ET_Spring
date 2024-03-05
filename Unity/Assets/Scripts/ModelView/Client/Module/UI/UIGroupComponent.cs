@@ -11,9 +11,9 @@ namespace ET.Client
     public class UIGroupComponent : Entity, IAwake, IDestroy
     { 
         // 界面formID
-        public UIDefine.GroupId GroupId { get; set; }
-        // 回溯队列
-        public Stack<int> IdStack = new();
+        public UIDefine.UIGroupId GroupId { get; set; }
+        // 回溯队列 
+        public List<UIGroupConfig> TraceIdList = new();
         
     }
 }

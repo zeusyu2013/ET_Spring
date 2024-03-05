@@ -27,18 +27,17 @@ namespace ET.Client
                 return;
             }
          
-            // 没有配置就不加载
-            // UIConfig config = UIConfigCategory.Instance.GetConfigByName(panelName);
-            // if (config == null)
-            // {
-            //     return;
-            // }
-            // // 创建UI，加载脚本
-            // UI ui = await UIEventComponent.Instance.UIEvents[panelName].OnCreate(self);
-            // self.UIs.Add(panelName, ui);
-            // ui.UIConfig = config;
-            // ui.Layer = config.Layer;
-       
+            //没有配置就不加载
+            UIConfig config = UIConfigCategory.Instance.GetConfigByName(panelName);
+            if (config == null)
+            {
+                return;
+            }
+            // 创建UI，加载脚本
+            UI ui = await UIEventComponent.Instance.UIEvents[panelName].OnCreate(self);
+            self.UIs.Add(panelName, ui);
+            ui.UIConfig = config;
+            ui.Layer = config.Layer;
         }
 
         /// <summary>

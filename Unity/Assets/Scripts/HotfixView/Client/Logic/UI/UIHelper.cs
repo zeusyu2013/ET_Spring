@@ -31,7 +31,7 @@
         }
 
         [EnableAccessEntiyChild]
-        public static void OpenGroup(Entity scene, UIDefine.GroupId groupId)
+        public static void OpenGroup(Entity scene, UIDefine.UIGroupId groupId)
         {
             UIComponent uiComponent = scene.GetComponent<UIComponent>();
             UIGroupComponent groupComponent = uiComponent.GetComponent<UIGroupComponent>();
@@ -39,7 +39,7 @@
         }
 
         [EnableAccessEntiyChild]
-        public static UIDefine.GroupId GetGroupId(Entity scene)
+        public static UIDefine.UIGroupId GetGroupId(Entity scene)
         {
             UIComponent uiComponent = scene.GetComponent<UIComponent>();
             UIGroupComponent groupComponent = uiComponent.GetComponent<UIGroupComponent>();

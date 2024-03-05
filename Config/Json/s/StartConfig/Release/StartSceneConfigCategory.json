@@ -35,8 +35,8 @@
     "Id": 5,
     "Process": 5,
     "Zone": 1,
-    "SceneType": "Match",
-    "Name": "Match",
+    "SceneType": "Map",
+    "Name": "Map0",
     "Port": 0
   },
   {
