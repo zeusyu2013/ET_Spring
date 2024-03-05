@@ -32,4 +32,24 @@
     {
         public Unit Unit;
     }
+
+    public struct AfterItemAdd
+    {
+        
+    }
+
+    public struct BeforeItemRemove
+    {
+        
+    }
+
+    public struct AfterItemRemove
+    {
+        
+    }
+
+    public struct OnItemUsed
+    {
+        
+    }
 }
