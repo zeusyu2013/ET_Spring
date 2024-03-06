@@ -26,13 +26,14 @@ local function LoopChildProperty(writer, classes, classInfo, varName)
     local memberInfo = members[i]
     local tempClassInfo = GetClassInfo(classes, memberInfo.type)
     local type = tempClassInfo ~= nil and tempClassInfo.superClassName or memberInfo.type
-    local propertName = varName ~= nil and varName .. memberInfo.varName or memberInfo.varName
+    local propertName = varName ~= nil and varName .. string.gsub(memberInfo.varName, 'G', '_', 1)  or memberInfo.varName
     writer:writeln('public %s %s { get; set; }',  type, propertName)
     if tempClassInfo ~= nil then
       LoopChildProperty(writer, classes, tempClassInfo, propertName)
     end
   end
 end
+
 
 -- 创建界面名字类
 local function CreatePanelNameClass(handler, writer, classes)

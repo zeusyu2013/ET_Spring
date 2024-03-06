@@ -24,6 +24,11 @@
     {
     }
 
+    public struct GetRolesFinish
+    {
+        
+    }
+
     public struct EnterMapFinish
     {
     }

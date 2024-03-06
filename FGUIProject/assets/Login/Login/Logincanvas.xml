@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1280,720" opaque="false">
+  <controller name="LoginCtrl" pages="0,,1," selected="0"/>
+  <displayList>
+    <component id="n3_hwto" name="LoginBtn" src="hwto0" fileName="Button/CommonButton.xml" pkg="6qczg918" xy="585,402" size="135,49" group="n8_8ych">
+      <Button title="登录" titleColor="#ffffff" titleFontSize="20"/>
+      <property target="down" propertyId="1" value="ui://6qczg918hwto3"/>
+      <property target="up" propertyId="1" value="ui://6qczg918hwto4"/>
+    </component>
+    <graph id="n5_hwto" name="n5" xy="465,216" size="368,32" group="n8_8ych" type="rect" lineSize="0"/>
+    <text id="n4_hwto" name="AccountText" xy="473,217" size="350,30" group="n8_8ych" fontSize="18" align="center" vAlign="middle" autoSize="none" text="" input="true" prompt="请输入账号" keyboardType="4"/>
+    <graph id="n6_hwto" name="n6" xy="465,268" size="368,32" group="n8_8ych" type="rect" lineSize="0"/>
+    <text id="n7_hwto" name="PasswordText" xy="473,269" size="350,30" group="n8_8ych" fontSize="18" align="center" vAlign="middle" autoSize="none" text="" input="true" prompt="请输入密码" keyboardType="4"/>
+    <group id="n8_8ych" name="n8" xy="465,216" size="368,235" advanced="true">
+      <gearDisplay controller="LoginCtrl" pages="0"/>
+    </group>
+    <component id="n9_8ych" name="EnterBtn" src="hwto0" fileName="Button/CommonButton.xml" pkg="6qczg918" xy="579,438" size="135,49">
+      <gearDisplay controller="LoginCtrl" pages="1"/>
+      <Button title="进入游戏" titleColor="#ffffff" titleFontSize="20"/>
+      <property target="down" propertyId="1" value="ui://6qczg918hwto3"/>
+      <property target="up" propertyId="1" value="ui://6qczg918hwto4"/>
+    </component>
+    <component id="n10_9vg2" name="SelectServerBtn" src="hwto0" fileName="Button/CommonButton.xml" pkg="6qczg918" xy="578,293" size="135,49">
+      <gearDisplay controller="LoginCtrl" pages="1"/>
+      <Button title="选择服务器器" titleColor="#ffffff" titleFontSize="20"/>
+      <property target="down" propertyId="1" value="ui://6qczg918hwto3"/>
+      <property target="up" propertyId="1" value="ui://6qczg918hwto4"/>
+    </component>
+  </displayList>
+</component>

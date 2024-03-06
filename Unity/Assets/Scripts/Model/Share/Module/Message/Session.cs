@@ -33,7 +33,7 @@ namespace ET
             return await this.tcs;
         }
     }
-    
+
     [EntitySystemOf(typeof(Session))]
     [FriendOf(typeof(Session))]
     public static partial class SessionSystem
@@ -47,25 +47,25 @@ namespace ET
             self.LastSendTime = timeNow;
 
             self.requestCallbacks.Clear();
-            
+
             Log.Info($"session create: zone: {self.Zone()} id: {self.Id} {timeNow} ");
         }
-        
+
         [EntitySystem]
         private static void Destroy(this Session self)
         {
             self.AService.Remove(self.Id, self.Error);
-            
+
             foreach (RpcInfo responseCallback in self.requestCallbacks.Values.ToArray())
             {
                 responseCallback.SetException(new RpcException(self.Error, $"session dispose: {self.Id} {self.RemoteAddress}"));
             }
 
             Log.Info($"session dispose: {self.RemoteAddress} id: {self.Id} ErrorCode: {self.Error}, please see ErrorCode.cs! {TimeInfo.Instance.ClientNow()}");
-            
+
             self.requestCallbacks.Clear();
         }
-        
+
         public static void OnResponse(this Session self, IResponse response)
         {
             if (!self.requestCallbacks.Remove(response.RpcId, out RpcInfo action))
@@ -74,7 +74,7 @@ namespace ET
             }
             action.SetResult(response);
         }
-        
+
         public static async ETTask<IResponse> Call(this Session self, IRequest request, ETCancellationToken cancellationToken)
         {
             int rpcId = ++self.RpcId;
@@ -83,7 +83,7 @@ namespace ET
             request.RpcId = rpcId;
 
             self.Send(request);
-            
+
             void CancelAction()
             {
                 if (!self.requestCallbacks.Remove(rpcId, out RpcInfo action))
@@ -92,7 +92,7 @@ namespace ET
                 }
 
                 Type responseType = OpcodeType.Instance.GetResponseType(action.RequestType);
-                IResponse response = (IResponse) Activator.CreateInstance(responseType);
+                IResponse response = (IResponse)Activator.CreateInstance(responseType);
                 response.Error = ErrorCore.ERR_Cancel;
                 action.SetResult(response);
             }
@@ -132,10 +132,10 @@ namespace ET
                     {
                         return;
                     }
-                    
+
                     action.SetException(new Exception($"session call timeout: {action.RequestType.FullName} {time}"));
                 }
-                
+
                 Timeout().Coroutine();
             }
 
@@ -146,7 +146,7 @@ namespace ET
         {
             self.Send(default, message);
         }
-        
+
         public static void Send(this Session self, ActorId actorId, IMessage message)
         {
             self.LastSendTime = TimeInfo.Instance.ClientNow();

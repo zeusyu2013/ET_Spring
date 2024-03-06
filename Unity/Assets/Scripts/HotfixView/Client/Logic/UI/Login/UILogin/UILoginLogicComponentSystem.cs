@@ -9,6 +9,21 @@ namespace ET.Client
         [EntitySystem]
         private static void Awake(this UILoginLogicComponent self)
         {
+            UILoginComponent view = self.GetParent<UI>().GetComponent<UILoginComponent>();
+            
+            view.GLoginBtn.onClick.Set(()=>
+            {
+                LoginHelper.Login(
+                    view.Root(), 
+                    view.GAccountText.text, 
+                    view.GPasswordText.text).Coroutine();
+            });
+            
+            view.GEnterBtn.onClick.Set(() =>
+            {
+                self.EnterMap().Coroutine();
+            });
+            
         }
         [EntitySystem]
         private static void Destroy(this UILoginLogicComponent self)
@@ -20,6 +35,15 @@ namespace ET.Client
 
         public static void OnShow(this UILoginLogicComponent self)
         {
+         
+            
+        }
+        
+        public static async ETTask EnterMap(this UILoginLogicComponent self)
+        {
+            Scene root = self.Root();
+            await EnterMapHelper.EnterMapAsync(root);
+            UIHelper.Remove(root, UIName.UILogin);
         }
     }
 }

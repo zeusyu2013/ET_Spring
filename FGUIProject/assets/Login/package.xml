@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <packageDescription id="6anu0bny">
   <resources>
-    <component id="cvky0" name="UILogin.xml" path="/" exported="true"/>
+    <component id="cvky0" name="UILogin.xml" path="/Login/" exported="true"/>
+    <component id="nnx51" name="UIServerList.xml" path="/ServerList/" exported="true"/>
+    <component id="nnx52" name="Logincanvas.xml" path="/Login/"/>
+    <component id="nnx53" name="ServeListCanvas.xml" path="/ServerList/"/>
+    <component id="nnx54" name="ServerItem.xml" path="/ServerList/"/>
   </resources>
   <publish name="" genCode="true"/>
 </packageDescription>

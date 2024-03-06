@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1280,720" pivot="1,0" opaque="false">
+  <displayList>
+    <graph id="n0_nnx5" name="n0" xy="0,0" size="1280,720" alpha="0.6" type="rect" lineSize="0" fillColor="#ff000000"/>
+    <graph id="n2_itrp" name="n2" xy="281,96" size="749,483" type="rect" fillColor="#ff999999"/>
+    <list id="n1_nnx5" name="List" xy="500,108" size="507,460" layout="flow_hz" overflow="scroll" lineGap="2" colGap="2" defaultItem="ui://6anu0bnynnx54">
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+  </displayList>
+</component>

@@ -28,7 +28,7 @@ local function LoopChildProperty(writer, classes, classInfo, varName, getMemberB
         local memberInfo = members[i]
         local tempClassInfo = GetClassInfo(classes, memberInfo.type)
         local type = tempClassInfo ~= nil and tempClassInfo.superClassName or memberInfo.type
-        local propertName = varName ~= nil and varName .. memberInfo.varName or memberInfo.varName
+        local propertName = varName ~= nil and varName .. string.gsub(memberInfo.varName, 'G', '_', 1) or memberInfo.varName
         local parnetName = varName ~= nil and 'self.' .. varName or 'ui.Component'
         if (memberInfo.group == 0) then -- 常规组件
             if getMemberByName then
@@ -62,7 +62,7 @@ local function LoopChildPropertyEnd(writer, classes, classInfo, varName)
     for i = 0, members.Count - 1 do
         local memberInfo = members[i]
         local tempClassInfo = GetClassInfo(classes, memberInfo.type)
-        local propertName = varName ~= nil and varName .. memberInfo.varName or memberInfo.varName
+        local propertName = varName ~= nil and varName .. string.gsub(memberInfo.varName, 'G', '_', 1) or memberInfo.varName
         writer:writeln('self.%s = null;', propertName)
 
         if tempClassInfo ~= nil then

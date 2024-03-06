@@ -19,5 +19,10 @@ namespace ET
         public const int ERR_OpenIdEmpty = 200004;
         public const int ERR_SigntureEmpty = 200005;
         public const int ERR_SigntureNotMatch = 200006;
+        
+        public const int ERR_PlayerIdEmpty = 200007;
+        public const int ERR_CreateRoleNameEmpty = 200008;
+        public const int ERR_CreateRoleNameSame = 200009;
+        public const int ERR_DeleteRoleHasNoRole = 200010;
     }
 }

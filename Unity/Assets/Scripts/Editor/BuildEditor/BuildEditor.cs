@@ -25,6 +25,7 @@ namespace ET
         public const int Reload = 1004;
         public const int NavMesh = 1005;
         public const int ServerTools = 1006;
+        public const int SvnTools = 1007;
     }
 
     public class BuildEditor : EditorWindow

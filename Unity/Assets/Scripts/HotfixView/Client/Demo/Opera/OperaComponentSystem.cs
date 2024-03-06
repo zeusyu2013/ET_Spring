@@ -21,24 +21,12 @@ namespace ET.Client
         [EntitySystem]
         private static void Update(this OperaComponent self)
         {
-            // if (Input.GetMouseButtonDown(0))
-            // {
-            //     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            //     RaycastHit hit;
-            //     if (Physics.Raycast(ray, out hit, 1000, self.mapMask))
-            //     {
-            //         C2M_PathfindingResult c2MPathfindingResult = C2M_PathfindingResult.Create();
-            //         c2MPathfindingResult.Position = hit.point;
-            //         self.Root().GetComponent<ClientSenderComponent>().Send(c2MPathfindingResult);
-            //     }
-            // }
-
             InputComponent inputComponent = self.Root().GetComponent<InputComponent>();
             if (inputComponent.MoveDirection.x != 0 || inputComponent.MoveDirection.z != 0)
             {
                 Vector3 moveDir = inputComponent.MoveDirection;
                 Unit unit = UnitHelper.GetMyUnitFromClientScene(self.Root());
-                Quaternion rotation = unit.GetComponent<CameraComponent>().MainCamera.transform.rotation;
+                Quaternion rotation = Quaternion.Euler(0, unit.GetComponent<CameraComponent>().CinemachineTargetYaw, 0);
                 Vector3 unitPos = unit.Position;
                 unitPos.y = 0;
                 Vector3 newPos = unitPos + (rotation * moveDir * 4f);

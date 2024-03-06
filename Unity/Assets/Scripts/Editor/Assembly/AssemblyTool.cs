@@ -1,8 +1,10 @@
+using System.Diagnostics;
 using System.IO;
 using System.Threading;
 using UnityEditor;
 using UnityEditor.Build.Player;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 namespace ET
 {
@@ -48,6 +50,69 @@ namespace ET
             }
         }
 
+        [MenuItem("ET/Update _F8", false, ETMenuItemPriority.SvnTools)]
+        static void MenuItemOfUpdate()
+        {
+            if (Application.isPlaying)
+            {
+                return;
+            }
+
+            DoSvnOperation("", SvnOperation.Update);
+        }
+
+        private enum SvnOperation
+        {
+            Update,
+            Commit,
+        }
+
+        private static void DoSvnOperation(string path, SvnOperation operation)
+        {
+            string command = "TortoiseProc.exe /command:";
+            switch (operation)
+            {
+                case SvnOperation.Update:
+                    command += "update /path:\"";
+                    break;
+                case SvnOperation.Commit:
+                    command += "commit /path:\"";
+                    break;
+            }
+
+            if (string.IsNullOrEmpty(path))
+            {
+                command += Application.dataPath;
+                command = command.Substring(0, command.Length - 12);
+            }
+            else
+            {
+                command += path;
+            }
+
+            command += "\"";
+            command += " /closeonend:0";
+
+            Thread thread = new(SvnCommandThread);
+            thread.Start(command);
+        }
+
+        private static void SvnCommandThread(object o)
+        {
+            Process process = new Process();
+            process.StartInfo.FileName = "cmd.exe";
+            process.StartInfo.Arguments = "/c" + o.ToString();
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardInput = true;
+            process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.RedirectStandardError = true;
+            process.StartInfo.CreateNoWindow = true;
+            process.Start();
+
+            process.WaitForExit();
+            process.Close();
+        }
+
         /// <summary>
         /// 执行编译代码流程
         /// </summary>
@@ -67,7 +132,7 @@ namespace ET
 
             CopyHotUpdateDlls();
             BuildHelper.ReGenerateProjectFiles();
-            
+
             Log.Info($"Compile Finish!");
         }
 

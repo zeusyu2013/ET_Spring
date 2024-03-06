@@ -12,7 +12,7 @@ namespace ET
         public void InitSubConfig()
         {
             subGroupDic.Clear();
-            foreach (var data in _dataList)
+            foreach (var data in this.DataList)
             {
                 int groupId = data.GroupId;
                 subGroupDic.TryGetValue(groupId, out var list);

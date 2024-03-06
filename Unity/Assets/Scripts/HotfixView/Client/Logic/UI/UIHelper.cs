@@ -3,10 +3,14 @@
     public static class UIHelper
     {
         [EnableAccessEntiyChild]
-        public static async ETTask Create(Entity scene, string panelName)
+        public static async ETTask Create(Entity scene, string panelName, bool isShow = true)
         {
            UIComponent uiComponent = scene.GetComponent<UIComponent>();
            await uiComponent.CreatePanel(panelName);
+           if (isShow)
+           {
+               uiComponent.ShowPanel(panelName);
+           }
         }
 
         [EnableAccessEntiyChild]
