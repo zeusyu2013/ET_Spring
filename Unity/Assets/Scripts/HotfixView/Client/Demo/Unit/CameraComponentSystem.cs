@@ -11,8 +11,8 @@ namespace ET.Client
         private static void Awake(this CameraComponent self)
         {
             self.MainCamera = Camera.main;
-            self.CameraMinDistance = 5;
-            self.CameraMaxDistance = 20;
+            self.CameraMinDistance = GlobalDataConfigCategory.Instance.CameraMinDistance;
+            self.CameraMaxDistance = GlobalDataConfigCategory.Instance.CameraMaxDistance;
 
             self.CinemachineBrain = self.MainCamera.gameObject.AddOrGetComponent<CinemachineBrain>();
             self.CinemachineVirtualCamera = self.MainCamera.gameObject.AddOrGetComponent<CinemachineVirtualCamera>();

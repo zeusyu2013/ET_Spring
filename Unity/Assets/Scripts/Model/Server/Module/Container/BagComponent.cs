@@ -7,6 +7,10 @@ namespace ET.Server
     {
         public long PlayerId;
 
+        public int Capacity;
+
+        public int MaxCapacity;
+        
         public List<ItemInfo> ItemInfos;
     }
 }

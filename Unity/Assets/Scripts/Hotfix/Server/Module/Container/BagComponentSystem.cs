@@ -8,6 +8,8 @@
         private static void Awake(this BagComponent self)
         {
             self.PlayerId = self.GetParent<Unit>().Id;
+            self.Capacity = GlobalDataConfigCategory.Instance.BagCapacity;
+            self.MaxCapacity = GlobalDataConfigCategory.Instance.BagMaxCapacity;
             self.ItemInfos = new();
         }
 

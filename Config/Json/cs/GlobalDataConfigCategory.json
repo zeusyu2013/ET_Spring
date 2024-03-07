@@ -1,0 +1,8 @@
+[
+  {
+    "BagCapacity": 50,
+    "BagMaxCapacity": 200,
+    "CameraMinDistance": 5,
+    "CameraMaxDistance": 20
+  }
+]
