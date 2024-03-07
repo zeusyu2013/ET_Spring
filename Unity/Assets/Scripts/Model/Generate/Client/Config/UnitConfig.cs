@@ -17,11 +17,9 @@ namespace ET
         public UnitConfig(ByteBuf _buf)
         {
             Id = _buf.ReadInt();
-            Type = _buf.ReadInt();
+            Type = (NpcType)_buf.ReadInt();
             Name = _buf.ReadString();
-            Position = _buf.ReadInt();
-            Height = _buf.ReadInt();
-            AI = _buf.ReadInt();
+            Model = _buf.ReadString();
 
             PostInit();
         }
@@ -37,9 +35,9 @@ namespace ET
         public readonly int Id;
 
         /// <summary>
-        /// Type
+        /// Npc类型
         /// </summary>
-        public readonly int Type;
+        public readonly NpcType Type;
 
         /// <summary>
         /// 名字
@@ -47,24 +45,9 @@ namespace ET
         public readonly string Name;
 
         /// <summary>
-        /// 位置
+        /// 模型
         /// </summary>
-        public readonly int Position;
-
-        /// <summary>
-        /// 身高
-        /// </summary>
-        public readonly int Height;
-
-        /// <summary>
-        /// Ref测试
-        /// </summary>
-        public readonly int AI;
-
-        /// <summary>
-        /// Ref测试
-        /// </summary>
-        public AIConfig AIConfig => AIConfigCategory.Instance.GetOrDefault(AI);
+        public readonly string Model;
 
         public const int __ID__ = -568528378;
 
@@ -76,9 +59,7 @@ namespace ET
             + "Id:" + Id + ","
             + "Type:" + Type + ","
             + "Name:" + Name + ","
-            + "Position:" + Position + ","
-            + "Height:" + Height + ","
-            + "AI:" + AI + ","
+            + "Model:" + Model + ","
             + "}";
         }
 

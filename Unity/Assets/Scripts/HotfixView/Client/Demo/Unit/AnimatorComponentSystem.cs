@@ -16,7 +16,7 @@ namespace ET.Client
 			self.Animator = null;
 			self.AnimancerComponent = null;
 		}
-			
+		
 		[EntitySystem]
 		private static void Awake(this AnimatorComponent self)
 		{
