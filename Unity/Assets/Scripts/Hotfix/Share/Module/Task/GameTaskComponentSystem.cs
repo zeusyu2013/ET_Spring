@@ -16,15 +16,15 @@
             {
                 return;
             }
-            
+
             TaskConfig config = TaskConfigCategory.Instance.Get(taskId);
-            
+
             // 已完成且非日常任务，不处理
             if (self.CompletedTasks.Contains(taskId) && config.Type != TaskType.TaskType_Daily)
             {
                 return;
             }
-            
+
             self.AcceptedTasks.Add(taskId);
         }
 
@@ -35,10 +35,18 @@
             {
                 return;
             }
-            
+
             // 判断任务条件是否完成
-            
-            // 完成任务，给奖励
+            TaskConfig config = TaskConfigCategory.Instance.Get(taskId);
+
+            // 完成任务
+            self.AcceptedTasks.Remove(taskId);
+            self.CompletedTasks.Add(taskId);
+
+            EventSystem.Instance.Publish(self.Scene(), new TaskComplete());
+
+            // 给奖励
+            self.GetParent<Unit>().GetComponent<RewardComponent>().Reward(config.TaskReward);
         }
     }
 }
