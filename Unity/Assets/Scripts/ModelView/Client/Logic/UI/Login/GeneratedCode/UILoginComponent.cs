@@ -7,10 +7,13 @@ namespace ET.Client
     [ComponentOf(typeof(UI))]
     public class UILoginComponent: Entity, IAwake, IDestroy
     {
-        public Controller GLoginCtrl { get; set; }
-        public GButton GLoginBtn { get; set; }
-        public GTextInput GAccountText { get; set; }
-        public GTextInput GPasswordText { get; set; }
-        public GButton GEnterBtn { get; set; }
+        public GComponent GCanvas { get; set; }
+        public Controller GCanvas_LoginCtrl { get; set; }
+        public GButton GCanvas_LoginBtn { get; set; }
+        public GTextInput GCanvas_AccountText { get; set; }
+        public GTextInput GCanvas_PasswordText { get; set; }
+        public GButton GCanvas_SelectServerBtn { get; set; }
+        public GGraph GCanvas_ServerNameBg { get; set; }
+        public GTextField GCanvas_ServerName { get; set; }
     }
 }

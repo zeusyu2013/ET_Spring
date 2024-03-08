@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-
+﻿
 namespace ET.Client
 {
     [EntitySystemOf(typeof(ClientSenderComponent))]

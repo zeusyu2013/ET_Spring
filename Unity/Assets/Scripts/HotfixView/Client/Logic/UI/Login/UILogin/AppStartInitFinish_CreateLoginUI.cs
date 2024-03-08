@@ -5,6 +5,8 @@
 	{
 		protected override async ETTask Run(Scene root, AppStartInitFinish args)
 		{
+			await root.GetComponent<RemoteConfigComponent>().GetRemoteConfig();
+			
 			await UIHelper.Create(root, UIName.UILogin);
 		}
 	}

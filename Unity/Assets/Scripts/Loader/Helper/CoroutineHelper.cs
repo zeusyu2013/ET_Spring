@@ -14,17 +14,26 @@ namespace ET
             await task;
         }
         
-        public static async ETTask<string> HttpGet(string link)
+        public static async ETTask<(bool, string)> HttpGet(string url)
         {
             try
             {
-                UnityWebRequest req = UnityWebRequest.Get(link);
-                await req.SendWebRequest();
-                return req.downloadHandler.text;
+                UnityWebRequest request = UnityWebRequest.Get(url);
+                await request.SendWebRequest();
+                
+                if (request.result == UnityWebRequest.Result.ProtocolError || 
+                    request.result == UnityWebRequest.Result.ConnectionError)
+                {
+                    return (false, request.error);
+                }
+                else
+                {
+                    return (true, request.downloadHandler.text);
+                }
             }
             catch (Exception e)
             {
-                throw new Exception($"http request fail: {link.Substring(0,link.IndexOf('?'))}\n{e}");
+                throw new Exception($"http request fail: {url.Substring(0,url.IndexOf('?'))}\n{e}");
             }
         }
     }

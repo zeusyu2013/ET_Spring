@@ -12,7 +12,9 @@
 				return;
 			}
 
-			ui.GetComponent<UILoginComponent>().GLoginCtrl.selectedIndex = 1;
+			//var loginComponent = ui.GetComponent<UILoginComponent>();
+			//loginComponent.GCanvas_LoginCtrl.selectedIndex = 1;
+	
 			await ETTask.CompletedTask;
 		}
 	}

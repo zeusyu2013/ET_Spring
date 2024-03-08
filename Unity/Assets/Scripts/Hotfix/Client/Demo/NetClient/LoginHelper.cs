@@ -37,11 +37,11 @@ namespace ET.Client
                 Log.Error($"获取角色列表失败：{g2CGetRoles.Message}");
                 return g2CGetRoles.Error;
             }
-            
+
             // 清空客户端列表，重新获取
             GameRoleInfoComponent gameRoleInfoComponent = root.GetComponent<GameRoleInfoComponent>();
             gameRoleInfoComponent.ClearInfos();
-            
+
             foreach (GameRoleInfo info in g2CGetRoles.Roles)
             {
                 gameRoleInfoComponent.AddGameRoleInfo(info);
@@ -70,11 +70,11 @@ namespace ET.Client
                 Log.Error($"获取角色列表失败：{g2CCreateRole.Message}");
                 return g2CCreateRole.Error;
             }
-            
+
             // 清空客户端列表，重新获取
             GameRoleInfoComponent gameRoleInfoComponent = root.GetComponent<GameRoleInfoComponent>();
             gameRoleInfoComponent.ClearInfos();
-            
+
             foreach (GameRoleInfo info in g2CCreateRole.Roles)
             {
                 gameRoleInfoComponent.AddGameRoleInfo(info);
@@ -101,11 +101,11 @@ namespace ET.Client
                 Log.Error($"获取角色列表失败：{g2CDeleteRole.Message}");
                 return g2CDeleteRole.Error;
             }
-            
+
             // 清空客户端列表，重新获取
             GameRoleInfoComponent gameRoleInfoComponent = root.GetComponent<GameRoleInfoComponent>();
             gameRoleInfoComponent.ClearInfos();
-            
+
             foreach (GameRoleInfo info in g2CDeleteRole.Roles)
             {
                 gameRoleInfoComponent.AddGameRoleInfo(info);

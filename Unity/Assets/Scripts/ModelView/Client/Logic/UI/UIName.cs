@@ -6,5 +6,6 @@ namespace ET.Client
     {
         public const string UIBackground = "UIBackground";
         public const string UILogin = "UILogin";
+        public const string UIServerList = "UIServerList";
     }
 }

@@ -316,3 +316,15 @@ message M2C_UseItem // ILocationResponse
 	string Message = 3;
 	repeated ItemInfo ItemInfos = 4;
 }
+
+// ResponseType
+message C2M_AcceptTask // ILocationRequest
+{
+	int32 RpcId = 1;
+	int32 TaskId = 2;
+}
+
+message M2C_AcceptTask // ILocationResponse
+{
+	int32 RpcId = 1;
+}

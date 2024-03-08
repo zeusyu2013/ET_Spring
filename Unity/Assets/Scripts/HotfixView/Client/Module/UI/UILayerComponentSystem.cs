@@ -38,7 +38,7 @@ namespace ET.Client
                 return component;
             }
             // 根据当前传入的层级创建分层组件
-            for (int i = 0; i < layer; i++)
+            for (int i = 0; i <= layer; i++)
             {
                 if (!self.UILayer.ContainsKey(i))
                 {

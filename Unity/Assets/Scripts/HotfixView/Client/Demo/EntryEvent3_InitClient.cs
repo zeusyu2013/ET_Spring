@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace ET.Client
 {
@@ -16,6 +13,9 @@ namespace ET.Client
             root.AddComponent<InputComponent>();
             root.AddComponent<UIComponent>();
             root.AddComponent<GameRoleInfoComponent>();
+            root.AddComponent<RemoteConfigComponent>();
+            root.AddComponent<PlayerPrefsComponent>();
+            root.AddComponent<MapleComponent>();
             
             // 根据配置修改掉Main Fiber的SceneType
             SceneType sceneType = EnumHelper.FromString<SceneType>(globalComponent.GlobalConfig.AppType.ToString());

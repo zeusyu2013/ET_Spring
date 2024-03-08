@@ -1,4 +1,3 @@
-/** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
 namespace ET.Client
 {
@@ -11,17 +10,55 @@ namespace ET.Client
         {
             UILoginComponent view = self.GetParent<UI>().GetComponent<UILoginComponent>();
             
-            view.GLoginBtn.onClick.Set(()=>
+            view.GCanvas_LoginBtn.onClick.Set(()=>
             {
-                LoginHelper.Login(
-                    view.Root(), 
-                    view.GAccountText.text, 
-                    view.GPasswordText.text).Coroutine();
+                string account = view.GCanvas_AccountText.text;
+                string passward = view.GCanvas_PasswordText.text;
+
+                if (string.IsNullOrEmpty(account) || string.IsNullOrEmpty(passward))
+                {
+                    Log.Info("请输入账号或者密码");
+                    return;
+                }
+
+                view.GCanvas_LoginCtrl.selectedIndex = 1;
+                Servers serverInfo = self.Root().GetComponent<PlayerPrefsComponent>().ServerInfo;
+			
+                if (string.IsNullOrEmpty(serverInfo.server_name))
+                {
+                    view.GCanvas_ServerName.text = "点击选择服务器。。。";
+                }
+                else
+                {
+                    view.GCanvas_ServerName.text = serverInfo.server_name;
+                }
+
             });
             
-            view.GEnterBtn.onClick.Set(() =>
+            view.GCanvas_ServerNameBg.onClick.Set(() =>
             {
-                self.EnterMap().Coroutine();
+                UIHelper.SetUIData(self.Root(), UIName.UIServerList, view.GCanvas_AccountText.text);
+                UIHelper.Create(self.Root(), UIName.UIServerList).Coroutine();
+            });
+            
+            view.GCanvas_SelectServerBtn.onClick.Set(() =>
+            {
+                Servers serverInfo = self.Root().GetComponent<PlayerPrefsComponent>().ServerInfo;
+                Log.Info(serverInfo.server_name);
+                // 没有服务器名字的时候，重新选择服务器
+                if (string.IsNullOrEmpty(serverInfo.server_name))
+                {
+                    UIHelper.SetUIData(self.Root(), UIName.UIServerList, view.GCanvas_AccountText.text);
+                    UIHelper.Create(self.Root(), UIName.UIServerList).Coroutine();
+                }
+                else
+                {         
+                    LoginHelper.Login(
+                            view.Root(), 
+                            view.GCanvas_AccountText.text, 
+                            view.GCanvas_PasswordText.text).Coroutine();
+                    
+                }
             });
             
         }

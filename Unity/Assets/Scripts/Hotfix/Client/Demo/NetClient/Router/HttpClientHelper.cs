@@ -1,7 +1,5 @@
 using System;
-using System.IO;
 using System.Net.Http;
-using System.Threading;
 
 namespace ET.Client
 {
@@ -19,6 +17,21 @@ namespace ET.Client
             catch (Exception e)
             {
                 throw new Exception($"http request fail: {link.Substring(0,link.IndexOf('?'))}\n{e}");
+            }
+        }
+
+        public static async ETTask<string> Post(string link, string postParams)
+        {
+            try
+            {
+                using HttpClient httpClient = new();
+                HttpResponseMessage responseMessage = await httpClient.PostAsync(link, new StringContent(postParams));
+                string result = await responseMessage.Content.ReadAsStringAsync();
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"http post request fail: {link.Substring(0,link.IndexOf('?'))}\n{e}");
             }
         }
     }

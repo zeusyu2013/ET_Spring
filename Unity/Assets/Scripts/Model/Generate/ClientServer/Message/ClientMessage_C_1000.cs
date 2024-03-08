@@ -4,6 +4,31 @@ using System.Collections.Generic;
 namespace ET
 {
     [MemoryPackable]
+    [Message(ClientMessage.RemoteConfig)]
+    public partial class RemoteConfig : MessageObject
+    {
+        public static RemoteConfig Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(RemoteConfig), isFromPool) as RemoteConfig;
+        }
+
+        [MemoryPackOrder(0)]
+        public bool DebugMode { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.DebugMode = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
     [Message(ClientMessage.Main2NetClient_Login)]
     [ResponseType(nameof(NetClient2Main_Login))]
     public partial class Main2NetClient_Login : MessageObject, IRequest
@@ -87,111 +112,31 @@ namespace ET
     }
 
     [MemoryPackable]
-    [Message(ClientMessage.MapleInfo)]
-    public partial class MapleInfo : MessageObject
+    [Message(ClientMessage.Servers)]
+    public partial class Servers : MessageObject
     {
-        public static MapleInfo Create(bool isFromPool = false)
+        public static Servers Create(bool isFromPool = false)
         {
-            return ObjectPool.Instance.Fetch(typeof(MapleInfo), isFromPool) as MapleInfo;
+            return ObjectPool.Instance.Fetch(typeof(Servers), isFromPool) as Servers;
         }
 
         [MemoryPackOrder(0)]
-        public List<DistrictInfo> DistrictInfos { get; set; } = new();
-
-        public override void Dispose()
-        {
-            if (!this.IsFromPool)
-            {
-                return;
-            }
-
-            this.DistrictInfos.Clear();
-
-            ObjectPool.Instance.Recycle(this);
-        }
-    }
-
-    [MemoryPackable]
-    [Message(ClientMessage.DistrictInfo)]
-    public partial class DistrictInfo : MessageObject
-    {
-        public static DistrictInfo Create(bool isFromPool = false)
-        {
-            return ObjectPool.Instance.Fetch(typeof(DistrictInfo), isFromPool) as DistrictInfo;
-        }
-
-        [MemoryPackOrder(0)]
-        public int district_id { get; set; }
-
-        [MemoryPackOrder(1)]
-        public string district_name { get; set; }
-
-        [MemoryPackOrder(2)]
-        public int district_group { get; set; }
-
-        [MemoryPackOrder(3)]
-        public List<ServerInfo> ServerInfos { get; set; } = new();
-
-        public override void Dispose()
-        {
-            if (!this.IsFromPool)
-            {
-                return;
-            }
-
-            this.district_id = default;
-            this.district_name = default;
-            this.district_group = default;
-            this.ServerInfos.Clear();
-
-            ObjectPool.Instance.Recycle(this);
-        }
-    }
-
-    [MemoryPackable]
-    [Message(ClientMessage.ServerInfo)]
-    public partial class ServerInfo : MessageObject
-    {
-        public static ServerInfo Create(bool isFromPool = false)
-        {
-            return ObjectPool.Instance.Fetch(typeof(ServerInfo), isFromPool) as ServerInfo;
-        }
-
-        [MemoryPackOrder(0)]
-        public string game_version { get; set; }
-
-        [MemoryPackOrder(1)]
-        public string district_id { get; set; }
-
-        [MemoryPackOrder(2)]
         public int server_id { get; set; }
 
-        [MemoryPackOrder(3)]
-        public int server_type { get; set; }
-
-        [MemoryPackOrder(4)]
+        [MemoryPackOrder(1)]
         public int server_state { get; set; }
 
-        [MemoryPackOrder(5)]
-        public int server_white { get; set; }
-
-        [MemoryPackOrder(6)]
+        [MemoryPackOrder(2)]
         public int server_flag { get; set; }
 
-        [MemoryPackOrder(7)]
+        [MemoryPackOrder(3)]
         public string server_name { get; set; }
 
-        [MemoryPackOrder(8)]
+        [MemoryPackOrder(4)]
         public string server_addr { get; set; }
 
-        [MemoryPackOrder(9)]
+        [MemoryPackOrder(5)]
         public int server_port { get; set; }
-
-        [MemoryPackOrder(10)]
-        public int server_group { get; set; }
-
-        [MemoryPackOrder(11)]
-        public string platform { get; set; }
 
         public override void Dispose()
         {
@@ -200,18 +145,103 @@ namespace ET
                 return;
             }
 
-            this.game_version = default;
-            this.district_id = default;
             this.server_id = default;
-            this.server_type = default;
             this.server_state = default;
-            this.server_white = default;
             this.server_flag = default;
             this.server_name = default;
             this.server_addr = default;
             this.server_port = default;
-            this.server_group = default;
-            this.platform = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(ClientMessage.Districts)]
+    public partial class Districts : MessageObject
+    {
+        public static Districts Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(Districts), isFromPool) as Districts;
+        }
+
+        [MemoryPackOrder(0)]
+        public string district_name { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int district_group { get; set; }
+
+        [MemoryPackOrder(2)]
+        public List<Servers> servers { get; set; } = new();
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.district_name = default;
+            this.district_group = default;
+            this.servers.Clear();
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(ClientMessage.Maple_info)]
+    public partial class Maple_info : MessageObject
+    {
+        public static Maple_info Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(Maple_info), isFromPool) as Maple_info;
+        }
+
+        [MemoryPackOrder(0)]
+        public List<Districts> districts { get; set; } = new();
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.districts.Clear();
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(ClientMessage.MapleResponse)]
+    public partial class MapleResponse : MessageObject
+    {
+        public static MapleResponse Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(MapleResponse), isFromPool) as MapleResponse;
+        }
+
+        [MemoryPackOrder(0)]
+        public int code { get; set; }
+
+        [MemoryPackOrder(1)]
+        public string message { get; set; }
+
+        [MemoryPackOrder(2)]
+        public Maple_info maple_info { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.code = default;
+            this.message = default;
+            this.maple_info = default;
 
             ObjectPool.Instance.Recycle(this);
         }
@@ -219,10 +249,12 @@ namespace ET
 
     public static class ClientMessage
     {
-        public const ushort Main2NetClient_Login = 1001;
-        public const ushort NetClient2Main_Login = 1002;
-        public const ushort MapleInfo = 1003;
-        public const ushort DistrictInfo = 1004;
-        public const ushort ServerInfo = 1005;
+        public const ushort RemoteConfig = 1001;
+        public const ushort Main2NetClient_Login = 1002;
+        public const ushort NetClient2Main_Login = 1003;
+        public const ushort Servers = 1004;
+        public const ushort Districts = 1005;
+        public const ushort Maple_info = 1006;
+        public const ushort MapleResponse = 1007;
     }
 }

@@ -70,18 +70,20 @@
             self.TraceIdList.RemoveAt(count - 1);
             //  关闭当前组界面
             self.CloseGroupPanels(groupConfig.Id);
+
+            int groupId = self.TraceIdList[self.TraceIdList.Count - 1].Id;
             // 打开组界面
             if (groupConfig.Type == UIGroupType.BaseFixed ||
                 groupConfig.Type == UIGroupType.NormalFixed)
             {
-                // 因为修正界面可能关闭界面, 这里只处理被关闭的界面
-                
-                
+                // 因为修正界面可能关闭界面, 这里将被关闭的界面打开
+                // 保证以打开的界面完成性
+                self.OpenGroupPanels(groupId, true).Coroutine();
             }
             else 
             {
                 // 重新刷新下界面
-                self.OpenGroupPanels(self.TraceIdList[self.TraceIdList.Count - 1].Id).Coroutine();
+                self.OpenGroupPanels(groupId).Coroutine();
             }
         }
         
@@ -137,8 +139,8 @@
         /// </summary>
         /// <param name="self"></param>
         /// <param name="groupId">组Id</param>
-        /// <param name="isShowHide"></param>
-        public static async ETTask OpenGroupPanels(this UIGroupComponent self, int groupId, bool isShowHide = false)
+        /// <param name="isOnlyShowHide"></param>
+        public static async ETTask OpenGroupPanels(this UIGroupComponent self, int groupId, bool isOnlyShowHide = false)
         {
             var subDataList = UIGroupSubConfigCategory.Instance.GetGroupSubData(groupId);
             if (subDataList == null)
@@ -161,9 +163,8 @@
                     continue;
                 }
                 
-                if(isShowHide && ui.IsShowing)
+                if(isOnlyShowHide && ui.IsShowing)
                 {
-                    
                     continue;
                 }
             

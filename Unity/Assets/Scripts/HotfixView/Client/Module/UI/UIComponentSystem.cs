@@ -110,6 +110,7 @@ namespace ET.Client
             await self.HidePanel(panelName);
             
             self.GetComponent<UIPackageComponent>().RemovePackage(panelName);
+            self.UIs.Remove(panelName);
             self.RemoveChild(ui.Id);
         }
 

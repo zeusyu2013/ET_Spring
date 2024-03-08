@@ -12,20 +12,26 @@ namespace ET.Client
         private static void Awake(this UILoginComponent self)
         {
             UI ui = self.Parent as UI;
-            self.GLoginCtrl = ui.Component.GetControllerAt(0);
-            self.GLoginBtn = ui.Component.GetChildAt(0) as GButton;
-            self.GAccountText = ui.Component.GetChildAt(2) as GTextInput;
-            self.GPasswordText = ui.Component.GetChildAt(4) as GTextInput;
-            self.GEnterBtn = ui.Component.GetChildAt(6) as GButton;
+            self.GCanvas = ui.Component.GetChildAt(0) as GComponent;
+            self.GCanvas_LoginCtrl = self.GCanvas.GetControllerAt(0);
+            self.GCanvas_LoginBtn = self.GCanvas.GetChildAt(0) as GButton;
+            self.GCanvas_AccountText = self.GCanvas.GetChildAt(2) as GTextInput;
+            self.GCanvas_PasswordText = self.GCanvas.GetChildAt(4) as GTextInput;
+            self.GCanvas_SelectServerBtn = self.GCanvas.GetChildAt(6) as GButton;
+            self.GCanvas_ServerNameBg = self.GCanvas.GetChildAt(7) as GGraph;
+            self.GCanvas_ServerName = self.GCanvas.GetChildAt(8) as GTextField;
         }
         [EntitySystem]
         private static void Destroy(this UILoginComponent self)
         {
-            self.GLoginCtrl = null;
-            self.GLoginBtn = null;
-            self.GAccountText = null;
-            self.GPasswordText = null;
-            self.GEnterBtn = null;
+            self.GCanvas = null;
+            self.GCanvas_LoginCtrl = null;
+            self.GCanvas_LoginBtn = null;
+            self.GCanvas_AccountText = null;
+            self.GCanvas_PasswordText = null;
+            self.GCanvas_SelectServerBtn = null;
+            self.GCanvas_ServerNameBg = null;
+            self.GCanvas_ServerName = null;
         }
     }
 }
