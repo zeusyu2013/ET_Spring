@@ -1,5 +1,4 @@
-﻿using System;
-using System.Net;
+﻿using System.Net;
 using System.Net.Sockets;
 
 namespace ET.Client
@@ -13,12 +12,10 @@ namespace ET.Client
             string password = request.Password;
             // 创建一个ETModel层的Session
             root.RemoveComponent<RouterAddressComponent>();
-           
-            //Log.Info(GlobalClient.Instance.RouterHttpHost);
-            //Log.Info(GlobalClient.Instance.RouterHttpPort.ToString());
+            
             // 获取路由跟realmDispatcher地址
             RouterAddressComponent routerAddressComponent =
-                    root.AddComponent<RouterAddressComponent, string, int>(ConstValue.RouterHttpHost, ConstValue.RouterHttpPort);
+                    root.AddComponent<RouterAddressComponent, string, int>(request.Host, request.Port);
             await routerAddressComponent.Init();
             root.AddComponent<NetComponent, AddressFamily, NetworkProtocol>(routerAddressComponent.RouterManagerIPAddress.AddressFamily, NetworkProtocol.UDP);
             root.GetComponent<FiberParentComponent>().ParentFiberId = request.OwnerFiberId;

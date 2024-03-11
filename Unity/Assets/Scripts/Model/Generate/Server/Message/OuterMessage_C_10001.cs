@@ -1458,6 +1458,69 @@ namespace ET
         }
     }
 
+    [MemoryPackable]
+    [Message(OuterMessage.C2M_AcceptTask)]
+    [ResponseType(nameof(M2C_AcceptTask))]
+    public partial class C2M_AcceptTask : MessageObject, ILocationRequest
+    {
+        public static C2M_AcceptTask Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_AcceptTask), isFromPool) as C2M_AcceptTask;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int TaskId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.TaskId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_AcceptTask)]
+    public partial class M2C_AcceptTask : MessageObject, ILocationResponse
+    {
+        public static M2C_AcceptTask Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_AcceptTask), isFromPool) as M2C_AcceptTask;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
     public static class OuterMessage
     {
         public const ushort HttpGetRouterResponse = 10002;
@@ -1504,5 +1567,7 @@ namespace ET
         public const ushort ItemInfo = 10043;
         public const ushort C2M_UseItem = 10044;
         public const ushort M2C_UseItem = 10045;
+        public const ushort C2M_AcceptTask = 10046;
+        public const ushort M2C_AcceptTask = 10047;
     }
 }

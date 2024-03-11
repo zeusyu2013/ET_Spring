@@ -2,7 +2,7 @@ namespace ET.Client
 {
     public static class LoginHelper
     {
-        public static async ETTask Login(Scene root, string account, string password)
+        public static async ETTask Login(Scene root, string account, string password, string host, int port)
         {
             ClientSenderComponent clientSenderComponent = root.GetComponent<ClientSenderComponent>();
             if (clientSenderComponent != null)
@@ -12,7 +12,7 @@ namespace ET.Client
 
             clientSenderComponent = root.AddComponent<ClientSenderComponent>();
 
-            long playerId = await clientSenderComponent.LoginAsync(account, password);
+            long playerId = await clientSenderComponent.LoginAsync(account, password, host, port);
 
             root.GetComponent<PlayerComponent>().MyId = playerId;
 

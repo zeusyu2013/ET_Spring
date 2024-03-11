@@ -18,5 +18,15 @@ namespace ET
         {
             EditorUtility.DisplayDialog("错误", msg, "好的");
         }
+
+        public static void CreateAsset(UnityEngine.Object o, string file)
+        {
+            AssetDatabase.CreateAsset(o, file);
+        }
+
+        public static void SaveAsset(UnityEngine.Object o)
+        {
+            AssetDatabase.SaveAssetIfDirty(o);
+        }
     }
 }

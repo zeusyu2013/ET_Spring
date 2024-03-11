@@ -18,7 +18,7 @@ namespace ET
         {
             Id = _buf.ReadInt();
             Name = _buf.ReadString();
-            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);Reward = new System.Collections.Generic.Dictionary<int, int>(n0 * 3 / 2);for(var i0 = 0 ; i0 < n0 ; i0++) { int _k0;  _k0 = _buf.ReadInt(); int _v0;  _v0 = _buf.ReadInt();     Reward.Add(_k0, _v0);}}
+            Type = (GameItemType)_buf.ReadInt();
             UseLevel = _buf.ReadInt();
 
             PostInit();
@@ -40,9 +40,9 @@ namespace ET
         public readonly string Name;
 
         /// <summary>
-        /// 奖励包内容
+        /// 道具类型
         /// </summary>
-        public readonly System.Collections.Generic.Dictionary<int, int> Reward;
+        public readonly GameItemType Type;
 
         /// <summary>
         /// 道具使用等级限制
@@ -58,7 +58,7 @@ namespace ET
             return "{ "
             + "Id:" + Id + ","
             + "Name:" + Name + ","
-            + "Reward:" + Luban.StringUtil.CollectionToString(Reward) + ","
+            + "Type:" + Type + ","
             + "UseLevel:" + UseLevel + ","
             + "}";
         }

@@ -10,6 +10,9 @@ namespace ET.Client
         {
             UILoginComponent view = self.GetParent<UI>().GetComponent<UILoginComponent>();
             
+            view.GCanvas_AccountText.text = self.Root().GetComponent<PlayerPrefsComponent>().Account;
+            view.GCanvas_PasswordText.text = self.Root().GetComponent<PlayerPrefsComponent>().Passward;
+            
             view.GCanvas_LoginBtn.onClick.Set(()=>
             {
                 string account = view.GCanvas_AccountText.text;
@@ -31,6 +34,8 @@ namespace ET.Client
                 else
                 {
                     view.GCanvas_ServerName.text = serverInfo.server_name;
+                    self.Root().GetComponent<PlayerPrefsComponent>().Account = account;
+                    self.Root().GetComponent<PlayerPrefsComponent>().Passward = passward;
                 }
 
             });
@@ -53,10 +58,14 @@ namespace ET.Client
                 }
                 else
                 {         
+                    
                     LoginHelper.Login(
                             view.Root(), 
                             view.GCanvas_AccountText.text, 
-                            view.GCanvas_PasswordText.text).Coroutine();
+                            view.GCanvas_PasswordText.text,
+                            serverInfo.server_addr,
+                            serverInfo.server_port).Coroutine();
+                    
                     
                 }
             });

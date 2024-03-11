@@ -22,6 +22,7 @@ namespace ET
             Layer = _buf.ReadInt();
             FullScreen = _buf.ReadBool();
             RefitH = _buf.ReadBool();
+            ChangeSceneRemove = _buf.ReadBool();
 
             PostInit();
         }
@@ -61,6 +62,11 @@ namespace ET
         /// </summary>
         public readonly bool RefitH;
 
+        /// <summary>
+        /// 切场景时移除
+        /// </summary>
+        public readonly bool ChangeSceneRemove;
+
         public const int __ID__ = 202324726;
 
         public override int GetTypeId() => __ID__;
@@ -74,6 +80,7 @@ namespace ET
             + "Layer:" + Layer + ","
             + "FullScreen:" + FullScreen + ","
             + "RefitH:" + RefitH + ","
+            + "ChangeSceneRemove:" + ChangeSceneRemove + ","
             + "}";
         }
 

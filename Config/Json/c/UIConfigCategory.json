@@ -1,19 +1,12 @@
 [
   {
-    "Id": 1,
-    "Name": "UILogin",
-    "UIType": 2,
-    "Layer": 1,
-    "FullScreen": false,
-    "RefitH": false
-  },
-  {
     "Id": 2,
     "Name": "UIJoystick",
     "UIType": 1,
     "Layer": 1,
     "FullScreen": false,
-    "RefitH": false
+    "RefitH": false,
+    "ChangeSceneRemove": false
   },
   {
     "Id": 3,
@@ -21,6 +14,25 @@
     "UIType": 1,
     "Layer": 1,
     "FullScreen": false,
-    "RefitH": false
+    "RefitH": false,
+    "ChangeSceneRemove": false
+  },
+  {
+    "Id": 2000,
+    "Name": "UIServerList",
+    "UIType": 2,
+    "Layer": 2,
+    "FullScreen": false,
+    "RefitH": false,
+    "ChangeSceneRemove": true
+  },
+  {
+    "Id": 2001,
+    "Name": "UILogin",
+    "UIType": 2,
+    "Layer": 1,
+    "FullScreen": false,
+    "RefitH": false,
+    "ChangeSceneRemove": true
   }
 ]

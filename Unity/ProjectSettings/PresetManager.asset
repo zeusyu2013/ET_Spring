@@ -3,4 +3,51 @@
 --- !u!1386491679 &1
 PresetManager:
   m_ObjectHideFlags: 0
-  m_DefaultList: []
+  serializedVersion: 2
+  m_DefaultPresets:
+  - first:
+      m_NativeTypeID: 1006
+      m_ManagedTypePPtr: {fileID: 0}
+      m_ManagedTypeFallback: 
+    second:
+    - m_Preset: {fileID: 2655988077585873504, guid: ca4a642dc5d9cf146b9065e12b0d485a,
+        type: 2}
+      m_Filter: glob:"Assets/Bundles/FairyGUI/*.png"
+      m_Disabled: 0
+    - m_Preset: {fileID: 2655988077585873504, guid: 538cbda6fe16f4040b8315527fd2f464,
+        type: 2}
+      m_Filter: glob:"Assets/Bundles/Scenes/**/*.png"
+      m_Disabled: 0
+    - m_Preset: {fileID: 2655988077585873504, guid: 538cbda6fe16f4040b8315527fd2f464,
+        type: 2}
+      m_Filter: glob:"Assets/Bundles/Scenes/**/*.exr"
+      m_Disabled: 0
+    - m_Preset: {fileID: 2655988077585873504, guid: d0e787aadd57c6e448b1a5a2a5cbb83f,
+        type: 2}
+      m_Filter: glob:"Assets/Res/Scenes/**/Textures/*.png"
+      m_Disabled: 0
+    - m_Preset: {fileID: 2655988077585873504, guid: d022b6c08d752fb4ead2f4fca47a946b,
+        type: 2}
+      m_Filter: glob:"Assets/Res/Unit/**/Textures/*.png"
+      m_Disabled: 0
+    - m_Preset: {fileID: 2655988077585873504, guid: f109e2545c9537a48bdda29de7d192ea,
+        type: 2}
+      m_Filter: glob:"Assets/Res/Fx/**/Textures/*.png"
+      m_Disabled: 0
+  - first:
+      m_NativeTypeID: 1041
+      m_ManagedTypePPtr: {fileID: 0}
+      m_ManagedTypeFallback: 
+    second:
+    - m_Preset: {fileID: 2655988077585873504, guid: 10b54b7467bf1774f95705a31584255c,
+        type: 2}
+      m_Filter: glob:"Assets/Res/Unit/**/*.fbx"
+      m_Disabled: 0
+    - m_Preset: {fileID: 2655988077585873504, guid: 4eb6d0ceed752814aadaf87daaa07b7c,
+        type: 2}
+      m_Filter: glob:"Assets/Res/Unit/**/Animations/*.fbx"
+      m_Disabled: 0
+    - m_Preset: {fileID: 2655988077585873504, guid: 37e97d389e69db945a7d948ed2375688,
+        type: 2}
+      m_Filter: glob:"Assets/Res/Scenes/**/Models/*.fbx"
+      m_Disabled: 0

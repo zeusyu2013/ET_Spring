@@ -15,12 +15,6 @@ namespace ET
         [LabelText("预设编号"), PropertyOrder(1.2f)]
         public string prefabId;
 
-        [MenuItem("Tools/预设编辑器"), PropertyOrder(1.3f)]
-        public static void ShowWindow()
-        {
-            GetWindow<PrefabEditor>().Show();
-        }
-
         [Button("导出Unit预设"), PropertyOrder(1.4f)]
         public void ExportUnit()
         {

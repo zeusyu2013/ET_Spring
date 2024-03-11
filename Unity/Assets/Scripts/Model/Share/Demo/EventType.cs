@@ -24,6 +24,11 @@
     {
     }
 
+    public struct ChooseServer
+    {
+        
+    }
+
     public struct GetRolesFinish
     {
         

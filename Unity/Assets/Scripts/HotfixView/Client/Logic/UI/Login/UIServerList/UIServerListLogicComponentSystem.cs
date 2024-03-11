@@ -75,6 +75,7 @@ namespace ET.Client
             
             self.Root().GetComponent<PlayerPrefsComponent>().ServerInfo = serverInfo;
             
+            EventSystem.Instance.Publish(self.Root(), new ChooseServer());
             UIHelper.Remove(self.Root(), UIName.UIServerList);
         }
         

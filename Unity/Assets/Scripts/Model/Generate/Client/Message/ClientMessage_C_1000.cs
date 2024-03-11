@@ -56,6 +56,12 @@ namespace ET
         [MemoryPackOrder(5)]
         public string Platform { get; set; }
 
+        [MemoryPackOrder(6)]
+        public string Host { get; set; }
+
+        [MemoryPackOrder(7)]
+        public int Port { get; set; }
+
         public override void Dispose()
         {
             if (!this.IsFromPool)
@@ -69,6 +75,8 @@ namespace ET
             this.Password = default;
             this.OpenId = default;
             this.Platform = default;
+            this.Host = default;
+            this.Port = default;
 
             ObjectPool.Instance.Recycle(this);
         }

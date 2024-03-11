@@ -2,121 +2,121 @@
   {
     "Id": 60001,
     "Name": "道具60001",
-    "Reward": [],
+    "Type": 1,
     "UseLevel": 0
   },
   {
     "Id": 60002,
     "Name": "道具60002",
-    "Reward": [],
+    "Type": 1,
     "UseLevel": 0
   },
   {
     "Id": 60003,
     "Name": "道具60003",
-    "Reward": [],
+    "Type": 1,
     "UseLevel": 0
   },
   {
     "Id": 60004,
     "Name": "道具60004",
-    "Reward": [],
+    "Type": 1,
     "UseLevel": 0
   },
   {
     "Id": 60005,
     "Name": "道具60005",
-    "Reward": [],
+    "Type": 1,
     "UseLevel": 0
   },
   {
     "Id": 60006,
     "Name": "道具60006",
-    "Reward": [],
+    "Type": 1,
     "UseLevel": 0
   },
   {
     "Id": 60007,
     "Name": "道具60007",
-    "Reward": [],
+    "Type": 1,
     "UseLevel": 0
   },
   {
     "Id": 60008,
     "Name": "道具60008",
-    "Reward": [],
+    "Type": 1,
     "UseLevel": 0
   },
   {
     "Id": 60009,
     "Name": "道具60009",
-    "Reward": [],
+    "Type": 1,
     "UseLevel": 0
   },
   {
     "Id": 60010,
     "Name": "道具60010",
-    "Reward": [],
+    "Type": 1,
     "UseLevel": 0
   },
   {
     "Id": 60011,
     "Name": "道具60011",
-    "Reward": [],
+    "Type": 1,
     "UseLevel": 0
   },
   {
     "Id": 60012,
     "Name": "道具60012",
-    "Reward": [],
+    "Type": 1,
     "UseLevel": 0
   },
   {
     "Id": 60013,
     "Name": "道具60013",
-    "Reward": [],
+    "Type": 1,
     "UseLevel": 0
   },
   {
     "Id": 60014,
     "Name": "道具60014",
-    "Reward": [],
+    "Type": 1,
     "UseLevel": 0
   },
   {
     "Id": 60015,
     "Name": "道具60015",
-    "Reward": [],
+    "Type": 1,
     "UseLevel": 0
   },
   {
     "Id": 60016,
     "Name": "道具60016",
-    "Reward": [],
+    "Type": 1,
     "UseLevel": 0
   },
   {
     "Id": 60017,
     "Name": "道具60017",
-    "Reward": [],
+    "Type": 1,
     "UseLevel": 0
   },
   {
     "Id": 60018,
     "Name": "道具60018",
-    "Reward": [],
+    "Type": 1,
     "UseLevel": 0
   },
   {
     "Id": 60019,
     "Name": "道具60019",
-    "Reward": [],
+    "Type": 1,
     "UseLevel": 0
   },
   {
     "Id": 60020,
     "Name": "道具60020",
-    "Reward": [],
+    "Type": 1,
     "UseLevel": 0
   }
 ]

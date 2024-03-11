@@ -16,6 +16,8 @@ message Main2NetClient_Login // IRequest
 	string Password = 4;
 	string OpenId = 5;
 	string Platform = 6;
+	string Host = 7;
+	int32 Port = 8;
 }
 
 message NetClient2Main_Login // IResponse

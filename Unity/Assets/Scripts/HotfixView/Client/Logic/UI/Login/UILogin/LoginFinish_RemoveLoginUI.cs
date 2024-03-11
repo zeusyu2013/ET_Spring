@@ -12,8 +12,8 @@
 				return;
 			}
 			
-			ui.GetComponent<UILoginLogicComponent>().EnterMap().Coroutine();
-			UIHelper.Remove(scene, UIName.UILogin);
+			//ui.GetComponent<UILoginLogicComponent>().EnterMap().Coroutine();
+			//UIHelper.Remove(scene, UIName.UILogin);
 			await ETTask.CompletedTask;
 		}
 	}
