@@ -122,7 +122,6 @@ namespace ET
             EditorUtility.CopySerialized(clip, temp);
             RemoveAnimationClipScale(temp);
             CompressAnimationClip(temp);
-            OptimizeConstantCurves(temp);
 
             var folder = $"{Application.dataPath}/Bundles/Animations/{parentFolder}";
             if (!Directory.Exists(folder))
@@ -174,45 +173,6 @@ namespace ET
                 data.keys = keyframes;
                 clip.SetCurve(cData.path, cData.type, cData.propertyName, data);
             }
-        }
-
-        private void OptimizeConstantCurves(AnimationClip clip)
-        {
-            var binds = AnimationUtility.GetCurveBindings(clip);
-            foreach (var bind in binds)
-            {
-                var curve = AnimationUtility.GetEditorCurve(clip, bind);
-                var keys = curve.keys;
-                var beginIndex = -1;
-                List<int> removeIndexes = new List<int>();
-
-                for (int i = 0; i < keys.Length; i++)
-                {
-                    var keyFrame = keys[i];
-                    if ((float.IsInfinity(keyFrame.inTangent) && float.IsInfinity(keyFrame.outTangent)) ||
-                        (Mathf.Abs(keyFrame.inTangent) <= float.Epsilon &&
-                            Mathf.Abs(keyFrame.outTangent) <= float.Epsilon))
-                    {
-                        removeIndexes.Add(i);
-                    }
-                }
-
-                for (int i = removeIndexes.Count - 1; i >= 0; i--)
-                {
-                    curve.RemoveKey(removeIndexes[i]);
-                }
-
-                if (curve.length == 0)
-                {
-                    AnimationUtility.SetEditorCurve(clip, bind, null);
-                }
-                else
-                {
-                    AnimationUtility.SetEditorCurve(clip, bind, curve);
-                }
-            }
-
-            EditorHelper.SaveAsset(clip);
         }
     }
 }
