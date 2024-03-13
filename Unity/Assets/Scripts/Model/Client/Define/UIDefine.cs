@@ -15,12 +15,11 @@
         public enum UIGroupId
         {
             // 通用UIGroupType.base基础配置（其他UIGroupType.base再这个基础上做增删, 减少配置量）
-            Common = 0,        
+            Common = 1,        
             
         }
-
-
         
+
     } 
 }
 

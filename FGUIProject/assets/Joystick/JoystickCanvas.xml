@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1280,720" opaque="false">
+  <displayList>
+    <component id="n0_n7al" name="Joystick" src="n7al2" fileName="CircleBtn.xml" xy="97,451">
+      <relation target="" sidePair="left-left,bottom-bottom"/>
+    </component>
+    <graph id="n1_n7al" name="TouchArea" xy="0,345" size="531,375" type="rect" lineSize="0" fillColor="#00ffffff">
+      <relation target="" sidePair="left-left,bottom-bottom"/>
+    </graph>
+  </displayList>
+</component>

@@ -20,6 +20,7 @@ namespace ET
             Name = _buf.ReadString();
             Type = (GameItemType)_buf.ReadInt();
             UseLevel = _buf.ReadInt();
+            MaxCount = _buf.ReadLong();
 
             PostInit();
         }
@@ -49,6 +50,11 @@ namespace ET
         /// </summary>
         public readonly int UseLevel;
 
+        /// <summary>
+        /// 最大堆叠数
+        /// </summary>
+        public readonly long MaxCount;
+
         public const int __ID__ = -764023723;
 
         public override int GetTypeId() => __ID__;
@@ -60,6 +66,7 @@ namespace ET
             + "Name:" + Name + ","
             + "Type:" + Type + ","
             + "UseLevel:" + UseLevel + ","
+            + "MaxCount:" + MaxCount + ","
             + "}";
         }
 

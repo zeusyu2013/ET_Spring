@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1280,720" opaque="false">
-  <controller name="LoginCtrl" pages="0,,1," selected="0"/>
+  <controller name="LoginCtrl" pages="0,,1," selected="1"/>
   <displayList>
     <component id="n3_hwto" name="LoginBtn" src="hwto0" fileName="Button/CommonButton.xml" pkg="6qczg918" xy="585,402" size="135,49" group="n8_8ych">
       <Button title="登录" titleColor="#ffffff" titleFontSize="20"/>
@@ -14,17 +14,15 @@
     <group id="n8_8ych" name="n8" xy="465,216" size="368,235" advanced="true">
       <gearDisplay controller="LoginCtrl" pages="0"/>
     </group>
-    <component id="n9_8ych" name="EnterBtn" src="hwto0" fileName="Button/CommonButton.xml" pkg="6qczg918" xy="579,438" size="135,49">
-      <gearDisplay controller="LoginCtrl" pages="1"/>
+    <component id="n10_9vg2" name="SelectServerBtn" src="hwto0" fileName="Button/CommonButton.xml" pkg="6qczg918" xy="585,403" size="135,49" group="n13_qvj9">
       <Button title="进入游戏" titleColor="#ffffff" titleFontSize="20"/>
       <property target="down" propertyId="1" value="ui://6qczg918hwto3"/>
       <property target="up" propertyId="1" value="ui://6qczg918hwto4"/>
     </component>
-    <component id="n10_9vg2" name="SelectServerBtn" src="hwto0" fileName="Button/CommonButton.xml" pkg="6qczg918" xy="578,293" size="135,49">
+    <graph id="n12_ra2b" name="ServerNameBg" xy="466,270" size="368,32" group="n13_qvj9" type="rect" lineSize="0"/>
+    <text id="n11_ra2b" name="ServerName" xy="527,272" size="250,29" group="n13_qvj9" fontSize="20" align="center" vAlign="middle" autoSize="none" text=""/>
+    <group id="n13_qvj9" name="n13" xy="466,270" size="368,182" advanced="true">
       <gearDisplay controller="LoginCtrl" pages="1"/>
-      <Button title="选择服务器器" titleColor="#ffffff" titleFontSize="20"/>
-      <property target="down" propertyId="1" value="ui://6qczg918hwto3"/>
-      <property target="up" propertyId="1" value="ui://6qczg918hwto4"/>
-    </component>
+    </group>
   </displayList>
 </component>

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <packageDescription id="l0rmaicz">
   <resources>
-    <component id="9vg21" name="Panel.xml" path="/"/>
+    <component id="9vg21" name="UIPanel.xml" path="/"/>
+    <component id="jrtg2" name="Canvas.xml" path="/"/>
   </resources>
   <publish name=""/>
 </packageDescription>

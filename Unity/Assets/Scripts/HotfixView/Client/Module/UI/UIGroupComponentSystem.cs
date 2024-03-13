@@ -42,7 +42,7 @@
                 groupConfig.Type != UIGroupType.NormalFixed)
             {
                 // 先关闭当前组的界面
-                self.CloseGroupPanels(id);
+                self.CloseGroupPanels((int)self.GroupId);
             }
     
             self.AddTraceId(groupConfig);

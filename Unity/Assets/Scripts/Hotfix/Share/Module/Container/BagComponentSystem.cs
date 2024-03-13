@@ -38,6 +38,12 @@ namespace ET
             {
                 return false;
             }
+
+            ItemConfig config = ItemConfigCategory.Instance.Get(itemConfig);
+            if (config == null)
+            {
+                return false;
+            }
             
             long count = self.GetItemCount(itemConfig);
             if (count < 1)
@@ -45,6 +51,8 @@ namespace ET
                 GameItem item = self.AddChild<GameItem, int>(itemConfig);
                 item.ItemCount = itemCount;
                 self.GameItems.Add(item);
+                
+                return true;
             }
 
             foreach (var refItem in self.GameItems)

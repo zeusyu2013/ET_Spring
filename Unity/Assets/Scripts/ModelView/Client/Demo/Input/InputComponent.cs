@@ -8,6 +8,8 @@ namespace ET.Client
     public class InputComponent: Entity, IAwake, IUpdate
     {
         public float3 MoveDirection;
+
+        public float3 JoystickMoveDirection;
         
         public List<KeyCode> KeyCodes = new();
     }

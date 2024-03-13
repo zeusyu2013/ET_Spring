@@ -28,6 +28,37 @@
             self.AcceptedTasks.Add(taskId);
         }
 
+        public static void UpdateTaskSchdule(this GameTaskComponent self, SubTaskType type, params object[] args)
+        {
+            if (self.AcceptedTasks.Count < 1)
+            {
+                return;
+            }
+
+            foreach (int task in self.AcceptedTasks)
+            {
+                TaskConfig config = TaskConfigCategory.Instance.Get(task);
+                if (config == null)
+                {
+                    continue;
+                }
+                
+                foreach (int i in config.SubTask)
+                {
+                    SubTaskConfig subTaskConfig = SubTaskConfigCategory.Instance.Get(i);
+                    if (subTaskConfig == null)
+                    {
+                        continue;
+                    }
+                    
+                    if (subTaskConfig.SubTaskType != type)
+                    {
+                        continue;
+                    }
+                }
+            }
+        }
+
         public static void CommitTask(this GameTaskComponent self, int taskId)
         {
             // 不在接取任务列表里，不处理

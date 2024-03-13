@@ -19,7 +19,8 @@ namespace ET
             Id = _buf.ReadInt();
             Name = _buf.ReadString();
             Type = (TaskType)_buf.ReadInt();
-            SubTask = _buf.ReadString();
+            TaskType = (TaskType)_buf.ReadInt();
+            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);SubTask = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); SubTask.Add(_e0);}}
             PreTask = _buf.ReadInt();
             NextTask = _buf.ReadInt();
             TaskReward = _buf.ReadInt();
@@ -48,9 +49,14 @@ namespace ET
         public readonly TaskType Type;
 
         /// <summary>
+        /// 任务类型
+        /// </summary>
+        public readonly TaskType TaskType;
+
+        /// <summary>
         /// 子任务列表
         /// </summary>
-        public readonly string SubTask;
+        public readonly System.Collections.Generic.List<int> SubTask;
 
         /// <summary>
         /// 前置任务
@@ -82,7 +88,8 @@ namespace ET
             + "Id:" + Id + ","
             + "Name:" + Name + ","
             + "Type:" + Type + ","
-            + "SubTask:" + SubTask + ","
+            + "TaskType:" + TaskType + ","
+            + "SubTask:" + Luban.StringUtil.CollectionToString(SubTask) + ","
             + "PreTask:" + PreTask + ","
             + "NextTask:" + NextTask + ","
             + "TaskReward:" + TaskReward + ","

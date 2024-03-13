@@ -29,6 +29,13 @@
         
     }
 
+    public struct JoystickMove
+    {
+        public bool IsMove;
+        public float DeltaX;
+        public float DeltaY;
+    }
+
     public struct GetRolesFinish
     {
         

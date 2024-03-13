@@ -3,11 +3,20 @@
   <displayList>
     <graph id="n0_nnx5" name="n0" xy="0,0" size="1280,720" alpha="0.6" type="rect" lineSize="0" fillColor="#ff000000"/>
     <graph id="n2_itrp" name="n2" xy="281,96" size="749,483" type="rect" fillColor="#ff999999"/>
-    <list id="n1_nnx5" name="List" xy="500,108" size="507,460" layout="flow_hz" overflow="scroll" lineGap="2" colGap="2" defaultItem="ui://6anu0bnynnx54">
+    <list id="n1_nnx5" name="ServerList" xy="500,108" size="507,460" layout="flow_hz" overflow="scroll" lineGap="2" colGap="2" defaultItem="ui://6anu0bnynnx54" autoClearItems="true">
       <item/>
       <item/>
       <item/>
       <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <component id="n4_ra2b" name="CloseBtn" src="hwto0" fileName="Button/CommonButton.xml" pkg="6qczg918" xy="1043,52" size="120,36">
+      <property target="down" propertyId="1" value="ui://6qczg918hwto3"/>
+      <property target="up" propertyId="1" value="ui://6qczg918hwto4"/>
+    </component>
+    <list id="n5_qvj9" name="DisList" xy="285,110" size="200,458" overflow="scroll" lineGap="2" defaultItem="ui://6anu0bnyqvj95" autoClearItems="true">
       <item/>
       <item/>
       <item/>

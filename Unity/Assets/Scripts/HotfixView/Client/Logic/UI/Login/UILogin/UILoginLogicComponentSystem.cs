@@ -58,15 +58,12 @@ namespace ET.Client
                 }
                 else
                 {         
-                    
                     LoginHelper.Login(
                             view.Root(), 
                             view.GCanvas_AccountText.text, 
                             view.GCanvas_PasswordText.text,
                             serverInfo.server_addr,
                             serverInfo.server_port).Coroutine();
-                    
-                    
                 }
             });
             

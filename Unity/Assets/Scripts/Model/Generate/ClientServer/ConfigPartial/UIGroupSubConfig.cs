@@ -19,6 +19,7 @@ namespace ET
                 if (list == null)
                 {
                     list = new List<UIGroupSubConfig>();
+                    subGroupDic.Add(groupId, list);
                 }
                 list.Add(data);
             }

@@ -53,6 +53,13 @@ namespace ET.Client
                 PlayerPrefs.SetString("Server_name", value.server_name);
             }
         }
+
+        // 遥感类型  0 - 浮动 1 - 固定
+        public bool JoystickType
+        {
+            get { return PlayerPrefs.GetInt("JoystickType", 0) == 1;}
+            set { PlayerPrefs.SetInt("JoystickType", value ? 1 : 0);}
+        }
     }
 }
 

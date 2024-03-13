@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <packageDescription id="huisf7jb">
-  <resources/>
+  <resources>
+    <component id="qvj90" name="UIJoystick.xml" path="/" exported="true"/>
+    <component id="qvj91" name="JoystickCanvas.xml" path="/"/>
+    <component id="n7al2" name="CircleBtn.xml" path="/"/>
+  </resources>
+  <publish name="" genCode="true"/>
 </packageDescription>

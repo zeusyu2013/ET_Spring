@@ -6,6 +6,7 @@
     <component id="nnx52" name="Logincanvas.xml" path="/Login/"/>
     <component id="nnx53" name="ServeListCanvas.xml" path="/ServerList/"/>
     <component id="nnx54" name="ServerItem.xml" path="/ServerList/"/>
+    <component id="qvj95" name="DistrictItem.xml" path="/ServerList/"/>
   </resources>
   <publish name="" genCode="true"/>
 </packageDescription>

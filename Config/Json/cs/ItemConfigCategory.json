@@ -3,120 +3,140 @@
     "Id": 60001,
     "Name": "道具60001",
     "Type": 1,
-    "UseLevel": 0
+    "UseLevel": 0,
+    "MaxCount": 999
   },
   {
     "Id": 60002,
     "Name": "道具60002",
     "Type": 1,
-    "UseLevel": 0
+    "UseLevel": 0,
+    "MaxCount": 999
   },
   {
     "Id": 60003,
     "Name": "道具60003",
     "Type": 1,
-    "UseLevel": 0
+    "UseLevel": 0,
+    "MaxCount": 999
   },
   {
     "Id": 60004,
     "Name": "道具60004",
     "Type": 1,
-    "UseLevel": 0
+    "UseLevel": 0,
+    "MaxCount": 999
   },
   {
     "Id": 60005,
     "Name": "道具60005",
     "Type": 1,
-    "UseLevel": 0
+    "UseLevel": 0,
+    "MaxCount": 999
   },
   {
     "Id": 60006,
     "Name": "道具60006",
     "Type": 1,
-    "UseLevel": 0
+    "UseLevel": 0,
+    "MaxCount": 999
   },
   {
     "Id": 60007,
     "Name": "道具60007",
     "Type": 1,
-    "UseLevel": 0
+    "UseLevel": 0,
+    "MaxCount": 999
   },
   {
     "Id": 60008,
     "Name": "道具60008",
     "Type": 1,
-    "UseLevel": 0
+    "UseLevel": 0,
+    "MaxCount": 999
   },
   {
     "Id": 60009,
     "Name": "道具60009",
     "Type": 1,
-    "UseLevel": 0
+    "UseLevel": 0,
+    "MaxCount": 999
   },
   {
     "Id": 60010,
     "Name": "道具60010",
     "Type": 1,
-    "UseLevel": 0
+    "UseLevel": 0,
+    "MaxCount": 999
   },
   {
     "Id": 60011,
     "Name": "道具60011",
     "Type": 1,
-    "UseLevel": 0
+    "UseLevel": 0,
+    "MaxCount": 999
   },
   {
     "Id": 60012,
     "Name": "道具60012",
     "Type": 1,
-    "UseLevel": 0
+    "UseLevel": 0,
+    "MaxCount": 999
   },
   {
     "Id": 60013,
     "Name": "道具60013",
     "Type": 1,
-    "UseLevel": 0
+    "UseLevel": 0,
+    "MaxCount": 999
   },
   {
     "Id": 60014,
     "Name": "道具60014",
     "Type": 1,
-    "UseLevel": 0
+    "UseLevel": 0,
+    "MaxCount": 999
   },
   {
     "Id": 60015,
     "Name": "道具60015",
     "Type": 1,
-    "UseLevel": 0
+    "UseLevel": 0,
+    "MaxCount": 999
   },
   {
     "Id": 60016,
     "Name": "道具60016",
     "Type": 1,
-    "UseLevel": 0
+    "UseLevel": 0,
+    "MaxCount": 999
   },
   {
     "Id": 60017,
     "Name": "道具60017",
     "Type": 1,
-    "UseLevel": 0
+    "UseLevel": 0,
+    "MaxCount": 999
   },
   {
     "Id": 60018,
     "Name": "道具60018",
     "Type": 1,
-    "UseLevel": 0
+    "UseLevel": 0,
+    "MaxCount": 999
   },
   {
     "Id": 60019,
     "Name": "道具60019",
     "Type": 1,
-    "UseLevel": 0
+    "UseLevel": 0,
+    "MaxCount": 999
   },
   {
     "Id": 60020,
     "Name": "道具60020",
     "Type": 1,
-    "UseLevel": 0
+    "UseLevel": 0,
+    "MaxCount": 999
   }
 ]

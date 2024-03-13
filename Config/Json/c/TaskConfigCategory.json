@@ -3,7 +3,12 @@
     "Id": 1001,
     "Name": "任务1001",
     "Type": 1,
-    "SubTask": "",
+    "TaskType": 1,
+    "SubTask": [
+      10001,
+      10002,
+      10004
+    ],
     "PreTask": 0,
     "NextTask": 1002
   },
@@ -11,7 +16,12 @@
     "Id": 1002,
     "Name": "任务1002",
     "Type": 1,
-    "SubTask": "",
+    "TaskType": 1,
+    "SubTask": [
+      10001,
+      10002,
+      10004
+    ],
     "PreTask": 1001,
     "NextTask": 1003
   },
@@ -19,7 +29,12 @@
     "Id": 1003,
     "Name": "任务1003",
     "Type": 1,
-    "SubTask": "",
+    "TaskType": 1,
+    "SubTask": [
+      10002,
+      10003,
+      10005
+    ],
     "PreTask": 1002,
     "NextTask": 1004
   },
@@ -27,7 +42,12 @@
     "Id": 1004,
     "Name": "任务1004",
     "Type": 1,
-    "SubTask": "",
+    "TaskType": 1,
+    "SubTask": [
+      10003,
+      10004,
+      10006
+    ],
     "PreTask": 1003,
     "NextTask": 1005
   },
@@ -35,7 +55,12 @@
     "Id": 1005,
     "Name": "任务1005",
     "Type": 1,
-    "SubTask": "",
+    "TaskType": 1,
+    "SubTask": [
+      10004,
+      10005,
+      10007
+    ],
     "PreTask": 1004,
     "NextTask": 1006
   },
@@ -43,7 +68,12 @@
     "Id": 1006,
     "Name": "任务1006",
     "Type": 1,
-    "SubTask": "",
+    "TaskType": 1,
+    "SubTask": [
+      10005,
+      10006,
+      10008
+    ],
     "PreTask": 1005,
     "NextTask": 1007
   },
@@ -51,7 +81,12 @@
     "Id": 1007,
     "Name": "任务1007",
     "Type": 1,
-    "SubTask": "",
+    "TaskType": 1,
+    "SubTask": [
+      10006,
+      10007,
+      10009
+    ],
     "PreTask": 1006,
     "NextTask": 1008
   },
@@ -59,7 +94,12 @@
     "Id": 1008,
     "Name": "任务1008",
     "Type": 1,
-    "SubTask": "",
+    "TaskType": 1,
+    "SubTask": [
+      10007,
+      10008,
+      10010
+    ],
     "PreTask": 1007,
     "NextTask": 1009
   },
@@ -67,7 +107,12 @@
     "Id": 1009,
     "Name": "任务1009",
     "Type": 1,
-    "SubTask": "",
+    "TaskType": 1,
+    "SubTask": [
+      10008,
+      10009,
+      10011
+    ],
     "PreTask": 1008,
     "NextTask": 1010
   },
@@ -75,7 +120,12 @@
     "Id": 1010,
     "Name": "任务1010",
     "Type": 1,
-    "SubTask": "",
+    "TaskType": 1,
+    "SubTask": [
+      10009,
+      10010,
+      10012
+    ],
     "PreTask": 1009,
     "NextTask": 1011
   },
@@ -83,7 +133,13 @@
     "Id": 1011,
     "Name": "任务1011",
     "Type": 1,
-    "SubTask": "",
+    "TaskType": 1,
+    "SubTask": [
+      10009,
+      10010,
+      10012,
+      10013
+    ],
     "PreTask": 1010,
     "NextTask": 1012
   },
@@ -91,7 +147,14 @@
     "Id": 1012,
     "Name": "任务1012",
     "Type": 1,
-    "SubTask": "",
+    "TaskType": 1,
+    "SubTask": [
+      10009,
+      10010,
+      10012,
+      10013,
+      10014
+    ],
     "PreTask": 1011,
     "NextTask": 1013
   },
@@ -99,7 +162,15 @@
     "Id": 1013,
     "Name": "任务1013",
     "Type": 1,
-    "SubTask": "",
+    "TaskType": 1,
+    "SubTask": [
+      10009,
+      10010,
+      10012,
+      10013,
+      10014,
+      10015
+    ],
     "PreTask": 1012,
     "NextTask": 1014
   },
@@ -107,7 +178,15 @@
     "Id": 1014,
     "Name": "任务1014",
     "Type": 1,
-    "SubTask": "",
+    "TaskType": 1,
+    "SubTask": [
+      10009,
+      10010,
+      10012,
+      10013,
+      10014,
+      10015
+    ],
     "PreTask": 1013,
     "NextTask": 1015
   },
@@ -115,7 +194,15 @@
     "Id": 1015,
     "Name": "任务1015",
     "Type": 1,
-    "SubTask": "",
+    "TaskType": 1,
+    "SubTask": [
+      10009,
+      10010,
+      10012,
+      10013,
+      10014,
+      10015
+    ],
     "PreTask": 1014,
     "NextTask": 1016
   },
@@ -123,7 +210,15 @@
     "Id": 1016,
     "Name": "任务1016",
     "Type": 1,
-    "SubTask": "",
+    "TaskType": 1,
+    "SubTask": [
+      10009,
+      10010,
+      10012,
+      10013,
+      10014,
+      10015
+    ],
     "PreTask": 1015,
     "NextTask": 1017
   },
@@ -131,7 +226,15 @@
     "Id": 1017,
     "Name": "任务1017",
     "Type": 1,
-    "SubTask": "",
+    "TaskType": 1,
+    "SubTask": [
+      10009,
+      10010,
+      10012,
+      10013,
+      10014,
+      10015
+    ],
     "PreTask": 1016,
     "NextTask": 1018
   },
@@ -139,7 +242,15 @@
     "Id": 1018,
     "Name": "任务1018",
     "Type": 1,
-    "SubTask": "",
+    "TaskType": 1,
+    "SubTask": [
+      10009,
+      10010,
+      10012,
+      10013,
+      10014,
+      10015
+    ],
     "PreTask": 1017,
     "NextTask": 1019
   },
@@ -147,7 +258,15 @@
     "Id": 1019,
     "Name": "任务1019",
     "Type": 1,
-    "SubTask": "",
+    "TaskType": 1,
+    "SubTask": [
+      10009,
+      10010,
+      10012,
+      10013,
+      10014,
+      10015
+    ],
     "PreTask": 1018,
     "NextTask": 1020
   },
@@ -155,7 +274,15 @@
     "Id": 1020,
     "Name": "任务1020",
     "Type": 1,
-    "SubTask": "",
+    "TaskType": 1,
+    "SubTask": [
+      10009,
+      10010,
+      10012,
+      10013,
+      10014,
+      10015
+    ],
     "PreTask": 1019,
     "NextTask": 1021
   },
@@ -163,7 +290,14 @@
     "Id": 1021,
     "Name": "任务1021",
     "Type": 1,
-    "SubTask": "",
+    "TaskType": 1,
+    "SubTask": [
+      10009,
+      10010,
+      10012,
+      10013,
+      10014
+    ],
     "PreTask": 1020,
     "NextTask": 1022
   },
@@ -171,7 +305,8 @@
     "Id": 1022,
     "Name": "任务1022",
     "Type": 1,
-    "SubTask": "",
+    "TaskType": 1,
+    "SubTask": [],
     "PreTask": 1021,
     "NextTask": 1023
   },
@@ -179,7 +314,8 @@
     "Id": 1023,
     "Name": "任务1023",
     "Type": 1,
-    "SubTask": "",
+    "TaskType": 1,
+    "SubTask": [],
     "PreTask": 1022,
     "NextTask": 1024
   },
@@ -187,7 +323,8 @@
     "Id": 1024,
     "Name": "任务1024",
     "Type": 1,
-    "SubTask": "",
+    "TaskType": 1,
+    "SubTask": [],
     "PreTask": 1023,
     "NextTask": 1025
   },
@@ -195,168 +332,9 @@
     "Id": 1025,
     "Name": "任务1025",
     "Type": 1,
-    "SubTask": "",
+    "TaskType": 1,
+    "SubTask": [],
     "PreTask": 1024,
-    "NextTask": 0
-  },
-  {
-    "Id": 20001,
-    "Name": "子任务20001",
-    "Type": 3,
-    "SubTask": "",
-    "PreTask": 0,
-    "NextTask": 0
-  },
-  {
-    "Id": 20002,
-    "Name": "子任务20002",
-    "Type": 3,
-    "SubTask": "",
-    "PreTask": 0,
-    "NextTask": 0
-  },
-  {
-    "Id": 20003,
-    "Name": "子任务20003",
-    "Type": 3,
-    "SubTask": "",
-    "PreTask": 0,
-    "NextTask": 0
-  },
-  {
-    "Id": 20004,
-    "Name": "子任务20004",
-    "Type": 3,
-    "SubTask": "",
-    "PreTask": 0,
-    "NextTask": 0
-  },
-  {
-    "Id": 20005,
-    "Name": "子任务20005",
-    "Type": 3,
-    "SubTask": "",
-    "PreTask": 0,
-    "NextTask": 0
-  },
-  {
-    "Id": 20006,
-    "Name": "子任务20006",
-    "Type": 3,
-    "SubTask": "",
-    "PreTask": 0,
-    "NextTask": 0
-  },
-  {
-    "Id": 20007,
-    "Name": "子任务20007",
-    "Type": 3,
-    "SubTask": "",
-    "PreTask": 0,
-    "NextTask": 0
-  },
-  {
-    "Id": 20008,
-    "Name": "子任务20008",
-    "Type": 3,
-    "SubTask": "",
-    "PreTask": 0,
-    "NextTask": 0
-  },
-  {
-    "Id": 20009,
-    "Name": "子任务20009",
-    "Type": 3,
-    "SubTask": "",
-    "PreTask": 0,
-    "NextTask": 0
-  },
-  {
-    "Id": 20010,
-    "Name": "子任务20010",
-    "Type": 3,
-    "SubTask": "",
-    "PreTask": 0,
-    "NextTask": 0
-  },
-  {
-    "Id": 20011,
-    "Name": "子任务20011",
-    "Type": 3,
-    "SubTask": "",
-    "PreTask": 0,
-    "NextTask": 0
-  },
-  {
-    "Id": 20012,
-    "Name": "子任务20012",
-    "Type": 3,
-    "SubTask": "",
-    "PreTask": 0,
-    "NextTask": 0
-  },
-  {
-    "Id": 20013,
-    "Name": "子任务20013",
-    "Type": 3,
-    "SubTask": "",
-    "PreTask": 0,
-    "NextTask": 0
-  },
-  {
-    "Id": 20014,
-    "Name": "子任务20014",
-    "Type": 3,
-    "SubTask": "",
-    "PreTask": 0,
-    "NextTask": 0
-  },
-  {
-    "Id": 20015,
-    "Name": "子任务20015",
-    "Type": 3,
-    "SubTask": "",
-    "PreTask": 0,
-    "NextTask": 0
-  },
-  {
-    "Id": 20016,
-    "Name": "子任务20016",
-    "Type": 3,
-    "SubTask": "",
-    "PreTask": 0,
-    "NextTask": 0
-  },
-  {
-    "Id": 20017,
-    "Name": "子任务20017",
-    "Type": 3,
-    "SubTask": "",
-    "PreTask": 0,
-    "NextTask": 0
-  },
-  {
-    "Id": 20018,
-    "Name": "子任务20018",
-    "Type": 3,
-    "SubTask": "",
-    "PreTask": 0,
-    "NextTask": 0
-  },
-  {
-    "Id": 20019,
-    "Name": "子任务20019",
-    "Type": 3,
-    "SubTask": "",
-    "PreTask": 0,
-    "NextTask": 0
-  },
-  {
-    "Id": 20020,
-    "Name": "子任务20020",
-    "Type": 3,
-    "SubTask": "",
-    "PreTask": 0,
     "NextTask": 0
   }
 ]

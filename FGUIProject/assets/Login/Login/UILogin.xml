@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1280,720" opaque="false">
   <displayList>
-    <component id="n3_hwto" name="Canvas" src="nnx52" fileName="Login/Logincanvas.xml" xy="1,-1" touchable="false"/>
+    <component id="n3_hwto" name="Canvas" src="nnx52" fileName="Login/Logincanvas.xml" xy="1,-1"/>
   </displayList>
 </component>

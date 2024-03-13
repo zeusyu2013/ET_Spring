@@ -33,8 +33,14 @@ namespace ET.Client
             {
                 return;
             }
+            
+            UIEventComponent.Instance.UIEvents.TryGetValue(panelName, out var uiEvent);
+            if (uiEvent == null)
+            {
+                return;
+            }
             // 创建UI，加载脚本
-            UI ui = await UIEventComponent.Instance.UIEvents[panelName].OnCreate(self);
+            UI ui = await uiEvent.OnCreate(self);
             self.UIs.Add(panelName, ui);
             ui.UIConfig = config;
             ui.Layer = config.Layer;

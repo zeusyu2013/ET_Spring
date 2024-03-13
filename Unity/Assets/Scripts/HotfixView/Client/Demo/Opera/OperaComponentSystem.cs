@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -22,20 +20,22 @@ namespace ET.Client
         private static void Update(this OperaComponent self)
         {
             InputComponent inputComponent = self.Root().GetComponent<InputComponent>();
-            if (inputComponent.MoveDirection.x != 0 || inputComponent.MoveDirection.z != 0)
+            if (inputComponent.MoveDirection.x != 0 || inputComponent.MoveDirection.z != 0 || 
+                inputComponent.JoystickMoveDirection.x != 0 || inputComponent.JoystickMoveDirection.y != 0)
             {
-                Vector3 moveDir = inputComponent.MoveDirection;
+                Vector3 moveDir = inputComponent.JoystickMoveDirection is { x: 0, z: 0 } ? inputComponent.MoveDirection : inputComponent.JoystickMoveDirection;
+              
                 Unit unit = UnitHelper.GetMyUnitFromClientScene(self.Root());
                 Quaternion rotation = Quaternion.Euler(0, unit.GetComponent<CameraComponent>().CinemachineTargetYaw, 0);
                 Vector3 unitPos = unit.Position;
                 unitPos.y = 0;
-                Vector3 newPos = unitPos + (rotation * moveDir * 4f);
+                Vector3 newPos = unitPos + (rotation * moveDir.normalized * 4f);
 
                 using ListComponent<float3> list = ListComponent<float3>.Create();
                 list.Add(unit.Position);
                 list.Add(newPos);
                 unit.MoveToAsync(list).Coroutine();
-
+                Log.Info($"move to {moveDir}   {unitPos}  {newPos}");
                 C2M_PathfindingResult c2MPathfindingResult = C2M_PathfindingResult.Create();
                 c2MPathfindingResult.Position = newPos;
                 self.Root().GetComponent<ClientSenderComponent>().Send(c2MPathfindingResult);

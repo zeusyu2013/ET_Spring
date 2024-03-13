@@ -5,7 +5,9 @@ namespace ET.Client
     public static partial class UIName
     {
         public const string UIBackground = "UIBackground";
+        public const string UIJoystick = "UIJoystick";
         public const string UILogin = "UILogin";
         public const string UIServerList = "UIServerList";
+        public const string UIPanel = "UIPanel";
     }
 }
