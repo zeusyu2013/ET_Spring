@@ -1,11 +1,11 @@
-﻿namespace ET
+﻿namespace ET.Server
 {
     [EntitySystemOf(typeof(GameTaskComponent))]
-    [FriendOfAttribute(typeof(ET.GameTaskComponent))]
+    [FriendOfAttribute(typeof(GameTaskComponent))]
     public static partial class GameTaskComponentSystem
     {
         [EntitySystem]
-        private static void Awake(this ET.GameTaskComponent self)
+        private static void Awake(this GameTaskComponent self)
         {
         }
 

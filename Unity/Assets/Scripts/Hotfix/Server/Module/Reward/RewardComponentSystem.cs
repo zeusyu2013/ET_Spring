@@ -1,10 +1,10 @@
-﻿namespace ET
+﻿namespace ET.Server
 {
     [EntitySystemOf(typeof(RewardComponent))]
     public static partial class RewardComponentSystem
     {
         [EntitySystem]
-        private static void Awake(this ET.RewardComponent self)
+        private static void Awake(this RewardComponent self)
         {
         }
 
@@ -22,7 +22,7 @@
                 int itemId = kv.Key;
                 int itemCount = kv.Value;
 
-                self.GetParent<BagComponent>().AddItem(itemId, itemCount);
+                self.GetParent<BagComponent>().AddItem(itemId, itemCount).Coroutine();
             }
         }
     }

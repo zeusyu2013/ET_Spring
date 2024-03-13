@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace ET
+namespace ET.Server
 {
     [ComponentOf(typeof(Unit))]
     public class GameTaskComponent : Entity, IAwake, ISerializeToEntity
