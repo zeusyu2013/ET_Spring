@@ -20,6 +20,7 @@ namespace ET
             Type = (NpcType)_buf.ReadInt();
             Name = _buf.ReadString();
             Model = _buf.ReadString();
+            Property = _buf.ReadInt();
 
             PostInit();
         }
@@ -49,6 +50,16 @@ namespace ET
         /// </summary>
         public readonly string Model;
 
+        /// <summary>
+        /// 属性包id
+        /// </summary>
+        public readonly int Property;
+
+        /// <summary>
+        /// 属性包id
+        /// </summary>
+        public PropertyConfig PropertyConfig => PropertyConfigCategory.Instance.GetOrDefault(Property);
+
         public const int __ID__ = -568528378;
 
         public override int GetTypeId() => __ID__;
@@ -60,6 +71,7 @@ namespace ET
             + "Type:" + Type + ","
             + "Name:" + Name + ","
             + "Model:" + Model + ","
+            + "Property:" + Property + ","
             + "}";
         }
 

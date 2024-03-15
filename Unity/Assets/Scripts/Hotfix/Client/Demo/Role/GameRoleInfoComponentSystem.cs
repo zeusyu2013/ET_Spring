@@ -1,4 +1,6 @@
-﻿namespace ET.Client
+﻿using System.Collections.Generic;
+
+namespace ET.Client
 {
     [EntitySystemOf(typeof(GameRoleInfoComponent))]
     [FriendOfAttribute(typeof(ET.Client.GameRoleInfoComponent))]
@@ -17,6 +19,11 @@
         public static void AddGameRoleInfo(this GameRoleInfoComponent self, GameRoleInfo info)
         {
             self.GameRoleInfos.Add(info);
+        }
+
+        public static List<GameRoleInfo> GetGameRoleInfos(this GameRoleInfoComponent self)
+        {
+            return self.GameRoleInfos;
         }
     }
 }

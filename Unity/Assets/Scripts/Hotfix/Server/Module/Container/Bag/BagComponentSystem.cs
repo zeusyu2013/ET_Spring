@@ -1,4 +1,6 @@
-﻿namespace ET.Server
+﻿using System.Collections.Generic;
+
+namespace ET.Server
 {
     [EntitySystemOf(typeof(BagComponent))]
     [FriendOf(typeof(BagComponent))]
@@ -54,6 +56,12 @@
             }
 
             return true;
+        }
+
+        public static async ETTask<List<ItemInfo>> GetItems(this BagComponent self)
+        {
+            await ETTask.CompletedTask;
+            return self.ItemInfos;
         }
     }
 }

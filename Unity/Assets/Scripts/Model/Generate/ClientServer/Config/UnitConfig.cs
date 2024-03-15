@@ -21,6 +21,7 @@ namespace ET
             Name = _buf.ReadString();
             Model = _buf.ReadString();
             AI = _buf.ReadInt();
+            Property = _buf.ReadInt();
 
             PostInit();
         }
@@ -58,7 +59,17 @@ namespace ET
         /// <summary>
         /// Ref测试
         /// </summary>
-        public AIConfig AIConfig => AIConfigCategory.Instance.GetOrDefault(AI);
+        public AIConfig AIConfig => AIConfigCategory.Instance.GetOrDefault(Property);
+
+        /// <summary>
+        /// 属性包id
+        /// </summary>
+        public readonly int Property;
+
+        /// <summary>
+        /// 属性包id
+        /// </summary>
+        public PropertyConfig PropertyConfig => PropertyConfigCategory.Instance.GetOrDefault(Property);
 
         public const int __ID__ = -568528378;
 
@@ -72,6 +83,7 @@ namespace ET
             + "Name:" + Name + ","
             + "Model:" + Model + ","
             + "AI:" + AI + ","
+            + "Property:" + Property + ","
             + "}";
         }
 

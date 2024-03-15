@@ -3,18 +3,21 @@
     "Id": 25001,
     "Type": 1,
     "Name": "米克尔",
-    "Model": "25001"
+    "Model": "25001",
+    "Property": 1001
   },
   {
     "Id": 25002,
     "Type": 1,
     "Name": "米克尔2",
-    "Model": "25002"
+    "Model": "25002",
+    "Property": 1002
   },
   {
     "Id": 1001,
     "Type": 1,
     "Name": "米克尔3",
-    "Model": "1001"
+    "Model": "1001",
+    "Property": 1001
   }
 ]

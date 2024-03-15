@@ -1,14 +1,14 @@
 [
   {
     "Id": 0,
-    "GroupId": 0,
+    "GroupId": 1,
     "PanelName": "UIJoystick",
     "Open": true,
     "Args": ""
   },
   {
     "Id": 1,
-    "GroupId": 0,
+    "GroupId": 1,
     "PanelName": "UIMain",
     "Open": true,
     "Args": ""

@@ -1,7 +1,7 @@
-﻿namespace ET
+﻿namespace ET.Server
 {
     [EntitySystemOf(typeof(PlayerLevelComponent))]
-    [FriendOfAttribute(typeof(ET.PlayerLevelComponent))]
+    [FriendOf(typeof(PlayerLevelComponent))]
     public static partial class PlayerLevelComponentSystem
     {
         public static void AddExp(this PlayerLevelComponent self, long exp)
@@ -28,6 +28,15 @@
             }
 
             self.Exp = current;
+
+            self.Boardcast();
+        }
+
+        public static void Boardcast(this PlayerLevelComponent self)
+        {
+            self.GetParent<Unit>().GetComponent<NumericComponent>().Set(NumericType.Level, self.Level);
+            self.GetParent<Unit>().GetComponent<NumericComponent>().SetNoEvent(NumericType.Exp, self.Exp);
+            self.GetParent<Unit>().GetComponent<NumericComponent>().SetNoEvent(NumericType.MaxExp, self.MaxExp);
         }
     }
 }
