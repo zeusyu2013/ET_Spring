@@ -4,7 +4,7 @@ using MongoDB.Bson.Serialization.Options;
 
 namespace ET
 {
-    [FriendOf(typeof (NumericComponent))]
+    [FriendOf(typeof(NumericComponent))]
     public static class NumericComponentSystem
     {
         public static float GetAsFloat(this NumericComponent self, int numericType)
@@ -12,9 +12,19 @@ namespace ET
             return (float)self.GetByKey(numericType) / 10000;
         }
 
+        public static float GetAsFloat(this NumericComponent self, PropertyType type)
+        {
+            return (float)self.GetByKey(type) / 10000;
+        }
+
         public static int GetAsInt(this NumericComponent self, int numericType)
         {
             return (int)self.GetByKey(numericType);
+        }
+
+        public static int GetAsInt(this NumericComponent self, PropertyType type)
+        {
+            return (int)self.GetByKey(type);
         }
 
         public static long GetAsLong(this NumericComponent self, int numericType)
@@ -22,9 +32,19 @@ namespace ET
             return self.GetByKey(numericType);
         }
 
+        public static long GetAsLong(this NumericComponent self, PropertyType type)
+        {
+            return self.GetByKey(type);
+        }
+
         public static void Set(this NumericComponent self, int nt, float value)
         {
             self[nt] = (long)(value * 10000);
+        }
+
+        public static void Set(this NumericComponent self, PropertyType type, float value)
+        {
+            self[(int)type] = (long)(value * 10000);
         }
 
         public static void Set(this NumericComponent self, int nt, int value)
@@ -32,14 +52,29 @@ namespace ET
             self[nt] = value;
         }
 
+        public static void Set(this NumericComponent self, PropertyType type, int value)
+        {
+            self[(int)type] = value;
+        }
+
         public static void Set(this NumericComponent self, int nt, long value)
         {
             self[nt] = value;
         }
 
+        public static void Set(this NumericComponent self, PropertyType type, long value)
+        {
+            self[(int)type] = value;
+        }
+
         public static void SetNoEvent(this NumericComponent self, int numericType, long value)
         {
             self.Insert(numericType, value, false);
+        }
+
+        public static void SetNoEvent(this NumericComponent self, PropertyType type, long value)
+        {
+            self.Insert((int)type, value, false);
         }
 
         public static void Insert(this NumericComponent self, int numericType, long value, bool isPublicEvent = true)
@@ -72,6 +107,13 @@ namespace ET
             return value;
         }
 
+        public static long GetByKey(this NumericComponent self, PropertyType type)
+        {
+            long value = 0;
+            self.NumericDic.TryGetValue((int)type, out value);
+            return value;
+        }
+
         public static void Update(this NumericComponent self, int numericType, bool isPublicEvent)
         {
             int final = (int)numericType / 10;
@@ -88,7 +130,7 @@ namespace ET
             self.Insert(final, result, isPublicEvent);
         }
     }
-    
+
     public struct NumbericChange
     {
         public Unit Unit;
@@ -97,8 +139,8 @@ namespace ET
         public long New;
     }
 
-    [ComponentOf(typeof (Unit))]
-    public class NumericComponent: Entity, IAwake, ITransfer
+    [ComponentOf(typeof(Unit))]
+    public class NumericComponent : Entity, IAwake, ITransfer
     {
         [BsonDictionaryOptions(DictionaryRepresentation.ArrayOfArrays)]
         public Dictionary<int, long> NumericDic = new Dictionary<int, long>();

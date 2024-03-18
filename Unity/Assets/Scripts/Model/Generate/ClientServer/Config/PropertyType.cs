@@ -12,24 +12,74 @@ namespace ET
     public enum PropertyType
     {
         /// <summary>
+        /// 等级
+        /// </summary>
+        PropertyType_Level = 1001,
+
+        /// <summary>
+        /// 经验值
+        /// </summary>
+        PropertyType_Exp = 1002,
+
+        /// <summary>
+        /// 最大经验值
+        /// </summary>
+        PropertyType_MaxExp = 1003,
+
+        /// <summary>
+        /// 银币
+        /// </summary>
+        PropertyType_Silver = 1004,
+
+        /// <summary>
+        /// 金币
+        /// </summary>
+        PropertyType_Gold = 1005,
+
+        /// <summary>
+        /// 钻石
+        /// </summary>
+        PropertyType_Diamond = 1006,
+
+        /// <summary>
+        /// 移动速度
+        /// </summary>
+        PropertyType_Speed = 1007,
+
+        /// <summary>
+        /// 视野范围
+        /// </summary>
+        PropertyType_AOI = 1008,
+
+        /// <summary>
         /// 生命值
         /// </summary>
-        PropertyType_Hp = 1001,
+        PropertyType_Hp = 1101,
 
         /// <summary>
         /// 最大生命值
         /// </summary>
-        PropertyType_MaxHp = 1002,
+        PropertyType_MaxHp = 1102,
 
         /// <summary>
         /// 攻击
         /// </summary>
-        PropertyType_Atk = 1003,
+        PropertyType_Atk = 1103,
 
         /// <summary>
         /// 防御
         /// </summary>
-        PropertyType_Def = 1004,
+        PropertyType_Def = 1104,
+
+        /// <summary>
+        /// 命中
+        /// </summary>
+        PropertyType_Hit = 1105,
+
+        /// <summary>
+        /// 暴击
+        /// </summary>
+        PropertyType_Crit = 1106,
 
     }
 }
