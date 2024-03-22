@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1280,720" pivot="1,0" opaque="false">
+  <displayList>
+    <component id="n0_jrtg" name="Canvas" src="mdp91" fileName="Canvas.xml" xy="0,0"/>
+  </displayList>
+</component>

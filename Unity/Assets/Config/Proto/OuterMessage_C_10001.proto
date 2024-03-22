@@ -293,20 +293,39 @@ message G2C_DeleteRole // IResponse
 	repeated GameRoleInfo Roles = 4;
 }
 
-message ItemInfo
+message GameItemInfo
 {
-	int32 ItemId = 1;
-	int64 ItemCount = 2;
+	int32 Config = 1;
+	int64 Amount = 2;
+}
+
+// ResponseType M2C_GetAllItems
+message C2M_GetAllItems // ILocationRequest
+{
+	int32 RpcId = 1;
+}
+
+message M2C_GetAllItems // ILocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+	repeated GameItemInfo GameItemInfos = 4;
+}
+
+message M2C_GetNewItem // ILocationMessage
+{
+	int32 RpcId = 1;
+	int32 ConfigId = 2;
+	int64 Amount = 3;
 }
 
 // ResponseType M2C_UseItem
 message C2M_UseItem // ILocationRequest
 {
 	int32 RpcId = 1;
-	int32 Error = 2;
-	string Message = 3;
-	int32 ItemId = 4;
-	int64 ItemCount = 5;
+	int32 ConfigId = 4;
+	int64 Amount = 5;
 }
 
 message M2C_UseItem // ILocationResponse
@@ -314,7 +333,7 @@ message M2C_UseItem // ILocationResponse
 	int32 RpcId = 1;
 	int32 Error = 2;
 	string Message = 3;
-	repeated ItemInfo ItemInfos = 4;
+	repeated GameItemInfo GameItemInfos = 4;
 }
 
 // ResponseType M2C_AcceptTask
@@ -329,4 +348,53 @@ message M2C_AcceptTask // ILocationResponse
 	int32 RpcId = 1;
 	int32 Error = 2;
 	string Message = 3;
+}
+
+message GameBuffInfo
+{
+	int32 ConfigId = 1;
+	int64 Time = 2;
+}
+
+// ResponseType M2C_GetAllBuffs
+message C2M_GetAllBuffs // ILocationRequest
+{
+	int32 RpcId = 1;
+}
+
+message M2C_GetAllBuffs // ILocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+	repeated GameBuffInfo GameBuffInfos = 4;
+}
+
+// ResponseType M2C_Equip
+message C2M_Equip // ILocationRequest
+{
+	int32 RpcId = 1;
+	int32 ConfigId = 2;
+}
+
+message M2C_Equip // ILocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+	int32 Index = 4;
+	int32 ConfigId = 5;
+}
+
+message GamePropertyInfo
+{
+	int32 PropertyType = 1;
+	int64 PropertyValue = 2;
+}
+
+message M2C_PropertyRefresh // IMessage
+{
+	int32 PlayerId = 1;
+
+	repeated GamePropertyInfo GamePropertyInfos = 2;
 }

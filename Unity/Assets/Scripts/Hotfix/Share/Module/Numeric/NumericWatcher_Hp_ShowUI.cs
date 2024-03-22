@@ -3,7 +3,7 @@
     /// <summary>
     /// 客户端监视hp数值变化，改变血条值
     /// </summary>
-    [NumericWatcher(SceneType.Current, (int)PropertyType.PropertyType_Hp)]
+    [NumericWatcher(SceneType.Current, (int)GamePropertyType.GamePropertyType_Hp)]
     public class NumericWatcher_Hp_ShowUI : INumericWatcher
     {
         public void Run(Unit unit, NumbericChange args)

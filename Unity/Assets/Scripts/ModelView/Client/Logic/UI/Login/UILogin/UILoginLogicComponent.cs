@@ -5,6 +5,6 @@ namespace ET.Client
     [ComponentOf(typeof(UI))]
     public class UILoginLogicComponent: Entity, IAwake, IDestroy
     {
-
+    
     }
 }

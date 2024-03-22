@@ -34,9 +34,9 @@
 
         public static void Boardcast(this PlayerLevelComponent self)
         {
-            self.GetParent<Unit>().GetComponent<NumericComponent>().Set(PropertyType.PropertyType_Level, self.Level);
-            self.GetParent<Unit>().GetComponent<NumericComponent>().SetNoEvent(PropertyType.PropertyType_Exp, self.Exp);
-            self.GetParent<Unit>().GetComponent<NumericComponent>().SetNoEvent(PropertyType.PropertyType_MaxExp, self.MaxExp);
+            self.GetParent<Unit>().GetComponent<NumericComponent>().Set(GamePropertyType.GamePropertyType_Level, self.Level);
+            self.GetParent<Unit>().GetComponent<NumericComponent>().SetNoEvent(GamePropertyType.GamePropertyType_Exp, self.Exp);
+            self.GetParent<Unit>().GetComponent<NumericComponent>().SetNoEvent(GamePropertyType.GamePropertyType_MaxExp, self.MaxExp);
         }
     }
 }

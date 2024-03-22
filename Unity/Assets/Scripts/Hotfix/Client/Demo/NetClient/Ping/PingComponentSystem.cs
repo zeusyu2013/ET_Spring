@@ -47,6 +47,12 @@ namespace ET.Client
                     self.Ping = time2 - time1;
                     
                     TimeInfo.Instance.ServerMinusClientTime = response.Time + (time2 - time1) / 2 - time2;
+
+                    var innerSender = self.Fiber().Root.GetComponent<ProcessInnerSender>();
+                    int fiberId = self.Fiber().Root.GetComponent<FiberParentComponent>().ParentFiberId;
+                    NetClient2Main_Ping client2MainPing = NetClient2Main_Ping.Create();
+                    client2MainPing.Ping = self.Ping;
+                    innerSender.Send(new ActorId(fiber.Process, fiberId), client2MainPing);
                 }
                 catch (RpcException e)
                 {

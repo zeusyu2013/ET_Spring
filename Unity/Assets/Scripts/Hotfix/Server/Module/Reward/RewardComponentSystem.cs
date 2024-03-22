@@ -22,7 +22,7 @@
                 int itemId = kv.Key;
                 int itemCount = kv.Value;
 
-                self.GetParent<BagComponent>().AddItem(itemId, itemCount).Coroutine();
+                self.GetParent<BagComponent>().AddItem(itemId, itemCount);
             }
         }
     }

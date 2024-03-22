@@ -24,6 +24,12 @@
     {
     }
 
+    public struct UIPing
+    {
+        public long Ping;
+    }
+    
+
     public struct ChooseServer
     {
         

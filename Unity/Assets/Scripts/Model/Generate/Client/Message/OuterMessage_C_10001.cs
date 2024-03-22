@@ -1351,19 +1351,19 @@ namespace ET
     }
 
     [MemoryPackable]
-    [Message(OuterMessage.ItemInfo)]
-    public partial class ItemInfo : MessageObject
+    [Message(OuterMessage.GameItemInfo)]
+    public partial class GameItemInfo : MessageObject
     {
-        public static ItemInfo Create(bool isFromPool = false)
+        public static GameItemInfo Create(bool isFromPool = false)
         {
-            return ObjectPool.Instance.Fetch(typeof(ItemInfo), isFromPool) as ItemInfo;
+            return ObjectPool.Instance.Fetch(typeof(GameItemInfo), isFromPool) as GameItemInfo;
         }
 
         [MemoryPackOrder(0)]
-        public int ItemId { get; set; }
+        public int Config { get; set; }
 
         [MemoryPackOrder(1)]
-        public long ItemCount { get; set; }
+        public long Amount { get; set; }
 
         public override void Dispose()
         {
@@ -1372,8 +1372,104 @@ namespace ET
                 return;
             }
 
-            this.ItemId = default;
-            this.ItemCount = default;
+            this.Config = default;
+            this.Amount = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.C2M_GetAllItems)]
+    [ResponseType(nameof(M2C_GetAllItems))]
+    public partial class C2M_GetAllItems : MessageObject, ILocationRequest
+    {
+        public static C2M_GetAllItems Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_GetAllItems), isFromPool) as C2M_GetAllItems;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_GetAllItems)]
+    public partial class M2C_GetAllItems : MessageObject, ILocationResponse
+    {
+        public static M2C_GetAllItems Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_GetAllItems), isFromPool) as M2C_GetAllItems;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        [MemoryPackOrder(3)]
+        public List<GameItemInfo> GameItemInfos { get; set; } = new();
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+            this.GameItemInfos.Clear();
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_GetNewItem)]
+    public partial class M2C_GetNewItem : MessageObject, ILocationMessage
+    {
+        public static M2C_GetNewItem Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_GetNewItem), isFromPool) as M2C_GetNewItem;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int ConfigId { get; set; }
+
+        [MemoryPackOrder(2)]
+        public long Amount { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.ConfigId = default;
+            this.Amount = default;
 
             ObjectPool.Instance.Recycle(this);
         }
@@ -1392,17 +1488,11 @@ namespace ET
         [MemoryPackOrder(0)]
         public int RpcId { get; set; }
 
-        [MemoryPackOrder(1)]
-        public int Error { get; set; }
-
-        [MemoryPackOrder(2)]
-        public string Message { get; set; }
-
         [MemoryPackOrder(3)]
-        public int ItemId { get; set; }
+        public int ConfigId { get; set; }
 
         [MemoryPackOrder(4)]
-        public long ItemCount { get; set; }
+        public long Amount { get; set; }
 
         public override void Dispose()
         {
@@ -1412,10 +1502,8 @@ namespace ET
             }
 
             this.RpcId = default;
-            this.Error = default;
-            this.Message = default;
-            this.ItemId = default;
-            this.ItemCount = default;
+            this.ConfigId = default;
+            this.Amount = default;
 
             ObjectPool.Instance.Recycle(this);
         }
@@ -1440,7 +1528,7 @@ namespace ET
         public string Message { get; set; }
 
         [MemoryPackOrder(3)]
-        public List<ItemInfo> ItemInfos { get; set; } = new();
+        public List<GameItemInfo> GameItemInfos { get; set; } = new();
 
         public override void Dispose()
         {
@@ -1452,7 +1540,7 @@ namespace ET
             this.RpcId = default;
             this.Error = default;
             this.Message = default;
-            this.ItemInfos.Clear();
+            this.GameItemInfos.Clear();
 
             ObjectPool.Instance.Recycle(this);
         }
@@ -1521,6 +1609,98 @@ namespace ET
         }
     }
 
+    [MemoryPackable]
+    [Message(OuterMessage.GameBuffInfo)]
+    public partial class GameBuffInfo : MessageObject
+    {
+        public static GameBuffInfo Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(GameBuffInfo), isFromPool) as GameBuffInfo;
+        }
+
+        [MemoryPackOrder(0)]
+        public int ConfigId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long Time { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.ConfigId = default;
+            this.Time = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.C2M_GetAllBuffs)]
+    [ResponseType(nameof(M2C_GetAllBuffs))]
+    public partial class C2M_GetAllBuffs : MessageObject, ILocationRequest
+    {
+        public static C2M_GetAllBuffs Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_GetAllBuffs), isFromPool) as C2M_GetAllBuffs;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_GetAllBuffs)]
+    public partial class M2C_GetAllBuffs : MessageObject, ILocationResponse
+    {
+        public static M2C_GetAllBuffs Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_GetAllBuffs), isFromPool) as M2C_GetAllBuffs;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        [MemoryPackOrder(3)]
+        public List<GameBuffInfo> GameBuffInfos { get; set; } = new();
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+            this.GameBuffInfos.Clear();
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
     public static class OuterMessage
     {
         public const ushort HttpGetRouterResponse = 10002;
@@ -1564,10 +1744,16 @@ namespace ET
         public const ushort G2C_CreateRole = 10040;
         public const ushort C2G_DeleteRole = 10041;
         public const ushort G2C_DeleteRole = 10042;
-        public const ushort ItemInfo = 10043;
-        public const ushort C2M_UseItem = 10044;
-        public const ushort M2C_UseItem = 10045;
-        public const ushort C2M_AcceptTask = 10046;
-        public const ushort M2C_AcceptTask = 10047;
+        public const ushort GameItemInfo = 10043;
+        public const ushort C2M_GetAllItems = 10044;
+        public const ushort M2C_GetAllItems = 10045;
+        public const ushort M2C_GetNewItem = 10046;
+        public const ushort C2M_UseItem = 10047;
+        public const ushort M2C_UseItem = 10048;
+        public const ushort C2M_AcceptTask = 10049;
+        public const ushort M2C_AcceptTask = 10050;
+        public const ushort GameBuffInfo = 10051;
+        public const ushort C2M_GetAllBuffs = 10052;
+        public const ushort M2C_GetAllBuffs = 10053;
     }
 }

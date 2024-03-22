@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1280,720" pivot="1,0" opaque="false">
+  <displayList>
+    <component id="n0_mdp9" name="Test1" src="hwto0" fileName="Button/CommonButton.xml" pkg="6qczg918" xy="456,655" size="135,47">
+      <Button title="测试1" titleFontSize="20"/>
+      <property target="down" propertyId="1" value="ui://6qczg918hwto4"/>
+      <property target="up" propertyId="1" value="ui://6qczg918hwto3"/>
+    </component>
+    <component id="n1_mdp9" name="Test2" src="hwto0" fileName="Button/CommonButton.xml" pkg="6qczg918" xy="610,655" size="135,47">
+      <Button title="测试2" titleFontSize="20"/>
+      <property target="down" propertyId="1" value="ui://6qczg918hwto4"/>
+      <property target="up" propertyId="1" value="ui://6qczg918hwto3"/>
+    </component>
+    <component id="n2_mdp9" name="Test3" src="hwto0" fileName="Button/CommonButton.xml" pkg="6qczg918" xy="766,655" size="135,47">
+      <Button title="测试3" titleFontSize="20"/>
+      <property target="down" propertyId="1" value="ui://6qczg918hwto4"/>
+      <property target="up" propertyId="1" value="ui://6qczg918hwto3"/>
+    </component>
+    <component id="n3_mdp9" name="Test4" src="hwto0" fileName="Button/CommonButton.xml" pkg="6qczg918" xy="930,655" size="135,47">
+      <Button title="测试4" titleFontSize="20"/>
+      <property target="down" propertyId="1" value="ui://6qczg918hwto4"/>
+      <property target="up" propertyId="1" value="ui://6qczg918hwto3"/>
+    </component>
+    <text id="n4_mdp9" name="PingText" xy="38,667" size="183,29" fontSize="20" color="#ff0000" autoSize="none" text=""/>
+  </displayList>
+</component>

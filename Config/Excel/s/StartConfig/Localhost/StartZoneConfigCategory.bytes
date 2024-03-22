@@ -1,3 +1,1 @@
-mongodb://127.0.0.1Account	账号区mongodb://127.0.0.1Game1
-游戏1区mongodb://127.0.0.1Game2
-游戏2区
+mongodb://127.0.0.1Game	游戏区

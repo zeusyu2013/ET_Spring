@@ -19,6 +19,7 @@ namespace ET
             Id = _buf.ReadInt();
             Name = _buf.ReadString();
             Type = (GameItemType)_buf.ReadInt();
+            Quality = (GameItemQualityType)_buf.ReadInt();
             UseLevel = _buf.ReadInt();
             MaxCount = _buf.ReadLong();
 
@@ -46,6 +47,11 @@ namespace ET
         public readonly GameItemType Type;
 
         /// <summary>
+        /// 道具品质
+        /// </summary>
+        public readonly GameItemQualityType Quality;
+
+        /// <summary>
         /// 道具使用等级限制
         /// </summary>
         public readonly int UseLevel;
@@ -65,6 +71,7 @@ namespace ET
             + "Id:" + Id + ","
             + "Name:" + Name + ","
             + "Type:" + Type + ","
+            + "Quality:" + Quality + ","
             + "UseLevel:" + UseLevel + ","
             + "MaxCount:" + MaxCount + ","
             + "}";

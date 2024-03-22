@@ -15,7 +15,7 @@ namespace ET.Client
                 return;
             }
 
-            float speed = unit.GetComponent<NumericComponent>().GetAsFloat(PropertyType.PropertyType_Speed);
+            float speed = unit.GetComponent<NumericComponent>().GetAsFloat(GamePropertyType.GamePropertyType_Speed);
 
             if (!unit.IsMyUnit())
             {

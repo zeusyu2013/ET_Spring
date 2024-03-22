@@ -86,7 +86,7 @@ namespace ET.Client
         {
             Scene root = self.Root();
             await EnterMapHelper.EnterMapAsync(root);
-            UIHelper.Remove(root, UIName.UILogin);
+            UIHelper.Remove(root, UIName.UILogin).Coroutine();
         }
     }
 }

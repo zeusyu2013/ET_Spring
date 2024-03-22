@@ -22,7 +22,7 @@ namespace ET.Client
             
             view.GCanvas_CloseBtn.onClick.Set(() =>
             {
-                UIHelper.Remove(self.Root(), UIName.UIServerList);
+                UIHelper.Remove(self.Root(), UIName.UIServerList).Coroutine();
             });
         }
         
@@ -76,7 +76,7 @@ namespace ET.Client
             self.Root().GetComponent<PlayerPrefsComponent>().ServerInfo = serverInfo;
             
             EventSystem.Instance.Publish(self.Root(), new ChooseServer());
-            UIHelper.Remove(self.Root(), UIName.UIServerList);
+            UIHelper.Remove(self.Root(), UIName.UIServerList).Coroutine();
         }
         
         public static void ServerItemRenderer(this UIServerListLogicComponent self, int index, GObject obj)

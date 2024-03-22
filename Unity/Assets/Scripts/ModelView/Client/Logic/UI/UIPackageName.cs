@@ -9,6 +9,7 @@ namespace ET.Client
         public const string Joystick = "Joystick";
         public const string Language = "Language";
         public const string Login = "Login";
+        public const string Main = "Main";
         public const string Template = "Template";
     }
 }

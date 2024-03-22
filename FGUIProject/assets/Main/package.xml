@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="rxzaofzu">
+  <resources>
+    <component id="mdp90" name="UIMain.xml" path="/" exported="true"/>
+    <component id="mdp91" name="MainCanvas.xml" path="/"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

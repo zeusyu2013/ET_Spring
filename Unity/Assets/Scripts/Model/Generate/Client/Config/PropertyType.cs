@@ -67,9 +67,59 @@ namespace ET
         PropertyType_Atk = 1103,
 
         /// <summary>
+        /// 攻击基础值
+        /// </summary>
+        PropertyType_AtkBase = 11031,
+
+        /// <summary>
+        /// 攻击附加值
+        /// </summary>
+        PropertyType_AtkAdd = 11032,
+
+        /// <summary>
+        /// 攻击百分比
+        /// </summary>
+        PropertyType_AtkPct = 11033,
+
+        /// <summary>
+        /// 攻击最终附加值
+        /// </summary>
+        PropertyType_AtkFinalAdd = 11034,
+
+        /// <summary>
+        /// 攻击最终百分比
+        /// </summary>
+        PropertyType_AtkFinalPct = 11035,
+
+        /// <summary>
         /// 防御
         /// </summary>
         PropertyType_Def = 1104,
+
+        /// <summary>
+        /// 防御基础值
+        /// </summary>
+        PropertyType_DefBase = 11041,
+
+        /// <summary>
+        /// 防御附加值
+        /// </summary>
+        PropertyType_DefAdd = 11042,
+
+        /// <summary>
+        /// 防御百分比
+        /// </summary>
+        PropertyType_DefPct = 11043,
+
+        /// <summary>
+        /// 防御最终附加值
+        /// </summary>
+        PropertyType_DefFinalAdd = 11044,
+
+        /// <summary>
+        /// 防御最终百分比
+        /// </summary>
+        PropertyType_DefFinalPct = 11045,
 
         /// <summary>
         /// 命中
@@ -77,9 +127,59 @@ namespace ET
         PropertyType_Hit = 1105,
 
         /// <summary>
+        /// 命中基础值
+        /// </summary>
+        PropertyType_HitBase = 11051,
+
+        /// <summary>
+        /// 命中附加值
+        /// </summary>
+        PropertyType_HitAdd = 11052,
+
+        /// <summary>
+        /// 命中百分比
+        /// </summary>
+        PropertyType_HitPct = 11053,
+
+        /// <summary>
+        /// 命中最终附加值
+        /// </summary>
+        PropertyType_HitFinalAdd = 11054,
+
+        /// <summary>
+        /// 命中最终百分比
+        /// </summary>
+        PropertyType_HitFinalPct = 11055,
+
+        /// <summary>
         /// 暴击
         /// </summary>
         PropertyType_Crit = 1106,
+
+        /// <summary>
+        /// 暴击基础值
+        /// </summary>
+        PropertyType_CritBase = 11061,
+
+        /// <summary>
+        /// 暴击附加值
+        /// </summary>
+        PropertyType_CritAdd = 11062,
+
+        /// <summary>
+        /// 暴击百分比
+        /// </summary>
+        PropertyType_CritPct = 11063,
+
+        /// <summary>
+        /// 暴击最终附加值
+        /// </summary>
+        PropertyType_CritFinalAdd = 11064,
+
+        /// <summary>
+        /// 暴击最终百分比
+        /// </summary>
+        PropertyType_CritFinalPct = 11065,
 
     }
 }

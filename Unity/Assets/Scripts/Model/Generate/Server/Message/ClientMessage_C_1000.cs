@@ -29,6 +29,35 @@ namespace ET
     }
 
     [MemoryPackable]
+    [Message(ClientMessage.NetClient2Main_Ping)]
+    public partial class NetClient2Main_Ping : MessageObject, IRequest
+    {
+        public static NetClient2Main_Ping Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(NetClient2Main_Ping), isFromPool) as NetClient2Main_Ping;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long Ping { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Ping = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
     [Message(ClientMessage.Main2NetClient_Login)]
     [ResponseType(nameof(NetClient2Main_Login))]
     public partial class Main2NetClient_Login : MessageObject, IRequest
@@ -258,11 +287,12 @@ namespace ET
     public static class ClientMessage
     {
         public const ushort RemoteConfig = 1001;
-        public const ushort Main2NetClient_Login = 1002;
-        public const ushort NetClient2Main_Login = 1003;
-        public const ushort Servers = 1004;
-        public const ushort Districts = 1005;
-        public const ushort Maple_info = 1006;
-        public const ushort MapleResponse = 1007;
+        public const ushort NetClient2Main_Ping = 1002;
+        public const ushort Main2NetClient_Login = 1003;
+        public const ushort NetClient2Main_Login = 1004;
+        public const ushort Servers = 1005;
+        public const ushort Districts = 1006;
+        public const ushort Maple_info = 1007;
+        public const ushort MapleResponse = 1008;
     }
 }

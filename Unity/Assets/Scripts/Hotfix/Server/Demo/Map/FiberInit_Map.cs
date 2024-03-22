@@ -15,6 +15,7 @@
             root.AddComponent<AOIManagerComponent>();
             root.AddComponent<LocationProxyComponent>();
             root.AddComponent<MessageLocationSenderComponent>();
+            root.AddComponent<DBCacheComponent>();
 
             await ETTask.CompletedTask;
         }

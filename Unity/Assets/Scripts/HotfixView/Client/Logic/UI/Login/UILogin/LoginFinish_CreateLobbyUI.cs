@@ -12,7 +12,7 @@
 				return;
 			}
 			ui.GetComponent<UILoginLogicComponent>().EnterMap().Coroutine();
-			UIHelper.Remove(scene, UIName.UILogin);
+			UIHelper.Remove(scene, UIName.UILogin).Coroutine();
 			//var loginComponent = ui.GetComponent<UILoginComponent>();
 			//loginComponent.GCanvas_LoginCtrl.selectedIndex = 1;
 	

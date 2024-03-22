@@ -17,7 +17,7 @@ namespace ET
         public PropertyConfig(ByteBuf _buf)
         {
             Id = _buf.ReadInt();
-            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);Properties = new System.Collections.Generic.Dictionary<PropertyType, int>(n0 * 3 / 2);for(var i0 = 0 ; i0 < n0 ; i0++) { PropertyType _k0;  _k0 = (PropertyType)_buf.ReadInt(); int _v0;  _v0 = _buf.ReadInt();     Properties.Add(_k0, _v0);}}
+            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);Properties = new System.Collections.Generic.Dictionary<GamePropertyType, int>(n0 * 3 / 2);for(var i0 = 0 ; i0 < n0 ; i0++) { GamePropertyType _k0;  _k0 = (GamePropertyType)_buf.ReadInt(); int _v0;  _v0 = _buf.ReadInt();     Properties.Add(_k0, _v0);}}
 
             PostInit();
         }
@@ -35,7 +35,7 @@ namespace ET
         /// <summary>
         /// 属性配置
         /// </summary>
-        public readonly System.Collections.Generic.Dictionary<PropertyType, int> Properties;
+        public readonly System.Collections.Generic.Dictionary<GamePropertyType, int> Properties;
 
         public const int __ID__ = 950969751;
 

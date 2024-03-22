@@ -5,7 +5,7 @@ namespace ET
     {
         public UIConfig GetConfigByName(string panelName)
         {
-            foreach (var data in _dataList)
+            foreach (var data in this.DataList)
             {
                 if (data.Name == panelName)
                 {

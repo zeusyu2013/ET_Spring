@@ -14,6 +14,8 @@
         public const int AITimer = 202;
         public const int SessionAcceptTimeout = 203;
         public const int DBCacheTimer = 204;
+
+        public const int GameBuffTimer = 210;
         
         public const int RoomUpdate = 301;
     }

@@ -2,19 +2,7 @@
   {
     "Id": 1,
     "DBConnection": "mongodb://127.0.0.1",
-    "DBName": "Account",
-    "Desc": "账号区"
-  },
-  {
-    "Id": 2,
-    "DBConnection": "mongodb://127.0.0.1",
-    "DBName": "Game1",
-    "Desc": "游戏1区"
-  },
-  {
-    "Id": 3,
-    "DBConnection": "mongodb://127.0.0.1",
-    "DBName": "Game2",
-    "Desc": "游戏2区"
+    "DBName": "Game",
+    "Desc": "游戏区"
   }
 ]

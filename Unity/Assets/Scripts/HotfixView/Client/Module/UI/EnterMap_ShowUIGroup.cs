@@ -5,7 +5,7 @@
     {
         protected override async ETTask Run(Scene scene, EnterMapFinish a)
         {
-            UIHelper.OpenGroup(scene, UIDefine.UIGroupId.Common);
+            UIHelper.OpenGroup(scene, UIDefine.UIGroupId.Common).Coroutine();
             await ETTask.CompletedTask;
         }
     }

@@ -12,7 +12,7 @@ namespace ET
             return (float)self.GetByKey(numericType) / 10000;
         }
 
-        public static float GetAsFloat(this NumericComponent self, PropertyType type)
+        public static float GetAsFloat(this NumericComponent self, GamePropertyType type)
         {
             return (float)self.GetByKey(type) / 10000;
         }
@@ -22,7 +22,7 @@ namespace ET
             return (int)self.GetByKey(numericType);
         }
 
-        public static int GetAsInt(this NumericComponent self, PropertyType type)
+        public static int GetAsInt(this NumericComponent self, GamePropertyType type)
         {
             return (int)self.GetByKey(type);
         }
@@ -32,7 +32,7 @@ namespace ET
             return self.GetByKey(numericType);
         }
 
-        public static long GetAsLong(this NumericComponent self, PropertyType type)
+        public static long GetAsLong(this NumericComponent self, GamePropertyType type)
         {
             return self.GetByKey(type);
         }
@@ -42,7 +42,7 @@ namespace ET
             self[nt] = (long)(value * 10000);
         }
 
-        public static void Set(this NumericComponent self, PropertyType type, float value)
+        public static void Set(this NumericComponent self, GamePropertyType type, float value)
         {
             self[(int)type] = (long)(value * 10000);
         }
@@ -52,7 +52,7 @@ namespace ET
             self[nt] = value;
         }
 
-        public static void Set(this NumericComponent self, PropertyType type, int value)
+        public static void Set(this NumericComponent self, GamePropertyType type, int value)
         {
             self[(int)type] = value;
         }
@@ -62,7 +62,7 @@ namespace ET
             self[nt] = value;
         }
 
-        public static void Set(this NumericComponent self, PropertyType type, long value)
+        public static void Set(this NumericComponent self, GamePropertyType type, long value)
         {
             self[(int)type] = value;
         }
@@ -72,7 +72,7 @@ namespace ET
             self.Insert(numericType, value, false);
         }
 
-        public static void SetNoEvent(this NumericComponent self, PropertyType type, long value)
+        public static void SetNoEvent(this NumericComponent self, GamePropertyType type, long value)
         {
             self.Insert((int)type, value, false);
         }
@@ -107,7 +107,7 @@ namespace ET
             return value;
         }
 
-        public static long GetByKey(this NumericComponent self, PropertyType type)
+        public static long GetByKey(this NumericComponent self, GamePropertyType type)
         {
             long value = 0;
             self.NumericDic.TryGetValue((int)type, out value);
@@ -116,7 +116,7 @@ namespace ET
 
         public static void Update(this NumericComponent self, int numericType, bool isPublicEvent)
         {
-            int final = (int)numericType / 10;
+            int final = numericType / 10;
             int bas = final * 10 + 1;
             int add = final * 10 + 2;
             int pct = final * 10 + 3;

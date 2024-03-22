@@ -117,15 +117,56 @@ namespace ET.Server
             self.LRUDict.Remove(playerId);
         }
 
+        public static async ETTask SaveUnit(this DBCacheComponent self, Entity unit)
+        {
+            if (unit == null || unit.IsDisposed)
+            {
+                return;
+            }
+
+            long id = unit.Id;
+            if (self.CacheDict.ContainsKey(id))
+            {
+                using (await self.Root().GetComponent<CoroutineLockComponent>().Wait(CoroutineLockType.DBCache, id))
+                {
+                    List<Entity> entities = new();
+                    foreach (var entityRef in self.CacheDict[id].Values)
+                    {
+                        Entity entity = entityRef;
+                        if (entity == null)
+                        {
+                            continue;
+                        }
+
+                        entities.Add(entity);
+                    }
+
+                    await self.Root().GetComponent<DBManagerComponent>().GetZoneDB(self.Zone()).InsertBatch(entities);
+
+                    self.CacheDict.Remove(id);
+                    self.LRUDict.Remove(id);
+                }
+            }
+            else
+            {
+                using (await self.Root().GetComponent<CoroutineLockComponent>().Wait(CoroutineLockType.DB, id))
+                {
+                    await self.Root().GetComponent<DBManagerComponent>().GetZoneDB(self.Zone()).Save(unit);
+                }
+            }
+        }
+
         private static void DBCacheUpdate(this DBCacheComponent self)
         {
+            Log.Info("缓存更新中……");
+
             long time = TimeInfo.Instance.ServerNow();
             List<long> keys = self.LRUDict.Keys.ToList();
 
             for (int i = keys.Count - 1; i > 0; --i)
             {
                 long lastSaveTime = self.LRUDict[keys[i]];
-                if (lastSaveTime - time < 24 * 60 * 1000)
+                if (lastSaveTime - time < 24 * 60 * 1000 * 1000)
                 {
                     continue;
                 }

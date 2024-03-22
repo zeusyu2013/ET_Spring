@@ -7,7 +7,7 @@ namespace ET.Server
 	{
 		protected override async ETTask Run(Unit unit, G2M_SessionDisconnect message)
 		{
-			await ETTask.CompletedTask;
+			await unit.Root().GetComponent<DBCacheComponent>().SaveUnit(unit);
 		}
 	}
 }

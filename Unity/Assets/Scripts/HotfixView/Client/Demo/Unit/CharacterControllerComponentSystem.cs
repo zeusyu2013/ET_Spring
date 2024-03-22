@@ -21,7 +21,7 @@ namespace ET.Client
         public static void MoveForward(this CharacterControllerComponent self)
         {
             Vector3 forward = self.GetParent<Unit>().Forward;
-            float speed = self.GetParent<Unit>().GetComponent<NumericComponent>().GetAsFloat(PropertyType.PropertyType_Speed);
+            float speed = self.GetParent<Unit>().GetComponent<NumericComponent>().GetAsFloat(GamePropertyType.GamePropertyType_Speed);
         }
     }
 }

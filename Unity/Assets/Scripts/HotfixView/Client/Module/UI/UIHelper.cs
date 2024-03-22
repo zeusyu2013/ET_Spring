@@ -1,45 +1,45 @@
 ﻿namespace ET.Client
 {
-    public static class UIHelper
+    public static partial class UIHelper
     {
         [EnableAccessEntiyChild]
-        public static async ETTask Create(Entity scene, string panelName, bool isShow = true)
+        public static async ETTask Create(Entity scene, string uiName, bool isShow = true)
         {
            UIComponent uiComponent = scene.GetComponent<UIComponent>();
-           await uiComponent.CreatePanel(panelName);
+           await uiComponent.CreatePanel(uiName);
            if (isShow)
            {
-               uiComponent.ShowPanel(panelName);
+               uiComponent.ShowPanel(uiName);
            }
         }
 
         [EnableAccessEntiyChild]
-        public static void Show(Entity scene, string panelName)
+        public static void Show(Entity scene, string uiName)
         {
             UIComponent uiComponent = scene.GetComponent<UIComponent>();
-            uiComponent.ShowPanel(panelName);
+            uiComponent.ShowPanel(uiName);
         }
 
         [EnableAccessEntiyChild]
-        public static void Hide(Entity scene, string panelName)
+        public static async ETTask Hide(Entity scene, string uiName)
         {
             UIComponent uiComponent = scene.GetComponent<UIComponent>();
-            uiComponent.HidePanel(panelName).Coroutine();
+            await uiComponent.HidePanel(uiName);
         }
 
         [EnableAccessEntiyChild]
-        public static void Remove(Entity scene, string panelName)
+        public static async ETTask Remove(Entity scene, string uiName)
         {
             UIComponent uiComponent = scene.GetComponent<UIComponent>();
-            uiComponent.RemovePanel(panelName).Coroutine();
+            await uiComponent.RemovePanel(uiName);
         }
 
         [EnableAccessEntiyChild]
-        public static void OpenGroup(Entity scene, UIDefine.UIGroupId groupId)
+        public static async ETTask OpenGroup(Entity scene, UIDefine.UIGroupId groupId)
         {
             UIComponent uiComponent = scene.GetComponent<UIComponent>();
             UIGroupComponent groupComponent = uiComponent.GetComponent<UIGroupComponent>();
-            groupComponent.OpenGroup(groupId).Coroutine();
+            await groupComponent.OpenGroup(groupId);
         }
 
         [EnableAccessEntiyChild]
@@ -50,6 +50,30 @@
             return groupComponent.GroupId;
         }
 
+        [EnableAccessEntiyChild]
+        public static T GetUIComponent<T>(Entity scene, string uiName) where T : Entity
+        {
+            UIComponent uiComponent = scene.GetComponent<UIComponent>();
+            var ui = uiComponent.GetPanel(uiName);
+            if (ui == null)
+            {
+                return null;
+            }
+            
+            return ui.GetComponent<T>();
+        }
+
+        [EnableAccessEntiyChild]
+        public static T GetUIComponent<T>(UI ui) where T : Entity
+        {
+            if (ui == null)
+            {
+                return null;
+            }
+
+            return ui.GetComponent<T>();
+        }
+        
         [EnableAccessEntiyChild]
         public static void SetUIData(Entity scene, string key, params object[] args)
         {
@@ -65,5 +89,6 @@
             UIExtraDataComponent groupComponent = uiComponent.GetComponent<UIExtraDataComponent>();
             return groupComponent.GetUIData(key);
         }
+
     }
 }
