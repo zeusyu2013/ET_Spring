@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using FairyGUI;
 using UnityEngine;
 
@@ -36,6 +37,7 @@ namespace ET.Client
 
             string path = $"Assets/Bundles/FairyGUI/{packageName}_fui.bytes";
             TextAsset asset = await self.Root().GetComponent<ResourcesLoaderComponent>().LoadAssetAsync<TextAsset>(path);
+            self.AddLoadInfo(packageName, path); 
             if (asset == null)
             {
                 return;
@@ -54,12 +56,63 @@ namespace ET.Client
             self.PackageDic[packageName] -= 1;
         }
 
+        
+        public static void RemoveUselessPackage(this UIPackageComponent self)
+        {
+            var keys = self.PackageDic.Keys.ToList();
+            for (int i = 0; i < keys.Count; i++)
+            {
+                if (self.PackageDic[keys[i]] > 0)
+                {
+                    continue;
+                }
+
+                self.PackageDic.Remove(keys[i]);
+                self.RemoveLoadInfo(keys[i]);
+            }
+        }
+
+        /// <summary>
+        /// 添加加载的信息
+        /// </summary>
+        public static void AddLoadInfo(this UIPackageComponent self, string packageName, string path)
+        {
+            if (self.MutiLoadKey.Contains(packageName, path))
+            {
+                return;
+            }
+            self.MutiLoadKey.Add(packageName, path);
+        }
+
+        public static void RemoveLoadInfo(this UIPackageComponent self, string packageName)
+        {
+            if (!self.MutiLoadKey.TryGetValue(packageName, out var value))
+            {
+                return;   
+            }
+
+            foreach (var key in value)
+            {
+                self.Scene().GetComponent<ResourcesLoaderComponent>().RemoveHandler(key);
+            }
+            value.Clear();
+            self.MutiLoadKey.Remove(packageName);
+        }
+
         public static void RemoveAll(this UIPackageComponent self)
         {
             UIPackage.RemoveAllPackages();
+            foreach (var kv in self.MutiLoadKey)
+            {
+                foreach (var key in kv.Value)
+                {
+                    self.Scene().GetComponent<ResourcesLoaderComponent>().RemoveHandler(key);
+                }
+            }
             self.PackageDic.Clear();
+            self.MutiLoadKey.Clear();
         }
-
+        
         /// <summary>
         /// 包加载资源回调函数
         /// </summary>
@@ -77,6 +130,7 @@ namespace ET.Client
         public static async ETTask PackageLoad(this UIPackageComponent self, string name, string extension,  Type type, PackageItem item)
         {
             string path = $"Assets/Bundles/FairyGUI/{item.owner.name}_{name}{extension}";
+            self.AddLoadInfo(item.owner.name, path);
             var o = await self.Scene().GetComponent<ResourcesLoaderComponent>().LoadAssetAsync(type, path);
             if (o == null)
             {

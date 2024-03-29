@@ -24,5 +24,9 @@ namespace ET
         public const int ERR_CreateRoleNameEmpty = 200008;
         public const int ERR_CreateRoleNameSame = 200009;
         public const int ERR_DeleteRoleHasNoRole = 200010;
+        
+        // DBCache
+        public const int ERR_DBCacheUnitIdInvalid = 200020;
+        public const int ERR_DBCacheUnitNotFound = 200021;
     }
 }

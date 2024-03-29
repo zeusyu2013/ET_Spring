@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace ET.Client
 {
@@ -14,7 +15,7 @@ namespace ET.Client
         [EntitySystem]
         private static void Awake(this GameObjectComponent self)
         {
-
+            
         }
     }
 }

@@ -30,7 +30,7 @@ namespace ET
 
     [MemoryPackable]
     [Message(ClientMessage.NetClient2Main_Ping)]
-    public partial class NetClient2Main_Ping : MessageObject, IRequest
+    public partial class NetClient2Main_Ping : MessageObject, IMessage
     {
         public static NetClient2Main_Ping Create(bool isFromPool = false)
         {

@@ -175,3 +175,25 @@ message M2M_UnitTransferResponse // IResponse
 	int32 Error = 2;
 	string Message = 3;
 }
+
+// ResponseType DBCache2Other_GetUnit
+message Other2DBCache_GetUnit // IRequest
+{
+	int32 RpcId = 1;
+	int64 UnitId = 2;
+}
+
+message DBCache2Other_GetUnit // IResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+	repeated bytes Entities = 4;
+}
+
+message Other2DBCache_UpdateCache // IMessage
+{
+	int32 RpcId = 1;
+	int64 UnitId = 2;
+	bytes Entity = 3;
+}

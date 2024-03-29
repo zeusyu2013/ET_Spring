@@ -38,5 +38,26 @@ namespace ET.Server
                     throw new Exception($"not such unit type: {unitType}");
             }
         }
+
+        public static async ETTask<Unit> LoadFromDB(Scene scene, long unitId)
+        {
+            Unit unit = null;
+            var units = await scene.GetComponent<DBManagerComponent>().GetZoneDB(scene.Zone()).Query<Unit>(x => x.Id == unitId);
+            if (units.Count < 1)
+            {
+                return null;
+            }
+
+            unit = units[0];
+            if (unit == null)
+            {
+                return null;
+            }
+
+            UnitComponent unitComponent = scene.GetComponent<UnitComponent>();
+            unitComponent.AddChild(unit);
+
+            return unit;
+        }
     }
 }

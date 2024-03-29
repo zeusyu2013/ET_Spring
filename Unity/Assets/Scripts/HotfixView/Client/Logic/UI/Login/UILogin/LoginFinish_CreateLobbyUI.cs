@@ -11,12 +11,13 @@
 			{
 				return;
 			}
-			ui.GetComponent<UILoginLogicComponent>().EnterMap().Coroutine();
+		
+			await EnterMapHelper.EnterMapAsync(scene);
 			UIHelper.Remove(scene, UIName.UILogin).Coroutine();
-			//var loginComponent = ui.GetComponent<UILoginComponent>();
-			//loginComponent.GCanvas_LoginCtrl.selectedIndex = 1;
 	
 			await ETTask.CompletedTask;
 		}
+		
+	
 	}
 }

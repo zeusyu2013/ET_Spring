@@ -81,12 +81,5 @@ namespace ET.Client
          
             
         }
-        
-        public static async ETTask EnterMap(this UILoginLogicComponent self)
-        {
-            Scene root = self.Root();
-            await EnterMapHelper.EnterMapAsync(root);
-            UIHelper.Remove(root, UIName.UILogin).Coroutine();
-        }
     }
 }

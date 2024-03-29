@@ -7,8 +7,6 @@
         [EntitySystem]
         private static void Awake(this UIGroupComponent self)
         {
-            // 初始化
-            UIGroupSubConfigCategory.Instance.InitSubConfig();
         }
         
         [EntitySystem]
@@ -38,17 +36,17 @@
             }
 
             // 修正组打开，不关闭当前组
-            if (groupConfig.Type != UIGroupType.BaseFixed &&
-                groupConfig.Type != UIGroupType.NormalFixed)
+            if (groupConfig.Type != UIGroupType.Add && 
+                groupConfig.Type != UIGroupType.GeneralFixed)
             {
                 // 先关闭当前组的界面
-                self.CloseGroupPanels((int)self.GroupId);
+                self.CloseGroupPanels(groupConfig);
             }
     
             self.AddTraceId(groupConfig);
             
             // 打开界面
-            await self.OpenGroupPanels(id);
+            await self.OpenGroupPanels(groupConfig);
         }
         
 
@@ -66,25 +64,24 @@
             }
         
             var groupConfig = self.TraceIdList[count - 1];
-            // 移出列表
+            // 移出列表最后一位
             self.TraceIdList.RemoveAt(count - 1);
-            //  关闭当前组界面
-            self.CloseGroupPanels(groupConfig.Id);
-
-            int groupId = self.TraceIdList[self.TraceIdList.Count - 1].Id;
-            // 打开组界面
-            if (groupConfig.Type == UIGroupType.BaseFixed ||
-                groupConfig.Type == UIGroupType.NormalFixed)
+            // 关闭当前组界面
+            self.CloseGroupPanels(groupConfig);
+            
+            // 打开组界面 
+            if (groupConfig.Type != UIGroupType.GeneralFixed)
             {
                 // 因为修正界面可能关闭界面, 这里将被关闭的界面打开
                 // 保证以打开的界面完成性
-                self.OpenGroupPanels(groupId, true).Coroutine();
+                self.OpenGroupPanels(groupConfig, true).Coroutine();
+                return;
             }
-            else 
-            {
+          
+            var nextGroupConfig = self.TraceIdList[self.TraceIdList.Count - 1];
                 // 重新刷新下界面
-                self.OpenGroupPanels(groupId).Coroutine();
-            }
+            self.OpenGroupPanels(nextGroupConfig).Coroutine();
+            
         }
         
         
@@ -110,7 +107,8 @@
             
             // 如果当前打开的是base，那么要替换掉，原baseID, base排最底层
             if (groupConfig.Type == UIGroupType.Base ||
-                groupConfig.Type == UIGroupType.GeneralBase)
+                groupConfig.Type == UIGroupType.GeneralBase ||
+                groupConfig.Type == UIGroupType.GeneralFixed)
             {
                 self.TraceIdList.Clear();
                 self.TraceIdList.Add(groupConfig);
@@ -140,22 +138,21 @@
         /// <param name="self"></param>
         /// <param name="groupId">组Id</param>
         /// <param name="isOnlyShowHide"></param>
-        public static async ETTask OpenGroupPanels(this UIGroupComponent self, int groupId, bool isOnlyShowHide = false)
+        public static async ETTask OpenGroupPanels(this UIGroupComponent self, UIGroupConfig groupConfig, bool isOnlyShowHide = false)
         {
-            var subDataList = UIGroupSubConfigCategory.Instance.GetGroupSubData(groupId);
-            if (subDataList == null)
+            if (groupConfig.GroupSubConfigs == null)
             {
                 return;
             }
             
             UIComponent uiComponent = self.Parent as UIComponent;
-            self.GroupId = (UIDefine.UIGroupId)groupId;
-            foreach (var data in subDataList)
+            self.GroupId = (UIDefine.UIGroupId)groupConfig.Id;
+            foreach (var data in groupConfig.GroupSubConfigs)
             {
                 await uiComponent.CreatePanel(data.PanelName);
             }
             // 界面全加载完后显示界面
-            foreach (var data in subDataList)
+            foreach (var data in groupConfig.GroupSubConfigs)
             {
                 UI ui = uiComponent.GetPanel(data.PanelName);
                 if (ui == null)
@@ -181,20 +178,19 @@
         /// 关闭当前界面组
         /// </summary>
         /// <param name="self"></param>
-        /// <param name="groupId"></param>
-        public static void CloseGroupPanels(this UIGroupComponent self, int groupId)
+        /// <param name="groupConfig"></param>
+        public static void CloseGroupPanels(this UIGroupComponent self, UIGroupConfig groupConfig)
         {
-            if (groupId != (int)self.GroupId)
+            if (groupConfig.Id != (int)self.GroupId)
             {
                 return;
             }
-            var subDataList = UIGroupSubConfigCategory.Instance.GetGroupSubData((int)groupId);
-            if (subDataList == null)
+            if (groupConfig.GroupSubConfigs == null)
             {
                 return;
             }
             UIComponent uiComponent = self.Parent as UIComponent;
-            foreach (var data in subDataList)
+            foreach (var data in groupConfig.GroupSubConfigs)
             {
                 uiComponent.HidePanel(data.PanelName).Coroutine();
             }

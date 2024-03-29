@@ -9,6 +9,7 @@ namespace ET.Server
 
             scene.AddComponent<UnitComponent>();
             scene.AddComponent<AOIManagerComponent>();
+            scene.AddComponent<DBManagerComponent>();
             
             scene.AddComponent<MailBoxComponent, MailBoxType>(MailBoxType.UnOrderedMessage);
             

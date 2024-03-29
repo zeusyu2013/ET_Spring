@@ -1701,6 +1701,135 @@ namespace ET
         }
     }
 
+    [MemoryPackable]
+    [Message(OuterMessage.C2M_Equip)]
+    [ResponseType(nameof(M2C_Equip))]
+    public partial class C2M_Equip : MessageObject, ILocationRequest
+    {
+        public static C2M_Equip Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_Equip), isFromPool) as C2M_Equip;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int ConfigId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.ConfigId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_Equip)]
+    public partial class M2C_Equip : MessageObject, ILocationResponse
+    {
+        public static M2C_Equip Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_Equip), isFromPool) as M2C_Equip;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        [MemoryPackOrder(3)]
+        public int Index { get; set; }
+
+        [MemoryPackOrder(4)]
+        public int ConfigId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+            this.Index = default;
+            this.ConfigId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.GamePropertyInfo)]
+    public partial class GamePropertyInfo : MessageObject
+    {
+        public static GamePropertyInfo Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(GamePropertyInfo), isFromPool) as GamePropertyInfo;
+        }
+
+        [MemoryPackOrder(0)]
+        public int PropertyType { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long PropertyValue { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.PropertyType = default;
+            this.PropertyValue = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_PropertyRefresh)]
+    public partial class M2C_PropertyRefresh : MessageObject, IMessage
+    {
+        public static M2C_PropertyRefresh Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_PropertyRefresh), isFromPool) as M2C_PropertyRefresh;
+        }
+
+        [MemoryPackOrder(0)]
+        public int PlayerId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public List<GamePropertyInfo> GamePropertyInfos { get; set; } = new();
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.PlayerId = default;
+            this.GamePropertyInfos.Clear();
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
     public static class OuterMessage
     {
         public const ushort HttpGetRouterResponse = 10002;
@@ -1755,5 +1884,9 @@ namespace ET
         public const ushort GameBuffInfo = 10051;
         public const ushort C2M_GetAllBuffs = 10052;
         public const ushort M2C_GetAllBuffs = 10053;
+        public const ushort C2M_Equip = 10054;
+        public const ushort M2C_Equip = 10055;
+        public const ushort GamePropertyInfo = 10056;
+        public const ushort M2C_PropertyRefresh = 10057;
     }
 }

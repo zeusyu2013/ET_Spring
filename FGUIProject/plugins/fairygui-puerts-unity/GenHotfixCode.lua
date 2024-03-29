@@ -92,8 +92,7 @@ local function CreateEventClass(writer, classes, classInfo, exportCodePath)
     writer:writeln('UI ui = uiComponent.AddChild<UI, string, string>(UIPackageName.%s, UIName.%s);', classInfo.res.owner.name, classInfo.className)
     writer:writeln('ui.Component = gOject as GComponent;')
     writer:writeln('ui.AddComponent<%sComponent>();', classInfo.className)
-    writer:writeln('ui.AddComponent<UITweenComponent>();')
-    writer:writeln('ui.AddComponent<UIRedComponent>();')
+      
     -- 逻辑类最后添加，防止逻辑类执行，缺少对应脚本
     writer:writeln('ui.AddComponent<%sLogicComponent>();', classInfo.className)
     writer:writeln('return ui;')

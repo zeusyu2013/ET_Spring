@@ -8,5 +8,7 @@ namespace ET.Client
         public readonly Dictionary<string, int> PackageDic = new ();
 
         public string Path = "FairyGUI/";
+
+        public MultiMap<string, string> MutiLoadKey = new();
     }
 }

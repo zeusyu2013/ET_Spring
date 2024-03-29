@@ -17,7 +17,6 @@ namespace ET
         public UIGroupSubConfig(ByteBuf _buf)
         {
             Id = _buf.ReadInt();
-            GroupId = _buf.ReadInt();
             PanelName = _buf.ReadString();
             Open = _buf.ReadBool();
             Args = _buf.ReadString();
@@ -34,11 +33,6 @@ namespace ET
         /// Id
         /// </summary>
         public readonly int Id;
-
-        /// <summary>
-        /// 组Id
-        /// </summary>
-        public readonly int GroupId;
 
         /// <summary>
         /// 界面名字
@@ -63,7 +57,6 @@ namespace ET
         {
             return "{ "
             + "Id:" + Id + ","
-            + "GroupId:" + GroupId + ","
             + "PanelName:" + PanelName + ","
             + "Open:" + Open + ","
             + "Args:" + Args + ","

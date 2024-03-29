@@ -42,7 +42,6 @@ namespace ET.Client
             // 创建UI，加载脚本
             UI ui = await uiEvent.OnCreate(self);
             self.UIs.Add(panelName, ui);
-            ui.UIConfig = config;
             ui.Layer = config.Layer;
         }
 

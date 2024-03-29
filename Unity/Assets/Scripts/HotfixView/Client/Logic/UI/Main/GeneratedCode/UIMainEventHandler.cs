@@ -13,8 +13,6 @@ namespace ET.Client
             UI ui = uiComponent.AddChild<UI, string, string>(UIPackageName.Main, UIName.UIMain);
             ui.Component = gOject as GComponent;
             ui.AddComponent<UIMainComponent>();
-            ui.AddComponent<UITweenComponent>();
-            ui.AddComponent<UIRedComponent>();
             ui.AddComponent<UIMainLogicComponent>();
             return ui;
         }

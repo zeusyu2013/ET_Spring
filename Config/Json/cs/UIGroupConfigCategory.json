@@ -5,6 +5,10 @@
     "Vague": false,
     "OpenDelay": false,
     "Conditions": [],
-    "TraceId": 0
+    "TraceId": 0,
+    "SubIds": [
+      0,
+      1
+    ]
   }
 ]

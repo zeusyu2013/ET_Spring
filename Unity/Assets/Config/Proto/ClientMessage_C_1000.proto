@@ -7,7 +7,7 @@ message RemoteConfig
 	bool DebugMode = 1;
 }
 
-message NetClient2Main_Ping // IRequest
+message NetClient2Main_Ping // IMessage
 {
 	int32 RpcId = 1;
 	int64 Ping = 2;

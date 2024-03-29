@@ -22,6 +22,7 @@ namespace ET
             OpenDelay = _buf.ReadBool();
             {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);Conditions = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); Conditions.Add(_e0);}}
             TraceId = _buf.ReadInt();
+            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);SubIds = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); SubIds.Add(_e0);}}
 
             PostInit();
         }
@@ -52,7 +53,7 @@ namespace ET
         public readonly bool OpenDelay;
 
         /// <summary>
-        /// 界面打开条件
+        /// 组打开条件
         /// </summary>
         public readonly System.Collections.Generic.List<int> Conditions;
 
@@ -60,6 +61,8 @@ namespace ET
         /// 追溯Id
         /// </summary>
         public readonly int TraceId;
+
+        public readonly System.Collections.Generic.List<int> SubIds;
 
         public const int __ID__ = -666942611;
 
@@ -74,6 +77,7 @@ namespace ET
             + "OpenDelay:" + OpenDelay + ","
             + "Conditions:" + Luban.StringUtil.CollectionToString(Conditions) + ","
             + "TraceId:" + TraceId + ","
+            + "SubIds:" + Luban.StringUtil.CollectionToString(SubIds) + ","
             + "}";
         }
 

@@ -9,6 +9,10 @@
         {
             self.PackageName = packageName;
             self.PanelName = panelName;
+            
+            self.AddComponent<ResourcesLoaderComponent>();
+            self.AddComponent<UITweenComponent>();
+            self.AddComponent<UIRedComponent>();
         }
 
         [EntitySystem]
@@ -17,7 +21,6 @@
             self.PanelName = "";
             self.Component.Dispose();
             self.Component = null;
-            self.UIConfig = null;
         }
     }
 }

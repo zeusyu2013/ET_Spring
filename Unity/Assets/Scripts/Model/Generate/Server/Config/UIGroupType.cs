@@ -12,24 +12,24 @@ namespace ET
     public enum UIGroupType
     {
         /// <summary>
-        /// 基础类型（用于以场景，玩法类基础的类型组）
+        /// 通用base修改（和通用变化不大）
         /// </summary>
-        Base = 1,
+        GeneralFixed = 1,
 
         /// <summary>
-        /// 基础类型 基础上附加
+        /// 场景、玩法（和通用变化比较大）
         /// </summary>
-        BaseFixed = 2,
+        Base = 2,
 
         /// <summary>
-        /// 常规组类型
+        /// 常规组
         /// </summary>
         Normal = 3,
 
         /// <summary>
-        /// 追加类型（组的基础上追加另一个组）
+        /// 追加（例如弹出界面也参与界面回朔）
         /// </summary>
-        NormalFixed = 4,
+        Add = 4,
 
         /// <summary>
         /// 通用base

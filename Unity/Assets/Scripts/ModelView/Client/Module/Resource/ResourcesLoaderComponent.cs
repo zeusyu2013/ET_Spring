@@ -121,6 +121,16 @@ namespace ET.Client
             await handler.Task;
             self.handlers.Add(location, handler);
         }
+
+        public static void RemoveHandler(this ResourcesLoaderComponent self, string location)
+        {
+            if (!self.handlers.TryGetValue(location, out var handler))
+            {
+                return;
+            }
+            (handler as AssetHandle)?.Release();
+            self.handlers.Remove(location);
+        }
     }
 
     /// <summary>

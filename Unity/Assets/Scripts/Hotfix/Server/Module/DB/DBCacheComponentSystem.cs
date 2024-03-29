@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace ET.Server
 {
+    [FriendOf(typeof(DBCacheComponent))]
     [EntitySystemOf(typeof(DBCacheComponent))]
-    [FriendOfAttribute(typeof(ET.Server.DBCacheComponent))]
     public static partial class DBCacheComponentSystem
     {
         [Invoke(TimerInvokeType.DBCacheTimer)]
@@ -17,18 +16,29 @@ namespace ET.Server
             }
         }
 
+        [Invoke(TimerInvokeType.DBCacheSaveTimer)]
+        public class DBCacheSaveTimer : ATimer<DBCacheComponent>
+        {
+            protected override void Run(DBCacheComponent self)
+            {
+                self.DBCacheSave().Coroutine();
+            }
+        }
+
         [EntitySystem]
-        private static void Awake(this ET.Server.DBCacheComponent self)
+        private static void Awake(this DBCacheComponent self)
         {
             self.TimerId = self.Root().GetComponent<TimerComponent>().NewRepeatedTimer(60 * 1000, TimerInvokeType.DBCacheTimer, self);
+            self.SaveTimerId = self.Root().GetComponent<TimerComponent>().NewRepeatedTimer(60 * 1000, TimerInvokeType.DBCacheSaveTimer, self);
             self.CacheDict = new();
             self.LRUDict = new();
         }
 
         [EntitySystem]
-        private static void Destroy(this ET.Server.DBCacheComponent self)
+        private static void Destroy(this DBCacheComponent self)
         {
             self.Root().GetComponent<TimerComponent>().Remove(ref self.TimerId);
+            self.Root().GetComponent<TimerComponent>().Remove(ref self.SaveTimerId);
             self.CacheDict.Clear();
             self.LRUDict.Clear();
         }
@@ -40,14 +50,14 @@ namespace ET.Server
                 if (!self.CacheDict.ContainsKey(playerId))
                 {
                     T entity = await self.Root().GetComponent<DBManagerComponent>().GetZoneDB(self.Zone()).Query<T>(playerId);
-                    self.AddCache<T>(playerId, entity);
+                    self.UpdateCache(playerId, entity);
                     return entity;
                 }
 
                 if (!self.CacheDict[playerId].ContainsKey(typeof(T)))
                 {
                     T entity = await self.Root().GetComponent<DBManagerComponent>().GetZoneDB(self.Zone()).Query<T>(playerId);
-                    self.AddCache<T>(playerId, entity);
+                    self.UpdateCache(playerId, entity);
                     return entity;
                 }
 
@@ -59,41 +69,21 @@ namespace ET.Server
         {
             using (await self.Root().GetComponent<CoroutineLockComponent>().Wait(CoroutineLockType.DBCache, entity.Id))
             {
-                if (!self.CacheDict.ContainsKey(entity.Id))
-                {
-                    self.AddCache(entity.Id, entity);
-                }
-                else
-                {
-                    self.UpdateCache(entity.Id, entity);
-                }
-
-                await self.Root().GetComponent<DBManagerComponent>().GetZoneDB(self.Zone()).Save(entity);
+                self.UpdateCache(entity.Id, entity);
             }
         }
 
-        private static void AddCache<T>(this DBCacheComponent self, long playerId, T entity) where T : Entity
+        public static void UpdateCache<T>(this DBCacheComponent self, long playerId, T entity) where T : Entity
         {
-            if (!self.LRUDict.ContainsKey(playerId))
+            if (self.LRUDict.ContainsKey(playerId))
+            {
+                self.LRUDict[playerId] = TimeInfo.Instance.ServerNow();
+            }
+            else
             {
                 self.LRUDict.Add(playerId, TimeInfo.Instance.ServerNow());
             }
 
-            self.LRUDict[playerId] = TimeInfo.Instance.ServerNow();
-
-            if (!self.CacheDict.ContainsKey(playerId))
-            {
-                self.CacheDict.Add(playerId, new Dictionary<Type, EntityRef<Entity>>());
-            }
-
-            if (!self.CacheDict[playerId].ContainsKey(typeof(T)))
-            {
-                self.CacheDict[playerId].Add(typeof(T), entity);
-            }
-        }
-
-        private static void UpdateCache<T>(this DBCacheComponent self, long playerId, T entity) where T : Entity
-        {
             if (self.CacheDict[playerId].ContainsKey(typeof(T)))
             {
                 self.CacheDict[playerId][typeof(T)] = entity;
@@ -102,8 +92,6 @@ namespace ET.Server
             {
                 self.CacheDict[playerId].Add(typeof(T), entity);
             }
-
-            self.LRUDict[playerId] = TimeInfo.Instance.ServerNow();
         }
 
         private static void RemoveCache(this DBCacheComponent self, long playerId)
@@ -142,9 +130,6 @@ namespace ET.Server
                     }
 
                     await self.Root().GetComponent<DBManagerComponent>().GetZoneDB(self.Zone()).InsertBatch(entities);
-
-                    self.CacheDict.Remove(id);
-                    self.LRUDict.Remove(id);
                 }
             }
             else
@@ -172,7 +157,23 @@ namespace ET.Server
                 }
 
                 self.RemoveCache(keys[i]);
-                self.LRUDict.Remove(keys[i]);
+            }
+        }
+
+        private static async ETTask DBCacheSave(this DBCacheComponent self)
+        {
+            using (await self.Root().GetComponent<CoroutineLockComponent>().Wait(CoroutineLockType.DBCache, TimeInfo.Instance.ServerNow()))
+            {
+                List<Entity> entities = new();
+                foreach (var entityRefs in self.CacheDict.Values)
+                {
+                    foreach (var kv in entityRefs)
+                    {
+                        entities.Add(kv.Value);
+                    }
+                }
+
+                await self.Root().GetComponent<DBManagerComponent>().GetZoneDB(self.Zone()).InsertBatch(entities);
             }
         }
     }

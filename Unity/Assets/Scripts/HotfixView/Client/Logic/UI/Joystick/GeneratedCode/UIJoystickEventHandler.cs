@@ -13,8 +13,6 @@ namespace ET.Client
             UI ui = uiComponent.AddChild<UI, string, string>(UIPackageName.Joystick, UIName.UIJoystick);
             ui.Component = gOject as GComponent;
             ui.AddComponent<UIJoystickComponent>();
-            ui.AddComponent<UITweenComponent>();
-            ui.AddComponent<UIRedComponent>();
             ui.AddComponent<UIJoystickLogicComponent>();
             return ui;
         }

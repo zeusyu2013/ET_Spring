@@ -14,7 +14,7 @@ namespace ET.Client
         // 层
         public int Layer { get; set; }
         // 配置数据
-        public UIConfig UIConfig { get; set; }
+        public UIConfig UIConfig => UIConfigCategory.Instance.GetConfigByName(this.PanelName);
         // 显示状态
         public bool IsShowing { get; set; }
 

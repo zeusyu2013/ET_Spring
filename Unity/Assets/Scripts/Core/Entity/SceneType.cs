@@ -19,6 +19,7 @@ namespace ET
 		BenchmarkClient = 1 << 11,
 		BenchmarkServer = 1 << 12,
 		Watcher = 1 << 13,
+		DBCache = 1 << 14,
 
 		// 客户端
 		Demo = 1 << 30,
