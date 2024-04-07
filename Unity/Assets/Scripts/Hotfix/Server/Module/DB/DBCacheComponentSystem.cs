@@ -140,6 +140,11 @@ namespace ET.Server
                 }
             }
         }
+        
+        public static async ETTask SaveAll(this DBCacheComponent self)
+        {
+            await self.DBCacheSave();
+        }
 
         private static void DBCacheUpdate(this DBCacheComponent self)
         {

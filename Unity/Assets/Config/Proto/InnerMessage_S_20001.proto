@@ -197,3 +197,21 @@ message Other2DBCache_UpdateCache // IMessage
 	int64 UnitId = 2;
 	bytes Entity = 3;
 }
+
+message Other2DBCache_SaveAll // IMessage
+{
+	int32 RpcId = 1;
+}
+
+message Rank_FightScore
+{
+	int64 UnitId = 1;
+	int64 FightScore = 2;
+}
+
+message Map2Rank_UpdateScore // IMessage
+{
+	int32 RpcId = 1;
+	int64 UnitId = 2;
+	int64 FightScore = 3;
+}

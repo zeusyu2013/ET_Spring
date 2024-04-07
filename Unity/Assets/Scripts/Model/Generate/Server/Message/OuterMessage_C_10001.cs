@@ -1830,6 +1830,319 @@ namespace ET
         }
     }
 
+    [MemoryPackable]
+    [Message(OuterMessage.FightScoreRankEntityInfo)]
+    public partial class FightScoreRankEntityInfo : MessageObject
+    {
+        public static FightScoreRankEntityInfo Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(FightScoreRankEntityInfo), isFromPool) as FightScoreRankEntityInfo;
+        }
+
+        [MemoryPackOrder(0)]
+        public long UnitId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long FightScore { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.UnitId = default;
+            this.FightScore = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.C2Main_GetFightScoreRank)]
+    [ResponseType(nameof(Main2C_GetFightScoreRank))]
+    public partial class C2Main_GetFightScoreRank : MessageObject, IRequest
+    {
+        public static C2Main_GetFightScoreRank Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2Main_GetFightScoreRank), isFromPool) as C2Main_GetFightScoreRank;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.Main2C_GetFightScoreRank)]
+    public partial class Main2C_GetFightScoreRank : MessageObject, IResponse
+    {
+        public static Main2C_GetFightScoreRank Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(Main2C_GetFightScoreRank), isFromPool) as Main2C_GetFightScoreRank;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        [MemoryPackOrder(3)]
+        public List<FightScoreRankEntityInfo> FightScoreRankEntityInfos { get; set; } = new();
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+            this.FightScoreRankEntityInfos.Clear();
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.GuildMemberInfo)]
+    public partial class GuildMemberInfo : MessageObject
+    {
+        public static GuildMemberInfo Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(GuildMemberInfo), isFromPool) as GuildMemberInfo;
+        }
+
+        [MemoryPackOrder(0)]
+        public long UnitId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int GuildMemberType { get; set; }
+
+        [MemoryPackOrder(2)]
+        public int OnlineStatus { get; set; }
+
+        [MemoryPackOrder(3)]
+        public long OfflineTime { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.UnitId = default;
+            this.GuildMemberType = default;
+            this.OnlineStatus = default;
+            this.OfflineTime = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.C2Guild_GetGuildMemberInfos)]
+    [ResponseType(nameof(Guild2C_GetGuildMemberInfos))]
+    public partial class C2Guild_GetGuildMemberInfos : MessageObject, ILocationRequest
+    {
+        public static C2Guild_GetGuildMemberInfos Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2Guild_GetGuildMemberInfos), isFromPool) as C2Guild_GetGuildMemberInfos;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.Guild2C_GetGuildMemberInfos)]
+    public partial class Guild2C_GetGuildMemberInfos : MessageObject, ILocationResponse
+    {
+        public static Guild2C_GetGuildMemberInfos Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(Guild2C_GetGuildMemberInfos), isFromPool) as Guild2C_GetGuildMemberInfos;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        [MemoryPackOrder(3)]
+        public List<GuildMemberInfo> GuildMemberInfos { get; set; } = new();
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+            this.GuildMemberInfos.Clear();
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.C2Guild_RequestAddGuild)]
+    public partial class C2Guild_RequestAddGuild : MessageObject, IMessage
+    {
+        public static C2Guild_RequestAddGuild Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2Guild_RequestAddGuild), isFromPool) as C2Guild_RequestAddGuild;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long UnitId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.UnitId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.C2Guild_AgreeRequestAddGuild)]
+    public partial class C2Guild_AgreeRequestAddGuild : MessageObject, IMessage
+    {
+        public static C2Guild_AgreeRequestAddGuild Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2Guild_AgreeRequestAddGuild), isFromPool) as C2Guild_AgreeRequestAddGuild;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long UnitId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.UnitId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.C2Guild_QuitGuild)]
+    [ResponseType(nameof(Guild2C_QuitGuild))]
+    public partial class C2Guild_QuitGuild : MessageObject, ILocationRequest
+    {
+        public static C2Guild_QuitGuild Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2Guild_QuitGuild), isFromPool) as C2Guild_QuitGuild;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long UnitId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.UnitId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.Guild2C_QuitGuild)]
+    public partial class Guild2C_QuitGuild : MessageObject, ILocationResponse
+    {
+        public static Guild2C_QuitGuild Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(Guild2C_QuitGuild), isFromPool) as Guild2C_QuitGuild;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
     public static class OuterMessage
     {
         public const ushort HttpGetRouterResponse = 10002;
@@ -1888,5 +2201,15 @@ namespace ET
         public const ushort M2C_Equip = 10055;
         public const ushort GamePropertyInfo = 10056;
         public const ushort M2C_PropertyRefresh = 10057;
+        public const ushort FightScoreRankEntityInfo = 10058;
+        public const ushort C2Main_GetFightScoreRank = 10059;
+        public const ushort Main2C_GetFightScoreRank = 10060;
+        public const ushort GuildMemberInfo = 10061;
+        public const ushort C2Guild_GetGuildMemberInfos = 10062;
+        public const ushort Guild2C_GetGuildMemberInfos = 10063;
+        public const ushort C2Guild_RequestAddGuild = 10064;
+        public const ushort C2Guild_AgreeRequestAddGuild = 10065;
+        public const ushort C2Guild_QuitGuild = 10066;
+        public const ushort Guild2C_QuitGuild = 10067;
     }
 }

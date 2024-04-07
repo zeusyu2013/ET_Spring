@@ -20,6 +20,8 @@ namespace ET
 		BenchmarkServer = 1 << 12,
 		Watcher = 1 << 13,
 		DBCache = 1 << 14,
+		Rank = 1 << 15,
+		Guild = 1 << 16,
 
 		// 客户端
 		Demo = 1 << 30,

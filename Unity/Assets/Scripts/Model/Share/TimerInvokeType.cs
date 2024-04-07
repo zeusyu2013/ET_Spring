@@ -17,6 +17,8 @@
         public const int DBCacheSaveTimer = 205;
 
         public const int GameBuffTimer = 210;
+
+        public const int FightScoreRankSortTimer = 220;
         
         public const int RoomUpdate = 301;
     }

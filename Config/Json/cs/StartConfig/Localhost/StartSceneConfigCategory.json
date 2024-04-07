@@ -64,6 +64,22 @@
     "Port": 0
   },
   {
+    "Id": 9,
+    "Process": 1,
+    "Zone": 1,
+    "SceneType": "Rank",
+    "Name": "Rank",
+    "Port": 0
+  },
+  {
+    "Id": 10,
+    "Process": 1,
+    "Zone": 1,
+    "SceneType": "Guild",
+    "Name": "Guild",
+    "Port": 0
+  },
+  {
     "Id": 300,
     "Process": 1,
     "Zone": 3,

@@ -398,3 +398,71 @@ message M2C_PropertyRefresh // IMessage
 
 	repeated GamePropertyInfo GamePropertyInfos = 2;
 }
+
+message FightScoreRankEntityInfo
+{
+	int64 UnitId = 1;
+	int64 FightScore = 2;
+}
+
+// ResponseType Main2C_GetFightScoreRank
+message C2Main_GetFightScoreRank // IRequest
+{
+	int32 RpcId = 1;
+}
+
+message Main2C_GetFightScoreRank // IResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+	repeated FightScoreRankEntityInfo FightScoreRankEntityInfos = 4;
+}
+
+message GuildMemberInfo
+{
+	int64 UnitId = 1;
+	int32 GuildMemberType = 2;
+	int32 OnlineStatus = 3;
+	int64 OfflineTime = 4;
+}
+
+// ResponseType Guild2C_GetGuildMemberInfos
+message C2Guild_GetGuildMemberInfos // ILocationRequest
+{
+	int32 RpcId = 1;
+}
+
+message Guild2C_GetGuildMemberInfos // ILocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+	repeated GuildMemberInfo GuildMemberInfos = 4;
+}
+
+message C2Guild_RequestAddGuild // IMessage
+{
+	int32 RpcId = 1;
+	int64 UnitId = 2;
+}
+
+message C2Guild_AgreeRequestAddGuild // IMessage
+{
+	int32 RpcId = 1;
+	int64 UnitId = 2;
+}
+
+// ResponseType Guild2C_QuitGuild
+message C2Guild_QuitGuild // ILocationRequest
+{
+	int32 RpcId = 1;
+	int64 UnitId = 2;
+}
+
+message Guild2C_QuitGuild // ILocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}

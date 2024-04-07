@@ -897,6 +897,93 @@ namespace ET
         }
     }
 
+    [MemoryPackable]
+    [Message(InnerMessage.Other2DBCache_SaveAll)]
+    public partial class Other2DBCache_SaveAll : MessageObject, IMessage
+    {
+        public static Other2DBCache_SaveAll Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(Other2DBCache_SaveAll), isFromPool) as Other2DBCache_SaveAll;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(InnerMessage.Rank_FightScore)]
+    public partial class Rank_FightScore : MessageObject
+    {
+        public static Rank_FightScore Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(Rank_FightScore), isFromPool) as Rank_FightScore;
+        }
+
+        [MemoryPackOrder(0)]
+        public long UnitId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long FightScore { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.UnitId = default;
+            this.FightScore = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(InnerMessage.Map2Rank_UpdateScore)]
+    public partial class Map2Rank_UpdateScore : MessageObject, IMessage
+    {
+        public static Map2Rank_UpdateScore Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(Map2Rank_UpdateScore), isFromPool) as Map2Rank_UpdateScore;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long UnitId { get; set; }
+
+        [MemoryPackOrder(2)]
+        public long FightScore { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.UnitId = default;
+            this.FightScore = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
     public static class InnerMessage
     {
         public const ushort ObjectQueryRequest = 20002;
@@ -925,5 +1012,8 @@ namespace ET
         public const ushort Other2DBCache_GetUnit = 20025;
         public const ushort DBCache2Other_GetUnit = 20026;
         public const ushort Other2DBCache_UpdateCache = 20027;
+        public const ushort Other2DBCache_SaveAll = 20028;
+        public const ushort Rank_FightScore = 20029;
+        public const ushort Map2Rank_UpdateScore = 20030;
     }
 }
