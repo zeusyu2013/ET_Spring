@@ -2143,6 +2143,244 @@ namespace ET
         }
     }
 
+    [MemoryPackable]
+    [Message(OuterMessage.MailInfo)]
+    public partial class MailInfo : MessageObject
+    {
+        public static MailInfo Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(MailInfo), isFromPool) as MailInfo;
+        }
+
+        [MemoryPackOrder(0)]
+        public string Title { get; set; }
+
+        [MemoryPackOrder(1)]
+        public string Content { get; set; }
+
+        [MemoryPackOrder(2)]
+        public List<GameItemInfo> Attachments { get; set; } = new();
+
+        [MemoryPackOrder(3)]
+        public bool Read { get; set; }
+
+        [MemoryPackOrder(4)]
+        public bool ReceiveAttachments { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.Title = default;
+            this.Content = default;
+            this.Attachments.Clear();
+            this.Read = default;
+            this.ReceiveAttachments = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    // ResponeseType M2C_CheckMails
+    [MemoryPackable]
+    [Message(OuterMessage.C2M_CheckMails)]
+    public partial class C2M_CheckMails : MessageObject, ILocationRequest
+    {
+        public static C2M_CheckMails Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_CheckMails), isFromPool) as C2M_CheckMails;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_CheckMails)]
+    public partial class M2C_CheckMails : MessageObject, ILocationResponse
+    {
+        public static M2C_CheckMails Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_CheckMails), isFromPool) as M2C_CheckMails;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        [MemoryPackOrder(3)]
+        public List<MailInfo> MailInfos { get; set; } = new();
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+            this.MailInfos.Clear();
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    // ResponeseType M2C_CheckMail
+    [MemoryPackable]
+    [Message(OuterMessage.C2M_CheckMail)]
+    public partial class C2M_CheckMail : MessageObject, ILocationRequest
+    {
+        public static C2M_CheckMail Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_CheckMail), isFromPool) as C2M_CheckMail;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long MailId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.MailId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_CheckMail)]
+    public partial class M2C_CheckMail : MessageObject, ILocationResponse
+    {
+        public static M2C_CheckMail Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_CheckMail), isFromPool) as M2C_CheckMail;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        [MemoryPackOrder(3)]
+        public MailInfo MailInfo { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+            this.MailInfo = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    // ResponeseType M2C_ReceiveAttachments
+    [MemoryPackable]
+    [Message(OuterMessage.C2M_ReceiveAttachments)]
+    public partial class C2M_ReceiveAttachments : MessageObject, ILocationRequest
+    {
+        public static C2M_ReceiveAttachments Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_ReceiveAttachments), isFromPool) as C2M_ReceiveAttachments;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long MailId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.MailId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_ReceiveAttachments)]
+    public partial class M2C_ReceiveAttachments : MessageObject, ILocationResponse
+    {
+        public static M2C_ReceiveAttachments Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_ReceiveAttachments), isFromPool) as M2C_ReceiveAttachments;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        [MemoryPackOrder(3)]
+        public MailInfo MailInfo { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+            this.MailInfo = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
     public static class OuterMessage
     {
         public const ushort HttpGetRouterResponse = 10002;
@@ -2211,5 +2449,12 @@ namespace ET
         public const ushort C2Guild_AgreeRequestAddGuild = 10065;
         public const ushort C2Guild_QuitGuild = 10066;
         public const ushort Guild2C_QuitGuild = 10067;
+        public const ushort MailInfo = 10068;
+        public const ushort C2M_CheckMails = 10069;
+        public const ushort M2C_CheckMails = 10070;
+        public const ushort C2M_CheckMail = 10071;
+        public const ushort M2C_CheckMail = 10072;
+        public const ushort C2M_ReceiveAttachments = 10073;
+        public const ushort M2C_ReceiveAttachments = 10074;
     }
 }

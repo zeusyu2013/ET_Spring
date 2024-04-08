@@ -28,5 +28,8 @@ namespace ET
         // DBCache
         public const int ERR_DBCacheUnitIdInvalid = 200020;
         public const int ERR_DBCacheUnitNotFound = 200021;
+
+        public const int ERR_MailIdInvalid = 200030;
+        public const int ERR_MailIdNotFound = 200031;
     }
 }

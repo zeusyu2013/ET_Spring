@@ -19,6 +19,8 @@
         public const int GameBuffTimer = 210;
 
         public const int FightScoreRankSortTimer = 220;
+
+        public const int DailyCheckTimer = 230;
         
         public const int RoomUpdate = 301;
     }
