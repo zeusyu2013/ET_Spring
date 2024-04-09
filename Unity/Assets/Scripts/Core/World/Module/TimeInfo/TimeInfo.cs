@@ -74,14 +74,14 @@ namespace ET
             return (d.Ticks - dt.Ticks) / 10000;
         }
 
-        public long PassedSecondsOfDay()
+        public long PassedSecondsOfToday()
         {
             return (long)this.dt.TimeOfDay.TotalSeconds;
         }
 
         public long PassedSecondsOf(long seconds)
         {
-            return (long)this.dt.AddSeconds(seconds).TimeOfDay.TotalSeconds;
+            return (long)this.dt1970.AddSeconds(seconds).TimeOfDay.TotalSeconds;
         }
 
         public int TotalDays()

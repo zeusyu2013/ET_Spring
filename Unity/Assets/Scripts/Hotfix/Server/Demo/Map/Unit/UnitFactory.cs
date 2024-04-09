@@ -29,6 +29,8 @@ namespace ET.Server
                     BagComponent bagComponent = unit.AddComponent<BagComponent>();
                     bagComponent.AddItem(60011, 1);
 
+                    unit.AddComponent<MailComponent>();
+
                     unitComponent.Add(unit);
                     // 加入aoi
                     unit.AddComponent<AOIEntity, int, float3>(9 * 1000, unit.Position);
@@ -56,6 +58,11 @@ namespace ET.Server
 
             UnitComponent unitComponent = scene.GetComponent<UnitComponent>();
             unitComponent.AddChild(unit);
+
+            unit.AddComponent<BagComponent>();
+            unit.AddComponent<MailComponent>();
+            unit.AddComponent<NumericComponent>();
+            unit.AddComponent<MoveComponent>();
 
             return unit;
         }

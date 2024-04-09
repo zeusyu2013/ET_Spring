@@ -18,8 +18,6 @@ namespace ET.Server
         [EntitySystem]
         private static void Awake(this ET.Server.DailyComponent self)
         {
-            TimeInfo.Instance.TimeZone = GlobalDataConfigCategory.Instance.BagCapacity;
-
             self.DailyCheckTimer = self.Root().GetComponent<TimerComponent>()
                     .NewRepeatedTimer(60 * 1000, TimerInvokeType.DailyCheckTimer, self);
         }
@@ -46,8 +44,10 @@ namespace ET.Server
             {
                 case DailyType.DailyType_Daily:
                 {
-                    var now = TimeInfo.Instance.ServerNow();
-                    if (now >= config.EndTime)
+                    var start = TimeInfo.Instance.PassedSecondsOf(config.StartTime);
+                    var end = TimeInfo.Instance.PassedSecondsOf(config.EndTime);
+                    var now = TimeInfo.Instance.PassedSecondsOfToday();
+                    if (start > now || now > end)
                     {
                         break;
                     }
@@ -67,12 +67,16 @@ namespace ET.Server
                     var day = TimeInfo.Instance.GetDayOfWeek();
                     if (config.Days.Contains((int)day))
                     {
-                        var seconds = TimeInfo.Instance.PassedSecondsOfDay();
-                        if (seconds >= config.DateTime)
+                        var start = TimeInfo.Instance.PassedSecondsOf(config.StartTime);
+                        var end = TimeInfo.Instance.PassedSecondsOf(config.EndTime);
+                        var now = TimeInfo.Instance.PassedSecondsOfToday();
+                        if (start > now || now > end)
                         {
-                            EventSystem.Instance.Publish(self.Root(), new DailyCheck() { ActivityId = config.Id });
-                            self.DailyConfigs.Add(config.Id);
+                            break;
                         }
+
+                        EventSystem.Instance.Publish(self.Root(), new DailyCheck() { ActivityId = config.Id });
+                        self.DailyConfigs.Add(config.Id);
                     }
                 }
                     break;

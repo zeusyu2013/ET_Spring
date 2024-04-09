@@ -203,6 +203,13 @@ message Other2DBCache_SaveAll // IMessage
 	int32 RpcId = 1;
 }
 
+message Other2DBCache_SaveUnit // IMessage
+{
+	int32 RpcId = 1;
+	bytes Unit = 2;
+	repeated bytes Entities = 3;
+}
+
 message Rank_FightScore
 {
 	int64 UnitId = 1;

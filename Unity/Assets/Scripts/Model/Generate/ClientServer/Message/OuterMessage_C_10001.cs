@@ -2184,9 +2184,9 @@ namespace ET
         }
     }
 
-    // ResponeseType M2C_CheckMails
     [MemoryPackable]
     [Message(OuterMessage.C2M_CheckMails)]
+    [ResponseType(nameof(M2C_CheckMails))]
     public partial class C2M_CheckMails : MessageObject, ILocationRequest
     {
         public static C2M_CheckMails Create(bool isFromPool = false)
@@ -2247,9 +2247,9 @@ namespace ET
         }
     }
 
-    // ResponeseType M2C_CheckMail
     [MemoryPackable]
     [Message(OuterMessage.C2M_CheckMail)]
+    [ResponseType(nameof(M2C_CheckMail))]
     public partial class C2M_CheckMail : MessageObject, ILocationRequest
     {
         public static C2M_CheckMail Create(bool isFromPool = false)
@@ -2314,9 +2314,9 @@ namespace ET
         }
     }
 
-    // ResponeseType M2C_ReceiveAttachments
     [MemoryPackable]
     [Message(OuterMessage.C2M_ReceiveAttachments)]
+    [ResponseType(nameof(M2C_ReceiveAttachments))]
     public partial class C2M_ReceiveAttachments : MessageObject, ILocationRequest
     {
         public static C2M_ReceiveAttachments Create(bool isFromPool = false)
@@ -2381,7 +2381,7 @@ namespace ET
         }
     }
 
-    public static class OuterMessage
+    public static partial class OuterMessage
     {
         public const ushort HttpGetRouterResponse = 10002;
         public const ushort RouterSync = 10003;

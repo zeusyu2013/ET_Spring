@@ -209,7 +209,7 @@ namespace ET
                 }
             }
 
-            sb.Append("\tpublic static class " + protoName + "\n\t{\n");
+            sb.Append("\tpublic static partial class " + protoName + "\n\t{\n");
             foreach (OpcodeInfo info in msgOpcode)
             {
                 sb.Append($"\t\tpublic const ushort {info.Name} = {info.Opcode};\n");

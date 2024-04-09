@@ -4,7 +4,7 @@
     "ActivityType": 1,
     "DailyType": 1,
     "Days": [],
-    "DateTime": -10800,
+    "StartTime": -10800,
     "EndTime": -10800
   },
   {
@@ -12,7 +12,7 @@
     "ActivityType": 2,
     "DailyType": 1,
     "Days": [],
-    "DateTime": -10800,
+    "StartTime": -10800,
     "EndTime": -10800
   },
   {
@@ -20,7 +20,7 @@
     "ActivityType": 3,
     "DailyType": 2,
     "Days": [],
-    "DateTime": -10800,
+    "StartTime": -10800,
     "EndTime": -10800
   },
   {
@@ -35,7 +35,7 @@
       6,
       0
     ],
-    "DateTime": -10800,
+    "StartTime": -10800,
     "EndTime": -10800
   }
 ]

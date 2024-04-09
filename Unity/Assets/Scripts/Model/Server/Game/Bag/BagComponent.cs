@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using MongoDB.Bson.Serialization.Attributes;
 
 namespace ET.Server
 {
@@ -10,7 +9,6 @@ namespace ET.Server
 
         public int MaxCapacity;
         
-        [BsonIgnore]
         public List<EntityRef<GameItem>> GameItems = new();
     }
 }

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+message C2M_GMCommand // ILocationMessage
+{
+	int32 RpcId = 1;
+	string GmCommand = 2;
+}
+
+// ResponseType M2C_Signin
+message C2M_Signin // ILocationRequest
+{
+	int32 RpcId = 1;
+}
+
+message M2C_Signin // ILocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}

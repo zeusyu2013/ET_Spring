@@ -20,7 +20,7 @@ namespace ET
             ActivityType = (ActivityType)_buf.ReadInt();
             DailyType = (DailyType)_buf.ReadInt();
             {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);Days = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); Days.Add(_e0);}}
-            DateTime = _buf.ReadLong();
+            StartTime = _buf.ReadLong();
             EndTime = _buf.ReadLong();
 
             PostInit();
@@ -54,7 +54,7 @@ namespace ET
         /// <summary>
         /// 开启时间
         /// </summary>
-        public readonly long DateTime;
+        public readonly long StartTime;
 
         /// <summary>
         /// 结束时间
@@ -72,7 +72,7 @@ namespace ET
             + "ActivityType:" + ActivityType + ","
             + "DailyType:" + DailyType + ","
             + "Days:" + Luban.StringUtil.CollectionToString(Days) + ","
-            + "DateTime:" + DateTime + ","
+            + "StartTime:" + StartTime + ","
             + "EndTime:" + EndTime + ","
             + "}";
         }

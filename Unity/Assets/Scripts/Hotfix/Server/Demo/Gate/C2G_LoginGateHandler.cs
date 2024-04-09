@@ -36,6 +36,7 @@ namespace ET.Server
             }
             else
             {
+                session.AddComponent<SessionPlayerComponent>().Player = player;
                 PlayerSessionComponent playerSessionComponent = player.GetComponent<PlayerSessionComponent>();
                 playerSessionComponent.Session = session;
             }

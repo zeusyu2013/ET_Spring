@@ -15,6 +15,8 @@
             root.AddComponent<AOIManagerComponent>();
             root.AddComponent<LocationProxyComponent>();
             root.AddComponent<MessageLocationSenderComponent>();
+
+            root.AddComponent<GameMasterComponent>();
  
             await ETTask.CompletedTask;
         }

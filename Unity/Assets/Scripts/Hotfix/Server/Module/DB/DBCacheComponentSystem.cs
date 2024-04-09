@@ -140,7 +140,7 @@ namespace ET.Server
                 }
             }
         }
-        
+
         public static async ETTask SaveAll(this DBCacheComponent self)
         {
             await self.DBCacheSave();
@@ -176,6 +176,11 @@ namespace ET.Server
                     {
                         entities.Add(kv.Value);
                     }
+                }
+
+                if (entities.Count < 1)
+                {
+                    return;
                 }
 
                 await self.Root().GetComponent<DBManagerComponent>().GetZoneDB(self.Zone()).InsertBatch(entities);

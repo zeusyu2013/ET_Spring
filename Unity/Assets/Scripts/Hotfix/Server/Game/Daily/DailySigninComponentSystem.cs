@@ -9,18 +9,20 @@
         {
         }
 
-        public static void Signin(this DailySigninComponent self)
+        public static int Signin(this DailySigninComponent self)
         {
             int nowDays = TimeInfo.Instance.TotalDays();
             if (nowDays == self.SigninDay)
             {
-                return;
+                return ErrorCode.ERR_SigninedToday;
             }
 
             // 发放签到奖励
             self.Root().GetComponent<RewardComponent>().Reward(1);
 
             self.SigninDay = nowDays;
+
+            return ErrorCode.ERR_Success;
         }
     }
 }

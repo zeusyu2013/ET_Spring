@@ -476,7 +476,7 @@ message MailInfo
 	bool ReceiveAttachments = 5;
 }
 
-// ResponeseType M2C_CheckMails
+// ResponseType M2C_CheckMails
 message C2M_CheckMails // ILocationRequest
 {
 	int32 RpcId = 1;
@@ -490,7 +490,7 @@ message M2C_CheckMails // ILocationResponse
 	repeated MailInfo MailInfos = 4;
 }
 
-// ResponeseType M2C_CheckMail
+// ResponseType M2C_CheckMail
 message C2M_CheckMail // ILocationRequest
 {
 	int32 RpcId = 1;
@@ -505,7 +505,7 @@ message M2C_CheckMail // ILocationResponse
 	MailInfo MailInfo = 4;
 }
 
-// ResponeseType M2C_ReceiveAttachments
+// ResponseType M2C_ReceiveAttachments
 message C2M_ReceiveAttachments // ILocationRequest
 {
 	int32 RpcId = 1;

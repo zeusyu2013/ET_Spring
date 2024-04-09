@@ -10,9 +10,11 @@
             root.AddComponent<CoroutineLockComponent>();
             root.AddComponent<ProcessInnerSender>();
             root.AddComponent<MessageSender>();
+            root.AddComponent<MailBoxComponent, MailBoxType>(MailBoxType.UnOrderedMessage);
             root.AddComponent<DBManagerComponent>();
             root.AddComponent<DBCacheComponent>();
             root.AddComponent<MessageLocationSenderComponent>();
+            root.AddComponent<UnitComponent>();
 
             await ETTask.CompletedTask;
         }

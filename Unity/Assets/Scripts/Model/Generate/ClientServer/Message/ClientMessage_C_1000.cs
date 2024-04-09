@@ -284,7 +284,7 @@ namespace ET
         }
     }
 
-    public static class ClientMessage
+    public static partial class ClientMessage
     {
         public const ushort RemoteConfig = 1001;
         public const ushort NetClient2Main_Ping = 1002;

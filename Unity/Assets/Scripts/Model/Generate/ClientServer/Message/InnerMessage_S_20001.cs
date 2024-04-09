@@ -923,6 +923,39 @@ namespace ET
     }
 
     [MemoryPackable]
+    [Message(InnerMessage.Other2DBCache_SaveUnit)]
+    public partial class Other2DBCache_SaveUnit : MessageObject, IMessage
+    {
+        public static Other2DBCache_SaveUnit Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(Other2DBCache_SaveUnit), isFromPool) as Other2DBCache_SaveUnit;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public byte[] Unit { get; set; }
+
+        [MemoryPackOrder(2)]
+        public List<byte[]> Entities { get; set; } = new();
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Unit = default;
+            this.Entities.Clear();
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
     [Message(InnerMessage.Rank_FightScore)]
     public partial class Rank_FightScore : MessageObject
     {
@@ -984,7 +1017,7 @@ namespace ET
         }
     }
 
-    public static class InnerMessage
+    public static partial class InnerMessage
     {
         public const ushort ObjectQueryRequest = 20002;
         public const ushort M2A_Reload = 20003;
@@ -1013,7 +1046,8 @@ namespace ET
         public const ushort DBCache2Other_GetUnit = 20026;
         public const ushort Other2DBCache_UpdateCache = 20027;
         public const ushort Other2DBCache_SaveAll = 20028;
-        public const ushort Rank_FightScore = 20029;
-        public const ushort Map2Rank_UpdateScore = 20030;
+        public const ushort Other2DBCache_SaveUnit = 20029;
+        public const ushort Rank_FightScore = 20030;
+        public const ushort Map2Rank_UpdateScore = 20031;
     }
 }
