@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="110,120">
+  <displayList>
+    <loader id="n0_qjfe" name="IconLoader" xy="0,0" size="110,120" align="center" vAlign="middle">
+      <relation target="" sidePair="width-width,height-height"/>
+    </loader>
+    <loader id="n1_qjfe" name="BgLoader" xy="0,0" size="110,120" align="center" vAlign="middle">
+      <relation target="" sidePair="width-width,height-height"/>
+    </loader>
+  </displayList>
+</component>

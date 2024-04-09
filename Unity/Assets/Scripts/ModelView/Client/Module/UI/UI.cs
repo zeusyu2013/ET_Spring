@@ -11,10 +11,9 @@ namespace ET.Client
         public string PanelName { get; set; }
         // 包名
         public string PackageName { get; set; }
-        // 层
-        public int Layer { get; set; }
         // 配置数据
-        public UIConfig UIConfig => UIConfigCategory.Instance.GetConfigByName(this.PanelName);
+        public UIConfig UIConfig { get; set; }
+
         // 显示状态
         public bool IsShowing { get; set; }
 

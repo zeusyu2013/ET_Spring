@@ -15,7 +15,7 @@ namespace ET
         public void Awake()
         {
         }
-
+ 
         public void Debug(Fiber fiber, object msg)
         {
             ushort opcode = OpcodeType.Instance.GetOpcode(msg.GetType());

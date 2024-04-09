@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="rrc81n56">
+  <resources>
+    <component id="m1et0" name="UIMapMini.xml" path="/" exported="true"/>
+    <component id="m1et1" name="MapMiniCanvas.xml" path="/"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

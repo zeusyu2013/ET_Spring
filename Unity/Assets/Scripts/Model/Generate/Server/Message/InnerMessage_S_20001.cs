@@ -1017,6 +1017,39 @@ namespace ET
         }
     }
 
+    [MemoryPackable]
+    [Message(InnerMessage.M2M_ChatBroadcast)]
+    public partial class M2M_ChatBroadcast : MessageObject, IMessage
+    {
+        public static M2M_ChatBroadcast Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2M_ChatBroadcast), isFromPool) as M2M_ChatBroadcast;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int ChannelId { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Content { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.ChannelId = default;
+            this.Content = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
     public static partial class InnerMessage
     {
         public const ushort ObjectQueryRequest = 20002;
@@ -1049,5 +1082,6 @@ namespace ET
         public const ushort Other2DBCache_SaveUnit = 20029;
         public const ushort Rank_FightScore = 20030;
         public const ushort Map2Rank_UpdateScore = 20031;
+        public const ushort M2M_ChatBroadcast = 20032;
     }
 }

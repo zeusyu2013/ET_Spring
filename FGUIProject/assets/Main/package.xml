@@ -4,5 +4,5 @@
     <component id="mdp90" name="UIMain.xml" path="/" exported="true"/>
     <component id="mdp91" name="MainCanvas.xml" path="/"/>
   </resources>
-  <publish name=""/>
+  <publish name="" genCode="true"/>
 </packageDescription>

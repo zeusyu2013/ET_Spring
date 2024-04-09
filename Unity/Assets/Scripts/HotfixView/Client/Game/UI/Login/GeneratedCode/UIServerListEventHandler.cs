@@ -10,7 +10,7 @@ namespace ET.Client
         {
             GObject gOject = await uiComponent.LoadUIObject(UIPackageName.Login, UIName.UIServerList);
             if (gOject == null) return null;
-            UI ui = uiComponent.AddChild<UI, string, string>(UIPackageName.Login, UIName.UIServerList);
+            UI ui = uiComponent.CreateUI(UIPackageName.Login, UIName.UIServerList);
             ui.Component = gOject as GComponent;
             ui.AddComponent<UIServerListComponent>();
             ui.AddComponent<UIServerListLogicComponent>();

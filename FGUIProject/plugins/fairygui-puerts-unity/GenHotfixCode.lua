@@ -89,7 +89,7 @@ local function CreateEventClass(writer, classes, classInfo, exportCodePath)
     writer:startBlock()
     writer:writeln('GObject gOject = await uiComponent.LoadUIObject(UIPackageName.%s, UIName.%s);', classInfo.res.owner.name, classInfo.className)
     writer:writeln('if (gOject == null) return null;')
-    writer:writeln('UI ui = uiComponent.AddChild<UI, string, string>(UIPackageName.%s, UIName.%s);', classInfo.res.owner.name, classInfo.className)
+    writer:writeln('UI ui = uiComponent.CreateUI(UIPackageName.%s, UIName.%s);', classInfo.res.owner.name, classInfo.className)
     writer:writeln('ui.Component = gOject as GComponent;')
     writer:writeln('ui.AddComponent<%sComponent>();', classInfo.className)
       

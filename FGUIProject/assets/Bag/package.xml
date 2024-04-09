@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="rdsx2lay">
+  <resources>
+    <component id="m1et0" name="UIBag.xml" path="/" exported="true"/>
+    <component id="m1et1" name="BagCanvas.xml" path="/Bag/"/>
+    <component id="qjfe2" name="ListCom.xml" path="/Bag/"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

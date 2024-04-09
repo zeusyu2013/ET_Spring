@@ -19,6 +19,13 @@ namespace ET.Client
             
         }
 
+        public static UI CreateUI(this UIComponent self, string packageName, string panelname)
+        {
+            UI ui = self.AddChild<UI, string, string>(packageName, panelname);
+            self.UIs.Add(panelname, ui);
+            return ui;
+        }
+
         public static async ETTask CreatePanel(this UIComponent self, string panelName)
         {
             // 如果界面存在就不创建爱了
@@ -41,8 +48,7 @@ namespace ET.Client
             }
             // 创建UI，加载脚本
             UI ui = await uiEvent.OnCreate(self);
-            self.UIs.Add(panelName, ui);
-            ui.Layer = config.Layer;
+            ui.UIConfig = config;
         }
 
         /// <summary>
@@ -158,7 +164,7 @@ namespace ET.Client
 
         public static void AddOnStage(this UIComponent self, UI ui)
         {
-            var layerComponent = self.GetComponent<UILayerComponent>().GetLayerComponet(ui.Layer);
+            var layerComponent = self.GetComponent<UILayerComponent>().GetLayerComponet(ui.UIConfig.Layer);
             layerComponent.AddChild(ui.Component);
         }
     }

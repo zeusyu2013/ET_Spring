@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <packageDescription id="6qczg918">
   <resources>
-    <component id="hwto0" name="CommonButton.xml" path="/Button/" exported="true"/>
-    <component id="hwto1" name="RadioButton.xml" path="/Button/" exported="true"/>
-    <component id="hwto2" name="CheckButton.xml" path="/Button/" exported="true"/>
+    <component id="hwto0" name="CommonButton.xml" path="/Component/Button/" exported="true"/>
+    <component id="hwto1" name="RadioButton.xml" path="/Component/Button/" exported="true"/>
+    <component id="hwto2" name="CheckButton.xml" path="/Component/Button/" exported="true"/>
     <image id="hwto3" name="btn_1_down.png" path="/Res/Button/" exported="true"/>
     <image id="hwto4" name="btn_1_on.png" path="/Res/Button/" exported="true"/>
     <image id="n7al5" name="0.png" path="/Res/Joystick/" exported="true"/>
     <image id="n7al6" name="1.png" path="/Res/Joystick/" exported="true"/>
+    <component id="cyvr8" name="Item.xml" path="/Component/Item/" exported="true"/>
+    <component id="cyvr9" name="ItemIcon.xml" path="/Component/Item/Component/"/>
   </resources>
   <publish name=""/>
 </packageDescription>

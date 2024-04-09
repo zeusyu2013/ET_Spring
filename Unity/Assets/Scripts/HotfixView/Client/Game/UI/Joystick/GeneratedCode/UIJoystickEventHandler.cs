@@ -10,7 +10,7 @@ namespace ET.Client
         {
             GObject gOject = await uiComponent.LoadUIObject(UIPackageName.Joystick, UIName.UIJoystick);
             if (gOject == null) return null;
-            UI ui = uiComponent.AddChild<UI, string, string>(UIPackageName.Joystick, UIName.UIJoystick);
+            UI ui = uiComponent.CreateUI(UIPackageName.Joystick, UIName.UIJoystick);
             ui.Component = gOject as GComponent;
             ui.AddComponent<UIJoystickComponent>();
             ui.AddComponent<UIJoystickLogicComponent>();

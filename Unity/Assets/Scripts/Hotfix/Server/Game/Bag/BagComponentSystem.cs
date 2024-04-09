@@ -88,6 +88,7 @@ namespace ET.Server
             return true;
         }
 
+        
         public static GameItem GetGameItemByConfig(this BagComponent self, int config)
         {
             GameItem item = null;

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1280,720" pivot="1,0" opaque="false">
+  <displayList>
+    <component id="n0_qjfe" name="List" src="qjfe2" fileName="Bag/ListCom.xml" xy="255,100"/>
+  </displayList>
+</component>

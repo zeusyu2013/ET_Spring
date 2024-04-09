@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="r99d6sdw">
+  <resources>
+    <component id="m1et0" name="UIMapBig.xml" path="/" exported="true"/>
+    <component id="m1et1" name="MapBigCanvas.xml" path="/"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="590,449" overflow="hidden" mask="n1_qjfe">
+  <displayList>
+    <graph id="n1_qjfe" name="n1" xy="0,0" size="590,449" type="rect" lineSize="0">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <list id="n0_qjfe" name="List" xy="0,0" size="590,449" layout="flow_hz" overflow="scroll" defaultItem="ui://6qczg918cyvr9" autoClearItems="true">
+      <relation target="" sidePair="height-height,left-left,rightext-right"/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+  </displayList>
+</component>
