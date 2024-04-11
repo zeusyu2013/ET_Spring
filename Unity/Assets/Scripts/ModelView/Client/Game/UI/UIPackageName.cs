@@ -6,6 +6,8 @@ namespace ET.Client
     {
         public const string Background = "Background";
         public const string Bag = "Bag";
+        public const string ChatBig = "ChatBig";
+        public const string ChatMini = "ChatMini";
         public const string Common = "Common";
         public const string Joystick = "Joystick";
         public const string Language = "Language";

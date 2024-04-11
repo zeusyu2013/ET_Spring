@@ -22,6 +22,7 @@ namespace ET
 		DBCache = 1 << 14,
 		Rank = 1 << 15,
 		Guild = 1 << 16,
+		Chat = 1 << 17,
 
 		// 客户端
 		Demo = 1 << 30,

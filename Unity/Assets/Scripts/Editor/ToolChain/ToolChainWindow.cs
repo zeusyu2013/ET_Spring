@@ -17,7 +17,7 @@ namespace ET
             window.maximized = true;
             window.Show();
         }
-        
+
         protected override OdinMenuTree BuildMenuTree()
         {
             if (tree != null)
@@ -27,9 +27,10 @@ namespace ET
 
             this.tree = new OdinMenuTree
             {
-                {"预设相关", CreateInstance<PrefabEditor>()},
-                {"动画相关", CreateInstance<AnimationEditorWindow>()},
-                {"Shader变体合并工具", CreateInstance<ShaderVariantsCollectionMergeWindow>()}
+                { "预设相关", CreateInstance<PrefabEditor>() },
+                { "动画相关", CreateInstance<AnimationEditorWindow>() },
+                { "路径编辑器", CreateInstance<PathEditorWindow>() },
+                { "Shader变体合并工具", CreateInstance<ShaderVariantsCollectionMergeWindow>() }
             };
 
             return this.tree;

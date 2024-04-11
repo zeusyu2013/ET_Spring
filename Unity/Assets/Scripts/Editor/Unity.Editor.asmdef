@@ -13,7 +13,7 @@
         "Unity.ModelView",
         "Unity.Hotfix",
         "Unity.HotfixView",
-        "XNodeEditor"
+        "Cinemachine"
     ],
     "includePlatforms": [
         "Editor"
