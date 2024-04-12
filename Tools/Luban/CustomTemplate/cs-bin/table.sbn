@@ -116,14 +116,6 @@ using System.Collections.Generic;
         public {{declaring_type_name value_type}} GetBy{{format_property_name __code_style idx.index_field.name}}({{declaring_type_name idx.type}} key) => _dataMap_{{idx.index_field.name}}.TryGetValue(key, out {{declaring_type_name value_type}} __v) ? __v : null;
             {{~end~}}
         {{~end~}}
-
-        public void ResolveRef({{__manager_name}} tables)
-        {
-            foreach(var _v in _dataList)
-            {
-                _v.ResolveRef(tables);
-            }
-        }
         {{~else~}}
 
         private readonly {{declaring_type_name value_type}} _data;

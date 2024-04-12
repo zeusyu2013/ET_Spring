@@ -22,6 +22,7 @@ namespace ET
             Model = _buf.ReadString();
             AI = _buf.ReadInt();
             Property = _buf.ReadInt();
+            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);Skills = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); Skills.Add(_e0);}}
 
             PostInit();
         }
@@ -59,7 +60,7 @@ namespace ET
         /// <summary>
         /// Ref测试
         /// </summary>
-        public AIConfig AIConfig => AIConfigCategory.Instance.GetOrDefault(Property);
+        public AIConfig AIConfig => AIConfigCategory.Instance.GetOrDefault(AI);
 
         /// <summary>
         /// 属性包id
@@ -70,6 +71,11 @@ namespace ET
         /// 属性包id
         /// </summary>
         public PropertyConfig PropertyConfig => PropertyConfigCategory.Instance.GetOrDefault(Property);
+
+        /// <summary>
+        /// 技能列表
+        /// </summary>
+        public readonly System.Collections.Generic.List<int> Skills;
 
         public const int __ID__ = -568528378;
 
@@ -84,6 +90,7 @@ namespace ET
             + "Model:" + Model + ","
             + "AI:" + AI + ","
             + "Property:" + Property + ","
+            + "Skills:" + Luban.StringUtil.CollectionToString(Skills) + ","
             + "}";
         }
 

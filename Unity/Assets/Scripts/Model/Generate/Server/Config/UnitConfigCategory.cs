@@ -12,6 +12,9 @@ using System.Collections.Generic;
 
 namespace ET
 {
+    /// <summary>
+    /// Npc配置表
+    /// </summary>
     [Config]
     public partial class UnitConfigCategory : Singleton<UnitConfigCategory>
     {

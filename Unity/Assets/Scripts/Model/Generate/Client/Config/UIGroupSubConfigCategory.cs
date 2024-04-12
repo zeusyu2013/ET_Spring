@@ -12,6 +12,9 @@ using System.Collections.Generic;
 
 namespace ET
 {
+    /// <summary>
+    /// UI配置表
+    /// </summary>
     [Config]
     public partial class UIGroupSubConfigCategory : Singleton<UIGroupSubConfigCategory>
     {

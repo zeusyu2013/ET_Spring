@@ -12,6 +12,9 @@ using System.Collections.Generic;
 
 namespace ET
 {
+    /// <summary>
+    /// AI配置表
+    /// </summary>
     [Config]
     public partial class AIConfigCategory : Singleton<AIConfigCategory>
     {
