@@ -1,4 +1,7 @@
-﻿namespace ET
+﻿using System.Collections.Generic;
+using Unity.Mathematics;
+
+namespace ET
 {
     [EntitySystemOf(typeof(SkillComponent))]
     [FriendOfAttribute(typeof(ET.SkillComponent))]
@@ -16,6 +19,8 @@
             }
 
             self.Skills = config.Skills;
+
+            self.CreateSkillEntities();
         }
 
         [EntitySystem]
@@ -35,6 +40,83 @@
             {
                 self.AddChild<Skill, int, int>(skillConfig, 1);
             }
+        }
+
+        public static int Cast(this SkillComponent self, int skillConfig, int level)
+        {
+            if (!self.Skills.Contains(skillConfig))
+            {
+                return SkillErrorCode.ERR_SkillConfigNotFound;
+            }
+
+            SkillConfig config = SkillConfigCategory.Instance.Get(skillConfig, level);
+            if (config == null)
+            {
+                return SkillErrorCode.ERR_SkillConfigNotFound;
+            }
+
+            // 检查消耗
+            Unit unit = self.GetParent<Unit>();
+            long current = unit.GetComponent<NumericComponent>().GetAsLong(GamePropertyType.GamePropertyType_Mp);
+            if (current < config.Consume)
+            {
+                return SkillErrorCode.ERR_SkillConsumeNotEnough;
+            }
+
+            // 扣除消耗
+            unit.GetComponent<NumericComponent>()[GamePropertyType.GamePropertyType_Mp] = current - config.Consume;
+
+            // 处理技能流程
+            int ret = self.Process(skillConfig, level);
+            if (ret != SkillErrorCode.ERR_Success)
+            {
+                return ret;
+            }
+
+            return SkillErrorCode.ERR_Success;
+        }
+
+        private static int Process(this SkillComponent self, int skillConfig, int level)
+        {
+            List<Unit> units = new();
+            self.GetParent<Unit>().GetComponent<SelectTargetComponent>().Check(skillConfig, level, ref units);
+            if (units.Count < 1)
+            {
+                return SkillErrorCode.ERR_SkillNotTarget;
+            }
+
+            SkillConfig config = SkillConfigCategory.Instance.Get(skillConfig, level);
+
+            foreach (Unit unit in units)
+            {
+                if (unit == null || unit.IsDisposed)
+                {
+                    continue;
+                }
+
+                NumericComponent numericComponent = unit.GetComponent<NumericComponent>();
+                if (numericComponent == null)
+                {
+                    continue;
+                }
+
+                long hp = numericComponent.GetAsLong(GamePropertyType.GamePropertyType_Hp);
+                long def = numericComponent.GetAsLong(GamePropertyType.GamePropertyType_Def);
+
+                long atk = self.GetParent<Unit>().GetComponent<NumericComponent>().GetAsLong(GamePropertyType.GamePropertyType_Atk);
+                long damage = atk * config.Ratio / 100 + config.Base;
+
+                hp = math.max(0, hp + def - damage);
+                numericComponent[GamePropertyType.GamePropertyType_Hp] = hp;
+
+                if (hp < 1)
+                {
+                    // 通知死亡
+                    EventSystem.Instance.Publish(self.Root(), new UnitDie() { Self = unit, Killer = self.GetParent<Unit>() });
+                }
+            }
+
+            return SkillErrorCode.ERR_Success;
         }
     }
 }

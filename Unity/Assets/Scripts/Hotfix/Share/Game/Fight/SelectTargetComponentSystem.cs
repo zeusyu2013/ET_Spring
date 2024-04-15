@@ -1,4 +1,6 @@
-﻿namespace ET
+﻿using System.Collections.Generic;
+
+namespace ET
 {
     [EntitySystemOf(typeof(SelectTargetComponent))]
     public static partial class SelectTargetComponentSystem
@@ -8,7 +10,7 @@
         {
         }
 
-        public static void Check(this SelectTargetComponent self, int configId, int level)
+        public static void Check(this SelectTargetComponent self, int configId, int level, ref List<Unit> targets)
         {
             SkillConfig config = SkillConfigCategory.Instance.Get(configId, level);
 

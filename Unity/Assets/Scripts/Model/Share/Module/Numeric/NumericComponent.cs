@@ -156,5 +156,11 @@ namespace ET
                 this.Insert(numericType, value);
             }
         }
+
+        public long this[GamePropertyType type]
+        {
+            get => this.GetByKey(type);
+            set => this.Insert((int)type, value);
+        }
     }
 }

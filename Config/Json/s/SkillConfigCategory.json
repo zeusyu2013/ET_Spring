@@ -3,120 +3,160 @@
     "Id": 11001,
     "Level": 1,
     "Base": 1100,
-    "SkillRange": 1
+    "Ratio": 5,
+    "SkillRange": 1,
+    "Consume": 10
   },
   {
     "Id": 11001,
     "Level": 2,
     "Base": 1200,
-    "SkillRange": 1
+    "Ratio": 10,
+    "SkillRange": 1,
+    "Consume": 11
   },
   {
     "Id": 11001,
     "Level": 3,
     "Base": 1300,
-    "SkillRange": 1
+    "Ratio": 15,
+    "SkillRange": 1,
+    "Consume": 12
   },
   {
     "Id": 11001,
     "Level": 4,
     "Base": 1400,
-    "SkillRange": 1
+    "Ratio": 20,
+    "SkillRange": 1,
+    "Consume": 13
   },
   {
     "Id": 11001,
     "Level": 5,
     "Base": 1500,
-    "SkillRange": 1
+    "Ratio": 25,
+    "SkillRange": 1,
+    "Consume": 14
   },
   {
     "Id": 11001,
     "Level": 6,
     "Base": 1600,
-    "SkillRange": 1
+    "Ratio": 30,
+    "SkillRange": 1,
+    "Consume": 15
   },
   {
     "Id": 11001,
     "Level": 7,
     "Base": 1700,
-    "SkillRange": 1
+    "Ratio": 35,
+    "SkillRange": 1,
+    "Consume": 16
   },
   {
     "Id": 11001,
     "Level": 8,
     "Base": 1800,
-    "SkillRange": 1
+    "Ratio": 40,
+    "SkillRange": 1,
+    "Consume": 17
   },
   {
     "Id": 11001,
     "Level": 9,
     "Base": 1900,
-    "SkillRange": 1
+    "Ratio": 45,
+    "SkillRange": 1,
+    "Consume": 18
   },
   {
     "Id": 11001,
     "Level": 10,
     "Base": 2000,
-    "SkillRange": 1
+    "Ratio": 50,
+    "SkillRange": 1,
+    "Consume": 19
   },
   {
     "Id": 11002,
     "Level": 1,
     "Base": 1650,
-    "SkillRange": 2
+    "Ratio": 5,
+    "SkillRange": 2,
+    "Consume": 10
   },
   {
     "Id": 11002,
     "Level": 2,
     "Base": 1800,
-    "SkillRange": 2
+    "Ratio": 10,
+    "SkillRange": 2,
+    "Consume": 11
   },
   {
     "Id": 11002,
     "Level": 3,
     "Base": 1950,
-    "SkillRange": 2
+    "Ratio": 15,
+    "SkillRange": 2,
+    "Consume": 12
   },
   {
     "Id": 11002,
     "Level": 4,
     "Base": 2100,
-    "SkillRange": 2
+    "Ratio": 20,
+    "SkillRange": 2,
+    "Consume": 13
   },
   {
     "Id": 11002,
     "Level": 5,
     "Base": 2250,
-    "SkillRange": 2
+    "Ratio": 25,
+    "SkillRange": 2,
+    "Consume": 14
   },
   {
     "Id": 11002,
     "Level": 6,
     "Base": 2400,
-    "SkillRange": 2
+    "Ratio": 30,
+    "SkillRange": 2,
+    "Consume": 15
   },
   {
     "Id": 11002,
     "Level": 7,
     "Base": 2550,
-    "SkillRange": 2
+    "Ratio": 35,
+    "SkillRange": 2,
+    "Consume": 16
   },
   {
     "Id": 11002,
     "Level": 8,
     "Base": 2700,
-    "SkillRange": 2
+    "Ratio": 40,
+    "SkillRange": 2,
+    "Consume": 17
   },
   {
     "Id": 11002,
     "Level": 9,
     "Base": 2850,
-    "SkillRange": 2
+    "Ratio": 45,
+    "SkillRange": 2,
+    "Consume": 18
   },
   {
     "Id": 11002,
     "Level": 10,
     "Base": 3000,
-    "SkillRange": 2
+    "Ratio": 50,
+    "SkillRange": 2,
+    "Consume": 19
   }
 ]

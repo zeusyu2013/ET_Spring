@@ -19,7 +19,9 @@ namespace ET
             Id = _buf.ReadInt();
             Level = _buf.ReadInt();
             Base = _buf.ReadLong();
+            Ratio = _buf.ReadLong();
             SkillRange = (SkillRange)_buf.ReadInt();
+            Consume = _buf.ReadLong();
 
             PostInit();
         }
@@ -45,9 +47,19 @@ namespace ET
         public readonly long Base;
 
         /// <summary>
+        /// 附加百分比值
+        /// </summary>
+        public readonly long Ratio;
+
+        /// <summary>
         /// 技能作用范围
         /// </summary>
         public readonly SkillRange SkillRange;
+
+        /// <summary>
+        /// 技能消耗
+        /// </summary>
+        public readonly long Consume;
 
         public const int __ID__ = -844226349;
 
@@ -59,7 +71,9 @@ namespace ET
             + "Id:" + Id + ","
             + "Level:" + Level + ","
             + "Base:" + Base + ","
+            + "Ratio:" + Ratio + ","
             + "SkillRange:" + SkillRange + ","
+            + "Consume:" + Consume + ","
             + "}";
         }
 

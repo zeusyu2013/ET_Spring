@@ -62,124 +62,134 @@ namespace ET
         GamePropertyType_MaxHp = 1102,
 
         /// <summary>
+        /// 魔法值
+        /// </summary>
+        GamePropertyType_Mp = 1103,
+
+        /// <summary>
+        /// 最大魔法值
+        /// </summary>
+        GamePropertyType_MaxMp = 1104,
+
+        /// <summary>
         /// 攻击
         /// </summary>
-        GamePropertyType_Atk = 1103,
+        GamePropertyType_Atk = 1105,
 
         /// <summary>
         /// 攻击基础值
         /// </summary>
-        GamePropertyType_AtkBase = 11031,
+        GamePropertyType_AtkBase = 11051,
 
         /// <summary>
         /// 攻击附加值
         /// </summary>
-        GamePropertyType_AtkAdd = 11032,
+        GamePropertyType_AtkAdd = 11052,
 
         /// <summary>
         /// 攻击百分比
         /// </summary>
-        GamePropertyType_AtkPct = 11033,
+        GamePropertyType_AtkPct = 11053,
 
         /// <summary>
         /// 攻击最终附加值
         /// </summary>
-        GamePropertyType_AtkFinalAdd = 11034,
+        GamePropertyType_AtkFinalAdd = 11054,
 
         /// <summary>
         /// 攻击最终百分比
         /// </summary>
-        GamePropertyType_AtkFinalPct = 11035,
+        GamePropertyType_AtkFinalPct = 11055,
 
         /// <summary>
         /// 防御
         /// </summary>
-        GamePropertyType_Def = 1104,
+        GamePropertyType_Def = 1106,
 
         /// <summary>
         /// 防御基础值
         /// </summary>
-        GamePropertyType_DefBase = 11041,
+        GamePropertyType_DefBase = 11061,
 
         /// <summary>
         /// 防御附加值
         /// </summary>
-        GamePropertyType_DefAdd = 11042,
+        GamePropertyType_DefAdd = 11062,
 
         /// <summary>
         /// 防御百分比
         /// </summary>
-        GamePropertyType_DefPct = 11043,
+        GamePropertyType_DefPct = 11063,
 
         /// <summary>
         /// 防御最终附加值
         /// </summary>
-        GamePropertyType_DefFinalAdd = 11044,
+        GamePropertyType_DefFinalAdd = 11064,
 
         /// <summary>
         /// 防御最终百分比
         /// </summary>
-        GamePropertyType_DefFinalPct = 11045,
+        GamePropertyType_DefFinalPct = 11065,
 
         /// <summary>
         /// 命中
         /// </summary>
-        GamePropertyType_Hit = 1105,
+        GamePropertyType_Hit = 1107,
 
         /// <summary>
         /// 命中基础值
         /// </summary>
-        GamePropertyType_HitBase = 11051,
+        GamePropertyType_HitBase = 11071,
 
         /// <summary>
         /// 命中附加值
         /// </summary>
-        GamePropertyType_HitAdd = 11052,
+        GamePropertyType_HitAdd = 11072,
 
         /// <summary>
         /// 命中百分比
         /// </summary>
-        GamePropertyType_HitPct = 11053,
+        GamePropertyType_HitPct = 11073,
 
         /// <summary>
         /// 命中最终附加值
         /// </summary>
-        GamePropertyType_HitFinalAdd = 11054,
+        GamePropertyType_HitFinalAdd = 11074,
 
         /// <summary>
         /// 命中最终百分比
         /// </summary>
-        GamePropertyType_HitFinalPct = 11055,
+        GamePropertyType_HitFinalPct = 11075,
 
         /// <summary>
         /// 暴击
         /// </summary>
-        GamePropertyType_Crit = 1106,
+        GamePropertyType_Crit = 1108,
 
         /// <summary>
         /// 暴击基础值
         /// </summary>
-        GamePropertyType_CritBase = 11061,
+        GamePropertyType_CritBase = 11081,
 
         /// <summary>
         /// 暴击附加值
         /// </summary>
-        GamePropertyType_CritAdd = 11062,
+        GamePropertyType_CritAdd = 11082,
 
         /// <summary>
         /// 暴击百分比
         /// </summary>
-        GamePropertyType_CritPct = 11063,
+        GamePropertyType_CritPct = 11083,
 
         /// <summary>
         /// 暴击最终附加值
         /// </summary>
-        GamePropertyType_CritFinalAdd = 11064,
+        GamePropertyType_CritFinalAdd = 11084,
 
         /// <summary>
         /// 暴击最终百分比
         /// </summary>
-        GamePropertyType_CritFinalPct = 11065,
+        GamePropertyType_CritFinalPct = 11085,
 
     }
 }
