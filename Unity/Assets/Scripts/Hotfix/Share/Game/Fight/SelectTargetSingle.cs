@@ -4,7 +4,12 @@
     {
         public override int Check(SelectTargetComponent selectTargetComponent, SkillConfig skillConfig)
         {
-            return 0;
+            if (skillConfig.SkillRange != SkillRange.SkillRange_Single)
+            {
+                return SelectTargetErrorCode.ERR_SkillRangeNotMatch;
+            }
+
+            return SelectTargetErrorCode.ERR_Success;
         }
     }
 }
