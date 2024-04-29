@@ -94,20 +94,14 @@ namespace ET
                     continue;
                 }
 
-                NumericComponent numericComponent = unit.GetComponent<NumericComponent>();
-                if (numericComponent == null)
-                {
-                    continue;
-                }
+                long hp = unit.GetLong(GamePropertyType.GamePropertyType_Hp);
+                long def = unit.GetLong(GamePropertyType.GamePropertyType_Def);
 
-                long hp = numericComponent.GetAsLong(GamePropertyType.GamePropertyType_Hp);
-                long def = numericComponent.GetAsLong(GamePropertyType.GamePropertyType_Def);
-
-                long atk = self.GetParent<Unit>().GetComponent<NumericComponent>().GetAsLong(GamePropertyType.GamePropertyType_Atk);
+                long atk = self.GetParent<Unit>().GetLong(GamePropertyType.GamePropertyType_Atk);
                 long damage = atk * config.Ratio / 100 + config.Base;
 
                 hp = math.max(0, hp + def - damage);
-                numericComponent[GamePropertyType.GamePropertyType_Hp] = hp;
+                unit.SetLong(GamePropertyType.GamePropertyType_Hp, hp);
 
                 if (hp < 1)
                 {

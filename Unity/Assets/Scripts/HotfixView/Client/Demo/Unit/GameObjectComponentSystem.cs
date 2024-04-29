@@ -10,12 +10,12 @@ namespace ET.Client
         private static void Destroy(this GameObjectComponent self)
         {
             UnityEngine.Object.Destroy(self.GameObject);
+            self.GameObject = null;
         }
-        
+
         [EntitySystem]
         private static void Awake(this GameObjectComponent self)
         {
-            
         }
     }
 }

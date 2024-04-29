@@ -37,6 +37,60 @@ namespace ET
             return self.GetByKey(type);
         }
 
+        public static int GetInt(this Unit unit, GamePropertyType type)
+        {
+            if (unit == null || unit.IsDisposed)
+            {
+                Log.Warning("unit not found");
+                return 0;
+            }
+
+            NumericComponent numericComponent = unit.GetComponent<NumericComponent>();
+            if (numericComponent == null)
+            {
+                Log.Warning("unit numericComponent not found");
+                return 0;
+            }
+
+            return numericComponent.GetAsInt(type);
+        }
+        
+        public static float GetFloat(this Unit unit, GamePropertyType type)
+        {
+            if (unit == null || unit.IsDisposed)
+            {
+                Log.Warning("unit not found");
+                return 0;
+            }
+
+            NumericComponent numericComponent = unit.GetComponent<NumericComponent>();
+            if (numericComponent == null)
+            {
+                Log.Warning("unit numericComponent not found");
+                return 0;
+            }
+
+            return numericComponent.GetAsFloat(type);
+        }
+        
+        public static long GetLong(this Unit unit, GamePropertyType type)
+        {
+            if (unit == null || unit.IsDisposed)
+            {
+                Log.Warning("unit not found");
+                return 0;
+            }
+
+            NumericComponent numericComponent = unit.GetComponent<NumericComponent>();
+            if (numericComponent == null)
+            {
+                Log.Warning("unit numericComponent not found");
+                return 0;
+            }
+
+            return numericComponent.GetAsLong(type);
+        }
+
         public static void Set(this NumericComponent self, int nt, float value)
         {
             self[nt] = (long)(value * 10000);
@@ -65,6 +119,60 @@ namespace ET
         public static void Set(this NumericComponent self, GamePropertyType type, long value)
         {
             self[(int)type] = value;
+        }
+
+        public static void SetInt(this Unit unit, GamePropertyType type, int value)
+        {
+            if (unit == null || unit.IsDisposed)
+            {
+                Log.Warning("unit not found");
+                return;
+            }
+
+            NumericComponent numericComponent = unit.GetComponent<NumericComponent>();
+            if (numericComponent == null)
+            {
+                Log.Warning("unit numericComponent not found");
+                return;
+            }
+
+            numericComponent.Set(type, value);
+        }
+
+        public static void SetFloat(this Unit unit, GamePropertyType type, float value)
+        {
+            if (unit == null || unit.IsDisposed)
+            {
+                Log.Warning("unit not found");
+                return;
+            }
+
+            NumericComponent numericComponent = unit.GetComponent<NumericComponent>();
+            if (numericComponent == null)
+            {
+                Log.Warning("unit numericComponent not found");
+                return;
+            }
+
+            numericComponent.Set(type, value);
+        }
+
+        public static void SetLong(this Unit unit, GamePropertyType type, long value)
+        {
+            if (unit == null || unit.IsDisposed)
+            {
+                Log.Warning("unit not found");
+                return;
+            }
+
+            NumericComponent numericComponent = unit.GetComponent<NumericComponent>();
+            if (numericComponent == null)
+            {
+                Log.Warning("unit numericComponent not found");
+                return;
+            }
+
+            numericComponent.Set(type, value);
         }
 
         public static void SetNoEvent(this NumericComponent self, int numericType, long value)

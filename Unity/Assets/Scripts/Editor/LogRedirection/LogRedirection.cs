@@ -26,6 +26,14 @@ namespace ET
             string codePath = AssetDatabase.GetAssetPath(instanceID);
             if (logFileRegex.IsMatch(codePath))
             {
+                var content = GetStackTrace();
+                var hrefMatch = Regex.Match(content, @"<a href=""(.*?)"" line=""(\w+)\"">.*?</a>");
+                if (hrefMatch.Success)
+                {
+                    OpenIDE(hrefMatch.Groups[1].Value, int.Parse(hrefMatch.Groups[2].Value));
+                    return true;
+                }
+
                 Match stackLineMatch = Regex.Match(GetStackTrace(), @"\(at (.+):([0-9]+)\)");
                 while (stackLineMatch.Success)
                 {
@@ -36,10 +44,11 @@ namespace ET
                         OpenIDE(codePath, matchLine);
                         return true;
                     }
+
                     stackLineMatch = stackLineMatch.NextMatch();
                 }
             }
-            
+
             return false;
         }
 
@@ -49,6 +58,7 @@ namespace ET
             {
                 path = Path.GetFullPath(path);
             }
+
             // 跳转到目标代码的特定行
             InternalEditorUtility.OpenFileAtLineExternal(path, line, column);
         }

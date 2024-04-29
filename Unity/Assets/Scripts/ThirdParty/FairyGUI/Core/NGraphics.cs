@@ -66,6 +66,7 @@ namespace FairyGUI
             public Vector3 cameraPos;
             public Matrix4x4 matrix;
         }
+
         VertexMatrix _vertexMatrix;
 
         bool hasAlphaBackup;
@@ -141,6 +142,7 @@ namespace FairyGUI
                 _meshFactory = new T();
                 _meshDirty = true;
             }
+
             return (T)_meshFactory;
         }
 
@@ -509,6 +511,7 @@ namespace FairyGUI
                     Object.DestroyImmediate(mesh);
                 mesh = null;
             }
+
             if ((_customMatarial & 128) != 0 && _material != null)
                 Object.DestroyImmediate(_material);
 
@@ -651,6 +654,7 @@ namespace FairyGUI
                     if (meshModifier != null)
                         meshModifier();
                 }
+
                 return;
             }
 
@@ -669,6 +673,7 @@ namespace FairyGUI
                     vb.uvRect.xMin = vb.uvRect.xMax;
                     vb.uvRect.xMax = tmp;
                 }
+
                 if (_flip == FlipType.Vertical || _flip == FlipType.Both)
                 {
                     float tmp = vb.uvRect.yMin;
@@ -676,6 +681,7 @@ namespace FairyGUI
                     vb.uvRect.yMax = tmp;
                 }
             }
+
             vb.vertexColor = _color;
             _meshFactory.OnPopulateMesh(vb);
 
@@ -689,6 +695,7 @@ namespace FairyGUI
                     if (meshModifier != null)
                         meshModifier();
                 }
+
                 vb.End();
                 return;
             }

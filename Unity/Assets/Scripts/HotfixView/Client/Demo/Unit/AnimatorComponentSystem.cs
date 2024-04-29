@@ -4,205 +4,106 @@ using UnityEngine;
 
 namespace ET.Client
 {
-	[EntitySystemOf(typeof(AnimatorComponent))]
-	[FriendOf(typeof(AnimatorComponent))]
-	public static partial class AnimatorComponentSystem
-	{
-		[EntitySystem]
-		private static void Destroy(this AnimatorComponent self)
-		{
-			self.animationClips = null;
-			self.Parameter = null;
-			self.Animator = null;
-			self.AnimancerComponent = null;
-		}
-		
-		[EntitySystem]
-		private static void Awake(this AnimatorComponent self)
-		{
-			Animator animator = self.GetParent<Unit>().GetComponent<GameObjectComponent>().GameObject.GetComponent<Animator>();
+    [EntitySystemOf(typeof(AnimatorComponent))]
+    [FriendOf(typeof(AnimatorComponent))]
+    public static partial class AnimatorComponentSystem
+    {
+        [EntitySystem]
+        private static void Destroy(this AnimatorComponent self)
+        {
+            self.Animator = null;
+            self.Animancer = null;
+        }
 
-			if (animator == null)
-			{
-				return;
-			}
+        [EntitySystem]
+        private static void Awake(this AnimatorComponent self)
+        {
+            Animator animator = self.GetParent<Unit>().GetComponent<GameObjectComponent>().GameObject.GetComponent<Animator>();
 
-			if (animator.runtimeAnimatorController == null)
-			{
-				return;
-			}
+            if (animator == null)
+            {
+                Log.Warning($"{self.GetParent<Unit>().ConfigId} 缺少Animator组件");
+                return;
+            }
 
-			if (animator.runtimeAnimatorController.animationClips == null)
-			{
-				return;
-			}
-			self.Animator = animator;
-			foreach (AnimationClip animationClip in animator.runtimeAnimatorController.animationClips)
-			{
-				self.animationClips[animationClip.name] = animationClip;
-			}
-			foreach (AnimatorControllerParameter animatorControllerParameter in animator.parameters)
-			{
-				self.Parameter.Add(animatorControllerParameter.name);
-			}
+            self.Animator = animator;
 
-			self.AnimancerComponent = self.GetParent<Unit>().GetComponent<GameObjectComponent>().GameObject.GetComponent<AnimancerComponent>();
-		}
-		
-		[EntitySystem]
-		private static void Update(this AnimatorComponent self)
-		{
-			if (self.isStop)
-			{
-				return;
-			}
+            self.Animancer = self.GetParent<Unit>().GetComponent<GameObjectComponent>().GameObject.Get<NamedAnimancerComponent>("Animancer");
+        }
 
-			if (self.MotionType == MotionType.None)
-			{
-				return;
-			}
+        [EntitySystem]
+        private static void Update(this AnimatorComponent self)
+        {
+            if (self.Animancer == null)
+            {
+                return;
+            }
+            
+            if (self.isStop)
+            {
+                return;
+            }
 
-			try
-			{
-				self.AnimancerComponent.Evaluate();
-				
-				self.Animator.SetFloat("MotionSpeed", self.MontionSpeed);
+            try
+            {
+                self.Animancer.Evaluate();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"", ex);
+            }
+        }
 
-				self.Animator.SetTrigger(self.MotionType.ToString());
+        public static async ETTask Play(this AnimatorComponent self, string action, float fade = 0.25f)
+        {
+            if (string.IsNullOrEmpty(action))
+            {
+                Log.Warning("播放动画名是空");
+                return;
+            }
 
-				self.MontionSpeed = 1;
-				self.MotionType = MotionType.None;
-			}
-			catch (Exception ex)
-			{
-				throw new Exception($"动作播放失败: {self.MotionType}", ex);
-			}
-		}
+            if (!self.Animancer.States.TryGet(action, out var state))
+            {
+                AnimationClip clip = await self.Root().GetComponent<ResourcesLoaderComponent>().LoadAssetAsync<AnimationClip>($"{action}.anim");
+                self.Animancer.States.Create(clip);
+            }
 
-		public static bool HasParameter(this AnimatorComponent self, string parameter)
-		{
-			return self.Parameter.Contains(parameter);
-		}
+            self.Animancer.Play(state, fade);
+            state.Events.OnEnd = self.OnEnd;
+        }
 
-		public static void PlayInTime(this AnimatorComponent self, MotionType motionType, float time)
-		{
-			AnimationClip animationClip;
-			if (!self.animationClips.TryGetValue(motionType.ToString(), out animationClip))
-			{
-				throw new Exception($"找不到该动作: {motionType}");
-			}
+        private static void OnEnd(this AnimatorComponent self)
+        {
+            self.Animancer.Play(self.Animancer.States[0]);
+        }
 
-			float motionSpeed = animationClip.length / time;
-			if (motionSpeed < 0.01f || motionSpeed > 1000f)
-			{
-				Log.Error($"motionSpeed数值异常, {motionSpeed}, 此动作跳过");
-				return;
-			}
-			self.MotionType = motionType;
-			self.MontionSpeed = motionSpeed;
-		}
+        public static void PauseAnimator(this AnimatorComponent self)
+        {
+            if (self.isStop)
+            {
+                return;
+            }
 
-		public static void Play(this AnimatorComponent self, MotionType motionType, float motionSpeed = 1f)
-		{
-			if (!self.HasParameter(motionType.ToString()))
-			{
-				return;
-			}
-			self.MotionType = motionType;
-			self.MontionSpeed = motionSpeed;
-		}
+            self.isStop = true;
 
-		public static float AnimationTime(this AnimatorComponent self, MotionType motionType)
-		{
-			AnimationClip animationClip;
-			if (!self.animationClips.TryGetValue(motionType.ToString(), out animationClip))
-			{
-				throw new Exception($"找不到该动作: {motionType}");
-			}
-			return animationClip.length;
-		}
+            if (self.Animator == null)
+            {
+                return;
+            }
 
-		public static void PauseAnimator(this AnimatorComponent self)
-		{
-			if (self.isStop)
-			{
-				return;
-			}
-			self.isStop = true;
+            self.stopSpeed = self.Animancer.States.Current.Speed;
+            self.Animancer.States.Current.Speed = 0;
+        }
 
-			if (self.Animator == null)
-			{
-				return;
-			}
-			self.stopSpeed = self.Animator.speed;
-			self.Animator.speed = 0;
-		}
+        public static void SetAnimatorSpeed(this AnimatorComponent self, float speed)
+        {
+            self.stopSpeed = self.Animancer.States.Current.Speed;
+            self.Animancer.States.Current.Speed = speed;
+        }
 
-		public static void RunAnimator(this AnimatorComponent self)
-		{
-			if (!self.isStop)
-			{
-				return;
-			}
-
-			self.isStop = false;
-
-			if (self.Animator == null)
-			{
-				return;
-			}
-			self.Animator.speed = self.stopSpeed;
-		}
-
-		public static void SetBoolValue(this AnimatorComponent self, string name, bool state)
-		{
-			if (!self.HasParameter(name))
-			{
-				return;
-			}
-
-			self.Animator.SetBool(name, state);
-		}
-
-		public static void SetFloatValue(this AnimatorComponent self, string name, float state)
-		{
-			if (!self.HasParameter(name))
-			{
-				return;
-			}
-
-			self.Animator.SetFloat(name, state);
-		}
-
-		public static void SetIntValue(this AnimatorComponent self, string name, int value)
-		{
-			if (!self.HasParameter(name))
-			{
-				return;
-			}
-
-			self.Animator.SetInteger(name, value);
-		}
-
-		public static void SetTrigger(this AnimatorComponent self, string name)
-		{
-			if (!self.HasParameter(name))
-			{
-				return;
-			}
-
-			self.Animator.SetTrigger(name);
-		}
-
-		public static void SetAnimatorSpeed(this AnimatorComponent self, float speed)
-		{
-			self.stopSpeed = self.Animator.speed;
-			self.Animator.speed = speed;
-		}
-
-		public static void ResetAnimatorSpeed(this AnimatorComponent self)
-		{
-			self.Animator.speed = self.stopSpeed;
-		}
-	}
+        public static void ResetAnimatorSpeed(this AnimatorComponent self)
+        {
+            self.Animancer.States.Current.Speed = self.stopSpeed;
+        }
+    }
 }

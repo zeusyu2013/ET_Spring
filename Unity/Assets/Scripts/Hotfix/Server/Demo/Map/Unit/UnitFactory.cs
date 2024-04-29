@@ -59,10 +59,19 @@ namespace ET.Server
             UnitComponent unitComponent = scene.GetComponent<UnitComponent>();
             unitComponent.AddChild(unit);
 
-            unit.AddComponent<BagComponent>();
-            unit.AddComponent<MailComponent>();
-            unit.AddComponent<NumericComponent>();
+            //unit.AddComponent<BagComponent>();
+            //unit.AddComponent<MailComponent>();
+            NumericComponent numericComponent = unit.AddComponent<NumericComponent>();
+            UnitConfig config = UnitConfigCategory.Instance.Get(unit.ConfigId);
+            foreach (var kv in config.PropertyConfig.Properties)
+            {
+                numericComponent.Set((int)kv.Key, kv.Value);
+            }
+            
             unit.AddComponent<MoveComponent>();
+            
+            // 加入aoi
+            unit.AddComponent<AOIEntity, int, float3>(9 * 1000, unit.Position);
 
             return unit;
         }
