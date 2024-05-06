@@ -1,6 +1,6 @@
 ﻿namespace ET.Client
 {
-    [Event(SceneType.Demo)]
+    [Event(SceneType.MainClient)]
     public class EnterMap_ShowUIGroup : AEvent<Scene, EnterMapFinish>
     {
         protected override async ETTask Run(Scene scene, EnterMapFinish a)

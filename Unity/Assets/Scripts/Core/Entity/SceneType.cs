@@ -25,11 +25,8 @@ namespace ET
 		Chat = 1 << 17,
 
 		// 客户端
-		Demo = 1 << 30,
+		MainClient = 1 << 30,
 		Current = 1L << 31,
-		LockStep = 1L << 32,
-		LockStepView = 1L << 33,
-		DemoView = 1L << 34,
 		NetClient = 1L << 35,
 
 		All = long.MaxValue,

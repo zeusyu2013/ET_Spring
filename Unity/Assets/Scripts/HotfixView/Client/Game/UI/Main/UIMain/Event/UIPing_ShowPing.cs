@@ -1,6 +1,6 @@
 ﻿namespace ET.Client
 {
-    [Event(SceneType.Demo)]
+    [Event(SceneType.MainClient)]
     public class UIPing_ShowPing : AEvent<Scene, UIPing>
     {
         protected override async ETTask Run(Scene scene, UIPing a)

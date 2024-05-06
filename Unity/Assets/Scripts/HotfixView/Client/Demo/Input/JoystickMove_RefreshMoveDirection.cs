@@ -1,6 +1,6 @@
 ﻿namespace ET.Client
 {
-    [Event(SceneType.Demo)]
+    [Event(SceneType.MainClient)]
     [FriendOf(typeof(InputComponent))]
     public class JoystickMove_RefreshMoveDirection : AEvent<Scene, JoystickMove>
     {

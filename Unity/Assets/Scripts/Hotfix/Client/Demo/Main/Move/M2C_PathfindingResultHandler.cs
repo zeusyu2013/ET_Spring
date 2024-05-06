@@ -3,7 +3,7 @@ using Unity.Mathematics;
 
 namespace ET.Client
 {
-    [MessageHandler(SceneType.Demo)]
+    [MessageHandler(SceneType.MainClient)]
     [FriendOfAttribute(typeof (ET.MoveComponent))]
     public class M2C_PathfindingResultHandler: MessageHandler<Scene, M2C_PathfindingResult>
     {

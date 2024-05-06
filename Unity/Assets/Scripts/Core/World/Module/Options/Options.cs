@@ -14,8 +14,7 @@ namespace ET
         BenchmarkClient,
         BenchmarkServer,
         
-        Demo,
-        LockStep,
+        MainClient,
     }
     
     public class Options: Singleton<Options>

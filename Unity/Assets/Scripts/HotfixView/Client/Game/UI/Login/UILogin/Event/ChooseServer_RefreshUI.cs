@@ -1,6 +1,6 @@
 ﻿namespace ET.Client
 {
-    [Event(SceneType.Demo)]
+    [Event(SceneType.MainClient)]
     public class ChooseServer_RefreshUI : AEvent<Scene, ChooseServer>
     {
         protected override async ETTask Run(Scene scene, ChooseServer a)
