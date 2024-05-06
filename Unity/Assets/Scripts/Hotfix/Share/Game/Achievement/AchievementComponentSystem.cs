@@ -49,6 +49,22 @@
             {
                 return;
             }
+
+            switch (config.Condition.GetTypeId())
+            {
+                case PropertyCompare.__ID__:
+                {
+                    PropertyCompare propertyCompare = (PropertyCompare)config.Condition;
+                    int value = self.GetParent<Unit>().GetInt(propertyCompare.Property);
+                    if (value >= propertyCompare.Value)
+                    {
+                        Achievement achievement = self.AddChild<Achievement>();
+                        self.Achievements.Add(achievementConfig, achievement);
+                    }
+
+                    break;
+                }
+            }
         }
     }
 }

@@ -69,6 +69,7 @@ namespace ET.Server
             }
             
             unit.AddComponent<MoveComponent>();
+            unit.AddComponent<AchievementComponent>();
             
             // 加入aoi
             unit.AddComponent<AOIEntity, int, float3>(9 * 1000, unit.Position);

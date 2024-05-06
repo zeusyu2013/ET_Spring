@@ -19,7 +19,7 @@ namespace ET
             Id = _buf.ReadInt();
             Name = _buf.ReadString();
             Desc = _buf.ReadString();
-            Condition = _buf.ReadInt();
+            Condition = Condition.DeserializeCondition(_buf);
 
             PostInit();
         }
@@ -47,7 +47,7 @@ namespace ET
         /// <summary>
         /// 成就条件
         /// </summary>
-        public readonly int Condition;
+        public readonly Condition Condition;
 
         public const int __ID__ = -714023119;
 
