@@ -2,7 +2,6 @@
 {
     [EntitySystemOf(typeof(AchievementComponent))]
     [FriendOfAttribute(typeof(ET.AchievementComponent))]
-    [FriendOfAttribute(typeof(ET.Achievement))]
     public static partial class AchievementComponentSystem
     {
         [EntitySystem]
@@ -13,56 +12,37 @@
         [EntitySystem]
         private static void Deserialize(this ET.AchievementComponent self)
         {
-            foreach (Entity childrenValue in self.Children.Values)
-            {
-                Achievement achievement = childrenValue as Achievement;
-                if (achievement == null)
-                {
-                    continue;
-                }
 
-                int config = achievement.AchievementConfig;
-                if (config < 1)
-                {
-                    continue;
-                }
-
-                if (self.Achievements.ContainsKey(config))
-                {
-                    Log.Error($"包含相同id成就 {config}");
-                    continue;
-                }
-
-                self.Achievements.Add(config, achievement);
-            }
         }
 
-        public static void AddAchievement(this AchievementComponent self, int achievementConfig)
+        public static void AddAchievement(this AchievementComponent self)
         {
-            if (self.Achievements.ContainsKey(achievementConfig))
+            var configs = AchievementConfigCategory.Instance.DataList;
+            if (configs == null || configs.Count < 1)
             {
                 return;
             }
 
-            AchievementConfig config = AchievementConfigCategory.Instance.Get(achievementConfig);
-            if (config == null)
+            foreach (AchievementConfig config in configs)
             {
-                return;
-            }
-
-            switch (config.Condition.GetTypeId())
-            {
-                case PropertyCompare.__ID__:
+                if (self.Achievements.Contains(config.Id))
                 {
-                    PropertyCompare propertyCompare = (PropertyCompare)config.Condition;
-                    int value = self.GetParent<Unit>().GetInt(propertyCompare.Property);
-                    if (value >= propertyCompare.Value)
-                    {
-                        Achievement achievement = self.AddChild<Achievement>();
-                        self.Achievements.Add(achievementConfig, achievement);
-                    }
+                    continue;
+                }
 
-                    break;
+                switch (config.Condition.GetTypeId())
+                {
+                    case PropertyCompare.__ID__:
+                    {
+                        PropertyCompare propertyCompare = (PropertyCompare)config.Condition;
+                        int value = self.GetParent<Unit>().GetInt(propertyCompare.Property);
+                        if (value >= propertyCompare.Value)
+                        {
+                            self.Achievements.Add(config.Id);
+                        }
+
+                        break;
+                    }
                 }
             }
         }

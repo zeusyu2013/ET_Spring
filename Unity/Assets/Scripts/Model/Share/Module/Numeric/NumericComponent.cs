@@ -54,7 +54,7 @@ namespace ET
 
             return numericComponent.GetAsInt(type);
         }
-        
+
         public static float GetFloat(this Unit unit, GamePropertyType type)
         {
             if (unit == null || unit.IsDisposed)
@@ -72,7 +72,7 @@ namespace ET
 
             return numericComponent.GetAsFloat(type);
         }
-        
+
         public static long GetLong(this Unit unit, GamePropertyType type)
         {
             if (unit == null || unit.IsDisposed)
@@ -173,6 +173,26 @@ namespace ET
             }
 
             numericComponent.Set(type, value);
+        }
+
+        public static void IncLong(this Unit unit, GamePropertyType type, long value)
+        {
+            if (unit == null || unit.IsDisposed)
+            {
+                Log.Warning("unit not found");
+                return;
+            }
+
+            NumericComponent numericComponent = unit.GetComponent<NumericComponent>();
+            if (numericComponent == null)
+            {
+                Log.Warning("unit numericComponent not found");
+                return;
+            }
+
+            long current = numericComponent.GetAsLong(type);
+
+            numericComponent.Set(type, current + value);
         }
 
         public static void SetNoEvent(this NumericComponent self, int numericType, long value)
