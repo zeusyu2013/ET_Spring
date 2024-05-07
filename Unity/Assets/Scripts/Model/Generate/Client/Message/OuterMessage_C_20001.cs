@@ -157,6 +157,80 @@ namespace ET
         }
     }
 
+    [MemoryPackable]
+    [Message(OuterMessage.C2M_GetOfflineIncome)]
+    public partial class C2M_GetOfflineIncome : MessageObject
+    {
+        public static C2M_GetOfflineIncome Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_GetOfflineIncome), isFromPool) as C2M_GetOfflineIncome;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_GetOfflineIncome)]
+    public partial class M2C_GetOfflineIncome : MessageObject
+    {
+        public static M2C_GetOfflineIncome Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_GetOfflineIncome), isFromPool) as M2C_GetOfflineIncome;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        [MemoryPackOrder(3)]
+        public long Gold { get; set; }
+
+        [MemoryPackOrder(4)]
+        public long Exp { get; set; }
+
+        [MemoryPackOrder(5)]
+        public int Material1 { get; set; }
+
+        [MemoryPackOrder(6)]
+        public int Material2 { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+            this.Gold = default;
+            this.Exp = default;
+            this.Material1 = default;
+            this.Material2 = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
     public static partial class OuterMessage
     {
         public const ushort C2M_GMCommand = 20002;
@@ -164,5 +238,7 @@ namespace ET
         public const ushort M2C_Signin = 20004;
         public const ushort C2M_ChatBroadcast = 20005;
         public const ushort M2C_ChatBroadcast = 20006;
+        public const ushort C2M_GetOfflineIncome = 20007;
+        public const ushort M2C_GetOfflineIncome = 20008;
     }
 }

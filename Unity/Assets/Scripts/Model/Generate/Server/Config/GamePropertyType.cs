@@ -27,29 +27,14 @@ namespace ET
         GamePropertyType_MaxExp = 1003,
 
         /// <summary>
-        /// 银币
-        /// </summary>
-        GamePropertyType_Silver = 1004,
-
-        /// <summary>
-        /// 金币
-        /// </summary>
-        GamePropertyType_Gold = 1005,
-
-        /// <summary>
-        /// 钻石
-        /// </summary>
-        GamePropertyType_Diamond = 1006,
-
-        /// <summary>
         /// 移动速度
         /// </summary>
-        GamePropertyType_Speed = 1007,
+        GamePropertyType_Speed = 1004,
 
         /// <summary>
         /// 视野范围
         /// </summary>
-        GamePropertyType_AOI = 1008,
+        GamePropertyType_AOI = 1005,
 
         /// <summary>
         /// 生命值

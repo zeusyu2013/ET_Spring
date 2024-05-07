@@ -32,3 +32,20 @@ message M2C_ChatBroadcast // IMessage
 	int32 ChannelId = 2;
 	string Content = 3;
 }
+
+message C2M_GetOfflineIncome
+{
+	int32 RpcId = 1;
+}
+
+message M2C_GetOfflineIncome
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+
+	int64 Gold = 4;
+	int64 Exp = 5;
+	int32 Material1 = 6;
+	int32 Material2 = 7;
+}

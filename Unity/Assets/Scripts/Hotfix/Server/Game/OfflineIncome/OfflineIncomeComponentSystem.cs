@@ -32,7 +32,7 @@
             // TODO:这里随便设置下，1s 100金币 10经验值
             long gold = diff * 100;
             long exp = diff * 10;
-            self.GetParent<Unit>().IncLong(GamePropertyType.GamePropertyType_Gold, gold);
+            self.GetParent<Unit>().GetComponent<CurrencyComponent>().Inc(CurrencyType.CurrencyType_Gold, gold);
             self.GetParent<Unit>().GetComponent<PlayerLevelComponent>().AddExp(exp);
 
             // 设置最后一次领取时间
