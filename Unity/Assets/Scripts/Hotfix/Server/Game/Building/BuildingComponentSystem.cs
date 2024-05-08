@@ -35,12 +35,18 @@ namespace ET
                 return;
             }
 
-            
+            Building building = self.AddChild<Building, int>(configId);
+            self.Buildings.Add(building);
         }
 
         public static void UpgradeBuilding(this BuildingComponent self, Building building)
         {
             if (building == null)
+            {
+                return;
+            }
+            
+            if (!self.Buildings.Contains(building))
             {
                 return;
             }

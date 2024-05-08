@@ -33,12 +33,13 @@ message M2C_ChatBroadcast // IMessage
 	string Content = 3;
 }
 
-message C2M_GetOfflineIncome
+// ResponseType M2C_GetOfflineIncome
+message C2M_GetOfflineIncome // ILocationRequest
 {
 	int32 RpcId = 1;
 }
 
-message M2C_GetOfflineIncome
+message M2C_GetOfflineIncome // ILocationResponse
 {
 	int32 RpcId = 1;
 	int32 Error = 2;
@@ -48,4 +49,56 @@ message M2C_GetOfflineIncome
 	int64 Exp = 5;
 	int32 Material1 = 6;
 	int32 Material2 = 7;
+}
+
+message M2C_SystemTips // IMessage
+{
+	int32 RpcId = 1;
+	int32 ErrorCode = 2;
+}
+
+message BuildingInfo
+{
+	int32 ConfigId = 1;
+	int32 Level = 2;
+}
+
+// ResponseType M2C_GetBuildings
+message C2M_GetBuildings // ILocationRequest
+{
+	int32 RpcId = 1;
+}
+
+message M2C_GetBuildings // ILocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+	repeated BuildingInfo Buildings = 4;
+}
+
+// ResponseType M2C_UpgradeBuilding
+message C2M_UpgradeBuilding // ILocationRequest
+{
+	int32 RpcId = 1;
+	int64 InstanceId = 2;
+}
+
+message M2C_UpgradeBuilding // ILocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}
+
+message C2M_LearnAvocation // ILocationMessage
+{
+	int32 RpcId = 1;
+	int32 AvocationType = 2;
+}
+
+message C2M_UpgradeAvocation // ILocationMessage
+{
+	int32 RpcId = 1;
+	int32 AvocationType = 2;
 }

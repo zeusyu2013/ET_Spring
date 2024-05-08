@@ -33,5 +33,7 @@ namespace ET
         public const int ERR_MailIdNotFound = 200031;
 
         public const int ERR_SigninedToday = 200040;
+
+        public const int ERR_NotFountComponent = 200050;
     }
 }

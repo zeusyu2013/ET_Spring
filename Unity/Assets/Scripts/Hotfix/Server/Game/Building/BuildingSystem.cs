@@ -9,5 +9,13 @@
         {
             self.ConfigId = configId;
         }
+
+        public static BuildingInfo ToMessage(this Building self)
+        {
+            BuildingInfo info = BuildingInfo.Create();
+            info.ConfigId = self.ConfigId;
+            info.Level = self.Level;
+            return info;
+        }
     }
 }
