@@ -3,7 +3,6 @@
     "Id": 1001,
     "Name": "任务1001",
     "Type": 1,
-    "TaskType": 1,
     "SubTask": [
       10001,
       10002,
@@ -16,7 +15,6 @@
     "Id": 1002,
     "Name": "任务1002",
     "Type": 1,
-    "TaskType": 1,
     "SubTask": [
       10001,
       10002,
@@ -29,7 +27,6 @@
     "Id": 1003,
     "Name": "任务1003",
     "Type": 1,
-    "TaskType": 1,
     "SubTask": [
       10002,
       10003,
@@ -42,7 +39,6 @@
     "Id": 1004,
     "Name": "任务1004",
     "Type": 1,
-    "TaskType": 1,
     "SubTask": [
       10003,
       10004,
@@ -55,7 +51,6 @@
     "Id": 1005,
     "Name": "任务1005",
     "Type": 1,
-    "TaskType": 1,
     "SubTask": [
       10004,
       10005,
@@ -68,7 +63,6 @@
     "Id": 1006,
     "Name": "任务1006",
     "Type": 1,
-    "TaskType": 1,
     "SubTask": [
       10005,
       10006,
@@ -81,7 +75,6 @@
     "Id": 1007,
     "Name": "任务1007",
     "Type": 1,
-    "TaskType": 1,
     "SubTask": [
       10006,
       10007,
@@ -94,7 +87,6 @@
     "Id": 1008,
     "Name": "任务1008",
     "Type": 1,
-    "TaskType": 1,
     "SubTask": [
       10007,
       10008,
@@ -107,7 +99,6 @@
     "Id": 1009,
     "Name": "任务1009",
     "Type": 1,
-    "TaskType": 1,
     "SubTask": [
       10008,
       10009,
@@ -120,7 +111,6 @@
     "Id": 1010,
     "Name": "任务1010",
     "Type": 1,
-    "TaskType": 1,
     "SubTask": [
       10009,
       10010,
@@ -133,7 +123,6 @@
     "Id": 1011,
     "Name": "任务1011",
     "Type": 1,
-    "TaskType": 1,
     "SubTask": [
       10009,
       10010,
@@ -147,7 +136,6 @@
     "Id": 1012,
     "Name": "任务1012",
     "Type": 1,
-    "TaskType": 1,
     "SubTask": [
       10009,
       10010,
@@ -162,7 +150,6 @@
     "Id": 1013,
     "Name": "任务1013",
     "Type": 1,
-    "TaskType": 1,
     "SubTask": [
       10009,
       10010,
@@ -178,7 +165,6 @@
     "Id": 1014,
     "Name": "任务1014",
     "Type": 1,
-    "TaskType": 1,
     "SubTask": [
       10009,
       10010,
@@ -194,7 +180,6 @@
     "Id": 1015,
     "Name": "任务1015",
     "Type": 1,
-    "TaskType": 1,
     "SubTask": [
       10009,
       10010,
@@ -210,7 +195,6 @@
     "Id": 1016,
     "Name": "任务1016",
     "Type": 1,
-    "TaskType": 1,
     "SubTask": [
       10009,
       10010,
@@ -226,7 +210,6 @@
     "Id": 1017,
     "Name": "任务1017",
     "Type": 1,
-    "TaskType": 1,
     "SubTask": [
       10009,
       10010,
@@ -242,7 +225,6 @@
     "Id": 1018,
     "Name": "任务1018",
     "Type": 1,
-    "TaskType": 1,
     "SubTask": [
       10009,
       10010,
@@ -258,7 +240,6 @@
     "Id": 1019,
     "Name": "任务1019",
     "Type": 1,
-    "TaskType": 1,
     "SubTask": [
       10009,
       10010,
@@ -274,7 +255,6 @@
     "Id": 1020,
     "Name": "任务1020",
     "Type": 1,
-    "TaskType": 1,
     "SubTask": [
       10009,
       10010,
@@ -290,7 +270,6 @@
     "Id": 1021,
     "Name": "任务1021",
     "Type": 1,
-    "TaskType": 1,
     "SubTask": [
       10009,
       10010,
@@ -305,7 +284,6 @@
     "Id": 1022,
     "Name": "任务1022",
     "Type": 1,
-    "TaskType": 1,
     "SubTask": [],
     "PreTask": 1021,
     "NextTask": 1023
@@ -314,7 +292,6 @@
     "Id": 1023,
     "Name": "任务1023",
     "Type": 1,
-    "TaskType": 1,
     "SubTask": [],
     "PreTask": 1022,
     "NextTask": 1024
@@ -323,7 +300,6 @@
     "Id": 1024,
     "Name": "任务1024",
     "Type": 1,
-    "TaskType": 1,
     "SubTask": [],
     "PreTask": 1023,
     "NextTask": 1025
@@ -332,7 +308,6 @@
     "Id": 1025,
     "Name": "任务1025",
     "Type": 1,
-    "TaskType": 1,
     "SubTask": [],
     "PreTask": 1024,
     "NextTask": 0

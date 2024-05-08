@@ -7,13 +7,6 @@
         {
             Other2DBCache_SaveUnit request = Other2DBCache_SaveUnit.Create();
             request.Unit = unit.ToBson();
-            foreach (Entity entity in unit.Components.Values)
-            {
-                if (entity is ITransfer)
-                {
-                    request.Entities.Add(entity.ToBson());
-                }
-            }
 
             StartSceneConfig dbcacheSceneConfig = StartSceneConfigCategory.Instance.DBCache;
             unit.Root().GetComponent<MessageSender>().Send(dbcacheSceneConfig.ActorId, request);

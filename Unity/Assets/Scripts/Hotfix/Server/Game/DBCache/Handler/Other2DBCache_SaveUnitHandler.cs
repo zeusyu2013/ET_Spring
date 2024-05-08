@@ -9,15 +9,9 @@
 
             UnitComponent unitComponent = root.GetComponent<UnitComponent>();
             unitComponent.AddChild(unit);
-            
-            foreach (byte[] bytes in message.Entities)
-            {
-                Entity entity = MongoHelper.Deserialize<Entity>(bytes);
-                unit.AddComponent(entity);
-            }
-            
+
             await root.GetComponent<DBCacheComponent>().SaveUnit(unit);
-            
+
             unitComponent.Remove(unit.Id);
         }
     }

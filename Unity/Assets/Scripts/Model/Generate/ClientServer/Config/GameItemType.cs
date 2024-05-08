@@ -12,12 +12,12 @@ namespace ET
     public enum GameItemType
     {
         /// <summary>
-        /// 普通道具
+        /// 普通
         /// </summary>
         GameItemType_Normal = 1,
 
         /// <summary>
-        /// 货币道具
+        /// 货币
         /// </summary>
         GameItemType_Money = 2,
 
