@@ -26,8 +26,11 @@ namespace ET.Server
                         numericComponent.Set((int)kv.Key, kv.Value);
                     }
 
-                    BagComponent bagComponent = unit.AddComponent<BagComponent>();
+                    BagComponent bagComponent = unit.AddComponentWithId<BagComponent>(unit.Id);
                     bagComponent.AddItem(60011, 1);
+
+                    CurrencyComponent currencyComponent = unit.AddComponentWithId<CurrencyComponent>(unit.Id);
+                    currencyComponent.Inc();
 
                     unit.AddComponent<MailComponent>();
 

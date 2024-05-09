@@ -1,0 +1,162 @@
+[
+  {
+    "Id": 1,
+    "Items": [
+      [
+        60010,
+        1
+      ],
+      [
+        60011,
+        1
+      ]
+    ],
+    "CurrencyType": 1,
+    "CurrencyValue": 1000,
+    "RaceFlag": 767
+  },
+  {
+    "Id": 2,
+    "Items": [
+      [
+        60010,
+        1
+      ],
+      [
+        60011,
+        1
+      ]
+    ],
+    "CurrencyType": 1,
+    "CurrencyValue": 1000,
+    "RaceFlag": 269
+  },
+  {
+    "Id": 3,
+    "Items": [
+      [
+        60010,
+        1
+      ],
+      [
+        60011,
+        1
+      ]
+    ],
+    "CurrencyType": 1,
+    "CurrencyValue": 1000,
+    "RaceFlag": 873
+  },
+  {
+    "Id": 4,
+    "Items": [
+      [
+        60010,
+        1
+      ],
+      [
+        60011,
+        1
+      ]
+    ],
+    "CurrencyType": 1,
+    "CurrencyValue": 1000,
+    "RaceFlag": 367
+  },
+  {
+    "Id": 5,
+    "Items": [
+      [
+        60010,
+        1
+      ],
+      [
+        60011,
+        1
+      ]
+    ],
+    "CurrencyType": 1,
+    "CurrencyValue": 1000,
+    "RaceFlag": 887
+  },
+  {
+    "Id": 6,
+    "Items": [
+      [
+        60010,
+        1
+      ],
+      [
+        60011,
+        1
+      ]
+    ],
+    "CurrencyType": 1,
+    "CurrencyValue": 1000,
+    "RaceFlag": 130
+  },
+  {
+    "Id": 7,
+    "Items": [
+      [
+        60010,
+        1
+      ],
+      [
+        60011,
+        1
+      ]
+    ],
+    "CurrencyType": 1,
+    "CurrencyValue": 1000,
+    "RaceFlag": 446
+  },
+  {
+    "Id": 8,
+    "Items": [
+      [
+        60010,
+        1
+      ],
+      [
+        60011,
+        1
+      ]
+    ],
+    "CurrencyType": 1,
+    "CurrencyValue": 1000,
+    "RaceFlag": 977
+  },
+  {
+    "Id": 9,
+    "Items": [
+      [
+        60010,
+        1
+      ],
+      [
+        60011,
+        1
+      ]
+    ],
+    "CurrencyType": 1,
+    "CurrencyValue": 1000,
+    "RaceFlag": 184
+  },
+  {
+    "Id": 10,
+    "Items": [
+      [
+        60010,
+        1
+      ],
+      [
+        60011,
+        1
+      ]
+    ],
+    "CurrencyType": 1,
+    "CurrencyValue": 1000,
+    "RaceFlag": 1023
+  }
+]
