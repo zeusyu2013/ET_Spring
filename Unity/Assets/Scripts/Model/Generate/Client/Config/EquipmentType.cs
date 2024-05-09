@@ -11,6 +11,8 @@ namespace ET
 {
     public enum EquipmentType
     {
+        EquipmentType_None = 0,
+
         /// <summary>
         /// 头部
         /// </summary>

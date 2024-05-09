@@ -77,7 +77,8 @@
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "MaxCount": 999
+    "MaxCount": 1,
+    "EquipmentType": 1
   },
   {
     "Id": 60011,
@@ -85,7 +86,8 @@
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "MaxCount": 999
+    "MaxCount": 1,
+    "EquipmentType": 2
   },
   {
     "Id": 60012,
@@ -93,7 +95,8 @@
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "MaxCount": 999
+    "MaxCount": 1,
+    "EquipmentType": 3
   },
   {
     "Id": 60013,
@@ -101,7 +104,8 @@
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "MaxCount": 999
+    "MaxCount": 1,
+    "EquipmentType": 4
   },
   {
     "Id": 60014,
@@ -109,7 +113,8 @@
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "MaxCount": 999
+    "MaxCount": 1,
+    "EquipmentType": 5
   },
   {
     "Id": 60015,
@@ -117,7 +122,8 @@
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "MaxCount": 999
+    "MaxCount": 1,
+    "EquipmentType": 6
   },
   {
     "Id": 60016,
@@ -125,7 +131,8 @@
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "MaxCount": 999
+    "MaxCount": 1,
+    "EquipmentType": 7
   },
   {
     "Id": 60017,
@@ -133,7 +140,8 @@
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "MaxCount": 999
+    "MaxCount": 1,
+    "EquipmentType": 8
   },
   {
     "Id": 60018,
@@ -141,6 +149,7 @@
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "MaxCount": 999
+    "MaxCount": 1,
+    "EquipmentType": 9
   }
 ]

@@ -35,7 +35,8 @@ namespace ET.Server
             {
                 return false;
             }
-            
+
+            self.AddChild(item);
             self.GameItems.Add(item);
 
             return true;
@@ -55,7 +56,9 @@ namespace ET.Server
                 item.ConfigId = itemId;
                 item.Amount = amount;
                 self.GameItems.Add(item);
-                
+
+                EventSystem.Instance.Publish(self.Scene(), new BagOnAdd() { GameItem = item });
+
                 return true;
             }
 
@@ -88,7 +91,6 @@ namespace ET.Server
             return true;
         }
 
-        
         public static GameItem GetGameItemByConfig(this BagComponent self, int config)
         {
             GameItem item = null;

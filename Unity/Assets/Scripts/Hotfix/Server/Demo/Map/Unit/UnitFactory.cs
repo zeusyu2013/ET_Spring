@@ -41,6 +41,53 @@ namespace ET.Server
             }
         }
 
+        public static Unit CreatePlayer(Scene scene, long id, int configId)
+        {
+            UnitComponent unitComponent = scene.GetComponent<UnitComponent>();
+            Unit unit = unitComponent.AddChildWithId<Unit, int>(id, configId);
+            unit.AddComponent<MoveComponent>();
+            
+            NumericComponent numericComponent = unit.AddComponent<NumericComponent>();
+            UnitConfig config = UnitConfigCategory.Instance.Get(configId);
+            foreach (var kv in config.PropertyConfig.Properties)
+            {
+                numericComponent.Set((int)kv.Key, kv.Value);
+            }
+            
+            BagComponent bagComponent = unit.AddComponent<BagComponent>();
+            bagComponent.AddItem(60011, 1);
+            
+            // 装备组件
+            unit.AddComponent<EquipmentComponent>();
+            
+            // 邮箱组件
+            unit.AddComponent<MailComponent>();
+            
+            // 副业组件
+            unit.AddComponent<AvocationComponent>();
+            
+            // 建筑组件
+            unit.AddComponent<BuildingComponent>();
+            
+            // 货币组件
+            unit.AddComponent<CurrencyComponent>();
+            
+            // 离线收益组件
+            unit.AddComponent<OfflineIncomeComponent>();
+            
+            // 任务组件
+            unit.AddComponent<GameTaskComponent>();
+            
+            // 成就组件
+            unit.AddComponent<AchievementComponent>();
+            
+            unitComponent.Add(unit);
+            
+            // 加入aoi
+            unit.AddComponent<AOIEntity, int, float3>(9 * 1000, unit.Position);
+            return unit;
+        }
+
         public static async ETTask<Unit> LoadFromDB(Scene scene, long unitId)
         {
             Unit unit = null;
@@ -59,8 +106,6 @@ namespace ET.Server
             UnitComponent unitComponent = scene.GetComponent<UnitComponent>();
             unitComponent.AddChild(unit);
 
-            //unit.AddComponent<BagComponent>();
-            //unit.AddComponent<MailComponent>();
             NumericComponent numericComponent = unit.AddComponent<NumericComponent>();
             UnitConfig config = UnitConfigCategory.Instance.Get(unit.ConfigId);
             foreach (var kv in config.PropertyConfig.Properties)
