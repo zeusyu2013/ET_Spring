@@ -11,15 +11,18 @@
 
         public static bool Inc(this CurrencyComponent self, CurrencyType type, long value)
         {
+            if (type is <= 0 or >= CurrencyType.CurrencyType_Max)
+            {
+                return false;
+            }
+
             if (value < 0)
             {
                 return false;
             }
 
-            if (!self.Currencies.ContainsKey(type))
-            {
-                self.Currencies.Add(type, 0);
-            }
+            // 没有此类型，尝试添加
+            self.Currencies.TryAdd(type, 0);
 
             self.Currencies[type] += value;
 
@@ -47,6 +50,11 @@
             self.Currencies[type] = current - value;
 
             return true;
+        }
+
+        [EntitySystem]
+        private static void Deserialize(this ET.CurrencyComponent self)
+        {
         }
     }
 }

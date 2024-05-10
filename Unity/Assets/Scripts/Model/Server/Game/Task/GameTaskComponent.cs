@@ -4,7 +4,7 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace ET.Server
 {
     [ComponentOf(typeof(Unit))]
-    public class GameTaskComponent : Entity, IAwake, ISerializeToEntity
+    public class GameTaskComponent : Entity, IAwake, IDeserialize
     {
         [BsonElement]
         public List<int> AcceptedTasks = new();

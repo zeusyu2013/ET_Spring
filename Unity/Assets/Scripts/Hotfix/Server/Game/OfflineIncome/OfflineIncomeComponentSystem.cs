@@ -38,5 +38,10 @@
             // 设置最后一次领取时间
             self.LastIncomeTime = now;
         }
+
+        [EntitySystem]
+        private static void Deserialize(this ET.Server.OfflineIncomeComponent self)
+        {
+        }
     }
 }

@@ -1,7 +1,10 @@
-﻿namespace ET.Server
+﻿using System.Collections.Generic;
+
+namespace ET.Server
 {
-    [ComponentOf(typeof(Scene))]
-    public class GameRoleComponent : Entity
+    [ComponentOf(typeof(Session))]
+    public class GameRoleComponent : Entity, IAwake, IDeserialize
     {
+        public List<EntityRef<GameRole>> GameRoles = new();
     }
 }

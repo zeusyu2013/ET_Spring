@@ -2,46 +2,91 @@
   {
     "Id": 60010,
     "Base": 1003,
-    "Random": 2001
+    "Random": 2001,
+    "CharacterFlag": 1023
   },
   {
     "Id": 60011,
     "Base": 1004,
-    "Random": 2001
+    "Random": 2001,
+    "CharacterFlag": 1023
   },
   {
     "Id": 60012,
     "Base": 1005,
-    "Random": 2001
+    "Random": 2001,
+    "CharacterFlag": 1023
   },
   {
     "Id": 60013,
     "Base": 1003,
-    "Random": 2001
+    "Random": 2001,
+    "CharacterFlag": 1023
   },
   {
     "Id": 60014,
     "Base": 1004,
-    "Random": 2001
+    "Random": 2001,
+    "CharacterFlag": 1023
   },
   {
     "Id": 60015,
     "Base": 1005,
-    "Random": 2001
+    "Random": 2001,
+    "CharacterFlag": 1023
   },
   {
     "Id": 60016,
     "Base": 1003,
-    "Random": 2001
+    "Random": 2001,
+    "CharacterFlag": 1023
   },
   {
     "Id": 60017,
     "Base": 1004,
-    "Random": 2001
+    "Random": 2001,
+    "CharacterFlag": 1023
   },
   {
     "Id": 60018,
     "Base": 1005,
-    "Random": 2001
+    "Random": 2001,
+    "CharacterFlag": 1023
+  },
+  {
+    "Id": 60019,
+    "Base": 1003,
+    "Random": 2001,
+    "CharacterFlag": 883
+  },
+  {
+    "Id": 60020,
+    "Base": 1004,
+    "Random": 2001,
+    "CharacterFlag": 883
+  },
+  {
+    "Id": 60021,
+    "Base": 1005,
+    "Random": 2001,
+    "CharacterFlag": 883
+  },
+  {
+    "Id": 60022,
+    "Base": 1003,
+    "Random": 2001,
+    "CharacterFlag": 883
+  },
+  {
+    "Id": 60023,
+    "Base": 1004,
+    "Random": 2001,
+    "CharacterFlag": 883
+  },
+  {
+    "Id": 60024,
+    "Base": 1005,
+    "Random": 2001,
+    "CharacterFlag": 883
   }
 ]

@@ -13,8 +13,7 @@ namespace ET
         public const int DBCache = 8;
 
         public const int Login = 10;
-        public const int CreateRole = 11;
-        public const int DeleteRole = 12;
+        public const int GameRole = 11;
 
         public const int Bag = 21;
 

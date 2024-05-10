@@ -151,5 +151,59 @@
     "UseLevel": 1,
     "MaxCount": 1,
     "EquipmentType": 9
+  },
+  {
+    "Id": 60019,
+    "Name": "裂皮头巾",
+    "Type": 3,
+    "Quality": 1,
+    "UseLevel": 1,
+    "MaxCount": 1,
+    "EquipmentType": 1
+  },
+  {
+    "Id": 60020,
+    "Name": "裂皮护肩",
+    "Type": 3,
+    "Quality": 1,
+    "UseLevel": 1,
+    "MaxCount": 1,
+    "EquipmentType": 3
+  },
+  {
+    "Id": 60021,
+    "Name": "裂皮护甲",
+    "Type": 3,
+    "Quality": 1,
+    "UseLevel": 1,
+    "MaxCount": 1,
+    "EquipmentType": 4
+  },
+  {
+    "Id": 60022,
+    "Name": "裂皮腰带",
+    "Type": 3,
+    "Quality": 1,
+    "UseLevel": 1,
+    "MaxCount": 1,
+    "EquipmentType": 5
+  },
+  {
+    "Id": 60023,
+    "Name": "裂皮裤子",
+    "Type": 3,
+    "Quality": 1,
+    "UseLevel": 1,
+    "MaxCount": 1,
+    "EquipmentType": 6
+  },
+  {
+    "Id": 60024,
+    "Name": "裂皮鞋子",
+    "Type": 3,
+    "Quality": 1,
+    "UseLevel": 1,
+    "MaxCount": 1,
+    "EquipmentType": 7
   }
 ]

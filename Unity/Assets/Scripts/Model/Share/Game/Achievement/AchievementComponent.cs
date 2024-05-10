@@ -3,7 +3,7 @@
 namespace ET
 {
     [ComponentOf(typeof(Unit))]
-    public class AchievementComponent : Entity, IAwake, IDeserialize, ISerializeToEntity
+    public class AchievementComponent : Entity, IAwake, IDeserialize
     {
         public List<int> Achievements = new();
     }

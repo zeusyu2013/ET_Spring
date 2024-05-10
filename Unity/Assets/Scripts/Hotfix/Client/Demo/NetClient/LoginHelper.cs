@@ -110,5 +110,32 @@ namespace ET.Client
 
             return ErrorCode.ERR_Success;
         }
+
+        public static async ETTask<int> ChooseRole(Scene root, string roleName)
+        {
+            if (string.IsNullOrEmpty(roleName))
+            {
+                return ErrorCode.ERR_ChooseRoleNameEmpty;
+            }
+            
+            PlayerComponent playerComponent = root.GetComponent<PlayerComponent>();
+            long playerId = playerComponent.MyId;
+            if (playerId < 1)
+            {
+                return ErrorCode.ERR_PlayerIdEmpty;
+            }
+
+            C2G_ChooseRole c2GChooseRole = C2G_ChooseRole.Create();
+            c2GChooseRole.PlayerId = playerId;
+            c2GChooseRole.RoleName = roleName;
+            G2C_ChooseRole g2CChooseRole = await SessionHelper.Call<G2C_ChooseRole>(root, c2GChooseRole);
+            if (g2CChooseRole.Error != ErrorCode.ERR_Success)
+            {
+                Log.Error($"选择角色登录异常：{g2CChooseRole.Message}");
+                return g2CChooseRole.Error;
+            }
+
+            return ErrorCode.ERR_Success;
+        }
     }
 }

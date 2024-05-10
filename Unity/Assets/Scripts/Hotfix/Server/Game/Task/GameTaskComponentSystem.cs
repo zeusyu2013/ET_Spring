@@ -42,7 +42,7 @@
                 {
                     continue;
                 }
-                
+
                 foreach (int i in config.SubTask)
                 {
                     SubTaskConfig subTaskConfig = SubTaskConfigCategory.Instance.Get(i);
@@ -50,7 +50,7 @@
                     {
                         continue;
                     }
-                    
+
                     if (subTaskConfig.SubTaskType != type)
                     {
                         continue;
@@ -78,6 +78,11 @@
 
             // 给奖励
             self.GetParent<Unit>().GetComponent<RewardComponent>().Reward(config.TaskReward);
+        }
+
+        [EntitySystem]
+        private static void Deserialize(this ET.Server.GameTaskComponent self)
+        {
         }
     }
 }

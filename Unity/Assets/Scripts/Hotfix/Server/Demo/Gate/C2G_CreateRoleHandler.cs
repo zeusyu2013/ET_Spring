@@ -1,9 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace ET.Server
+﻿namespace ET.Server
 {
-    [FriendOf(typeof(RoleInfo))]
-    [FriendOf(typeof(RoleNameInfo))]
+    [FriendOf(typeof(GameRole))]
+    [FriendOf(typeof(GameRoleName))]
     [MessageSessionHandler(SceneType.Gate)]
     public class C2G_CreateRoleHandler : MessageSessionHandler<C2G_CreateRole, G2C_CreateRole>
     {
@@ -25,56 +23,17 @@ namespace ET.Server
                 return;
             }
 
-            using (await session.Root().GetComponent<CoroutineLockComponent>().Wait(CoroutineLockType.CreateRole, playerId))
+            int characterType = request.CharacterType;
+            int raceType = request.RaceType;
+
+            int errorCode = await session.GetComponent<GameRoleComponent>().Create(roleName, characterType, raceType);
+            if (errorCode != ErrorCode.ERR_Success)
             {
-                // 查询重名
-                List<RoleNameInfo> roleNameInfos = await session.Root().GetComponent<DBManagerComponent>().GetZoneDB(session.Zone())
-                        .Query<RoleNameInfo>(x => x.RoleName.Equals(roleName));
-
-                bool sameName = false;
-                foreach (RoleNameInfo info in roleNameInfos)
-                {
-                    if (!info.Deleted)
-                    {
-                        sameName = true;
-                    }
-                }
-
-                // 重名提示
-                if (sameName)
-                {
-                    response.Error = ErrorCode.ERR_CreateRoleNameSame;
-                    return;
-                }
-
-                // 开始创角流程
-                RoleInfo roleInfo = session.Root().GetComponent<GameRoleComponent>().AddChild<RoleInfo>();
-                roleInfo.PlayerId = playerId;
-                roleInfo.RoleName = roleName;
-                roleInfo.RoleLevel = 1;
-                roleInfo.CharacterType = request.CharacterType;
-                roleInfo.RaceType = request.RaceType;
-
-                await session.Root().GetComponent<DBManagerComponent>().GetZoneDB(session.Zone()).Save(roleInfo);
-
-                // 存储名字
-                RoleNameInfo roleNameInfo = session.Root().GetComponent<RoleNameComponent>().AddChild<RoleNameInfo>();
-                roleNameInfo.RoleName = roleName;
-                roleNameInfo.Deleted = false;
-                await session.Root().GetComponent<DBManagerComponent>().GetZoneDB(session.Zone()).Save(roleNameInfo);
-
-                // 重新查询角色列表，并返回
-                List<RoleInfo> roleInfos = await session.Root().GetComponent<DBManagerComponent>().GetZoneDB(session.Zone())
-                        .Query<RoleInfo>(x => x.PlayerId == playerId);
-
-                List<GameRoleInfo> list = new();
-                foreach (RoleInfo info in roleInfos)
-                {
-                    list.Add(info.Convert());
-                }
-
-                response.Roles = list;
+                response.Error = errorCode;
+                return;
             }
+
+            response.Roles = await session.GetComponent<GameRoleComponent>().Query();
         }
     }
 }

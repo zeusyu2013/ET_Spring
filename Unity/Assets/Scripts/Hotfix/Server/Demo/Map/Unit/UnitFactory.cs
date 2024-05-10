@@ -66,36 +66,41 @@ namespace ET.Server
             unit.AddComponent<MoveComponent>();
 
             // 背包组件
-            BagComponent bagComponent = unit.AddComponent<BagComponent>();
-            foreach ((int itemConfigId, int amount) in config.Items)
+            BagComponent bagComponent = unit.AddComponentWithId<BagComponent>(unit.Id);
+            foreach ((int itemConfigId, long amount) in config.Items)
             {
                 bagComponent.AddItem(itemConfigId, amount);
             }
 
             // 装备组件
-            unit.AddComponent<EquipmentComponent>();
+            unit.AddComponentWithId<EquipmentComponent>(unit.Id);
 
             // 邮箱组件
-            MailComponent mailComponent = unit.AddComponent<MailComponent>();
+            MailComponent mailComponent = unit.AddComponentWithId<MailComponent>(unit.Id);
             mailComponent.AddMail("欢迎", "欢迎");
 
             // 副业组件
-            unit.AddComponent<AvocationComponent>();
+            unit.AddComponentWithId<AvocationComponent>(unit.Id);
 
             // 建筑组件
-            unit.AddComponent<BuildingComponent>();
+            unit.AddComponentWithId<BuildingComponent>(unit.Id);
 
             // 货币组件
-            unit.AddComponent<CurrencyComponent>();
+            CurrencyComponent currencyComponent = unit.AddComponentWithId<CurrencyComponent>(unit.Id);
+            bool ret = currencyComponent.Inc(config.CurrencyType, config.CurrencyValue);
+            if (!ret)
+            {
+                Log.Warning("创建角色添加货币失败");
+            }
 
             // 离线收益组件
-            unit.AddComponent<OfflineIncomeComponent>();
+            unit.AddComponentWithId<OfflineIncomeComponent>(unit.Id);
 
             // 任务组件
-            unit.AddComponent<GameTaskComponent>();
+            unit.AddComponentWithId<GameTaskComponent>(unit.Id);
 
             // 成就组件
-            unit.AddComponent<AchievementComponent>();
+            unit.AddComponentWithId<AchievementComponent>(unit.Id);
 
             unitComponent.Add(unit);
 

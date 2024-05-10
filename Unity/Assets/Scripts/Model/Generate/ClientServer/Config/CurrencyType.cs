@@ -26,5 +26,7 @@ namespace ET
         /// </summary>
         CurrencyType_Diamond = 3,
 
+        CurrencyType_Max = 4,
+
     }
 }

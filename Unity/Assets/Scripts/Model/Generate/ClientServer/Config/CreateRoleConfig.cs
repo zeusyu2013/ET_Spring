@@ -17,7 +17,7 @@ namespace ET
         public CreateRoleConfig(ByteBuf _buf)
         {
             Id = (CharacterType)_buf.ReadInt();
-            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);Items = new System.Collections.Generic.Dictionary<int, int>(n0 * 3 / 2);for(var i0 = 0 ; i0 < n0 ; i0++) { int _k0;  _k0 = _buf.ReadInt(); int _v0;  _v0 = _buf.ReadInt();     Items.Add(_k0, _v0);}}
+            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);Items = new System.Collections.Generic.Dictionary<int, long>(n0 * 3 / 2);for(var i0 = 0 ; i0 < n0 ; i0++) { int _k0;  _k0 = _buf.ReadInt(); long _v0;  _v0 = _buf.ReadLong();     Items.Add(_k0, _v0);}}
             CurrencyType = (CurrencyType)_buf.ReadInt();
             CurrencyValue = _buf.ReadLong();
             RaceFlag = (RaceType)_buf.ReadInt();
@@ -39,7 +39,7 @@ namespace ET
         /// <summary>
         /// 初始道具
         /// </summary>
-        public readonly System.Collections.Generic.Dictionary<int, int> Items;
+        public readonly System.Collections.Generic.Dictionary<int, long> Items;
 
         /// <summary>
         /// 初始货币类型

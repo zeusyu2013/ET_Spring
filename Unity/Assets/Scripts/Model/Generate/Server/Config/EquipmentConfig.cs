@@ -19,6 +19,7 @@ namespace ET
             Id = _buf.ReadInt();
             Base = _buf.ReadInt();
             Random = _buf.ReadInt();
+            CharacterFlag = (CharacterType)_buf.ReadInt();
 
             PostInit();
         }
@@ -58,6 +59,11 @@ namespace ET
         /// </summary>
         public PropertyRandomConfig RandomConfig => PropertyRandomConfigCategory.Instance.GetOrDefault(Random);
 
+        /// <summary>
+        /// 装备对应职业
+        /// </summary>
+        public readonly CharacterType CharacterFlag;
+
         public const int __ID__ = -824956336;
 
         public override int GetTypeId() => __ID__;
@@ -68,6 +74,7 @@ namespace ET
             + "Id:" + Id + ","
             + "Base:" + Base + ","
             + "Random:" + Random + ","
+            + "CharacterFlag:" + CharacterFlag + ","
             + "}";
         }
 

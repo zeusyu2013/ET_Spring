@@ -295,6 +295,21 @@ message G2C_DeleteRole // IResponse
 	repeated GameRoleInfo Roles = 4;
 }
 
+// ResponseType G2C_ChooseRole
+message C2G_ChooseRole // IRequest
+{
+	int32 RpcId = 1;
+	int64 PlayerId = 2;
+	string RoleName = 3;
+}
+
+message G2C_ChooseRole // IResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}
+
 message GameItemInfo
 {
 	int32 Config = 1;

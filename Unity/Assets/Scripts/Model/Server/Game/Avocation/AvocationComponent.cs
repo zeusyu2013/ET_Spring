@@ -3,7 +3,7 @@
 namespace ET
 {
     [ComponentOf(typeof(Unit))]
-    public class AvocationComponent : Entity, IAwake, IDeserialize, ISerializeToEntity
+    public class AvocationComponent : Entity, IAwake, IDeserialize
     {
         public Dictionary<AvocationType, EntityRef<Avocation>> Avocations = new();
     }

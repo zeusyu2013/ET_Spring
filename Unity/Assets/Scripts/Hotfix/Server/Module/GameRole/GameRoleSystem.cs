@@ -1,15 +1,15 @@
-﻿namespace ET
+﻿namespace ET.Server
 {
-    [FriendOf(typeof(RoleInfo))]
-    [EntitySystemOf(typeof(RoleInfo))]
-    public static partial class RoleInfoSystem
+    [EntitySystemOf(typeof(GameRole))]
+    [FriendOfAttribute(typeof(ET.Server.GameRole))]
+    public static partial class GameRoleSystem
     {
         [EntitySystem]
-        public static void Awake(this RoleInfo self)
+        private static void Awake(this ET.Server.GameRole self)
         {
         }
 
-        public static GameRoleInfo Convert(this RoleInfo self)
+        public static GameRoleInfo ToMessage(this GameRole self)
         {
             GameRoleInfo info = GameRoleInfo.Create();
             info.PlayerId = self.PlayerId;
@@ -17,6 +17,7 @@
             info.RoleLevel = self.RoleLevel;
             info.CharacterType = self.CharacterType;
             info.RaceType = self.RaceType;
+            info.RoleModel = self.RoleModel;
 
             return info;
         }

@@ -24,42 +24,42 @@ namespace ET
         /// <summary>
         /// 法师
         /// </summary>
-        CharacterType_Mage = 3,
+        CharacterType_Mage = 4,
 
         /// <summary>
         /// 牧师
         /// </summary>
-        CharacterType_Priest = 4,
+        CharacterType_Priest = 8,
 
         /// <summary>
         /// 盗贼
         /// </summary>
-        CharacterType_Rogue = 5,
+        CharacterType_Rogue = 16,
 
         /// <summary>
         /// 德鲁伊
         /// </summary>
-        CharacterType_Druid = 6,
+        CharacterType_Druid = 32,
 
         /// <summary>
         /// 猎人
         /// </summary>
-        CharacterType_Hunter = 7,
+        CharacterType_Hunter = 64,
 
         /// <summary>
         /// 术士
         /// </summary>
-        CharacterType_Warlock = 8,
+        CharacterType_Warlock = 128,
 
         /// <summary>
         /// 萨满
         /// </summary>
-        CharacterType_Shaman = 9,
+        CharacterType_Shaman = 256,
 
         /// <summary>
         /// 死亡骑士
         /// </summary>
-        CharacterType_DarkKnight = 10,
+        CharacterType_DarkKnight = 512,
 
     }
 }

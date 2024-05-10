@@ -1359,6 +1359,73 @@ namespace ET
     }
 
     [MemoryPackable]
+    [Message(OuterMessage.C2G_ChooseRole)]
+    [ResponseType(nameof(G2C_ChooseRole))]
+    public partial class C2G_ChooseRole : MessageObject, IRequest
+    {
+        public static C2G_ChooseRole Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2G_ChooseRole), isFromPool) as C2G_ChooseRole;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long PlayerId { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string RoleName { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.PlayerId = default;
+            this.RoleName = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.G2C_ChooseRole)]
+    public partial class G2C_ChooseRole : MessageObject, IResponse
+    {
+        public static G2C_ChooseRole Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(G2C_ChooseRole), isFromPool) as G2C_ChooseRole;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
     [Message(OuterMessage.GameItemInfo)]
     public partial class GameItemInfo : MessageObject
     {
@@ -2432,37 +2499,39 @@ namespace ET
         public const ushort G2C_CreateRole = 10040;
         public const ushort C2G_DeleteRole = 10041;
         public const ushort G2C_DeleteRole = 10042;
-        public const ushort GameItemInfo = 10043;
-        public const ushort C2M_GetAllItems = 10044;
-        public const ushort M2C_GetAllItems = 10045;
-        public const ushort M2C_GetNewItem = 10046;
-        public const ushort C2M_UseItem = 10047;
-        public const ushort M2C_UseItem = 10048;
-        public const ushort C2M_AcceptTask = 10049;
-        public const ushort M2C_AcceptTask = 10050;
-        public const ushort GameBuffInfo = 10051;
-        public const ushort C2M_GetAllBuffs = 10052;
-        public const ushort M2C_GetAllBuffs = 10053;
-        public const ushort C2M_Equip = 10054;
-        public const ushort M2C_Equip = 10055;
-        public const ushort GamePropertyInfo = 10056;
-        public const ushort M2C_PropertyRefresh = 10057;
-        public const ushort FightScoreRankEntityInfo = 10058;
-        public const ushort C2Main_GetFightScoreRank = 10059;
-        public const ushort Main2C_GetFightScoreRank = 10060;
-        public const ushort GuildMemberInfo = 10061;
-        public const ushort C2Guild_GetGuildMemberInfos = 10062;
-        public const ushort Guild2C_GetGuildMemberInfos = 10063;
-        public const ushort C2Guild_RequestAddGuild = 10064;
-        public const ushort C2Guild_AgreeRequestAddGuild = 10065;
-        public const ushort C2Guild_QuitGuild = 10066;
-        public const ushort Guild2C_QuitGuild = 10067;
-        public const ushort MailInfo = 10068;
-        public const ushort C2M_CheckMails = 10069;
-        public const ushort M2C_CheckMails = 10070;
-        public const ushort C2M_CheckMail = 10071;
-        public const ushort M2C_CheckMail = 10072;
-        public const ushort C2M_ReceiveAttachments = 10073;
-        public const ushort M2C_ReceiveAttachments = 10074;
+        public const ushort C2G_ChooseRole = 10043;
+        public const ushort G2C_ChooseRole = 10044;
+        public const ushort GameItemInfo = 10045;
+        public const ushort C2M_GetAllItems = 10046;
+        public const ushort M2C_GetAllItems = 10047;
+        public const ushort M2C_GetNewItem = 10048;
+        public const ushort C2M_UseItem = 10049;
+        public const ushort M2C_UseItem = 10050;
+        public const ushort C2M_AcceptTask = 10051;
+        public const ushort M2C_AcceptTask = 10052;
+        public const ushort GameBuffInfo = 10053;
+        public const ushort C2M_GetAllBuffs = 10054;
+        public const ushort M2C_GetAllBuffs = 10055;
+        public const ushort C2M_Equip = 10056;
+        public const ushort M2C_Equip = 10057;
+        public const ushort GamePropertyInfo = 10058;
+        public const ushort M2C_PropertyRefresh = 10059;
+        public const ushort FightScoreRankEntityInfo = 10060;
+        public const ushort C2Main_GetFightScoreRank = 10061;
+        public const ushort Main2C_GetFightScoreRank = 10062;
+        public const ushort GuildMemberInfo = 10063;
+        public const ushort C2Guild_GetGuildMemberInfos = 10064;
+        public const ushort Guild2C_GetGuildMemberInfos = 10065;
+        public const ushort C2Guild_RequestAddGuild = 10066;
+        public const ushort C2Guild_AgreeRequestAddGuild = 10067;
+        public const ushort C2Guild_QuitGuild = 10068;
+        public const ushort Guild2C_QuitGuild = 10069;
+        public const ushort MailInfo = 10070;
+        public const ushort C2M_CheckMails = 10071;
+        public const ushort M2C_CheckMails = 10072;
+        public const ushort C2M_CheckMail = 10073;
+        public const ushort M2C_CheckMail = 10074;
+        public const ushort C2M_ReceiveAttachments = 10075;
+        public const ushort M2C_ReceiveAttachments = 10076;
     }
 }
