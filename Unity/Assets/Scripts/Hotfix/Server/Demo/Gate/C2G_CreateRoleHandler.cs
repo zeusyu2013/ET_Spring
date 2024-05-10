@@ -52,6 +52,8 @@ namespace ET.Server
                 roleInfo.PlayerId = playerId;
                 roleInfo.RoleName = roleName;
                 roleInfo.RoleLevel = 1;
+                roleInfo.CharacterType = request.CharacterType;
+                roleInfo.RaceType = request.RaceType;
 
                 await session.Root().GetComponent<DBManagerComponent>().GetZoneDB(session.Zone()).Save(roleInfo);
 

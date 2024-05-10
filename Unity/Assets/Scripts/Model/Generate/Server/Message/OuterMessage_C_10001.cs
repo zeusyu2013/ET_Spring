@@ -1115,9 +1115,12 @@ namespace ET
         public int RoleLevel { get; set; }
 
         [MemoryPackOrder(3)]
-        public int RoleJob { get; set; }
+        public int CharacterType { get; set; }
 
         [MemoryPackOrder(4)]
+        public int RaceType { get; set; }
+
+        [MemoryPackOrder(5)]
         public string RoleModel { get; set; }
 
         public override void Dispose()
@@ -1130,7 +1133,8 @@ namespace ET
             this.PlayerId = default;
             this.RoleName = default;
             this.RoleLevel = default;
-            this.RoleJob = default;
+            this.CharacterType = default;
+            this.RaceType = default;
             this.RoleModel = default;
 
             ObjectPool.Instance.Recycle(this);
@@ -1224,7 +1228,10 @@ namespace ET
         public string RoleName { get; set; }
 
         [MemoryPackOrder(3)]
-        public int RoleJob { get; set; }
+        public int CharacterType { get; set; }
+
+        [MemoryPackOrder(4)]
+        public int RaceType { get; set; }
 
         public override void Dispose()
         {
@@ -1236,7 +1243,8 @@ namespace ET
             this.RpcId = default;
             this.PlayerId = default;
             this.RoleName = default;
-            this.RoleJob = default;
+            this.CharacterType = default;
+            this.RaceType = default;
 
             ObjectPool.Instance.Recycle(this);
         }

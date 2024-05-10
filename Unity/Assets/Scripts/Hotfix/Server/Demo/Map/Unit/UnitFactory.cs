@@ -3,6 +3,7 @@ using Unity.Mathematics;
 
 namespace ET.Server
 {
+    [FriendOfAttribute(typeof(ET.Server.Mail))]
     public static partial class UnitFactory
     {
         public static Unit Create(Scene scene, long id, UnitType unitType)
@@ -29,9 +30,6 @@ namespace ET.Server
                     BagComponent bagComponent = unit.AddComponentWithId<BagComponent>(unit.Id);
                     bagComponent.AddItem(60011, 1);
 
-                    CurrencyComponent currencyComponent = unit.AddComponentWithId<CurrencyComponent>(unit.Id);
-                    currencyComponent.Inc();
-
                     unit.AddComponent<MailComponent>();
 
                     unitComponent.Add(unit);
@@ -44,48 +42,63 @@ namespace ET.Server
             }
         }
 
-        public static Unit CreatePlayer(Scene scene, long id, int configId)
+        public static Unit CreateCharacter(Scene scene, long id, CharacterType character, RaceType race)
         {
-            UnitComponent unitComponent = scene.GetComponent<UnitComponent>();
-            Unit unit = unitComponent.AddChildWithId<Unit, int>(id, configId);
-            unit.AddComponent<MoveComponent>();
-            
-            NumericComponent numericComponent = unit.AddComponent<NumericComponent>();
-            UnitConfig config = UnitConfigCategory.Instance.Get(configId);
-            foreach (var kv in config.PropertyConfig.Properties)
+            // 检查职业种族对应
+            CreateRoleConfig config = CreateRoleConfigCategory.Instance.Get(character);
+            bool vaild = (config.RaceFlag & race) == race;
+            if (!vaild)
             {
-                numericComponent.Set((int)kv.Key, kv.Value);
+                return null;
             }
-            
+
+            UnitComponent unitComponent = scene.GetComponent<UnitComponent>();
+            Unit unit = unitComponent.AddChildWithId<Unit, int>(id, 0);
+
+            // 数值组件
+            NumericComponent numericComponent = unit.AddComponent<NumericComponent>();
+            foreach (var kv in config.BasePropertyConfig.Properties)
+            {
+                numericComponent.Set(kv.Key, kv.Value);
+            }
+
+            // 移动组件
+            unit.AddComponent<MoveComponent>();
+
+            // 背包组件
             BagComponent bagComponent = unit.AddComponent<BagComponent>();
-            bagComponent.AddItem(60011, 1);
-            
+            foreach ((int itemConfigId, int amount) in config.Items)
+            {
+                bagComponent.AddItem(itemConfigId, amount);
+            }
+
             // 装备组件
             unit.AddComponent<EquipmentComponent>();
-            
+
             // 邮箱组件
-            unit.AddComponent<MailComponent>();
-            
+            MailComponent mailComponent = unit.AddComponent<MailComponent>();
+            mailComponent.AddMail("欢迎", "欢迎");
+
             // 副业组件
             unit.AddComponent<AvocationComponent>();
-            
+
             // 建筑组件
             unit.AddComponent<BuildingComponent>();
-            
+
             // 货币组件
             unit.AddComponent<CurrencyComponent>();
-            
+
             // 离线收益组件
             unit.AddComponent<OfflineIncomeComponent>();
-            
+
             // 任务组件
             unit.AddComponent<GameTaskComponent>();
-            
+
             // 成就组件
             unit.AddComponent<AchievementComponent>();
-            
+
             unitComponent.Add(unit);
-            
+
             // 加入aoi
             unit.AddComponent<AOIEntity, int, float3>(9 * 1000, unit.Position);
             return unit;
@@ -115,9 +128,9 @@ namespace ET.Server
             {
                 numericComponent.Set((int)kv.Key, kv.Value);
             }
-            
+
             unit.AddComponent<MoveComponent>();
-            
+
             // 加入aoi
             unit.AddComponent<AOIEntity, int, float3>(9 * 1000, unit.Position);
 

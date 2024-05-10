@@ -15,6 +15,8 @@
             info.PlayerId = self.PlayerId;
             info.RoleName = self.RoleName;
             info.RoleLevel = self.RoleLevel;
+            info.CharacterType = self.CharacterType;
+            info.RaceType = self.RaceType;
 
             return info;
         }

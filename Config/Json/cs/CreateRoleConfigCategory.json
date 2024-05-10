@@ -13,7 +13,8 @@
     ],
     "CurrencyType": 1,
     "CurrencyValue": 1000,
-    "RaceFlag": 767
+    "RaceFlag": 767,
+    "BaseProperty": 1001
   },
   {
     "Id": 2,
@@ -29,7 +30,8 @@
     ],
     "CurrencyType": 1,
     "CurrencyValue": 1000,
-    "RaceFlag": 269
+    "RaceFlag": 269,
+    "BaseProperty": 1002
   },
   {
     "Id": 3,
@@ -45,7 +47,8 @@
     ],
     "CurrencyType": 1,
     "CurrencyValue": 1000,
-    "RaceFlag": 873
+    "RaceFlag": 873,
+    "BaseProperty": 1001
   },
   {
     "Id": 4,
@@ -61,7 +64,8 @@
     ],
     "CurrencyType": 1,
     "CurrencyValue": 1000,
-    "RaceFlag": 367
+    "RaceFlag": 367,
+    "BaseProperty": 1002
   },
   {
     "Id": 5,
@@ -77,7 +81,8 @@
     ],
     "CurrencyType": 1,
     "CurrencyValue": 1000,
-    "RaceFlag": 887
+    "RaceFlag": 887,
+    "BaseProperty": 1001
   },
   {
     "Id": 6,
@@ -93,7 +98,8 @@
     ],
     "CurrencyType": 1,
     "CurrencyValue": 1000,
-    "RaceFlag": 130
+    "RaceFlag": 130,
+    "BaseProperty": 1002
   },
   {
     "Id": 7,
@@ -109,7 +115,8 @@
     ],
     "CurrencyType": 1,
     "CurrencyValue": 1000,
-    "RaceFlag": 446
+    "RaceFlag": 446,
+    "BaseProperty": 1001
   },
   {
     "Id": 8,
@@ -125,7 +132,8 @@
     ],
     "CurrencyType": 1,
     "CurrencyValue": 1000,
-    "RaceFlag": 977
+    "RaceFlag": 977,
+    "BaseProperty": 1002
   },
   {
     "Id": 9,
@@ -141,7 +149,8 @@
     ],
     "CurrencyType": 1,
     "CurrencyValue": 1000,
-    "RaceFlag": 184
+    "RaceFlag": 184,
+    "BaseProperty": 1001
   },
   {
     "Id": 10,
@@ -157,6 +166,7 @@
     ],
     "CurrencyType": 1,
     "CurrencyValue": 1000,
-    "RaceFlag": 1023
+    "RaceFlag": 1023,
+    "BaseProperty": 1002
   }
 ]

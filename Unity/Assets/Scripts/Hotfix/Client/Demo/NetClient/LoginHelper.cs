@@ -46,7 +46,7 @@ namespace ET.Client
             return ErrorCode.ERR_Success;
         }
 
-        public static async ETTask<int> CreateRole(Scene root, string roleName, int roleJob)
+        public static async ETTask<int> CreateRole(Scene root, string roleName, int character, int race)
         {
             PlayerComponent playerComponent = root.GetComponent<PlayerComponent>();
             long playerId = playerComponent.MyId;
@@ -58,7 +58,8 @@ namespace ET.Client
             C2G_CreateRole c2GCreateRole = C2G_CreateRole.Create();
             c2GCreateRole.PlayerId = playerId;
             c2GCreateRole.RoleName = roleName;
-            c2GCreateRole.RoleJob = roleJob;
+            c2GCreateRole.CharacterType = character;
+            c2GCreateRole.RaceType = race;
 
             G2C_CreateRole g2CCreateRole = await SessionHelper.Call<G2C_CreateRole>(root, c2GCreateRole);
             if (g2CCreateRole.Error != ErrorCode.ERR_Success)

@@ -10,6 +10,14 @@
         {
         }
 
+        public static void AddMail(this MailComponent self, string title, string content)
+        {
+            Mail mail = self.AddChild<Mail>();
+            mail.Title = title;
+            mail.Content = content;
+            self.Mails.Add(mail);
+        }
+
         public static void AddMail(this MailComponent self, Mail mail)
         {
             self.Mails.Add(mail);
@@ -63,7 +71,7 @@
             foreach (Entity childrenValue in self.Children.Values)
             {
                 Mail mail = childrenValue as Mail;
-
+                self.AddChild(mail);
                 self.Mails.Add(mail);
             }
         }
