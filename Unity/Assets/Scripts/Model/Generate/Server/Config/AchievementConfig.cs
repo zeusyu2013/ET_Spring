@@ -20,6 +20,7 @@ namespace ET
             Name = _buf.ReadString();
             Desc = _buf.ReadString();
             Condition = Condition.DeserializeCondition(_buf);
+            Icon = _buf.ReadString();
 
             PostInit();
         }
@@ -49,6 +50,11 @@ namespace ET
         /// </summary>
         public readonly Condition Condition;
 
+        /// <summary>
+        /// 成就图标
+        /// </summary>
+        public readonly string Icon;
+
         public const int __ID__ = -714023119;
 
         public override int GetTypeId() => __ID__;
@@ -60,6 +66,7 @@ namespace ET
             + "Name:" + Name + ","
             + "Desc:" + Desc + ","
             + "Condition:" + Condition + ","
+            + "Icon:" + Icon + ","
             + "}";
         }
 

@@ -19,7 +19,7 @@ namespace ET
             Id = _buf.ReadInt();
             Name = _buf.ReadString();
             Desc = _buf.ReadString();
-            Condition = Condition.DeserializeCondition(_buf);
+            Icon = _buf.ReadString();
 
             PostInit();
         }
@@ -45,9 +45,9 @@ namespace ET
         public readonly string Desc;
 
         /// <summary>
-        /// 成就条件
+        /// 成就图标
         /// </summary>
-        public readonly Condition Condition;
+        public readonly string Icon;
 
         public const int __ID__ = -714023119;
 
@@ -59,7 +59,7 @@ namespace ET
             + "Id:" + Id + ","
             + "Name:" + Name + ","
             + "Desc:" + Desc + ","
-            + "Condition:" + Condition + ","
+            + "Icon:" + Icon + ","
             + "}";
         }
 
