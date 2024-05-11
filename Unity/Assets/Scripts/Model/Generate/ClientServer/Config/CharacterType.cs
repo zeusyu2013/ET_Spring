@@ -9,6 +9,7 @@
 
 namespace ET
 {
+    [System.Flags]
     public enum CharacterType
     {
         /// <summary>

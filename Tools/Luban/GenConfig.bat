@@ -15,6 +15,11 @@ dotnet %LUBAN_DLL% ^
     -x bin.outputDataDir=%WORKSPACE%\Config\Excel\c ^
     -x json.outputDataDir=%WORKSPACE%\Config\Json\c ^
     -x lineEnding=CRLF ^
+    -x l10n.textFile.path=%WORKSPACE%\Unity\Assets\Config\Excel\L10nConfig.xlsx ^
+    -x l10n.provider=default ^
+    -x l10n.textFile.languageFieldName=Text_CN ^
+    -x l10n.textFile.keyFieldName=Id ^
+    -x l10n.convertTextKeyToValue=1
     
 
 echo ==================== FuncConfig : GenClientFinish ====================

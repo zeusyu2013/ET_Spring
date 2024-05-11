@@ -15,7 +15,7 @@
 
         public static void Broadcast(this ChatComponent self, int channelId, string content)
         {
-            if (channelId < 1 || channelId >= (int)ChatChannel.ChatChannel_Max)
+            if (channelId < 1)
             {
                 return;
             }

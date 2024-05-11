@@ -1,209 +1,185 @@
 [
   {
     "Id": 60001,
-    "Name": "道具60001",
+    "Name": "升级",
     "Type": 1,
     "Quality": 1,
-    "UseLevel": 1,
-    "MaxCount": 999
+    "UseLevel": 1
   },
   {
     "Id": 60002,
-    "Name": "道具60002",
+    "Name": "升级",
     "Type": 1,
     "Quality": 1,
-    "UseLevel": 1,
-    "MaxCount": 999
+    "UseLevel": 1
   },
   {
     "Id": 60003,
-    "Name": "道具60003",
+    "Name": "升级",
     "Type": 1,
     "Quality": 1,
-    "UseLevel": 1,
-    "MaxCount": 999
+    "UseLevel": 1
   },
   {
     "Id": 60004,
-    "Name": "道具60004",
+    "Name": "升级",
     "Type": 1,
     "Quality": 1,
-    "UseLevel": 1,
-    "MaxCount": 999
+    "UseLevel": 1
   },
   {
     "Id": 60005,
-    "Name": "道具60005",
+    "Name": "升级",
     "Type": 1,
     "Quality": 1,
-    "UseLevel": 1,
-    "MaxCount": 999
+    "UseLevel": 1
   },
   {
     "Id": 60006,
-    "Name": "道具60006",
+    "Name": "升级",
     "Type": 1,
     "Quality": 1,
-    "UseLevel": 1,
-    "MaxCount": 999
+    "UseLevel": 1
   },
   {
     "Id": 60007,
-    "Name": "道具60007",
+    "Name": "升级",
     "Type": 1,
     "Quality": 1,
-    "UseLevel": 1,
-    "MaxCount": 999
+    "UseLevel": 1
   },
   {
     "Id": 60008,
-    "Name": "道具60008",
+    "Name": "升级",
     "Type": 1,
     "Quality": 1,
-    "UseLevel": 1,
-    "MaxCount": 999
+    "UseLevel": 1
   },
   {
     "Id": 60009,
-    "Name": "道具60009",
+    "Name": "升级",
     "Type": 1,
     "Quality": 1,
-    "UseLevel": 1,
-    "MaxCount": 999
+    "UseLevel": 1
   },
   {
     "Id": 60010,
-    "Name": "破布头巾",
+    "Name": "升级",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "MaxCount": 1,
     "EquipmentType": 1
   },
   {
     "Id": 60011,
-    "Name": "碎裂的项链",
+    "Name": "升级",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "MaxCount": 1,
     "EquipmentType": 2
   },
   {
     "Id": 60012,
-    "Name": "破布披肩",
+    "Name": "升级",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "MaxCount": 1,
     "EquipmentType": 3
   },
   {
     "Id": 60013,
-    "Name": "破布旅衣",
+    "Name": "升级",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "MaxCount": 1,
     "EquipmentType": 4
   },
   {
     "Id": 60014,
-    "Name": "破布腰带",
+    "Name": "升级",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "MaxCount": 1,
     "EquipmentType": 5
   },
   {
     "Id": 60015,
-    "Name": "破布裤子",
+    "Name": "升级",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "MaxCount": 1,
     "EquipmentType": 6
   },
   {
     "Id": 60016,
-    "Name": "破布鞋子",
+    "Name": "升级",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "MaxCount": 1,
     "EquipmentType": 7
   },
   {
     "Id": 60017,
-    "Name": "碎裂的戒指",
+    "Name": "升级",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "MaxCount": 1,
     "EquipmentType": 8
   },
   {
     "Id": 60018,
-    "Name": "碎裂的饰品",
+    "Name": "升级",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "MaxCount": 1,
     "EquipmentType": 9
   },
   {
     "Id": 60019,
-    "Name": "裂皮头巾",
+    "Name": "升级",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "MaxCount": 1,
     "EquipmentType": 1
   },
   {
     "Id": 60020,
-    "Name": "裂皮护肩",
+    "Name": "升级",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "MaxCount": 1,
     "EquipmentType": 3
   },
   {
     "Id": 60021,
-    "Name": "裂皮护甲",
+    "Name": "升级",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "MaxCount": 1,
     "EquipmentType": 4
   },
   {
     "Id": 60022,
-    "Name": "裂皮腰带",
+    "Name": "升级",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "MaxCount": 1,
     "EquipmentType": 5
   },
   {
     "Id": 60023,
-    "Name": "裂皮裤子",
+    "Name": "升级",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "MaxCount": 1,
     "EquipmentType": 6
   },
   {
     "Id": 60024,
-    "Name": "裂皮鞋子",
+    "Name": "升级",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "MaxCount": 1,
     "EquipmentType": 7
   }
 ]
