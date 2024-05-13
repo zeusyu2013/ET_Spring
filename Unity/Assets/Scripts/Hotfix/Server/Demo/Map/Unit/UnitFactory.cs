@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Unity.Mathematics;
 
 namespace ET.Server
@@ -140,6 +141,15 @@ namespace ET.Server
             }
          
             // TODO：从缓存服拉去玩家相关组件数据
+            List<byte[]> entities = await DBCacheHelper.GetCache(scene, unitId);
+            if (entities.Count > 0)
+            {
+                foreach (byte[] bytes in entities)
+                {
+                    Entity entity = MongoHelper.Deserialize<Entity>(bytes);
+                    unit.AddComponent(entity);
+                }
+            }
             
             unit.AddComponent<MoveComponent>();
             

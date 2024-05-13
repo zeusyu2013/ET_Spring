@@ -184,6 +184,21 @@ message Other2DBCache_AddOrUpdateUnitCache // IMessage
 	repeated bytes EntityBytes = 4;
 }
 
+// ResponseType DBCache2Other_GetEntities
+message Other2DBCache_GetEntities // IRequest
+{
+	int32 RpcId = 1;
+	int64 UnitId = 2;
+}
+
+message DBCache2Other_GetEntities // IResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+	repeated bytes EntityBytes = 4;
+}
+
 message Rank_FightScore
 {
 	int64 UnitId = 1;

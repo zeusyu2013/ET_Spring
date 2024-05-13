@@ -835,6 +835,73 @@ namespace ET
     }
 
     [MemoryPackable]
+    [Message(InnerMessage.Other2DBCache_GetEntities)]
+    [ResponseType(nameof(DBCache2Other_GetEntities))]
+    public partial class Other2DBCache_GetEntities : MessageObject, IRequest
+    {
+        public static Other2DBCache_GetEntities Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(Other2DBCache_GetEntities), isFromPool) as Other2DBCache_GetEntities;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long UnitId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.UnitId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(InnerMessage.DBCache2Other_GetEntities)]
+    public partial class DBCache2Other_GetEntities : MessageObject, IResponse
+    {
+        public static DBCache2Other_GetEntities Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(DBCache2Other_GetEntities), isFromPool) as DBCache2Other_GetEntities;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        [MemoryPackOrder(3)]
+        public List<byte[]> EntityBytes { get; set; } = new();
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+            this.EntityBytes.Clear();
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
     [Message(InnerMessage.Rank_FightScore)]
     public partial class Rank_FightScore : MessageObject
     {
@@ -955,8 +1022,10 @@ namespace ET
         public const ushort M2M_UnitTransferRequest = 20023;
         public const ushort M2M_UnitTransferResponse = 20024;
         public const ushort Other2DBCache_AddOrUpdateUnitCache = 20025;
-        public const ushort Rank_FightScore = 20026;
-        public const ushort Map2Rank_UpdateScore = 20027;
-        public const ushort M2M_ChatBroadcast = 20028;
+        public const ushort Other2DBCache_GetEntities = 20026;
+        public const ushort DBCache2Other_GetEntities = 20027;
+        public const ushort Rank_FightScore = 20028;
+        public const ushort Map2Rank_UpdateScore = 20029;
+        public const ushort M2M_ChatBroadcast = 20030;
     }
 }

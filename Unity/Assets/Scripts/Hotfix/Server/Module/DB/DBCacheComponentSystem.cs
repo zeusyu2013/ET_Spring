@@ -55,6 +55,16 @@ namespace ET.Server
             }
         }
 
+        public static async ETTask<List<byte[]>> QueryUnitComponents(this DBCacheComponent self, long id)
+        {
+            List<byte[]> entities = new();
+            BagComponent bagComponent = await self.Query<BagComponent>(id);
+
+            entities.Add(bagComponent.ToBson());
+
+            return entities;
+        }
+
         public static async ETTask AddOrUpdateUnitCache(this DBCacheComponent self, long id, List<string> entityTypes, List<byte[]> entityBytes)
         {
             if (entityTypes == null || entityBytes == null)
