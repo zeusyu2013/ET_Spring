@@ -5,11 +5,7 @@
     {
         protected override async ETTask Run(Unit unit, G2M_SessionDisconnect message)
         {
-            Other2DBCache_SaveUnit request = Other2DBCache_SaveUnit.Create();
-            request.Unit = unit.ToBson();
-
-            StartSceneConfig dbcacheSceneConfig = StartSceneConfigCategory.Instance.DBCache;
-            unit.Root().GetComponent<MessageSender>().Send(dbcacheSceneConfig.ActorId, request);
+            unit.GetComponent<UnitDBSaveComponent>().SaveChanged();
             
             unit.Root().GetComponent<UnitComponent>().Remove(unit.Id);
 

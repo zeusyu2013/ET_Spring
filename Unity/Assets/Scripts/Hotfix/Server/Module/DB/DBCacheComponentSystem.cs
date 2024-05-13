@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ET.Server
@@ -16,20 +17,10 @@ namespace ET.Server
             }
         }
 
-        [Invoke(TimerInvokeType.DBCacheSaveTimer)]
-        public class DBCacheSaveTimer : ATimer<DBCacheComponent>
-        {
-            protected override void Run(DBCacheComponent self)
-            {
-                self.DBCacheSave().Coroutine();
-            }
-        }
-
         [EntitySystem]
         private static void Awake(this DBCacheComponent self)
         {
             self.TimerId = self.Root().GetComponent<TimerComponent>().NewRepeatedTimer(60 * 1000, TimerInvokeType.DBCacheTimer, self);
-            self.SaveTimerId = self.Root().GetComponent<TimerComponent>().NewRepeatedTimer(60 * 1000, TimerInvokeType.DBCacheSaveTimer, self);
             self.CacheDict = new();
             self.LRUDict = new();
         }
@@ -38,7 +29,6 @@ namespace ET.Server
         private static void Destroy(this DBCacheComponent self)
         {
             self.Root().GetComponent<TimerComponent>().Remove(ref self.TimerId);
-            self.Root().GetComponent<TimerComponent>().Remove(ref self.SaveTimerId);
             self.CacheDict.Clear();
             self.LRUDict.Clear();
         }
@@ -65,12 +55,31 @@ namespace ET.Server
             }
         }
 
-        public static async ETTask Save<T>(this DBCacheComponent self, T entity) where T : Entity
+        public static async ETTask AddOrUpdateUnitCache(this DBCacheComponent self, long id, List<string> entityTypes, List<byte[]> entityBytes)
         {
-            using (await self.Root().GetComponent<CoroutineLockComponent>().Wait(CoroutineLockType.DBCache, entity.Id))
+            if (entityTypes == null || entityBytes == null)
             {
-                self.UpdateCache(entity.Id, entity);
+                return;
             }
+
+            if (entityTypes.Count != entityBytes.Count)
+            {
+                return;
+            }
+
+            List<Entity> entities = new();
+            int count = entityTypes.Count;
+            for (int i = 0; i < count; i++)
+            {
+                string name = entityTypes[i];
+                byte[] bytes = entityBytes[i];
+
+                Entity entity = MongoHelper.Deserialize<Entity>(bytes);
+                self.UpdateCache(id, entity);
+                entities.Add(entity);
+            }
+
+            await self.Root().GetComponent<DBManagerComponent>().GetZoneDB(self.Zone()).Save(id, entities);
         }
 
         public static void UpdateCache<T>(this DBCacheComponent self, long playerId, T entity) where T : Entity
@@ -105,47 +114,6 @@ namespace ET.Server
             self.LRUDict.Remove(playerId);
         }
 
-        public static async ETTask SaveUnit(this DBCacheComponent self, Entity unit)
-        {
-            if (unit == null || unit.IsDisposed)
-            {
-                return;
-            }
-
-            long id = unit.Id;
-            if (self.CacheDict.ContainsKey(id))
-            {
-                using (await self.Root().GetComponent<CoroutineLockComponent>().Wait(CoroutineLockType.DBCache, id))
-                {
-                    List<Entity> entities = new();
-                    foreach (var entityRef in self.CacheDict[id].Values)
-                    {
-                        Entity entity = entityRef;
-                        if (entity == null)
-                        {
-                            continue;
-                        }
-
-                        entities.Add(entity);
-                    }
-
-                    await self.Root().GetComponent<DBManagerComponent>().GetZoneDB(self.Zone()).InsertBatch(entities);
-                }
-            }
-            else
-            {
-                using (await self.Root().GetComponent<CoroutineLockComponent>().Wait(CoroutineLockType.DB, id))
-                {
-                    await self.Root().GetComponent<DBManagerComponent>().GetZoneDB(self.Zone()).Save(unit);
-                }
-            }
-        }
-
-        public static async ETTask SaveAll(this DBCacheComponent self)
-        {
-            await self.DBCacheSave();
-        }
-
         private static void DBCacheUpdate(this DBCacheComponent self)
         {
             Log.Info("缓存更新中……");
@@ -162,28 +130,7 @@ namespace ET.Server
                 }
 
                 self.RemoveCache(keys[i]);
-            }
-        }
-
-        private static async ETTask DBCacheSave(this DBCacheComponent self)
-        {
-            using (await self.Root().GetComponent<CoroutineLockComponent>().Wait(CoroutineLockType.DBCache, TimeInfo.Instance.ServerNow()))
-            {
-                List<Entity> entities = new();
-                foreach (var entityRefs in self.CacheDict.Values)
-                {
-                    foreach (var kv in entityRefs)
-                    {
-                        entities.Add(kv.Value);
-                    }
-                }
-
-                if (entities.Count < 1)
-                {
-                    return;
-                }
-
-                await self.Root().GetComponent<DBManagerComponent>().GetZoneDB(self.Zone()).InsertBatch(entities);
+                Log.Info("删除过期数据……");
             }
         }
     }

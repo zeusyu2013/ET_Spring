@@ -12,7 +12,7 @@
         public static GameRoleInfo ToMessage(this GameRole self)
         {
             GameRoleInfo info = GameRoleInfo.Create();
-            info.PlayerId = self.PlayerId;
+            info.UnitId = self.UnitId;
             info.RoleName = self.RoleName;
             info.RoleLevel = self.RoleLevel;
             info.CharacterType = self.CharacterType;

@@ -41,6 +41,8 @@ namespace ET.Server
                 playerSessionComponent.Session = session;
             }
 
+            session.AddComponentWithId<GameRoleComponent>(player.Id);
+
             response.PlayerId = player.Id;
             await ETTask.CompletedTask;
         }

@@ -798,13 +798,12 @@ namespace ET
     }
 
     [MemoryPackable]
-    [Message(InnerMessage.Other2DBCache_GetUnit)]
-    [ResponseType(nameof(DBCache2Other_GetUnit))]
-    public partial class Other2DBCache_GetUnit : MessageObject, IRequest
+    [Message(InnerMessage.Other2DBCache_AddOrUpdateUnitCache)]
+    public partial class Other2DBCache_AddOrUpdateUnitCache : MessageObject, IMessage
     {
-        public static Other2DBCache_GetUnit Create(bool isFromPool = false)
+        public static Other2DBCache_AddOrUpdateUnitCache Create(bool isFromPool = false)
         {
-            return ObjectPool.Instance.Fetch(typeof(Other2DBCache_GetUnit), isFromPool) as Other2DBCache_GetUnit;
+            return ObjectPool.Instance.Fetch(typeof(Other2DBCache_AddOrUpdateUnitCache), isFromPool) as Other2DBCache_AddOrUpdateUnitCache;
         }
 
         [MemoryPackOrder(0)]
@@ -813,74 +812,11 @@ namespace ET
         [MemoryPackOrder(1)]
         public long UnitId { get; set; }
 
-        public override void Dispose()
-        {
-            if (!this.IsFromPool)
-            {
-                return;
-            }
-
-            this.RpcId = default;
-            this.UnitId = default;
-
-            ObjectPool.Instance.Recycle(this);
-        }
-    }
-
-    [MemoryPackable]
-    [Message(InnerMessage.DBCache2Other_GetUnit)]
-    public partial class DBCache2Other_GetUnit : MessageObject, IResponse
-    {
-        public static DBCache2Other_GetUnit Create(bool isFromPool = false)
-        {
-            return ObjectPool.Instance.Fetch(typeof(DBCache2Other_GetUnit), isFromPool) as DBCache2Other_GetUnit;
-        }
-
-        [MemoryPackOrder(0)]
-        public int RpcId { get; set; }
-
-        [MemoryPackOrder(1)]
-        public int Error { get; set; }
-
         [MemoryPackOrder(2)]
-        public string Message { get; set; }
+        public List<string> EntityTypes { get; set; } = new();
 
         [MemoryPackOrder(3)]
-        public List<byte[]> Entities { get; set; } = new();
-
-        public override void Dispose()
-        {
-            if (!this.IsFromPool)
-            {
-                return;
-            }
-
-            this.RpcId = default;
-            this.Error = default;
-            this.Message = default;
-            this.Entities.Clear();
-
-            ObjectPool.Instance.Recycle(this);
-        }
-    }
-
-    [MemoryPackable]
-    [Message(InnerMessage.Other2DBCache_UpdateCache)]
-    public partial class Other2DBCache_UpdateCache : MessageObject, IMessage
-    {
-        public static Other2DBCache_UpdateCache Create(bool isFromPool = false)
-        {
-            return ObjectPool.Instance.Fetch(typeof(Other2DBCache_UpdateCache), isFromPool) as Other2DBCache_UpdateCache;
-        }
-
-        [MemoryPackOrder(0)]
-        public int RpcId { get; set; }
-
-        [MemoryPackOrder(1)]
-        public long UnitId { get; set; }
-
-        [MemoryPackOrder(2)]
-        public byte[] Entity { get; set; }
+        public List<byte[]> EntityBytes { get; set; } = new();
 
         public override void Dispose()
         {
@@ -891,65 +827,8 @@ namespace ET
 
             this.RpcId = default;
             this.UnitId = default;
-            this.Entity = default;
-
-            ObjectPool.Instance.Recycle(this);
-        }
-    }
-
-    [MemoryPackable]
-    [Message(InnerMessage.Other2DBCache_SaveAll)]
-    public partial class Other2DBCache_SaveAll : MessageObject, IMessage
-    {
-        public static Other2DBCache_SaveAll Create(bool isFromPool = false)
-        {
-            return ObjectPool.Instance.Fetch(typeof(Other2DBCache_SaveAll), isFromPool) as Other2DBCache_SaveAll;
-        }
-
-        [MemoryPackOrder(0)]
-        public int RpcId { get; set; }
-
-        public override void Dispose()
-        {
-            if (!this.IsFromPool)
-            {
-                return;
-            }
-
-            this.RpcId = default;
-
-            ObjectPool.Instance.Recycle(this);
-        }
-    }
-
-    [MemoryPackable]
-    [Message(InnerMessage.Other2DBCache_SaveUnit)]
-    public partial class Other2DBCache_SaveUnit : MessageObject, IMessage
-    {
-        public static Other2DBCache_SaveUnit Create(bool isFromPool = false)
-        {
-            return ObjectPool.Instance.Fetch(typeof(Other2DBCache_SaveUnit), isFromPool) as Other2DBCache_SaveUnit;
-        }
-
-        [MemoryPackOrder(0)]
-        public int RpcId { get; set; }
-
-        [MemoryPackOrder(1)]
-        public byte[] Unit { get; set; }
-
-        [MemoryPackOrder(2)]
-        public List<byte[]> Entities { get; set; } = new();
-
-        public override void Dispose()
-        {
-            if (!this.IsFromPool)
-            {
-                return;
-            }
-
-            this.RpcId = default;
-            this.Unit = default;
-            this.Entities.Clear();
+            this.EntityTypes.Clear();
+            this.EntityBytes.Clear();
 
             ObjectPool.Instance.Recycle(this);
         }
@@ -1075,13 +954,9 @@ namespace ET
         public const ushort ObjectQueryResponse = 20022;
         public const ushort M2M_UnitTransferRequest = 20023;
         public const ushort M2M_UnitTransferResponse = 20024;
-        public const ushort Other2DBCache_GetUnit = 20025;
-        public const ushort DBCache2Other_GetUnit = 20026;
-        public const ushort Other2DBCache_UpdateCache = 20027;
-        public const ushort Other2DBCache_SaveAll = 20028;
-        public const ushort Other2DBCache_SaveUnit = 20029;
-        public const ushort Rank_FightScore = 20030;
-        public const ushort Map2Rank_UpdateScore = 20031;
-        public const ushort M2M_ChatBroadcast = 20032;
+        public const ushort Other2DBCache_AddOrUpdateUnitCache = 20025;
+        public const ushort Rank_FightScore = 20026;
+        public const ushort Map2Rank_UpdateScore = 20027;
+        public const ushort M2M_ChatBroadcast = 20028;
     }
 }

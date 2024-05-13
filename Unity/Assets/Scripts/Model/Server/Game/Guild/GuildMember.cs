@@ -1,7 +1,7 @@
 ﻿namespace ET.Server
 {
     [ChildOf(typeof(Guild))]
-    public class GuildMember : Entity, IAwake
+    public class GuildMember : Entity, IAwake, ISerializeToEntity
     {
         public long UnitId;
 

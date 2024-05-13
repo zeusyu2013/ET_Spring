@@ -3,7 +3,7 @@
     [ChildOf(typeof(GameRoleComponent))]
     public class GameRole : Entity, IAwake, ISerializeToEntity
     {
-        public long PlayerId;
+        public long UnitId;
         public string RoleName;
         public int RoleLevel;
         public int CharacterType;

@@ -42,7 +42,7 @@ namespace ET.Server
                     long playerId = self.GetParent<Session>().GetComponent<SessionPlayerComponent>().Player.Id;
 
                     List<GameRole> roles = await self.Root().GetComponent<DBManagerComponent>().GetZoneDB(self.Zone())
-                            .Query<GameRole>(x => x.PlayerId == playerId);
+                            .Query<GameRole>(x => self.Id == playerId);
                     if (roles.Count < 1)
                     {
                         return infos;
@@ -85,14 +85,13 @@ namespace ET.Server
                 }
 
                 // 开始创角流程
-                GameRole gameRole = session.GetComponent<GameRoleComponent>().AddChild<GameRole>();
-                gameRole.PlayerId = playerId;
+                GameRole gameRole = self.AddChild<GameRole>();
                 gameRole.RoleName = roleName;
                 gameRole.RoleLevel = 1;
                 gameRole.CharacterType = characterType;
                 gameRole.RaceType = raceType;
 
-                await session.Root().GetComponent<DBManagerComponent>().GetZoneDB(session.Zone()).Save(gameRole);
+                await session.Root().GetComponent<DBManagerComponent>().GetZoneDB(session.Zone()).Save(self);
 
                 // 存储名字
                 GameRoleName gameRoleName = session.Root().GetComponent<RoleNameComponent>().AddChild<GameRoleName>();
@@ -115,7 +114,7 @@ namespace ET.Server
             {
                 List<GameRole> roleInfos =
                         await session.Root().GetComponent<DBManagerComponent>().GetZoneDB(session.Zone())
-                                .Query<GameRole>(x => x.PlayerId == playerId && x.RoleName.Equals(roleName) && !x.Deleted);
+                                .Query<GameRole>(x => self.Id == playerId && x.RoleName.Equals(roleName) && !x.Deleted);
                 if (roleInfos.Count != 1)
                 {
                     return ErrorCode.ERR_DeleteRoleHasNoRole;

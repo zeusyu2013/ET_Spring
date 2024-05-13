@@ -8,6 +8,12 @@ namespace ET
         {
             self.ConfigId = configId;
         }
+        
+        [EntitySystem]
+        private static void GetComponentSys(this Unit self, System.Type type)
+        {
+
+        }
 
         public static UnitConfig Config(this Unit self)
         {

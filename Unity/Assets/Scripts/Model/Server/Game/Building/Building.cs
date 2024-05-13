@@ -3,7 +3,7 @@
 namespace ET
 {
     [ChildOf(typeof(BuildingComponent))]
-    public class Building : Entity, IAwake<int>
+    public class Building : Entity, IAwake<int>, ISerializeToEntity
     {
         public int ConfigId;
 

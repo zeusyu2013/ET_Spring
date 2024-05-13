@@ -176,38 +176,12 @@ message M2M_UnitTransferResponse // IResponse
 	string Message = 3;
 }
 
-// ResponseType DBCache2Other_GetUnit
-message Other2DBCache_GetUnit // IRequest
+message Other2DBCache_AddOrUpdateUnitCache // IMessage
 {
 	int32 RpcId = 1;
 	int64 UnitId = 2;
-}
-
-message DBCache2Other_GetUnit // IResponse
-{
-	int32 RpcId = 1;
-	int32 Error = 2;
-	string Message = 3;
-	repeated bytes Entities = 4;
-}
-
-message Other2DBCache_UpdateCache // IMessage
-{
-	int32 RpcId = 1;
-	int64 UnitId = 2;
-	bytes Entity = 3;
-}
-
-message Other2DBCache_SaveAll // IMessage
-{
-	int32 RpcId = 1;
-}
-
-message Other2DBCache_SaveUnit // IMessage
-{
-	int32 RpcId = 1;
-	bytes Unit = 2;
-	repeated bytes Entities = 3;
+	repeated string EntityTypes = 3;
+	repeated bytes EntityBytes = 4;
 }
 
 message Rank_FightScore

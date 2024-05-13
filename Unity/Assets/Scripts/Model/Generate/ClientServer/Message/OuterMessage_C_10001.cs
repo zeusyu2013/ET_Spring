@@ -1106,7 +1106,7 @@ namespace ET
         }
 
         [MemoryPackOrder(0)]
-        public long PlayerId { get; set; }
+        public long UnitId { get; set; }
 
         [MemoryPackOrder(1)]
         public string RoleName { get; set; }
@@ -1130,7 +1130,7 @@ namespace ET
                 return;
             }
 
-            this.PlayerId = default;
+            this.UnitId = default;
             this.RoleName = default;
             this.RoleLevel = default;
             this.CharacterType = default;

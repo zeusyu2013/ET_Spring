@@ -4,7 +4,7 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace ET.Server
 {
     [ComponentOf(typeof(Unit))]
-    public class BagComponent : Entity, IAwake, IGetComponentSys, IDeserialize
+    public class BagComponent : Entity, IAwake, IDeserialize, ITransfer, IUnitCache, IGetComponentSys
     {
         public int Capacity;
 

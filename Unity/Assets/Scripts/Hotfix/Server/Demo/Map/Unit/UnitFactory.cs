@@ -53,7 +53,9 @@ namespace ET.Server
             }
 
             UnitComponent unitComponent = scene.GetComponent<UnitComponent>();
-            Unit unit = unitComponent.AddChildWithId<Unit, int>(id, 0);
+            Unit unit = unitComponent.AddChild<Unit, int>(0);
+
+            unit.AddComponent<UnitDBSaveComponent>();
 
             // 数值组件
             NumericComponent numericComponent = unit.AddComponent<NumericComponent>();
@@ -97,7 +99,8 @@ namespace ET.Server
             unit.AddComponentWithId<OfflineIncomeComponent>(unit.Id);
 
             // 任务组件
-            unit.AddComponentWithId<GameTaskComponent>(unit.Id);
+            GameTaskComponent gameTaskComponent = unit.AddComponentWithId<GameTaskComponent>(unit.Id);
+            gameTaskComponent.AcceptTask(config.TaskId);
 
             // 成就组件
             unit.AddComponentWithId<AchievementComponent>(unit.Id);
@@ -127,15 +130,19 @@ namespace ET.Server
             UnitComponent unitComponent = scene.GetComponent<UnitComponent>();
             unitComponent.AddChild(unit);
 
+            unit.AddComponent<UnitDBSaveComponent>();
+
             NumericComponent numericComponent = unit.AddComponent<NumericComponent>();
             UnitConfig config = UnitConfigCategory.Instance.Get(unit.ConfigId);
             foreach (var kv in config.PropertyConfig.Properties)
             {
                 numericComponent.Set((int)kv.Key, kv.Value);
             }
-
+         
+            // TODO：从缓存服拉去玩家相关组件数据
+            
             unit.AddComponent<MoveComponent>();
-
+            
             // 加入aoi
             unit.AddComponent<AOIEntity, int, float3>(9 * 1000, unit.Position);
 

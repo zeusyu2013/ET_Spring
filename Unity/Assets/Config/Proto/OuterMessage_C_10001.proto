@@ -238,7 +238,7 @@ message G2C_Benchmark // ISessionResponse
 
 message GameRoleInfo
 {
-	int64 PlayerId = 1;
+	int64 UnitId = 1;
 	string RoleName = 2;
 	int32 RoleLevel = 3;
 	int32 CharacterType = 4;

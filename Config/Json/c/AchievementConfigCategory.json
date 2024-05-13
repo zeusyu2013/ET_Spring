@@ -3,78 +3,143 @@
     "Id": 10001,
     "Name": "成就10001",
     "Desc": "获得10000金币",
+    "Condition": {
+      "$type": "PropertyCompare",
+      "Property": 1001,
+      "Value": 1
+    },
     "Icon": "achievement_10001"
   },
   {
     "Id": 10002,
     "Name": "成就10002",
     "Desc": "获得10001金币",
+    "Condition": {
+      "$type": "PropertyCompare",
+      "Property": 1001,
+      "Value": 2
+    },
     "Icon": "achievement_10002"
   },
   {
     "Id": 10003,
     "Name": "成就10003",
     "Desc": "获得10002金币",
+    "Condition": {
+      "$type": "PropertyCompare",
+      "Property": 1001,
+      "Value": 3
+    },
     "Icon": "achievement_10003"
   },
   {
     "Id": 10004,
     "Name": "成就10004",
     "Desc": "获得10003金币",
+    "Condition": {
+      "$type": "PropertyCompare",
+      "Property": 1001,
+      "Value": 4
+    },
     "Icon": "achievement_10004"
   },
   {
     "Id": 10005,
     "Name": "成就10005",
     "Desc": "获得10004金币",
+    "Condition": {
+      "$type": "PropertyCompare",
+      "Property": 1001,
+      "Value": 5
+    },
     "Icon": "achievement_10005"
   },
   {
     "Id": 10006,
     "Name": "成就10006",
     "Desc": "获得10005金币",
+    "Condition": {
+      "$type": "PropertyCompare",
+      "Property": 1001,
+      "Value": 6
+    },
     "Icon": "achievement_10006"
   },
   {
     "Id": 10007,
     "Name": "成就10007",
     "Desc": "获得10006金币",
+    "Condition": {
+      "$type": "PropertyCompare",
+      "Property": 1001,
+      "Value": 7
+    },
     "Icon": "achievement_10007"
   },
   {
     "Id": 10008,
     "Name": "成就10008",
     "Desc": "获得10007金币",
+    "Condition": {
+      "$type": "PropertyCompare",
+      "Property": 1001,
+      "Value": 8
+    },
     "Icon": "achievement_10008"
   },
   {
     "Id": 10009,
     "Name": "成就10009",
     "Desc": "获得10008金币",
+    "Condition": {
+      "$type": "PropertyCompare",
+      "Property": 1001,
+      "Value": 9
+    },
     "Icon": "achievement_10009"
   },
   {
     "Id": 10010,
     "Name": "成就10010",
     "Desc": "获得10009金币",
+    "Condition": {
+      "$type": "PropertyCompare",
+      "Property": 1001,
+      "Value": 10
+    },
     "Icon": "achievement_10010"
   },
   {
     "Id": 10011,
     "Name": "成就10011",
     "Desc": "获得10010金币",
+    "Condition": {
+      "$type": "PropertyCompare",
+      "Property": 1001,
+      "Value": 11
+    },
     "Icon": "achievement_10011"
   },
   {
     "Id": 10012,
     "Name": "成就10012",
     "Desc": "获得10011金币",
+    "Condition": {
+      "$type": "PropertyCompare",
+      "Property": 1001,
+      "Value": 12
+    },
     "Icon": "achievement_10012"
   },
   {
     "Id": 10013,
     "Name": "成就10013",
     "Desc": "获得10012金币",
+    "Condition": {
+      "$type": "PropertyCompare",
+      "Property": 1001,
+      "Value": 13
+    },
     "Icon": "achievement_10013"
   }
 ]

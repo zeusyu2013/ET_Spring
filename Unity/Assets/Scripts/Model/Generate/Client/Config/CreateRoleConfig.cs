@@ -22,6 +22,7 @@ namespace ET
             CurrencyValue = _buf.ReadLong();
             RaceFlag = (RaceType)_buf.ReadInt();
             BaseProperty = _buf.ReadInt();
+            TaskId = _buf.ReadInt();
 
             PostInit();
         }
@@ -66,6 +67,16 @@ namespace ET
         /// </summary>
         public PropertyConfig BasePropertyConfig => PropertyConfigCategory.Instance.GetOrDefault(BaseProperty);
 
+        /// <summary>
+        /// 初始任务编号
+        /// </summary>
+        public readonly int TaskId;
+
+        /// <summary>
+        /// 初始任务编号
+        /// </summary>
+        public TaskConfig TaskIdConfig => TaskConfigCategory.Instance.GetOrDefault(TaskId);
+
         public const int __ID__ = 2003629460;
 
         public override int GetTypeId() => __ID__;
@@ -79,6 +90,7 @@ namespace ET
             + "CurrencyValue:" + CurrencyValue + ","
             + "RaceFlag:" + RaceFlag + ","
             + "BaseProperty:" + BaseProperty + ","
+            + "TaskId:" + TaskId + ","
             + "}";
         }
 

@@ -2,7 +2,8 @@
 
 namespace ET.Server
 {
-    public class Guild : Entity, IAwake
+    [ChildOf(typeof(GuildComponent))]
+    public class Guild : Entity, IAwake, ISerializeToEntity
     {
         public long GuildId;
 

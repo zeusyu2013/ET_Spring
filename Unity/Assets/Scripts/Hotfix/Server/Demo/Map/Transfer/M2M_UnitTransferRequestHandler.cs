@@ -13,6 +13,8 @@ namespace ET.Server
             unitComponent.AddChild(unit);
             unitComponent.Add(unit);
 
+            unit.AddComponent<UnitDBSaveComponent>();
+
             foreach (byte[] bytes in request.Entitys)
             {
                 Entity entity = MongoHelper.Deserialize<Entity>(bytes);

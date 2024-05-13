@@ -15,6 +15,7 @@
         public const int SessionAcceptTimeout = 203;
         public const int DBCacheTimer = 204;
         public const int DBCacheSaveTimer = 205;
+        public const int UnitDBSaveTimer = 206;
 
         public const int GameBuffTimer = 210;
 

@@ -26,7 +26,7 @@ namespace ET.Server
         [EntitySystem]
         private static void GetComponentSys(this BagComponent self, System.Type type)
         {
-            self.Root().GetComponent<DBCacheComponent>().Save(self).Coroutine();
+            
         }
 
         public static bool AddItem(this BagComponent self, GameItem item)
@@ -114,6 +114,8 @@ namespace ET.Server
 
         public static List<EntityRef<GameItem>> GetGameItems(this BagComponent self)
         {
+            self.AddItem(60015, 1);
+            
             return self.GameItems;
         }
     }
