@@ -141,6 +141,9 @@ namespace ET
         [MemoryPackOrder(0)]
         public int RpcId { get; set; }
 
+        [MemoryPackOrder(1)]
+        public long UnitId { get; set; }
+
         public override void Dispose()
         {
             if (!this.IsFromPool)
@@ -149,6 +152,7 @@ namespace ET
             }
 
             this.RpcId = default;
+            this.UnitId = default;
 
             ObjectPool.Instance.Recycle(this);
         }
@@ -172,12 +176,6 @@ namespace ET
         [MemoryPackOrder(2)]
         public string Message { get; set; }
 
-        /// <summary>
-        /// 自己的UnitId
-        /// </summary>
-        [MemoryPackOrder(3)]
-        public long MyId { get; set; }
-
         public override void Dispose()
         {
             if (!this.IsFromPool)
@@ -188,7 +186,6 @@ namespace ET
             this.RpcId = default;
             this.Error = default;
             this.Message = default;
-            this.MyId = default;
 
             ObjectPool.Instance.Recycle(this);
         }
@@ -812,6 +809,9 @@ namespace ET
         [MemoryPackOrder(3)]
         public long PlayerId { get; set; }
 
+        [MemoryPackOrder(4)]
+        public long UnitId { get; set; }
+
         public override void Dispose()
         {
             if (!this.IsFromPool)
@@ -823,6 +823,7 @@ namespace ET
             this.Error = default;
             this.Message = default;
             this.PlayerId = default;
+            this.UnitId = default;
 
             ObjectPool.Instance.Recycle(this);
         }
@@ -1106,21 +1107,24 @@ namespace ET
         }
 
         [MemoryPackOrder(0)]
-        public long UnitId { get; set; }
+        public long PlayerId { get; set; }
 
         [MemoryPackOrder(1)]
-        public string RoleName { get; set; }
+        public long UnitId { get; set; }
 
         [MemoryPackOrder(2)]
-        public int RoleLevel { get; set; }
+        public string RoleName { get; set; }
 
         [MemoryPackOrder(3)]
-        public int CharacterType { get; set; }
+        public int RoleLevel { get; set; }
 
         [MemoryPackOrder(4)]
-        public int RaceType { get; set; }
+        public int CharacterType { get; set; }
 
         [MemoryPackOrder(5)]
+        public int RaceType { get; set; }
+
+        [MemoryPackOrder(6)]
         public string RoleModel { get; set; }
 
         public override void Dispose()
@@ -1130,6 +1134,7 @@ namespace ET
                 return;
             }
 
+            this.PlayerId = default;
             this.UnitId = default;
             this.RoleName = default;
             this.RoleLevel = default;
@@ -1144,7 +1149,7 @@ namespace ET
     [MemoryPackable]
     [Message(OuterMessage.C2G_GetRoles)]
     [ResponseType(nameof(G2C_GetRoles))]
-    public partial class C2G_GetRoles : MessageObject, IRequest
+    public partial class C2G_GetRoles : MessageObject, ISessionRequest
     {
         public static C2G_GetRoles Create(bool isFromPool = false)
         {
@@ -1173,7 +1178,7 @@ namespace ET
 
     [MemoryPackable]
     [Message(OuterMessage.G2C_GetRoles)]
-    public partial class G2C_GetRoles : MessageObject, IResponse
+    public partial class G2C_GetRoles : MessageObject, ISessionResponse
     {
         public static G2C_GetRoles Create(bool isFromPool = false)
         {
@@ -1211,7 +1216,7 @@ namespace ET
     [MemoryPackable]
     [Message(OuterMessage.C2G_CreateRole)]
     [ResponseType(nameof(G2C_CreateRole))]
-    public partial class C2G_CreateRole : MessageObject, IRequest
+    public partial class C2G_CreateRole : MessageObject, ISessionRequest
     {
         public static C2G_CreateRole Create(bool isFromPool = false)
         {
@@ -1252,7 +1257,7 @@ namespace ET
 
     [MemoryPackable]
     [Message(OuterMessage.G2C_CreateRole)]
-    public partial class G2C_CreateRole : MessageObject, IResponse
+    public partial class G2C_CreateRole : MessageObject, ISessionResponse
     {
         public static G2C_CreateRole Create(bool isFromPool = false)
         {
@@ -1290,7 +1295,7 @@ namespace ET
     [MemoryPackable]
     [Message(OuterMessage.C2G_DeleteRole)]
     [ResponseType(nameof(G2C_DeleteRole))]
-    public partial class C2G_DeleteRole : MessageObject, IRequest
+    public partial class C2G_DeleteRole : MessageObject, ISessionRequest
     {
         public static C2G_DeleteRole Create(bool isFromPool = false)
         {
@@ -1323,7 +1328,7 @@ namespace ET
 
     [MemoryPackable]
     [Message(OuterMessage.G2C_DeleteRole)]
-    public partial class G2C_DeleteRole : MessageObject, IResponse
+    public partial class G2C_DeleteRole : MessageObject, ISessionResponse
     {
         public static G2C_DeleteRole Create(bool isFromPool = false)
         {

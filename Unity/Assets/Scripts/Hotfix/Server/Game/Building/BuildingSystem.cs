@@ -1,11 +1,11 @@
-﻿namespace ET
+﻿namespace ET.Server
 {
     [EntitySystemOf(typeof(Building))]
-    [FriendOfAttribute(typeof(ET.Building))]
+    [FriendOfAttribute(typeof(Building))]
     public static partial class BuildingSystem
     {
         [EntitySystem]
-        private static void Awake(this ET.Building self, int configId)
+        private static void Awake(this Building self, int configId)
         {
             self.ConfigId = configId;
         }

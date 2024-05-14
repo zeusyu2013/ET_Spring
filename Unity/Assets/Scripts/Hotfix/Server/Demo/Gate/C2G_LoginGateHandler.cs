@@ -20,6 +20,7 @@ namespace ET.Server
 
             PlayerComponent playerComponent = root.GetComponent<PlayerComponent>();
             Player player = playerComponent.GetByAccount(accountId);
+            // 第一次进游戏
             if (player == null)
             {
                 player = playerComponent.AddChildWithId<Player>(accountId);
@@ -36,9 +37,16 @@ namespace ET.Server
             }
             else
             {
+                // 可能是短线重连，也可能是顶号
                 session.AddComponent<SessionPlayerComponent>().Player = player;
                 PlayerSessionComponent playerSessionComponent = player.GetComponent<PlayerSessionComponent>();
                 playerSessionComponent.Session = session;
+
+                GateUnitComponent gateUnitComponent = player.GetComponent<GateUnitComponent>();
+                if (gateUnitComponent != null)
+                {
+                    response.UnitId = gateUnitComponent.UnitId;
+                }
             }
 
             session.AddComponentWithId<GameRoleComponent>(player.Id);

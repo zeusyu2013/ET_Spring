@@ -1,18 +1,12 @@
-﻿namespace ET
+﻿namespace ET.Server
 {
     [EntitySystemOf(typeof(AchievementComponent))]
-    [FriendOfAttribute(typeof(ET.AchievementComponent))]
+    [FriendOfAttribute(typeof(AchievementComponent))]
     public static partial class AchievementComponentSystem
     {
         [EntitySystem]
-        private static void Awake(this ET.AchievementComponent self)
+        private static void Awake(this AchievementComponent self)
         {
-        }
-
-        [EntitySystem]
-        private static void Deserialize(this ET.AchievementComponent self)
-        {
-
         }
 
         public static void AddAchievement(this AchievementComponent self)

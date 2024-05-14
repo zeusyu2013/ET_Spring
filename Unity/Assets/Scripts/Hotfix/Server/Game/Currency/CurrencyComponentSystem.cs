@@ -1,11 +1,11 @@
-﻿namespace ET
+﻿namespace ET.Server
 {
     [EntitySystemOf(typeof(CurrencyComponent))]
-    [FriendOfAttribute(typeof(ET.CurrencyComponent))]
+    [FriendOfAttribute(typeof(CurrencyComponent))]
     public static partial class CurrencyComponentSystem
     {
         [EntitySystem]
-        private static void Awake(this ET.CurrencyComponent self)
+        private static void Awake(this CurrencyComponent self)
         {
         }
 
@@ -22,9 +22,9 @@
             }
 
             // 没有此类型，尝试添加
-            self.Currencies.TryAdd(type, 0);
+            self.Currencies.TryAdd((int)type, 0);
 
-            self.Currencies[type] += value;
+            self.Currencies[(int)type] += value;
 
             return true;
         }
@@ -36,25 +36,20 @@
                 return false;
             }
 
-            if (!self.Currencies.ContainsKey(type))
+            if (!self.Currencies.ContainsKey((int)type))
             {
                 return false;
             }
 
-            long current = self.Currencies[type];
+            long current = self.Currencies[(int)type];
             if (current < value)
             {
                 return false;
             }
 
-            self.Currencies[type] = current - value;
+            self.Currencies[(int)type] = current - value;
 
             return true;
-        }
-
-        [EntitySystem]
-        private static void Deserialize(this ET.CurrencyComponent self)
-        {
         }
     }
 }

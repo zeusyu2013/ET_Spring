@@ -3,7 +3,7 @@
 namespace ET.Server
 {
     [ChildOf(typeof(MailComponent))]
-    public class Mail : Entity, IAwake, ISerializeToEntity
+    public class Mail : Entity, IAwake
     {
         public string Title;
 

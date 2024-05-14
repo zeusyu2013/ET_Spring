@@ -20,7 +20,7 @@
             
             await LoginHelper.Login(root, root.Name, "", "", 0);
             
-            await EnterMapHelper.EnterMapAsync(root);
+            await EnterMapHelper.EnterMapAsync(root, root.Id);
             
             root.AddComponent<AIComponent, int>(1);
         }

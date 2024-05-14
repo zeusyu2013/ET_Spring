@@ -13,6 +13,8 @@
         [EntitySystem]
         private static void Destroy(this GameItem self)
         {
+            self.ConfigId = 0;
+            self.Amount = 0;
         }
 
         public static GameItemInfo ToMessage(this GameItem self)

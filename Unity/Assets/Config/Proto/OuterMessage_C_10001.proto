@@ -32,6 +32,7 @@ message M2C_TestResponse // IResponse
 message C2G_EnterMap // ISessionRequest
 {
 	int32 RpcId = 1;
+	int64 UnitId = 2;
 }
 
 message G2C_EnterMap // ISessionResponse
@@ -39,8 +40,6 @@ message G2C_EnterMap // ISessionResponse
 	int32 RpcId = 1;
 	int32 Error = 2;
 	string Message = 3;
-	/// 自己的UnitId
-	int64 MyId = 4;
 }
 
 message MoveInfo
@@ -176,6 +175,7 @@ message G2C_LoginGate // ISessionResponse
 	int32 Error = 2;
 	string Message = 3;
 	int64 PlayerId = 4;
+	int64 UnitId = 5;
 }
 
 message G2C_TestHotfixMessage // ISessionMessage
@@ -238,22 +238,23 @@ message G2C_Benchmark // ISessionResponse
 
 message GameRoleInfo
 {
-	int64 UnitId = 1;
-	string RoleName = 2;
-	int32 RoleLevel = 3;
-	int32 CharacterType = 4;
-	int32 RaceType = 5;
-	string RoleModel = 6;
+	int64 PlayerId = 1;
+	int64 UnitId = 2;
+	string RoleName = 3;
+	int32 RoleLevel = 4;
+	int32 CharacterType = 5;
+	int32 RaceType = 6;
+	string RoleModel = 7;
 }
 
 // ResponseType G2C_GetRoles
-message C2G_GetRoles // IRequest
+message C2G_GetRoles // ISessionRequest
 {
 	int32 RpcId = 1;
 	int64 PlayerId = 2;
 }
 
-message G2C_GetRoles // IResponse
+message G2C_GetRoles // ISessionResponse
 {
 	int32 RpcId = 1;
 	int32 Error = 2;
@@ -262,7 +263,7 @@ message G2C_GetRoles // IResponse
 }
 
 // ResponseType G2C_CreateRole
-message C2G_CreateRole // IRequest
+message C2G_CreateRole // ISessionRequest
 {
 	int32 RpcId = 1;
 	int64 PlayerId = 2;
@@ -271,7 +272,7 @@ message C2G_CreateRole // IRequest
 	int32 RaceType = 5;
 }
 
-message G2C_CreateRole // IResponse
+message G2C_CreateRole // ISessionResponse
 {
 	int32 RpcId = 1;
 	int32 Error = 2;
@@ -280,14 +281,14 @@ message G2C_CreateRole // IResponse
 }
 
 // ResponseType G2C_DeleteRole
-message C2G_DeleteRole // IRequest
+message C2G_DeleteRole // ISessionRequest
 {
 	int32 RpcId = 1;
 	int64 PlayerId = 2;
 	string RoleName = 3;
 }
 
-message G2C_DeleteRole // IResponse
+message G2C_DeleteRole // ISessionResponse
 {
 	int32 RpcId = 1;
 	int32 Error = 2;

@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace ET
+namespace ET.Server
 {
+    [UnitCacheEvent(typeof(BuildingComponent))]
     [ComponentOf(typeof(Unit))]
     public class BuildingComponent : Entity, IAwake, IDeserialize, ITransfer
     {

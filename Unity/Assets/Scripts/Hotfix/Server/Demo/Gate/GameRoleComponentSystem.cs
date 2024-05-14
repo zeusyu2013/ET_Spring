@@ -13,27 +13,13 @@ namespace ET.Server
         {
         }
 
-        [EntitySystem]
-        private static void Deserialize(this ET.Server.GameRoleComponent self)
-        {
-            foreach (Entity entity in self.Children.Values)
-            {
-                GameRole gameRole = entity as GameRole;
-                self.GameRoles.Add(gameRole);
-            }
-        }
-
         public static async ETTask<List<GameRoleInfo>> Query(this GameRoleComponent self)
         {
             List<GameRoleInfo> infos = new();
 
             if (self.GameRoles.Count > 0)
             {
-                foreach (var entityRef in self.GameRoles)
-                {
-                    GameRole role = entityRef;
-                    infos.Add(role.ToMessage());
-                }
+                infos.AddRange(self.GameRoles);
             }
             else
             {
@@ -42,7 +28,7 @@ namespace ET.Server
                     long playerId = self.GetParent<Session>().GetComponent<SessionPlayerComponent>().Player.Id;
 
                     List<GameRole> roles = await self.Root().GetComponent<DBManagerComponent>().GetZoneDB(self.Zone())
-                            .Query<GameRole>(x => self.Id == playerId);
+                            .Query<GameRole>(x => x.PlayerId == playerId);
                     if (roles.Count < 1)
                     {
                         return infos;
@@ -50,8 +36,9 @@ namespace ET.Server
 
                     foreach (GameRole gameRole in roles)
                     {
-                        self.GameRoles.Add(gameRole);
+                        self.GameRoles.Add(gameRole.ToMessage());
                     }
+                    infos.AddRange(self.GameRoles);
                 }
             }
 
@@ -60,6 +47,11 @@ namespace ET.Server
 
         public static async ETTask<int> Create(this GameRoleComponent self, string roleName, int characterType, int raceType)
         {
+            if (self.GameRoles.Count >= GlobalDataConfigCategory.Instance.CreateRoleMaxLimit)
+            {
+                return ErrorCode.ERR_CreateRoleLimit;
+            }
+            
             Session session = self.GetParent<Session>();
             long playerId = session.GetComponent<SessionPlayerComponent>().Player.Id;
 
@@ -86,12 +78,16 @@ namespace ET.Server
 
                 // 开始创角流程
                 GameRole gameRole = self.AddChild<GameRole>();
+                gameRole.PlayerId = playerId;
+                gameRole.UnitId = gameRole.Id;
                 gameRole.RoleName = roleName;
                 gameRole.RoleLevel = 1;
+                gameRole.RoleModel = "";
                 gameRole.CharacterType = characterType;
                 gameRole.RaceType = raceType;
+                gameRole.Deleted = false;
 
-                await session.Root().GetComponent<DBManagerComponent>().GetZoneDB(session.Zone()).Save(self);
+                await session.Root().GetComponent<DBManagerComponent>().GetZoneDB(session.Zone()).Save(gameRole);
 
                 // 存储名字
                 GameRoleName gameRoleName = session.Root().GetComponent<RoleNameComponent>().AddChild<GameRoleName>();
@@ -99,7 +95,7 @@ namespace ET.Server
                 gameRoleName.Deleted = false;
                 await session.Root().GetComponent<DBManagerComponent>().GetZoneDB(session.Zone()).Save(gameRoleName);
 
-                self.GameRoles.Add(gameRole);
+                self.GameRoles.Add(gameRole.ToMessage());
             }
 
             return ErrorCode.ERR_Success;
@@ -124,10 +120,10 @@ namespace ET.Server
                 info.Deleted = true;
                 await session.Root().GetComponent<DBManagerComponent>().GetZoneDB(session.Zone()).Save(info);
 
-                GameRole role = self.GameRoles.Find(x => ((GameRole)x).RoleName.Equals(roleName));
-                if (role != null)
+                GameRoleInfo roleInfo = self.GameRoles.Find(x => x.RoleName.Equals(roleName));
+                if (roleInfo != null)
                 {
-                    self.GameRoles.Remove(role);
+                    self.GameRoles.Remove(roleInfo);
                 }
             }
 

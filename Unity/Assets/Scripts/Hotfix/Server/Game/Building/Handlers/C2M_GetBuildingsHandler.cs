@@ -1,7 +1,7 @@
 ﻿namespace ET.Server
 {
     [MessageLocationHandler(SceneType.Map)]
-    [FriendOfAttribute(typeof(ET.BuildingComponent))]
+    [FriendOfAttribute(typeof(BuildingComponent))]
     public class C2M_GetBuildingsHandler : MessageLocationHandler<Unit, C2M_GetBuildings, M2C_GetBuildings>
     {
         protected override async ETTask Run(Unit unit, C2M_GetBuildings request, M2C_GetBuildings response)
@@ -9,7 +9,7 @@
             BuildingComponent buildingComponent = unit.GetComponent<BuildingComponent>();
             if (buildingComponent == null)
             {
-                response.Error = ErrorCode.ERR_NotFountComponent;
+                response.Error = ErrorCode.ERR_NotFoundComponent;
                 response.Message = "没找到建筑组件";
                 return;
             }

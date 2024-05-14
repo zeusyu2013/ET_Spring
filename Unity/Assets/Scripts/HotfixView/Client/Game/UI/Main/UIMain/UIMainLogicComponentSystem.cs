@@ -1,4 +1,3 @@
-
 namespace ET.Client
 {
     [EntitySystemOf(typeof(UIMainLogicComponent))]
@@ -16,22 +15,18 @@ namespace ET.Client
             });
             view.GCanvas_Test2.onClick.Set(() =>
             {
-                Log.Info("Click test button 2");
+                C2M_GetAllCurrencies c2MGetAllCurrencies = C2M_GetAllCurrencies.Create();
+                self.Root().GetComponent<ClientSenderComponent>().Call(c2MGetAllCurrencies).Coroutine();
             });
-            view.GCanvas_Test3.onClick.Set(() =>
-            {
-                Log.Info("Click test button 3");
-            });
-            view.GCanvas_Test4.onClick.Set(() =>
-            {
-                Log.Info("Click test button 4");
-            });
-            
+            view.GCanvas_Test3.onClick.Set(() => { Log.Info("Click test button 3"); });
+            view.GCanvas_Test4.onClick.Set(() => { Log.Info("Click test button 4"); });
         }
+
         [EntitySystem]
         private static void Destroy(this UIMainLogicComponent self)
         {
         }
+
         public static void OnHide(this UIMainLogicComponent self)
         {
         }

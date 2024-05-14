@@ -45,6 +45,7 @@ namespace ET.Client
             Log.Debug("登陆gate成功!");
 
             response.PlayerId = g2CLoginGate.PlayerId;
+            response.UnitId = g2CLoginGate.UnitId;
         }
     }
 }

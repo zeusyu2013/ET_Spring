@@ -22,6 +22,7 @@
 
     public struct LoginFinish
     {
+        public long UnitId;
     }
 
     public struct UIPing

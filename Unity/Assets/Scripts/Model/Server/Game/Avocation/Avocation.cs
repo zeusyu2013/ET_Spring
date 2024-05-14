@@ -1,6 +1,6 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
 
-namespace ET
+namespace ET.Server
 {
     [ChildOf(typeof(AvocationComponent))]
     public class Avocation : Entity, IAwake<AvocationType>

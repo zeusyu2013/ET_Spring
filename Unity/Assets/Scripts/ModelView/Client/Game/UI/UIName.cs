@@ -8,6 +8,8 @@ namespace ET.Client
         public const string UIBag = "UIBag";
         public const string UIChatBig = "UIChatBig";
         public const string UIChatMini = "UIChatMini";
+        public const string UICreateRole = "UICreateRole";
+        public const string UIChooseRole = "UIChooseRole";
         public const string UIJoystick = "UIJoystick";
         public const string UILogin = "UILogin";
         public const string UIServerList = "UIServerList";

@@ -20,6 +20,7 @@ namespace ET
             BagMaxCapacity = _buf.ReadInt();
             CameraMinDistance = _buf.ReadFloat();
             CameraMaxDistance = _buf.ReadFloat();
+            CreateRoleMaxLimit = _buf.ReadInt();
 
             PostInit();
         }
@@ -49,6 +50,11 @@ namespace ET
         /// </summary>
         public readonly float CameraMaxDistance;
 
+        /// <summary>
+        /// 创角数量限制
+        /// </summary>
+        public readonly int CreateRoleMaxLimit;
+
         public const int __ID__ = 394046383;
 
         public override int GetTypeId() => __ID__;
@@ -60,6 +66,7 @@ namespace ET
             + "BagMaxCapacity:" + BagMaxCapacity + ","
             + "CameraMinDistance:" + CameraMinDistance + ","
             + "CameraMaxDistance:" + CameraMaxDistance + ","
+            + "CreateRoleMaxLimit:" + CreateRoleMaxLimit + ","
             + "}";
         }
 

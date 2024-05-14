@@ -1,7 +1,7 @@
 ﻿namespace ET.Server
 {
     [ComponentOf]
-    public class RoleNameComponent : Entity
+    public class RoleNameComponent : Entity, IAwake
     {
     }
 }

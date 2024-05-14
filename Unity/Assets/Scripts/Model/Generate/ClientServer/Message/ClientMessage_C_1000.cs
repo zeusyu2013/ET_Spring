@@ -132,6 +132,9 @@ namespace ET
         [MemoryPackOrder(3)]
         public long PlayerId { get; set; }
 
+        [MemoryPackOrder(4)]
+        public long UnitId { get; set; }
+
         public override void Dispose()
         {
             if (!this.IsFromPool)
@@ -143,6 +146,7 @@ namespace ET
             this.Error = default;
             this.Message = default;
             this.PlayerId = default;
+            this.UnitId = default;
 
             ObjectPool.Instance.Recycle(this);
         }

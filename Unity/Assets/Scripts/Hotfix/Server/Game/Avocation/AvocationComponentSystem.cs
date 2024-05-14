@@ -1,17 +1,17 @@
-﻿namespace ET
+﻿namespace ET.Server
 {
     [EntitySystemOf(typeof(AvocationComponent))]
-    [FriendOfAttribute(typeof(ET.AvocationComponent))]
-    [FriendOfAttribute(typeof(ET.Avocation))]
+    [FriendOfAttribute(typeof(AvocationComponent))]
+    [FriendOfAttribute(typeof(Avocation))]
     public static partial class AvocationComponentSystem
     {
         [EntitySystem]
-        private static void Awake(this ET.AvocationComponent self)
+        private static void Awake(this AvocationComponent self)
         {
         }
 
         [EntitySystem]
-        private static void Deserialize(this ET.AvocationComponent self)
+        private static void Deserialize(this AvocationComponent self)
         {
             foreach (Entity entity in self.Children.Values)
             {

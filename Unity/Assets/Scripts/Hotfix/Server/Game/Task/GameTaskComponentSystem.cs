@@ -79,10 +79,5 @@
             // 给奖励
             self.GetParent<Unit>().GetComponent<RewardComponent>().Reward(config.TaskReward);
         }
-
-        [EntitySystem]
-        private static void Deserialize(this ET.Server.GameTaskComponent self)
-        {
-        }
     }
 }

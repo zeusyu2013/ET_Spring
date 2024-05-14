@@ -1,6 +1,6 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
 
-namespace ET
+namespace ET.Server
 {
     [ChildOf(typeof(BuildingComponent))]
     public class Building : Entity, IAwake<int>, ISerializeToEntity

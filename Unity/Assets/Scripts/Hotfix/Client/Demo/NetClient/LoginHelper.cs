@@ -8,11 +8,11 @@ namespace ET.Client
 
             ClientSenderComponent clientSenderComponent = root.AddComponent<ClientSenderComponent>();
 
-            long playerId = await clientSenderComponent.LoginAsync(account, password, host, port);
-
+            var (playerId, UnitId) = await clientSenderComponent.LoginAsync(account, password, host, port);
+            // 
             root.GetComponent<PlayerComponent>().MyId = playerId;
-
-            await EventSystem.Instance.PublishAsync(root, new LoginFinish());
+            
+            await EventSystem.Instance.PublishAsync(root, new LoginFinish(){UnitId = UnitId});
         }
 
         public static async ETTask<int> GetRoleInfos(Scene root)
@@ -26,8 +26,8 @@ namespace ET.Client
 
             C2G_GetRoles c2GGetRoles = C2G_GetRoles.Create();
             c2GGetRoles.PlayerId = playerId;
-
-            G2C_GetRoles g2CGetRoles = await SessionHelper.Call<G2C_GetRoles>(root, c2GGetRoles);
+            ClientSenderComponent clientSenderComponent = root.GetComponent<ClientSenderComponent>();
+            G2C_GetRoles g2CGetRoles = await clientSenderComponent.Call(c2GGetRoles) as G2C_GetRoles;
             if (g2CGetRoles.Error != ErrorCode.ERR_Success)
             {
                 Log.Error($"获取角色列表失败：{g2CGetRoles.Message}");
@@ -60,8 +60,9 @@ namespace ET.Client
             c2GCreateRole.RoleName = roleName;
             c2GCreateRole.CharacterType = character;
             c2GCreateRole.RaceType = race;
-
-            G2C_CreateRole g2CCreateRole = await SessionHelper.Call<G2C_CreateRole>(root, c2GCreateRole);
+            ClientSenderComponent clientSenderComponent = root.GetComponent<ClientSenderComponent>();
+            
+            G2C_CreateRole g2CCreateRole = await clientSenderComponent.Call(c2GCreateRole) as G2C_CreateRole;
             if (g2CCreateRole.Error != ErrorCode.ERR_Success)
             {
                 Log.Error($"获取角色列表失败：{g2CCreateRole.Message}");

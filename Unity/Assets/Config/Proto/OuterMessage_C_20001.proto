@@ -102,3 +102,23 @@ message C2M_UpgradeAvocation // ILocationMessage
 	int32 RpcId = 1;
 	int32 AvocationType = 2;
 }
+
+message CurrencyInfo
+{
+	int32 Type = 1;
+	int64 Value = 2;
+}
+
+// ResponseType M2C_GetAllCurrencies
+message C2M_GetAllCurrencies // ILocationRequest
+{
+	int32 RpcId = 1;
+}
+
+message M2C_GetAllCurrencies // ILocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+	repeated CurrencyInfo CurrencyInfos = 4;
+}

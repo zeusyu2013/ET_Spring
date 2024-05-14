@@ -3,8 +3,9 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace ET.Server
 {
+    [UnitCacheEvent(typeof(BagComponent))]
     [ComponentOf(typeof(Unit))]
-    public class BagComponent : Entity, IAwake, IDeserialize, ITransfer, IUnitCache, IGetComponentSys
+    public class BagComponent : Entity, IAwake, IDeserialize, ITransfer, IUnitCache
     {
         public int Capacity;
 

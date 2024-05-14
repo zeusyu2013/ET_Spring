@@ -15,6 +15,7 @@
             root.AddComponent<DBCacheComponent>();
             root.AddComponent<MessageLocationSenderComponent>();
             root.AddComponent<UnitComponent>();
+            root.AddComponent<UnitCacheEventComponent>();
 
             await ETTask.CompletedTask;
         }

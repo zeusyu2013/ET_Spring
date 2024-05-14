@@ -1,19 +1,19 @@
 ﻿using System.Collections.Generic;
 
-namespace ET
+namespace ET.Server
 {
     [EntitySystemOf(typeof(BuildingComponent))]
-    [FriendOfAttribute(typeof(ET.BuildingComponent))]
-    [FriendOfAttribute(typeof(ET.Building))]
+    [FriendOfAttribute(typeof(BuildingComponent))]
+    [FriendOfAttribute(typeof(Building))]
     public static partial class BuildingComponentSystem
     {
         [EntitySystem]
-        private static void Awake(this ET.BuildingComponent self)
+        private static void Awake(this BuildingComponent self)
         {
         }
 
         [EntitySystem]
-        private static void Deserialize(this ET.BuildingComponent self)
+        private static void Deserialize(this BuildingComponent self)
         {
             foreach (Entity entity in self.Children.Values)
             {

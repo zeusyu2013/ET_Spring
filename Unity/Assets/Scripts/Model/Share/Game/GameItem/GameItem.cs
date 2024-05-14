@@ -3,7 +3,7 @@
 namespace ET
 {
     [ChildOf]
-    public class GameItem : Entity, IAwake<int>, IDestroy, ISerializeToEntity
+    public class GameItem : Entity, IAwake<int>, IDestroy
     {
         public int ConfigId;
         public long Amount;

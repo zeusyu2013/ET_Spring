@@ -474,6 +474,98 @@ namespace ET
         }
     }
 
+    [MemoryPackable]
+    [Message(OuterMessage.CurrencyInfo)]
+    public partial class CurrencyInfo : MessageObject
+    {
+        public static CurrencyInfo Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(CurrencyInfo), isFromPool) as CurrencyInfo;
+        }
+
+        [MemoryPackOrder(0)]
+        public int Type { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long Value { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.Type = default;
+            this.Value = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.C2M_GetAllCurrencies)]
+    [ResponseType(nameof(M2C_GetAllCurrencies))]
+    public partial class C2M_GetAllCurrencies : MessageObject, ILocationRequest
+    {
+        public static C2M_GetAllCurrencies Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_GetAllCurrencies), isFromPool) as C2M_GetAllCurrencies;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_GetAllCurrencies)]
+    public partial class M2C_GetAllCurrencies : MessageObject, ILocationResponse
+    {
+        public static M2C_GetAllCurrencies Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_GetAllCurrencies), isFromPool) as M2C_GetAllCurrencies;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        [MemoryPackOrder(3)]
+        public List<CurrencyInfo> CurrencyInfos { get; set; } = new();
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+            this.CurrencyInfos.Clear();
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
     public static partial class OuterMessage
     {
         public const ushort C2M_GMCommand = 20002;
@@ -491,5 +583,8 @@ namespace ET
         public const ushort M2C_UpgradeBuilding = 20014;
         public const ushort C2M_LearnAvocation = 20015;
         public const ushort C2M_UpgradeAvocation = 20016;
+        public const ushort CurrencyInfo = 20017;
+        public const ushort C2M_GetAllCurrencies = 20018;
+        public const ushort M2C_GetAllCurrencies = 20019;
     }
 }

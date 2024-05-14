@@ -45,6 +45,10 @@ namespace ET
         /// 相机最远距离
         /// </summary>
         public float CameraMaxDistance => _data.CameraMaxDistance;
+        /// <summary>
+        /// 创角数量限制
+        /// </summary>
+        public int CreateRoleMaxLimit => _data.CreateRoleMaxLimit;
 
 
         partial void PostInit();

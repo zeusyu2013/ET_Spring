@@ -1,4 +1,4 @@
-﻿namespace ET
+﻿namespace ET.Server
 {
     [NumericWatcher(SceneType.Current, (int)GamePropertyType.GamePropertyType_Level)]
     public class NumericWatcher_Achievement_UnitLevel : INumericWatcher

@@ -3,13 +3,12 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace ET.Server
 {
+    [UnitCacheEvent(typeof(GameTaskComponent))]
     [ComponentOf(typeof(Unit))]
-    public class GameTaskComponent : Entity, IAwake, IDeserialize, ITransfer
+    public class GameTaskComponent : Entity, IAwake, ITransfer
     {
-        [BsonElement]
         public List<int> AcceptedTasks = new();
         
-        [BsonElement]
         public List<int> CompletedTasks = new();
     }
 }

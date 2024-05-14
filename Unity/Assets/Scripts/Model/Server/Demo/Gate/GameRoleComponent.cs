@@ -3,8 +3,8 @@
 namespace ET.Server
 {
     [ComponentOf(typeof(Session))]
-    public class GameRoleComponent : Entity, IAwake, IDeserialize
+    public class GameRoleComponent : Entity, IAwake
     {
-        public List<EntityRef<GameRole>> GameRoles = new();
+        public List<GameRoleInfo> GameRoles = new();
     }
 }

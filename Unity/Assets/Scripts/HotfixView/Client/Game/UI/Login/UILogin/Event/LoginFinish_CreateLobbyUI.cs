@@ -11,11 +11,30 @@
 			{
 				return;
 			}
-		
-			await EnterMapHelper.EnterMapAsync(scene);
+
+			int error = await LoginHelper.GetRoleInfos(scene);
+			if (error != ErrorCode.ERR_Success)
+			{
+				return;
+			}
+			GameRoleInfoComponent gameRoleInfoComponent = scene.GetComponent<GameRoleInfoComponent>();
+			var roleInfos = gameRoleInfoComponent.GetGameRoleInfos();
 			UIHelper.Remove(scene, UIName.UILogin).Coroutine();
-	
-			await ETTask.CompletedTask;
+			// 如果没有角色就打开创建角色界面
+			if (roleInfos.Count <= 0)
+			{
+				UIHelper.Create(scene, UIName.UICreateRole).Coroutine();
+				return;
+			}
+
+			if (args.UnitId <= 0)
+			{
+				UIHelper.Create(scene, UIName.UIChooseRole).Coroutine();
+				return;
+			}
+			
+			// 进入场景
+			await EnterMapHelper.EnterMapAsync(scene, args.UnitId);
 		}
 		
 	

@@ -3,6 +3,5 @@
     public struct BagOnAdd
     {
         public GameItem GameItem;
-
     }
 }

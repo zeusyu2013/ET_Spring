@@ -17,6 +17,7 @@ namespace ET
         public CreateRoleConfig(ByteBuf _buf)
         {
             Id = (CharacterType)_buf.ReadInt();
+            ConfigId = _buf.ReadInt();
             {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);Items = new System.Collections.Generic.Dictionary<int, long>(n0 * 3 / 2);for(var i0 = 0 ; i0 < n0 ; i0++) { int _k0;  _k0 = _buf.ReadInt(); long _v0;  _v0 = _buf.ReadLong();     Items.Add(_k0, _v0);}}
             CurrencyType = (CurrencyType)_buf.ReadInt();
             CurrencyValue = _buf.ReadLong();
@@ -36,6 +37,16 @@ namespace ET
         /// 职业
         /// </summary>
         public readonly CharacterType Id;
+
+        /// <summary>
+        /// 基础配置id
+        /// </summary>
+        public readonly int ConfigId;
+
+        /// <summary>
+        /// 基础配置id
+        /// </summary>
+        public UnitConfig ConfigIdConfig => UnitConfigCategory.Instance.GetOrDefault(ConfigId);
 
         /// <summary>
         /// 初始道具
@@ -85,6 +96,7 @@ namespace ET
         {
             return "{ "
             + "Id:" + Id + ","
+            + "ConfigId:" + ConfigId + ","
             + "Items:" + Luban.StringUtil.CollectionToString(Items) + ","
             + "CurrencyType:" + CurrencyType + ","
             + "CurrencyValue:" + CurrencyValue + ","

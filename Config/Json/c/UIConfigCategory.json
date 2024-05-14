@@ -34,5 +34,23 @@
     "FullScreen": false,
     "RefitH": false,
     "ChangeSceneRemove": true
+  },
+  {
+    "Id": 2002,
+    "Name": "UICreateRole",
+    "UIType": 2,
+    "Layer": 2,
+    "FullScreen": true,
+    "RefitH": false,
+    "ChangeSceneRemove": true
+  },
+  {
+    "Id": 2003,
+    "Name": "UIChooseRole",
+    "UIType": 2,
+    "Layer": 2,
+    "FullScreen": true,
+    "RefitH": false,
+    "ChangeSceneRemove": true
   }
 ]

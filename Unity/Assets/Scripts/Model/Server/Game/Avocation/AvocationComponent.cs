@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace ET
+namespace ET.Server
 {
+    [UnitCacheEvent(typeof(AvocationComponent))]
     [ComponentOf(typeof(Unit))]
     public class AvocationComponent : Entity, IAwake, IDeserialize, ITransfer
     {

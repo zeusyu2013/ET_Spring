@@ -33,6 +33,7 @@ message NetClient2Main_Login // IResponse
 	string Message = 3;
 
 	int64 PlayerId = 4;
+	int64 UnitId = 5;
 }
 
 message Servers 

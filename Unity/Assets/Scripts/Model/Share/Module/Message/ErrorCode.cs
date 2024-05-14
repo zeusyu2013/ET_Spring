@@ -25,6 +25,7 @@ namespace ET
         public const int ERR_CreateRoleNameSame = 200009;
         public const int ERR_DeleteRoleHasNoRole = 200010;
         public const int ERR_ChooseRoleNameEmpty = 200011;
+        public const int ERR_CreateRoleLimit = 200012;
         
         // DBCache
         public const int ERR_DBCacheUnitIdInvalid = 200020;
@@ -35,6 +36,8 @@ namespace ET
 
         public const int ERR_SigninedToday = 200040;
 
-        public const int ERR_NotFountComponent = 200050;
+        public const int ERR_NotFoundComponent = 200050;
+
+        public const int ERR_NotFoundCurrencies = 200060;
     }
 }

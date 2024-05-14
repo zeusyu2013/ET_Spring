@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace ET.Server
 {
     [FriendOf(typeof(DBCacheComponent))]
     [EntitySystemOf(typeof(DBCacheComponent))]
+    [FriendOfAttribute(typeof(ET.Server.UnitCacheEventComponent))]
     public static partial class DBCacheComponentSystem
     {
         [Invoke(TimerInvokeType.DBCacheTimer)]
@@ -55,12 +55,11 @@ namespace ET.Server
             }
         }
 
-        public static async ETTask<List<byte[]>> QueryUnitComponents(this DBCacheComponent self, long id)
+        public static async ETTask<List<Entity>> QueryUnitComponents(this DBCacheComponent self, long id)
         {
-            List<byte[]> entities = new();
-            BagComponent bagComponent = await self.Query<BagComponent>(id);
-
-            entities.Add(bagComponent.ToBson());
+            List<Entity> entities = new();
+            List<string> collectionNames = self.Root().GetComponent<UnitCacheEventComponent>().CollectionNames;
+            await self.Root().GetComponent<DBManagerComponent>().GetZoneDB(self.Zone()).Query(id, collectionNames, entities);
 
             return entities;
         }

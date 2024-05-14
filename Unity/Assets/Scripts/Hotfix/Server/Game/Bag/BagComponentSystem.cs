@@ -23,12 +23,6 @@ namespace ET.Server
             }
         }
 
-        [EntitySystem]
-        private static void GetComponentSys(this BagComponent self, System.Type type)
-        {
-            
-        }
-
         public static bool AddItem(this BagComponent self, GameItem item)
         {
             if (item == null || item.IsDisposed)
@@ -114,8 +108,6 @@ namespace ET.Server
 
         public static List<EntityRef<GameItem>> GetGameItems(this BagComponent self)
         {
-            self.AddItem(60015, 1);
-            
             return self.GameItems;
         }
     }
