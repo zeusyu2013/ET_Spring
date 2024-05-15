@@ -12,6 +12,13 @@ namespace ET.Server
         private static void Awake(this ET.Server.GameRoleComponent self)
         {
         }
+        
+        [EntitySystem]
+        private static void Destroy(this ET.Server.GameRoleComponent self)
+        {
+            self.GameRoles.Clear();
+            self.UnitId = 0;
+        }
 
         public static async ETTask<List<GameRoleInfo>> Query(this GameRoleComponent self)
         {
@@ -79,7 +86,6 @@ namespace ET.Server
                 // 开始创角流程
                 GameRole gameRole = self.AddChild<GameRole>();
                 gameRole.PlayerId = playerId;
-                gameRole.UnitId = gameRole.Id;
                 gameRole.RoleName = roleName;
                 gameRole.RoleLevel = 1;
                 gameRole.RoleModel = "";
@@ -94,7 +100,7 @@ namespace ET.Server
                 gameRoleName.RoleName = roleName;
                 gameRoleName.Deleted = false;
                 await session.Root().GetComponent<DBManagerComponent>().GetZoneDB(session.Zone()).Save(gameRoleName);
-
+                
                 self.GameRoles.Add(gameRole.ToMessage());
             }
 

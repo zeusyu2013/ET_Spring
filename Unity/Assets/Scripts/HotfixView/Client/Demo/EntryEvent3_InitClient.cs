@@ -16,6 +16,7 @@ namespace ET.Client
             root.AddComponent<RemoteConfigComponent>();
             root.AddComponent<PlayerPrefsComponent>();
             root.AddComponent<MapleComponent>();
+            root.AddComponent<GameUnitComponent>();
             
             // 根据配置修改掉Main Fiber的SceneType
             SceneType sceneType = EnumHelper.FromString<SceneType>(globalComponent.GlobalConfig.AppType.ToString());

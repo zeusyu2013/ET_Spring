@@ -21,8 +21,6 @@ namespace ET.Server
             UnitComponent unitComponent = scene.GetComponent<UnitComponent>();
             Unit unit = unitComponent.AddChildWithId<Unit, int>(id, config.ConfigId);
 
-            unit.AddComponent<UnitDBSaveComponent>();
-
             // 数值组件
             NumericComponent numericComponent = unit.AddComponent<NumericComponent>();
             foreach (var kv in config.BasePropertyConfig.Properties)
@@ -72,6 +70,18 @@ namespace ET.Server
             unit.AddComponentWithId<AchievementComponent>(unit.Id);
 
             unitComponent.Add(unit);
+            
+            UnitDBSaveComponent unitDBSaveComponent = unit.AddComponent<UnitDBSaveComponent>();
+            unitDBSaveComponent.AddChange(typeof(BagComponent));
+            unitDBSaveComponent.AddChange(typeof(EquipmentComponent));
+            unitDBSaveComponent.AddChange(typeof(MailComponent));
+            unitDBSaveComponent.AddChange(typeof(AvocationComponent));
+            unitDBSaveComponent.AddChange(typeof(BuildingComponent));
+            unitDBSaveComponent.AddChange(typeof(CurrencyComponent));
+            unitDBSaveComponent.AddChange(typeof(OfflineIncomeComponent));
+            unitDBSaveComponent.AddChange(typeof(GameTaskComponent));
+            unitDBSaveComponent.AddChange(typeof(AchievementComponent));
+            unitDBSaveComponent.SaveChanged();
 
             // 加入aoi
             unit.AddComponent<AOIEntity, int, float3>(9 * 1000, unit.Position);

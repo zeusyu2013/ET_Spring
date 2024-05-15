@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ET.Server
@@ -100,6 +101,11 @@ namespace ET.Server
             else
             {
                 self.LRUDict.Add(playerId, TimeInfo.Instance.ServerNow());
+            }
+
+            if (!self.CacheDict.ContainsKey(playerId))
+            {
+                self.CacheDict.Add(playerId, new Dictionary<Type, EntityRef<Entity>>());
             }
 
             if (self.CacheDict[playerId].ContainsKey(typeof(T)))

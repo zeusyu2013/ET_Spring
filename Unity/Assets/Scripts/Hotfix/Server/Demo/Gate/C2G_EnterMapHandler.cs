@@ -2,6 +2,7 @@
 {
     [MessageSessionHandler(SceneType.Gate)]
     [FriendOfAttribute(typeof(ET.Server.UnitPlayerIdComponent))]
+    [FriendOfAttribute(typeof(ET.Server.GameRoleComponent))]
     public class C2G_EnterMapHandler : MessageSessionHandler<C2G_EnterMap, G2C_EnterMap>
     {
         protected override async ETTask Run(Session session, C2G_EnterMap request, G2C_EnterMap response)
@@ -37,6 +38,7 @@
             }
 
             unit.AddComponent<UnitPlayerIdComponent>().PlayerId = player.Id;
+            session.GetComponent<GameRoleComponent>().UnitId = unit.Id;
 
             StartSceneConfig startSceneConfig = StartSceneConfigCategory.Instance.GetBySceneName(session.Zone(), "Map1");
 

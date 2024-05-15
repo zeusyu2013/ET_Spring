@@ -234,24 +234,27 @@ namespace ET
         }
 
         [MemoryPackOrder(0)]
-        public long UnitId { get; set; }
+        public long PlayerId { get; set; }
 
         [MemoryPackOrder(1)]
-        public int ConfigId { get; set; }
+        public long UnitId { get; set; }
 
         [MemoryPackOrder(2)]
-        public int Type { get; set; }
+        public int ConfigId { get; set; }
 
         [MemoryPackOrder(3)]
-        public Unity.Mathematics.float3 Position { get; set; }
+        public int Type { get; set; }
 
         [MemoryPackOrder(4)]
+        public Unity.Mathematics.float3 Position { get; set; }
+
+        [MemoryPackOrder(5)]
         public Unity.Mathematics.float3 Forward { get; set; }
 
         [MongoDB.Bson.Serialization.Attributes.BsonDictionaryOptions(MongoDB.Bson.Serialization.Options.DictionaryRepresentation.ArrayOfArrays)]
-        [MemoryPackOrder(5)]
-        public Dictionary<int, long> KV { get; set; } = new();
         [MemoryPackOrder(6)]
+        public Dictionary<int, long> KV { get; set; } = new();
+        [MemoryPackOrder(7)]
         public MoveInfo MoveInfo { get; set; }
 
         public override void Dispose()
@@ -261,6 +264,7 @@ namespace ET
                 return;
             }
 
+            this.PlayerId = default;
             this.UnitId = default;
             this.ConfigId = default;
             this.Type = default;

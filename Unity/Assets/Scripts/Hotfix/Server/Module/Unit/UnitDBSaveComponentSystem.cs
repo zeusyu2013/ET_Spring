@@ -44,6 +44,11 @@ namespace ET.Server
             self.EntityChangeTypes.Add(type);
         }
 
+        public static void AddChange(this UnitDBSaveComponent self, string collections)
+        {
+            
+        }
+
         public static void SaveChanged(this UnitDBSaveComponent self)
         {
             if (self.EntityChangeTypes.Count < 1)

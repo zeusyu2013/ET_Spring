@@ -7,7 +7,9 @@
         Version3,
     }
 
+    [ComponentOf(typeof(Unit))]
     public class DBVersion : Entity, IAwake
     {
+        public int DBVersionNumber;
     }
 }

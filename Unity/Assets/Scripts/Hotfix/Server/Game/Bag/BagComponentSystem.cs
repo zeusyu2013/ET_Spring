@@ -15,6 +15,14 @@ namespace ET.Server
         }
 
         [EntitySystem]
+        private static void Destroy(this BagComponent self)
+        {
+            self.Capacity = 0;
+            self.MaxCapacity = 0;
+            self.GameItems.Clear();
+        }
+
+        [EntitySystem]
         private static void Deserialize(this BagComponent self)
         {
             foreach (var child in self.Children.Values)

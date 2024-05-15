@@ -14,5 +14,6 @@ namespace ET.Client
         public GTextField GCanvas_RaceText { get; set; }
         public GTextField GCanvas_CharacterText { get; set; }
         public GLoader GCanvas_IconLoader { get; set; }
+        public GButton GCanvas_CreateBtn { get; set; }
     }
 }

@@ -57,20 +57,12 @@ namespace ET.Client
                 return;
             }
 
-            long unitId = 0;
-            GameRoleInfoComponent gameRoleInfoComponent = self.Root().GetComponent<GameRoleInfoComponent>();
-            foreach (var roleInfo in gameRoleInfoComponent.GameRoleInfos)
-            {
-                if (name != roleInfo.RoleName)
-                {
-                    continue;
-                }
-
-                unitId = roleInfo.UnitId;
-            }
+            UIHelper.SetUIData(self.Root(), UIName.UIChooseRole, name);
+            UIHelper.Create(self.Root(), UIName.UIChooseRole).Coroutine();
             
             // 创建角色成功，接入场景
-            await EnterMapHelper.EnterMapAsync(self.Root(), unitId);
+            //await EnterMapHelper.EnterMapAsync(self.Root(), unitId);
+            
             UIHelper.Remove(self.Root(), UIName.UICreateRole).Coroutine();
         }
 

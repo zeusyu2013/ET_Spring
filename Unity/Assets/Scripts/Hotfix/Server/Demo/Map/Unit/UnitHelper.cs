@@ -5,12 +5,14 @@ namespace ET.Server
 {
     [FriendOf(typeof(MoveComponent))]
     [FriendOf(typeof(NumericComponent))]
+    [FriendOfAttribute(typeof(ET.Server.UnitPlayerIdComponent))]
     public static partial class UnitHelper
     {
         public static UnitInfo CreateUnitInfo(Unit unit)
         {
             UnitInfo unitInfo = UnitInfo.Create();
             NumericComponent nc = unit.GetComponent<NumericComponent>();
+            unitInfo.PlayerId = unit.GetComponent<UnitPlayerIdComponent>().PlayerId;
             unitInfo.UnitId = unit.Id;
             unitInfo.ConfigId = unit.ConfigId;
             unitInfo.Type = (int)unit.Type();
@@ -39,7 +41,7 @@ namespace ET.Server
 
             return unitInfo;
         }
-        
+
         // 获取看见unit的玩家，主要用于广播
         public static Dictionary<long, EntityRef<AOIEntity>> GetBeSeePlayers(this Unit self)
         {

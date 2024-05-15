@@ -25,22 +25,41 @@ namespace ET.Server
                 }
                 case ILocationMessage actorLocationMessage:
                 {
-                    long unitId = session.GetComponent<SessionPlayerComponent>().Player.Id;
-                    root.GetComponent<MessageLocationSenderComponent>().Get(LocationType.Unit).Send(unitId, actorLocationMessage);
+                    GateUnitComponent unitComponent = session.GetComponent<SessionPlayerComponent>().Player.GetComponent<GateUnitComponent>();
+                    if (unitComponent != null)
+                    {
+                        root.GetComponent<MessageLocationSenderComponent>().Get(LocationType.Unit).Send(unitComponent.UnitId, actorLocationMessage);
+                    }
                     break;
                 }
                 case ILocationRequest actorLocationRequest: // gate session收到actor rpc消息，先向actor 发送rpc请求，再将请求结果返回客户端
                 {
-                    long unitId = session.GetComponent<SessionPlayerComponent>().Player.Id;
+                    GateUnitComponent unitComponent = session.GetComponent<SessionPlayerComponent>().Player.GetComponent<GateUnitComponent>();
+                    if (unitComponent == null)
+                    {
+                        return;
+                    }
+                     
+                    //long unitId = session.GetComponent<SessionPlayerComponent>().Player.Id;
                     int rpcId = actorLocationRequest.RpcId; // 这里要保存客户端的rpcId
                     long instanceId = session.InstanceId;
-                    IResponse iResponse = await root.GetComponent<MessageLocationSenderComponent>().Get(LocationType.Unit).Call(unitId, actorLocationRequest);
+                    IResponse iResponse = await root.GetComponent<MessageLocationSenderComponent>().Get(LocationType.Unit).Call(unitComponent.UnitId, actorLocationRequest);
                     iResponse.RpcId = rpcId;
                     // session可能已经断开了，所以这里需要判断
                     if (session.InstanceId == instanceId)
                     {
                         session.Send(iResponse);
                     }
+                    break;
+                }
+                case IChatMessage actorChatMessage:
+                {
+                    
+                    break;
+                }
+                case IChatRequest actorChatRequest:
+                {
+                    
                     break;
                 }
                 case IRequest actorRequest:  // 分发IActorRequest消息，目前没有用到，需要的自己添加
@@ -51,6 +70,7 @@ namespace ET.Server
                 {
                     break;
                 }
+           
 				
                 default:
                 {

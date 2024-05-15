@@ -19,6 +19,7 @@ namespace ET.Client
             self.GCanvas_RaceText = self.GCanvas.GetChildAt(4) as GTextField;
             self.GCanvas_CharacterText = self.GCanvas.GetChildAt(6) as GTextField;
             self.GCanvas_IconLoader = self.GCanvas.GetChildAt(7) as GLoader;
+            self.GCanvas_CreateBtn = self.GCanvas.GetChildAt(8) as GButton;
         }
         [EntitySystem]
         private static void Destroy(this UIChooseRoleComponent self)
@@ -30,6 +31,7 @@ namespace ET.Client
             self.GCanvas_RaceText = null;
             self.GCanvas_CharacterText = null;
             self.GCanvas_IconLoader = null;
+            self.GCanvas_CreateBtn = null;
         }
     }
 }

@@ -25,6 +25,12 @@ namespace ET.Client
             {
                 self.DeletaRoleClickEvent().Coroutine();
             });
+            
+            view.GCanvas_CreateBtn.onClick.Set(() =>
+            {
+                UIHelper.Create(self.Root(), UIName.UICreateRole).Coroutine();
+                UIHelper.Remove(self.Root(), UIName.UIChooseRole).Coroutine();
+            });
         }
         [EntitySystem]
         private static void Destroy(this UIChooseRoleLogicComponent self)
@@ -65,9 +71,22 @@ namespace ET.Client
                 UIHelper.Remove(self.Root(), UIName.UIChooseRole).Coroutine();
                 return;
             }
+
+            object[] args =  UIHelper.GetUIData(self.Root(), UIName.UIChooseRole);
+            int chooseIndex = 0;
+            if (args != null && args.Length == 1)
+            {
+                string roleName = (string)args[0];
+                int index = gameRoleInfoComponent.GameRoleInfos.FindIndex(data => data.RoleName == roleName);
+                if (index != -1)
+                {
+                    chooseIndex = index;
+                }
+            }
+          
             view.GCanvas_List.numItems = count;
-            view.GCanvas_List.selectedIndex = 0;
-            self.RoleInfo = gameRoleInfoComponent.GameRoleInfos[0];
+            view.GCanvas_List.selectedIndex = chooseIndex;
+            self.RoleInfo = gameRoleInfoComponent.GameRoleInfos[chooseIndex];
             self.SetRoleInfo(self.RoleInfo);
         }
 

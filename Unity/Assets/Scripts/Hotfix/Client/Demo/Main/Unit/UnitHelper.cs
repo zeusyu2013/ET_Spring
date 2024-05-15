@@ -4,15 +4,15 @@
     {
         public static Unit GetMyUnitFromClientScene(Scene root)
         {
-            PlayerComponent playerComponent = root.GetComponent<PlayerComponent>();
+            GameUnitComponent gameUnitComponent = root.GetComponent<GameUnitComponent>();
             Scene currentScene = root.GetComponent<CurrentScenesComponent>().Scene;
-            return currentScene.GetComponent<UnitComponent>().Get(playerComponent.MyId);
+            return currentScene.GetComponent<UnitComponent>().Get(gameUnitComponent.UnitId);
         }
 
         public static Unit GetMyUnitFromCurrentScene(Scene currentScene)
         {
-            PlayerComponent playerComponent = currentScene.Root().GetComponent<PlayerComponent>();
-            return currentScene.GetComponent<UnitComponent>().Get(playerComponent.MyId);
+            GameUnitComponent gameUnitComponent = currentScene.Root().GetComponent<GameUnitComponent>();
+            return currentScene.GetComponent<UnitComponent>().Get(gameUnitComponent.UnitId);
         }
 
         public static bool IsMyUnit(this Unit unit)
@@ -22,9 +22,9 @@
                 return false;
             }
             
-            PlayerComponent playerComponent = unit.Root().GetComponent<PlayerComponent>();
+            GameUnitComponent gameUnitComponent = unit.Root().GetComponent<GameUnitComponent>();
             
-            return playerComponent.MyId == unit.Id;
+            return gameUnitComponent.UnitId == unit.Id;
         }
     }
 }
