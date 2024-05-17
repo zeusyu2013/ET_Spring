@@ -10,7 +10,7 @@ namespace ET.Server
     public static partial class MessageLocationSenderComponentSystem
     {
         [Invoke(TimerInvokeType.MessageLocationSenderChecker)]
-        public class MessageLocationSenderChecker: ATimer<MessageLocationSenderOneType>
+        public class MessageLocationSenderChecker : ATimer<MessageLocationSenderOneType>
         {
             protected override void Run(MessageLocationSenderOneType self)
             {
@@ -24,16 +24,16 @@ namespace ET.Server
                 }
             }
         }
-    
+
         [EntitySystem]
-        private static void Awake(this MessageLocationSenderOneType self, int locationType)
+        private static void Awake(this MessageLocationSenderOneType self)
         {
-            self.LocationType = locationType;
             // 每10s扫描一次过期的actorproxy进行回收,过期时间是2分钟
             // 可能由于bug或者进程挂掉，导致ActorLocationSender发送的消息没有确认，结果无法自动删除，每一分钟清理一次这种ActorLocationSender
-            self.CheckTimer = self.Root().GetComponent<TimerComponent>().NewRepeatedTimer(10 * 1000, TimerInvokeType.MessageLocationSenderChecker, self);
+            self.CheckTimer = self.Root().GetComponent<TimerComponent>()
+                    .NewRepeatedTimer(10 * 1000, TimerInvokeType.MessageLocationSenderChecker, self);
         }
-        
+
         [EntitySystem]
         private static void Destroy(this MessageLocationSenderOneType self)
         {
@@ -47,7 +47,7 @@ namespace ET.Server
                 long timeNow = TimeInfo.Instance.ServerNow();
                 foreach ((long key, Entity value) in self.Children)
                 {
-                    MessageLocationSender messageLocationMessageSender = (MessageLocationSender) value;
+                    MessageLocationSender messageLocationMessageSender = (MessageLocationSender)value;
 
                     if (timeNow > messageLocationMessageSender.LastSendOrRecvTime + MessageLocationSenderOneType.TIMEOUT_TIME)
                     {
@@ -71,11 +71,11 @@ namespace ET.Server
 
             if (self.Children.TryGetValue(id, out Entity actorLocationSender))
             {
-                return (MessageLocationSender) actorLocationSender;
+                return (MessageLocationSender)actorLocationSender;
             }
 
             actorLocationSender = self.AddChildWithId<MessageLocationSender>(id);
-            return (MessageLocationSender) actorLocationSender;
+            return (MessageLocationSender)actorLocationSender;
         }
 
         // 有需要主动删除actorMessageSender的需求，比如断线重连，玩家登录了不同的Gate，这时候需要通知map删掉之前的actorMessageSender
@@ -89,46 +89,46 @@ namespace ET.Server
 
             actorMessageSender.Dispose();
         }
-        
+
         // 发给不会改变位置的actorlocation用这个，这种actor消息不会阻塞发送队列，性能更高
         // 发送过去找不到actor不会重试,用此方法，你得保证actor提前注册好了location
         public static void Send(this MessageLocationSenderOneType self, long entityId, IMessage message)
         {
             self.SendInner(entityId, message).Coroutine();
         }
-        
+
         private static async ETTask SendInner(this MessageLocationSenderOneType self, long entityId, IMessage message)
         {
             MessageLocationSender messageLocationSender = self.GetOrCreate(entityId);
 
             Scene root = self.Root();
-            
+
             if (messageLocationSender.ActorId != default)
             {
                 messageLocationSender.LastSendOrRecvTime = TimeInfo.Instance.ServerNow();
                 root.GetComponent<MessageSender>().Send(messageLocationSender.ActorId, message);
                 return;
             }
-            
+
             long instanceId = messageLocationSender.InstanceId;
-            
-            int coroutineLockType = (self.LocationType << 16) | CoroutineLockType.MessageLocationSender;
+
+            int coroutineLockType = ((int)self.Id << 16) | CoroutineLockType.MessageLocationSender;
             using (await root.Root().GetComponent<CoroutineLockComponent>().Wait(coroutineLockType, entityId))
             {
                 if (messageLocationSender.InstanceId != instanceId)
                 {
                     throw new RpcException(ErrorCore.ERR_MessageTimeout, $"{message}");
                 }
-                
+
                 if (messageLocationSender.ActorId == default)
                 {
-                    messageLocationSender.ActorId = await root.GetComponent<LocationProxyComponent>().Get(self.LocationType, messageLocationSender.Id);
+                    messageLocationSender.ActorId = await root.GetComponent<LocationProxyComponent>().Get((int)self.Id, messageLocationSender.Id);
                     if (messageLocationSender.InstanceId != instanceId)
                     {
                         throw new RpcException(ErrorCore.ERR_ActorLocationSenderTimeout2, $"{message}");
                     }
                 }
-                
+
                 messageLocationSender.LastSendOrRecvTime = TimeInfo.Instance.ServerNow();
                 root.GetComponent<MessageSender>().Send(messageLocationSender.ActorId, message);
             }
@@ -141,16 +141,16 @@ namespace ET.Server
             MessageLocationSender messageLocationSender = self.GetOrCreate(entityId);
 
             Scene root = self.Root();
-            
+
             if (messageLocationSender.ActorId != default)
             {
                 messageLocationSender.LastSendOrRecvTime = TimeInfo.Instance.ServerNow();
                 return await root.GetComponent<MessageSender>().Call(messageLocationSender.ActorId, request);
             }
-            
+
             long instanceId = messageLocationSender.InstanceId;
-            
-            int coroutineLockType = (self.LocationType << 16) | CoroutineLockType.MessageLocationSender;
+
+            int coroutineLockType = ((int)self.Id << 16) | CoroutineLockType.MessageLocationSender;
             using (await root.GetComponent<CoroutineLockComponent>().Wait(coroutineLockType, entityId))
             {
                 if (messageLocationSender.InstanceId != instanceId)
@@ -160,7 +160,8 @@ namespace ET.Server
 
                 if (messageLocationSender.ActorId == default)
                 {
-                    messageLocationSender.ActorId = await root.GetComponent<LocationProxyComponent>().Get(self.LocationType, messageLocationSender.Id);
+                    messageLocationSender.ActorId =
+                            await root.GetComponent<LocationProxyComponent>().Get((int)self.Id, messageLocationSender.Id);
                     if (messageLocationSender.InstanceId != instanceId)
                     {
                         throw new RpcException(ErrorCore.ERR_ActorLocationSenderTimeout2, $"{request}");
@@ -184,7 +185,7 @@ namespace ET.Server
             Scene root = self.Root();
             Type iRequestType = iRequest.GetType();
             long actorLocationSenderInstanceId = messageLocationSender.InstanceId;
-            int coroutineLockType = (self.LocationType << 16) | CoroutineLockType.MessageLocationSender;
+            int coroutineLockType = ((int)self.Id << 16) | CoroutineLockType.MessageLocationSender;
             using (await root.GetComponent<CoroutineLockComponent>().Wait(coroutineLockType, entityId))
             {
                 if (messageLocationSender.InstanceId != actorLocationSenderInstanceId)
@@ -209,12 +210,13 @@ namespace ET.Server
             }
         }
 
-        private static async ETTask<IResponse> CallInner(this MessageLocationSenderOneType self, MessageLocationSender messageLocationSender, IRequest iRequest)
+        private static async ETTask<IResponse> CallInner(this MessageLocationSenderOneType self, MessageLocationSender messageLocationSender,
+        IRequest iRequest)
         {
             int failTimes = 0;
             long instanceId = messageLocationSender.InstanceId;
             messageLocationSender.LastSendOrRecvTime = TimeInfo.Instance.ServerNow();
-            
+
             Scene root = self.Root();
 
             Type requestType = iRequest.GetType();
@@ -222,7 +224,8 @@ namespace ET.Server
             {
                 if (messageLocationSender.ActorId == default)
                 {
-                    messageLocationSender.ActorId = await root.GetComponent<LocationProxyComponent>().Get(self.LocationType, messageLocationSender.Id);
+                    messageLocationSender.ActorId =
+                            await root.GetComponent<LocationProxyComponent>().Get((int)self.Id, messageLocationSender.Id);
                     if (messageLocationSender.InstanceId != instanceId)
                     {
                         throw new RpcException(ErrorCore.ERR_ActorLocationSenderTimeout2, $"{iRequest}");
@@ -233,13 +236,14 @@ namespace ET.Server
                 {
                     return MessageHelper.CreateResponse(requestType, 0, ErrorCore.ERR_NotFoundActor);
                 }
+
                 IResponse response = await root.GetComponent<MessageSender>().Call(messageLocationSender.ActorId, iRequest, needException: false);
-                
+
                 if (messageLocationSender.InstanceId != instanceId)
                 {
                     throw new RpcException(ErrorCore.ERR_ActorLocationSenderTimeout3, $"{requestType.FullName}");
                 }
-                
+
                 switch (response.Error)
                 {
                     case ErrorCore.ERR_NotFoundActor:
@@ -249,7 +253,7 @@ namespace ET.Server
                         if (failTimes > 20)
                         {
                             Log.Debug($"actor send message fail, actorid: {messageLocationSender.Id} {requestType.FullName}");
-                            
+
                             // 这里删除actor，后面等待发送的消息会判断InstanceId，InstanceId不一致返回ERR_NotFoundActor
                             self.Remove(messageLocationSender.Id);
                             return response;
@@ -282,21 +286,24 @@ namespace ET.Server
     }
 
     [EntitySystemOf(typeof(MessageLocationSenderComponent))]
-    [FriendOf(typeof (MessageLocationSenderComponent))]
+    [FriendOf(typeof(MessageLocationSenderComponent))]
     public static partial class MessageLocationSenderManagerComponentSystem
     {
         [EntitySystem]
         private static void Awake(this MessageLocationSenderComponent self)
         {
-            for (int i = 0; i < self.messageLocationSenders.Length; ++i)
-            {
-                self.messageLocationSenders[i] = self.AddChild<MessageLocationSenderOneType, int>(i);
-            }
         }
-        
+
         public static MessageLocationSenderOneType Get(this MessageLocationSenderComponent self, int locationType)
         {
-            return self.messageLocationSenders[locationType];
+            MessageLocationSenderOneType messageLocationSenderOneType = self.GetChild<MessageLocationSenderOneType>(locationType);
+            if (messageLocationSenderOneType != null)
+            {
+                return messageLocationSenderOneType;
+            }
+
+            messageLocationSenderOneType = self.AddChildWithId<MessageLocationSenderOneType>(locationType);
+            return messageLocationSenderOneType;
         }
     }
 }
