@@ -568,23 +568,23 @@ namespace ET
 
     public static partial class OuterMessage
     {
-        public const ushort C2M_GMCommand = 20002;
-        public const ushort C2M_Signin = 20003;
-        public const ushort M2C_Signin = 20004;
-        public const ushort C2M_ChatBroadcast = 20005;
-        public const ushort M2C_ChatBroadcast = 20006;
-        public const ushort C2M_GetOfflineIncome = 20007;
-        public const ushort M2C_GetOfflineIncome = 20008;
-        public const ushort M2C_SystemTips = 20009;
-        public const ushort BuildingInfo = 20010;
-        public const ushort C2M_GetBuildings = 20011;
-        public const ushort M2C_GetBuildings = 20012;
-        public const ushort C2M_UpgradeBuilding = 20013;
-        public const ushort M2C_UpgradeBuilding = 20014;
-        public const ushort C2M_LearnAvocation = 20015;
-        public const ushort C2M_UpgradeAvocation = 20016;
-        public const ushort CurrencyInfo = 20017;
-        public const ushort C2M_GetAllCurrencies = 20018;
-        public const ushort M2C_GetAllCurrencies = 20019;
+        public const ushort C2M_GMCommand = 11002;
+        public const ushort C2M_Signin = 11003;
+        public const ushort M2C_Signin = 11004;
+        public const ushort C2M_ChatBroadcast = 11005;
+        public const ushort M2C_ChatBroadcast = 11006;
+        public const ushort C2M_GetOfflineIncome = 11007;
+        public const ushort M2C_GetOfflineIncome = 11008;
+        public const ushort M2C_SystemTips = 11009;
+        public const ushort BuildingInfo = 11010;
+        public const ushort C2M_GetBuildings = 11011;
+        public const ushort M2C_GetBuildings = 11012;
+        public const ushort C2M_UpgradeBuilding = 11013;
+        public const ushort M2C_UpgradeBuilding = 11014;
+        public const ushort C2M_LearnAvocation = 11015;
+        public const ushort C2M_UpgradeAvocation = 11016;
+        public const ushort CurrencyInfo = 11017;
+        public const ushort C2M_GetAllCurrencies = 11018;
+        public const ushort M2C_GetAllCurrencies = 11019;
     }
 }
