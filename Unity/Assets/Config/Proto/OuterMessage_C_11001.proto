@@ -33,6 +33,12 @@ message M2C_ChatBroadcast // IMessage
 	string Content = 3;
 }
 
+message OfflineIncomeInfo
+{
+	int64 Gold = 1;
+	int64 Exp = 2;
+}
+
 // ResponseType M2C_GetOfflineIncome
 message C2M_GetOfflineIncome // ILocationRequest
 {
@@ -45,10 +51,7 @@ message M2C_GetOfflineIncome // ILocationResponse
 	int32 Error = 2;
 	string Message = 3;
 
-	int64 Gold = 4;
-	int64 Exp = 5;
-	int32 Material1 = 6;
-	int32 Material2 = 7;
+	OfflineIncomeInfo OfflineIncomeInfo = 4;
 }
 
 message M2C_SystemTips // IMessage
@@ -121,4 +124,24 @@ message M2C_GetAllCurrencies // ILocationResponse
 	int32 Error = 2;
 	string Message = 3;
 	repeated CurrencyInfo CurrencyInfos = 4;
+}
+
+message TalentInfo
+{
+	int32 ConfigId = 1;
+	int32 Level = 2;
+}
+
+// ResponseType M2C_GetAllTalents
+message C2M_GetAllTalents // ILocationRequest
+{
+	int32 RpcId = 1;
+}
+
+message M2C_GetAllTalents // ILocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+	repeated TalentInfo TalentInfos = 4;
 }

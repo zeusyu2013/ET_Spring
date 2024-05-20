@@ -24,6 +24,10 @@ namespace ET
         public StartSceneConfig Benchmark;
 
         public StartSceneConfig DBCache;
+        
+        public StartSceneConfig Guild;
+        
+        public StartSceneConfig Chat;
 
         public List<StartSceneConfig> GetByProcess(int process)
         {
@@ -70,6 +74,12 @@ namespace ET
                         break;
                     case SceneType.DBCache:
                         this.DBCache = startSceneConfig;
+                        break;
+                    case SceneType.Guild:
+                        this.Guild = startSceneConfig;
+                        break;
+                    case SceneType.Chat:
+                        this.Chat = startSceneConfig;
                         break;
                 }
             }

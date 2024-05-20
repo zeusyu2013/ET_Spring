@@ -49,6 +49,14 @@ namespace ET
         /// 创角数量限制
         /// </summary>
         public int CreateRoleMaxLimit => _data.CreateRoleMaxLimit;
+        /// <summary>
+        /// 重置天赋货币
+        /// </summary>
+        public int ResetTalentCurrency => _data.ResetTalentCurrency;
+        /// <summary>
+        /// 重置天赋货币值
+        /// </summary>
+        public long ResetTalentCurrencyValue => _data.ResetTalentCurrencyValue;
 
 
         partial void PostInit();

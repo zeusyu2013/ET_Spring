@@ -86,6 +86,7 @@ namespace ET.Server
                 // 开始创角流程
                 GameRole gameRole = self.AddChild<GameRole>();
                 gameRole.PlayerId = playerId;
+                gameRole.UnitId = gameRole.Id;
                 gameRole.RoleName = roleName;
                 gameRole.RoleLevel = 1;
                 gameRole.RoleModel = "";

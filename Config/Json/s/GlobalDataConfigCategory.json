@@ -4,6 +4,8 @@
     "BagMaxCapacity": 200,
     "CameraMinDistance": 5,
     "CameraMaxDistance": 20,
-    "CreateRoleMaxLimit": 5
+    "CreateRoleMaxLimit": 5,
+    "ResetTalentCurrency": 1,
+    "ResetTalentCurrencyValue": 50000
   }
 ]

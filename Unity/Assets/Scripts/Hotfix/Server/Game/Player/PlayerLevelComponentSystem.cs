@@ -4,6 +4,15 @@
     [FriendOf(typeof(PlayerLevelComponent))]
     public static partial class PlayerLevelComponentSystem
     {
+        private static void Awake(this PlayerLevelComponent self, int level)
+        {
+            self.Level = level;
+        }
+
+        private static void Destroy(this PlayerLevelComponent self)
+        {
+        }
+
         public static void AddExp(this PlayerLevelComponent self, long exp)
         {
             long current = self.Exp + exp;

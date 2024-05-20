@@ -21,6 +21,8 @@ namespace ET
             CameraMinDistance = _buf.ReadFloat();
             CameraMaxDistance = _buf.ReadFloat();
             CreateRoleMaxLimit = _buf.ReadInt();
+            ResetTalentCurrency = _buf.ReadInt();
+            ResetTalentCurrencyValue = _buf.ReadLong();
 
             PostInit();
         }
@@ -55,6 +57,16 @@ namespace ET
         /// </summary>
         public readonly int CreateRoleMaxLimit;
 
+        /// <summary>
+        /// 重置天赋货币
+        /// </summary>
+        public readonly int ResetTalentCurrency;
+
+        /// <summary>
+        /// 重置天赋货币值
+        /// </summary>
+        public readonly long ResetTalentCurrencyValue;
+
         public const int __ID__ = 394046383;
 
         public override int GetTypeId() => __ID__;
@@ -67,6 +79,8 @@ namespace ET
             + "CameraMinDistance:" + CameraMinDistance + ","
             + "CameraMaxDistance:" + CameraMaxDistance + ","
             + "CreateRoleMaxLimit:" + CreateRoleMaxLimit + ","
+            + "ResetTalentCurrency:" + ResetTalentCurrency + ","
+            + "ResetTalentCurrencyValue:" + ResetTalentCurrencyValue + ","
             + "}";
         }
 

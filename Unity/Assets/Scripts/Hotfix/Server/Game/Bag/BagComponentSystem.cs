@@ -27,7 +27,7 @@ namespace ET.Server
         {
             foreach (var child in self.Children.Values)
             {
-                self.AddItem(child as GameItem);
+                self.GameItems.Add(child as GameItem);
             }
         }
 

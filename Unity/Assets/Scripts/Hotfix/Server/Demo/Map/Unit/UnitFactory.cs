@@ -38,6 +38,9 @@ namespace ET.Server
                 bagComponent.AddItem(itemConfigId, amount);
             }
 
+            // 等级经验组件
+            unit.AddComponentWithId<PlayerLevelComponent, int>(unit.Id, 1);
+
             // 装备组件
             unit.AddComponentWithId<EquipmentComponent>(unit.Id);
 
@@ -70,8 +73,9 @@ namespace ET.Server
             unit.AddComponentWithId<AchievementComponent>(unit.Id);
 
             unitComponent.Add(unit);
-            
+
             UnitDBSaveComponent unitDBSaveComponent = unit.AddComponent<UnitDBSaveComponent>();
+            unitDBSaveComponent.AddChange(typeof(PlayerLevelComponent));
             unitDBSaveComponent.AddChange(typeof(BagComponent));
             unitDBSaveComponent.AddChange(typeof(EquipmentComponent));
             unitDBSaveComponent.AddChange(typeof(MailComponent));

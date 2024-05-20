@@ -1,0 +1,122 @@
+[
+  {
+    "Id": 70001,
+    "Name": "天赋70001",
+    "Desc": "天赋描述70001",
+    "LevelLimit": 1,
+    "MaxLevel": 1,
+    "Consume": 1
+  },
+  {
+    "Id": 70002,
+    "Name": "天赋70002",
+    "Desc": "天赋描述70002",
+    "LevelLimit": 2,
+    "MaxLevel": 2,
+    "Consume": 1
+  },
+  {
+    "Id": 70003,
+    "Name": "天赋70003",
+    "Desc": "天赋描述70003",
+    "LevelLimit": 3,
+    "MaxLevel": 3,
+    "Consume": 1
+  },
+  {
+    "Id": 70004,
+    "Name": "天赋70004",
+    "Desc": "天赋描述70004",
+    "LevelLimit": 4,
+    "MaxLevel": 1,
+    "Consume": 1
+  },
+  {
+    "Id": 70005,
+    "Name": "天赋70005",
+    "Desc": "天赋描述70005",
+    "LevelLimit": 5,
+    "MaxLevel": 2,
+    "Consume": 1
+  },
+  {
+    "Id": 70006,
+    "Name": "天赋70006",
+    "Desc": "天赋描述70006",
+    "LevelLimit": 6,
+    "MaxLevel": 3,
+    "Consume": 1
+  },
+  {
+    "Id": 70007,
+    "Name": "天赋70007",
+    "Desc": "天赋描述70007",
+    "LevelLimit": 7,
+    "MaxLevel": 1,
+    "Consume": 1
+  },
+  {
+    "Id": 70008,
+    "Name": "天赋70008",
+    "Desc": "天赋描述70008",
+    "LevelLimit": 8,
+    "MaxLevel": 2,
+    "Consume": 1
+  },
+  {
+    "Id": 70009,
+    "Name": "天赋70009",
+    "Desc": "天赋描述70009",
+    "LevelLimit": 9,
+    "MaxLevel": 3,
+    "Consume": 1
+  },
+  {
+    "Id": 70010,
+    "Name": "天赋70010",
+    "Desc": "天赋描述70010",
+    "LevelLimit": 10,
+    "MaxLevel": 1,
+    "Consume": 1
+  },
+  {
+    "Id": 70011,
+    "Name": "天赋70011",
+    "Desc": "天赋描述70011",
+    "LevelLimit": 11,
+    "MaxLevel": 2,
+    "Consume": 1
+  },
+  {
+    "Id": 70012,
+    "Name": "天赋70012",
+    "Desc": "天赋描述70012",
+    "LevelLimit": 12,
+    "MaxLevel": 3,
+    "Consume": 1
+  },
+  {
+    "Id": 70013,
+    "Name": "天赋70013",
+    "Desc": "天赋描述70013",
+    "LevelLimit": 13,
+    "MaxLevel": 1,
+    "Consume": 1
+  },
+  {
+    "Id": 70014,
+    "Name": "天赋70014",
+    "Desc": "天赋描述70014",
+    "LevelLimit": 14,
+    "MaxLevel": 2,
+    "Consume": 1
+  },
+  {
+    "Id": 70015,
+    "Name": "天赋70015",
+    "Desc": "天赋描述70015",
+    "LevelLimit": 15,
+    "MaxLevel": 3,
+    "Consume": 1
+  }
+]

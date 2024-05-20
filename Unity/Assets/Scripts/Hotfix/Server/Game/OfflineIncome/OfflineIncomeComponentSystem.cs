@@ -13,19 +13,21 @@
             }
         }
 
-        public static void GetOfflineIncome(this OfflineIncomeComponent self)
+        public static OfflineIncomeInfo GetOfflineIncome(this OfflineIncomeComponent self)
         {
+            OfflineIncomeInfo info = OfflineIncomeInfo.Create();
+            
             long now = TimeInfo.Instance.ServerNow();
             if (self.LastIncomeTime > now)
             {
                 self.LastIncomeTime = now;
-                return;
+                return info;
             }
 
             long diff = (now - self.LastIncomeTime) / 1000;
             if (diff < 1)
             {
-                return;
+                return info;
             }
 
             // 统计diff秒收益
@@ -35,8 +37,13 @@
             self.GetParent<Unit>().GetComponent<CurrencyComponent>().Inc(CurrencyType.CurrencyType_Gold, gold);
             self.GetParent<Unit>().GetComponent<PlayerLevelComponent>().AddExp(exp);
 
+            info.Gold = gold;
+            info.Exp = exp;
+
             // 设置最后一次领取时间
             self.LastIncomeTime = now;
+
+            return info;
         }
 
         [EntitySystem]

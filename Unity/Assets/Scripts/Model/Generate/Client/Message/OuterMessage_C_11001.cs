@@ -158,6 +158,35 @@ namespace ET
     }
 
     [MemoryPackable]
+    [Message(OuterMessage.OfflineIncomeInfo)]
+    public partial class OfflineIncomeInfo : MessageObject
+    {
+        public static OfflineIncomeInfo Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(OfflineIncomeInfo), isFromPool) as OfflineIncomeInfo;
+        }
+
+        [MemoryPackOrder(0)]
+        public long Gold { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long Exp { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.Gold = default;
+            this.Exp = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
     [Message(OuterMessage.C2M_GetOfflineIncome)]
     [ResponseType(nameof(M2C_GetOfflineIncome))]
     public partial class C2M_GetOfflineIncome : MessageObject, ILocationRequest
@@ -202,16 +231,7 @@ namespace ET
         public string Message { get; set; }
 
         [MemoryPackOrder(3)]
-        public long Gold { get; set; }
-
-        [MemoryPackOrder(4)]
-        public long Exp { get; set; }
-
-        [MemoryPackOrder(5)]
-        public int Material1 { get; set; }
-
-        [MemoryPackOrder(6)]
-        public int Material2 { get; set; }
+        public OfflineIncomeInfo OfflineIncomeInfo { get; set; }
 
         public override void Dispose()
         {
@@ -223,10 +243,7 @@ namespace ET
             this.RpcId = default;
             this.Error = default;
             this.Message = default;
-            this.Gold = default;
-            this.Exp = default;
-            this.Material1 = default;
-            this.Material2 = default;
+            this.OfflineIncomeInfo = default;
 
             ObjectPool.Instance.Recycle(this);
         }
@@ -566,6 +583,98 @@ namespace ET
         }
     }
 
+    [MemoryPackable]
+    [Message(OuterMessage.TalentInfo)]
+    public partial class TalentInfo : MessageObject
+    {
+        public static TalentInfo Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(TalentInfo), isFromPool) as TalentInfo;
+        }
+
+        [MemoryPackOrder(0)]
+        public int ConfigId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Level { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.ConfigId = default;
+            this.Level = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.C2M_GetAllTalents)]
+    [ResponseType(nameof(M2C_GetAllTalents))]
+    public partial class C2M_GetAllTalents : MessageObject, ILocationRequest
+    {
+        public static C2M_GetAllTalents Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_GetAllTalents), isFromPool) as C2M_GetAllTalents;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_GetAllTalents)]
+    public partial class M2C_GetAllTalents : MessageObject, ILocationResponse
+    {
+        public static M2C_GetAllTalents Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_GetAllTalents), isFromPool) as M2C_GetAllTalents;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        [MemoryPackOrder(3)]
+        public List<TalentInfo> TalentInfos { get; set; } = new();
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+            this.TalentInfos.Clear();
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
     public static partial class OuterMessage
     {
         public const ushort C2M_GMCommand = 11002;
@@ -573,18 +682,22 @@ namespace ET
         public const ushort M2C_Signin = 11004;
         public const ushort C2M_ChatBroadcast = 11005;
         public const ushort M2C_ChatBroadcast = 11006;
-        public const ushort C2M_GetOfflineIncome = 11007;
-        public const ushort M2C_GetOfflineIncome = 11008;
-        public const ushort M2C_SystemTips = 11009;
-        public const ushort BuildingInfo = 11010;
-        public const ushort C2M_GetBuildings = 11011;
-        public const ushort M2C_GetBuildings = 11012;
-        public const ushort C2M_UpgradeBuilding = 11013;
-        public const ushort M2C_UpgradeBuilding = 11014;
-        public const ushort C2M_LearnAvocation = 11015;
-        public const ushort C2M_UpgradeAvocation = 11016;
-        public const ushort CurrencyInfo = 11017;
-        public const ushort C2M_GetAllCurrencies = 11018;
-        public const ushort M2C_GetAllCurrencies = 11019;
+        public const ushort OfflineIncomeInfo = 11007;
+        public const ushort C2M_GetOfflineIncome = 11008;
+        public const ushort M2C_GetOfflineIncome = 11009;
+        public const ushort M2C_SystemTips = 11010;
+        public const ushort BuildingInfo = 11011;
+        public const ushort C2M_GetBuildings = 11012;
+        public const ushort M2C_GetBuildings = 11013;
+        public const ushort C2M_UpgradeBuilding = 11014;
+        public const ushort M2C_UpgradeBuilding = 11015;
+        public const ushort C2M_LearnAvocation = 11016;
+        public const ushort C2M_UpgradeAvocation = 11017;
+        public const ushort CurrencyInfo = 11018;
+        public const ushort C2M_GetAllCurrencies = 11019;
+        public const ushort M2C_GetAllCurrencies = 11020;
+        public const ushort TalentInfo = 11021;
+        public const ushort C2M_GetAllTalents = 11022;
+        public const ushort M2C_GetAllTalents = 11023;
     }
 }

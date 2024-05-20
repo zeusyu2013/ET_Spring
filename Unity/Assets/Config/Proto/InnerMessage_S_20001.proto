@@ -218,3 +218,71 @@ message M2M_ChatBroadcast // IMessage
 	int32 ChannelId = 2;
 	string Content = 3;
 }
+
+message GuildInfo
+{
+	int64 GuildId = 1;
+	string GuildName = 2;
+	int32 GuildLevel = 3;
+	int32 GuildMemberCount = 4;
+}
+
+// ResponseType G2M_CreateGuild
+message M2G_CreateGuild // IRequest
+{
+	int32 RpcId = 1;
+	string GuildName = 2;
+	int64 UnitId = 3;
+	string UnitName = 4;
+}
+
+message G2M_CreateGuild // IResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}
+
+// ResponseType G2M_GetAllGuilds
+message M2G_GetAllGuilds // IRequest
+{
+	int32 RpcId = 1;
+}
+
+message G2M_GetAllGuilds // IResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+	repeated GuildInfo GuildInfos = 4;
+}
+
+// ResponseType G2M_RequestJoinGuild
+message M2G_RequestJoinGuild // IRequest
+{
+	int32 RpcId = 1;
+	string GuildName = 2;
+	int64 UnitId = 3;
+}
+
+message G2M_RequestJoinGuild // IResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}
+
+// ResponseType G2M_RequestQuitGuild
+message M2G_RequestQuitGuild // IRequest
+{
+	int32 RpcId = 1;
+	string GuildName = 2;
+	int64 UnitId = 3;
+}
+
+message G2M_RequestQuitGuild // IResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}

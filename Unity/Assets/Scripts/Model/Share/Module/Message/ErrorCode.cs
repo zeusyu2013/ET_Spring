@@ -39,5 +39,12 @@ namespace ET
         public const int ERR_NotFoundComponent = 200050;
 
         public const int ERR_NotFoundCurrencies = 200060;
+        
+        // Guild
+        public const int ERR_GuildEmpty = 200100;
+        public const int ERR_GuildNameSame = 200101;
+        public const int ERR_AlreadyHasGuild = 200102;
+        public const int ERR_NotFoundGuild = 200103;
+        public const int ERR_PlayerNotHasGuild = 200104;
     }
 }

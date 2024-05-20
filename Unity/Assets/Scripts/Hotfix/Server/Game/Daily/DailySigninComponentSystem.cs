@@ -8,6 +8,12 @@
         private static void Awake(this ET.Server.DailySigninComponent self)
         {
         }
+        
+        [EntitySystem]
+        private static void Destroy(this ET.Server.DailySigninComponent self)
+        {
+            self.SigninDay = 0;
+        }
 
         public static int Signin(this DailySigninComponent self)
         {
