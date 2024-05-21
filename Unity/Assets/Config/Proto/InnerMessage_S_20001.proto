@@ -227,6 +227,14 @@ message GuildInfo
 	int32 GuildMemberCount = 4;
 }
 
+message GuildMemberInfo
+{
+	int64 UnitId = 1;
+	int32 GuildMemberType = 2;
+	int32 OnlineStatus = 3;
+	int64 OfflineTime = 4;
+}
+
 // ResponseType G2M_CreateGuild
 message M2G_CreateGuild // IRequest
 {

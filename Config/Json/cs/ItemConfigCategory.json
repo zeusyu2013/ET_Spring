@@ -1,7 +1,7 @@
 [
   {
     "Id": 60001,
-    "Name": "60001",
+    "Name": "itemname_60001",
     "Type": 1,
     "Quality": 1,
     "UseLevel": 1,
@@ -9,7 +9,7 @@
   },
   {
     "Id": 60002,
-    "Name": "60002",
+    "Name": "itemname_60002",
     "Type": 1,
     "Quality": 1,
     "UseLevel": 1,
@@ -17,7 +17,7 @@
   },
   {
     "Id": 60003,
-    "Name": "60003",
+    "Name": "itemname_60003",
     "Type": 1,
     "Quality": 1,
     "UseLevel": 1,
@@ -25,7 +25,7 @@
   },
   {
     "Id": 60004,
-    "Name": "60004",
+    "Name": "itemname_60004",
     "Type": 1,
     "Quality": 1,
     "UseLevel": 1,
@@ -33,7 +33,7 @@
   },
   {
     "Id": 60005,
-    "Name": "60005",
+    "Name": "itemname_60005",
     "Type": 1,
     "Quality": 1,
     "UseLevel": 1,
@@ -41,7 +41,7 @@
   },
   {
     "Id": 60006,
-    "Name": "60006",
+    "Name": "itemname_60006",
     "Type": 1,
     "Quality": 1,
     "UseLevel": 1,
@@ -49,7 +49,7 @@
   },
   {
     "Id": 60007,
-    "Name": "60007",
+    "Name": "itemname_60007",
     "Type": 1,
     "Quality": 1,
     "UseLevel": 1,
@@ -57,7 +57,7 @@
   },
   {
     "Id": 60008,
-    "Name": "60008",
+    "Name": "itemname_60008",
     "Type": 1,
     "Quality": 1,
     "UseLevel": 1,
@@ -65,7 +65,7 @@
   },
   {
     "Id": 60009,
-    "Name": "60009",
+    "Name": "itemname_60009",
     "Type": 1,
     "Quality": 1,
     "UseLevel": 1,
@@ -73,7 +73,7 @@
   },
   {
     "Id": 60010,
-    "Name": "60010",
+    "Name": "itemname_60010",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
@@ -82,7 +82,7 @@
   },
   {
     "Id": 60011,
-    "Name": "60011",
+    "Name": "itemname_60011",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
@@ -91,7 +91,7 @@
   },
   {
     "Id": 60012,
-    "Name": "60012",
+    "Name": "itemname_60012",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
@@ -100,7 +100,7 @@
   },
   {
     "Id": 60013,
-    "Name": "60013",
+    "Name": "itemname_60013",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
@@ -109,7 +109,7 @@
   },
   {
     "Id": 60014,
-    "Name": "60014",
+    "Name": "itemname_60014",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
@@ -118,7 +118,7 @@
   },
   {
     "Id": 60015,
-    "Name": "60015",
+    "Name": "itemname_60015",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
@@ -127,7 +127,7 @@
   },
   {
     "Id": 60016,
-    "Name": "60016",
+    "Name": "itemname_60016",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
@@ -136,7 +136,7 @@
   },
   {
     "Id": 60017,
-    "Name": "60017",
+    "Name": "itemname_60017",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
@@ -145,7 +145,7 @@
   },
   {
     "Id": 60018,
-    "Name": "60018",
+    "Name": "itemname_60018",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
@@ -154,7 +154,7 @@
   },
   {
     "Id": 60019,
-    "Name": "60019",
+    "Name": "itemname_60019",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
@@ -163,7 +163,7 @@
   },
   {
     "Id": 60020,
-    "Name": "60020",
+    "Name": "itemname_60020",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
@@ -172,7 +172,7 @@
   },
   {
     "Id": 60021,
-    "Name": "60021",
+    "Name": "itemname_60021",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
@@ -181,7 +181,7 @@
   },
   {
     "Id": 60022,
-    "Name": "60022",
+    "Name": "itemname_60022",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
@@ -190,7 +190,7 @@
   },
   {
     "Id": 60023,
-    "Name": "60023",
+    "Name": "itemname_60023",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
@@ -199,7 +199,7 @@
   },
   {
     "Id": 60024,
-    "Name": "60024",
+    "Name": "itemname_60024",
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,

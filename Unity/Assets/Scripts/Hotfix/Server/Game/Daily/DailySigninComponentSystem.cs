@@ -24,7 +24,7 @@
             }
 
             // 发放签到奖励
-            self.Root().GetComponent<RewardComponent>().Reward(1);
+            self.GetParent<Unit>().GetComponent<RewardComponent>().Reward(1);
 
             self.SigninDay = nowDays;
 

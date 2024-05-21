@@ -1,7 +1,7 @@
 ﻿namespace ET.Server
 {
     [Invoke((long)SceneType.Map)]
-    public class FiberInit_Map: AInvokeHandler<FiberInit, ETTask>
+    public class FiberInit_Map : AInvokeHandler<FiberInit, ETTask>
     {
         public override async ETTask Handle(FiberInit fiberInit)
         {
@@ -16,8 +16,9 @@
             root.AddComponent<LocationProxyComponent>();
             root.AddComponent<MessageLocationSenderComponent>();
 
+#if DEBUG
             root.AddComponent<GameMasterComponent>();
- 
+#endif
             await ETTask.CompletedTask;
         }
     }

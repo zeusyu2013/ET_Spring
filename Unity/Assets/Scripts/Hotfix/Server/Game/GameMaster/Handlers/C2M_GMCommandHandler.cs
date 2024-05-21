@@ -5,13 +5,19 @@
     {
         protected override async ETTask Run(Unit unit, C2M_GMCommand message)
         {
+            GameMasterComponent gameMasterComponent = unit.Root().GetComponent<GameMasterComponent>();
+            if (gameMasterComponent == null)
+            {
+                return;
+            }
+            
             string command = message.GmCommand;
             if (string.IsNullOrEmpty(command))
             {
                 return;
             }
 
-            unit.Root().GetComponent<GameMasterComponent>().Execute(unit, command);
+            gameMasterComponent.Execute(unit, command);
 
             await ETTask.CompletedTask;
         }

@@ -16,13 +16,13 @@
                 Log.Error($"错误的奖励包id：{rewardId}");
                 return;
             }
-            
+
             foreach (var kv in config.Reward)
             {
                 int itemId = kv.Key;
-                int itemCount = kv.Value;
+                long itemAmount = kv.Value;
 
-                self.GetParent<BagComponent>().AddItem(itemId, itemCount);
+                self.GetParent<Unit>().GetComponent<BagComponent>().AddItem(itemId, itemAmount);
             }
         }
     }

@@ -1034,6 +1034,43 @@ namespace ET
     }
 
     [MemoryPackable]
+    [Message(InnerMessage.GuildMemberInfo)]
+    public partial class GuildMemberInfo : MessageObject
+    {
+        public static GuildMemberInfo Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(GuildMemberInfo), isFromPool) as GuildMemberInfo;
+        }
+
+        [MemoryPackOrder(0)]
+        public long UnitId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int GuildMemberType { get; set; }
+
+        [MemoryPackOrder(2)]
+        public int OnlineStatus { get; set; }
+
+        [MemoryPackOrder(3)]
+        public long OfflineTime { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.UnitId = default;
+            this.GuildMemberType = default;
+            this.OnlineStatus = default;
+            this.OfflineTime = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
     [Message(InnerMessage.M2G_CreateGuild)]
     [ResponseType(nameof(G2M_CreateGuild))]
     public partial class M2G_CreateGuild : MessageObject, IRequest
@@ -1333,13 +1370,14 @@ namespace ET
         public const ushort Map2Rank_UpdateScore = 20029;
         public const ushort M2M_ChatBroadcast = 20030;
         public const ushort GuildInfo = 20031;
-        public const ushort M2G_CreateGuild = 20032;
-        public const ushort G2M_CreateGuild = 20033;
-        public const ushort M2G_GetAllGuilds = 20034;
-        public const ushort G2M_GetAllGuilds = 20035;
-        public const ushort M2G_RequestJoinGuild = 20036;
-        public const ushort G2M_RequestJoinGuild = 20037;
-        public const ushort M2G_RequestQuitGuild = 20038;
-        public const ushort G2M_RequestQuitGuild = 20039;
+        public const ushort GuildMemberInfo = 20032;
+        public const ushort M2G_CreateGuild = 20033;
+        public const ushort G2M_CreateGuild = 20034;
+        public const ushort M2G_GetAllGuilds = 20035;
+        public const ushort G2M_GetAllGuilds = 20036;
+        public const ushort M2G_RequestJoinGuild = 20037;
+        public const ushort G2M_RequestJoinGuild = 20038;
+        public const ushort M2G_RequestQuitGuild = 20039;
+        public const ushort G2M_RequestQuitGuild = 20040;
     }
 }

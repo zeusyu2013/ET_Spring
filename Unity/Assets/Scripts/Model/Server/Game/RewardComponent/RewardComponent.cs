@@ -1,6 +1,6 @@
 ﻿namespace ET.Server
 {
-    [ComponentOf]
+    [ComponentOf(typeof(Unit))]
     public class RewardComponent : Entity, IAwake
     {
     }
