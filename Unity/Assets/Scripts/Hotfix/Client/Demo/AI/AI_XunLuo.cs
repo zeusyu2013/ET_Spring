@@ -2,7 +2,7 @@ using Unity.Mathematics;
 
 namespace ET.Client
 {
-    public class AI_XunLuo: AAIHandler
+    public class AI_XunLuo : AAIHandler
     {
         public override int Check(AIComponent aiComponent, AIConfig aiConfig)
         {
@@ -11,6 +11,7 @@ namespace ET.Client
             {
                 return 0;
             }
+
             return 1;
         }
 
@@ -23,7 +24,7 @@ namespace ET.Client
             {
                 return;
             }
-            
+
             Log.Debug("开始巡逻");
 
             while (true)
@@ -35,6 +36,7 @@ namespace ET.Client
                 {
                     return;
                 }
+
                 xunLuoPathComponent.MoveNext();
             }
         }

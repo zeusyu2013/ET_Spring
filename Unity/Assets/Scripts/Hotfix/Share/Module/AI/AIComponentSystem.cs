@@ -8,7 +8,7 @@ namespace ET
     public static partial class AIComponentSystem
     {
         [Invoke(TimerInvokeType.AITimer)]
-        public class AITimer: ATimer<AIComponent>
+        public class AITimer : ATimer<AIComponent>
         {
             protected override void Run(AIComponent self)
             {
@@ -22,7 +22,7 @@ namespace ET
                 }
             }
         }
-    
+
         [EntitySystem]
         private static void Awake(this AIComponent self, int aiConfigId)
         {
@@ -48,39 +48,37 @@ namespace ET
                 return;
             }
 
-            var oneAI = AIConfigCategory.Instance.AIConfigs[self.AIConfigId];
-            
+            var oneAI = AIConfigCategory.Instance.GetAI(self.AIConfigId);
+
             foreach (AIConfig aiConfig in oneAI.Values)
             {
-            
                 AAIHandler aaiHandler = AIDispatcherComponent.Instance.Get(aiConfig.Name);
-            
+
                 if (aaiHandler == null)
                 {
                     Log.Error($"not found aihandler: {aiConfig.Name}");
                     continue;
                 }
-            
+
                 int ret = aaiHandler.Check(self, aiConfig);
                 if (ret != 0)
                 {
                     continue;
                 }
-            
+
                 if (self.Current == aiConfig.Id)
                 {
                     break;
                 }
-            
+
                 self.Cancel(); // 取消之前的行为
                 ETCancellationToken cancellationToken = new();
                 self.CancellationToken = cancellationToken;
                 self.Current = aiConfig.Id;
-            
+
                 aaiHandler.Execute(self, aiConfig, cancellationToken).Coroutine();
                 return;
             }
-            
         }
 
         private static void Cancel(this AIComponent self)
@@ -90,4 +88,4 @@ namespace ET
             self.CancellationToken = null;
         }
     }
-} 
+}

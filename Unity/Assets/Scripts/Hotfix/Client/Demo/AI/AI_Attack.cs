@@ -1,6 +1,6 @@
 namespace ET.Client
 {
-    public class AI_Attack: AAIHandler
+    public class AI_Attack : AAIHandler
     {
         public override int Check(AIComponent aiComponent, AIConfig aiConfig)
         {
@@ -9,6 +9,7 @@ namespace ET.Client
             {
                 return 0;
             }
+
             return 1;
         }
 
@@ -24,7 +25,7 @@ namespace ET.Client
 
             // 停在当前位置
             fiber.Root.GetComponent<ClientSenderComponent>().Send(C2M_Stop.Create());
-            
+
             Log.Debug("开始攻击");
 
             for (int i = 0; i < 100000; ++i)

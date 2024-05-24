@@ -22,6 +22,7 @@ namespace ET
             Quality = (GameItemQualityType)_buf.ReadInt();
             UseLevel = _buf.ReadInt();
             if(_buf.ReadBool()){ EquipmentType = (EquipmentType)_buf.ReadInt(); } else { EquipmentType = null; }
+            Icon = _buf.ReadString();
 
             PostInit();
         }
@@ -61,6 +62,11 @@ namespace ET
         /// </summary>
         public readonly EquipmentType? EquipmentType;
 
+        /// <summary>
+        /// 道具图标
+        /// </summary>
+        public readonly string Icon;
+
         public const int __ID__ = -764023723;
 
         public override int GetTypeId() => __ID__;
@@ -74,6 +80,7 @@ namespace ET
             + "Quality:" + Quality + ","
             + "UseLevel:" + UseLevel + ","
             + "EquipmentType:" + EquipmentType + ","
+            + "Icon:" + Icon + ","
             + "}";
         }
 
