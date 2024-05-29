@@ -50,7 +50,7 @@ namespace ET.Server
             {
                 return false;
             }
-
+            
             GameItem item = self.GetGameItemByConfig(itemId);
             if (item == null)
             {
@@ -59,7 +59,19 @@ namespace ET.Server
                 item.Amount = amount;
                 self.GameItems.Add(item);
 
-                EventSystem.Instance.Publish(self.Scene(), new BagOnAdd() { GameItem = item });
+                EventSystem.Instance.Publish(self.Root(), new BagOnAdd() { GameItem = item });
+
+                return true;
+            }
+            
+            if (item.Config.MaxCount == 1)
+            {
+                item = self.AddChild<GameItem, int>(itemId);
+                item.ConfigId = itemId;
+                item.Amount = amount;
+                self.GameItems.Add(item);
+
+                EventSystem.Instance.Publish(self.Root(), new BagOnAdd() { GameItem = item });
 
                 return true;
             }

@@ -1,16 +1,16 @@
 ﻿namespace ET.Server
 {
-    [EntitySystemOf(typeof(EquipmentComponent))]
-    [FriendOfAttribute(typeof(ET.Server.EquipmentComponent))]
+    [EntitySystemOf(typeof(EquipmentContainerComponent))]
+    [FriendOfAttribute(typeof(ET.Server.EquipmentContainerComponent))]
     public static partial class EquipmentComponentSystem
     {
         [EntitySystem]
-        private static void Awake(this ET.Server.EquipmentComponent self)
+        private static void Awake(this ET.Server.EquipmentContainerComponent self)
         {
         }
 
         [EntitySystem]
-        private static void Deserialize(this ET.Server.EquipmentComponent self)
+        private static void Deserialize(this ET.Server.EquipmentContainerComponent self)
         {
             foreach (Entity entity in self.Children.Values)
             {
@@ -28,7 +28,7 @@
             }
         }
 
-        public static void Equip(this EquipmentComponent self, long id)
+        public static void Equip(this EquipmentContainerComponent self, long id)
         {
             BagComponent bagComponent = self.GetParent<Unit>().GetComponent<BagComponent>();
             GameItem item = bagComponent.GetChild<GameItem>(id);

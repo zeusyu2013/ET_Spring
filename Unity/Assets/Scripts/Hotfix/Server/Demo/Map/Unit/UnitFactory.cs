@@ -42,7 +42,7 @@ namespace ET.Server
             unit.AddComponentWithId<PlayerLevelComponent, int>(unit.Id, 1);
 
             // 装备组件
-            unit.AddComponentWithId<EquipmentComponent>(unit.Id);
+            unit.AddComponentWithId<EquipmentContainerComponent>(unit.Id);
 
             // 邮箱组件
             MailComponent mailComponent = unit.AddComponentWithId<MailComponent>(unit.Id);
@@ -77,7 +77,7 @@ namespace ET.Server
             UnitDBSaveComponent unitDBSaveComponent = unit.AddComponent<UnitDBSaveComponent>();
             unitDBSaveComponent.AddChange(typeof(PlayerLevelComponent));
             unitDBSaveComponent.AddChange(typeof(BagComponent));
-            unitDBSaveComponent.AddChange(typeof(EquipmentComponent));
+            unitDBSaveComponent.AddChange(typeof(EquipmentContainerComponent));
             unitDBSaveComponent.AddChange(typeof(MailComponent));
             unitDBSaveComponent.AddChange(typeof(AvocationComponent));
             unitDBSaveComponent.AddChange(typeof(BuildingComponent));
