@@ -2,6 +2,7 @@
 {
     [EntitySystemOf(typeof(EquipmentContainerComponent))]
     [FriendOfAttribute(typeof(ET.Server.EquipmentContainerComponent))]
+    [FriendOfAttribute(typeof(ET.GameItem))]
     public static partial class EquipmentComponentSystem
     {
         [EntitySystem]
@@ -15,8 +16,6 @@
             foreach (Entity entity in self.Children.Values)
             {
                 GameItem item = entity as GameItem;
-                self.AddChild(item);
-
                 if (item.Config.EquipmentType == null)
                 {
                     item.Dispose();
@@ -55,6 +54,21 @@
             self.Equipments.Add(type, item);
 
             EventSystem.Instance.Publish(self.Scene(), new EquipmentOnAdd() { Unit = self.GetParent<Unit>(), Old = old, New = item });
+        }
+
+        public static GameItem GetEquipmentByConfigId(this EquipmentContainerComponent self, int configId)
+        {
+            foreach ((int key, var value) in self.Equipments)
+            {
+                GameItem item = value;
+
+                if (item.ConfigId == configId)
+                {
+                    return item;
+                }
+            }
+
+            return null;
         }
     }
 }

@@ -675,6 +675,102 @@ namespace ET
         }
     }
 
+    [MemoryPackable]
+    [Message(OuterMessage.EquipmentRandomProperty)]
+    public partial class EquipmentRandomProperty : MessageObject
+    {
+        public static EquipmentRandomProperty Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(EquipmentRandomProperty), isFromPool) as EquipmentRandomProperty;
+        }
+
+        [MemoryPackOrder(0)]
+        public int GamePropertyType { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long GamePropertyValue { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.GamePropertyType = default;
+            this.GamePropertyValue = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.C2M_RerandomEquipmentProperties)]
+    [ResponseType(nameof(M2C_RerandomEquipmentProperties))]
+    public partial class C2M_RerandomEquipmentProperties : MessageObject, ILocationRequest
+    {
+        public static C2M_RerandomEquipmentProperties Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_RerandomEquipmentProperties), isFromPool) as C2M_RerandomEquipmentProperties;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int EquipmentConfigId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.EquipmentConfigId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_RerandomEquipmentProperties)]
+    public partial class M2C_RerandomEquipmentProperties : MessageObject, ILocationResponse
+    {
+        public static M2C_RerandomEquipmentProperties Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_RerandomEquipmentProperties), isFromPool) as M2C_RerandomEquipmentProperties;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        [MemoryPackOrder(3)]
+        public List<EquipmentRandomProperty> EquipmentRandomProperties { get; set; } = new();
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+            this.EquipmentRandomProperties.Clear();
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
     public static partial class OuterMessage
     {
         public const ushort C2M_GMCommand = 11002;
@@ -699,5 +795,8 @@ namespace ET
         public const ushort TalentInfo = 11021;
         public const ushort C2M_GetAllTalents = 11022;
         public const ushort M2C_GetAllTalents = 11023;
+        public const ushort EquipmentRandomProperty = 11024;
+        public const ushort C2M_RerandomEquipmentProperties = 11025;
+        public const ushort M2C_RerandomEquipmentProperties = 11026;
     }
 }

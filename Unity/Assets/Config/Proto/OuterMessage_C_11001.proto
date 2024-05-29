@@ -145,3 +145,24 @@ message M2C_GetAllTalents // ILocationResponse
 	string Message = 3;
 	repeated TalentInfo TalentInfos = 4;
 }
+
+message EquipmentRandomProperty
+{
+	int32 GamePropertyType = 1;
+	int64 GamePropertyValue = 2;
+}
+
+// ResponseType M2C_RerandomEquipmentProperties
+message C2M_RerandomEquipmentProperties // ILocationRequest
+{
+	int32 RpcId = 1;
+	int32 EquipmentConfigId = 2;
+}
+
+message M2C_RerandomEquipmentProperties // ILocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+	repeated EquipmentRandomProperty EquipmentRandomProperties = 4;
+}

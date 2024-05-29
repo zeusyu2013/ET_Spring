@@ -2,7 +2,7 @@
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson.Serialization.Options;
 
-namespace ET
+namespace ET.Server
 {
     [ComponentOf(typeof(GameItem))]
     public class EquipmentInfoComponent : Entity, IAwake, IDestroy, ISerializeToEntity

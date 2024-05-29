@@ -46,5 +46,8 @@ namespace ET
         public const int ERR_AlreadyHasGuild = 200102;
         public const int ERR_NotFoundGuild = 200103;
         public const int ERR_PlayerNotHasGuild = 200104;
+        
+        // Equipment
+        public const int ERR_NotFoundEquipment = 200201;
     }
 }
