@@ -17,6 +17,7 @@ namespace ET.Client
             root.AddComponent<PlayerPrefsComponent>();
             root.AddComponent<MapleComponent>();
             root.AddComponent<GameUnitComponent>();
+            root.AddComponent<ThinkingDataComponent, string, string>("038b22bae3e7481eb18dc686bea7fa4c", "https://ta-receiver.ujoygames.net.cn");
             
             // 根据配置修改掉Main Fiber的SceneType
             SceneType sceneType = EnumHelper.FromString<SceneType>(globalComponent.GlobalConfig.AppType.ToString());
