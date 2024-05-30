@@ -39,6 +39,11 @@
 
             unit.AddComponent<UnitPlayerIdComponent>().PlayerId = player.Id;
             session.GetComponent<GameRoleComponent>().UnitId = unit.Id;
+            
+            TDUserAdd userAdd = TDUserAdd.Create();
+            userAdd.AccountId = "123123";
+            userAdd.Properties = "";
+            TDHelper.SendUserAddToTDLog(scene, userAdd);
 
             StartSceneConfig startSceneConfig = StartSceneConfigCategory.Instance.GetBySceneName(session.Zone(), "Map1");
 

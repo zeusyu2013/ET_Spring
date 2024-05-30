@@ -88,6 +88,14 @@
     "Port": 0
   },
   {
+    "Id": 12,
+    "Process": 1,
+    "Zone": 1,
+    "SceneType": "Log",
+    "Name": "Log",
+    "Port": 0
+  },
+  {
     "Id": 300,
     "Process": 1,
     "Zone": 3,

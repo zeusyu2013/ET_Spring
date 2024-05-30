@@ -29,6 +29,8 @@ namespace ET
         
         public StartSceneConfig Chat;
 
+        public StartSceneConfig TDLog;
+
         public List<StartSceneConfig> GetByProcess(int process)
         {
             return this.ProcessScenes[process];
@@ -80,6 +82,9 @@ namespace ET
                         break;
                     case SceneType.Chat:
                         this.Chat = startSceneConfig;
+                        break;
+                    case SceneType.Log:
+                        this.TDLog = startSceneConfig;
                         break;
                 }
             }

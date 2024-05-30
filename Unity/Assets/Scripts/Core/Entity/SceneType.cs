@@ -23,6 +23,7 @@ namespace ET
 		Rank = 1 << 15,
 		Guild = 1 << 16,
 		Chat = 1 << 17,
+		Log = 1 << 18,
 
 		// 客户端
 		MainClient = 1 << 30,

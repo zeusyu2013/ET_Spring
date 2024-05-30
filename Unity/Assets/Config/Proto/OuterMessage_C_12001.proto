@@ -1,1 +1,30 @@
 syntax = "proto3";
+
+message TDUserSet // IMessage
+{
+    int32 RpcId = 1;
+    string AccountId = 2;
+    string Properties = 3;
+}
+
+message TDUserSetOnce // IMessage
+{
+    int32 RpcId = 1;
+    string AccountId = 2;
+    string Properties = 3;
+}
+
+message TDUserAdd // IMessage
+{
+    int32 RpcId = 1;
+    string AccountId = 2;
+    string Properties = 3;
+}
+
+message TDTrack // IMessage
+{
+    int32 RpcId = 1;
+    string AccountId = 2;
+    string EventName = 3;
+    string Properties = 4;
+}

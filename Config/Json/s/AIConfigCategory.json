@@ -4,7 +4,6 @@
     "AIConfigId": 1,
     "Order": 1,
     "Name": "AI_Attack",
-    "Desc": "攻击",
     "NodeParams": []
   },
   {
@@ -12,7 +11,13 @@
     "AIConfigId": 1,
     "Order": 2,
     "Name": "AI_XunLuo",
-    "Desc": "巡逻",
+    "NodeParams": []
+  },
+  {
+    "Id": 103,
+    "AIConfigId": 1,
+    "Order": 3,
+    "Name": "AI_Stand",
     "NodeParams": []
   },
   {
@@ -20,7 +25,6 @@
     "AIConfigId": 2,
     "Order": 1,
     "Name": "AI_XunLuo",
-    "Desc": "巡逻",
     "NodeParams": []
   }
 ]

@@ -20,7 +20,6 @@ namespace ET
             AIConfigId = _buf.ReadInt();
             Order = _buf.ReadInt();
             Name = _buf.ReadString();
-            Desc = _buf.ReadString();
             {int __n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);NodeParams = new int[__n0];for(var __index0 = 0 ; __index0 < __n0 ; __index0++) { int __e0;__e0 = _buf.ReadInt(); NodeParams[__index0] = __e0;}}
 
             PostInit();
@@ -52,11 +51,6 @@ namespace ET
         public readonly string Name;
 
         /// <summary>
-        /// 描述
-        /// </summary>
-        public readonly string Desc;
-
-        /// <summary>
         /// 节点参数
         /// </summary>
         public readonly int[] NodeParams;
@@ -72,7 +66,6 @@ namespace ET
             + "AIConfigId:" + AIConfigId + ","
             + "Order:" + Order + ","
             + "Name:" + Name + ","
-            + "Desc:" + Desc + ","
             + "NodeParams:" + Luban.StringUtil.CollectionToString(NodeParams) + ","
             + "}";
         }
