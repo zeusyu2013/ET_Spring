@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using SimpleJSON;
-using ThinkingData.Analytics;
+using ThinkingDataServer.Analytics;
 
 namespace ET.Server
 {

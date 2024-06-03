@@ -1,5 +1,8 @@
-﻿namespace ET.Server
+﻿using System;
+
+namespace ET.Server
 {
+    [AttributeUsage(AttributeTargets.Class)]
     public class DBVersionAttribute : BaseAttribute
     {
         public DBVersionEnum DBVersionEnum;

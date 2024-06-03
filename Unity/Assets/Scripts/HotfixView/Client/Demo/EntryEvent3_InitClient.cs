@@ -1,4 +1,3 @@
-
 namespace ET.Client
 {
     [Event(SceneType.Main)]

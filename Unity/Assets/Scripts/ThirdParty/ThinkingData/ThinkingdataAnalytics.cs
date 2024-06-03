@@ -20,7 +20,7 @@ using System.Text.RegularExpressions;
 
 
 
-namespace ThinkingData.Analytics
+namespace ThinkingDataServer.Analytics
 {
 
     /// <summary>

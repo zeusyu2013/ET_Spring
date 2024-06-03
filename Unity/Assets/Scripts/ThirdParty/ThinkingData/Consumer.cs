@@ -11,7 +11,7 @@ using Newtonsoft.Json.Converters;
 using Timer = System.Timers.Timer;
 using System.Net.Http;
 
-namespace ThinkingData.Analytics
+namespace ThinkingDataServer.Analytics
 {
     /// <summary>
     /// Consumer interface

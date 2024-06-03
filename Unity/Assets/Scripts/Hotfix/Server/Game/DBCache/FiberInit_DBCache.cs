@@ -17,6 +17,9 @@
             root.AddComponent<UnitComponent>();
             root.AddComponent<UnitCacheEventComponent>();
 
+            long id = root.Fiber.Process * 100000000 + root.Fiber.Zone * 10000 + root.Id;
+            root.AddComponentWithId<DBVersion>(id);
+
             await ETTask.CompletedTask;
         }
     }

@@ -24,6 +24,8 @@ namespace ET
         public StartSceneConfig Benchmark;
 
         public StartSceneConfig DBCache;
+
+        public StartSceneConfig TDLog;
         
         public List<StartSceneConfig> GetByProcess(int process)
         {
@@ -69,6 +71,9 @@ namespace ET
                         break;
                     case SceneType.DBCache:
                         this.DBCache = startSceneConfig;
+                        break;
+                    case SceneType.Log:
+                        this.TDLog = startSceneConfig;
                         break;
                 }
             }

@@ -60,6 +60,14 @@
           <Link>Luban\StringUtil.cs</Link>
         </Compile>
 
+        <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\ThinkingData\Consumer.cs">
+          <Link>ThinkingData\Consumer.cs</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\ThinkingData\ThinkingdataAnalytics.cs">
+          <Link>ThinkingData\ThinkingdataAnalytics.cs</Link>
+        </Compile>
+
         <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\TrueSync\**\*.cs">
             <Link>TrueSync/%(RecursiveDir)%(FileName)%(Extension)</Link>
         </Compile>
@@ -107,6 +115,12 @@
       </Content>
       <Content Include="..\..\Unity\Assets\Scripts\ThirdParty\Luban\SimpleJSON\README">
         <Link>Luban\SimpleJSON\README</Link>
+      </Content>
+      <Content Include="..\..\Unity\Assets\Scripts\ThirdParty\ThinkingData\Consumer.cs.meta">
+        <Link>ThinkingData\Consumer.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Assets\Scripts\ThirdParty\ThinkingData\ThinkingdataAnalytics.cs.meta">
+        <Link>ThinkingData\ThinkingdataAnalytics.cs.meta</Link>
       </Content>
     </ItemGroup>
 </Project>
