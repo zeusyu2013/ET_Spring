@@ -41,5 +41,10 @@ namespace ET
         /// </summary>
         GameItemType_Fragment = 6,
 
+        /// <summary>
+        /// 宝石
+        /// </summary>
+        GameItemType_Gem = 7,
+
     }
 }

@@ -41,12 +41,17 @@
                 return;
             }
 
+            if (item.Config.EquipmentType == null)
+            {
+                return;
+            }
+            
             int type = (int)item.Config.EquipmentType;
             GameItem old = null;
             if (self.Equipments.ContainsKey(type))
             {
                 old = self.Equipments[type];
-                bagComponent.AddChild(old);
+                bagComponent.AddItem(old);
                 self.Equipments.Remove(type);
             }
 

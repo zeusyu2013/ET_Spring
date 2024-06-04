@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson.Serialization.Options;
 
@@ -175,6 +176,20 @@ namespace ET
             numericComponent.Set(type, value);
         }
 
+        public static void IncLong(this NumericComponent self, GamePropertyType type, long value)
+        {
+            long current = self.GetAsLong(type);
+
+            self.Set(type, current + value);
+        }
+
+        public static void DecLong(this NumericComponent self, GamePropertyType type, long value)
+        {
+            long current = self.GetAsLong(type);
+
+            self.Set(type, Math.Max(0, current - value));
+        }
+
         public static void IncLong(this Unit unit, GamePropertyType type, long value)
         {
             if (unit == null || unit.IsDisposed)
@@ -190,9 +205,25 @@ namespace ET
                 return;
             }
 
-            long current = numericComponent.GetAsLong(type);
+            numericComponent.IncLong(type, value);
+        }
 
-            numericComponent.Set(type, current + value);
+        public static void DecLong(this Unit unit, GamePropertyType type, long value)
+        {
+            if (unit == null || unit.IsDisposed)
+            {
+                Log.Warning("unit not found");
+                return;
+            }
+
+            NumericComponent numericComponent = unit.GetComponent<NumericComponent>();
+            if (numericComponent == null)
+            {
+                Log.Warning("unit numericComponent not found");
+                return;
+            }
+            
+            numericComponent.DecLong(type, value);
         }
 
         public static void SetNoEvent(this NumericComponent self, int numericType, long value)
@@ -240,6 +271,36 @@ namespace ET
             long value = 0;
             self.NumericDic.TryGetValue((int)type, out value);
             return value;
+        }
+
+        public static void AddPropertyPack(this NumericComponent self, int propertyPack)
+        {
+            PropertyConfig config = PropertyConfigCategory.Instance.Get(propertyPack);
+            if (config == null)
+            {
+                Log.Error($"没找到指定属性包:{propertyPack}");
+                return;
+            }
+
+            foreach ((GamePropertyType type, long value) in config.Properties)
+            {
+                self.IncLong(type, value);
+            }
+        }
+
+        public static void RemovePropertyPack(this NumericComponent self, int propertyPack)
+        {
+            PropertyConfig config = PropertyConfigCategory.Instance.Get(propertyPack);
+            if (config == null)
+            {
+                Log.Error($"没找到指定属性包:{propertyPack}");
+                return;
+            }
+            
+            foreach ((GamePropertyType type, long value) in config.Properties)
+            {
+                self.DecLong(type, value);
+            }
         }
 
         public static void Update(this NumericComponent self, int numericType, bool isPublicEvent)

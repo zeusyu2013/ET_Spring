@@ -1,0 +1,238 @@
+[
+  {
+    "Id": 60010,
+    "HolesProperty": [
+      [
+        1,
+        {
+          "HoleColor": 8,
+          "PropertyPack": 1030
+        }
+      ],
+      [
+        2,
+        {
+          "HoleColor": 1,
+          "PropertyPack": 1030
+        }
+      ]
+    ]
+  },
+  {
+    "Id": 60011,
+    "HolesProperty": [
+      [
+        1,
+        {
+          "HoleColor": 4,
+          "PropertyPack": 1030
+        }
+      ]
+    ]
+  },
+  {
+    "Id": 60012,
+    "HolesProperty": [
+      [
+        1,
+        {
+          "HoleColor": 1,
+          "PropertyPack": 1030
+        }
+      ],
+      [
+        2,
+        {
+          "HoleColor": 4,
+          "PropertyPack": 1030
+        }
+      ]
+    ]
+  },
+  {
+    "Id": 60013,
+    "HolesProperty": [
+      [
+        1,
+        {
+          "HoleColor": 1,
+          "PropertyPack": 1030
+        }
+      ],
+      [
+        2,
+        {
+          "HoleColor": 4,
+          "PropertyPack": 1030
+        }
+      ]
+    ]
+  },
+  {
+    "Id": 60014,
+    "HolesProperty": [
+      [
+        1,
+        {
+          "HoleColor": 2,
+          "PropertyPack": 1030
+        }
+      ]
+    ]
+  },
+  {
+    "Id": 60015,
+    "HolesProperty": [
+      [
+        1,
+        {
+          "HoleColor": 1,
+          "PropertyPack": 1030
+        }
+      ],
+      [
+        2,
+        {
+          "HoleColor": 4,
+          "PropertyPack": 1030
+        }
+      ]
+    ]
+  },
+  {
+    "Id": 60016,
+    "HolesProperty": [
+      [
+        1,
+        {
+          "HoleColor": 1,
+          "PropertyPack": 1030
+        }
+      ]
+    ]
+  },
+  {
+    "Id": 60017,
+    "HolesProperty": [
+      [
+        1,
+        {
+          "HoleColor": 1,
+          "PropertyPack": 1030
+        }
+      ]
+    ]
+  },
+  {
+    "Id": 60018,
+    "HolesProperty": [
+      [
+        1,
+        {
+          "HoleColor": 1,
+          "PropertyPack": 1030
+        }
+      ]
+    ]
+  },
+  {
+    "Id": 60019,
+    "HolesProperty": [
+      [
+        1,
+        {
+          "HoleColor": 4,
+          "PropertyPack": 1030
+        }
+      ],
+      [
+        2,
+        {
+          "HoleColor": 1,
+          "PropertyPack": 1030
+        }
+      ]
+    ]
+  },
+  {
+    "Id": 60020,
+    "HolesProperty": [
+      [
+        1,
+        {
+          "HoleColor": 4,
+          "PropertyPack": 1030
+        }
+      ],
+      [
+        2,
+        {
+          "HoleColor": 1,
+          "PropertyPack": 1030
+        }
+      ]
+    ]
+  },
+  {
+    "Id": 60021,
+    "HolesProperty": [
+      [
+        1,
+        {
+          "HoleColor": 4,
+          "PropertyPack": 1030
+        }
+      ],
+      [
+        2,
+        {
+          "HoleColor": 1,
+          "PropertyPack": 1030
+        }
+      ]
+    ]
+  },
+  {
+    "Id": 60022,
+    "HolesProperty": [
+      [
+        1,
+        {
+          "HoleColor": 4,
+          "PropertyPack": 1030
+        }
+      ]
+    ]
+  },
+  {
+    "Id": 60023,
+    "HolesProperty": [
+      [
+        1,
+        {
+          "HoleColor": 4,
+          "PropertyPack": 1030
+        }
+      ],
+      [
+        2,
+        {
+          "HoleColor": 1,
+          "PropertyPack": 1030
+        }
+      ]
+    ]
+  },
+  {
+    "Id": 60024,
+    "HolesProperty": [
+      [
+        1,
+        {
+          "HoleColor": 4,
+          "PropertyPack": 1030
+        }
+      ]
+    ]
+  }
+]

@@ -8,8 +8,11 @@
     }
 
     [ComponentOf]
-    public class DBVersion : Entity, IAwake
+    public class DBVersion : Entity, IAwake<int, int>
     {
+        public int Process;
+        public int Zone;
+        
         public int DBVersionNumber;
     }
 }

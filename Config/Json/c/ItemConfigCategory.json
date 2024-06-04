@@ -205,5 +205,565 @@
     "UseLevel": 1,
     "EquipmentType": 7,
     "Icon": "itemicon_60024"
+  },
+  {
+    "Id": 610001,
+    "Name": "红色宝石01",
+    "Type": 7,
+    "Quality": 2,
+    "UseLevel": 1,
+    "Icon": "itemicon_610001"
+  },
+  {
+    "Id": 610002,
+    "Name": "红色宝石02",
+    "Type": 7,
+    "Quality": 2,
+    "UseLevel": 1,
+    "Icon": "itemicon_610002"
+  },
+  {
+    "Id": 610003,
+    "Name": "红色宝石03",
+    "Type": 7,
+    "Quality": 2,
+    "UseLevel": 1,
+    "Icon": "itemicon_610003"
+  },
+  {
+    "Id": 610004,
+    "Name": "红色宝石04",
+    "Type": 7,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_610004"
+  },
+  {
+    "Id": 610005,
+    "Name": "红色宝石05",
+    "Type": 7,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_610005"
+  },
+  {
+    "Id": 610006,
+    "Name": "红色宝石06",
+    "Type": 7,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_610006"
+  },
+  {
+    "Id": 610007,
+    "Name": "红色宝石07",
+    "Type": 7,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_610007"
+  },
+  {
+    "Id": 610008,
+    "Name": "红色宝石08",
+    "Type": 7,
+    "Quality": 4,
+    "UseLevel": 1,
+    "Icon": "itemicon_610008"
+  },
+  {
+    "Id": 610009,
+    "Name": "红色宝石09",
+    "Type": 7,
+    "Quality": 4,
+    "UseLevel": 1,
+    "Icon": "itemicon_610009"
+  },
+  {
+    "Id": 610010,
+    "Name": "红色宝石10",
+    "Type": 7,
+    "Quality": 4,
+    "UseLevel": 1,
+    "Icon": "itemicon_610010"
+  },
+  {
+    "Id": 620001,
+    "Name": "蓝色宝石01",
+    "Type": 7,
+    "Quality": 2,
+    "UseLevel": 1,
+    "Icon": "itemicon_620001"
+  },
+  {
+    "Id": 620002,
+    "Name": "蓝色宝石02",
+    "Type": 7,
+    "Quality": 2,
+    "UseLevel": 1,
+    "Icon": "itemicon_620002"
+  },
+  {
+    "Id": 620003,
+    "Name": "蓝色宝石03",
+    "Type": 7,
+    "Quality": 2,
+    "UseLevel": 1,
+    "Icon": "itemicon_620003"
+  },
+  {
+    "Id": 620004,
+    "Name": "蓝色宝石04",
+    "Type": 7,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_620004"
+  },
+  {
+    "Id": 620005,
+    "Name": "蓝色宝石05",
+    "Type": 7,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_620005"
+  },
+  {
+    "Id": 620006,
+    "Name": "蓝色宝石06",
+    "Type": 7,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_620006"
+  },
+  {
+    "Id": 620007,
+    "Name": "蓝色宝石07",
+    "Type": 7,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_620007"
+  },
+  {
+    "Id": 620008,
+    "Name": "蓝色宝石08",
+    "Type": 7,
+    "Quality": 4,
+    "UseLevel": 1,
+    "Icon": "itemicon_620008"
+  },
+  {
+    "Id": 620009,
+    "Name": "蓝色宝石09",
+    "Type": 7,
+    "Quality": 4,
+    "UseLevel": 1,
+    "Icon": "itemicon_620009"
+  },
+  {
+    "Id": 620010,
+    "Name": "蓝色宝石10",
+    "Type": 7,
+    "Quality": 4,
+    "UseLevel": 1,
+    "Icon": "itemicon_620010"
+  },
+  {
+    "Id": 630001,
+    "Name": "黄色宝石01",
+    "Type": 7,
+    "Quality": 2,
+    "UseLevel": 1,
+    "Icon": "itemicon_630001"
+  },
+  {
+    "Id": 630002,
+    "Name": "黄色宝石02",
+    "Type": 7,
+    "Quality": 2,
+    "UseLevel": 1,
+    "Icon": "itemicon_630002"
+  },
+  {
+    "Id": 630003,
+    "Name": "黄色宝石03",
+    "Type": 7,
+    "Quality": 2,
+    "UseLevel": 1,
+    "Icon": "itemicon_630003"
+  },
+  {
+    "Id": 630004,
+    "Name": "黄色宝石04",
+    "Type": 7,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_630004"
+  },
+  {
+    "Id": 630005,
+    "Name": "黄色宝石05",
+    "Type": 7,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_630005"
+  },
+  {
+    "Id": 630006,
+    "Name": "黄色宝石06",
+    "Type": 7,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_630006"
+  },
+  {
+    "Id": 630007,
+    "Name": "黄色宝石07",
+    "Type": 7,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_630007"
+  },
+  {
+    "Id": 630008,
+    "Name": "黄色宝石08",
+    "Type": 7,
+    "Quality": 4,
+    "UseLevel": 1,
+    "Icon": "itemicon_630008"
+  },
+  {
+    "Id": 630009,
+    "Name": "黄色宝石09",
+    "Type": 7,
+    "Quality": 4,
+    "UseLevel": 1,
+    "Icon": "itemicon_630009"
+  },
+  {
+    "Id": 630010,
+    "Name": "黄色宝石10",
+    "Type": 7,
+    "Quality": 4,
+    "UseLevel": 1,
+    "Icon": "itemicon_630010"
+  },
+  {
+    "Id": 640001,
+    "Name": "绿色宝石01",
+    "Type": 7,
+    "Quality": 2,
+    "UseLevel": 1,
+    "Icon": "itemicon_640001"
+  },
+  {
+    "Id": 640002,
+    "Name": "绿色宝石02",
+    "Type": 7,
+    "Quality": 2,
+    "UseLevel": 1,
+    "Icon": "itemicon_640002"
+  },
+  {
+    "Id": 640003,
+    "Name": "绿色宝石03",
+    "Type": 7,
+    "Quality": 2,
+    "UseLevel": 1,
+    "Icon": "itemicon_640003"
+  },
+  {
+    "Id": 640004,
+    "Name": "绿色宝石04",
+    "Type": 7,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_640004"
+  },
+  {
+    "Id": 640005,
+    "Name": "绿色宝石05",
+    "Type": 7,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_640005"
+  },
+  {
+    "Id": 640006,
+    "Name": "绿色宝石06",
+    "Type": 7,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_640006"
+  },
+  {
+    "Id": 640007,
+    "Name": "绿色宝石07",
+    "Type": 7,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_640007"
+  },
+  {
+    "Id": 640008,
+    "Name": "绿色宝石08",
+    "Type": 7,
+    "Quality": 4,
+    "UseLevel": 1,
+    "Icon": "itemicon_640008"
+  },
+  {
+    "Id": 640009,
+    "Name": "绿色宝石09",
+    "Type": 7,
+    "Quality": 4,
+    "UseLevel": 1,
+    "Icon": "itemicon_640009"
+  },
+  {
+    "Id": 640010,
+    "Name": "绿色宝石10",
+    "Type": 7,
+    "Quality": 4,
+    "UseLevel": 1,
+    "Icon": "itemicon_640010"
+  },
+  {
+    "Id": 650001,
+    "Name": "紫色宝石01",
+    "Type": 7,
+    "Quality": 2,
+    "UseLevel": 1,
+    "Icon": "itemicon_650001"
+  },
+  {
+    "Id": 650002,
+    "Name": "紫色宝石02",
+    "Type": 7,
+    "Quality": 2,
+    "UseLevel": 1,
+    "Icon": "itemicon_650002"
+  },
+  {
+    "Id": 650003,
+    "Name": "紫色宝石03",
+    "Type": 7,
+    "Quality": 2,
+    "UseLevel": 1,
+    "Icon": "itemicon_650003"
+  },
+  {
+    "Id": 650004,
+    "Name": "紫色宝石04",
+    "Type": 7,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_650004"
+  },
+  {
+    "Id": 650005,
+    "Name": "紫色宝石05",
+    "Type": 7,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_650005"
+  },
+  {
+    "Id": 650006,
+    "Name": "紫色宝石06",
+    "Type": 7,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_650006"
+  },
+  {
+    "Id": 650007,
+    "Name": "紫色宝石07",
+    "Type": 7,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_650007"
+  },
+  {
+    "Id": 650008,
+    "Name": "紫色宝石08",
+    "Type": 7,
+    "Quality": 4,
+    "UseLevel": 1,
+    "Icon": "itemicon_650008"
+  },
+  {
+    "Id": 650009,
+    "Name": "紫色宝石09",
+    "Type": 7,
+    "Quality": 4,
+    "UseLevel": 1,
+    "Icon": "itemicon_650009"
+  },
+  {
+    "Id": 650010,
+    "Name": "紫色宝石10",
+    "Type": 7,
+    "Quality": 4,
+    "UseLevel": 1,
+    "Icon": "itemicon_650010"
+  },
+  {
+    "Id": 660001,
+    "Name": "橙色宝石01",
+    "Type": 7,
+    "Quality": 2,
+    "UseLevel": 1,
+    "Icon": "itemicon_660001"
+  },
+  {
+    "Id": 660002,
+    "Name": "橙色宝石02",
+    "Type": 7,
+    "Quality": 2,
+    "UseLevel": 1,
+    "Icon": "itemicon_660002"
+  },
+  {
+    "Id": 660003,
+    "Name": "橙色宝石03",
+    "Type": 7,
+    "Quality": 2,
+    "UseLevel": 1,
+    "Icon": "itemicon_660003"
+  },
+  {
+    "Id": 660004,
+    "Name": "橙色宝石04",
+    "Type": 7,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_660004"
+  },
+  {
+    "Id": 660005,
+    "Name": "橙色宝石05",
+    "Type": 7,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_660005"
+  },
+  {
+    "Id": 660006,
+    "Name": "橙色宝石06",
+    "Type": 7,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_660006"
+  },
+  {
+    "Id": 660007,
+    "Name": "橙色宝石07",
+    "Type": 7,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_660007"
+  },
+  {
+    "Id": 660008,
+    "Name": "橙色宝石08",
+    "Type": 7,
+    "Quality": 4,
+    "UseLevel": 1,
+    "Icon": "itemicon_660008"
+  },
+  {
+    "Id": 660009,
+    "Name": "橙色宝石09",
+    "Type": 7,
+    "Quality": 4,
+    "UseLevel": 1,
+    "Icon": "itemicon_660009"
+  },
+  {
+    "Id": 660010,
+    "Name": "橙色宝石10",
+    "Type": 7,
+    "Quality": 4,
+    "UseLevel": 1,
+    "Icon": "itemicon_660010"
+  },
+  {
+    "Id": 670001,
+    "Name": "多彩宝石01",
+    "Type": 7,
+    "Quality": 2,
+    "UseLevel": 1,
+    "Icon": "itemicon_670001"
+  },
+  {
+    "Id": 670002,
+    "Name": "多彩宝石02",
+    "Type": 7,
+    "Quality": 2,
+    "UseLevel": 1,
+    "Icon": "itemicon_670002"
+  },
+  {
+    "Id": 670003,
+    "Name": "多彩宝石03",
+    "Type": 7,
+    "Quality": 2,
+    "UseLevel": 1,
+    "Icon": "itemicon_670003"
+  },
+  {
+    "Id": 670004,
+    "Name": "多彩宝石04",
+    "Type": 7,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_670004"
+  },
+  {
+    "Id": 670005,
+    "Name": "多彩宝石05",
+    "Type": 7,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_670005"
+  },
+  {
+    "Id": 670006,
+    "Name": "多彩宝石06",
+    "Type": 7,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_670006"
+  },
+  {
+    "Id": 670007,
+    "Name": "多彩宝石07",
+    "Type": 7,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_670007"
+  },
+  {
+    "Id": 670008,
+    "Name": "多彩宝石08",
+    "Type": 7,
+    "Quality": 4,
+    "UseLevel": 1,
+    "Icon": "itemicon_670008"
+  },
+  {
+    "Id": 670009,
+    "Name": "多彩宝石09",
+    "Type": 7,
+    "Quality": 4,
+    "UseLevel": 1,
+    "Icon": "itemicon_670009"
+  },
+  {
+    "Id": 670010,
+    "Name": "多彩宝石10",
+    "Type": 7,
+    "Quality": 4,
+    "UseLevel": 1,
+    "Icon": "itemicon_670010"
   }
 ]

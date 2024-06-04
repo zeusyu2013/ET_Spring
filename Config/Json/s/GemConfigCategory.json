@@ -1,0 +1,302 @@
+[
+  {
+    "Id": 610001,
+    "ColorFlag": 1,
+    "Property": 1007
+  },
+  {
+    "Id": 610002,
+    "ColorFlag": 1,
+    "Property": 1008
+  },
+  {
+    "Id": 610003,
+    "ColorFlag": 1,
+    "Property": 1009
+  },
+  {
+    "Id": 610004,
+    "ColorFlag": 1,
+    "Property": 1010
+  },
+  {
+    "Id": 610005,
+    "ColorFlag": 1,
+    "Property": 1011
+  },
+  {
+    "Id": 610006,
+    "ColorFlag": 1,
+    "Property": 1012
+  },
+  {
+    "Id": 610007,
+    "ColorFlag": 1,
+    "Property": 1013
+  },
+  {
+    "Id": 610008,
+    "ColorFlag": 1,
+    "Property": 1014
+  },
+  {
+    "Id": 610009,
+    "ColorFlag": 1,
+    "Property": 1015
+  },
+  {
+    "Id": 610010,
+    "ColorFlag": 1,
+    "Property": 1016
+  },
+  {
+    "Id": 620001,
+    "ColorFlag": 4,
+    "Property": 1020
+  },
+  {
+    "Id": 620002,
+    "ColorFlag": 4,
+    "Property": 1021
+  },
+  {
+    "Id": 620003,
+    "ColorFlag": 4,
+    "Property": 1022
+  },
+  {
+    "Id": 620004,
+    "ColorFlag": 4,
+    "Property": 1023
+  },
+  {
+    "Id": 620005,
+    "ColorFlag": 4,
+    "Property": 1024
+  },
+  {
+    "Id": 620006,
+    "ColorFlag": 4,
+    "Property": 1025
+  },
+  {
+    "Id": 620007,
+    "ColorFlag": 4,
+    "Property": 1026
+  },
+  {
+    "Id": 620008,
+    "ColorFlag": 4,
+    "Property": 1027
+  },
+  {
+    "Id": 620009,
+    "ColorFlag": 4,
+    "Property": 1028
+  },
+  {
+    "Id": 620010,
+    "ColorFlag": 4,
+    "Property": 1029
+  },
+  {
+    "Id": 630001,
+    "ColorFlag": 2,
+    "Property": 1030
+  },
+  {
+    "Id": 630002,
+    "ColorFlag": 2,
+    "Property": 1031
+  },
+  {
+    "Id": 630003,
+    "ColorFlag": 2,
+    "Property": 1032
+  },
+  {
+    "Id": 630004,
+    "ColorFlag": 2,
+    "Property": 1033
+  },
+  {
+    "Id": 630005,
+    "ColorFlag": 2,
+    "Property": 1034
+  },
+  {
+    "Id": 630006,
+    "ColorFlag": 2,
+    "Property": 1035
+  },
+  {
+    "Id": 630007,
+    "ColorFlag": 2,
+    "Property": 1036
+  },
+  {
+    "Id": 630008,
+    "ColorFlag": 2,
+    "Property": 1037
+  },
+  {
+    "Id": 630009,
+    "ColorFlag": 2,
+    "Property": 1038
+  },
+  {
+    "Id": 630010,
+    "ColorFlag": 2,
+    "Property": 1039
+  },
+  {
+    "Id": 640001,
+    "ColorFlag": 6,
+    "Property": 1040
+  },
+  {
+    "Id": 640002,
+    "ColorFlag": 6,
+    "Property": 1041
+  },
+  {
+    "Id": 640003,
+    "ColorFlag": 6,
+    "Property": 1042
+  },
+  {
+    "Id": 640004,
+    "ColorFlag": 6,
+    "Property": 1043
+  },
+  {
+    "Id": 640005,
+    "ColorFlag": 6,
+    "Property": 1044
+  },
+  {
+    "Id": 640006,
+    "ColorFlag": 6,
+    "Property": 1045
+  },
+  {
+    "Id": 640007,
+    "ColorFlag": 6,
+    "Property": 1046
+  },
+  {
+    "Id": 640008,
+    "ColorFlag": 6,
+    "Property": 1047
+  },
+  {
+    "Id": 640009,
+    "ColorFlag": 6,
+    "Property": 1048
+  },
+  {
+    "Id": 640010,
+    "ColorFlag": 6,
+    "Property": 1049
+  },
+  {
+    "Id": 650001,
+    "ColorFlag": 5,
+    "Property": 1050
+  },
+  {
+    "Id": 650002,
+    "ColorFlag": 5,
+    "Property": 1051
+  },
+  {
+    "Id": 650003,
+    "ColorFlag": 5,
+    "Property": 1052
+  },
+  {
+    "Id": 650004,
+    "ColorFlag": 5,
+    "Property": 1053
+  },
+  {
+    "Id": 650005,
+    "ColorFlag": 5,
+    "Property": 1054
+  },
+  {
+    "Id": 650006,
+    "ColorFlag": 5,
+    "Property": 1055
+  },
+  {
+    "Id": 650007,
+    "ColorFlag": 5,
+    "Property": 1056
+  },
+  {
+    "Id": 650008,
+    "ColorFlag": 5,
+    "Property": 1057
+  },
+  {
+    "Id": 650009,
+    "ColorFlag": 5,
+    "Property": 1058
+  },
+  {
+    "Id": 650010,
+    "ColorFlag": 5,
+    "Property": 1059
+  },
+  {
+    "Id": 660001,
+    "ColorFlag": 3,
+    "Property": 1060
+  },
+  {
+    "Id": 660002,
+    "ColorFlag": 3,
+    "Property": 1061
+  },
+  {
+    "Id": 660003,
+    "ColorFlag": 3,
+    "Property": 1062
+  },
+  {
+    "Id": 660004,
+    "ColorFlag": 3,
+    "Property": 1063
+  },
+  {
+    "Id": 660005,
+    "ColorFlag": 3,
+    "Property": 1064
+  },
+  {
+    "Id": 660006,
+    "ColorFlag": 3,
+    "Property": 1065
+  },
+  {
+    "Id": 660007,
+    "ColorFlag": 3,
+    "Property": 1066
+  },
+  {
+    "Id": 660008,
+    "ColorFlag": 3,
+    "Property": 1067
+  },
+  {
+    "Id": 660009,
+    "ColorFlag": 3,
+    "Property": 1068
+  },
+  {
+    "Id": 660010,
+    "ColorFlag": 3,
+    "Property": 1069
+  }
+]

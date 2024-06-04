@@ -6,35 +6,36 @@
     [FriendOfAttribute(typeof(ET.GameItem))]
     public class EquipmentOnAdd_PropertyRefreshHandler : AEvent<Scene, EquipmentOnAdd>
     {
-        protected override async ETTask Run(Scene scene, EquipmentOnAdd a)
+        protected override async ETTask Run(Scene scene, EquipmentOnAdd args)
         {
-            Unit unit = a.Unit;
+            Unit unit = args.Unit;
             if (unit == null)
             {
                 return;
             }
 
-            if (a.Old != null)
+            NumericComponent numericComponent = unit.GetComponent<NumericComponent>();
+            if (numericComponent == null)
             {
-                EquipmentConfig oldConfig = EquipmentConfigCategory.Instance.Get(a.Old.ConfigId);
-                foreach ((GamePropertyType key, int value) in oldConfig.BaseConfig.Properties)
-                {
-                    unit.IncLong(key, -value);
-                }
+                Log.Error($"未找到指定对象数值组件:{unit.ConfigId}");
+                return;
+            }
 
-                foreach ((int key, long value) in a.Old.GetComponent<EquipmentRandomPropertiesComponent>().RandomProperties)
+            if (args.Old != null)
+            {
+                EquipmentConfig oldConfig = EquipmentConfigCategory.Instance.Get(args.Old.ConfigId);
+                numericComponent.RemovePropertyPack(oldConfig.Base);
+
+                foreach ((int key, long value) in args.Old.GetComponent<EquipmentRandomPropertiesComponent>().RandomProperties)
                 {
-                    unit.IncLong((GamePropertyType)key, -value);
+                    unit.DecLong((GamePropertyType)key, value);
                 }
             }
 
-            EquipmentConfig config = EquipmentConfigCategory.Instance.Get(a.New.ConfigId);
-            foreach ((GamePropertyType key, int value) in config.BaseConfig.Properties)
-            {
-                unit.IncLong(key, value);
-            }
+            EquipmentConfig config = EquipmentConfigCategory.Instance.Get(args.New.ConfigId);
+            numericComponent.AddPropertyPack(config.Base);
             
-            foreach ((int key, long value) in a.New.GetComponent<EquipmentRandomPropertiesComponent>().RandomProperties)
+            foreach ((int key, long value) in args.New.GetComponent<EquipmentRandomPropertiesComponent>().RandomProperties)
             {
                 unit.IncLong((GamePropertyType)key, value);
             }

@@ -8,8 +8,11 @@ namespace ET.Server
     public static partial class DBVersionSystem
     {
         [EntitySystem]
-        public static void Awake(this DBVersion self)
+        public static void Awake(this DBVersion self, int process, int zone)
         {
+            self.Process = process;
+            self.Zone = zone;
+            
             self.Query().Coroutine();
         }
 
@@ -22,8 +25,7 @@ namespace ET.Server
                 return;
             }
 
-            long id = self.Root().Fiber.Process * 100000000 + self.Root().Fiber.Zone * 10000 + self.Root().Id;
-            List<DBVersion> dbVersions = await dbComponent.Query<DBVersion>(x => x.Id == id);
+            List<DBVersion> dbVersions = await dbComponent.Query<DBVersion>(x => x.Process == self.Process && x.Zone == self.Zone);
             if (dbVersions.Count < 1)
             {
                 self.DBVersionNumber = 0;

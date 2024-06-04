@@ -51,6 +51,16 @@ namespace ET.Server
             {
                 return;
             }
+            
+            // TODO:检查重置天赋消耗
+            int currencyType = GlobalDataConfigCategory.Instance.ResetTalentCurrency;
+            long currencyValue = GlobalDataConfigCategory.Instance.ResetTalentCurrencyValue;
+            Unit unit = self.GetParent<Unit>();
+            bool ret = unit.GetComponent<CurrencyComponent>().Dec((CurrencyType)currencyType, currencyValue);
+            if (!ret)
+            {
+                return;
+            }
 
             int point = 0;
             foreach (EntityRef<Talent> entityRef in self.Talents)
@@ -69,16 +79,6 @@ namespace ET.Server
                 return;
             }
             
-            // TODO:检查重置天赋消耗
-            int currencyType = GlobalDataConfigCategory.Instance.ResetTalentCurrency;
-            long currencyValue = GlobalDataConfigCategory.Instance.ResetTalentCurrencyValue;
-            Unit unit = self.GetParent<Unit>();
-            bool ret = unit.GetComponent<CurrencyComponent>().Dec((CurrencyType)currencyType, currencyValue);
-            if (!ret)
-            {
-                return;
-            }
-
             self.TalentPoint += point;
 
             self.Talents.Clear();

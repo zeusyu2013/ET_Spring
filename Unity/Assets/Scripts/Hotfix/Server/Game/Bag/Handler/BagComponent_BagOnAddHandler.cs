@@ -11,6 +11,7 @@
             }
 
             args.GameItem.AddComponent<EquipmentInfoComponent>();
+            args.GameItem.AddComponent<EquipmentGemComponent>();
 
             await ETTask.CompletedTask;
         }
