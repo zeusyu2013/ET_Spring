@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using Sirenix.OdinInspector;
 using Sirenix.OdinInspector.Editor;
 using UnityEditor;
@@ -12,6 +11,10 @@ namespace ET
         [BoxGroup("导出"), LabelText("动画Fbx路径"), FolderPath]
         public string AnimationPath;
 
+        private int _modelConfigId = 0;
+        public const string AnimationClipsBundlePath = "Assets/Bundles/Animations/{0}";
+        private string _animationClipsBundleFolder = "";
+
         [BoxGroup("导出"), Button("导出切片")]
         public void ExportAnimationClips()
         {
@@ -21,20 +24,37 @@ namespace ET
                 return;
             }
 
-            ForeachDirectory(AnimationPath);
-            
+            int last = this.AnimationPath.LastIndexOf('/');
+            var modelName = this.AnimationPath.Substring(last + 1, this.AnimationPath.Length - last - 1);
+            if (!int.TryParse(modelName, out int modelConfigId))
+            {
+                return;
+            }
+
+            _modelConfigId = modelConfigId;
+
+            _animationClipsBundleFolder = string.Format(AnimationClipsBundlePath, this._modelConfigId);
+            if (Directory.Exists(_animationClipsBundleFolder))
+            {
+                Directory.Delete(_animationClipsBundleFolder);
+            }
+
+            Directory.CreateDirectory(_animationClipsBundleFolder);
+
+            ForeachDirectory(Path.Combine(AnimationPath, "Animations"));
+
             AssetDatabase.Refresh(ImportAssetOptions.ForceUpdate);
         }
 
         [BoxGroup("压缩"), LabelText("单个切片还是目录批量")]
         public bool SingleOrBatch = true;
-        
+
         [BoxGroup("压缩"), LabelText("动画切片"), ShowIf("@SingleOrBatch == true")]
         public AnimationClip AnimationClip;
-        
+
         [BoxGroup("压缩"), LabelText("动画切片目录"), FolderPath, ShowIf("@SingleOrBatch == false")]
         public string AnimationClipsPath;
-        
+
         [BoxGroup("压缩"), Button("压缩切片")]
         public void CompressionClips()
         {
@@ -45,7 +65,7 @@ namespace ET
                     EditorHelper.LogError("请设置压缩切片");
                     return;
                 }
-            
+
                 CompressAnimationClip(this.AnimationClip);
             }
             else
@@ -64,11 +84,11 @@ namespace ET
                     {
                         continue;
                     }
-                    
+
                     CompressAnimationClip(clip);
                 }
             }
-            
+
             EditorHelper.Log("压缩完成");
         }
 
@@ -83,53 +103,37 @@ namespace ET
             var files = Directory.GetFiles(dir, "*.fbx");
             foreach (var file in files)
             {
-                if (Directory.Exists(file))
+                var clips = AssetDatabase.LoadAllAssetsAtPath(file);
+                if (clips == null || clips.Length < 1)
                 {
-                    ForeachDirectory(file);
+                    continue;
                 }
-                else
+
+                foreach (var clip in clips)
                 {
-                    var fbxPath = file.ToLower();
-                    var clips = AssetDatabase.LoadAllAssetsAtPath(fbxPath);
-                    if (clips == null || clips.Length < 1)
+                    if (clip is not AnimationClip animationClip)
                     {
                         continue;
                     }
 
-                    fbxPath = fbxPath.Replace("/", "\\");
-                    var parentFolder = fbxPath.Split('\\')[4];
-                    foreach (var clip in clips)
+                    if (animationClip.name.StartsWith("__preview__"))
                     {
-                        if (!(clip is AnimationClip animationClip))
-                        {
-                            continue;
-                        }
-
-                        if (animationClip.name.StartsWith("__preview__"))
-                        {
-                            continue;
-                        }
-
-                        CreateAnimationClip(animationClip, parentFolder);
+                        continue;
                     }
+
+                    CreateAnimationClip(animationClip);
                 }
             }
         }
 
-        private void CreateAnimationClip(AnimationClip clip, string parentFolder)
+        private void CreateAnimationClip(AnimationClip clip)
         {
             var temp = new AnimationClip();
             EditorUtility.CopySerialized(clip, temp);
             RemoveAnimationClipScale(temp);
             CompressAnimationClip(temp);
 
-            var folder = $"{Application.dataPath}/Bundles/Animations/{parentFolder}";
-            if (!Directory.Exists(folder))
-            {
-                Directory.CreateDirectory(folder);
-            }
-
-            EditorHelper.CreateAsset(temp, $"{folder}/{clip.name}.anim");
+            EditorHelper.CreateAsset(temp, $"{_animationClipsBundleFolder}/{clip.name}.anim");
             EditorHelper.SaveAsset(temp);
         }
 

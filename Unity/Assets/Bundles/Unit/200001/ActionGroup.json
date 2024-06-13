@@ -1,0 +1,41 @@
+
+{
+    "model" : "200001",
+    "action_groups" : [
+        {
+            "action_group_name" : "attack",
+            "actions"           : [
+                "Idle",
+                "Attack1",
+                "Attack2",
+                "Attack3"
+            ],
+            "events"            : [
+            ],
+            "trantions"         : [
+                {
+                    "action_from" : "Idle",
+                    "action_to"   : "",
+                    "fade_time"   : 0
+                },
+                {
+                    "action_from" : "Attack1",
+                    "action_to"   : "",
+                    "fade_time"   : 0
+                },
+                {
+                    "action_from" : "Attack2",
+                    "action_to"   : "",
+                    "fade_time"   : 0
+                },
+                {
+                    "action_from" : "Attack3",
+                    "action_to"   : "",
+                    "fade_time"   : 0
+                }
+            ],
+            "event_datas"       : [
+            ]
+        }
+    ]
+}

@@ -1,10 +1,14 @@
-﻿namespace ET
+﻿using System.Collections.Generic;
+
+namespace ET
 {
     public class SelectTargetSelfRound : ASelectTargetHandler
     {
-        public override int Check(SelectTargetComponent selectTargetComponent, SkillConfig skillConfig)
+        public override (int, List<Unit>) Check(SelectTargetComponent selectTargetComponent, SkillConfig skillConfig)
         {
-            return 0;
+            List<Unit> units = new();
+            
+            return (0, units);
         }
     }
 }

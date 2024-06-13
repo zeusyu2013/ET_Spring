@@ -20,12 +20,20 @@ namespace ET
                 return;
             }
 
-            int ret = handler.Check(self, config);
+            (int ret, List<Unit> units) = handler.Check(self, config);
             if (ret != SelectTargetErrorCode.ERR_Success)
             {
                 Log.Error($"技能选择目标失败，技能编号：{configId} ， 技能等级：{level}，错误：{ret}");
                 return;
             }
+
+            if (units.Count < 1)
+            {
+                Log.Error($"技能没有选择到目标，技能编号：{configId} ， 技能等级：{level}");
+                return;
+            }
+
+            targets = units;
         }
     }
 }
