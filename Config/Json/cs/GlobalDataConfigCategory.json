@@ -6,6 +6,7 @@
     "CameraMaxDistance": 20,
     "CreateRoleMaxLimit": 5,
     "ResetTalentCurrency": 1,
-    "ResetTalentCurrencyValue": 50000
+    "ResetTalentCurrencyValue": 50000,
+    "ExtendBagItemConfig": 60006
   }
 ]

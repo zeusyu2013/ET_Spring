@@ -57,6 +57,10 @@ namespace ET
         /// 重置天赋货币值
         /// </summary>
         public long ResetTalentCurrencyValue => _data.ResetTalentCurrencyValue;
+        /// <summary>
+        /// 背包扩容道具id
+        /// </summary>
+        public int ExtendBagItemConfig => _data.ExtendBagItemConfig;
 
 
         partial void PostInit();

@@ -49,5 +49,9 @@ namespace ET
         
         // Equipment
         public const int ERR_NotFoundEquipment = 200201;
+        
+        // Bag
+        public const int ERR_ExtendBagItemConfigError = 200301;
+        public const int ERR_ItemNotEnough = 200302;
     }
 }

@@ -23,6 +23,7 @@ namespace ET
             CreateRoleMaxLimit = _buf.ReadInt();
             ResetTalentCurrency = _buf.ReadInt();
             ResetTalentCurrencyValue = _buf.ReadLong();
+            ExtendBagItemConfig = _buf.ReadInt();
 
             PostInit();
         }
@@ -67,6 +68,11 @@ namespace ET
         /// </summary>
         public readonly long ResetTalentCurrencyValue;
 
+        /// <summary>
+        /// 背包扩容道具id
+        /// </summary>
+        public readonly int ExtendBagItemConfig;
+
         public const int __ID__ = 394046383;
 
         public override int GetTypeId() => __ID__;
@@ -81,6 +87,7 @@ namespace ET
             + "CreateRoleMaxLimit:" + CreateRoleMaxLimit + ","
             + "ResetTalentCurrency:" + ResetTalentCurrency + ","
             + "ResetTalentCurrencyValue:" + ResetTalentCurrencyValue + ","
+            + "ExtendBagItemConfig:" + ExtendBagItemConfig + ","
             + "}";
         }
 

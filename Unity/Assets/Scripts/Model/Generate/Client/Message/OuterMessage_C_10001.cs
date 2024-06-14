@@ -1527,6 +1527,69 @@ namespace ET
     }
 
     [MemoryPackable]
+    [Message(OuterMessage.C2M_ExtendBag)]
+    [ResponseType(nameof(M2C_ExtendBag))]
+    public partial class C2M_ExtendBag : MessageObject, ILocationRequest
+    {
+        public static C2M_ExtendBag Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_ExtendBag), isFromPool) as C2M_ExtendBag;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_ExtendBag)]
+    public partial class M2C_ExtendBag : MessageObject, ILocationResponse
+    {
+        public static M2C_ExtendBag Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_ExtendBag), isFromPool) as M2C_ExtendBag;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        [MemoryPackOrder(3)]
+        public int MaxCapacity { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+            this.MaxCapacity = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
     [Message(OuterMessage.M2C_GetNewItem)]
     public partial class M2C_GetNewItem : MessageObject, ILocationMessage
     {
@@ -2292,27 +2355,29 @@ namespace ET
         public const ushort GameItemInfo = 10045;
         public const ushort C2M_GetAllItems = 10046;
         public const ushort M2C_GetAllItems = 10047;
-        public const ushort M2C_GetNewItem = 10048;
-        public const ushort C2M_UseItem = 10049;
-        public const ushort M2C_UseItem = 10050;
-        public const ushort C2M_AcceptTask = 10051;
-        public const ushort M2C_AcceptTask = 10052;
-        public const ushort GameBuffInfo = 10053;
-        public const ushort C2M_GetAllBuffs = 10054;
-        public const ushort M2C_GetAllBuffs = 10055;
-        public const ushort C2M_Equip = 10056;
-        public const ushort M2C_Equip = 10057;
-        public const ushort GamePropertyInfo = 10058;
-        public const ushort M2C_PropertyRefresh = 10059;
-        public const ushort FightScoreRankEntityInfo = 10060;
-        public const ushort C2Main_GetFightScoreRank = 10061;
-        public const ushort Main2C_GetFightScoreRank = 10062;
-        public const ushort MailInfo = 10063;
-        public const ushort C2M_CheckMails = 10064;
-        public const ushort M2C_CheckMails = 10065;
-        public const ushort C2M_CheckMail = 10066;
-        public const ushort M2C_CheckMail = 10067;
-        public const ushort C2M_ReceiveAttachments = 10068;
-        public const ushort M2C_ReceiveAttachments = 10069;
+        public const ushort C2M_ExtendBag = 10048;
+        public const ushort M2C_ExtendBag = 10049;
+        public const ushort M2C_GetNewItem = 10050;
+        public const ushort C2M_UseItem = 10051;
+        public const ushort M2C_UseItem = 10052;
+        public const ushort C2M_AcceptTask = 10053;
+        public const ushort M2C_AcceptTask = 10054;
+        public const ushort GameBuffInfo = 10055;
+        public const ushort C2M_GetAllBuffs = 10056;
+        public const ushort M2C_GetAllBuffs = 10057;
+        public const ushort C2M_Equip = 10058;
+        public const ushort M2C_Equip = 10059;
+        public const ushort GamePropertyInfo = 10060;
+        public const ushort M2C_PropertyRefresh = 10061;
+        public const ushort FightScoreRankEntityInfo = 10062;
+        public const ushort C2Main_GetFightScoreRank = 10063;
+        public const ushort Main2C_GetFightScoreRank = 10064;
+        public const ushort MailInfo = 10065;
+        public const ushort C2M_CheckMails = 10066;
+        public const ushort M2C_CheckMails = 10067;
+        public const ushort C2M_CheckMail = 10068;
+        public const ushort M2C_CheckMail = 10069;
+        public const ushort C2M_ReceiveAttachments = 10070;
+        public const ushort M2C_ReceiveAttachments = 10071;
     }
 }

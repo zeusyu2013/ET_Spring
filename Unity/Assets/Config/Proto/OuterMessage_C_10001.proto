@@ -332,6 +332,20 @@ message M2C_GetAllItems // ILocationResponse
 	repeated GameItemInfo GameItemInfos = 4;
 }
 
+// ResponseType M2C_ExtendBag
+message C2M_ExtendBag // ILocationRequest
+{
+	int32 RpcId = 1;
+}
+
+message M2C_ExtendBag // ILocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+	int32 MaxCapacity = 4;
+}
+
 message M2C_GetNewItem // ILocationMessage
 {
 	int32 RpcId = 1;
