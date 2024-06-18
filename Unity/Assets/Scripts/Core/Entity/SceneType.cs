@@ -24,6 +24,7 @@ namespace ET
 		Guild = 1 << 16,
 		Chat = 1 << 17,
 		Log = 1 << 18,
+		TeamHall = 1 << 19,
 
 		// 客户端
 		MainClient = 1 << 30,

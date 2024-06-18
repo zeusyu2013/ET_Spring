@@ -166,3 +166,69 @@ message M2C_RerandomEquipmentProperties // ILocationResponse
 	string Message = 3;
 	repeated EquipmentRandomProperty EquipmentRandomProperties = 4;
 }
+
+message TeamInfo
+{
+	int64 TeamId = 1;
+	int64 TeamLeaderId = 2;
+	repeated int64 TeamMemberIds = 3;
+}
+
+// ResponseType T2C_CreateTeam
+message C2T_CreateTeam // IRequest
+{
+	int32 RpcId = 1;
+	int64 UnitId = 2;
+}
+
+message T2C_CreateTeam // IResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+	int64 TeamId = 4;
+}
+
+// ResponseType T2C_JoinTeam
+message C2T_JoinTeam // IRequest
+{
+	int32 RpcId = 1;
+	int64 TeamId = 2;
+	int64 UnitId = 3;
+}
+
+message T2C_JoinTeam // IResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}
+
+// ResponseType T2C_QuitTeam
+message C2T_QuitTeam // IRequest
+{
+	int32 RpcId = 1;
+	int64 TeamId = 2;
+	int64 UnitId = 3;
+}
+
+message T2C_QuitTeam // IResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}
+
+// ResponseType T2C_GetTeams
+message C2T_GetTeams // IRequest
+{
+	int32 RpcId = 1;
+}
+
+message T2C_GetTeams // IResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+	repeated TeamInfo TeamInfos = 4;
+}

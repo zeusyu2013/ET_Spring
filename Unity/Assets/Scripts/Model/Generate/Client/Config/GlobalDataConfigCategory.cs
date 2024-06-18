@@ -61,6 +61,10 @@ namespace ET
         /// 背包扩容道具id
         /// </summary>
         public int ExtendBagItemConfig => _data.ExtendBagItemConfig;
+        /// <summary>
+        /// 小队队员最大数量
+        /// </summary>
+        public int TeamMemberLimit => _data.TeamMemberLimit;
 
 
         partial void PostInit();

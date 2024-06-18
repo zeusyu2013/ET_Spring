@@ -53,5 +53,10 @@ namespace ET
         // Bag
         public const int ERR_ExtendBagItemConfigError = 200301;
         public const int ERR_ItemNotEnough = 200302;
+        
+        // Team
+        public const int ERR_AlreadyHasTeam = 200401;
+        public const int ERR_NotFoundTeam = 200402;
+        public const int ERR_TeamMemberFull = 200403;
     }
 }

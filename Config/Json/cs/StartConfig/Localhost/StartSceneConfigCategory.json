@@ -96,6 +96,14 @@
     "Port": 0
   },
   {
+    "Id": 13,
+    "Process": 1,
+    "Zone": 1,
+    "SceneType": "TeamHall",
+    "Name": "TeamHall",
+    "Port": 0
+  },
+  {
     "Id": 300,
     "Process": 1,
     "Zone": 3,

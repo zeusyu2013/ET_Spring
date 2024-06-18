@@ -24,6 +24,7 @@ namespace ET
             ResetTalentCurrency = _buf.ReadInt();
             ResetTalentCurrencyValue = _buf.ReadLong();
             ExtendBagItemConfig = _buf.ReadInt();
+            TeamMemberLimit = _buf.ReadInt();
 
             PostInit();
         }
@@ -73,6 +74,11 @@ namespace ET
         /// </summary>
         public readonly int ExtendBagItemConfig;
 
+        /// <summary>
+        /// 小队队员最大数量
+        /// </summary>
+        public readonly int TeamMemberLimit;
+
         public const int __ID__ = 394046383;
 
         public override int GetTypeId() => __ID__;
@@ -88,6 +94,7 @@ namespace ET
             + "ResetTalentCurrency:" + ResetTalentCurrency + ","
             + "ResetTalentCurrencyValue:" + ResetTalentCurrencyValue + ","
             + "ExtendBagItemConfig:" + ExtendBagItemConfig + ","
+            + "TeamMemberLimit:" + TeamMemberLimit + ","
             + "}";
         }
 

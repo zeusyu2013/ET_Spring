@@ -771,6 +771,303 @@ namespace ET
         }
     }
 
+    [MemoryPackable]
+    [Message(OuterMessage.TeamInfo)]
+    public partial class TeamInfo : MessageObject
+    {
+        public static TeamInfo Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(TeamInfo), isFromPool) as TeamInfo;
+        }
+
+        [MemoryPackOrder(0)]
+        public long TeamId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long TeamLeaderId { get; set; }
+
+        [MemoryPackOrder(2)]
+        public List<long> TeamMemberIds { get; set; } = new();
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.TeamId = default;
+            this.TeamLeaderId = default;
+            this.TeamMemberIds.Clear();
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.C2T_CreateTeam)]
+    [ResponseType(nameof(T2C_CreateTeam))]
+    public partial class C2T_CreateTeam : MessageObject, IRequest
+    {
+        public static C2T_CreateTeam Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2T_CreateTeam), isFromPool) as C2T_CreateTeam;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long UnitId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.UnitId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.T2C_CreateTeam)]
+    public partial class T2C_CreateTeam : MessageObject, IResponse
+    {
+        public static T2C_CreateTeam Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(T2C_CreateTeam), isFromPool) as T2C_CreateTeam;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        [MemoryPackOrder(3)]
+        public long TeamId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+            this.TeamId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.C2T_JoinTeam)]
+    [ResponseType(nameof(T2C_JoinTeam))]
+    public partial class C2T_JoinTeam : MessageObject, IRequest
+    {
+        public static C2T_JoinTeam Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2T_JoinTeam), isFromPool) as C2T_JoinTeam;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long TeamId { get; set; }
+
+        [MemoryPackOrder(2)]
+        public long UnitId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.TeamId = default;
+            this.UnitId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.T2C_JoinTeam)]
+    public partial class T2C_JoinTeam : MessageObject, IResponse
+    {
+        public static T2C_JoinTeam Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(T2C_JoinTeam), isFromPool) as T2C_JoinTeam;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.C2T_QuitTeam)]
+    [ResponseType(nameof(T2C_QuitTeam))]
+    public partial class C2T_QuitTeam : MessageObject, IRequest
+    {
+        public static C2T_QuitTeam Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2T_QuitTeam), isFromPool) as C2T_QuitTeam;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long TeamId { get; set; }
+
+        [MemoryPackOrder(2)]
+        public long UnitId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.TeamId = default;
+            this.UnitId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.T2C_QuitTeam)]
+    public partial class T2C_QuitTeam : MessageObject, IResponse
+    {
+        public static T2C_QuitTeam Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(T2C_QuitTeam), isFromPool) as T2C_QuitTeam;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.C2T_GetTeams)]
+    [ResponseType(nameof(T2C_GetTeams))]
+    public partial class C2T_GetTeams : MessageObject, IRequest
+    {
+        public static C2T_GetTeams Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2T_GetTeams), isFromPool) as C2T_GetTeams;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.T2C_GetTeams)]
+    public partial class T2C_GetTeams : MessageObject, IResponse
+    {
+        public static T2C_GetTeams Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(T2C_GetTeams), isFromPool) as T2C_GetTeams;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        [MemoryPackOrder(3)]
+        public List<TeamInfo> TeamInfos { get; set; } = new();
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+            this.TeamInfos.Clear();
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
     public static partial class OuterMessage
     {
         public const ushort C2M_GMCommand = 11002;
@@ -798,5 +1095,14 @@ namespace ET
         public const ushort EquipmentRandomProperty = 11024;
         public const ushort C2M_RerandomEquipmentProperties = 11025;
         public const ushort M2C_RerandomEquipmentProperties = 11026;
+        public const ushort TeamInfo = 11027;
+        public const ushort C2T_CreateTeam = 11028;
+        public const ushort T2C_CreateTeam = 11029;
+        public const ushort C2T_JoinTeam = 11030;
+        public const ushort T2C_JoinTeam = 11031;
+        public const ushort C2T_QuitTeam = 11032;
+        public const ushort T2C_QuitTeam = 11033;
+        public const ushort C2T_GetTeams = 11034;
+        public const ushort T2C_GetTeams = 11035;
     }
 }
