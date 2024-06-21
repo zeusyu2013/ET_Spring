@@ -29,6 +29,9 @@
 
             GemConfig newGemConfig = GemConfigCategory.Instance.Get(newGemConfigId);
             numericComponent.AddPropertyPack(newGemConfig.Property);
+            
+            // 刷新战斗力
+            unit.GetComponent<FightScoreComponent>().RefreshFightScore();
 
             await ETTask.CompletedTask;
         }

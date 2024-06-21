@@ -1,0 +1,142 @@
+[
+  {
+    "Id": 710001,
+    "ShopType": 1,
+    "CurrencyType": 1,
+    "CurrencyValue": 5000,
+    "Limit": 5
+  },
+  {
+    "Id": 710002,
+    "ShopType": 1,
+    "CurrencyType": 1,
+    "CurrencyValue": 5000,
+    "Limit": 5
+  },
+  {
+    "Id": 710003,
+    "ShopType": 1,
+    "CurrencyType": 1,
+    "CurrencyValue": 5000,
+    "Limit": 5
+  },
+  {
+    "Id": 710004,
+    "ShopType": 1,
+    "CurrencyType": 1,
+    "CurrencyValue": 5000,
+    "Limit": 5
+  },
+  {
+    "Id": 710005,
+    "ShopType": 1,
+    "CurrencyType": 1,
+    "CurrencyValue": 5000,
+    "Limit": 5
+  },
+  {
+    "Id": 710006,
+    "ShopType": 1,
+    "CurrencyType": 1,
+    "CurrencyValue": 5000,
+    "Limit": 5
+  },
+  {
+    "Id": 710007,
+    "ShopType": 1,
+    "CurrencyType": 1,
+    "CurrencyValue": 5000,
+    "Limit": 5
+  },
+  {
+    "Id": 710008,
+    "ShopType": 1,
+    "CurrencyType": 1,
+    "CurrencyValue": 5000,
+    "Limit": 5
+  },
+  {
+    "Id": 710009,
+    "ShopType": 2,
+    "CurrencyType": 2,
+    "CurrencyValue": 2500,
+    "Limit": 1
+  },
+  {
+    "Id": 710010,
+    "ShopType": 2,
+    "CurrencyType": 2,
+    "CurrencyValue": 2500,
+    "Limit": 1
+  },
+  {
+    "Id": 710011,
+    "ShopType": 2,
+    "CurrencyType": 2,
+    "CurrencyValue": 2500,
+    "Limit": 1
+  },
+  {
+    "Id": 710012,
+    "ShopType": 2,
+    "CurrencyType": 2,
+    "CurrencyValue": 2500,
+    "Limit": 1
+  },
+  {
+    "Id": 710013,
+    "ShopType": 3,
+    "CurrencyType": 3,
+    "CurrencyValue": 80,
+    "Limit": 1
+  },
+  {
+    "Id": 710014,
+    "ShopType": 3,
+    "CurrencyType": 3,
+    "CurrencyValue": 80,
+    "Limit": 1
+  },
+  {
+    "Id": 710015,
+    "ShopType": 3,
+    "CurrencyType": 3,
+    "CurrencyValue": 80,
+    "Limit": 1
+  },
+  {
+    "Id": 710016,
+    "ShopType": 3,
+    "CurrencyType": 3,
+    "CurrencyValue": 80,
+    "Limit": 1
+  },
+  {
+    "Id": 710017,
+    "ShopType": 4,
+    "CurrencyType": 3,
+    "CurrencyValue": 80,
+    "Limit": 1
+  },
+  {
+    "Id": 710018,
+    "ShopType": 4,
+    "CurrencyType": 3,
+    "CurrencyValue": 80,
+    "Limit": 1
+  },
+  {
+    "Id": 710019,
+    "ShopType": 4,
+    "CurrencyType": 3,
+    "CurrencyValue": 80,
+    "Limit": 1
+  },
+  {
+    "Id": 710020,
+    "ShopType": 4,
+    "CurrencyType": 3,
+    "CurrencyValue": 80,
+    "Limit": 1
+  }
+]

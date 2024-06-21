@@ -39,6 +39,9 @@
             {
                 unit.IncLong((GamePropertyType)key, value);
             }
+            
+            // 刷新战斗力
+            unit.GetComponent<FightScoreComponent>().RefreshFightScore();
 
             await ETTask.CompletedTask;
         }

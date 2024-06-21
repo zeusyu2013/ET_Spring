@@ -1068,6 +1068,165 @@ namespace ET
         }
     }
 
+    [MemoryPackable]
+    [Message(OuterMessage.ShopItemInfo)]
+    public partial class ShopItemInfo : MessageObject
+    {
+        public static ShopItemInfo Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(ShopItemInfo), isFromPool) as ShopItemInfo;
+        }
+
+        [MemoryPackOrder(0)]
+        public int ItemConfig { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long ItemAmount { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.ItemConfig = default;
+            this.ItemAmount = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.C2M_ShopItems)]
+    [ResponseType(nameof(M2C_ShopItems))]
+    public partial class C2M_ShopItems : MessageObject, ILocationRequest
+    {
+        public static C2M_ShopItems Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_ShopItems), isFromPool) as C2M_ShopItems;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_ShopItems)]
+    public partial class M2C_ShopItems : MessageObject, ILocationResponse
+    {
+        public static M2C_ShopItems Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_ShopItems), isFromPool) as M2C_ShopItems;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        [MemoryPackOrder(3)]
+        public List<ShopItemInfo> ShopItemInfos { get; set; } = new();
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+            this.ShopItemInfos.Clear();
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.C2M_BuyItem)]
+    [ResponseType(nameof(M2C_BuyItem))]
+    public partial class C2M_BuyItem : MessageObject, ILocationRequest
+    {
+        public static C2M_BuyItem Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_BuyItem), isFromPool) as C2M_BuyItem;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int ItemConfig { get; set; }
+
+        [MemoryPackOrder(2)]
+        public long ItemAmount { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.ItemConfig = default;
+            this.ItemAmount = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_BuyItem)]
+    public partial class M2C_BuyItem : MessageObject, ILocationResponse
+    {
+        public static M2C_BuyItem Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_BuyItem), isFromPool) as M2C_BuyItem;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
     public static partial class OuterMessage
     {
         public const ushort C2M_GMCommand = 11002;
@@ -1104,5 +1263,10 @@ namespace ET
         public const ushort T2C_QuitTeam = 11033;
         public const ushort C2T_GetTeams = 11034;
         public const ushort T2C_GetTeams = 11035;
+        public const ushort ShopItemInfo = 11036;
+        public const ushort C2M_ShopItems = 11037;
+        public const ushort M2C_ShopItems = 11038;
+        public const ushort C2M_BuyItem = 11039;
+        public const ushort M2C_BuyItem = 11040;
     }
 }
