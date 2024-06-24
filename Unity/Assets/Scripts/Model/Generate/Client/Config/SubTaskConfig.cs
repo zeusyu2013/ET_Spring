@@ -18,6 +18,7 @@ namespace ET
         {
             Id = _buf.ReadInt();
             Name = _buf.ReadString();
+            Desc = _buf.ReadString();
             SubTaskType = (SubTaskType)_buf.ReadInt();
 
             PostInit();
@@ -39,6 +40,11 @@ namespace ET
         public readonly string Name;
 
         /// <summary>
+        /// 任务描述
+        /// </summary>
+        public readonly string Desc;
+
+        /// <summary>
         /// 子任务类型
         /// </summary>
         public readonly SubTaskType SubTaskType;
@@ -52,6 +58,7 @@ namespace ET
             return "{ "
             + "Id:" + Id + ","
             + "Name:" + Name + ","
+            + "Desc:" + Desc + ","
             + "SubTaskType:" + SubTaskType + ","
             + "}";
         }
