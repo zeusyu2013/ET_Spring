@@ -104,6 +104,14 @@
     "Port": 0
   },
   {
+    "Id": 14,
+    "Process": 1,
+    "Zone": 1,
+    "SceneType": "TimeEvent",
+    "Name": "TimeEvent",
+    "Port": 0
+  },
+  {
     "Id": 300,
     "Process": 1,
     "Zone": 3,

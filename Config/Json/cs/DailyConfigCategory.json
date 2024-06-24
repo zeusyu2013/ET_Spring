@@ -3,7 +3,7 @@
     "Id": 1,
     "ActivityType": 1,
     "DailyType": 1,
-    "Days": [],
+    "DaysOfWeek": [],
     "StartTime": -10800,
     "EndTime": -10800
   },
@@ -11,7 +11,7 @@
     "Id": 2,
     "ActivityType": 2,
     "DailyType": 1,
-    "Days": [],
+    "DaysOfWeek": [],
     "StartTime": -10800,
     "EndTime": -10800
   },
@@ -19,7 +19,8 @@
     "Id": 3,
     "ActivityType": 3,
     "DailyType": 2,
-    "Days": [],
+    "DayOfWeek": 1,
+    "DaysOfWeek": [],
     "StartTime": -10800,
     "EndTime": -10800
   },
@@ -27,7 +28,7 @@
     "Id": 4,
     "ActivityType": 4,
     "DailyType": 4,
-    "Days": [
+    "DaysOfWeek": [
       1,
       3,
       4,
@@ -35,6 +36,14 @@
       6,
       0
     ],
+    "StartTime": -10800,
+    "EndTime": -10800
+  },
+  {
+    "Id": 5,
+    "ActivityType": 5,
+    "DailyType": 1,
+    "DaysOfWeek": [],
     "StartTime": -10800,
     "EndTime": -10800
   }

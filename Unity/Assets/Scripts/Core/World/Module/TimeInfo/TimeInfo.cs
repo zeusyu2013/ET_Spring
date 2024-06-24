@@ -84,6 +84,18 @@ namespace ET
             return (long)this.dt1970.AddSeconds(seconds).TimeOfDay.TotalSeconds;
         }
 
+        public long PassedSecondsOfToday(long seconds)
+        {
+            DateTime time = this.dt.AddSeconds(seconds);
+
+            return (long)DateTime.Today.AddSeconds(time.TimeOfDay.TotalSeconds).TimeOfDay.TotalSeconds;
+        }
+
+        public int DayOfYear()
+        {
+            return DateTime.UtcNow.DayOfYear;
+        }
+
         public int TotalDays()
         {
             return (int)this.dt.TimeOfDay.TotalDays;

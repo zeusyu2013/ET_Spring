@@ -30,6 +30,10 @@ namespace ET
 
 
         /// <summary>
+        /// 时区
+        /// </summary>
+        public int TimeZone => _data.TimeZone;
+        /// <summary>
         /// 背包初始容量
         /// </summary>
         public int BagCapacity => _data.BagCapacity;
@@ -65,6 +69,10 @@ namespace ET
         /// 小队队员最大数量
         /// </summary>
         public int TeamMemberLimit => _data.TeamMemberLimit;
+        /// <summary>
+        /// 每日刷新时间
+        /// </summary>
+        public long NewDayTime => _data.NewDayTime;
 
 
         partial void PostInit();

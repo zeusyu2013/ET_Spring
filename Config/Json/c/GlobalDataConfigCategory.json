@@ -1,5 +1,6 @@
 [
   {
+    "TimeZone": 8,
     "BagCapacity": 50,
     "BagMaxCapacity": 200,
     "CameraMinDistance": 5,
@@ -8,6 +9,7 @@
     "ResetTalentCurrency": 1,
     "ResetTalentCurrencyValue": 50000,
     "ExtendBagItemConfig": 60006,
-    "TeamMemberLimit": 4
+    "TeamMemberLimit": 4,
+    "NewDayTime": -2209086000
   }
 ]

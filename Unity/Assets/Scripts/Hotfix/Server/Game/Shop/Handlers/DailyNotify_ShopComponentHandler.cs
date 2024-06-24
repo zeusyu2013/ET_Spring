@@ -1,14 +1,14 @@
 ﻿namespace ET.Server
 {
-    [Event(SceneType.Map)]
-    public class NewDay_DailyHandler : AEvent<Scene, NewDay>
+    [MessageHandler(SceneType.Map)]
+    public class DailyNotify_ShopComponentHandler : MessageHandler<Scene, DailyNotify>
     {
-        protected override async ETTask Run(Scene scene, NewDay args)
+        protected override async ETTask Run(Scene scene, DailyNotify message)
         {
             foreach ((long _, Entity entity) in scene.GetComponent<UnitComponent>().Children)
             {
                 Unit unit = entity as Unit;
-                if (unit == null)
+                if (unit == null || unit.IsDisposed)
                 {
                     continue;
                 }

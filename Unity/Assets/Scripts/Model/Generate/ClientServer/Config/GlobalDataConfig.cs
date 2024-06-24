@@ -16,6 +16,7 @@ namespace ET
     {
         public GlobalDataConfig(ByteBuf _buf)
         {
+            TimeZone = _buf.ReadInt();
             BagCapacity = _buf.ReadInt();
             BagMaxCapacity = _buf.ReadInt();
             CameraMinDistance = _buf.ReadFloat();
@@ -25,6 +26,7 @@ namespace ET
             ResetTalentCurrencyValue = _buf.ReadLong();
             ExtendBagItemConfig = _buf.ReadInt();
             TeamMemberLimit = _buf.ReadInt();
+            NewDayTime = _buf.ReadLong();
 
             PostInit();
         }
@@ -33,6 +35,11 @@ namespace ET
         {
             return new GlobalDataConfig(_buf);
         }
+
+        /// <summary>
+        /// 时区
+        /// </summary>
+        public readonly int TimeZone;
 
         /// <summary>
         /// 背包初始容量
@@ -79,6 +86,11 @@ namespace ET
         /// </summary>
         public readonly int TeamMemberLimit;
 
+        /// <summary>
+        /// 每日刷新时间
+        /// </summary>
+        public readonly long NewDayTime;
+
         public const int __ID__ = 394046383;
 
         public override int GetTypeId() => __ID__;
@@ -86,6 +98,7 @@ namespace ET
         public override string ToString()
         {
             return "{ "
+            + "TimeZone:" + TimeZone + ","
             + "BagCapacity:" + BagCapacity + ","
             + "BagMaxCapacity:" + BagMaxCapacity + ","
             + "CameraMinDistance:" + CameraMinDistance + ","
@@ -95,6 +108,7 @@ namespace ET
             + "ResetTalentCurrencyValue:" + ResetTalentCurrencyValue + ","
             + "ExtendBagItemConfig:" + ExtendBagItemConfig + ","
             + "TeamMemberLimit:" + TeamMemberLimit + ","
+            + "NewDayTime:" + NewDayTime + ","
             + "}";
         }
 

@@ -31,5 +31,10 @@ namespace ET
         /// </summary>
         ActivityType_WorldBoss1 = 4,
 
+        /// <summary>
+        /// 随身商店
+        /// </summary>
+        ActivityType_Shop = 5,
+
     }
 }

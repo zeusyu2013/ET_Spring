@@ -294,3 +294,15 @@ message G2M_RequestQuitGuild // IResponse
 	int32 Error = 2;
 	string Message = 3;
 }
+
+message NewDayNotify // IMessage
+{
+	int32 RpcId = 1;
+}
+
+message DailyNotify // IMessage
+{
+	int32 RpcId = 1;
+	int32 DailyConfig = 2;
+	bool OpenOrClose = 3;
+}

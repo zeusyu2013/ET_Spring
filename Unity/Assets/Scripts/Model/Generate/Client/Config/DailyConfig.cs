@@ -19,7 +19,8 @@ namespace ET
             Id = _buf.ReadInt();
             ActivityType = (ActivityType)_buf.ReadInt();
             DailyType = (DailyType)_buf.ReadInt();
-            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);Days = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); Days.Add(_e0);}}
+            if(_buf.ReadBool()){ DayOfWeek = _buf.ReadInt(); } else { DayOfWeek = null; }
+            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);DaysOfWeek = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); DaysOfWeek.Add(_e0);}}
             StartTime = _buf.ReadLong();
             EndTime = _buf.ReadLong();
 
@@ -47,9 +48,14 @@ namespace ET
         public readonly DailyType DailyType;
 
         /// <summary>
+        /// 周几
+        /// </summary>
+        public readonly int? DayOfWeek;
+
+        /// <summary>
         /// 指定周几
         /// </summary>
-        public readonly System.Collections.Generic.List<int> Days;
+        public readonly System.Collections.Generic.List<int> DaysOfWeek;
 
         /// <summary>
         /// 开启时间
@@ -71,7 +77,8 @@ namespace ET
             + "Id:" + Id + ","
             + "ActivityType:" + ActivityType + ","
             + "DailyType:" + DailyType + ","
-            + "Days:" + Luban.StringUtil.CollectionToString(Days) + ","
+            + "DayOfWeek:" + DayOfWeek + ","
+            + "DaysOfWeek:" + Luban.StringUtil.CollectionToString(DaysOfWeek) + ","
             + "StartTime:" + StartTime + ","
             + "EndTime:" + EndTime + ","
             + "}";

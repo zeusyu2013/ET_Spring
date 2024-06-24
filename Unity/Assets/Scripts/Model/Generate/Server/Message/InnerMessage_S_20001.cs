@@ -1338,6 +1338,64 @@ namespace ET
         }
     }
 
+    [MemoryPackable]
+    [Message(InnerMessage.NewDayNotify)]
+    public partial class NewDayNotify : MessageObject, IMessage
+    {
+        public static NewDayNotify Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(NewDayNotify), isFromPool) as NewDayNotify;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(InnerMessage.DailyNotify)]
+    public partial class DailyNotify : MessageObject, IMessage
+    {
+        public static DailyNotify Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(DailyNotify), isFromPool) as DailyNotify;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int DailyConfig { get; set; }
+
+        [MemoryPackOrder(2)]
+        public bool OpenOrClose { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.DailyConfig = default;
+            this.OpenOrClose = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
     public static partial class InnerMessage
     {
         public const ushort ObjectQueryRequest = 20002;
@@ -1379,5 +1437,7 @@ namespace ET
         public const ushort G2M_RequestJoinGuild = 20038;
         public const ushort M2G_RequestQuitGuild = 20039;
         public const ushort G2M_RequestQuitGuild = 20040;
+        public const ushort NewDayNotify = 20041;
+        public const ushort DailyNotify = 20042;
     }
 }
