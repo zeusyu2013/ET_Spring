@@ -101,6 +101,11 @@ namespace ET
             return (int)this.dt.TimeOfDay.TotalDays;
         }
 
+        public int DayOfMonth()
+        {
+            return DateTime.Today.Day;
+        }
+
         public DayOfWeek GetDayOfWeek()
         {
             return this.dt.DayOfWeek;

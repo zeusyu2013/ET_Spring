@@ -58,5 +58,8 @@ namespace ET
         public const int ERR_AlreadyHasTeam = 200401;
         public const int ERR_NotFoundTeam = 200402;
         public const int ERR_TeamMemberFull = 200403;
+        
+        // Daily Sign
+        public const int ERR_DailySignErrorDay = 200501;
     }
 }

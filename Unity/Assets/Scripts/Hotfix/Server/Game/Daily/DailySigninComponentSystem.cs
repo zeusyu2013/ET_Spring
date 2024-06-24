@@ -17,16 +17,22 @@
 
         public static int Signin(this DailySigninComponent self)
         {
-            int nowDays = TimeInfo.Instance.TotalDays();
-            if (nowDays == self.SigninDay)
+            int nowDay = TimeInfo.Instance.DayOfMonth();
+            if (nowDay == self.SigninDay)
             {
                 return ErrorCode.ERR_SigninedToday;
             }
 
-            // 发放签到奖励
-            self.GetParent<Unit>().GetComponent<RewardComponent>().Reward(1);
+            SignConfig config = SignConfigCategory.Instance.Get(nowDay);
+            if (config == null)
+            {
+                return ErrorCode.ERR_DailySignErrorDay;
+            }
 
-            self.SigninDay = nowDays;
+            // 发放签到奖励
+            self.GetParent<Unit>().GetComponent<RewardComponent>().Reward(config.SignReward);
+
+            self.SigninDay = nowDay;
 
             return ErrorCode.ERR_Success;
         }
