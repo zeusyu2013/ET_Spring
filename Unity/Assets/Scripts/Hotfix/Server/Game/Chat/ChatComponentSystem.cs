@@ -24,6 +24,9 @@
             {
                 return;
             }
+            
+            // TODO:字符串过滤，这里处理
+            // content
 
             foreach (StartSceneConfig config in StartSceneConfigCategory.Instance.Maps)
             {

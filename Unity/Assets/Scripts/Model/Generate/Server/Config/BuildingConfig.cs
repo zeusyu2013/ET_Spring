@@ -18,8 +18,8 @@ namespace ET
         {
             Id = _buf.ReadInt();
             Limit = _buf.ReadInt();
-            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);Produce = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); Produce.Add(_e0);}}
-            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);UpgradeConsume = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); UpgradeConsume.Add(_e0);}}
+            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);Produce = new System.Collections.Generic.Dictionary<int, BuildingProduce>(n0 * 3 / 2);for(var i0 = 0 ; i0 < n0 ; i0++) { int _k0;  _k0 = _buf.ReadInt(); BuildingProduce _v0;  _v0 = BuildingProduce.DeserializeBuildingProduce(_buf);     Produce.Add(_k0, _v0);}}
+            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);UpgradeConsume = new System.Collections.Generic.Dictionary<int, BuildingUpgrade>(n0 * 3 / 2);for(var i0 = 0 ; i0 < n0 ; i0++) { int _k0;  _k0 = _buf.ReadInt(); BuildingUpgrade _v0;  _v0 = BuildingUpgrade.DeserializeBuildingUpgrade(_buf);     UpgradeConsume.Add(_k0, _v0);}}
 
             PostInit();
         }
@@ -42,12 +42,12 @@ namespace ET
         /// <summary>
         /// 每秒产出
         /// </summary>
-        public readonly System.Collections.Generic.List<int> Produce;
+        public readonly System.Collections.Generic.Dictionary<int, BuildingProduce> Produce;
 
         /// <summary>
         /// 升级消耗
         /// </summary>
-        public readonly System.Collections.Generic.List<int> UpgradeConsume;
+        public readonly System.Collections.Generic.Dictionary<int, BuildingUpgrade> UpgradeConsume;
 
         public const int __ID__ = -701401290;
 

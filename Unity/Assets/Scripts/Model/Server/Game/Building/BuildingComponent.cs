@@ -6,6 +6,8 @@ namespace ET.Server
     [ComponentOf(typeof(Unit))]
     public class BuildingComponent : Entity, IAwake, IDeserialize, ITransfer
     {
+        public long LastProduceTime;
+        
         public List<EntityRef<Building>> Buildings = new();
     }
 }

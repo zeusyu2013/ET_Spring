@@ -28,7 +28,7 @@ namespace ET.Server
             {
                 return;
             }
-            
+
             List<EntityRef<Building>> buildings = self.Buildings.FindAll(x => ((Building)x).ConfigId == configId);
             if (buildings.Count >= config.Limit)
             {
@@ -45,7 +45,7 @@ namespace ET.Server
             {
                 return;
             }
-            
+
             if (!self.Buildings.Contains(building))
             {
                 return;
@@ -56,19 +56,69 @@ namespace ET.Server
                 return;
             }
 
-            int consume = building.Config.UpgradeConsume[building.Level];
-            if (consume < 1)
+            BuildingUpgrade upgrade = building.Config.UpgradeConsume[building.Level];
+            if (upgrade == null)
             {
                 return;
             }
 
-            bool ret = self.GetParent<Unit>().GetComponent<CurrencyComponent>().Dec(CurrencyType.CurrencyType_Gold, consume);
+            bool ret = self.GetParent<Unit>().GetComponent<CurrencyComponent>().Dec(upgrade.CurrencyType, upgrade.CurrencyValue);
             if (!ret)
             {
                 return;
             }
 
             building.Level += 1;
+        }
+
+        public static void GetBuildingProduce(this BuildingComponent self)
+        {
+            Unit unit = self.GetParent<Unit>();
+            if (unit == null || unit.IsDisposed)
+            {
+                return;
+            }
+
+            long now = TimeInfo.Instance.ServerNow();
+            if (now < self.LastProduceTime)
+            {
+                return;
+            }
+
+            long diff = (now - self.LastProduceTime) / 1000;
+            if (diff < 1)
+            {
+                return;
+            }
+
+            Dictionary<int, long> produces = new();
+            foreach (var buildingRef in self.Buildings)
+            {
+                Building building = buildingRef;
+                if (building == null || building.IsDisposed)
+                {
+                    continue;
+                }
+
+                if (!building.Config.Produce.TryGetValue(building.Level, out BuildingProduce produce))
+                {
+                    continue;
+                }
+
+                if (produces.ContainsKey((int)produce.CurrencyType))
+                {
+                    produces[(int)produce.CurrencyType] += produce.CurrencyValue;
+                }
+                else
+                {
+                    produces.Add((int)produce.CurrencyType, produce.CurrencyValue);
+                }
+            }
+
+            foreach ((int type, long value) in produces)
+            {
+                unit.GetComponent<CurrencyComponent>().Inc((CurrencyType)type, value);
+            }
         }
     }
 }
