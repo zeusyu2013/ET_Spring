@@ -41,7 +41,7 @@
             session.GetComponent<GameRoleComponent>().UnitId = unit.Id;
             
             TDUserAdd userAdd = TDUserAdd.Create();
-            userAdd.AccountId = "123123";
+            userAdd.AccountId = player.Id.ToString();
             userAdd.Properties = "";
             TDHelper.SendUserAddToTDLog(scene, userAdd);
 

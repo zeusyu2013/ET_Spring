@@ -24,7 +24,20 @@
             // 没有此类型，尝试添加
             self.Currencies.TryAdd((int)type, 0);
 
-            self.Currencies[(int)type] += value;
+            long oldValue = self.Currencies[(int)type];
+            
+            self.Currencies[(int)type] = oldValue + value;
+            
+            // 发送变化
+            EventSystem.Instance.Publish(self.Root(), 
+                new CurrencyChanged()
+                {
+                    Unit = self.GetParent<Unit>(),
+                    ChangeType = CurrencyChangeType.Inc,
+                    Type = type,
+                    OldValue = oldValue,
+                    NewValue = self.Currencies[(int)type]
+                });
 
             return true;
         }
@@ -46,8 +59,19 @@
             {
                 return false;
             }
-
+            
             self.Currencies[(int)type] = current - value;
+            
+            // 发送变化
+            EventSystem.Instance.Publish(self.Root(), 
+                new CurrencyChanged()
+                {
+                    Unit = self.GetParent<Unit>(),
+                    ChangeType = CurrencyChangeType.Dec,
+                    Type = type,
+                    OldValue = current,
+                    NewValue = current - value
+                });
 
             return true;
         }

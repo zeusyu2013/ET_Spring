@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using SimpleJSON;
 using ThinkingDataServer.Analytics;
 
 namespace ET.Server
@@ -31,54 +30,26 @@ namespace ET.Server
 
         public static void UserSet(this ThinkingDataComponent self, string accountId, string distinctId, string propertiesJson)
         {
-            self.TDAnalytics.UserSet(accountId, distinctId, ToMap(propertiesJson));
+            Dictionary<string, object> properties = LitJson.JsonMapper.ToObject<Dictionary<string, object>>(propertiesJson);
+            self.TDAnalytics.UserSet(accountId, distinctId, properties);
         }
 
         public static void UserSetOnce(this ThinkingDataComponent self, string accountId, string distinctId, string propertiesJson)
         {
-            self.TDAnalytics.UserSetOnce(accountId, distinctId, ToMap(propertiesJson));
+            Dictionary<string, object> properties = LitJson.JsonMapper.ToObject<Dictionary<string, object>>(propertiesJson);
+            self.TDAnalytics.UserSetOnce(accountId, distinctId, properties);
         }
 
         public static void UserAdd(this ThinkingDataComponent self, string accountId, string distinctId, string propertiesJson)
         {
-            self.TDAnalytics.UserAdd(accountId, distinctId, ToMap(propertiesJson));
+            Dictionary<string, object> properties = LitJson.JsonMapper.ToObject<Dictionary<string, object>>(propertiesJson);
+            self.TDAnalytics.UserAdd(accountId, distinctId, properties);
         }
 
         public static void Track(this ThinkingDataComponent self, string accountId, string distinctId, string eventName, string propertiesJson)
         {
-            self.TDAnalytics.Track(accountId, distinctId, eventName, ToMap(propertiesJson));
-        }
-
-        public static Dictionary<string, object> ToMap(string json)
-        {
-            Dictionary<string, object> properties = new();
-
-            JSONNode node = JSON.Parse(json);
-            foreach ((string key, JSONNode value) in node)
-            {
-                switch (value.Tag)
-                {
-                    case JSONNodeType.Array:
-                        properties.Add(key, value.AsArray);
-                        break;
-                    case JSONNodeType.Object:
-                        properties.Add(key, value.AsObject);
-                        break;
-                    case JSONNodeType.String:
-                        properties.Add(key, value.Value);
-                        break;
-                    case JSONNodeType.Number:
-                        properties.Add(key, value.AsFloat);
-                        break;
-                    case JSONNodeType.Boolean:
-                        properties.Add(key, value.AsBool);
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException();
-                }
-            }
-
-            return properties;
+            Dictionary<string, object> properties = LitJson.JsonMapper.ToObject<Dictionary<string, object>>(propertiesJson);
+            self.TDAnalytics.Track(accountId, distinctId, eventName, properties);
         }
     }
 }

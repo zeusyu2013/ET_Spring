@@ -472,6 +472,50 @@
           <Link>Box2DSharp\Ropes\StretchingModel.cs</Link>
         </Compile>
 
+        <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\LitJson\Extensions.cs">
+          <Link>LitJson\Extensions.cs</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\LitJson\IJsonWrapper.cs">
+          <Link>LitJson\IJsonWrapper.cs</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\LitJson\JsonData.cs">
+          <Link>LitJson\JsonData.cs</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\LitJson\JsonException.cs">
+          <Link>LitJson\JsonException.cs</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\LitJson\JsonMapper.cs">
+          <Link>LitJson\JsonMapper.cs</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\LitJson\JsonMockWrapper.cs">
+          <Link>LitJson\JsonMockWrapper.cs</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\LitJson\JsonReader.cs">
+          <Link>LitJson\JsonReader.cs</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\LitJson\JsonWriter.cs">
+          <Link>LitJson\JsonWriter.cs</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\LitJson\Lexer.cs">
+          <Link>LitJson\Lexer.cs</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\LitJson\Netstandard15Polyfill.cs">
+          <Link>LitJson\Netstandard15Polyfill.cs</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\LitJson\ParserToken.cs">
+          <Link>LitJson\ParserToken.cs</Link>
+        </Compile>
+
         <Compile Include="..\..\Unity\Assets\Scripts\ThirdParty\Luban\BeanBase.cs">
           <Link>Luban\BeanBase.cs</Link>
         </Compile>
@@ -900,6 +944,39 @@
       </Content>
       <Content Include="..\..\Unity\Assets\Scripts\ThirdParty\Box2DSharp\Ropes\StretchingModel.cs.meta">
         <Link>Box2DSharp\Ropes\StretchingModel.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Assets\Scripts\ThirdParty\LitJson\Extensions.cs.meta">
+        <Link>LitJson\Extensions.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Assets\Scripts\ThirdParty\LitJson\IJsonWrapper.cs.meta">
+        <Link>LitJson\IJsonWrapper.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Assets\Scripts\ThirdParty\LitJson\JsonData.cs.meta">
+        <Link>LitJson\JsonData.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Assets\Scripts\ThirdParty\LitJson\JsonException.cs.meta">
+        <Link>LitJson\JsonException.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Assets\Scripts\ThirdParty\LitJson\JsonMapper.cs.meta">
+        <Link>LitJson\JsonMapper.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Assets\Scripts\ThirdParty\LitJson\JsonMockWrapper.cs.meta">
+        <Link>LitJson\JsonMockWrapper.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Assets\Scripts\ThirdParty\LitJson\JsonReader.cs.meta">
+        <Link>LitJson\JsonReader.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Assets\Scripts\ThirdParty\LitJson\JsonWriter.cs.meta">
+        <Link>LitJson\JsonWriter.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Assets\Scripts\ThirdParty\LitJson\Lexer.cs.meta">
+        <Link>LitJson\Lexer.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Assets\Scripts\ThirdParty\LitJson\Netstandard15Polyfill.cs.meta">
+        <Link>LitJson\Netstandard15Polyfill.cs.meta</Link>
+      </Content>
+      <Content Include="..\..\Unity\Assets\Scripts\ThirdParty\LitJson\ParserToken.cs.meta">
+        <Link>LitJson\ParserToken.cs.meta</Link>
       </Content>
       <Content Include="..\..\Unity\Assets\Scripts\ThirdParty\Luban\SimpleJSON\Changelog.txt">
         <Link>Luban\SimpleJSON\Changelog.txt</Link>
