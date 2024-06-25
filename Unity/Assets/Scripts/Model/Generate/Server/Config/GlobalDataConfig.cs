@@ -25,6 +25,7 @@ namespace ET
             ResetTalentCurrency = _buf.ReadInt();
             ResetTalentCurrencyValue = _buf.ReadLong();
             ExtendBagItemConfig = _buf.ReadInt();
+            ExtendBagCapacity = _buf.ReadInt();
             TeamMemberLimit = _buf.ReadInt();
             NewDayTime = _buf.ReadLong();
 
@@ -82,6 +83,11 @@ namespace ET
         public readonly int ExtendBagItemConfig;
 
         /// <summary>
+        /// 背包扩展个数
+        /// </summary>
+        public readonly int ExtendBagCapacity;
+
+        /// <summary>
         /// 小队队员最大数量
         /// </summary>
         public readonly int TeamMemberLimit;
@@ -107,6 +113,7 @@ namespace ET
             + "ResetTalentCurrency:" + ResetTalentCurrency + ","
             + "ResetTalentCurrencyValue:" + ResetTalentCurrencyValue + ","
             + "ExtendBagItemConfig:" + ExtendBagItemConfig + ","
+            + "ExtendBagCapacity:" + ExtendBagCapacity + ","
             + "TeamMemberLimit:" + TeamMemberLimit + ","
             + "NewDayTime:" + NewDayTime + ","
             + "}";

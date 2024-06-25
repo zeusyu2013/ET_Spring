@@ -23,7 +23,14 @@
                 return;
             }
 
-            unit.GetComponent<BagComponent>().MaxCapacity += 5;
+            if (unit.GetComponent<BagComponent>().MaxCapacity >= GlobalDataConfigCategory.Instance.BagMaxCapacity)
+            {
+                response.Error = ErrorCode.ERR_BagCapacityMaxLimit;
+                response.Message = "背包扩容上限";
+                return;
+            }
+
+            unit.GetComponent<BagComponent>().MaxCapacity += GlobalDataConfigCategory.Instance.ExtendBagCapacity;
 
             response.MaxCapacity = unit.GetComponent<BagComponent>().MaxCapacity;
 

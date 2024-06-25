@@ -23,7 +23,7 @@ namespace ET.Server
             }
 
             TDTrack track = TDTrack.Create();
-            track.AccountId = unit.GetComponent<UnitPlayerIdComponent>().PlayerId.ToString();
+            track.AccountId = unit.GetComponent<UnitPlayerIdComponent>().PlayerIdSting;
             track.EventName = "currency_changed";
 
             TDTrackCurrencyChanged currencyChanged = new();

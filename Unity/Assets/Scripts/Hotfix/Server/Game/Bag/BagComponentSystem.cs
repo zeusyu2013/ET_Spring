@@ -50,7 +50,7 @@ namespace ET.Server
             {
                 return false;
             }
-            
+
             GameItem item = self.GetGameItemByConfig(itemId);
             if (item == null)
             {
@@ -59,11 +59,12 @@ namespace ET.Server
                 item.Amount = amount;
                 self.GameItems.Add(item);
 
-                EventSystem.Instance.Publish(self.Root(), new BagOnAdd() { GameItem = item });
+                EventSystem.Instance.Publish(self.Root(),
+                    new BagOnAdd() { Unit = self.GetParent<Unit>(), GameItem = item, OldAmount = 0, NewAmount = amount });
 
                 return true;
             }
-            
+
             if (item.Config.MaxCount == 1)
             {
                 item = self.AddChild<GameItem, int>(itemId);
@@ -71,17 +72,22 @@ namespace ET.Server
                 item.Amount = amount;
                 self.GameItems.Add(item);
 
-                EventSystem.Instance.Publish(self.Root(), new BagOnAdd() { GameItem = item });
+                EventSystem.Instance.Publish(self.Root(),
+                    new BagOnAdd() { Unit = self.GetParent<Unit>(), GameItem = item, OldAmount = 0, NewAmount = 1 });
 
                 return true;
             }
 
-            item.Amount += amount;
+            long oldAmount = item.Amount;
+            item.Amount = oldAmount + amount;
+
+            EventSystem.Instance.Publish(self.Root(),
+                new BagOnAdd() { Unit = self.GetParent<Unit>(), GameItem = item, OldAmount = oldAmount, NewAmount = oldAmount + amount });
 
             return true;
         }
 
-        public static bool RemoveItem(this BagComponent self, int itemId, long itemCount)
+        public static bool RemoveItem(this BagComponent self, int itemId, long itemAmount)
         {
             GameItem item = self.GetGameItemByConfig(itemId);
             if (item == null)
@@ -89,18 +95,22 @@ namespace ET.Server
                 return false;
             }
 
-            if (item.Amount < itemCount)
+            if (item.Amount < itemAmount)
             {
                 return false;
             }
 
-            item.Amount -= itemCount;
+            long oldAmount = item.Amount;
+            item.Amount = oldAmount - itemAmount;
 
             if (item.Amount == 0)
             {
                 self.GameItems.Remove(item);
                 item.Dispose();
             }
+
+            EventSystem.Instance.Publish(self.Root(),
+                new BagOnRemove() { GameItemConfig = itemId, OldAmount = oldAmount, NewAmount = oldAmount - itemAmount });
 
             return true;
         }

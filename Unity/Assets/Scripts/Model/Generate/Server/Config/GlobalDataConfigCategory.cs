@@ -66,6 +66,10 @@ namespace ET
         /// </summary>
         public int ExtendBagItemConfig => _data.ExtendBagItemConfig;
         /// <summary>
+        /// 背包扩展个数
+        /// </summary>
+        public int ExtendBagCapacity => _data.ExtendBagCapacity;
+        /// <summary>
         /// 小队队员最大数量
         /// </summary>
         public int TeamMemberLimit => _data.TeamMemberLimit;

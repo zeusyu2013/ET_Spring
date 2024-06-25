@@ -53,6 +53,7 @@ namespace ET
         // Bag
         public const int ERR_ExtendBagItemConfigError = 200301;
         public const int ERR_ItemNotEnough = 200302;
+        public const int ERR_BagCapacityMaxLimit = 200303;
         
         // Team
         public const int ERR_AlreadyHasTeam = 200401;

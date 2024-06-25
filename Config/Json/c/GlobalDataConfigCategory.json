@@ -9,6 +9,7 @@
     "ResetTalentCurrency": 1,
     "ResetTalentCurrencyValue": 50000,
     "ExtendBagItemConfig": 60006,
+    "ExtendBagCapacity": 5,
     "TeamMemberLimit": 4,
     "NewDayTime": -2209086000
   }
