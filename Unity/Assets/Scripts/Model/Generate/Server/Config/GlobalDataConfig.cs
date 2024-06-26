@@ -27,7 +27,6 @@ namespace ET
             ExtendBagItemConfig = _buf.ReadInt();
             ExtendBagCapacity = _buf.ReadInt();
             TeamMemberLimit = _buf.ReadInt();
-            NewDayTime = _buf.ReadLong();
 
             PostInit();
         }
@@ -92,11 +91,6 @@ namespace ET
         /// </summary>
         public readonly int TeamMemberLimit;
 
-        /// <summary>
-        /// 每日刷新时间
-        /// </summary>
-        public readonly long NewDayTime;
-
         public const int __ID__ = 394046383;
 
         public override int GetTypeId() => __ID__;
@@ -115,7 +109,6 @@ namespace ET
             + "ExtendBagItemConfig:" + ExtendBagItemConfig + ","
             + "ExtendBagCapacity:" + ExtendBagCapacity + ","
             + "TeamMemberLimit:" + TeamMemberLimit + ","
-            + "NewDayTime:" + NewDayTime + ","
             + "}";
         }
 

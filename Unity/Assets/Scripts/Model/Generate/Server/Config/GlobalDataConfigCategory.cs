@@ -73,10 +73,6 @@ namespace ET
         /// 小队队员最大数量
         /// </summary>
         public int TeamMemberLimit => _data.TeamMemberLimit;
-        /// <summary>
-        /// 每日刷新时间
-        /// </summary>
-        public long NewDayTime => _data.NewDayTime;
 
 
         partial void PostInit();

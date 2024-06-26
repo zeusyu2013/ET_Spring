@@ -23,6 +23,7 @@ namespace ET
             AI = _buf.ReadInt();
             Property = _buf.ReadInt();
             {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);Skills = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); Skills.Add(_e0);}}
+            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);Drops = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); Drops.Add(_e0);}}
 
             PostInit();
         }
@@ -77,6 +78,11 @@ namespace ET
         /// </summary>
         public readonly System.Collections.Generic.List<int> Skills;
 
+        /// <summary>
+        /// 死亡掉落包
+        /// </summary>
+        public readonly System.Collections.Generic.List<int> Drops;
+
         public const int __ID__ = -568528378;
 
         public override int GetTypeId() => __ID__;
@@ -91,6 +97,7 @@ namespace ET
             + "AI:" + AI + ","
             + "Property:" + Property + ","
             + "Skills:" + Luban.StringUtil.CollectionToString(Skills) + ","
+            + "Drops:" + Luban.StringUtil.CollectionToString(Drops) + ","
             + "}";
         }
 

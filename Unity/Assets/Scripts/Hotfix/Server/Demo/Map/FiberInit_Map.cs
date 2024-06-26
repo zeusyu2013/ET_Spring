@@ -16,6 +16,8 @@
             root.AddComponent<LocationProxyComponent>();
             root.AddComponent<MessageLocationSenderComponent>();
 
+            root.AddComponent<DropComponent>();
+            
 #if DEBUG
             root.AddComponent<GameMasterComponent>();
 #endif

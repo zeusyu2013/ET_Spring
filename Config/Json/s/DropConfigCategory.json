@@ -1,0 +1,58 @@
+[
+  {
+    "Id": 10001,
+    "DropCount": 1,
+    "DropCertainty": 10000,
+    "DropList": [
+      {
+        "ItemConfig": 60010,
+        "ItemAmount": 1,
+        "ItemRate": 5000
+      },
+      {
+        "ItemConfig": 60011,
+        "ItemAmount": 1,
+        "ItemRate": 5000
+      }
+    ]
+  },
+  {
+    "Id": 10002,
+    "DropCount": 2,
+    "DropCertainty": 10000,
+    "DropList": [
+      {
+        "ItemConfig": 60010,
+        "ItemAmount": 1,
+        "ItemRate": 2500
+      },
+      {
+        "ItemConfig": 60011,
+        "ItemAmount": 1,
+        "ItemRate": 2500
+      },
+      {
+        "ItemConfig": 60012,
+        "ItemAmount": 1,
+        "ItemRate": 5000
+      }
+    ]
+  },
+  {
+    "Id": 10003,
+    "DropCount": 1,
+    "DropCertainty": 400,
+    "DropList": [
+      {
+        "ItemConfig": 60013,
+        "ItemAmount": 1,
+        "ItemRate": 5000
+      },
+      {
+        "ItemConfig": 60014,
+        "ItemAmount": 1,
+        "ItemRate": 5000
+      }
+    ]
+  }
+]
