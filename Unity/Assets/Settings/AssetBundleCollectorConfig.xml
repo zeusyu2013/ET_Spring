@@ -1,14 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<root Version="2.4">
-  <Common AutoAddressable="False" LocationToLower="False" IncludeAssetGUID="False" UniqueBundleName="False" ShowPackageView="True" ShowEditorAlias="False" />
-  <Package PackageName="DefaultPackage" PackageDesc="">
-    <Group GroupActiveRule="EnableGroup" GroupName="Default Group" GroupDesc="" AssetTags="">
-      <Collector CollectPath="Assets/Bundles/AotDlls" CollectGUID="51f33a3e2065f5642bee2f96c2433544" CollectType="MainAssetCollector" AddressRule="AddressByFileName" PackRule="PackDirectory" FilterRule="CollectAll" UserData="" AssetTags="" />
+<root Version="v2.1">
+  <Common ShowPackageView="True" ShowEditorAlias="True" UniqueBundleName="True" />
+  <Package PackageName="DefaultPackage" PackageDesc="" AutoAddressable="False" LocationToLower="False" IncludeAssetGUID="False" IgnoreRuleName="NormalIgnoreRule">
+    <Group GroupActiveRule="EnableGroup" GroupName="Code" GroupDesc="代码" AssetTags="Code">
       <Collector CollectPath="Assets/Bundles/Code" CollectGUID="55d9010d6a87934468703901aa518c85" CollectType="MainAssetCollector" AddressRule="AddressByFileName" PackRule="PackDirectory" FilterRule="CollectAll" UserData="" AssetTags="" />
+    </Group>
+    <Group GroupActiveRule="EnableGroup" GroupName="Animations" GroupDesc="动画" AssetTags="Animations">
+      <Collector CollectPath="Assets/Bundles/Animations" CollectGUID="2a19523d42f996048bca769ec1778544" CollectType="MainAssetCollector" AddressRule="AddressByFileName" PackRule="PackDirectory" FilterRule="CollectAll" UserData="" AssetTags="" />
+    </Group>
+    <Group GroupActiveRule="EnableGroup" GroupName="AotDlls" GroupDesc="元数据" AssetTags="AotDlls">
+      <Collector CollectPath="Assets/Bundles/AotDlls" CollectGUID="51f33a3e2065f5642bee2f96c2433544" CollectType="MainAssetCollector" AddressRule="AddressByFileName" PackRule="PackDirectory" FilterRule="CollectAll" UserData="" AssetTags="" />
+    </Group>
+    <Group GroupActiveRule="EnableGroup" GroupName="Config" GroupDesc="配置文件" AssetTags="Config">
       <Collector CollectPath="Assets/Bundles/Config" CollectGUID="ff3acf49577de0f44b9e1e1afc6f131e" CollectType="MainAssetCollector" AddressRule="AddressByFileName" PackRule="PackDirectory" FilterRule="CollectAll" UserData="" AssetTags="" />
-      <Collector CollectPath="Assets/Bundles/UI" CollectGUID="3a57d524d1e0d7543828b2ac7273f608" CollectType="MainAssetCollector" AddressRule="AddressByFileName" PackRule="PackSeparately" FilterRule="CollectPrefab" UserData="" AssetTags="" />
-      <Collector CollectPath="Assets/Bundles/Unit" CollectGUID="c3561f86a9d0b324680975876c94ca05" CollectType="MainAssetCollector" AddressRule="AddressByFileName" PackRule="PackSeparately" FilterRule="CollectPrefab" UserData="" AssetTags="" />
+    </Group>
+    <Group GroupActiveRule="EnableGroup" GroupName="FariyGUI" GroupDesc="界面" AssetTags="FariyGUI">
+      <Collector CollectPath="Assets/Bundles/FairyGUI" CollectGUID="2c90de83dde9d56429f97dcb0fdf8323" CollectType="MainAssetCollector" AddressRule="AddressByFileName" PackRule="PackDirectory" FilterRule="CollectAll" UserData="" AssetTags="" />
+    </Group>
+    <Group GroupActiveRule="EnableGroup" GroupName="Scenes" GroupDesc="场景" AssetTags="Scenes">
       <Collector CollectPath="Assets/Bundles/Scenes" CollectGUID="406b13cb70603ef449d91f5572708db2" CollectType="MainAssetCollector" AddressRule="AddressByFileName" PackRule="PackDirectory" FilterRule="CollectScene" UserData="" AssetTags="" />
+    </Group>
+    <Group GroupActiveRule="EnableGroup" GroupName="Unit" GroupDesc="角色" AssetTags="Unit">
+      <Collector CollectPath="Assets/Bundles/Unit" CollectGUID="c3561f86a9d0b324680975876c94ca05" CollectType="MainAssetCollector" AddressRule="AddressByFileName" PackRule="PackDirectory" FilterRule="CollectPrefab" UserData="" AssetTags="" />
     </Group>
   </Package>
 </root>

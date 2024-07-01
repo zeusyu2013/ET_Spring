@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="803,406">
+  <displayList>
+    <image id="n0_q8zw" name="n0" src="q8zwf" fileName="Res/Frame/frame_linetextframe_03.png" xy="0,0"/>
+  </displayList>
+  <transition name="t0" autoPlay="true" autoPlayRepeat="0" frameRate="30">
+    <item time="0" type="Alpha" target="n0_q8zw" tween="true" startValue="1" endValue="0.8" duration="7" repeat="3" yoyo="true"/>
+    <item time="7" type="Alpha" target="n0_q8zw" value="0.8"/>
+  </transition>
+</component>

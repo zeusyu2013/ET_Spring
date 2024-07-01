@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="130,138">
+  <displayList>
+    <image id="n0_q8zw" name="n0" src="q8zwi" fileName="Res/Frame/frame_itemframe_01_n_blue.png" xy="0,0"/>
+    <loader id="n2_q8zw" name="n2" xy="16,20" size="98,98"/>
+  </displayList>
+</component>
