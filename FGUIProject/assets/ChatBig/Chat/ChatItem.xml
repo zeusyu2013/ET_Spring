@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="480,43">
+  <displayList>
+    <graph id="n1_mtde" name="n1" xy="0,0" size="480,43" alpha="0.6" type="rect" fillColor="#ff000000">
+      <relation target="n0_b64z" sidePair="height-height"/>
+    </graph>
+    <richtext id="n0_b64z" name="Text" xy="2,6" size="475,29" fontSize="20" color="#ffffff" ubb="true" autoSize="none" text=""/>
+  </displayList>
+  <relation target="n0_b64z" sidePair="height-height"/>
+</component>

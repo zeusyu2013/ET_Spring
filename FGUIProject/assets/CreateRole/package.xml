@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="3vj0qwq4">
+  <resources>
+    <component id="9vcm0" name="UICreateRole.xml" path="/Create/" exported="true"/>
+    <component id="9vcm1" name="CreateCanvas.xml" path="/Create/"/>
+    <image id="gza9d" name="8.PNG" path="/Res/" exported="true"/>
+    <image id="gza9e" name="9.PNG" path="/Res/" exported="true"/>
+    <image id="gza9f" name="10.PNG" path="/Res/" exported="true"/>
+    <image id="gza9g" name="1.PNG" path="/Res/" exported="true"/>
+    <image id="gza9h" name="2.PNG" path="/Res/" exported="true"/>
+    <image id="gza9i" name="3.PNG" path="/Res/" exported="true"/>
+    <image id="gza9j" name="4.PNG" path="/Res/" exported="true"/>
+    <image id="gza9k" name="5.PNG" path="/Res/" exported="true"/>
+    <image id="gza9l" name="6.PNG" path="/Res/" exported="true"/>
+    <image id="gza9m" name="7.PNG" path="/Res/" exported="true"/>
+    <component id="gza9o" name="RoleHeadItem.xml" path="/Create/"/>
+    <component id="jf9rp" name="UIChooseRole.xml" path="/ChooseRole/" exported="true"/>
+    <component id="jf9rq" name="Canvas.xml" path="/ChooseRole/"/>
+  </resources>
+  <publish name="" genCode="true"/>
+</packageDescription>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <packageDescription id="rxzaofzu">
   <resources>
-    <component id="mdp90" name="UIMain.xml" path="/" exported="true"/>
-    <component id="mdp91" name="MainCanvas.xml" path="/"/>
+    <component id="mdp90" name="UIMain.xml" path="/Main/" exported="true"/>
+    <component id="mdp91" name="MainCanvas.xml" path="/Main/"/>
+    <component id="f7kj2" name="Button.xml" path="/Component/" exported="true"/>
   </resources>
   <publish name="" genCode="true"/>
 </packageDescription>

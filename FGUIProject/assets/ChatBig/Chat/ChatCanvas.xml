@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1280,720" pivot="1,0" opaque="false">
+  <displayList>
+    <graph id="n0_mtde" name="n0" xy="0,0" size="640,720" alpha="0.5" type="rect" lineSize="0" fillColor="#ff000000"/>
+    <list id="n1_mtde" name="List" xy="154,5" size="480,630" overflow="scroll" lineGap="2" defaultItem="ui://4auik987b64z2" autoClearItems="true">
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <graph id="n2_h9t1" name="n2" xy="153,652" size="329,44" type="rect" lineSize="0"/>
+    <text id="n4_h9t1" name="InputText" xy="158,657" size="318,35" fontSize="20" vAlign="middle" ubb="true" autoSize="none" singleLine="true" text="" input="true"/>
+    <component id="n3_h9t1" name="SendBtn" src="hwto0" fileName="Component/Button/CommonButton.xml" pkg="6qczg918" xy="496,654" size="134,48">
+      <Button title="发送" titleColor="#ffffff" titleFontSize="20"/>
+      <property target="down" propertyId="1" value="ui://6qczg918hwto3"/>
+      <property target="up" propertyId="1" value="ui://6qczg918hwto4"/>
+    </component>
+  </displayList>
+</component>

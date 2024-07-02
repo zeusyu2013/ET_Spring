@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="1280,720" pivot="1,0" opaque="false">
+<component size="1280,720" opaque="false">
   <displayList>
     <graph id="n0_nnx5" name="n0" xy="0,0" size="1280,720" alpha="0.6" type="rect" lineSize="0" fillColor="#ff000000"/>
     <graph id="n2_itrp" name="n2" xy="281,96" size="749,483" type="rect" fillColor="#ff999999"/>
@@ -12,7 +12,7 @@
       <item/>
       <item/>
     </list>
-    <component id="n4_ra2b" name="CloseBtn" src="hwto0" fileName="Button/CommonButton.xml" pkg="6qczg918" xy="1043,52" size="120,36">
+    <component id="n4_ra2b" name="CloseBtn" src="hwto0" fileName="Component/Button/CommonButton.xml" pkg="6qczg918" xy="1043,52" size="120,36">
       <property target="down" propertyId="1" value="ui://6qczg918hwto3"/>
       <property target="up" propertyId="1" value="ui://6qczg918hwto4"/>
     </component>

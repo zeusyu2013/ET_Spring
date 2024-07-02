@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="4auik987">
+  <resources>
+    <component id="b64z0" name="UIChatBig.xml" path="/Chat/" exported="true"/>
+    <component id="b64z1" name="ChatCanvas.xml" path="/Chat/"/>
+    <component id="b64z2" name="ChatItem.xml" path="/Chat/"/>
+  </resources>
+  <publish name="" genCode="true"/>
+</packageDescription>

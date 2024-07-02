@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="4n9atamm">
+  <resources>
+    <component id="mtde0" name="UIChatMini.xml" path="/Chat/" exported="true"/>
+    <component id="mtde1" name="MiniCanvas.xml" path="/Chat/"/>
+    <component id="mtde2" name="ChatItem.xml" path="/Chat/"/>
+    <component id="mtde3" name="ChatCom.xml" path="/Chat/"/>
+  </resources>
+  <publish name="" genCode="true"/>
+</packageDescription>

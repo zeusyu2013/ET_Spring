@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="1280,720" pivot="1,0" opaque="false">
+<component size="1280,720" opaque="false">
   <displayList>
-    <component id="n0_nnx5" name="Canvas" src="nnx53" fileName="ServerList/ServeListCanvas.xml" xy="0,0"/>
+    <component id="n0_nnx5" name="Canvas" src="nnx53" fileName="ServerList/ServeListCanvas.xml" xy="0,0">
+      <relation target="" sidePair="width-width,height-height"/>
+    </component>
   </displayList>
 </component>

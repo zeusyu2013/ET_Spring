@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1280,720" opaque="false">
+  <displayList>
+    <list id="n0_jf9r" name="List" xy="117,49" size="206,589" layout="flow_hz" overflow="scroll" colGap="4" defaultItem="ui://3vj0qwq4gza9o" autoClearItems="true">
+      <relation target="" sidePair="center-center,top-top"/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <component id="n1_jf9r" name="EnterBtn" src="hwto0" fileName="Component/Button/CommonButton.xml" pkg="6qczg918" xy="1099,626" size="133,51">
+      <Button title="进入游戏" titleFontSize="20"/>
+      <property target="down" propertyId="1" value="ui://6qczg918hwto4"/>
+      <property target="up" propertyId="1" value="ui://6qczg918hwto3"/>
+    </component>
+    <component id="n2_jf9r" name="DeleteBtn" src="hwto0" fileName="Component/Button/CommonButton.xml" pkg="6qczg918" xy="738,626" size="133,51">
+      <Button title="删除角色" titleFontSize="20"/>
+      <property target="down" propertyId="1" value="ui://6qczg918hwto4"/>
+      <property target="up" propertyId="1" value="ui://6qczg918hwto3"/>
+    </component>
+    <text id="n3_jf9r" name="n3" xy="926,159" size="94,29" fontSize="20" color="#ffffff" autoSize="none" text="种族："/>
+    <text id="n4_jf9r" name="RaceText" xy="1032,159" size="136,29" fontSize="20" color="#ffffff" autoSize="none" text="人族"/>
+    <text id="n5_jf9r" name="n5" xy="926,114" size="94,29" fontSize="20" color="#ffffff" autoSize="none" text="职业："/>
+    <text id="n6_jf9r" name="CharacterText" xy="1032,114" size="136,29" fontSize="20" color="#ffffff" autoSize="none" text="人族"/>
+    <loader id="n7_jf9r" name="IconLoader" xy="425,104" size="453,493"/>
+    <component id="n8_jf9r" name="CreateBtn" src="hwto0" fileName="Component/Button/CommonButton.xml" pkg="6qczg918" xy="919,626" size="133,51">
+      <Button title="创建角色" titleFontSize="20"/>
+      <property target="down" propertyId="1" value="ui://6qczg918hwto4"/>
+      <property target="up" propertyId="1" value="ui://6qczg918hwto3"/>
+    </component>
+  </displayList>
+</component>

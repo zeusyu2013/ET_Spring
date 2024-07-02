@@ -112,14 +112,6 @@ local function CreateEventClass(writer, classes, classInfo, exportCodePath)
     writer:writeln('logicComponent.OnHide();')
     writer:endBlock()
 
-    --[[
-    writer:writeln()
-    writer:writeln('public override void OnRemove(UIComponent uiComponent, UI ui)')
-    writer:startBlock()
-    writer:writeln('var logicComponent = ui.GetComponent<%sLogicComponent>();', classInfo.className)
-    writer:writeln('logicComponent.OnHide();')
-    writer:endBlock()
-    ]]
     writer:endBlock()
     writer:endBlock()
     writer:save(fullPath)
@@ -213,7 +205,7 @@ end
 local function genHotfixCode(handler)
     local settings = handler.project:GetSettings("Publish").codeGeneration
     local codePkgName = handler:ToFilename(handler.pkg.name)
-    local exportCodePath = handler.exportCodePath .. '/HotfixView/Client/Logic/UI/' .. codePkgName 
+    local exportCodePath = handler.exportCodePath .. '/HotfixView/Client/Game/UI/' .. codePkgName 
 
     local classes = handler:CollectClasses(settings.ignoreNoname, settings.ignoreNoname, nil)
     handler:SetupCodeFolder(exportCodePath .. "/GeneratedCode", "ts")

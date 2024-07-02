@@ -4,6 +4,7 @@
     <component id="m1et0" name="UIBag.xml" path="/" exported="true"/>
     <component id="m1et1" name="BagCanvas.xml" path="/Bag/"/>
     <component id="qjfe2" name="ListCom.xml" path="/Bag/"/>
+    <component id="f7kj3" name="TabButton.xml" path="/Component/" exported="true"/>
   </resources>
   <publish name=""/>
 </packageDescription>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1280,720" pivot="1,0" opaque="false">
+  <displayList>
+    <text id="n0_9vcm" name="NameText" xy="481,580" size="310,29" fontSize="20" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="" input="true" prompt="请输入名字"/>
+    <component id="n1_9vcm" name="ConfimBtn" src="hwto0" fileName="Component/Button/CommonButton.xml" pkg="6qczg918" xy="567,629" size="133,51">
+      <Button title="确定" titleFontSize="20"/>
+      <property target="down" propertyId="1" value="ui://6qczg918hwto4"/>
+      <property target="up" propertyId="1" value="ui://6qczg918hwto3"/>
+    </component>
+    <list id="n2_dbrq" name="List" xy="60,65" size="206,589" layout="flow_hz" overflow="scroll" colGap="4" defaultItem="ui://3vj0qwq4gza9o" autoClearItems="true">
+      <relation target="" sidePair="center-center,top-top"/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <loader id="n3_dbrq" name="ModelLoader" xy="422,134" size="418,433"/>
+    <text id="n4_fa1d" name="n4" xy="881,219" size="94,29" fontSize="20" color="#ffffff" autoSize="none" text="种族："/>
+    <text id="n5_fa1d" name="RaceText" xy="987,219" size="136,29" fontSize="20" color="#ffffff" autoSize="none" text="人族"/>
+    <text id="n6_fa1d" name="n6" xy="881,174" size="94,29" fontSize="20" color="#ffffff" autoSize="none" text="职业："/>
+    <text id="n7_fa1d" name="CharacterText" xy="987,174" size="136,29" fontSize="20" color="#ffffff" autoSize="none" text="人族"/>
+  </displayList>
+</component>

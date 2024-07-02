@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="110,110" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <component id="n3_cyvr" name="IconCom" src="cyvr9" fileName="Component/Item/Component/ItemIcon.xml" xy="0,0" size="110,110"/>
+    <loader id="n5_cyvr" name="SelectLoader" xy="-5,-5" size="110,110" url="ui://6qczg918102j7a"/>
+    <text id="n4_cyvr" name="NumText" xy="29,80" size="53,29" fontSize="20" color="#ffffff" align="center" vAlign="middle" autoSize="none" text=""/>
+  </displayList>
+  <Button/>
+</component>

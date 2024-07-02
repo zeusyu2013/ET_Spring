@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="1280,720" pivot="1,0" opaque="false">
+<component size="1280,720" opaque="false">
+  <controller name="TabCtrl" pages="0,,1,,2,,3," selected="0"/>
   <displayList>
-    <component id="n0_qjfe" name="List" src="qjfe2" fileName="Bag/ListCom.xml" xy="255,100"/>
+    <graph id="n2_f7kj" name="n2" xy="0,0" size="1280,720" alpha="0.4" type="rect" lineSize="0" fillColor="#ff000000">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <component id="n0_qjfe" name="List" src="qjfe2" fileName="Bag/ListCom.xml" xy="553,188" size="688,473"/>
+    <component id="n1_f7kj" name="CloseBtn" src="hwto0" fileName="Component/Button/CommonButton.xml" pkg="6qczg918" xy="1113,30" size="135,43">
+      <Button title="关闭" titleFontSize="20"/>
+      <property target="down" propertyId="1" value="ui://6qczg918hwto3"/>
+      <property target="up" propertyId="1" value="ui://6qczg918hwto4"/>
+    </component>
+    <component id="n3_f7kj" name="Tab1" src="f7kj3" fileName="Component/TabButton.xml" xy="556,123" size="167,50">
+      <Button checked="true" title="ALL" titleFontSize="20" controller="TabCtrl" page="0"/>
+    </component>
+    <component id="n4_f7kj" name="Tab2" src="f7kj3" fileName="Component/TabButton.xml" xy="740,125" size="167,50">
+      <Button controller="TabCtrl" page="1"/>
+      <property target="n4" propertyId="1" value="ui://6qczg918f7kjhr"/>
+    </component>
+    <component id="n5_f7kj" name="Tab3" src="f7kj3" fileName="Component/TabButton.xml" xy="926,123" size="167,50">
+      <Button controller="TabCtrl" page="2"/>
+      <property target="n4" propertyId="1" value="ui://6qczg918f7kjg2"/>
+    </component>
+    <component id="n6_f7kj" name="Tab4" src="f7kj3" fileName="Component/TabButton.xml" xy="1081,123" size="167,50">
+      <Button controller="TabCtrl" page="3"/>
+      <property target="n4" propertyId="1" value="ui://6qczg918f7kjmk"/>
+    </component>
   </displayList>
 </component>

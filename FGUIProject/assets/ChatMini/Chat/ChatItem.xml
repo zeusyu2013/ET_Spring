@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="400,32">
+  <displayList>
+    <richtext id="n1_mtde" name="Text" xy="1,1" size="397,29" fontSize="20" color="#ffffff" ubb="true" autoSize="none" text=""/>
+  </displayList>
+</component>

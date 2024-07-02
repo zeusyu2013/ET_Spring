@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1280,720" pivot="1,0" opaque="false">
+  <displayList>
+    <component id="n0_mtde" name="Chat" src="mtde3" fileName="Chat/ChatCom.xml" xy="390,599" size="479,120"/>
+    <list id="n2_mtde" name="n2" xy="393,601" size="472,115" overflow="scroll" defaultItem="ui://4n9atammmtde2">
+      <item/>
+      <item/>
+    </list>
+  </displayList>
+</component>

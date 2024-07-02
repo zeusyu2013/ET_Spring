@@ -37,7 +37,7 @@ end
 
 -- 创建界面名字类
 local function CreatePanelNameClass(handler, writer, classes)
-  local fullPath = handler.exportCodePath .. '/ModelView/Client/Logic/UI/UIName.cs'
+  local fullPath = handler.exportCodePath .. '/ModelView/Client/Game/UI/UIName.cs'
   os.remove(fullPath)
   writer:reset()
   writer:writeln('namespace ET.Client')
@@ -64,7 +64,7 @@ end
 
 -- 创建包名类
 local function CreatePackageNameClass(handler, writer, classes)
-  local fullPath = handler.exportCodePath .. '/ModelView/Client/Logic/UI/UIPackageName.cs'
+  local fullPath = handler.exportCodePath .. '/ModelView/Client/Game/UI/UIPackageName.cs'
   os.remove(fullPath)
   writer:reset()
   writer:writeln('namespace ET.Client')
@@ -108,7 +108,7 @@ end
 
 -- 创建类
 local function CreateComponentClass(handler, writer, classes, classInfo, exportCodePath, getMemberByName)
-  -- 只有组件结尾是Panel的才创建
+  -- 只有组件名字以UI开头的才创建
   local startIndex, endIndex = string.find(classInfo.className, "UI")
   if (startIndex == nil or startIndex ~= 1) then
     return
@@ -144,7 +144,7 @@ local function genModelCode(handler)
  
     local settings = handler.project:GetSettings("Publish").codeGeneration
     local codePkgName = handler:ToFilename(handler.pkg.name)
-    local exportCodePath = handler.exportCodePath .. '/ModelView/Client/Logic/UI/' .. codePkgName
+    local exportCodePath = handler.exportCodePath .. '/ModelView/Client/Game/UI/' .. codePkgName
  
     local classes = handler:CollectClasses(settings.ignoreNoname, settings.ignoreNoname, nil)
     handler:SetupCodeFolder(exportCodePath  .. "/GeneratedCode", "ts")

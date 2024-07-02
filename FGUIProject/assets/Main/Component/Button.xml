@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="110,105" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <image id="n6_f7kj" name="n6" src="f7kj7s" fileName="Res/Button/btn_sqeure_01.png" pkg="6qczg918" xy="0,0" size="110,105"/>
+    <text id="n3_hwto" name="title" xy="0,45" size="110,42" fontSize="18" color="#ffffff" align="center" vAlign="middle" autoSize="none" singleLine="true" text="Shop">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <loader id="n7_f7kj" name="n7" xy="24,-11" size="60,60" url="ui://6qczg918f7kjdc" fill="scaleFree"/>
+  </displayList>
+  <Button/>
+  <customProperty target="n7" propertyId="1"/>
+</component>

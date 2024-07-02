@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="479,120">
+  <displayList>
+    <graph id="n0_mtde" name="n0" xy="0,0" size="479,120" alpha="0.6" type="rect" lineSize="0" fillColor="#ff000000"/>
+    <list id="n2_mtde" name="List" xy="1,1" size="476,119" overflow="scroll"/>
+  </displayList>
+</component>
