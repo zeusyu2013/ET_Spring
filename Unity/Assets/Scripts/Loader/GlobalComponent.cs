@@ -11,6 +11,7 @@ namespace ET
             self.Global = GameObject.Find("/Global").transform;
             self.Unit = GameObject.Find("/Global/Unit").transform;
             //self.UI = GameObject.Find("/Global/UI").transform;
+            self.Pool = GameObject.Find("/Global/Pool").transform;
             self.GlobalConfig = Resources.Load<GlobalConfig>("GlobalConfig");
         }
     }
@@ -21,6 +22,7 @@ namespace ET
         public Transform Global;
         public Transform Unit { get; set; }
         public Transform UI;
+        public Transform Pool { get; set; }
 
         public GlobalConfig GlobalConfig { get; set; }
     }

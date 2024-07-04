@@ -159,7 +159,7 @@ end
 
 -- 创建组件类的system脚本
 local function CreateComponentSystemClass(handler, writer, classes, classInfo, exportCodePath, getMemberByName)
-    -- 只有组件结尾是Panel的才创建
+    -- 只有组件前面是UI的才创建
     local startIndex, endIndex = string.find(classInfo.className, "UI")
     if (startIndex == nil or startIndex ~= 1) then
         return

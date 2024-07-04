@@ -51,10 +51,13 @@ local function CreatePanelNameClass(handler, writer, classes)
     local packageItems = tempPackage.items
     for j = 0, packageItems.Count - 1, 1 do
       local packageItem = packageItems[j]
-      local startIndex, endIndex = string.find(packageItem.name, "UI")
-      if (startIndex ~= nil and startIndex == 1) then
-        writer:writeln('public const string %s = "%s";', packageItem.name, packageItem.name)
+      if packageItem.type ~= "folder" then
+         local startIndex, endIndex = string.find(packageItem.name, "UI")
+         if (startIndex ~= nil and startIndex == 1) then
+            writer:writeln('public const string %s = "%s";', packageItem.name, packageItem.name)
+         end
       end
+
     end
   end
   writer:endBlock()
