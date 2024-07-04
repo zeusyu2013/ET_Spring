@@ -35,6 +35,8 @@ namespace ET
 
         public StartSceneConfig TimeEvent;
 
+        public StartSceneConfig RequestHall;
+
         public List<StartSceneConfig> GetByProcess(int process)
         {
             return this.ProcessScenes[process];
@@ -95,6 +97,9 @@ namespace ET
                         break;
                     case SceneType.TimeEvent:
                         this.TimeEvent = startSceneConfig;
+                        break;
+                    case SceneType.RequestHall:
+                        this.RequestHall = startSceneConfig;
                         break;
                 }
             }

@@ -306,3 +306,41 @@ message DailyNotify // IMessage
 	int32 DailyConfig = 2;
 	bool OpenOrClose = 3;
 }
+
+message GameRequestInfo
+{
+	int64 UnitId = 1;
+	int64 SenderUnitId = 2;
+	int32 RequestType = 3;
+}
+
+// ResponseType Request2M_AddRequest
+message M2Request_AddRequest // IRequest
+{
+	int32 RpcId = 1;
+	int64 UnitId = 2;
+	int64 SenderUnitId = 3;
+	int32 RequestType = 4;
+}
+
+message Request2M_AddRequest // IResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}
+
+// ResponseType Request2M_GetRequests
+message M2Request_GetRequests // IRequest
+{
+	int32 RpcId = 1;
+	int64 UnitId = 2;
+}
+
+message Request2M_GetRequests // IResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+	repeated GameRequestInfo GameRequestInfos = 4;
+}

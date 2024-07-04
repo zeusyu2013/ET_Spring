@@ -1396,6 +1396,177 @@ namespace ET
         }
     }
 
+    [MemoryPackable]
+    [Message(InnerMessage.GameRequestInfo)]
+    public partial class GameRequestInfo : MessageObject
+    {
+        public static GameRequestInfo Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(GameRequestInfo), isFromPool) as GameRequestInfo;
+        }
+
+        [MemoryPackOrder(0)]
+        public long UnitId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long SenderUnitId { get; set; }
+
+        [MemoryPackOrder(2)]
+        public int RequestType { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.UnitId = default;
+            this.SenderUnitId = default;
+            this.RequestType = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(InnerMessage.M2Request_AddRequest)]
+    [ResponseType(nameof(Request2M_AddRequest))]
+    public partial class M2Request_AddRequest : MessageObject, IRequest
+    {
+        public static M2Request_AddRequest Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2Request_AddRequest), isFromPool) as M2Request_AddRequest;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long UnitId { get; set; }
+
+        [MemoryPackOrder(2)]
+        public long SenderUnitId { get; set; }
+
+        [MemoryPackOrder(3)]
+        public int RequestType { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.UnitId = default;
+            this.SenderUnitId = default;
+            this.RequestType = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(InnerMessage.Request2M_AddRequest)]
+    public partial class Request2M_AddRequest : MessageObject, IResponse
+    {
+        public static Request2M_AddRequest Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(Request2M_AddRequest), isFromPool) as Request2M_AddRequest;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(InnerMessage.M2Request_GetRequests)]
+    [ResponseType(nameof(Request2M_GetRequests))]
+    public partial class M2Request_GetRequests : MessageObject, IRequest
+    {
+        public static M2Request_GetRequests Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2Request_GetRequests), isFromPool) as M2Request_GetRequests;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long UnitId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.UnitId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(InnerMessage.Request2M_GetRequests)]
+    public partial class Request2M_GetRequests : MessageObject, IResponse
+    {
+        public static Request2M_GetRequests Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(Request2M_GetRequests), isFromPool) as Request2M_GetRequests;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        [MemoryPackOrder(3)]
+        public List<GameRequestInfo> GameRequestInfos { get; set; } = new();
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+            this.GameRequestInfos.Clear();
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
     public static partial class InnerMessage
     {
         public const ushort ObjectQueryRequest = 20002;
@@ -1439,5 +1610,10 @@ namespace ET
         public const ushort G2M_RequestQuitGuild = 20040;
         public const ushort NewDayNotify = 20041;
         public const ushort DailyNotify = 20042;
+        public const ushort GameRequestInfo = 20043;
+        public const ushort M2Request_AddRequest = 20044;
+        public const ushort Request2M_AddRequest = 20045;
+        public const ushort M2Request_GetRequests = 20046;
+        public const ushort Request2M_GetRequests = 20047;
     }
 }
