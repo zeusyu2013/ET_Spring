@@ -17,7 +17,9 @@ namespace ET.Server
             {
                 response.Routers.Add($"{startSceneConfig.StartProcessConfig.OuterIP}:{startSceneConfig.Port}");
             }
+            
             HttpHelper.Response(context, response);
+            
             await ETTask.CompletedTask;
         }
     }

@@ -1319,6 +1319,69 @@ namespace ET
         }
     }
 
+    [MemoryPackable]
+    [Message(OuterMessage.C2M_DeleteFriend)]
+    [ResponseType(nameof(M2C_DeleteFriend))]
+    public partial class C2M_DeleteFriend : MessageObject, ILocationRequest
+    {
+        public static C2M_DeleteFriend Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_DeleteFriend), isFromPool) as C2M_DeleteFriend;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long UnitId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.UnitId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_DeleteFriend)]
+    public partial class M2C_DeleteFriend : MessageObject, ILocationResponse
+    {
+        public static M2C_DeleteFriend Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_DeleteFriend), isFromPool) as M2C_DeleteFriend;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
     public static partial class OuterMessage
     {
         public const ushort C2M_GMCommand = 11002;
@@ -1363,5 +1426,7 @@ namespace ET
         public const ushort FriendInfo = 11041;
         public const ushort C2M_AddFriend = 11042;
         public const ushort M2C_AddFriend = 11043;
+        public const ushort C2M_DeleteFriend = 11044;
+        public const ushort M2C_DeleteFriend = 11045;
     }
 }

@@ -12,34 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 185f6993d5150494d98da50e26cb1c25, type: 3}
   m_Name: AssetBundleCollectorSetting
   m_EditorClassIdentifier: 
-  ShowPackageView: 0
-  ShowEditorAlias: 0
-  UniqueBundleName: 0
+  ShowPackageView: 1
+  ShowEditorAlias: 1
+  UniqueBundleName: 1
   Packages:
   - PackageName: DefaultPackage
     PackageDesc: 
     EnableAddressable: 0
     LocationToLower: 0
     IncludeAssetGUID: 0
-    IgnoreDefaultType: 1
     AutoCollectShaders: 1
+    IgnoreRuleName: NormalIgnoreRule
     Groups:
-    - GroupName: AotDlls
-      GroupDesc: 
-      AssetTags: 
-      ActiveRuleName: EnableGroup
-      Collectors:
-      - CollectPath: Assets/Bundles/AotDlls
-        CollectorGUID: 51f33a3e2065f5642bee2f96c2433544
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
     - GroupName: Code
-      GroupDesc: 
-      AssetTags: 
+      GroupDesc: "\u4EE3\u7801"
+      AssetTags: Code
       ActiveRuleName: EnableGroup
       Collectors:
       - CollectPath: Assets/Bundles/Code
@@ -50,9 +37,35 @@ MonoBehaviour:
         FilterRuleName: CollectAll
         AssetTags: 
         UserData: 
+    - GroupName: Animations
+      GroupDesc: "\u52A8\u753B"
+      AssetTags: Animations
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/Bundles/Animations
+        CollectorGUID: 2a19523d42f996048bca769ec1778544
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+    - GroupName: AotDlls
+      GroupDesc: "\u5143\u6570\u636E"
+      AssetTags: AotDlls
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/Bundles/AotDlls
+        CollectorGUID: 51f33a3e2065f5642bee2f96c2433544
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
     - GroupName: Config
-      GroupDesc: 
-      AssetTags: 
+      GroupDesc: "\u914D\u7F6E\u6587\u4EF6"
+      AssetTags: Config
       ActiveRuleName: EnableGroup
       Collectors:
       - CollectPath: Assets/Bundles/Config
@@ -63,35 +76,9 @@ MonoBehaviour:
         FilterRuleName: CollectAll
         AssetTags: 
         UserData: 
-    - GroupName: Unit
-      GroupDesc: 
-      AssetTags: 
-      ActiveRuleName: EnableGroup
-      Collectors:
-      - CollectPath: Assets/Bundles/Unit
-        CollectorGUID: c3561f86a9d0b324680975876c94ca05
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackSeparately
-        FilterRuleName: CollectPrefab
-        AssetTags: 
-        UserData: 
-    - GroupName: Scene
-      GroupDesc: 
-      AssetTags: 
-      ActiveRuleName: EnableGroup
-      Collectors:
-      - CollectPath: Assets/Bundles/Scenes
-        CollectorGUID: 406b13cb70603ef449d91f5572708db2
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackSeparately
-        FilterRuleName: CollectScene
-        AssetTags: 
-        UserData: 
-    - GroupName: FairyGUI
-      GroupDesc: 
-      AssetTags: 
+    - GroupName: FariyGUI
+      GroupDesc: "\u754C\u9762"
+      AssetTags: FariyGUI
       ActiveRuleName: EnableGroup
       Collectors:
       - CollectPath: Assets/Bundles/FairyGUI
@@ -100,5 +87,31 @@ MonoBehaviour:
         AddressRuleName: AddressByFileName
         PackRuleName: PackDirectory
         FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+    - GroupName: Scenes
+      GroupDesc: "\u573A\u666F"
+      AssetTags: Scenes
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/Bundles/Scenes
+        CollectorGUID: 406b13cb70603ef449d91f5572708db2
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectScene
+        AssetTags: 
+        UserData: 
+    - GroupName: Unit
+      GroupDesc: "\u89D2\u8272"
+      AssetTags: Unit
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/Bundles/Unit
+        CollectorGUID: c3561f86a9d0b324680975876c94ca05
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectPrefab
         AssetTags: 
         UserData: 

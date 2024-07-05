@@ -287,3 +287,17 @@ message M2C_AddFriend // ILocationResponse
 	int32 Error = 2;
 	string Message = 3;
 }
+
+// ResponseType M2C_DeleteFriend
+message C2M_DeleteFriend // ILocationRequest
+{
+	int32 RpcId = 1;
+	int64 UnitId = 2;
+}
+
+message M2C_DeleteFriend // ILocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}
