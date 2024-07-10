@@ -112,6 +112,78 @@
     "Port": 0
   },
   {
+    "Id": 15,
+    "Process": 1,
+    "Zone": 1,
+    "SceneType": "RequestHall",
+    "Name": "RequestHall",
+    "Port": 0
+  },
+  {
+    "Id": 100,
+    "Process": 1,
+    "Zone": 1,
+    "SceneType": "Map",
+    "Name": "艾尔文森林",
+    "Port": 0
+  },
+  {
+    "Id": 101,
+    "Process": 1,
+    "Zone": 1,
+    "SceneType": "Map",
+    "Name": "血蹄村",
+    "Port": 0
+  },
+  {
+    "Id": 102,
+    "Process": 1,
+    "Zone": 1,
+    "SceneType": "Map",
+    "Name": "逐日岛",
+    "Port": 0
+  },
+  {
+    "Id": 103,
+    "Process": 1,
+    "Zone": 1,
+    "SceneType": "Map",
+    "Name": "幽影谷",
+    "Port": 0
+  },
+  {
+    "Id": 104,
+    "Process": 1,
+    "Zone": 1,
+    "SceneType": "Map",
+    "Name": "试炼谷",
+    "Port": 0
+  },
+  {
+    "Id": 105,
+    "Process": 1,
+    "Zone": 1,
+    "SceneType": "Map",
+    "Name": "寒脊山谷",
+    "Port": 0
+  },
+  {
+    "Id": 106,
+    "Process": 1,
+    "Zone": 1,
+    "SceneType": "Map",
+    "Name": "埃门谷",
+    "Port": 0
+  },
+  {
+    "Id": 107,
+    "Process": 1,
+    "Zone": 1,
+    "SceneType": "Map",
+    "Name": "丧钟镇",
+    "Port": 0
+  },
+  {
     "Id": 300,
     "Process": 1,
     "Zone": 3,

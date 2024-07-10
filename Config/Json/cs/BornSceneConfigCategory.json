@@ -1,0 +1,42 @@
+[
+  {
+    "Id": 1,
+    "BornScene": "艾尔文森林"
+  },
+  {
+    "Id": 2,
+    "BornScene": "幽影谷"
+  },
+  {
+    "Id": 4,
+    "BornScene": "寒脊山谷"
+  },
+  {
+    "Id": 8,
+    "BornScene": "埃门谷"
+  },
+  {
+    "Id": 16,
+    "BornScene": "试炼谷"
+  },
+  {
+    "Id": 32,
+    "BornScene": "试炼谷"
+  },
+  {
+    "Id": 64,
+    "BornScene": "丧钟镇"
+  },
+  {
+    "Id": 128,
+    "BornScene": "血蹄村"
+  },
+  {
+    "Id": 256,
+    "BornScene": "逐日岛"
+  },
+  {
+    "Id": 512,
+    "BornScene": "寒脊山谷"
+  }
+]

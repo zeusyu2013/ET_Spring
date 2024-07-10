@@ -48,10 +48,6 @@
             TDHelper.SendUserAddToTDLog(scene, userAdd);
 
             string sceneName = unit.GetComponent<LocationComponent>().SceneName;
-            if (string.IsNullOrEmpty(sceneName))
-            {
-                sceneName = "Map1";
-            }
 
             StartSceneConfig startSceneConfig = StartSceneConfigCategory.Instance.GetBySceneName(session.Zone(), sceneName);
 

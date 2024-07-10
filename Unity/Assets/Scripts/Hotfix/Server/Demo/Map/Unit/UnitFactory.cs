@@ -6,6 +6,7 @@ namespace ET.Server
 {
     [FriendOf(typeof(Mail))]
     [FriendOf(typeof(UnitPlayerIdComponent))]
+    [FriendOfAttribute(typeof(ET.Server.LocationComponent))]
     public static partial class UnitFactory
     {
         public static Unit CreateCharacter(Scene scene, long id, CharacterType character, RaceType race)
@@ -73,7 +74,9 @@ namespace ET.Server
             unit.AddComponentWithId<AchievementComponent>(unit.Id);
 
             // 位置组件
-            unit.AddComponentWithId<LocationComponent>(unit.Id);
+            LocationComponent locationComponent = unit.AddComponentWithId<LocationComponent>(unit.Id);
+            BornSceneConfig bornSceneConfig = BornSceneConfigCategory.Instance.Get(race);
+            locationComponent.SceneName = bornSceneConfig.BornScene;
 
             unitComponent.Add(unit);
 
@@ -88,6 +91,7 @@ namespace ET.Server
             unitDBSaveComponent.AddChange(typeof(OfflineIncomeComponent));
             unitDBSaveComponent.AddChange(typeof(GameTaskComponent));
             unitDBSaveComponent.AddChange(typeof(AchievementComponent));
+            unitDBSaveComponent.AddChange(typeof(LocationComponent));
             unitDBSaveComponent.SaveChanged();
 
             // 加入aoi
