@@ -20,7 +20,7 @@
                 case "AddExp":
                 {
                     long exp = long.Parse(commands[1]);
-                    unit.GetComponent<PlayerLevelComponent>().AddExp(exp);
+                    unit.GetComponent<LevelComponent>().AddExp(exp);
                     break;
                 }
 

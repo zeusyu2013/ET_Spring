@@ -12,6 +12,7 @@
             root.AddComponent<MessageSender>();
             root.AddComponent<MailBoxComponent, MailBoxType>(MailBoxType.UnOrderedMessage);
             root.AddComponent<MessageLocationSenderComponent>();
+            root.AddComponent<DBManagerComponent>();
             
             await ETTask.CompletedTask;
         }

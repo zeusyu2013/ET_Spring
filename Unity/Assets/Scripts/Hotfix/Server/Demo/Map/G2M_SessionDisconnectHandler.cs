@@ -6,10 +6,10 @@
         protected override async ETTask Run(Unit unit, G2M_SessionDisconnect message)
         {
             unit.GetComponent<UnitDBSaveComponent>().SaveChanged();
+
+            await unit.RemoveLocation(LocationType.Unit);
             
             unit.Root().GetComponent<UnitComponent>().Remove(unit.Id);
-
-            await ETTask.CompletedTask;
         }
     }
 }

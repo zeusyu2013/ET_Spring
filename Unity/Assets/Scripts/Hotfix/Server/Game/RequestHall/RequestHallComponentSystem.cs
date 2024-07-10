@@ -31,6 +31,20 @@ namespace ET.Server
 
         public static void AddRequest(this RequestHallComponent self, long unitId, long senderUnitId, int requestType)
         {
+            if (self.GameRequests.TryGetValue(unitId, out List<EntityRef<GameRequest>> list))
+            {
+                foreach (var entityRef in list)
+                {
+                    GameRequest tempReq = entityRef;
+
+                    // 过滤重复请求
+                    if ((int)tempReq.RequestType == requestType && tempReq.SenderUnitId == senderUnitId)
+                    {
+                        return;
+                    }
+                }
+            }
+
             GameRequest request = self.AddChild<GameRequest>();
             request.UnitId = unitId;
             request.SenderUnitId = senderUnitId;
@@ -65,6 +79,11 @@ namespace ET.Server
             self.GameRequests.Remove(unitId);
 
             return infos;
+        }
+
+        public static async ETTask Save(this RequestHallComponent self)
+        {
+            await self.Root().GetComponent<DBManagerComponent>().GetZoneDB(self.Zone()).Save(self);
         }
     }
 }

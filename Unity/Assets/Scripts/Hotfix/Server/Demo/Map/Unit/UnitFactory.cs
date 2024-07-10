@@ -39,7 +39,7 @@ namespace ET.Server
             }
 
             // 等级经验组件
-            unit.AddComponentWithId<PlayerLevelComponent, int>(unit.Id, 1);
+            unit.AddComponentWithId<LevelComponent, int>(unit.Id, 1);
 
             // 装备组件
             unit.AddComponentWithId<EquipmentContainerComponent>(unit.Id);
@@ -72,10 +72,13 @@ namespace ET.Server
             // 成就组件
             unit.AddComponentWithId<AchievementComponent>(unit.Id);
 
+            // 位置组件
+            unit.AddComponentWithId<LocationComponent>(unit.Id);
+
             unitComponent.Add(unit);
 
             UnitDBSaveComponent unitDBSaveComponent = unit.AddComponent<UnitDBSaveComponent>();
-            unitDBSaveComponent.AddChange(typeof(PlayerLevelComponent));
+            unitDBSaveComponent.AddChange(typeof(LevelComponent));
             unitDBSaveComponent.AddChange(typeof(BagComponent));
             unitDBSaveComponent.AddChange(typeof(EquipmentContainerComponent));
             unitDBSaveComponent.AddChange(typeof(MailComponent));
@@ -119,7 +122,7 @@ namespace ET.Server
                 numericComponent.Set((int)kv.Key, kv.Value);
             }
 
-            // TODO：从缓存服拉去玩家相关组件数据
+            // 从缓存服拉去玩家相关组件数据，过期被清除的数据从数据库中拉取并存储在缓存服上
             List<byte[]> entities = await DBCacheHelper.GetCache(scene, unitId);
             if (entities.Count > 0)
             {

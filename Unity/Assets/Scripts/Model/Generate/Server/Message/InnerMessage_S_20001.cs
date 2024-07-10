@@ -1430,6 +1430,65 @@ namespace ET
     }
 
     [MemoryPackable]
+    [Message(InnerMessage.Manager2Request_ShutDown)]
+    [ResponseType(nameof(Request2Manager_ShutDown))]
+    public partial class Manager2Request_ShutDown : MessageObject, IRequest
+    {
+        public static Manager2Request_ShutDown Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(Manager2Request_ShutDown), isFromPool) as Manager2Request_ShutDown;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(InnerMessage.Request2Manager_ShutDown)]
+    public partial class Request2Manager_ShutDown : MessageObject, IResponse
+    {
+        public static Request2Manager_ShutDown Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(Request2Manager_ShutDown), isFromPool) as Request2Manager_ShutDown;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
     [Message(InnerMessage.M2Request_AddRequest)]
     [ResponseType(nameof(Request2M_AddRequest))]
     public partial class M2Request_AddRequest : MessageObject, IRequest
@@ -1611,9 +1670,11 @@ namespace ET
         public const ushort NewDayNotify = 20041;
         public const ushort DailyNotify = 20042;
         public const ushort GameRequestInfo = 20043;
-        public const ushort M2Request_AddRequest = 20044;
-        public const ushort Request2M_AddRequest = 20045;
-        public const ushort M2Request_GetRequests = 20046;
-        public const ushort Request2M_GetRequests = 20047;
+        public const ushort Manager2Request_ShutDown = 20044;
+        public const ushort Request2Manager_ShutDown = 20045;
+        public const ushort M2Request_AddRequest = 20046;
+        public const ushort Request2M_AddRequest = 20047;
+        public const ushort M2Request_GetRequests = 20048;
+        public const ushort Request2M_GetRequests = 20049;
     }
 }

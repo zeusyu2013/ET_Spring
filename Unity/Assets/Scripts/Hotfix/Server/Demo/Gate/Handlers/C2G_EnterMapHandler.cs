@@ -3,6 +3,7 @@
     [MessageSessionHandler(SceneType.Gate)]
     [FriendOfAttribute(typeof(ET.Server.UnitPlayerIdComponent))]
     [FriendOfAttribute(typeof(ET.Server.GameRoleComponent))]
+    [FriendOfAttribute(typeof(ET.Server.LocationComponent))]
     public class C2G_EnterMapHandler : MessageSessionHandler<C2G_EnterMap, G2C_EnterMap>
     {
         protected override async ETTask Run(Session session, C2G_EnterMap request, G2C_EnterMap response)
@@ -40,13 +41,19 @@
             unit.AddComponent<UnitPlayerIdComponent>().PlayerId = player.Id;
             unit.AddComponent<UnitPlayerIdComponent>().PlayerIdSting = player.Id.ToString();
             session.GetComponent<GameRoleComponent>().UnitId = unit.Id;
-            
+
             TDUserAdd userAdd = TDUserAdd.Create();
             userAdd.AccountId = player.Id.ToString();
             userAdd.Properties = "";
             TDHelper.SendUserAddToTDLog(scene, userAdd);
 
-            StartSceneConfig startSceneConfig = StartSceneConfigCategory.Instance.GetBySceneName(session.Zone(), "Map1");
+            string sceneName = unit.GetComponent<LocationComponent>().SceneName;
+            if (string.IsNullOrEmpty(sceneName))
+            {
+                sceneName = "Map1";
+            }
+
+            StartSceneConfig startSceneConfig = StartSceneConfigCategory.Instance.GetBySceneName(session.Zone(), sceneName);
 
             // 等到一帧的最后面再传送，先让G2C_EnterMap返回，否则传送消息可能比G2C_EnterMap还早
             TransferHelper.TransferAtFrameFinish(unit, startSceneConfig.ActorId, startSceneConfig.Name).Coroutine();

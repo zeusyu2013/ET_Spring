@@ -7,7 +7,7 @@
     }
 
     [ChildOf]
-    public class GameRequest : Entity, IAwake
+    public class GameRequest : Entity, IAwake, ISerializeToEntity
     {
         public long UnitId;
         public long SenderUnitId;

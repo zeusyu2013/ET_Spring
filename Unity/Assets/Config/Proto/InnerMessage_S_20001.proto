@@ -314,6 +314,19 @@ message GameRequestInfo
 	int32 RequestType = 3;
 }
 
+// ResponseType Request2Manager_ShutDown
+message Manager2Request_ShutDown // IRequest
+{
+	int32 RpcId = 1;
+}
+
+message Request2Manager_ShutDown // IResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}
+
 // ResponseType Request2M_AddRequest
 message M2Request_AddRequest // IRequest
 {

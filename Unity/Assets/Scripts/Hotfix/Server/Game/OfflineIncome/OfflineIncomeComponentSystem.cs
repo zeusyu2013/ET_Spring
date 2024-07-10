@@ -35,7 +35,7 @@
             long gold = diff * 100;
             long exp = diff * 10;
             self.GetParent<Unit>().GetComponent<CurrencyComponent>().Inc(CurrencyType.CurrencyType_Gold, gold);
-            self.GetParent<Unit>().GetComponent<PlayerLevelComponent>().AddExp(exp);
+            self.GetParent<Unit>().GetComponent<LevelComponent>().AddExp(exp);
 
             info.Gold = gold;
             info.Exp = exp;
