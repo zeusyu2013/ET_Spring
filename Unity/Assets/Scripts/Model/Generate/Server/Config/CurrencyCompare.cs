@@ -12,27 +12,34 @@ using Luban;
 namespace ET
 {
     [EnableClass]
-    public abstract partial class Condition : BeanBase
+    public sealed partial class CurrencyCompare : Condition
     {
-        public Condition(ByteBuf _buf)
+        public CurrencyCompare(ByteBuf _buf) : base(_buf) 
         {
+            CurrencyType = (CurrencyType)_buf.ReadInt();
+            Value = _buf.ReadLong();
 
             PostInit();
         }
 
-        public static Condition DeserializeCondition(ByteBuf _buf)
+        public static CurrencyCompare DeserializeCurrencyCompare(ByteBuf _buf)
         {
-            switch (_buf.ReadInt())
-            {
-                case PropertyCompare.__ID__: return new PropertyCompare(_buf);
-                case CurrencyCompare.__ID__: return new CurrencyCompare(_buf);
-                default: throw new SerializationException();
-            }
+            return new CurrencyCompare(_buf);
         }
+
+        public readonly CurrencyType CurrencyType;
+
+        public readonly long Value;
+
+        public const int __ID__ = 600610676;
+
+        public override int GetTypeId() => __ID__;
 
         public override string ToString()
         {
             return "{ "
+            + "CurrencyType:" + CurrencyType + ","
+            + "Value:" + Value + ","
             + "}";
         }
 

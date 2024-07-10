@@ -10,9 +10,9 @@
             {
                 return;
             }
-            
-            unit.GetComponent<AchievementComponent>().AddAchievement();
-            
+
+            unit.GetComponent<AchievementComponent>().AddAchievement(AchievementType.AchievementType_Currency);
+
             await ETTask.CompletedTask;
         }
     }

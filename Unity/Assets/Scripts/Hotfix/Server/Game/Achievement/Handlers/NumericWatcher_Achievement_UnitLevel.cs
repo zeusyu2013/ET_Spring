@@ -16,7 +16,7 @@
                 return;
             }
 
-            achievementComponent.AddAchievement();
+            achievementComponent.AddAchievement(AchievementType.AchievementType_PropertyCompare);
         }
     }
 }

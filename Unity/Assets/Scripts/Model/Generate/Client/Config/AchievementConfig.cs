@@ -19,8 +19,10 @@ namespace ET
             Id = _buf.ReadInt();
             Name = _buf.ReadString();
             Desc = _buf.ReadString();
+            AchievementType = (AchievementType)_buf.ReadInt();
             Condition = Condition.DeserializeCondition(_buf);
             Icon = _buf.ReadString();
+            Property = _buf.ReadInt();
 
             PostInit();
         }
@@ -46,6 +48,11 @@ namespace ET
         public readonly string Desc;
 
         /// <summary>
+        /// 成就类型
+        /// </summary>
+        public readonly AchievementType AchievementType;
+
+        /// <summary>
         /// 成就条件
         /// </summary>
         public readonly Condition Condition;
@@ -54,6 +61,16 @@ namespace ET
         /// 成就图标
         /// </summary>
         public readonly string Icon;
+
+        /// <summary>
+        /// 成就属性包
+        /// </summary>
+        public readonly int Property;
+
+        /// <summary>
+        /// 成就属性包
+        /// </summary>
+        public PropertyConfig PropertyConfig => PropertyConfigCategory.Instance.GetOrDefault(Property);
 
         public const int __ID__ = -714023119;
 
@@ -65,8 +82,10 @@ namespace ET
             + "Id:" + Id + ","
             + "Name:" + Name + ","
             + "Desc:" + Desc + ","
+            + "AchievementType:" + AchievementType + ","
             + "Condition:" + Condition + ","
             + "Icon:" + Icon + ","
+            + "Property:" + Property + ","
             + "}";
         }
 

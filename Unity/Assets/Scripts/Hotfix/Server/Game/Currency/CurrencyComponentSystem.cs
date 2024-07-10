@@ -9,6 +9,16 @@
         {
         }
 
+        public static long GetCurrencyValue(this CurrencyComponent self, CurrencyType type)
+        {
+            if (type is <= 0 or >= CurrencyType.CurrencyType_Max)
+            {
+                return 0;
+            }
+
+            return self.Currencies[(int)type];
+        }
+
         public static bool Inc(this CurrencyComponent self, CurrencyType type, long value)
         {
             if (type is <= 0 or >= CurrencyType.CurrencyType_Max)
@@ -25,11 +35,11 @@
             self.Currencies.TryAdd((int)type, 0);
 
             long oldValue = self.Currencies[(int)type];
-            
+
             self.Currencies[(int)type] = oldValue + value;
-            
+
             // 发送变化
-            EventSystem.Instance.Publish(self.Root(), 
+            EventSystem.Instance.Publish(self.Root(),
                 new CurrencyChanged()
                 {
                     Unit = self.GetParent<Unit>(),
@@ -59,11 +69,11 @@
             {
                 return false;
             }
-            
+
             self.Currencies[(int)type] = current - value;
-            
+
             // 发送变化
-            EventSystem.Instance.Publish(self.Root(), 
+            EventSystem.Instance.Publish(self.Root(),
                 new CurrencyChanged()
                 {
                     Unit = self.GetParent<Unit>(),

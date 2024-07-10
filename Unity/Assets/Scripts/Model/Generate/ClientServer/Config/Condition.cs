@@ -25,6 +25,7 @@ namespace ET
             switch (_buf.ReadInt())
             {
                 case PropertyCompare.__ID__: return new PropertyCompare(_buf);
+                case CurrencyCompare.__ID__: return new CurrencyCompare(_buf);
                 default: throw new SerializationException();
             }
         }

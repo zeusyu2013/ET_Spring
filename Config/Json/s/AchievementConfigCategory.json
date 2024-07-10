@@ -3,143 +3,312 @@
     "Id": 10001,
     "Name": "achievementname_10001",
     "Desc": "achievementdesc_10001",
+    "AchievementType": 1,
     "Condition": {
       "$type": "PropertyCompare",
       "Property": 1001,
       "Value": 1
     },
-    "Icon": "achievementicon_10001"
+    "Icon": "achievementicon_10001",
+    "Property": 1001
   },
   {
     "Id": 10002,
     "Name": "achievementname_10002",
     "Desc": "achievementdesc_10002",
+    "AchievementType": 1,
     "Condition": {
       "$type": "PropertyCompare",
       "Property": 1001,
       "Value": 2
     },
-    "Icon": "achievementicon_10002"
+    "Icon": "achievementicon_10002",
+    "Property": 1002
   },
   {
     "Id": 10003,
     "Name": "achievementname_10003",
     "Desc": "achievementdesc_10003",
+    "AchievementType": 1,
     "Condition": {
       "$type": "PropertyCompare",
       "Property": 1001,
       "Value": 3
     },
-    "Icon": "achievementicon_10003"
+    "Icon": "achievementicon_10003",
+    "Property": 1001
   },
   {
     "Id": 10004,
     "Name": "achievementname_10004",
     "Desc": "achievementdesc_10004",
+    "AchievementType": 1,
     "Condition": {
       "$type": "PropertyCompare",
       "Property": 1001,
       "Value": 4
     },
-    "Icon": "achievementicon_10004"
+    "Icon": "achievementicon_10004",
+    "Property": 1002
   },
   {
     "Id": 10005,
     "Name": "achievementname_10005",
     "Desc": "achievementdesc_10005",
+    "AchievementType": 1,
     "Condition": {
       "$type": "PropertyCompare",
       "Property": 1001,
       "Value": 5
     },
-    "Icon": "achievementicon_10005"
+    "Icon": "achievementicon_10005",
+    "Property": 1001
   },
   {
     "Id": 10006,
     "Name": "achievementname_10006",
     "Desc": "achievementdesc_10006",
+    "AchievementType": 1,
     "Condition": {
       "$type": "PropertyCompare",
       "Property": 1001,
       "Value": 6
     },
-    "Icon": "achievementicon_10006"
+    "Icon": "achievementicon_10006",
+    "Property": 1002
   },
   {
     "Id": 10007,
     "Name": "achievementname_10007",
     "Desc": "achievementdesc_10007",
+    "AchievementType": 1,
     "Condition": {
       "$type": "PropertyCompare",
       "Property": 1001,
       "Value": 7
     },
-    "Icon": "achievementicon_10007"
+    "Icon": "achievementicon_10007",
+    "Property": 1001
   },
   {
     "Id": 10008,
     "Name": "achievementname_10008",
     "Desc": "achievementdesc_10008",
+    "AchievementType": 1,
     "Condition": {
       "$type": "PropertyCompare",
       "Property": 1001,
       "Value": 8
     },
-    "Icon": "achievementicon_10008"
+    "Icon": "achievementicon_10008",
+    "Property": 1002
   },
   {
     "Id": 10009,
     "Name": "achievementname_10009",
     "Desc": "achievementdesc_10009",
+    "AchievementType": 1,
     "Condition": {
       "$type": "PropertyCompare",
       "Property": 1001,
       "Value": 9
     },
-    "Icon": "achievementicon_10009"
+    "Icon": "achievementicon_10009",
+    "Property": 1001
   },
   {
     "Id": 10010,
     "Name": "achievementname_10010",
     "Desc": "achievementdesc_10010",
+    "AchievementType": 1,
     "Condition": {
       "$type": "PropertyCompare",
       "Property": 1001,
       "Value": 10
     },
-    "Icon": "achievementicon_10010"
+    "Icon": "achievementicon_10010",
+    "Property": 1002
   },
   {
     "Id": 10011,
     "Name": "achievementname_10011",
     "Desc": "achievementdesc_10011",
+    "AchievementType": 1,
     "Condition": {
       "$type": "PropertyCompare",
       "Property": 1001,
       "Value": 11
     },
-    "Icon": "achievementicon_10011"
+    "Icon": "achievementicon_10011",
+    "Property": 1001
   },
   {
     "Id": 10012,
     "Name": "achievementname_10012",
     "Desc": "achievementdesc_10012",
+    "AchievementType": 1,
     "Condition": {
       "$type": "PropertyCompare",
       "Property": 1001,
       "Value": 12
     },
-    "Icon": "achievementicon_10012"
+    "Icon": "achievementicon_10012",
+    "Property": 1002
   },
   {
     "Id": 10013,
     "Name": "achievementname_10013",
     "Desc": "achievementdesc_10013",
+    "AchievementType": 1,
     "Condition": {
       "$type": "PropertyCompare",
       "Property": 1001,
       "Value": 13
     },
-    "Icon": "achievementicon_10013"
+    "Icon": "achievementicon_10013",
+    "Property": 1001
+  },
+  {
+    "Id": 10014,
+    "Name": "achievementname_10014",
+    "Desc": "achievementdesc_10014",
+    "AchievementType": 2,
+    "Condition": {
+      "$type": "CurrencyCompare",
+      "CurrencyType": 1,
+      "Value": 10000
+    },
+    "Icon": "achievementicon_10014",
+    "Property": 1002
+  },
+  {
+    "Id": 10015,
+    "Name": "achievementname_10015",
+    "Desc": "achievementdesc_10015",
+    "AchievementType": 2,
+    "Condition": {
+      "$type": "CurrencyCompare",
+      "CurrencyType": 1,
+      "Value": 50000
+    },
+    "Icon": "achievementicon_10015",
+    "Property": 1001
+  },
+  {
+    "Id": 10016,
+    "Name": "achievementname_10016",
+    "Desc": "achievementdesc_10016",
+    "AchievementType": 2,
+    "Condition": {
+      "$type": "CurrencyCompare",
+      "CurrencyType": 1,
+      "Value": 100000
+    },
+    "Icon": "achievementicon_10016",
+    "Property": 1002
+  },
+  {
+    "Id": 10017,
+    "Name": "achievementname_10017",
+    "Desc": "achievementdesc_10017",
+    "AchievementType": 2,
+    "Condition": {
+      "$type": "CurrencyCompare",
+      "CurrencyType": 1,
+      "Value": 150000
+    },
+    "Icon": "achievementicon_10017",
+    "Property": 1001
+  },
+  {
+    "Id": 10018,
+    "Name": "achievementname_10018",
+    "Desc": "achievementdesc_10018",
+    "AchievementType": 2,
+    "Condition": {
+      "$type": "CurrencyCompare",
+      "CurrencyType": 1,
+      "Value": 200000
+    },
+    "Icon": "achievementicon_10018",
+    "Property": 1002
+  },
+  {
+    "Id": 10019,
+    "Name": "achievementname_10019",
+    "Desc": "achievementdesc_10019",
+    "AchievementType": 2,
+    "Condition": {
+      "$type": "CurrencyCompare",
+      "CurrencyType": 1,
+      "Value": 250000
+    },
+    "Icon": "achievementicon_10019",
+    "Property": 1001
+  },
+  {
+    "Id": 10020,
+    "Name": "achievementname_10020",
+    "Desc": "achievementdesc_10020",
+    "AchievementType": 2,
+    "Condition": {
+      "$type": "CurrencyCompare",
+      "CurrencyType": 1,
+      "Value": 300000
+    },
+    "Icon": "achievementicon_10020",
+    "Property": 1002
+  },
+  {
+    "Id": 10021,
+    "Name": "achievementname_10021",
+    "Desc": "achievementdesc_10021",
+    "AchievementType": 2,
+    "Condition": {
+      "$type": "CurrencyCompare",
+      "CurrencyType": 1,
+      "Value": 350000
+    },
+    "Icon": "achievementicon_10021",
+    "Property": 1001
+  },
+  {
+    "Id": 10022,
+    "Name": "achievementname_10022",
+    "Desc": "achievementdesc_10022",
+    "AchievementType": 2,
+    "Condition": {
+      "$type": "CurrencyCompare",
+      "CurrencyType": 1,
+      "Value": 400000
+    },
+    "Icon": "achievementicon_10022",
+    "Property": 1002
+  },
+  {
+    "Id": 10023,
+    "Name": "achievementname_10023",
+    "Desc": "achievementdesc_10023",
+    "AchievementType": 2,
+    "Condition": {
+      "$type": "CurrencyCompare",
+      "CurrencyType": 1,
+      "Value": 450000
+    },
+    "Icon": "achievementicon_10023",
+    "Property": 1001
+  },
+  {
+    "Id": 10024,
+    "Name": "achievementname_10024",
+    "Desc": "achievementdesc_10024",
+    "AchievementType": 2,
+    "Condition": {
+      "$type": "CurrencyCompare",
+      "CurrencyType": 1,
+      "Value": 500000
+    },
+    "Icon": "achievementicon_10024",
+    "Property": 1002
   }
 ]
