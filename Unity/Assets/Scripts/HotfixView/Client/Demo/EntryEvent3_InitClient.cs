@@ -13,6 +13,7 @@ namespace ET.Client
             root.AddComponent<UIComponent>();
             root.AddComponent<GameRoleInfoComponent>();
             root.AddComponent<RemoteConfigComponent>();
+            root.AddComponent<QualityComponent>();
             root.AddComponent<PlayerPrefsComponent>();
             root.AddComponent<MapleComponent>();
             root.AddComponent<GameUnitComponent>();

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="800,600">
+  <displayList>
+    <image id="n0_yo31" name="n0" src="f7kj8b" fileName="Res/Frame/frame_cardframe_00_n_front1.png" xy="400,300" pivot="0.5,0.5" anchor="true" size="800,600">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+  </displayList>
+  <transition name="t0" autoPlay="true" frameRate="30">
+    <item time="0" type="Scale" tween="true" startValue="0.85,0.85" endValue="1,1" duration="12"/>
+  </transition>
+</component>

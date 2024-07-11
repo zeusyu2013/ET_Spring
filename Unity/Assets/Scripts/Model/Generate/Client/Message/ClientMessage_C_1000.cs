@@ -15,6 +15,9 @@ namespace ET
         [MemoryPackOrder(0)]
         public bool DebugMode { get; set; }
 
+        [MemoryPackOrder(1)]
+        public string QualityUrl { get; set; }
+
         public override void Dispose()
         {
             if (!this.IsFromPool)
@@ -23,6 +26,102 @@ namespace ET
             }
 
             this.DebugMode = default;
+            this.QualityUrl = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(ClientMessage.AndroidQualityRule)]
+    public partial class AndroidQualityRule : MessageObject
+    {
+        public static AndroidQualityRule Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(AndroidQualityRule), isFromPool) as AndroidQualityRule;
+        }
+
+        [MemoryPackOrder(0)]
+        public int Quality { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int FrameRate { get; set; }
+
+        [MemoryPackOrder(2)]
+        public int ScreenWidth { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.Quality = default;
+            this.FrameRate = default;
+            this.ScreenWidth = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(ClientMessage.iOSQualityRule)]
+    public partial class iOSQualityRule : MessageObject
+    {
+        public static iOSQualityRule Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(iOSQualityRule), isFromPool) as iOSQualityRule;
+        }
+
+        [MemoryPackOrder(0)]
+        public int Quality { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int FrameRate { get; set; }
+
+        [MemoryPackOrder(2)]
+        public int ScreenWidth { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.Quality = default;
+            this.FrameRate = default;
+            this.ScreenWidth = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(ClientMessage.QualityConfig)]
+    public partial class QualityConfig : MessageObject
+    {
+        public static QualityConfig Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(QualityConfig), isFromPool) as QualityConfig;
+        }
+
+        [MemoryPackOrder(0)]
+        public List<AndroidQualityRule> AndroidQualityRules { get; set; } = new();
+
+        [MemoryPackOrder(1)]
+        public List<iOSQualityRule> iOSQualityRules { get; set; } = new();
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.AndroidQualityRules.Clear();
+            this.iOSQualityRules.Clear();
 
             ObjectPool.Instance.Recycle(this);
         }
@@ -291,12 +390,15 @@ namespace ET
     public static partial class ClientMessage
     {
         public const ushort RemoteConfig = 1001;
-        public const ushort NetClient2Main_Ping = 1002;
-        public const ushort Main2NetClient_Login = 1003;
-        public const ushort NetClient2Main_Login = 1004;
-        public const ushort Servers = 1005;
-        public const ushort Districts = 1006;
-        public const ushort Maple_info = 1007;
-        public const ushort MapleResponse = 1008;
+        public const ushort AndroidQualityRule = 1002;
+        public const ushort iOSQualityRule = 1003;
+        public const ushort QualityConfig = 1004;
+        public const ushort NetClient2Main_Ping = 1005;
+        public const ushort Main2NetClient_Login = 1006;
+        public const ushort NetClient2Main_Login = 1007;
+        public const ushort Servers = 1008;
+        public const ushort Districts = 1009;
+        public const ushort Maple_info = 1010;
+        public const ushort MapleResponse = 1011;
     }
 }

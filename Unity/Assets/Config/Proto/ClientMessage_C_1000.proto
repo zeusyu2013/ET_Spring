@@ -5,6 +5,27 @@ package ET;
 message RemoteConfig
 {
 	bool DebugMode = 1;
+	string QualityUrl = 2;
+}
+
+message AndroidQualityRule
+{
+	int32 Quality = 1;
+	int32 FrameRate = 2;
+	int32 ScreenWidth = 3;
+}
+
+message iOSQualityRule
+{
+	int32 Quality = 1;
+	int32 FrameRate = 2;
+	int32 ScreenWidth = 3;
+}
+
+message QualityConfig
+{
+	repeated AndroidQualityRule AndroidQualityRules = 1;
+	repeated iOSQualityRule iOSQualityRules = 2;
 }
 
 message NetClient2Main_Ping // IMessage

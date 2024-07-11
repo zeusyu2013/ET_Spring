@@ -36,11 +36,13 @@
 
             foreach (AchievementConfig config in configs)
             {
+                // 成就类型
                 if (config.AchievementType != type)
                 {
                     continue;
                 }
                 
+                // 已获得该成就
                 if (self.Achievements.Contains(config.Id))
                 {
                     continue;
