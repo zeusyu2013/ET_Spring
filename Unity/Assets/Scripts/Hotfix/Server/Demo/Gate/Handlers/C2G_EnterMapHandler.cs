@@ -38,8 +38,9 @@
                 unit = UnitFactory.CreateCharacter(scene, unitId, CharacterType.CharacterType_Warrior, RaceType.RaceType_Human);
             }
 
-            unit.AddComponent<UnitPlayerIdComponent>().PlayerId = player.Id;
-            unit.AddComponent<UnitPlayerIdComponent>().PlayerIdSting = player.Id.ToString();
+            UnitPlayerIdComponent unitPlayerIdComponent = unit.AddComponent<UnitPlayerIdComponent>();
+            unitPlayerIdComponent.PlayerId = player.Id;
+            unitPlayerIdComponent.PlayerIdSting = player.Id.ToString();
             session.GetComponent<GameRoleComponent>().UnitId = unit.Id;
 
             TDUserAdd userAdd = TDUserAdd.Create();
@@ -47,7 +48,18 @@
             userAdd.Properties = "";
             TDHelper.SendUserAddToTDLog(scene, userAdd);
 
-            string sceneName = unit.GetComponent<LocationComponent>().SceneName;
+            LocationComponent locationComponent = unit.GetComponent<LocationComponent>();
+            if (locationComponent == null)
+            {
+                locationComponent = unit.AddComponent<LocationComponent>();
+            }
+
+            string sceneName = locationComponent.SceneName;
+
+            if (string.IsNullOrEmpty(sceneName))
+            {
+                sceneName = "Map1";
+            }
 
             StartSceneConfig startSceneConfig = StartSceneConfigCategory.Instance.GetBySceneName(session.Zone(), sceneName);
 

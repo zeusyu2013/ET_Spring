@@ -6,7 +6,7 @@ namespace ET.Server
 {
     [UnitCacheEvent(typeof(CurrencyComponent))]
     [ComponentOf(typeof(Unit))]
-    public class CurrencyComponent : Entity, IAwake, ITransfer, IUnitCache
+    public class CurrencyComponent : Entity, IAwake, ITransfer
     {
         [BsonDictionaryOptions(DictionaryRepresentation.ArrayOfArrays)]
         public Dictionary<int, long> Currencies = new();

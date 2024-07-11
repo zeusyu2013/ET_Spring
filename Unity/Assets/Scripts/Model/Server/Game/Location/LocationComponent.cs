@@ -1,7 +1,8 @@
 ﻿namespace ET.Server
 {
     [ComponentOf]
-    public class LocationComponent : Entity, IAwake, IDestroy, IUnitCache, ITransfer
+    [UnitCacheEvent(typeof(LocationComponent))]
+    public class LocationComponent : Entity, IAwake, IDestroy, ITransfer
     {
         public string SceneName;
     }

@@ -5,7 +5,7 @@ namespace ET.Server
 {
     [UnitCacheEvent(typeof(TalentComponent))]
     [ComponentOf(typeof(Unit))]
-    public class TalentComponent : Entity, IAwake, IDestroy, IUnitCache, IDeserialize
+    public class TalentComponent : Entity, IAwake, IDestroy, IDeserialize
     {
         public int TalentPoint;
 

@@ -11,11 +11,12 @@
         [EntitySystem]
         private static void GetComponentSys(this Unit self, System.Type type)
         {
-            if (!(typeof(IUnitCache).IsAssignableFrom(type)))
+            object[] attrs = type.GetCustomAttributes(typeof(UnitCacheEventAttribute), false);
+            if (attrs.Length == 0)
             {
                 return;
             }
-
+            
             self.GetComponent<UnitDBSaveComponent>()?.AddChange(type);
         }
     }
