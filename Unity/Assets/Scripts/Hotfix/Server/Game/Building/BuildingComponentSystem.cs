@@ -62,7 +62,8 @@ namespace ET.Server
                 return;
             }
 
-            bool ret = self.GetParent<Unit>().GetComponent<CurrencyComponent>().Dec(upgrade.CurrencyType, upgrade.CurrencyValue);
+            bool ret = self.GetParent<Unit>().GetComponent<CurrencyComponent>().
+                    Dec(upgrade.CurrencyType, upgrade.CurrencyValue, "建筑升级");
             if (!ret)
             {
                 return;
@@ -117,7 +118,7 @@ namespace ET.Server
 
             foreach ((int type, long value) in produces)
             {
-                unit.GetComponent<CurrencyComponent>().Inc((CurrencyType)type, value);
+                unit.GetComponent<CurrencyComponent>().Inc((CurrencyType)type, value, "建筑产出");
             }
         }
     }

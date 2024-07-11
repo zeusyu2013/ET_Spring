@@ -19,7 +19,7 @@
             return self.Currencies[(int)type];
         }
 
-        public static bool Inc(this CurrencyComponent self, CurrencyType type, long value)
+        public static bool Inc(this CurrencyComponent self, CurrencyType type, long value, string reason)
         {
             if (type is <= 0 or >= CurrencyType.CurrencyType_Max)
             {
@@ -45,6 +45,7 @@
                     Unit = self.GetParent<Unit>(),
                     ChangeType = CurrencyChangeType.Inc,
                     Type = type,
+                    CurrencyChangeReason = reason,
                     OldValue = oldValue,
                     NewValue = self.Currencies[(int)type]
                 });
@@ -52,7 +53,7 @@
             return true;
         }
 
-        public static bool Dec(this CurrencyComponent self, CurrencyType type, long value)
+        public static bool Dec(this CurrencyComponent self, CurrencyType type, long value, string reason)
         {
             if (value < 0)
             {
@@ -79,6 +80,7 @@
                     Unit = self.GetParent<Unit>(),
                     ChangeType = CurrencyChangeType.Dec,
                     Type = type,
+                    CurrencyChangeReason = reason,
                     OldValue = current,
                     NewValue = current - value
                 });

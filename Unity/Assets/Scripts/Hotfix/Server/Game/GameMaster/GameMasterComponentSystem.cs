@@ -36,7 +36,7 @@
                 {
                     int currencyType = int.Parse(commands[1]);
                     long currencyValue = long.Parse(commands[2]);
-                    unit.GetComponent<CurrencyComponent>().Inc((CurrencyType)currencyType, currencyValue);
+                    unit.GetComponent<CurrencyComponent>().Inc((CurrencyType)currencyType, currencyValue, "GM产出");
                     break;
                 }
             }

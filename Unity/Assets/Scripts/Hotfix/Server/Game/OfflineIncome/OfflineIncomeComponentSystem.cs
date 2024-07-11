@@ -16,7 +16,7 @@
         public static OfflineIncomeInfo GetOfflineIncome(this OfflineIncomeComponent self)
         {
             OfflineIncomeInfo info = OfflineIncomeInfo.Create();
-            
+
             long now = TimeInfo.Instance.ServerNow();
             if (self.LastIncomeTime > now)
             {
@@ -34,7 +34,7 @@
             // TODO:这里随便设置下，1s 100金币 10经验值
             long gold = diff * 100;
             long exp = diff * 10;
-            self.GetParent<Unit>().GetComponent<CurrencyComponent>().Inc(CurrencyType.CurrencyType_Gold, gold);
+            self.GetParent<Unit>().GetComponent<CurrencyComponent>().Inc(CurrencyType.CurrencyType_Gold, gold, "离线收益");
             self.GetParent<Unit>().GetComponent<LevelComponent>().AddExp(exp);
 
             info.Gold = gold;

@@ -56,7 +56,7 @@ namespace ET.Server
             int currencyType = GlobalDataConfigCategory.Instance.ResetTalentCurrency;
             long currencyValue = GlobalDataConfigCategory.Instance.ResetTalentCurrencyValue;
             Unit unit = self.GetParent<Unit>();
-            bool ret = unit.GetComponent<CurrencyComponent>().Dec((CurrencyType)currencyType, currencyValue);
+            bool ret = unit.GetComponent<CurrencyComponent>().Dec((CurrencyType)currencyType, currencyValue, "重置天赋");
             if (!ret)
             {
                 return;

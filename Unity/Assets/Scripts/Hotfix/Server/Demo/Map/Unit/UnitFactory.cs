@@ -57,7 +57,7 @@ namespace ET.Server
 
             // 货币组件
             CurrencyComponent currencyComponent = unit.AddComponentWithId<CurrencyComponent>(unit.Id);
-            bool ret = currencyComponent.Inc(config.CurrencyType, config.CurrencyValue);
+            bool ret = currencyComponent.Inc(config.CurrencyType, config.CurrencyValue, "创角初始奖励");
             if (!ret)
             {
                 Log.Warning("创建角色添加货币失败");

@@ -83,7 +83,7 @@
             long consume = avocation.Config.UpgradeConsume[avocation.Level];
 
             // 钱不够，不处理
-            bool ret = self.GetParent<Unit>().GetComponent<CurrencyComponent>().Dec(CurrencyType.CurrencyType_Gold, consume);
+            bool ret = self.GetParent<Unit>().GetComponent<CurrencyComponent>().Dec(CurrencyType.CurrencyType_Gold, consume, "升级生活技能");
             if (!ret)
             {
                 return;

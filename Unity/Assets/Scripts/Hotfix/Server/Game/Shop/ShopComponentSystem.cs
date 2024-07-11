@@ -37,7 +37,7 @@ namespace ET.Server
                 }
             }
 
-            bool ret = self.GetParent<Unit>().GetComponent<CurrencyComponent>().Dec(config.CurrencyType, config.CurrencyValue);
+            bool ret = self.GetParent<Unit>().GetComponent<CurrencyComponent>().Dec(config.CurrencyType, config.CurrencyValue, "商店购买");
             if (!ret)
             {
                 return;
