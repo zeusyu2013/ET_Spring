@@ -3,7 +3,8 @@
 namespace ET.Server
 {
     [MessageHandler(SceneType.Map)]
-    public class M2M_UnitTransferRequestHandler: MessageHandler<Scene, M2M_UnitTransferRequest, M2M_UnitTransferResponse>
+    [FriendOfAttribute(typeof(ET.Server.LocationComponent))]
+    public class M2M_UnitTransferRequestHandler : MessageHandler<Scene, M2M_UnitTransferRequest, M2M_UnitTransferResponse>
     {
         protected override async ETTask Run(Scene scene, M2M_UnitTransferRequest request, M2M_UnitTransferResponse response)
         {
@@ -20,6 +21,9 @@ namespace ET.Server
                 Entity entity = MongoHelper.Deserialize<Entity>(bytes);
                 unit.AddComponent(entity);
             }
+
+            // 传送完成后，设置定位
+            unit.GetComponent<LocationComponent>().SceneName = scene.Name;
 
             unit.AddComponent<MoveComponent>();
             unit.AddComponent<PathfindingComponent, string>(scene.Name);
