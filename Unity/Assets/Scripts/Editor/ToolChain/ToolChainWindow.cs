@@ -27,7 +27,8 @@ namespace ET
 
             this.tree = new OdinMenuTree
             {
-                { "预设相关", CreateInstance<PrefabEditor>() },
+                { "卡通预设相关", CreateInstance<PrefabEditor>() },
+                { "角色预设生成", CreateInstance<PrefabEditorWindow>() },
                 { "动画相关", CreateInstance<AnimationEditorWindow>() },
                 { "路径编辑器", CreateInstance<PathEditorWindow>() },
                 { "Shader变体合并工具", CreateInstance<ShaderVariantsCollectionMergeWindow>() }
