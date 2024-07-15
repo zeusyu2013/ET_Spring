@@ -925,5 +925,85 @@
     "Quality": 4,
     "UseLevel": 1,
     "Icon": "itemicon_670010"
+  },
+  {
+    "Id": 920001,
+    "Name": "坐骑激活道具01",
+    "Type": 1,
+    "Quality": 2,
+    "UseLevel": 1,
+    "Icon": "itemicon_920001"
+  },
+  {
+    "Id": 920002,
+    "Name": "坐骑激活道具02",
+    "Type": 1,
+    "Quality": 2,
+    "UseLevel": 1,
+    "Icon": "itemicon_920002"
+  },
+  {
+    "Id": 920003,
+    "Name": "坐骑激活道具03",
+    "Type": 1,
+    "Quality": 2,
+    "UseLevel": 1,
+    "Icon": "itemicon_920003"
+  },
+  {
+    "Id": 920004,
+    "Name": "坐骑激活道具04",
+    "Type": 1,
+    "Quality": 2,
+    "UseLevel": 1,
+    "Icon": "itemicon_920004"
+  },
+  {
+    "Id": 920005,
+    "Name": "坐骑激活道具05",
+    "Type": 1,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_920005"
+  },
+  {
+    "Id": 920006,
+    "Name": "坐骑激活道具06",
+    "Type": 1,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_920006"
+  },
+  {
+    "Id": 920007,
+    "Name": "坐骑激活道具07",
+    "Type": 1,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_920007"
+  },
+  {
+    "Id": 920008,
+    "Name": "坐骑激活道具08",
+    "Type": 1,
+    "Quality": 3,
+    "UseLevel": 1,
+    "Icon": "itemicon_920008"
+  },
+  {
+    "Id": 920009,
+    "Name": "坐骑激活道具09",
+    "Type": 1,
+    "Quality": 4,
+    "UseLevel": 1,
+    "Icon": "itemicon_920009"
+  },
+  {
+    "Id": 920010,
+    "Name": "坐骑激活道具10",
+    "Type": 1,
+    "Quality": 4,
+    "UseLevel": 1,
+    "Icon": "itemicon_920010"
   }
 ]
