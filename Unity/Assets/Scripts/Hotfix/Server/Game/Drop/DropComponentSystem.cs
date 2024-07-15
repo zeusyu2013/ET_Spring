@@ -51,10 +51,10 @@ namespace ET.Server
             int certainty = RandomGenerator.RandomNumber(0, 10000);
             if (certainty > config.DropCertainty)
             {
-                Log.Info($"触发非必定掉落，掉落编号：{dropConfig} 随机确定性：{certainty} 掉落确定性：{config.DropCertainty}");
+                Log.Info($"触发非必定掉落，掉落编号：[{dropConfig}] 随机确定性：[{certainty}] 掉落确定性：[{config.DropCertainty}]");
                 return;
             }
-
+            
             // 必定掉落
             int index = 0;
             Dictionary<DropRange, DropItem> ranges = new();

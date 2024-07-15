@@ -39,6 +39,13 @@
                     unit.GetComponent<CurrencyComponent>().Inc((CurrencyType)currencyType, currencyValue, "GM产出");
                     break;
                 }
+
+                case "AddTask":
+                {
+                    int taskConfig = int.Parse(commands[1]);
+                    unit.GetComponent<GameTaskComponent>().AcceptTask(taskConfig);
+                    break;
+                }
             }
         }
     }

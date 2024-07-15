@@ -1,4 +1,6 @@
-﻿namespace ET.Server
+﻿using Unity.Mathematics;
+
+namespace ET.Server
 {
     [EntitySystemOf(typeof(LocationComponent))]
     [FriendOfAttribute(typeof(ET.Server.LocationComponent))]
@@ -8,12 +10,16 @@
         private static void Awake(this ET.Server.LocationComponent self)
         {
             self.SceneName = "";
+            self.Position = float3.zero;
+            self.Rotation = quaternion.identity;
         }
 
         [EntitySystem]
         private static void Destroy(this ET.Server.LocationComponent self)
         {
             self.SceneName = "";
+            self.Position = float3.zero;
+            self.Rotation = quaternion.identity;
         }
     }
 }

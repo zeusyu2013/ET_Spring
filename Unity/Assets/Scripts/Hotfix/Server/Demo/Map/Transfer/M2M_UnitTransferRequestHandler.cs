@@ -23,7 +23,10 @@ namespace ET.Server
             }
 
             // 传送完成后，设置定位
-            unit.GetComponent<LocationComponent>().SceneName = scene.Name;
+            LocationComponent locationComponent = unit.GetComponent<LocationComponent>();
+            locationComponent.SceneName = scene.Name;
+            unit.Position = locationComponent.Position;
+            unit.Rotation = locationComponent.Rotation;
 
             unit.AddComponent<MoveComponent>();
             unit.AddComponent<PathfindingComponent, string>(scene.Name);

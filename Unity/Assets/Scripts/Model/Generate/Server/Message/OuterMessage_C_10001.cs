@@ -1043,6 +1043,224 @@ namespace ET
     }
 
     [MemoryPackable]
+    [Message(OuterMessage.C2M_CreateDungeon)]
+    [ResponseType(nameof(M2C_CreateDungeon))]
+    public partial class C2M_CreateDungeon : MessageObject, ILocationRequest
+    {
+        public static C2M_CreateDungeon Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_CreateDungeon), isFromPool) as C2M_CreateDungeon;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int DungeonConfig { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.DungeonConfig = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_CreateDungeon)]
+    public partial class M2C_CreateDungeon : MessageObject, ILocationResponse
+    {
+        public static M2C_CreateDungeon Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_CreateDungeon), isFromPool) as M2C_CreateDungeon;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        [MemoryPackOrder(3)]
+        public ActorId ActorId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+            this.ActorId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.C2M_TransferDungeon)]
+    [ResponseType(nameof(M2C_TransferDungeon))]
+    public partial class C2M_TransferDungeon : MessageObject, ILocationRequest
+    {
+        public static C2M_TransferDungeon Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_TransferDungeon), isFromPool) as C2M_TransferDungeon;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public ActorId ActorId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.ActorId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_TransferDungeon)]
+    public partial class M2C_TransferDungeon : MessageObject, ILocationResponse
+    {
+        public static M2C_TransferDungeon Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_TransferDungeon), isFromPool) as M2C_TransferDungeon;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.C2M_ExitDungeon)]
+    [ResponseType(nameof(M2C_ExitDungeon))]
+    public partial class C2M_ExitDungeon : MessageObject, ILocationRequest
+    {
+        public static C2M_ExitDungeon Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_ExitDungeon), isFromPool) as C2M_ExitDungeon;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public ActorId ActorId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.ActorId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_ExitDungeon)]
+    public partial class M2C_ExitDungeon : MessageObject, ILocationResponse
+    {
+        public static M2C_ExitDungeon Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_ExitDungeon), isFromPool) as M2C_ExitDungeon;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_DungeonTimeout)]
+    public partial class M2C_DungeonTimeout : MessageObject, IMessage
+    {
+        public static M2C_DungeonTimeout Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_DungeonTimeout), isFromPool) as M2C_DungeonTimeout;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
     [Message(OuterMessage.C2G_Benchmark)]
     [ResponseType(nameof(G2C_Benchmark))]
     public partial class C2G_Benchmark : MessageObject, ISessionRequest
@@ -2341,43 +2559,50 @@ namespace ET
         public const ushort M2C_TestRobotCase2 = 10031;
         public const ushort C2M_TransferMap = 10032;
         public const ushort M2C_TransferMap = 10033;
-        public const ushort C2G_Benchmark = 10034;
-        public const ushort G2C_Benchmark = 10035;
-        public const ushort GameRoleInfo = 10036;
-        public const ushort C2G_GetRoles = 10037;
-        public const ushort G2C_GetRoles = 10038;
-        public const ushort C2G_CreateRole = 10039;
-        public const ushort G2C_CreateRole = 10040;
-        public const ushort C2G_DeleteRole = 10041;
-        public const ushort G2C_DeleteRole = 10042;
-        public const ushort C2G_ChooseRole = 10043;
-        public const ushort G2C_ChooseRole = 10044;
-        public const ushort GameItemInfo = 10045;
-        public const ushort C2M_GetAllItems = 10046;
-        public const ushort M2C_GetAllItems = 10047;
-        public const ushort C2M_ExtendBag = 10048;
-        public const ushort M2C_ExtendBag = 10049;
-        public const ushort M2C_GetNewItem = 10050;
-        public const ushort C2M_UseItem = 10051;
-        public const ushort M2C_UseItem = 10052;
-        public const ushort C2M_AcceptTask = 10053;
-        public const ushort M2C_AcceptTask = 10054;
-        public const ushort GameBuffInfo = 10055;
-        public const ushort C2M_GetAllBuffs = 10056;
-        public const ushort M2C_GetAllBuffs = 10057;
-        public const ushort C2M_Equip = 10058;
-        public const ushort M2C_Equip = 10059;
-        public const ushort GamePropertyInfo = 10060;
-        public const ushort M2C_PropertyRefresh = 10061;
-        public const ushort FightScoreRankEntityInfo = 10062;
-        public const ushort C2Main_GetFightScoreRank = 10063;
-        public const ushort Main2C_GetFightScoreRank = 10064;
-        public const ushort MailInfo = 10065;
-        public const ushort C2M_CheckMails = 10066;
-        public const ushort M2C_CheckMails = 10067;
-        public const ushort C2M_CheckMail = 10068;
-        public const ushort M2C_CheckMail = 10069;
-        public const ushort C2M_ReceiveAttachments = 10070;
-        public const ushort M2C_ReceiveAttachments = 10071;
+        public const ushort C2M_CreateDungeon = 10034;
+        public const ushort M2C_CreateDungeon = 10035;
+        public const ushort C2M_TransferDungeon = 10036;
+        public const ushort M2C_TransferDungeon = 10037;
+        public const ushort C2M_ExitDungeon = 10038;
+        public const ushort M2C_ExitDungeon = 10039;
+        public const ushort M2C_DungeonTimeout = 10040;
+        public const ushort C2G_Benchmark = 10041;
+        public const ushort G2C_Benchmark = 10042;
+        public const ushort GameRoleInfo = 10043;
+        public const ushort C2G_GetRoles = 10044;
+        public const ushort G2C_GetRoles = 10045;
+        public const ushort C2G_CreateRole = 10046;
+        public const ushort G2C_CreateRole = 10047;
+        public const ushort C2G_DeleteRole = 10048;
+        public const ushort G2C_DeleteRole = 10049;
+        public const ushort C2G_ChooseRole = 10050;
+        public const ushort G2C_ChooseRole = 10051;
+        public const ushort GameItemInfo = 10052;
+        public const ushort C2M_GetAllItems = 10053;
+        public const ushort M2C_GetAllItems = 10054;
+        public const ushort C2M_ExtendBag = 10055;
+        public const ushort M2C_ExtendBag = 10056;
+        public const ushort M2C_GetNewItem = 10057;
+        public const ushort C2M_UseItem = 10058;
+        public const ushort M2C_UseItem = 10059;
+        public const ushort C2M_AcceptTask = 10060;
+        public const ushort M2C_AcceptTask = 10061;
+        public const ushort GameBuffInfo = 10062;
+        public const ushort C2M_GetAllBuffs = 10063;
+        public const ushort M2C_GetAllBuffs = 10064;
+        public const ushort C2M_Equip = 10065;
+        public const ushort M2C_Equip = 10066;
+        public const ushort GamePropertyInfo = 10067;
+        public const ushort M2C_PropertyRefresh = 10068;
+        public const ushort FightScoreRankEntityInfo = 10069;
+        public const ushort C2Main_GetFightScoreRank = 10070;
+        public const ushort Main2C_GetFightScoreRank = 10071;
+        public const ushort MailInfo = 10072;
+        public const ushort C2M_CheckMails = 10073;
+        public const ushort M2C_CheckMails = 10074;
+        public const ushort C2M_CheckMail = 10075;
+        public const ushort M2C_CheckMail = 10076;
+        public const ushort C2M_ReceiveAttachments = 10077;
+        public const ushort M2C_ReceiveAttachments = 10078;
     }
 }

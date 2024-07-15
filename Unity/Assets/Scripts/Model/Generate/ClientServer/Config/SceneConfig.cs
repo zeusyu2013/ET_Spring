@@ -17,7 +17,7 @@ namespace ET
         public SceneConfig(ByteBuf _buf)
         {
             Id = _buf.ReadInt();
-            SceneRes = _buf.ReadInt();
+            SceneRes = _buf.ReadString();
 
             PostInit();
         }
@@ -35,7 +35,7 @@ namespace ET
         /// <summary>
         /// 场景资源编号
         /// </summary>
-        public readonly int SceneRes;
+        public readonly string SceneRes;
 
         public const int __ID__ = 935827150;
 

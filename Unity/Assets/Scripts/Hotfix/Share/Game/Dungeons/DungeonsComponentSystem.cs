@@ -21,7 +21,7 @@
                 return;
             }
 
-            DungeonsConfig config = DungeonsConfigCategory.Instance.Get(dungeonsConfig);
+            DungeonConfig config = DungeonConfigCategory.Instance.Get(dungeonsConfig);
             if (config == null)
             {
                 return;
@@ -43,7 +43,7 @@
                 return;
             }
 
-            DungeonsConfig config = DungeonsConfigCategory.Instance.Get(dungeonsConfig);
+            DungeonConfig config = DungeonConfigCategory.Instance.Get(dungeonsConfig);
             if (config == null)
             {
                 return;

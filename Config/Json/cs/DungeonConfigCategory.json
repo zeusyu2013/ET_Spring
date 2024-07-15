@@ -1,0 +1,122 @@
+[
+  {
+    "Id": 70001,
+    "Scene": 50001,
+    "PreStage": 0,
+    "BornPosition": {
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "BornRotation": 0,
+    "During": 180000
+  },
+  {
+    "Id": 70002,
+    "Scene": 50002,
+    "PreStage": 70001,
+    "BornPosition": {
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "BornRotation": 0,
+    "During": 180000
+  },
+  {
+    "Id": 70003,
+    "Scene": 50003,
+    "PreStage": 70002,
+    "BornPosition": {
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "BornRotation": 0,
+    "During": 180000
+  },
+  {
+    "Id": 70004,
+    "Scene": 50004,
+    "PreStage": 70003,
+    "BornPosition": {
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "BornRotation": 0,
+    "During": 180000
+  },
+  {
+    "Id": 70005,
+    "Scene": 50005,
+    "PreStage": 70004,
+    "BornPosition": {
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "BornRotation": 0,
+    "During": 180000
+  },
+  {
+    "Id": 70006,
+    "Scene": 50006,
+    "PreStage": 70005,
+    "BornPosition": {
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "BornRotation": 0,
+    "During": 180000
+  },
+  {
+    "Id": 70007,
+    "Scene": 50007,
+    "PreStage": 70006,
+    "BornPosition": {
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "BornRotation": 0,
+    "During": 180000
+  },
+  {
+    "Id": 70008,
+    "Scene": 50008,
+    "PreStage": 70007,
+    "BornPosition": {
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "BornRotation": 0,
+    "During": 180000
+  },
+  {
+    "Id": 70009,
+    "Scene": 50009,
+    "PreStage": 70008,
+    "BornPosition": {
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "BornRotation": 0,
+    "During": 180000
+  },
+  {
+    "Id": 70010,
+    "Scene": 50010,
+    "PreStage": 70009,
+    "BornPosition": {
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "BornRotation": 0,
+    "During": 180000
+  }
+]

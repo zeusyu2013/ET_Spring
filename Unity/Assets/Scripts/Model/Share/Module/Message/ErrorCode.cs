@@ -62,5 +62,9 @@ namespace ET
         
         // Daily Sign
         public const int ERR_DailySignErrorDay = 200501;
+        
+        // Dungeon
+        public const int ERR_CreateDungeonFailed = 200601;
+        public const int ERR_TransferDungeonFailed = 200602;
     }
 }

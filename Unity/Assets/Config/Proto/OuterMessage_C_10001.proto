@@ -224,6 +224,54 @@ message M2C_TransferMap // ILocationResponse
 	string Message = 3;
 }
 
+// ResponseType M2C_CreateDungeon
+message C2M_CreateDungeon // ILocationRequest
+{
+	int32 RpcId = 1;
+	int32 DungeonConfig = 2;
+}
+
+message M2C_CreateDungeon // ILocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+	ActorId ActorId = 4;
+}
+
+// ResponseType M2C_TransferDungeon
+message C2M_TransferDungeon // ILocationRequest
+{
+	int32 RpcId = 1;
+	ActorId ActorId = 2;
+}
+
+message M2C_TransferDungeon // ILocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}
+
+// ResponseType M2C_ExitDungeon
+message C2M_ExitDungeon // ILocationRequest
+{
+	int32 RpcId = 1;
+	ActorId ActorId = 2;
+}
+
+message M2C_ExitDungeon // ILocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}
+
+message M2C_DungeonTimeout // IMessage
+{
+	int32 RpcId = 1;
+}
+
 // ResponseType G2C_Benchmark
 message C2G_Benchmark // ISessionRequest
 {
