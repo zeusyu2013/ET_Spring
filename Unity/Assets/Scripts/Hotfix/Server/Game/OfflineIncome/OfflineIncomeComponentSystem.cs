@@ -2,6 +2,8 @@
 {
     [EntitySystemOf(typeof(OfflineIncomeComponent))]
     [FriendOfAttribute(typeof(OfflineIncomeComponent))]
+    [FriendOfAttribute(typeof(ET.Server.VipComponent))]
+    [FriendOfAttribute(typeof(ET.Server.LevelComponent))]
     public static partial class OfflineIncomeComponentSystem
     {
         [EntitySystem]
@@ -30,13 +32,26 @@
                 return info;
             }
 
+            Unit unit = self.GetParent<Unit>();
+
+            VipConfig vipConfig = VipConfigCategory.Instance.Get(unit.GetComponent<VipComponent>().VipLevel);
+
+            OfflineIncomeConfig offlineIncomeConfig = OfflineIncomeConfigCategory.Instance.Get(unit.GetComponent<LevelComponent>().Level);
+            if (diff >= offlineIncomeConfig.MaxTime + vipConfig.OfflineAddTime)
+            {
+                diff = offlineIncomeConfig.MaxTime + vipConfig.OfflineAddTime;
+            }
+
+            float rate = 1 + vipConfig.OfflineRate / 10000f;
+
             // 统计diff秒收益
-            // TODO:这里随便设置下，1s 100金币 10经验值
-            long gold = diff * 100;
-            long exp = diff * 10;
+            long gold = (long)(diff * offlineIncomeConfig.Gold * rate);
+            long exp = (long)(diff * offlineIncomeConfig.Exp * rate);
+            
             self.GetParent<Unit>().GetComponent<CurrencyComponent>().Inc(CurrencyType.CurrencyType_Gold, gold, "离线收益");
             self.GetParent<Unit>().GetComponent<LevelComponent>().AddExp(exp);
 
+            info.Time = diff;
             info.Gold = gold;
             info.Exp = exp;
 

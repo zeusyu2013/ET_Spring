@@ -1,0 +1,422 @@
+[
+  {
+    "Level": 1,
+    "Exp": 10,
+    "Gold": 100,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 2,
+    "Exp": 20,
+    "Gold": 200,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 3,
+    "Exp": 30,
+    "Gold": 300,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 4,
+    "Exp": 40,
+    "Gold": 400,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 5,
+    "Exp": 50,
+    "Gold": 500,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 6,
+    "Exp": 60,
+    "Gold": 600,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 7,
+    "Exp": 70,
+    "Gold": 700,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 8,
+    "Exp": 80,
+    "Gold": 800,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 9,
+    "Exp": 90,
+    "Gold": 900,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 10,
+    "Exp": 100,
+    "Gold": 1000,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 11,
+    "Exp": 110,
+    "Gold": 1100,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 12,
+    "Exp": 120,
+    "Gold": 1200,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 13,
+    "Exp": 130,
+    "Gold": 1300,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 14,
+    "Exp": 140,
+    "Gold": 1400,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 15,
+    "Exp": 150,
+    "Gold": 1500,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 16,
+    "Exp": 160,
+    "Gold": 1600,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 17,
+    "Exp": 170,
+    "Gold": 1700,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 18,
+    "Exp": 180,
+    "Gold": 1800,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 19,
+    "Exp": 190,
+    "Gold": 1900,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 20,
+    "Exp": 200,
+    "Gold": 2000,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 21,
+    "Exp": 210,
+    "Gold": 2100,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 22,
+    "Exp": 220,
+    "Gold": 2200,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 23,
+    "Exp": 230,
+    "Gold": 2300,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 24,
+    "Exp": 240,
+    "Gold": 2400,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 25,
+    "Exp": 250,
+    "Gold": 2500,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 26,
+    "Exp": 260,
+    "Gold": 2600,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 27,
+    "Exp": 270,
+    "Gold": 2700,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 28,
+    "Exp": 280,
+    "Gold": 2800,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 29,
+    "Exp": 290,
+    "Gold": 2900,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 30,
+    "Exp": 300,
+    "Gold": 3000,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 31,
+    "Exp": 310,
+    "Gold": 3100,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 32,
+    "Exp": 320,
+    "Gold": 3200,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 33,
+    "Exp": 330,
+    "Gold": 3300,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 34,
+    "Exp": 340,
+    "Gold": 3400,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 35,
+    "Exp": 350,
+    "Gold": 3500,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 36,
+    "Exp": 360,
+    "Gold": 3600,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 37,
+    "Exp": 370,
+    "Gold": 3700,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 38,
+    "Exp": 380,
+    "Gold": 3800,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 39,
+    "Exp": 390,
+    "Gold": 3900,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 40,
+    "Exp": 400,
+    "Gold": 4000,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 41,
+    "Exp": 410,
+    "Gold": 4100,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 42,
+    "Exp": 420,
+    "Gold": 4200,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 43,
+    "Exp": 430,
+    "Gold": 4300,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 44,
+    "Exp": 440,
+    "Gold": 4400,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 45,
+    "Exp": 450,
+    "Gold": 4500,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 46,
+    "Exp": 460,
+    "Gold": 4600,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 47,
+    "Exp": 470,
+    "Gold": 4700,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 48,
+    "Exp": 480,
+    "Gold": 4800,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 49,
+    "Exp": 490,
+    "Gold": 4900,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 50,
+    "Exp": 500,
+    "Gold": 5000,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 51,
+    "Exp": 510,
+    "Gold": 5100,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 52,
+    "Exp": 520,
+    "Gold": 5200,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 53,
+    "Exp": 530,
+    "Gold": 5300,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 54,
+    "Exp": 540,
+    "Gold": 5400,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 55,
+    "Exp": 550,
+    "Gold": 5500,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 56,
+    "Exp": 560,
+    "Gold": 5600,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 57,
+    "Exp": 570,
+    "Gold": 5700,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 58,
+    "Exp": 580,
+    "Gold": 5800,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 59,
+    "Exp": 590,
+    "Gold": 5900,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 60,
+    "Exp": 600,
+    "Gold": 6000,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 61,
+    "Exp": 610,
+    "Gold": 6100,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 62,
+    "Exp": 620,
+    "Gold": 6200,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 63,
+    "Exp": 630,
+    "Gold": 6300,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 64,
+    "Exp": 640,
+    "Gold": 6400,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 65,
+    "Exp": 650,
+    "Gold": 6500,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 66,
+    "Exp": 660,
+    "Gold": 6600,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 67,
+    "Exp": 670,
+    "Gold": 6700,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 68,
+    "Exp": 680,
+    "Gold": 6800,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 69,
+    "Exp": 690,
+    "Gold": 6900,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 70,
+    "Exp": 700,
+    "Gold": 7000,
+    "MaxTime": 86400
+  }
+]

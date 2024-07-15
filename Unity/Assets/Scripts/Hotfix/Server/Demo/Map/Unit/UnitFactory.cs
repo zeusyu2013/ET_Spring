@@ -78,6 +78,12 @@ namespace ET.Server
             BornSceneConfig bornSceneConfig = BornSceneConfigCategory.Instance.Get(race);
             locationComponent.SceneName = bornSceneConfig.BornScene;
 
+            // 坐骑组件
+            unit.AddComponentWithId<MountComponent>(unit.Id);
+
+            // VIP组件
+            unit.AddComponentWithId<VipComponent>(unit.Id);
+
             unitComponent.Add(unit);
 
             UnitDBSaveComponent unitDBSaveComponent = unit.AddComponent<UnitDBSaveComponent>();
@@ -92,6 +98,8 @@ namespace ET.Server
             unitDBSaveComponent.AddChange(typeof(GameTaskComponent));
             unitDBSaveComponent.AddChange(typeof(AchievementComponent));
             unitDBSaveComponent.AddChange(typeof(LocationComponent));
+            unitDBSaveComponent.AddChange(typeof(MountComponent));
+            unitDBSaveComponent.AddChange(typeof(VipComponent));
             unitDBSaveComponent.SaveChanged();
 
             // 加入aoi

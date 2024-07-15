@@ -167,9 +167,12 @@ namespace ET
         }
 
         [MemoryPackOrder(0)]
-        public long Gold { get; set; }
+        public long Time { get; set; }
 
         [MemoryPackOrder(1)]
+        public long Gold { get; set; }
+
+        [MemoryPackOrder(2)]
         public long Exp { get; set; }
 
         public override void Dispose()
@@ -179,6 +182,7 @@ namespace ET
                 return;
             }
 
+            this.Time = default;
             this.Gold = default;
             this.Exp = default;
 
