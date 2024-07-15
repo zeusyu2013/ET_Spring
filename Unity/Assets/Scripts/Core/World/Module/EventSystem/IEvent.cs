@@ -2,33 +2,33 @@
 
 namespace ET
 {
-	public interface IEvent
-	{
-		Type Type { get; }
-	}
-	
-	public abstract class AEvent<S, A>: IEvent where S: class, IScene where A: struct
-	{
-		public Type Type
-		{
-			get
-			{
-				return typeof (A);
-			}
-		}
+    public interface IEvent
+    {
+        Type Type { get; }
+    }
 
-		protected abstract ETTask Run(S scene, A a);
+    public abstract class AEvent<S, A> : IEvent where S : class, IScene where A : struct
+    {
+        public Type Type
+        {
+            get
+            {
+                return typeof(A);
+            }
+        }
 
-		public async ETTask Handle(S scene, A a)
-		{
-			try
-			{
-				await Run(scene, a);
-			}
-			catch (Exception e)
-			{
-				Log.Error(e);
-			}
-		}
-	}
+        protected abstract ETTask Run(S scene, A args);
+
+        public async ETTask Handle(S scene, A args)
+        {
+            try
+            {
+                await Run(scene, args);
+            }
+            catch (Exception e)
+            {
+                Log.Error(e);
+            }
+        }
+    }
 }

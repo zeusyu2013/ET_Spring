@@ -1,322 +1,402 @@
 [
   {
     "Id": 1,
-    "Exp": 200
+    "Exp": 200,
+    "Property": 1001
   },
   {
     "Id": 2,
-    "Exp": 300
+    "Exp": 300,
+    "Property": 1001
   },
   {
     "Id": 3,
-    "Exp": 400
+    "Exp": 400,
+    "Property": 1001
   },
   {
     "Id": 4,
-    "Exp": 500
+    "Exp": 500,
+    "Property": 1001
   },
   {
     "Id": 5,
-    "Exp": 600
+    "Exp": 600,
+    "Property": 1001
   },
   {
     "Id": 6,
-    "Exp": 700
+    "Exp": 700,
+    "Property": 1001
   },
   {
     "Id": 7,
-    "Exp": 800
+    "Exp": 800,
+    "Property": 1001
   },
   {
     "Id": 8,
-    "Exp": 900
+    "Exp": 900,
+    "Property": 1001
   },
   {
     "Id": 9,
-    "Exp": 1000
+    "Exp": 1000,
+    "Property": 1001
   },
   {
     "Id": 10,
-    "Exp": 1100
+    "Exp": 1100,
+    "Property": 1001
   },
   {
     "Id": 11,
-    "Exp": 1200
+    "Exp": 1200,
+    "Property": 1001
   },
   {
     "Id": 12,
-    "Exp": 1300
+    "Exp": 1300,
+    "Property": 1001
   },
   {
     "Id": 13,
-    "Exp": 1400
+    "Exp": 1400,
+    "Property": 1001
   },
   {
     "Id": 14,
-    "Exp": 1500
+    "Exp": 1500,
+    "Property": 1001
   },
   {
     "Id": 15,
-    "Exp": 1600
+    "Exp": 1600,
+    "Property": 1001
   },
   {
     "Id": 16,
-    "Exp": 1700
+    "Exp": 1700,
+    "Property": 1001
   },
   {
     "Id": 17,
-    "Exp": 1800
+    "Exp": 1800,
+    "Property": 1001
   },
   {
     "Id": 18,
-    "Exp": 1900
+    "Exp": 1900,
+    "Property": 1001
   },
   {
     "Id": 19,
-    "Exp": 2000
+    "Exp": 2000,
+    "Property": 1001
   },
   {
     "Id": 20,
-    "Exp": 2100
+    "Exp": 2100,
+    "Property": 1001
   },
   {
     "Id": 21,
-    "Exp": 2200
+    "Exp": 2200,
+    "Property": 1001
   },
   {
     "Id": 22,
-    "Exp": 2300
+    "Exp": 2300,
+    "Property": 1001
   },
   {
     "Id": 23,
-    "Exp": 2400
+    "Exp": 2400,
+    "Property": 1001
   },
   {
     "Id": 24,
-    "Exp": 2500
+    "Exp": 2500,
+    "Property": 1001
   },
   {
     "Id": 25,
-    "Exp": 2600
+    "Exp": 2600,
+    "Property": 1001
   },
   {
     "Id": 26,
-    "Exp": 2700
+    "Exp": 2700,
+    "Property": 1001
   },
   {
     "Id": 27,
-    "Exp": 2800
+    "Exp": 2800,
+    "Property": 1001
   },
   {
     "Id": 28,
-    "Exp": 2900
+    "Exp": 2900,
+    "Property": 1001
   },
   {
     "Id": 29,
-    "Exp": 3000
+    "Exp": 3000,
+    "Property": 1001
   },
   {
     "Id": 30,
-    "Exp": 3100
+    "Exp": 3100,
+    "Property": 1001
   },
   {
     "Id": 31,
-    "Exp": 3200
+    "Exp": 3200,
+    "Property": 1001
   },
   {
     "Id": 32,
-    "Exp": 3300
+    "Exp": 3300,
+    "Property": 1001
   },
   {
     "Id": 33,
-    "Exp": 3400
+    "Exp": 3400,
+    "Property": 1001
   },
   {
     "Id": 34,
-    "Exp": 3500
+    "Exp": 3500,
+    "Property": 1001
   },
   {
     "Id": 35,
-    "Exp": 3600
+    "Exp": 3600,
+    "Property": 1001
   },
   {
     "Id": 36,
-    "Exp": 3700
+    "Exp": 3700,
+    "Property": 1001
   },
   {
     "Id": 37,
-    "Exp": 3800
+    "Exp": 3800,
+    "Property": 1001
   },
   {
     "Id": 38,
-    "Exp": 3900
+    "Exp": 3900,
+    "Property": 1001
   },
   {
     "Id": 39,
-    "Exp": 4000
+    "Exp": 4000,
+    "Property": 1001
   },
   {
     "Id": 40,
-    "Exp": 4100
+    "Exp": 4100,
+    "Property": 1001
   },
   {
     "Id": 41,
-    "Exp": 4200
+    "Exp": 4200,
+    "Property": 1001
   },
   {
     "Id": 42,
-    "Exp": 4300
+    "Exp": 4300,
+    "Property": 1001
   },
   {
     "Id": 43,
-    "Exp": 4400
+    "Exp": 4400,
+    "Property": 1001
   },
   {
     "Id": 44,
-    "Exp": 4500
+    "Exp": 4500,
+    "Property": 1001
   },
   {
     "Id": 45,
-    "Exp": 4600
+    "Exp": 4600,
+    "Property": 1001
   },
   {
     "Id": 46,
-    "Exp": 4700
+    "Exp": 4700,
+    "Property": 1001
   },
   {
     "Id": 47,
-    "Exp": 4800
+    "Exp": 4800,
+    "Property": 1001
   },
   {
     "Id": 48,
-    "Exp": 4900
+    "Exp": 4900,
+    "Property": 1001
   },
   {
     "Id": 49,
-    "Exp": 5000
+    "Exp": 5000,
+    "Property": 1001
   },
   {
     "Id": 50,
-    "Exp": 5100
+    "Exp": 5100,
+    "Property": 1001
   },
   {
     "Id": 51,
-    "Exp": 5200
+    "Exp": 5200,
+    "Property": 1001
   },
   {
     "Id": 52,
-    "Exp": 5300
+    "Exp": 5300,
+    "Property": 1001
   },
   {
     "Id": 53,
-    "Exp": 5400
+    "Exp": 5400,
+    "Property": 1001
   },
   {
     "Id": 54,
-    "Exp": 5500
+    "Exp": 5500,
+    "Property": 1001
   },
   {
     "Id": 55,
-    "Exp": 5600
+    "Exp": 5600,
+    "Property": 1001
   },
   {
     "Id": 56,
-    "Exp": 5700
+    "Exp": 5700,
+    "Property": 1001
   },
   {
     "Id": 57,
-    "Exp": 5800
+    "Exp": 5800,
+    "Property": 1001
   },
   {
     "Id": 58,
-    "Exp": 5900
+    "Exp": 5900,
+    "Property": 1001
   },
   {
     "Id": 59,
-    "Exp": 6000
+    "Exp": 6000,
+    "Property": 1001
   },
   {
     "Id": 60,
-    "Exp": 6100
+    "Exp": 6100,
+    "Property": 1001
   },
   {
     "Id": 61,
-    "Exp": 6200
+    "Exp": 6200,
+    "Property": 1001
   },
   {
     "Id": 62,
-    "Exp": 6300
+    "Exp": 6300,
+    "Property": 1001
   },
   {
     "Id": 63,
-    "Exp": 6400
+    "Exp": 6400,
+    "Property": 1001
   },
   {
     "Id": 64,
-    "Exp": 6500
+    "Exp": 6500,
+    "Property": 1001
   },
   {
     "Id": 65,
-    "Exp": 6600
+    "Exp": 6600,
+    "Property": 1001
   },
   {
     "Id": 66,
-    "Exp": 6700
+    "Exp": 6700,
+    "Property": 1001
   },
   {
     "Id": 67,
-    "Exp": 6800
+    "Exp": 6800,
+    "Property": 1001
   },
   {
     "Id": 68,
-    "Exp": 6900
+    "Exp": 6900,
+    "Property": 1001
   },
   {
     "Id": 69,
-    "Exp": 7000
+    "Exp": 7000,
+    "Property": 1001
   },
   {
     "Id": 70,
-    "Exp": 7100
+    "Exp": 7100,
+    "Property": 1001
   },
   {
     "Id": 71,
-    "Exp": 7200
+    "Exp": 7200,
+    "Property": 1001
   },
   {
     "Id": 72,
-    "Exp": 7300
+    "Exp": 7300,
+    "Property": 1001
   },
   {
     "Id": 73,
-    "Exp": 7400
+    "Exp": 7400,
+    "Property": 1001
   },
   {
     "Id": 74,
-    "Exp": 7500
+    "Exp": 7500,
+    "Property": 1001
   },
   {
     "Id": 75,
-    "Exp": 7600
+    "Exp": 7600,
+    "Property": 1001
   },
   {
     "Id": 76,
-    "Exp": 7700
+    "Exp": 7700,
+    "Property": 1001
   },
   {
     "Id": 77,
-    "Exp": 7800
+    "Exp": 7800,
+    "Property": 1001
   },
   {
     "Id": 78,
-    "Exp": 7900
+    "Exp": 7900,
+    "Property": 1001
   },
   {
     "Id": 79,
-    "Exp": 8000
+    "Exp": 8000,
+    "Property": 1001
   },
   {
     "Id": 80,
-    "Exp": 0
+    "Exp": 0,
+    "Property": 1001
   }
 ]

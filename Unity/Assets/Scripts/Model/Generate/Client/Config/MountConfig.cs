@@ -21,6 +21,7 @@ namespace ET
             Desc = _buf.ReadString();
             Model = _buf.ReadString();
             ActivationItem = _buf.ReadInt();
+            SpeedRate = _buf.ReadLong();
 
             PostInit();
         }
@@ -60,6 +61,11 @@ namespace ET
         /// </summary>
         public ItemConfig ActivationItemConfig => ItemConfigCategory.Instance.GetOrDefault(ActivationItem);
 
+        /// <summary>
+        /// 移动速度百分比加成
+        /// </summary>
+        public readonly long SpeedRate;
+
         public const int __ID__ = -1952375653;
 
         public override int GetTypeId() => __ID__;
@@ -72,6 +78,7 @@ namespace ET
             + "Desc:" + Desc + ","
             + "Model:" + Model + ","
             + "ActivationItem:" + ActivationItem + ","
+            + "SpeedRate:" + SpeedRate + ","
             + "}";
         }
 

@@ -4,9 +4,9 @@ namespace ET.Server
 {
     [ComponentOf]
     [UnitCacheEvent(typeof(MountComponent))]
-    public class MountComponent : Entity, IAwake, IDestroy, ITransfer, IDeserialize
+    public class MountComponent : Entity, IAwake, IDestroy, ITransfer
     {
-        public int MountConfig;
+        public int MountConfigId;
         
         public List<int> Mounts = new();
     }

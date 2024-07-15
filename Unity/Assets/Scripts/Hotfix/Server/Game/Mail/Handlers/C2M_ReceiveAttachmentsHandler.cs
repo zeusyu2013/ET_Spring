@@ -1,6 +1,7 @@
 ﻿namespace ET.Server
 {
     [MessageHandler(SceneType.Map)]
+    [FriendOfAttribute(typeof(ET.Server.Mail))]
     public class C2M_ReceiveAttachmentsHandler : MessageLocationHandler<Unit, C2M_ReceiveAttachments, M2C_ReceiveAttachments>
     {
         protected override async ETTask Run(Unit unit, C2M_ReceiveAttachments request, M2C_ReceiveAttachments response)
@@ -12,7 +13,7 @@
                 response.Message = "邮箱id无效";
                 return;
             }
-            
+
             Mail mail = unit.GetComponent<MailComponent>().ReceiveMailAttachments(mailId);
             if (mail == null)
             {
@@ -21,8 +22,10 @@
                 return;
             }
 
+            mail.Read = true;
+            mail.ReceiveAttachments = true;
             response.MailInfo = mail.ToMessage();
-            
+
             await ETTask.CompletedTask;
         }
     }

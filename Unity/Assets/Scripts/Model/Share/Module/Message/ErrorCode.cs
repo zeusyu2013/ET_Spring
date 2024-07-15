@@ -66,5 +66,9 @@ namespace ET
         // Dungeon
         public const int ERR_CreateDungeonFailed = 200601;
         public const int ERR_TransferDungeonFailed = 200602;
+        
+        // Mount
+        public const int ERR_HasMount = 200701;
+        public const int ERR_MountConfigError = 200701;
     }
 }

@@ -301,3 +301,58 @@ message M2C_DeleteFriend // ILocationResponse
 	int32 Error = 2;
 	string Message = 3;
 }
+
+// ResponseType M2C_GetMounts
+message C2M_GetMounts // ILocationRequest
+{
+	int32 RpcId = 1;
+}
+
+message M2C_GetMounts // ILocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+	repeated int32 Mounts = 4;
+}
+
+// ResponseType M2C_ActivationMount
+message C2M_ActivationMount // ILocationRequest
+{
+	int32 RpcId = 1;
+	int32 MountConfigId = 2;
+}
+
+message M2C_ActivationMount // ILocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}
+
+// ResponseType M2C_RideMount
+message C2M_RideMount // ILocationRequest
+{
+	int32 RpcId = 1;
+	int32 MountConfigId = 2;
+}
+
+message M2C_RideMount // ILocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}
+
+// ResponseType M2C_DownMount
+message C2M_DownMount // ILocationRequest
+{
+	int32 RpcId = 1;
+}
+
+message M2C_DownMount // ILocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}

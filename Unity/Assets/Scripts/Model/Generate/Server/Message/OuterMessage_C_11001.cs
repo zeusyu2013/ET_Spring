@@ -1382,6 +1382,254 @@ namespace ET
         }
     }
 
+    [MemoryPackable]
+    [Message(OuterMessage.C2M_GetMounts)]
+    [ResponseType(nameof(M2C_GetMounts))]
+    public partial class C2M_GetMounts : MessageObject, ILocationRequest
+    {
+        public static C2M_GetMounts Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_GetMounts), isFromPool) as C2M_GetMounts;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_GetMounts)]
+    public partial class M2C_GetMounts : MessageObject, ILocationResponse
+    {
+        public static M2C_GetMounts Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_GetMounts), isFromPool) as M2C_GetMounts;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        [MemoryPackOrder(3)]
+        public List<int> Mounts { get; set; } = new();
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+            this.Mounts.Clear();
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.C2M_ActivationMount)]
+    [ResponseType(nameof(M2C_ActivationMount))]
+    public partial class C2M_ActivationMount : MessageObject, ILocationRequest
+    {
+        public static C2M_ActivationMount Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_ActivationMount), isFromPool) as C2M_ActivationMount;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int MountConfigId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.MountConfigId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_ActivationMount)]
+    public partial class M2C_ActivationMount : MessageObject, ILocationResponse
+    {
+        public static M2C_ActivationMount Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_ActivationMount), isFromPool) as M2C_ActivationMount;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.C2M_RideMount)]
+    [ResponseType(nameof(M2C_RideMount))]
+    public partial class C2M_RideMount : MessageObject, ILocationRequest
+    {
+        public static C2M_RideMount Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_RideMount), isFromPool) as C2M_RideMount;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int MountConfigId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.MountConfigId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_RideMount)]
+    public partial class M2C_RideMount : MessageObject, ILocationResponse
+    {
+        public static M2C_RideMount Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_RideMount), isFromPool) as M2C_RideMount;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.C2M_DownMount)]
+    [ResponseType(nameof(M2C_DownMount))]
+    public partial class C2M_DownMount : MessageObject, ILocationRequest
+    {
+        public static C2M_DownMount Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_DownMount), isFromPool) as C2M_DownMount;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_DownMount)]
+    public partial class M2C_DownMount : MessageObject, ILocationResponse
+    {
+        public static M2C_DownMount Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_DownMount), isFromPool) as M2C_DownMount;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
     public static partial class OuterMessage
     {
         public const ushort C2M_GMCommand = 11002;
@@ -1428,5 +1676,13 @@ namespace ET
         public const ushort M2C_AddFriend = 11043;
         public const ushort C2M_DeleteFriend = 11044;
         public const ushort M2C_DeleteFriend = 11045;
+        public const ushort C2M_GetMounts = 11046;
+        public const ushort M2C_GetMounts = 11047;
+        public const ushort C2M_ActivationMount = 11048;
+        public const ushort M2C_ActivationMount = 11049;
+        public const ushort C2M_RideMount = 11050;
+        public const ushort M2C_RideMount = 11051;
+        public const ushort C2M_DownMount = 11052;
+        public const ushort M2C_DownMount = 11053;
     }
 }

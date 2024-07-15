@@ -27,6 +27,14 @@
             {
                 current -= max;
 
+                EventSystem.Instance.Publish(self.Root(),
+                    new LevelChanged()
+                    {
+                        Unit = self.GetParent<Unit>(),
+                        OldLevel = self.Level,
+                        NewLevel = self.Level + 1
+                    });
+
                 self.Level += 1;
 
                 max = ExpConfigCategory.Instance.Get(self.Level).Exp;
@@ -44,7 +52,7 @@
         public static void Boardcast(this LevelComponent self)
         {
             Unit unit = self.GetParent<Unit>();
-            
+
             unit.SetInt(GamePropertyType.GamePropertyType_Level, self.Level);
             unit.SetLong(GamePropertyType.GamePropertyType_Exp, self.Exp);
         }

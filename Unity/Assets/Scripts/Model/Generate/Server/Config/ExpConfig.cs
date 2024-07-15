@@ -18,6 +18,7 @@ namespace ET
         {
             Id = _buf.ReadInt();
             Exp = _buf.ReadLong();
+            Property = _buf.ReadInt();
 
             PostInit();
         }
@@ -37,6 +38,16 @@ namespace ET
         /// </summary>
         public readonly long Exp;
 
+        /// <summary>
+        /// 等级属性包
+        /// </summary>
+        public readonly int Property;
+
+        /// <summary>
+        /// 等级属性包
+        /// </summary>
+        public PropertyConfig PropertyConfig => PropertyConfigCategory.Instance.GetOrDefault(Property);
+
         public const int __ID__ = 1163743135;
 
         public override int GetTypeId() => __ID__;
@@ -46,6 +57,7 @@ namespace ET
             return "{ "
             + "Id:" + Id + ","
             + "Exp:" + Exp + ","
+            + "Property:" + Property + ","
             + "}";
         }
 
