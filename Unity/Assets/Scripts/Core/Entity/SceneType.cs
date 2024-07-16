@@ -27,6 +27,7 @@ namespace ET
         TeamHall = 1 << 19,
         TimeEvent = 1 << 20,
         RequestHall = 1 << 21,
+        PayHall = 1 << 22,
 
         // 客户端
         MainClient = 1 << 30,

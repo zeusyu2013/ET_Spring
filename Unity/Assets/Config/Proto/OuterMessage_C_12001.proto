@@ -28,3 +28,27 @@ message TDTrack // IMessage
     string EventName = 3;
     string Properties = 4;
 }
+
+message WanxinPayRequest
+{
+    string app_order_id = 1;
+    string app_role_id = 2;
+    string is_sandbox = 3;
+    string channel = 4;
+    string xx_game_id = 5;
+    string product_id = 6;
+    string order_id = 7;
+    string server_id = 8;
+    string total_fee = 9;
+    string sign = 10;
+    string user_id = 11;
+    string time = 12;
+    string tp = 13;
+}
+
+message WanxinPayResponse
+{
+    int32 Ret = 1;
+    string Message = 2;
+    repeated string Content = 3;
+}

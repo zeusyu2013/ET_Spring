@@ -15,7 +15,6 @@
             long max = VipConfigCategory.Instance.Get(self.VipLevel).Exp;
             if (max < 1)
             {
-                self.VipExp += exp;
                 return;
             }
 
@@ -41,6 +40,28 @@
             }
 
             self.VipExp = current;
+        }
+
+        public static void GetVipPack(this VipComponent self, int pack)
+        {
+            if (self.AlreadyGetPacks.Contains(pack))
+            {
+                return;
+            }
+
+            VipConfig config = VipConfigCategory.Instance.Get(self.VipLevel);
+            if (config == null)
+            {
+                return;
+            }
+
+            bool ret = self.GetParent<Unit>().GetComponent<BagComponent>().AddItem(config.Pack, 1);
+            if (!ret)
+            {
+                return;
+            }
+
+            self.AlreadyGetPacks.Add(config.Pack);
         }
     }
 }

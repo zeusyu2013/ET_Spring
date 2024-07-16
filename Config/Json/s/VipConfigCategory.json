@@ -3,180 +3,210 @@
     "VipLevel": 1,
     "Exp": 6,
     "OfflineRate": 0,
-    "OfflineAddTime": 0
+    "OfflineAddTime": 0,
+    "Pack": 930001
   },
   {
     "VipLevel": 2,
     "Exp": 12,
     "OfflineRate": 0,
-    "OfflineAddTime": 0
+    "OfflineAddTime": 0,
+    "Pack": 930001
   },
   {
     "VipLevel": 3,
     "Exp": 18,
     "OfflineRate": 0,
-    "OfflineAddTime": 0
+    "OfflineAddTime": 0,
+    "Pack": 930001
   },
   {
     "VipLevel": 4,
     "Exp": 24,
     "OfflineRate": 0,
-    "OfflineAddTime": 0
+    "OfflineAddTime": 0,
+    "Pack": 930001
   },
   {
     "VipLevel": 5,
     "Exp": 30,
     "OfflineRate": 0,
-    "OfflineAddTime": 0
+    "OfflineAddTime": 0,
+    "Pack": 930001
   },
   {
     "VipLevel": 6,
     "Exp": 36,
     "OfflineRate": 0,
-    "OfflineAddTime": 0
+    "OfflineAddTime": 0,
+    "Pack": 930001
   },
   {
     "VipLevel": 7,
     "Exp": 42,
     "OfflineRate": 0,
-    "OfflineAddTime": 0
+    "OfflineAddTime": 0,
+    "Pack": 930001
   },
   {
     "VipLevel": 8,
     "Exp": 48,
     "OfflineRate": 0,
-    "OfflineAddTime": 0
+    "OfflineAddTime": 0,
+    "Pack": 930001
   },
   {
     "VipLevel": 9,
     "Exp": 54,
     "OfflineRate": 0,
-    "OfflineAddTime": 0
+    "OfflineAddTime": 0,
+    "Pack": 930001
   },
   {
     "VipLevel": 10,
     "Exp": 60,
     "OfflineRate": 0,
-    "OfflineAddTime": 43200
+    "OfflineAddTime": 43200,
+    "Pack": 930001
   },
   {
     "VipLevel": 11,
     "Exp": 66,
     "OfflineRate": 0,
-    "OfflineAddTime": 43200
+    "OfflineAddTime": 43200,
+    "Pack": 930001
   },
   {
     "VipLevel": 12,
     "Exp": 72,
     "OfflineRate": 0,
-    "OfflineAddTime": 43200
+    "OfflineAddTime": 43200,
+    "Pack": 930001
   },
   {
     "VipLevel": 13,
     "Exp": 78,
     "OfflineRate": 0,
-    "OfflineAddTime": 43200
+    "OfflineAddTime": 43200,
+    "Pack": 930001
   },
   {
     "VipLevel": 14,
     "Exp": 84,
     "OfflineRate": 0,
-    "OfflineAddTime": 43200
+    "OfflineAddTime": 43200,
+    "Pack": 930001
   },
   {
     "VipLevel": 15,
     "Exp": 90,
     "OfflineRate": 0,
-    "OfflineAddTime": 43200
+    "OfflineAddTime": 43200,
+    "Pack": 930001
   },
   {
     "VipLevel": 16,
     "Exp": 96,
     "OfflineRate": 0,
-    "OfflineAddTime": 43200
+    "OfflineAddTime": 43200,
+    "Pack": 930001
   },
   {
     "VipLevel": 17,
     "Exp": 102,
     "OfflineRate": 0,
-    "OfflineAddTime": 43200
+    "OfflineAddTime": 43200,
+    "Pack": 930001
   },
   {
     "VipLevel": 18,
     "Exp": 108,
     "OfflineRate": 0,
-    "OfflineAddTime": 43200
+    "OfflineAddTime": 43200,
+    "Pack": 930001
   },
   {
     "VipLevel": 19,
     "Exp": 114,
     "OfflineRate": 0,
-    "OfflineAddTime": 43200
+    "OfflineAddTime": 43200,
+    "Pack": 930001
   },
   {
     "VipLevel": 20,
     "Exp": 120,
     "OfflineRate": 0,
-    "OfflineAddTime": 43200
+    "OfflineAddTime": 43200,
+    "Pack": 930001
   },
   {
     "VipLevel": 21,
     "Exp": 126,
     "OfflineRate": 5000,
-    "OfflineAddTime": 86400
+    "OfflineAddTime": 86400,
+    "Pack": 930001
   },
   {
     "VipLevel": 22,
     "Exp": 132,
     "OfflineRate": 5000,
-    "OfflineAddTime": 86400
+    "OfflineAddTime": 86400,
+    "Pack": 930001
   },
   {
     "VipLevel": 23,
     "Exp": 138,
     "OfflineRate": 5000,
-    "OfflineAddTime": 86400
+    "OfflineAddTime": 86400,
+    "Pack": 930001
   },
   {
     "VipLevel": 24,
     "Exp": 144,
     "OfflineRate": 5000,
-    "OfflineAddTime": 86400
+    "OfflineAddTime": 86400,
+    "Pack": 930001
   },
   {
     "VipLevel": 25,
     "Exp": 150,
     "OfflineRate": 5000,
-    "OfflineAddTime": 86400
+    "OfflineAddTime": 86400,
+    "Pack": 930001
   },
   {
     "VipLevel": 26,
     "Exp": 156,
     "OfflineRate": 10000,
-    "OfflineAddTime": 86400
+    "OfflineAddTime": 86400,
+    "Pack": 930001
   },
   {
     "VipLevel": 27,
     "Exp": 162,
     "OfflineRate": 10000,
-    "OfflineAddTime": 86400
+    "OfflineAddTime": 86400,
+    "Pack": 930001
   },
   {
     "VipLevel": 28,
     "Exp": 168,
     "OfflineRate": 10000,
-    "OfflineAddTime": 86400
+    "OfflineAddTime": 86400,
+    "Pack": 930001
   },
   {
     "VipLevel": 29,
     "Exp": 174,
     "OfflineRate": 10000,
-    "OfflineAddTime": 86400
+    "OfflineAddTime": 86400,
+    "Pack": 930001
   },
   {
     "VipLevel": 30,
     "Exp": 180,
     "OfflineRate": 15000,
-    "OfflineAddTime": 86400
+    "OfflineAddTime": 86400,
+    "Pack": 930001
   }
 ]

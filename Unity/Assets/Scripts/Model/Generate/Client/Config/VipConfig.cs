@@ -20,6 +20,7 @@ namespace ET
             Exp = _buf.ReadLong();
             OfflineRate = _buf.ReadLong();
             OfflineAddTime = _buf.ReadLong();
+            Pack = _buf.ReadInt();
 
             PostInit();
         }
@@ -49,6 +50,16 @@ namespace ET
         /// </summary>
         public readonly long OfflineAddTime;
 
+        /// <summary>
+        /// Vip礼包
+        /// </summary>
+        public readonly int Pack;
+
+        /// <summary>
+        /// Vip礼包
+        /// </summary>
+        public ItemConfig PackConfig => ItemConfigCategory.Instance.GetOrDefault(Pack);
+
         public const int __ID__ = 129437087;
 
         public override int GetTypeId() => __ID__;
@@ -60,6 +71,7 @@ namespace ET
             + "Exp:" + Exp + ","
             + "OfflineRate:" + OfflineRate + ","
             + "OfflineAddTime:" + OfflineAddTime + ","
+            + "Pack:" + Pack + ","
             + "}";
         }
 

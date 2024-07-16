@@ -72,8 +72,9 @@ namespace ET.Server
             {
                 Log.Error(e);
             }
-            context.Request.InputStream.Dispose();
-            context.Response.OutputStream.Dispose();
+            
+            await context.Request.InputStream.DisposeAsync();
+            await context.Response.OutputStream.DisposeAsync();
         }
     }
 }

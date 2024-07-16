@@ -120,6 +120,14 @@
     "Port": 0
   },
   {
+    "Id": 16,
+    "Process": 1,
+    "Zone": 1,
+    "SceneType": "PayHall",
+    "Name": "PayHall",
+    "Port": 30005
+  },
+  {
     "Id": 100,
     "Process": 1,
     "Zone": 1,

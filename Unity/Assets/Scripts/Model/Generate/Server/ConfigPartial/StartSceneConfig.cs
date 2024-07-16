@@ -37,6 +37,8 @@ namespace ET
 
         public StartSceneConfig RequestHall;
 
+        public StartSceneConfig PayHall;
+
         public List<StartSceneConfig> GetByProcess(int process)
         {
             return this.ProcessScenes[process];
@@ -100,6 +102,9 @@ namespace ET
                         break;
                     case SceneType.RequestHall:
                         this.RequestHall = startSceneConfig;
+                        break;
+                    case SceneType.PayHall:
+                        this.PayHall = startSceneConfig;
                         break;
                 }
             }
