@@ -13,7 +13,7 @@ namespace ET.Server
                 return;
             }
             
-            WanxinPayResponse response = await scene.GetComponent<PaymentComponent>().CheckOrder(request.QueryString);
+            WanxinPayResponse response = await scene.GetComponent<PaymentComponent>().CheckWanxinOrder(request.QueryString);
 
             HttpHelper.Response(context, response);
         }

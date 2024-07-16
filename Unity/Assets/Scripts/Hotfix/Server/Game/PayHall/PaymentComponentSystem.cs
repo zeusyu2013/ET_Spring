@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Text;
 
@@ -18,7 +19,7 @@ namespace ET.Server
         {
         }
 
-        public static async ETTask<WanxinPayResponse> CheckOrder(this PaymentComponent self, NameValueCollection request)
+        public static async ETTask<WanxinPayResponse> CheckWanxinOrder(this PaymentComponent self, NameValueCollection request)
         {
             string app_order_id = request.Get("app_order_id");
             string app_role_id = request.Get("app_role_id");
@@ -104,9 +105,25 @@ namespace ET.Server
 
                 WanxinOrder order = self.AddChild<WanxinOrder>();
                 order.OrderId = app_order_id;
+                order.UnitId = app_role_id;
                 order.UserId = user_id;
+                order.ServerId = server_id;
+                order.ProductId = product_id;
+                order.Time = DateTime.Now;
 
                 await dbComponent.Save(order);
+            }
+
+            long unitId = long.Parse(app_role_id);
+
+            Pay2M_Pay message = Pay2M_Pay.Create();
+            message.UnitId = unitId;
+            message.ProductId = product_id;
+
+            List<StartSceneConfig> maps = StartSceneConfigCategory.Instance.Maps;
+            foreach (StartSceneConfig config in maps)
+            {
+                self.Root().GetComponent<MessageSender>().Send(config.ActorId, message);
             }
 
             response.Ret = 1;

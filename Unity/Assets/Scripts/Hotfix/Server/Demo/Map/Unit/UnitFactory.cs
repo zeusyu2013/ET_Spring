@@ -81,6 +81,9 @@ namespace ET.Server
             // 坐骑组件
             unit.AddComponentWithId<MountComponent>(unit.Id);
 
+            // 付费组件
+            unit.AddComponentWithId<PayComponent>(unit.Id);
+
             // VIP组件
             unit.AddComponentWithId<VipComponent>(unit.Id);
 
@@ -99,6 +102,7 @@ namespace ET.Server
             unitDBSaveComponent.AddChange(typeof(AchievementComponent));
             unitDBSaveComponent.AddChange(typeof(LocationComponent));
             unitDBSaveComponent.AddChange(typeof(MountComponent));
+            unitDBSaveComponent.AddChange(typeof(PayComponent));
             unitDBSaveComponent.AddChange(typeof(VipComponent));
             unitDBSaveComponent.SaveChanged();
 

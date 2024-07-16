@@ -357,3 +357,10 @@ message Request2M_GetRequests // IResponse
 	string Message = 3;
 	repeated GameRequestInfo GameRequestInfos = 4;
 }
+
+message Pay2M_Pay // IMessage
+{
+	int32 RpcId = 1;
+	int64 UnitId = 2;
+	string ProductId = 3;
+}

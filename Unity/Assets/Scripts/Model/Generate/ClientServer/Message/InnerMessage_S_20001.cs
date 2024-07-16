@@ -1626,6 +1626,39 @@ namespace ET
         }
     }
 
+    [MemoryPackable]
+    [Message(InnerMessage.Pay2M_Pay)]
+    public partial class Pay2M_Pay : MessageObject, IMessage
+    {
+        public static Pay2M_Pay Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(Pay2M_Pay), isFromPool) as Pay2M_Pay;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long UnitId { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string ProductId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.UnitId = default;
+            this.ProductId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
     public static partial class InnerMessage
     {
         public const ushort ObjectQueryRequest = 20002;
@@ -1676,5 +1709,6 @@ namespace ET
         public const ushort Request2M_AddRequest = 20047;
         public const ushort M2Request_GetRequests = 20048;
         public const ushort Request2M_GetRequests = 20049;
+        public const ushort Pay2M_Pay = 20050;
     }
 }
