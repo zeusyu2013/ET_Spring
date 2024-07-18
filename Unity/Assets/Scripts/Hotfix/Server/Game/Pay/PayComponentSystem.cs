@@ -12,12 +12,7 @@
 
         public static void Pay(this PayComponent self, string productConfigId)
         {
-            if (!int.TryParse(productConfigId, out int id))
-            {
-                return;
-            }
-
-            ChargeConfig config = ChargeConfigCategory.Instance.Get(id);
+            ChargeConfig config = ChargeConfigCategory.Instance.Get(productConfigId);
             if (config == null)
             {
                 return;
@@ -31,7 +26,11 @@
                     NewAmount = self.PayAmount + config.Price
                 });
             
+            // 累加充值金额
             self.PayAmount += config.Price;
+
+            // 发放礼包
+            self.GetParent<Unit>().GetComponent<BagComponent>().AddItem(config.Pack, 1);
         }
     }
 }

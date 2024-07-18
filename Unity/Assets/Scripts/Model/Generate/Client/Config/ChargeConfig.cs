@@ -16,8 +16,9 @@ namespace ET
     {
         public ChargeConfig(ByteBuf _buf)
         {
-            Id = _buf.ReadInt();
+            Id = _buf.ReadString();
             Price = _buf.ReadLong();
+            Pack = _buf.ReadInt();
 
             PostInit();
         }
@@ -30,12 +31,22 @@ namespace ET
         /// <summary>
         /// 商品编号
         /// </summary>
-        public readonly int Id;
+        public readonly string Id;
 
         /// <summary>
-        /// 价格
+        /// 价格（元）
         /// </summary>
         public readonly long Price;
+
+        /// <summary>
+        /// 礼包
+        /// </summary>
+        public readonly int Pack;
+
+        /// <summary>
+        /// 礼包
+        /// </summary>
+        public ItemPackConfig PackConfig => ItemPackConfigCategory.Instance.GetOrDefault(Pack);
 
         public const int __ID__ = 969346870;
 
@@ -46,6 +57,7 @@ namespace ET
             return "{ "
             + "Id:" + Id + ","
             + "Price:" + Price + ","
+            + "Pack:" + Pack + ","
             + "}";
         }
 

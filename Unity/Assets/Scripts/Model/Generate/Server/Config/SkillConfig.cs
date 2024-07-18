@@ -18,10 +18,14 @@ namespace ET
         {
             Id = _buf.ReadInt();
             Level = _buf.ReadInt();
+            SkillName = _buf.ReadString();
+            SkillDesc = _buf.ReadString();
             Base = _buf.ReadLong();
             Ratio = _buf.ReadLong();
             SkillRange = (SkillRange)_buf.ReadInt();
             Consume = _buf.ReadLong();
+            LearnCurrencyType = (CurrencyType)_buf.ReadInt();
+            LearnCurrencyValue = _buf.ReadLong();
 
             PostInit();
         }
@@ -40,6 +44,16 @@ namespace ET
         /// 技能等级
         /// </summary>
         public readonly int Level;
+
+        /// <summary>
+        /// 技能名称
+        /// </summary>
+        public readonly string SkillName;
+
+        /// <summary>
+        /// 技能描述
+        /// </summary>
+        public readonly string SkillDesc;
 
         /// <summary>
         /// 基础伤害/治疗值
@@ -61,6 +75,16 @@ namespace ET
         /// </summary>
         public readonly long Consume;
 
+        /// <summary>
+        /// 学习花费货币类型
+        /// </summary>
+        public readonly CurrencyType LearnCurrencyType;
+
+        /// <summary>
+        /// 学习花费货币
+        /// </summary>
+        public readonly long LearnCurrencyValue;
+
         public const int __ID__ = -844226349;
 
         public override int GetTypeId() => __ID__;
@@ -70,10 +94,14 @@ namespace ET
             return "{ "
             + "Id:" + Id + ","
             + "Level:" + Level + ","
+            + "SkillName:" + SkillName + ","
+            + "SkillDesc:" + SkillDesc + ","
             + "Base:" + Base + ","
             + "Ratio:" + Ratio + ","
             + "SkillRange:" + SkillRange + ","
             + "Consume:" + Consume + ","
+            + "LearnCurrencyType:" + LearnCurrencyType + ","
+            + "LearnCurrencyValue:" + LearnCurrencyValue + ","
             + "}";
         }
 

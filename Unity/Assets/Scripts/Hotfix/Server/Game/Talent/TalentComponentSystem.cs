@@ -45,13 +45,18 @@ namespace ET.Server
             return infos;
         }
 
+        public static void AddTalentPoint(this TalentComponent self, int point)
+        {
+            self.TalentPoint += point;
+        }
+
         public static void Reset(this TalentComponent self)
         {
             if (self.Talents.Count < 1)
             {
                 return;
             }
-            
+
             // TODO:检查重置天赋消耗
             int currencyType = GlobalDataConfigCategory.Instance.ResetTalentCurrency;
             long currencyValue = GlobalDataConfigCategory.Instance.ResetTalentCurrencyValue;
@@ -78,7 +83,7 @@ namespace ET.Server
             {
                 return;
             }
-            
+
             self.TalentPoint += point;
 
             self.Talents.Clear();

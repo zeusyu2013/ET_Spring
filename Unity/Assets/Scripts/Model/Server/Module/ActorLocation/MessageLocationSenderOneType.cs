@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace ET.Server
+﻿namespace ET.Server
 {
     
     [ChildOf(typeof(MessageLocationSenderComponent))]
@@ -15,8 +13,6 @@ namespace ET.Server
     [ComponentOf(typeof(Scene))]
     public class MessageLocationSenderComponent: Entity, IAwake
     {
-        public const long TIMEOUT_TIME = 60 * 1000;
-
         public long CheckTimer;
     }
 }

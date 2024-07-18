@@ -57,14 +57,14 @@ namespace ET
 
             // 检查消耗
             Unit unit = self.GetParent<Unit>();
-            long current = unit.GetComponent<NumericComponent>().GetAsLong(GamePropertyType.GamePropertyType_Mp);
+            long current = unit.GetLong(GamePropertyType.GamePropertyType_Mp);
             if (current < config.Consume)
             {
                 return SkillErrorCode.ERR_SkillConsumeNotEnough;
             }
 
             // 扣除消耗
-            unit.GetComponent<NumericComponent>()[GamePropertyType.GamePropertyType_Mp] = current - config.Consume;
+            unit.DecLong(GamePropertyType.GamePropertyType_Mp, config.Consume);
 
             // 处理技能流程
             int ret = self.Process(skillConfig, level);

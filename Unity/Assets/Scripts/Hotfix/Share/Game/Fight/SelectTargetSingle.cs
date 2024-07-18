@@ -12,7 +12,7 @@ namespace ET
             {
                 return (SelectTargetErrorCode.ERR_SkillRangeNotMatch, units);
             }
-
+            
             return (SelectTargetErrorCode.ERR_Success, units);
         }
     }

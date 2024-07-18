@@ -18,12 +18,12 @@ namespace ET
     [Config]
     public partial class ChargeConfigCategory : Singleton<ChargeConfigCategory>
     {
-        private readonly Dictionary<int, ChargeConfig> _dataMap;
+        private readonly Dictionary<string, ChargeConfig> _dataMap;
         private readonly List<ChargeConfig> _dataList;
 
         public ChargeConfigCategory(ByteBuf _buf)
         {
-            _dataMap = new Dictionary<int, ChargeConfig>();
+            _dataMap = new Dictionary<string, ChargeConfig>();
             _dataList = new List<ChargeConfig>();
 
             for (int n = _buf.ReadSize(); n > 0; --n)
@@ -37,12 +37,12 @@ namespace ET
             PostInit();
         }
 
-        public Dictionary<int, ChargeConfig> DataMap => _dataMap;
+        public Dictionary<string, ChargeConfig> DataMap => _dataMap;
         public List<ChargeConfig> DataList => _dataList;
 
-        public ChargeConfig GetOrDefault(int key) => _dataMap.TryGetValue(key, out var v) ? v : null;
-        public ChargeConfig Get(int key) => _dataMap[key];
-        public ChargeConfig this[int key] => _dataMap[key];
+        public ChargeConfig GetOrDefault(string key) => _dataMap.TryGetValue(key, out var v) ? v : null;
+        public ChargeConfig Get(string key) => _dataMap[key];
+        public ChargeConfig this[string key] => _dataMap[key];
 
         partial void PostInit();
     }
