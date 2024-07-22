@@ -39,14 +39,10 @@ namespace ET.Server
             self.Buildings.Add(building);
         }
 
-        public static void UpgradeBuilding(this BuildingComponent self, Building building)
+        public static void UpgradeBuilding(this BuildingComponent self, int buildingConfig)
         {
+            Building building = self.Buildings.Find(x => ((Building)x).ConfigId == buildingConfig);
             if (building == null)
-            {
-                return;
-            }
-
-            if (!self.Buildings.Contains(building))
             {
                 return;
             }

@@ -85,7 +85,7 @@ message M2C_GetBuildings // ILocationResponse
 message C2M_UpgradeBuilding // ILocationRequest
 {
 	int32 RpcId = 1;
-	int64 InstanceId = 2;
+	int32 BuildingConfig = 2;
 }
 
 message M2C_UpgradeBuilding // ILocationResponse
