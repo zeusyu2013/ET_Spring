@@ -18,8 +18,7 @@ namespace ET
         {
             Id = _buf.ReadInt();
             Limit = _buf.ReadInt();
-            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);Produce = new System.Collections.Generic.Dictionary<int, BuildingProduce>(n0 * 3 / 2);for(var i0 = 0 ; i0 < n0 ; i0++) { int _k0;  _k0 = _buf.ReadInt(); BuildingProduce _v0;  _v0 = BuildingProduce.DeserializeBuildingProduce(_buf);     Produce.Add(_k0, _v0);}}
-            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);UpgradeConsume = new System.Collections.Generic.Dictionary<int, BuildingUpgrade>(n0 * 3 / 2);for(var i0 = 0 ; i0 < n0 ; i0++) { int _k0;  _k0 = _buf.ReadInt(); BuildingUpgrade _v0;  _v0 = BuildingUpgrade.DeserializeBuildingUpgrade(_buf);     UpgradeConsume.Add(_k0, _v0);}}
+            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);BuildingLevelInfos = new System.Collections.Generic.Dictionary<int, BuildingLevelInfo>(n0 * 3 / 2);for(var i0 = 0 ; i0 < n0 ; i0++) { int _k0;  _k0 = _buf.ReadInt(); BuildingLevelInfo _v0;  _v0 = BuildingLevelInfo.DeserializeBuildingLevelInfo(_buf);     BuildingLevelInfos.Add(_k0, _v0);}}
 
             PostInit();
         }
@@ -39,15 +38,7 @@ namespace ET
         /// </summary>
         public readonly int Limit;
 
-        /// <summary>
-        /// 每秒产出
-        /// </summary>
-        public readonly System.Collections.Generic.Dictionary<int, BuildingProduce> Produce;
-
-        /// <summary>
-        /// 升级消耗
-        /// </summary>
-        public readonly System.Collections.Generic.Dictionary<int, BuildingUpgrade> UpgradeConsume;
+        public readonly System.Collections.Generic.Dictionary<int, BuildingLevelInfo> BuildingLevelInfos;
 
         public const int __ID__ = -701401290;
 
@@ -58,8 +49,7 @@ namespace ET
             return "{ "
             + "Id:" + Id + ","
             + "Limit:" + Limit + ","
-            + "Produce:" + Luban.StringUtil.CollectionToString(Produce) + ","
-            + "UpgradeConsume:" + Luban.StringUtil.CollectionToString(UpgradeConsume) + ","
+            + "BuildingLevelInfos:" + Luban.StringUtil.CollectionToString(BuildingLevelInfos) + ","
             + "}";
         }
 

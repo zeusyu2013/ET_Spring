@@ -2,161 +2,126 @@
   {
     "Id": 80001,
     "Limit": 1,
-    "Produce": [
+    "BuildingLevelInfos": [
       [
         1,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 15000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 15000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 20000,
+          "LimitBuildingConfig": 0,
+          "LimitLevel": 0
         }
       ],
       [
         2,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 20000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 20000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 30000,
+          "LimitBuildingConfig": 0,
+          "LimitLevel": 0
         }
       ],
       [
         3,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 25000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 25000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 40000,
+          "LimitBuildingConfig": 0,
+          "LimitLevel": 0
         }
       ],
       [
         4,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 30000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 30000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 50000,
+          "LimitBuildingConfig": 0,
+          "LimitLevel": 0
         }
       ],
       [
         5,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 35000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 35000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 60000,
+          "LimitBuildingConfig": 0,
+          "LimitLevel": 0
         }
       ],
       [
         6,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 40000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 40000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 70000,
+          "LimitBuildingConfig": 0,
+          "LimitLevel": 0
         }
       ],
       [
         7,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 45000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 45000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 80000,
+          "LimitBuildingConfig": 0,
+          "LimitLevel": 0
         }
       ],
       [
         8,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 50000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 50000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 90000,
+          "LimitBuildingConfig": 0,
+          "LimitLevel": 0
         }
       ],
       [
         9,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 55000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 55000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 100000,
+          "LimitBuildingConfig": 0,
+          "LimitLevel": 0
         }
       ],
       [
         10,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 60000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 60000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 110000,
+          "LimitBuildingConfig": 0,
+          "LimitLevel": 0
         }
       ],
       [
         11,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 65000
-        }
-      ]
-    ],
-    "UpgradeConsume": [
-      [
-        1,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 20000
-        }
-      ],
-      [
-        2,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 30000
-        }
-      ],
-      [
-        3,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 40000
-        }
-      ],
-      [
-        4,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 50000
-        }
-      ],
-      [
-        5,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 60000
-        }
-      ],
-      [
-        6,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 70000
-        }
-      ],
-      [
-        7,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 80000
-        }
-      ],
-      [
-        8,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 90000
-        }
-      ],
-      [
-        9,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 100000
-        }
-      ],
-      [
-        10,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 110000
-        }
-      ],
-      [
-        11,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 120000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 65000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 120000,
+          "LimitBuildingConfig": 0,
+          "LimitLevel": 0
         }
       ]
     ]
@@ -164,161 +129,126 @@
   {
     "Id": 80002,
     "Limit": 1,
-    "Produce": [
+    "BuildingLevelInfos": [
       [
         1,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 15000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 15000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 20000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 1
         }
       ],
       [
         2,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 20000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 20000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 30000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 2
         }
       ],
       [
         3,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 25000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 25000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 40000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 3
         }
       ],
       [
         4,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 30000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 30000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 50000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 4
         }
       ],
       [
         5,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 35000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 35000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 60000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 5
         }
       ],
       [
         6,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 40000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 40000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 70000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 6
         }
       ],
       [
         7,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 45000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 45000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 80000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 7
         }
       ],
       [
         8,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 50000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 50000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 90000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 8
         }
       ],
       [
         9,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 55000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 55000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 100000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 9
         }
       ],
       [
         10,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 60000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 60000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 110000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 10
         }
       ],
       [
         11,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 65000
-        }
-      ]
-    ],
-    "UpgradeConsume": [
-      [
-        1,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 20000
-        }
-      ],
-      [
-        2,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 30000
-        }
-      ],
-      [
-        3,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 40000
-        }
-      ],
-      [
-        4,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 50000
-        }
-      ],
-      [
-        5,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 60000
-        }
-      ],
-      [
-        6,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 70000
-        }
-      ],
-      [
-        7,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 80000
-        }
-      ],
-      [
-        8,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 90000
-        }
-      ],
-      [
-        9,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 100000
-        }
-      ],
-      [
-        10,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 110000
-        }
-      ],
-      [
-        11,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 120000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 65000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 120000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 11
         }
       ]
     ]
@@ -326,161 +256,126 @@
   {
     "Id": 80003,
     "Limit": 1,
-    "Produce": [
+    "BuildingLevelInfos": [
       [
         1,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 15000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 15000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 20000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 1
         }
       ],
       [
         2,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 20000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 20000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 30000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 2
         }
       ],
       [
         3,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 25000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 25000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 40000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 3
         }
       ],
       [
         4,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 30000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 30000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 50000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 4
         }
       ],
       [
         5,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 35000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 35000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 60000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 5
         }
       ],
       [
         6,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 40000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 40000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 70000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 6
         }
       ],
       [
         7,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 45000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 45000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 80000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 7
         }
       ],
       [
         8,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 50000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 50000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 90000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 8
         }
       ],
       [
         9,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 55000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 55000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 100000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 9
         }
       ],
       [
         10,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 60000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 60000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 110000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 10
         }
       ],
       [
         11,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 65000
-        }
-      ]
-    ],
-    "UpgradeConsume": [
-      [
-        1,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 20000
-        }
-      ],
-      [
-        2,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 30000
-        }
-      ],
-      [
-        3,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 40000
-        }
-      ],
-      [
-        4,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 50000
-        }
-      ],
-      [
-        5,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 60000
-        }
-      ],
-      [
-        6,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 70000
-        }
-      ],
-      [
-        7,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 80000
-        }
-      ],
-      [
-        8,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 90000
-        }
-      ],
-      [
-        9,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 100000
-        }
-      ],
-      [
-        10,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 110000
-        }
-      ],
-      [
-        11,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 120000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 65000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 120000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 11
         }
       ]
     ]
@@ -488,161 +383,126 @@
   {
     "Id": 80004,
     "Limit": 1,
-    "Produce": [
+    "BuildingLevelInfos": [
       [
         1,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 15000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 15000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 20000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 1
         }
       ],
       [
         2,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 20000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 20000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 30000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 2
         }
       ],
       [
         3,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 25000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 25000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 40000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 3
         }
       ],
       [
         4,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 30000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 30000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 50000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 4
         }
       ],
       [
         5,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 35000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 35000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 60000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 5
         }
       ],
       [
         6,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 40000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 40000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 70000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 6
         }
       ],
       [
         7,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 45000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 45000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 80000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 7
         }
       ],
       [
         8,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 50000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 50000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 90000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 8
         }
       ],
       [
         9,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 55000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 55000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 100000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 9
         }
       ],
       [
         10,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 60000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 60000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 110000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 10
         }
       ],
       [
         11,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 65000
-        }
-      ]
-    ],
-    "UpgradeConsume": [
-      [
-        1,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 20000
-        }
-      ],
-      [
-        2,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 30000
-        }
-      ],
-      [
-        3,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 40000
-        }
-      ],
-      [
-        4,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 50000
-        }
-      ],
-      [
-        5,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 60000
-        }
-      ],
-      [
-        6,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 70000
-        }
-      ],
-      [
-        7,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 80000
-        }
-      ],
-      [
-        8,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 90000
-        }
-      ],
-      [
-        9,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 100000
-        }
-      ],
-      [
-        10,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 110000
-        }
-      ],
-      [
-        11,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 120000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 65000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 120000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 11
         }
       ]
     ]
@@ -650,161 +510,126 @@
   {
     "Id": 80005,
     "Limit": 1,
-    "Produce": [
+    "BuildingLevelInfos": [
       [
         1,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 15000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 15000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 20000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 1
         }
       ],
       [
         2,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 20000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 20000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 30000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 2
         }
       ],
       [
         3,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 25000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 25000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 40000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 3
         }
       ],
       [
         4,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 30000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 30000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 50000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 4
         }
       ],
       [
         5,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 35000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 35000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 60000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 5
         }
       ],
       [
         6,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 40000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 40000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 70000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 6
         }
       ],
       [
         7,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 45000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 45000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 80000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 7
         }
       ],
       [
         8,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 50000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 50000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 90000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 8
         }
       ],
       [
         9,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 55000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 55000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 100000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 9
         }
       ],
       [
         10,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 60000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 60000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 110000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 10
         }
       ],
       [
         11,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 65000
-        }
-      ]
-    ],
-    "UpgradeConsume": [
-      [
-        1,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 20000
-        }
-      ],
-      [
-        2,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 30000
-        }
-      ],
-      [
-        3,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 40000
-        }
-      ],
-      [
-        4,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 50000
-        }
-      ],
-      [
-        5,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 60000
-        }
-      ],
-      [
-        6,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 70000
-        }
-      ],
-      [
-        7,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 80000
-        }
-      ],
-      [
-        8,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 90000
-        }
-      ],
-      [
-        9,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 100000
-        }
-      ],
-      [
-        10,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 110000
-        }
-      ],
-      [
-        11,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 120000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 65000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 120000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 11
         }
       ]
     ]
@@ -812,161 +637,126 @@
   {
     "Id": 80006,
     "Limit": 1,
-    "Produce": [
+    "BuildingLevelInfos": [
       [
         1,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 15000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 15000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 20000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 1
         }
       ],
       [
         2,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 20000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 20000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 30000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 2
         }
       ],
       [
         3,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 25000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 25000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 40000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 3
         }
       ],
       [
         4,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 30000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 30000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 50000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 4
         }
       ],
       [
         5,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 35000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 35000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 60000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 5
         }
       ],
       [
         6,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 40000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 40000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 70000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 6
         }
       ],
       [
         7,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 45000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 45000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 80000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 7
         }
       ],
       [
         8,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 50000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 50000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 90000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 8
         }
       ],
       [
         9,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 55000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 55000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 100000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 9
         }
       ],
       [
         10,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 60000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 60000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 110000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 10
         }
       ],
       [
         11,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 65000
-        }
-      ]
-    ],
-    "UpgradeConsume": [
-      [
-        1,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 20000
-        }
-      ],
-      [
-        2,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 30000
-        }
-      ],
-      [
-        3,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 40000
-        }
-      ],
-      [
-        4,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 50000
-        }
-      ],
-      [
-        5,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 60000
-        }
-      ],
-      [
-        6,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 70000
-        }
-      ],
-      [
-        7,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 80000
-        }
-      ],
-      [
-        8,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 90000
-        }
-      ],
-      [
-        9,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 100000
-        }
-      ],
-      [
-        10,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 110000
-        }
-      ],
-      [
-        11,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 120000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 65000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 120000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 11
         }
       ]
     ]
@@ -974,161 +764,126 @@
   {
     "Id": 80007,
     "Limit": 1,
-    "Produce": [
+    "BuildingLevelInfos": [
       [
         1,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 15000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 15000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 20000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 1
         }
       ],
       [
         2,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 20000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 20000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 30000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 2
         }
       ],
       [
         3,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 25000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 25000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 40000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 3
         }
       ],
       [
         4,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 30000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 30000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 50000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 4
         }
       ],
       [
         5,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 35000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 35000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 60000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 5
         }
       ],
       [
         6,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 40000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 40000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 70000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 6
         }
       ],
       [
         7,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 45000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 45000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 80000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 7
         }
       ],
       [
         8,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 50000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 50000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 90000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 8
         }
       ],
       [
         9,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 55000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 55000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 100000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 9
         }
       ],
       [
         10,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 60000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 60000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 110000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 10
         }
       ],
       [
         11,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 65000
-        }
-      ]
-    ],
-    "UpgradeConsume": [
-      [
-        1,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 20000
-        }
-      ],
-      [
-        2,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 30000
-        }
-      ],
-      [
-        3,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 40000
-        }
-      ],
-      [
-        4,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 50000
-        }
-      ],
-      [
-        5,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 60000
-        }
-      ],
-      [
-        6,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 70000
-        }
-      ],
-      [
-        7,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 80000
-        }
-      ],
-      [
-        8,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 90000
-        }
-      ],
-      [
-        9,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 100000
-        }
-      ],
-      [
-        10,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 110000
-        }
-      ],
-      [
-        11,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 120000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 65000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 120000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 11
         }
       ]
     ]
@@ -1136,161 +891,126 @@
   {
     "Id": 80008,
     "Limit": 1,
-    "Produce": [
+    "BuildingLevelInfos": [
       [
         1,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 15000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 15000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 20000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 1
         }
       ],
       [
         2,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 20000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 20000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 30000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 2
         }
       ],
       [
         3,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 25000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 25000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 40000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 3
         }
       ],
       [
         4,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 30000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 30000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 50000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 4
         }
       ],
       [
         5,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 35000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 35000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 60000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 5
         }
       ],
       [
         6,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 40000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 40000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 70000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 6
         }
       ],
       [
         7,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 45000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 45000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 80000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 7
         }
       ],
       [
         8,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 50000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 50000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 90000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 8
         }
       ],
       [
         9,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 55000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 55000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 100000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 9
         }
       ],
       [
         10,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 60000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 60000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 110000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 10
         }
       ],
       [
         11,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 65000
-        }
-      ]
-    ],
-    "UpgradeConsume": [
-      [
-        1,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 20000
-        }
-      ],
-      [
-        2,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 30000
-        }
-      ],
-      [
-        3,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 40000
-        }
-      ],
-      [
-        4,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 50000
-        }
-      ],
-      [
-        5,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 60000
-        }
-      ],
-      [
-        6,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 70000
-        }
-      ],
-      [
-        7,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 80000
-        }
-      ],
-      [
-        8,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 90000
-        }
-      ],
-      [
-        9,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 100000
-        }
-      ],
-      [
-        10,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 110000
-        }
-      ],
-      [
-        11,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 120000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 65000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 120000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 11
         }
       ]
     ]
@@ -1298,161 +1018,126 @@
   {
     "Id": 80009,
     "Limit": 1,
-    "Produce": [
+    "BuildingLevelInfos": [
       [
         1,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 15000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 15000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 20000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 1
         }
       ],
       [
         2,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 20000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 20000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 30000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 2
         }
       ],
       [
         3,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 25000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 25000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 40000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 3
         }
       ],
       [
         4,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 30000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 30000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 50000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 4
         }
       ],
       [
         5,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 35000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 35000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 60000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 5
         }
       ],
       [
         6,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 40000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 40000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 70000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 6
         }
       ],
       [
         7,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 45000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 45000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 80000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 7
         }
       ],
       [
         8,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 50000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 50000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 90000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 8
         }
       ],
       [
         9,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 55000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 55000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 100000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 9
         }
       ],
       [
         10,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 60000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 60000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 110000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 10
         }
       ],
       [
         11,
         {
-          "CurrencyType": 1,
-          "CurrencyValue": 65000
-        }
-      ]
-    ],
-    "UpgradeConsume": [
-      [
-        1,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 20000
-        }
-      ],
-      [
-        2,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 30000
-        }
-      ],
-      [
-        3,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 40000
-        }
-      ],
-      [
-        4,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 50000
-        }
-      ],
-      [
-        5,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 60000
-        }
-      ],
-      [
-        6,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 70000
-        }
-      ],
-      [
-        7,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 80000
-        }
-      ],
-      [
-        8,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 90000
-        }
-      ],
-      [
-        9,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 100000
-        }
-      ],
-      [
-        10,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 110000
-        }
-      ],
-      [
-        11,
-        {
-          "CurrencyType": 1,
-          "CurrencyValue": 120000
+          "ProduceCurrencyType": 1,
+          "ProduceCurrencyValue": 65000,
+          "UpgradeCurrencyType": 1,
+          "UpgradeCurrencyValue": 120000,
+          "LimitBuildingConfig": 80001,
+          "LimitLevel": 11
         }
       ]
     ]

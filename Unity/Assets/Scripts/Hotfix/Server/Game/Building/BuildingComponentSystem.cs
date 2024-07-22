@@ -51,19 +51,31 @@ namespace ET.Server
                 return;
             }
 
-            if (building.Level >= building.Config.UpgradeConsume.Count)
+            if (building.Level >= building.Config.BuildingLevelInfos.Count)
             {
                 return;
             }
 
-            BuildingUpgrade upgrade = building.Config.UpgradeConsume[building.Level];
-            if (upgrade == null)
+            BuildingLevelInfo info = building.Config.BuildingLevelInfos[building.Level];
+            if (info == null)
             {
                 return;
             }
 
-            bool ret = self.GetParent<Unit>().GetComponent<CurrencyComponent>().
-                    Dec(upgrade.CurrencyType, upgrade.CurrencyValue, "建筑升级");
+            int preBuildingConfig = info.LimitBuildingConfig;
+            int preBuildingLevel = info.LimitLevel;
+            if (preBuildingConfig != 0)
+            {
+                Building limitBuilding = self.Buildings.Find(x =>
+                        ((Building)x).ConfigId == preBuildingConfig &&
+                        ((Building)x).Level >= preBuildingLevel);
+                if (limitBuilding == null)
+                {
+                    return;
+                }
+            }
+
+            bool ret = self.GetParent<Unit>().GetComponent<CurrencyComponent>().Dec(info.UpgradeCurrencyType, info.UpgradeCurrencyValue, "建筑升级");
             if (!ret)
             {
                 return;
@@ -101,18 +113,18 @@ namespace ET.Server
                     continue;
                 }
 
-                if (!building.Config.Produce.TryGetValue(building.Level, out BuildingProduce produce))
+                if (!building.Config.BuildingLevelInfos.TryGetValue(building.Level, out BuildingLevelInfo info))
                 {
                     continue;
                 }
 
-                if (produces.ContainsKey((int)produce.CurrencyType))
+                if (produces.ContainsKey((int)info.ProduceCurrencyType))
                 {
-                    produces[(int)produce.CurrencyType] += produce.CurrencyValue;
+                    produces[(int)info.ProduceCurrencyType] += info.ProduceCurrencyValue;
                 }
                 else
                 {
-                    produces.Add((int)produce.CurrencyType, produce.CurrencyValue);
+                    produces.Add((int)info.ProduceCurrencyType, info.ProduceCurrencyValue);
                 }
             }
 
