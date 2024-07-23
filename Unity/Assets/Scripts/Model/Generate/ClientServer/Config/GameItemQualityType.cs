@@ -36,5 +36,10 @@ namespace ET
         /// </summary>
         GameItemQualityType_Orange = 5,
 
+        /// <summary>
+        /// 红色品质
+        /// </summary>
+        GameItemQualityType_Red = 6,
+
     }
 }

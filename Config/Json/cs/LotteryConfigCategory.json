@@ -1,0 +1,662 @@
+[
+  {
+    "Id": 1,
+    "LotteryInfos": [
+      [
+        1,
+        8000
+      ],
+      [
+        2,
+        1800
+      ],
+      [
+        3,
+        200
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        6,
+        0
+      ]
+    ],
+    "UpgradeCurrencyType": 1,
+    "UpgradeCurrencyValue": 1000,
+    "UpgradeBuildingConfig": 80001,
+    "UpgradeBuildingLevel": 1
+  },
+  {
+    "Id": 2,
+    "LotteryInfos": [
+      [
+        1,
+        7900
+      ],
+      [
+        2,
+        1780
+      ],
+      [
+        3,
+        260
+      ],
+      [
+        4,
+        60
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        6,
+        0
+      ]
+    ],
+    "UpgradeCurrencyType": 1,
+    "UpgradeCurrencyValue": 2000,
+    "UpgradeBuildingConfig": 80001,
+    "UpgradeBuildingLevel": 2
+  },
+  {
+    "Id": 3,
+    "LotteryInfos": [
+      [
+        1,
+        7800
+      ],
+      [
+        2,
+        1760
+      ],
+      [
+        3,
+        320
+      ],
+      [
+        4,
+        120
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        6,
+        0
+      ]
+    ],
+    "UpgradeCurrencyType": 1,
+    "UpgradeCurrencyValue": 3000,
+    "UpgradeBuildingConfig": 80001,
+    "UpgradeBuildingLevel": 3
+  },
+  {
+    "Id": 4,
+    "LotteryInfos": [
+      [
+        1,
+        7700
+      ],
+      [
+        2,
+        1740
+      ],
+      [
+        3,
+        380
+      ],
+      [
+        4,
+        180
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        6,
+        0
+      ]
+    ],
+    "UpgradeCurrencyType": 1,
+    "UpgradeCurrencyValue": 4000,
+    "UpgradeBuildingConfig": 80001,
+    "UpgradeBuildingLevel": 4
+  },
+  {
+    "Id": 5,
+    "LotteryInfos": [
+      [
+        1,
+        7600
+      ],
+      [
+        2,
+        1720
+      ],
+      [
+        3,
+        440
+      ],
+      [
+        4,
+        240
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        6,
+        0
+      ]
+    ],
+    "UpgradeCurrencyType": 1,
+    "UpgradeCurrencyValue": 5000,
+    "UpgradeBuildingConfig": 80001,
+    "UpgradeBuildingLevel": 5
+  },
+  {
+    "Id": 6,
+    "LotteryInfos": [
+      [
+        1,
+        7500
+      ],
+      [
+        2,
+        1700
+      ],
+      [
+        3,
+        500
+      ],
+      [
+        4,
+        300
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        6,
+        0
+      ]
+    ],
+    "UpgradeCurrencyType": 1,
+    "UpgradeCurrencyValue": 6000,
+    "UpgradeBuildingConfig": 80001,
+    "UpgradeBuildingLevel": 6
+  },
+  {
+    "Id": 7,
+    "LotteryInfos": [
+      [
+        1,
+        7400
+      ],
+      [
+        2,
+        1680
+      ],
+      [
+        3,
+        560
+      ],
+      [
+        4,
+        360
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        6,
+        0
+      ]
+    ],
+    "UpgradeCurrencyType": 1,
+    "UpgradeCurrencyValue": 7000,
+    "UpgradeBuildingConfig": 80001,
+    "UpgradeBuildingLevel": 7
+  },
+  {
+    "Id": 8,
+    "LotteryInfos": [
+      [
+        1,
+        7300
+      ],
+      [
+        2,
+        1660
+      ],
+      [
+        3,
+        620
+      ],
+      [
+        4,
+        420
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        6,
+        0
+      ]
+    ],
+    "UpgradeCurrencyType": 1,
+    "UpgradeCurrencyValue": 8000,
+    "UpgradeBuildingConfig": 80001,
+    "UpgradeBuildingLevel": 8
+  },
+  {
+    "Id": 9,
+    "LotteryInfos": [
+      [
+        1,
+        7200
+      ],
+      [
+        2,
+        1640
+      ],
+      [
+        3,
+        680
+      ],
+      [
+        4,
+        480
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        6,
+        0
+      ]
+    ],
+    "UpgradeCurrencyType": 1,
+    "UpgradeCurrencyValue": 9000,
+    "UpgradeBuildingConfig": 80002,
+    "UpgradeBuildingLevel": 1
+  },
+  {
+    "Id": 10,
+    "LotteryInfos": [
+      [
+        1,
+        7100
+      ],
+      [
+        2,
+        1620
+      ],
+      [
+        3,
+        740
+      ],
+      [
+        4,
+        540
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        6,
+        0
+      ]
+    ],
+    "UpgradeCurrencyType": 1,
+    "UpgradeCurrencyValue": 10000,
+    "UpgradeBuildingConfig": 80002,
+    "UpgradeBuildingLevel": 2
+  },
+  {
+    "Id": 11,
+    "LotteryInfos": [
+      [
+        1,
+        7000
+      ],
+      [
+        2,
+        1600
+      ],
+      [
+        3,
+        800
+      ],
+      [
+        4,
+        600
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        6,
+        0
+      ]
+    ],
+    "UpgradeCurrencyType": 1,
+    "UpgradeCurrencyValue": 11000,
+    "UpgradeBuildingConfig": 80002,
+    "UpgradeBuildingLevel": 3
+  },
+  {
+    "Id": 12,
+    "LotteryInfos": [
+      [
+        1,
+        6900
+      ],
+      [
+        2,
+        1580
+      ],
+      [
+        3,
+        860
+      ],
+      [
+        4,
+        660
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        6,
+        0
+      ]
+    ],
+    "UpgradeCurrencyType": 1,
+    "UpgradeCurrencyValue": 12000,
+    "UpgradeBuildingConfig": 80002,
+    "UpgradeBuildingLevel": 4
+  },
+  {
+    "Id": 13,
+    "LotteryInfos": [
+      [
+        1,
+        6800
+      ],
+      [
+        2,
+        1560
+      ],
+      [
+        3,
+        920
+      ],
+      [
+        4,
+        720
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        6,
+        0
+      ]
+    ],
+    "UpgradeCurrencyType": 1,
+    "UpgradeCurrencyValue": 13000,
+    "UpgradeBuildingConfig": 80002,
+    "UpgradeBuildingLevel": 5
+  },
+  {
+    "Id": 14,
+    "LotteryInfos": [
+      [
+        1,
+        6700
+      ],
+      [
+        2,
+        1540
+      ],
+      [
+        3,
+        980
+      ],
+      [
+        4,
+        780
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        6,
+        0
+      ]
+    ],
+    "UpgradeCurrencyType": 1,
+    "UpgradeCurrencyValue": 14000,
+    "UpgradeBuildingConfig": 80002,
+    "UpgradeBuildingLevel": 6
+  },
+  {
+    "Id": 15,
+    "LotteryInfos": [
+      [
+        1,
+        6600
+      ],
+      [
+        2,
+        1520
+      ],
+      [
+        3,
+        1040
+      ],
+      [
+        4,
+        840
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        6,
+        0
+      ]
+    ],
+    "UpgradeCurrencyType": 1,
+    "UpgradeCurrencyValue": 15000,
+    "UpgradeBuildingConfig": 80002,
+    "UpgradeBuildingLevel": 7
+  },
+  {
+    "Id": 16,
+    "LotteryInfos": [
+      [
+        1,
+        6500
+      ],
+      [
+        2,
+        1500
+      ],
+      [
+        3,
+        1100
+      ],
+      [
+        4,
+        900
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        6,
+        0
+      ]
+    ],
+    "UpgradeCurrencyType": 1,
+    "UpgradeCurrencyValue": 16000,
+    "UpgradeBuildingConfig": 80002,
+    "UpgradeBuildingLevel": 8
+  },
+  {
+    "Id": 17,
+    "LotteryInfos": [
+      [
+        1,
+        6400
+      ],
+      [
+        2,
+        1480
+      ],
+      [
+        3,
+        1160
+      ],
+      [
+        4,
+        960
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        6,
+        0
+      ]
+    ],
+    "UpgradeCurrencyType": 1,
+    "UpgradeCurrencyValue": 17000,
+    "UpgradeBuildingConfig": 80002,
+    "UpgradeBuildingLevel": 9
+  },
+  {
+    "Id": 18,
+    "LotteryInfos": [
+      [
+        1,
+        6300
+      ],
+      [
+        2,
+        1460
+      ],
+      [
+        3,
+        1220
+      ],
+      [
+        4,
+        1020
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        6,
+        0
+      ]
+    ],
+    "UpgradeCurrencyType": 1,
+    "UpgradeCurrencyValue": 18000,
+    "UpgradeBuildingConfig": 80003,
+    "UpgradeBuildingLevel": 1
+  },
+  {
+    "Id": 19,
+    "LotteryInfos": [
+      [
+        1,
+        6200
+      ],
+      [
+        2,
+        1440
+      ],
+      [
+        3,
+        1280
+      ],
+      [
+        4,
+        1080
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        6,
+        0
+      ]
+    ],
+    "UpgradeCurrencyType": 1,
+    "UpgradeCurrencyValue": 19000,
+    "UpgradeBuildingConfig": 80003,
+    "UpgradeBuildingLevel": 2
+  },
+  {
+    "Id": 20,
+    "LotteryInfos": [
+      [
+        1,
+        6100
+      ],
+      [
+        2,
+        1420
+      ],
+      [
+        3,
+        1340
+      ],
+      [
+        4,
+        1140
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        6,
+        0
+      ]
+    ],
+    "UpgradeCurrencyType": 1,
+    "UpgradeCurrencyValue": 20000,
+    "UpgradeBuildingConfig": 80003,
+    "UpgradeBuildingLevel": 3
+  }
+]

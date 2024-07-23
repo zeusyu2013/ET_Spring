@@ -70,5 +70,12 @@ namespace ET
         // Mount
         public const int ERR_HasMount = 200701;
         public const int ERR_MountConfigError = 200701;
+        
+        // Lottery
+        public const int ERR_NotFoundLotteryConfig = 200801;
+        public const int ERR_BuildingLevelNotMatch = 200802;
+        
+        // Currency
+        public const int ERR_CurrencyNotEnough = 200901;
     }
 }

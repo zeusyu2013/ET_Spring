@@ -1634,6 +1634,124 @@ namespace ET
         }
     }
 
+    [MemoryPackable]
+    [Message(OuterMessage.C2M_Lottery)]
+    [ResponseType(nameof(M2C_Lottery))]
+    public partial class C2M_Lottery : MessageObject, ILocationRequest
+    {
+        public static C2M_Lottery Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_Lottery), isFromPool) as C2M_Lottery;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_Lottery)]
+    public partial class M2C_Lottery : MessageObject, ILocationResponse
+    {
+        public static M2C_Lottery Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_Lottery), isFromPool) as M2C_Lottery;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.C2M_UpgradeLottery)]
+    [ResponseType(nameof(M2C_UpgradeLottery))]
+    public partial class C2M_UpgradeLottery : MessageObject, ILocationRequest
+    {
+        public static C2M_UpgradeLottery Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_UpgradeLottery), isFromPool) as C2M_UpgradeLottery;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_UpgradeLottery)]
+    public partial class M2C_UpgradeLottery : MessageObject, ILocationResponse
+    {
+        public static M2C_UpgradeLottery Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_UpgradeLottery), isFromPool) as M2C_UpgradeLottery;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
     public static partial class OuterMessage
     {
         public const ushort C2M_GMCommand = 11002;
@@ -1688,5 +1806,9 @@ namespace ET
         public const ushort M2C_RideMount = 11051;
         public const ushort C2M_DownMount = 11052;
         public const ushort M2C_DownMount = 11053;
+        public const ushort C2M_Lottery = 11054;
+        public const ushort M2C_Lottery = 11055;
+        public const ushort C2M_UpgradeLottery = 11056;
+        public const ushort M2C_UpgradeLottery = 11057;
     }
 }

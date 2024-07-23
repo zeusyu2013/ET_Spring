@@ -357,3 +357,29 @@ message M2C_DownMount // ILocationResponse
 	int32 Error = 2;
 	string Message = 3;
 }
+
+// ResponseType M2C_Lottery
+message C2M_Lottery // ILocationRequest
+{
+	int32 RpcId = 1;
+}
+
+message M2C_Lottery // ILocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}
+
+// ResponseType M2C_UpgradeLottery
+message C2M_UpgradeLottery // ILocationRequest
+{
+	int32 RpcId = 1;
+}
+
+message M2C_UpgradeLottery // ILocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}

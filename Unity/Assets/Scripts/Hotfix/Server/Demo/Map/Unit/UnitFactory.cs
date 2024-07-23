@@ -7,6 +7,7 @@ namespace ET.Server
     [FriendOf(typeof(Mail))]
     [FriendOf(typeof(UnitPlayerIdComponent))]
     [FriendOfAttribute(typeof(ET.Server.LocationComponent))]
+    [FriendOfAttribute(typeof(ET.Server.LotteryComponent))]
     public static partial class UnitFactory
     {
         public static Unit CreateCharacter(Scene scene, long id, CharacterType character, RaceType race)
@@ -87,6 +88,10 @@ namespace ET.Server
             // VIP组件
             unit.AddComponentWithId<VipComponent>(unit.Id);
 
+            // 宝箱组件
+            LotteryComponent lotteryComponent = unit.AddComponentWithId<LotteryComponent>(unit.Id);
+            lotteryComponent.Level = 1;
+
             unitComponent.Add(unit);
 
             UnitDBSaveComponent unitDBSaveComponent = unit.AddComponent<UnitDBSaveComponent>();
@@ -104,6 +109,7 @@ namespace ET.Server
             unitDBSaveComponent.AddChange(typeof(MountComponent));
             unitDBSaveComponent.AddChange(typeof(PayComponent));
             unitDBSaveComponent.AddChange(typeof(VipComponent));
+            unitDBSaveComponent.AddChange(typeof(LotteryComponent));
             unitDBSaveComponent.SaveChanged();
 
             // 加入aoi

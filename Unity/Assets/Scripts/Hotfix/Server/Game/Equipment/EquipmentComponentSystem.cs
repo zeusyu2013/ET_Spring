@@ -63,7 +63,7 @@
 
         public static GameItem GetEquipmentByConfigId(this EquipmentContainerComponent self, int configId)
         {
-            foreach ((int key, var value) in self.Equipments)
+            foreach ((int _, var value) in self.Equipments)
             {
                 GameItem item = value;
 

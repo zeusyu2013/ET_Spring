@@ -9,37 +9,38 @@
 
 namespace ET
 {
-    public enum GameItemQualityType
+    [System.Flags]
+    public enum LotteryQuality
     {
         /// <summary>
-        /// 白色品质
+        /// 普通
         /// </summary>
-        GameItemQualityType_White = 1,
+        LotteryQuality_Gray = 1,
 
         /// <summary>
-        /// 绿色品质
+        /// 优秀
         /// </summary>
-        GameItemQualityType_Green = 2,
+        LotteryQuality_Green = 2,
 
         /// <summary>
-        /// 蓝色品质
+        /// 精良
         /// </summary>
-        GameItemQualityType_Blue = 3,
+        LotteryQuality_Blue = 3,
 
         /// <summary>
-        /// 紫色品质
+        /// 史诗
         /// </summary>
-        GameItemQualityType_Purple = 4,
+        LotteryQuality_Purple = 4,
 
         /// <summary>
-        /// 橙色品质
+        /// 传说
         /// </summary>
-        GameItemQualityType_Orange = 5,
+        LotteryQuality_Orange = 5,
 
         /// <summary>
-        /// 红色品质
+        /// 神话
         /// </summary>
-        GameItemQualityType_Red = 6,
+        LotteryQuality_Red = 6,
 
     }
 }

@@ -129,5 +129,16 @@ namespace ET.Server
                 unit.GetComponent<CurrencyComponent>().Inc((CurrencyType)type, value, "建筑产出");
             }
         }
+
+        public static bool CheckConfigAndLevel(this BuildingComponent self, int config, int level)
+        {
+            Building building = self.Buildings.Find(x => ((Building)x).ConfigId == config && ((Building)x).Level >= level);
+            if (building == null)
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }
