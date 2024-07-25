@@ -23,5 +23,7 @@
         public const int DailyCheckTimer = 302;
         public const int RoomUpdate = 303;
         public const int DungeonTimer = 304;
+
+        public const int BuffTimer = 401;
     }
 }

@@ -19,7 +19,7 @@ namespace ET
             Id = _buf.ReadInt();
             Type = (BuffType)_buf.ReadInt();
             ContinueTime = _buf.ReadLong();
-            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);Parameters = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); Parameters.Add(_e0);}}
+            Parameters = BuffParams.DeserializeBuffParams(_buf);
 
             PostInit();
         }
@@ -47,7 +47,7 @@ namespace ET
         /// <summary>
         /// 参数列表
         /// </summary>
-        public readonly System.Collections.Generic.List<int> Parameters;
+        public readonly BuffParams Parameters;
 
         public const int __ID__ = -1370631787;
 
@@ -59,7 +59,7 @@ namespace ET
             + "Id:" + Id + ","
             + "Type:" + Type + ","
             + "ContinueTime:" + ContinueTime + ","
-            + "Parameters:" + Luban.StringUtil.CollectionToString(Parameters) + ","
+            + "Parameters:" + Parameters + ","
             + "}";
         }
 

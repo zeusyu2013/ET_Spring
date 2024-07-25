@@ -175,5 +175,10 @@ namespace ET.Server
         {
             return self.BeSeePlayers.ContainsKey(unitId);
         }
+
+        public static Dictionary<long, EntityRef<AOIEntity>> GetSeeUnits(this Unit unit)
+        {
+            return unit.GetComponent<AOIEntity>().SeeUnits;
+        }
     }
 }

@@ -3,35 +3,37 @@
     "Id": 40001,
     "Type": 2,
     "ContinueTime": 5000,
-    "Parameters": [
-      1,
-      1
-    ]
+    "Parameters": {
+      "$type": "BuffControlParams",
+      "Type": 2
+    }
   },
   {
     "Id": 40002,
     "Type": 1,
     "ContinueTime": 3600000,
-    "Parameters": [
-      1,
-      1
-    ]
+    "Parameters": {
+      "$type": "BuffModifyPropertyParams",
+      "Property": 1102,
+      "Value": 1000
+    }
   },
   {
     "Id": 40003,
     "Type": 4,
     "ContinueTime": 300000,
-    "Parameters": [
-      1,
-      1
-    ]
+    "Parameters": {
+      "$type": "BuffActionParams",
+      "ActionType": 1
+    }
   },
   {
     "Id": 40004,
     "Type": 3,
     "ContinueTime": 15000,
-    "Parameters": [
-      5100
-    ]
+    "Parameters": {
+      "$type": "BuffDotParams",
+      "Count": 5
+    }
   }
 ]

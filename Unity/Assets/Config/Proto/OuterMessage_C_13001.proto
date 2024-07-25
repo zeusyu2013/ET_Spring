@@ -1,1 +1,16 @@
 syntax = "proto3";
+
+// ResponseType M2C_CastSkill
+message C2M_CastSkill // ILocationRequest
+{
+	int32 RpcId = 1;
+    int32 SkillConfigId = 2;
+    int32 SkillLevel = 3;
+}
+
+message M2C_CastSkill // ILocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}

@@ -23,6 +23,8 @@ namespace ET
             Base = _buf.ReadLong();
             Ratio = _buf.ReadLong();
             SkillRange = (SkillRange)_buf.ReadInt();
+            SkillTargetRangeParam = SkillTargetRangeParams.DeserializeSkillTargetRangeParams(_buf);
+            SkillHitTime = _buf.ReadLong();
             Consume = _buf.ReadLong();
             LearnCurrencyType = (CurrencyType)_buf.ReadInt();
             LearnCurrencyValue = _buf.ReadLong();
@@ -66,9 +68,16 @@ namespace ET
         public readonly long Ratio;
 
         /// <summary>
-        /// 技能作用范围
+        /// 技能范围
         /// </summary>
         public readonly SkillRange SkillRange;
+
+        public readonly SkillTargetRangeParams SkillTargetRangeParam;
+
+        /// <summary>
+        /// 技能命中时间
+        /// </summary>
+        public readonly long SkillHitTime;
 
         /// <summary>
         /// 技能消耗
@@ -99,6 +108,8 @@ namespace ET
             + "Base:" + Base + ","
             + "Ratio:" + Ratio + ","
             + "SkillRange:" + SkillRange + ","
+            + "SkillTargetRangeParam:" + SkillTargetRangeParam + ","
+            + "SkillHitTime:" + SkillHitTime + ","
             + "Consume:" + Consume + ","
             + "LearnCurrencyType:" + LearnCurrencyType + ","
             + "LearnCurrencyValue:" + LearnCurrencyValue + ","

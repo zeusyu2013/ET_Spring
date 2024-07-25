@@ -44,6 +44,7 @@ namespace ET.Server
             foreach ((LotteryQuality key, int value) in config.LotteryInfos)
             {
                 ranges.Add(new LotteryRange() { Min = index, Max = index + value }, key);
+                index += value;
             }
 
             LotteryQuality quality = LotteryQuality.LotteryQuality_Gray;
