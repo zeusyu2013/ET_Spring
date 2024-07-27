@@ -1,0 +1,15 @@
+[
+  {
+    "Id": 10001,
+    "Position": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "RandomRange": 10,
+    "Monsters": {
+      "MonsterConfig": 1001,
+      "MonsterCount": 5
+    }
+  }
+]

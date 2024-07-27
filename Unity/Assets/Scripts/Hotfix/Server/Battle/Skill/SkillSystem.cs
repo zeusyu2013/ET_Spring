@@ -9,15 +9,12 @@
         {
             self.ConfigId = configId;
             self.Level = level;
+
+            self.AddComponent<ActionTempComponent>();
         }
 
         [EntitySystem]
         private static void Destroy(this Skill self)
-        {
-        }
-
-        [EntitySystem]
-        private static void Update(this Skill self)
         {
         }
     }

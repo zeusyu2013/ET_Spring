@@ -5,6 +5,7 @@
     [FriendOfAttribute(typeof(GameBuffContinueComponent))]
     public static partial class GameBuffSystem
     {
+        [Invoke(TimerInvokeType.BuffTimer)]
         public class BuffTimer : ATimer<GameBuff>
         {
             protected override void Run(GameBuff t)

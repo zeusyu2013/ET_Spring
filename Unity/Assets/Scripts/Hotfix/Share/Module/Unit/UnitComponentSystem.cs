@@ -17,5 +17,10 @@
 			Unit unit = self.GetChild<Unit>(id);
 			unit?.Dispose();
 		}
+
+		public static Unit GetUnit(this Scene scene, long id)
+		{
+			return scene.GetComponent<UnitComponent>().Get(id);
+		}
 	}
 }

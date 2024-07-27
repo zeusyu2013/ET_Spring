@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace ET.Server
 {
@@ -6,6 +7,7 @@ namespace ET.Server
     [UnitCacheEvent(typeof(GameBuffComponent))]
     public class GameBuffComponent : Entity, IAwake, IUpdate, IDestroy, ITransfer, IDeserialize
     {
+        [BsonIgnore]
         public List<EntityRef<GameBuff>> GameBuffs = new();
     }
 }

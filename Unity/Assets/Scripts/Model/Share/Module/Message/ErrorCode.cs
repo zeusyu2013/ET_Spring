@@ -85,5 +85,6 @@ namespace ET
         public const int ERR_SkillConfigNotFound = 201004;
         public const int ERR_SkillConsumeNotEnough = 201005;
         public const int ERR_SkillNotTarget = 201006;
+        public const int ERR_AlreadyAlive = 201007;
     }
 }
