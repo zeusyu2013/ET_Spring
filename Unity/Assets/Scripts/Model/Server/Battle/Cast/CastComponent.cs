@@ -1,7 +1,7 @@
 ﻿namespace ET.Server
 {
     [ComponentOf(typeof(Unit))]
-    public class CastComponent : Entity, IAwake, IDestroy
+    public class CastComponent : Entity, IAwake, IDestroy, ITransfer, IDeserialize
     {
     }
 }

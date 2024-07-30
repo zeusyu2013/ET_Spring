@@ -5,7 +5,7 @@
     {
         public void Run(Unit unit, NumbericChange args)
         {
-            if (unit.Type() != UnitType.Player)
+            if (unit.Type() != UnitType.UnitType_Player)
             {
                 return;
             }

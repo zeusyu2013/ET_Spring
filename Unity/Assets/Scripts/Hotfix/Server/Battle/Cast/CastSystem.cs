@@ -41,7 +41,7 @@
             return ErrorCode.ERR_Success;
         }
 
-        public static int CastCheck(this Cast self)
+        private static int CastCheck(this Cast self)
         {
             if (self == null || self.IsDisposed)
             {
@@ -57,13 +57,15 @@
             return ErrorCode.ERR_Success;
         }
 
-        public static void SelectTargets(this Cast self)
+        private static void SelectTargets(this Cast self)
         {
+            self.Targets.Clear();
+            
             Unit caster = self.Caster;
             caster.GetComponent<SelectTargetComponent>().Check(self.ConfigId, ref self.Targets);
         }
 
-        public static int CastCheckBeforeBegin(this Cast self)
+        private static int CastCheckBeforeBegin(this Cast self)
         {
             if (self.Targets.Count < 1)
             {
@@ -73,7 +75,7 @@
             return ErrorCode.ERR_Success;
         }
 
-        public static async ETTask CastBeginAsync(this Cast self)
+        private static async ETTask CastBeginAsync(this Cast self)
         {
             self.StartTime = TimeInfo.Instance.ServerNow();
 
@@ -134,7 +136,7 @@
             self.CastFinish();
         }
 
-        public static void HandleSelfHit(this Cast self, CastHitInfo hitInfo)
+        private static void HandleSelfHit(this Cast self, CastHitInfo hitInfo)
         {
             self.SelectTargets();
             if (self.Targets.Count < 1)
@@ -161,7 +163,7 @@
             }
         }
 
-        public static void HandleTargetHit(this Cast self, CastHitInfo info)
+        private static void HandleTargetHit(this Cast self, CastHitInfo info)
         {
             self.SelectTargets();
 
@@ -198,7 +200,7 @@
             }
         }
 
-        public static void CastFinish(this Cast self)
+        private static void CastFinish(this Cast self)
         {
             if (self.Config.TotalTime > 0)
             {
@@ -212,7 +214,7 @@
             self?.Dispose();
         }
 
-        public static bool CheckAsyncInvalid(this Cast self, long castInstanceId, long casterInstanceId)
+        private static bool CheckAsyncInvalid(this Cast self, long castInstanceId, long casterInstanceId)
         {
             Unit unit = self.Caster;
             if (unit == null)

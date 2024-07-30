@@ -22,9 +22,9 @@ namespace ET
             Interval = _buf.ReadInt();
             {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);IntervalCasts = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); IntervalCasts.Add(_e0);}}
             {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);IntervalActions = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); IntervalActions.Add(_e0);}}
-            Model = _buf.ReadString();
             {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);CreateActions = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); CreateActions.Add(_e0);}}
             {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);DestroyActions = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); DestroyActions.Add(_e0);}}
+            Model = _buf.ReadString();
 
             PostInit();
         }
@@ -65,11 +65,6 @@ namespace ET
         public readonly System.Collections.Generic.List<int> IntervalActions;
 
         /// <summary>
-        /// 子弹模型
-        /// </summary>
-        public readonly string Model;
-
-        /// <summary>
         /// 创建时触发行为
         /// </summary>
         public readonly System.Collections.Generic.List<int> CreateActions;
@@ -78,6 +73,11 @@ namespace ET
         /// 销毁前触发行为
         /// </summary>
         public readonly System.Collections.Generic.List<int> DestroyActions;
+
+        /// <summary>
+        /// 子弹模型
+        /// </summary>
+        public readonly string Model;
 
         public const int __ID__ = 284876548;
 
@@ -92,9 +92,9 @@ namespace ET
             + "Interval:" + Interval + ","
             + "IntervalCasts:" + Luban.StringUtil.CollectionToString(IntervalCasts) + ","
             + "IntervalActions:" + Luban.StringUtil.CollectionToString(IntervalActions) + ","
-            + "Model:" + Model + ","
             + "CreateActions:" + Luban.StringUtil.CollectionToString(CreateActions) + ","
             + "DestroyActions:" + Luban.StringUtil.CollectionToString(DestroyActions) + ","
+            + "Model:" + Model + ","
             + "}";
         }
 

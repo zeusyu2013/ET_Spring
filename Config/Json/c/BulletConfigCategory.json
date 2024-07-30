@@ -13,12 +13,12 @@
     "IntervalActions": [
       1
     ],
-    "Model": "fire_ball",
     "CreateActions": [
       1
     ],
     "DestroyActions": [
       1
-    ]
+    ],
+    "Model": "fire_ball"
   }
 ]

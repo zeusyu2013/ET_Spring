@@ -7,7 +7,7 @@
         {
             Log.Console($"玩家{message.UnitId} 更新 {message.BuffInfo.ConfigId} BUFF({message.BuffInfo.Id})");
 
-            Unit unit = scene.GetComponent<UnitComponent>().Get(message.UnitId);
+            Unit unit = scene.GetUnit(message.UnitId);
             if (unit == null)
             {
                 return;
@@ -24,11 +24,16 @@
             {
                 return;
             }
-            
-            EventSystem.Instance.Publish(scene, new BuffUpdate(){});
-            
+
+            EventSystem.Instance.Publish(scene, new BuffUpdate()
+            {
+                Unit = unit,
+                BuffId = message.BuffInfo.Id,
+                BuffConfigId = message.BuffInfo.ConfigId
+            });
+
             clientBuffComponent.Update(message.BuffInfo);
-            
+
             await ETTask.CompletedTask;
         }
     }

@@ -57,7 +57,14 @@
 
         public static void Remove(this ClientBuffComponent self, long buffId)
         {
-            
+            ClientBuff buff = self.Get(buffId);
+            if (buff == null)
+            {
+                return;
+            }
+
+            self.Buffs.Remove(buffId);
+            buff?.Dispose();
         }
     }
 }

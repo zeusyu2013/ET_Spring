@@ -29,11 +29,16 @@
                 {
                     continue;
                 }
-                
+
                 clientCast.Targets.Add(tid);
+
+                EventSystem.Instance.Publish(scene, new CastHit()
+                {
+                    CasterId = message.CasterId, 
+                    CastId = message.CastId, 
+                    TargetId = tid
+                });
             }
-            
-            EventSystem.Instance.Publish(scene, new CastHit(){});
 
             await ETTask.CompletedTask;
         }

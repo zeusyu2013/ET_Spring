@@ -3,6 +3,7 @@ using Unity.Mathematics;
 
 namespace ET.Server
 {
+    [SelectTarget(SelectTargetType.SelectTargetType_ForwardRect)]
     public class SelectTargetForwardRect : ASelectTargetHandler
     {
         public override int Check(SelectTargetComponent selectTargetComponent, CastConfig castConfig, ref List<long> targets)
@@ -33,6 +34,11 @@ namespace ET.Server
                 AOIEntity aoiEntity = entityRef;
                 Unit target = aoiEntity.GetParent<Unit>();
                 if (target == null || target.IsDisposed)
+                {
+                    continue;
+                }
+                
+                if (target.Type() != UnitType.UnitType_Player && target.Type() != UnitType.UnitType_Monster)
                 {
                     continue;
                 }

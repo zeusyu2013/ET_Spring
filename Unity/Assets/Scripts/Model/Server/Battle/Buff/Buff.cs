@@ -2,8 +2,6 @@
 
 namespace ET.Server
 {
-    
-
     [ChildOf(typeof(BuffComponent))]
     public class Buff : Entity, IAwake<int>, IDestroy, ISerializeToEntity, IDeserialize
     {

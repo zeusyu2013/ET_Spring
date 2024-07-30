@@ -4,75 +4,8 @@ using System.Collections.Generic;
 namespace ET
 {
     [MemoryPackable]
-    [Message(OuterMessage.C2M_CastSkill)]
-    [ResponseType(nameof(M2C_CastSkill))]
-    public partial class C2M_CastSkill : MessageObject, ILocationRequest
-    {
-        public static C2M_CastSkill Create(bool isFromPool = false)
-        {
-            return ObjectPool.Instance.Fetch(typeof(C2M_CastSkill), isFromPool) as C2M_CastSkill;
-        }
-
-        [MemoryPackOrder(0)]
-        public int RpcId { get; set; }
-
-        [MemoryPackOrder(1)]
-        public int SkillConfigId { get; set; }
-
-        [MemoryPackOrder(2)]
-        public int SkillLevel { get; set; }
-
-        public override void Dispose()
-        {
-            if (!this.IsFromPool)
-            {
-                return;
-            }
-
-            this.RpcId = default;
-            this.SkillConfigId = default;
-            this.SkillLevel = default;
-
-            ObjectPool.Instance.Recycle(this);
-        }
-    }
-
-    [MemoryPackable]
-    [Message(OuterMessage.M2C_CastSkill)]
-    public partial class M2C_CastSkill : MessageObject, ILocationResponse
-    {
-        public static M2C_CastSkill Create(bool isFromPool = false)
-        {
-            return ObjectPool.Instance.Fetch(typeof(M2C_CastSkill), isFromPool) as M2C_CastSkill;
-        }
-
-        [MemoryPackOrder(0)]
-        public int RpcId { get; set; }
-
-        [MemoryPackOrder(1)]
-        public int Error { get; set; }
-
-        [MemoryPackOrder(2)]
-        public string Message { get; set; }
-
-        public override void Dispose()
-        {
-            if (!this.IsFromPool)
-            {
-                return;
-            }
-
-            this.RpcId = default;
-            this.Error = default;
-            this.Message = default;
-
-            ObjectPool.Instance.Recycle(this);
-        }
-    }
-
-    [MemoryPackable]
     [Message(OuterMessage.M2C_CastStart)]
-    public partial class M2C_CastStart : MessageObject, ILocationMessage
+    public partial class M2C_CastStart : MessageObject, IMessage
     {
         public static M2C_CastStart Create(bool isFromPool = false)
         {
@@ -113,7 +46,7 @@ namespace ET
 
     [MemoryPackable]
     [Message(OuterMessage.M2C_CastHit)]
-    public partial class M2C_CastHit : MessageObject, ILocationMessage
+    public partial class M2C_CastHit : MessageObject, IMessage
     {
         public static M2C_CastHit Create(bool isFromPool = false)
         {
@@ -150,7 +83,7 @@ namespace ET
 
     [MemoryPackable]
     [Message(OuterMessage.M2C_CastFinish)]
-    public partial class M2C_CastFinish : MessageObject, ILocationMessage
+    public partial class M2C_CastFinish : MessageObject, IMessage
     {
         public static M2C_CastFinish Create(bool isFromPool = false)
         {
@@ -183,7 +116,7 @@ namespace ET
 
     [MemoryPackable]
     [Message(OuterMessage.M2C_CastBreak)]
-    public partial class M2C_CastBreak : MessageObject, ILocationMessage
+    public partial class M2C_CastBreak : MessageObject, IMessage
     {
         public static M2C_CastBreak Create(bool isFromPool = false)
         {
@@ -257,7 +190,7 @@ namespace ET
 
     [MemoryPackable]
     [Message(OuterMessage.M2C_BuffAdd)]
-    public partial class M2C_BuffAdd : MessageObject, ILocationMessage
+    public partial class M2C_BuffAdd : MessageObject, IMessage
     {
         public static M2C_BuffAdd Create(bool isFromPool = false)
         {
@@ -290,7 +223,7 @@ namespace ET
 
     [MemoryPackable]
     [Message(OuterMessage.M2C_BuffRemove)]
-    public partial class M2C_BuffRemove : MessageObject, ILocationMessage
+    public partial class M2C_BuffRemove : MessageObject, IMessage
     {
         public static M2C_BuffRemove Create(bool isFromPool = false)
         {
@@ -323,7 +256,7 @@ namespace ET
 
     [MemoryPackable]
     [Message(OuterMessage.M2C_BuffTick)]
-    public partial class M2C_BuffTick : MessageObject, ILocationMessage
+    public partial class M2C_BuffTick : MessageObject, IMessage
     {
         public static M2C_BuffTick Create(bool isFromPool = false)
         {
@@ -356,7 +289,7 @@ namespace ET
 
     [MemoryPackable]
     [Message(OuterMessage.M2C_BuffUpdate)]
-    public partial class M2C_BuffUpdate : MessageObject, ILocationMessage
+    public partial class M2C_BuffUpdate : MessageObject, IMessage
     {
         public static M2C_BuffUpdate Create(bool isFromPool = false)
         {
@@ -389,7 +322,7 @@ namespace ET
 
     [MemoryPackable]
     [Message(OuterMessage.M2C_BattleResult)]
-    public partial class M2C_BattleResult : MessageObject, ILocationMessage
+    public partial class M2C_BattleResult : MessageObject, IMessage
     {
         public static M2C_BattleResult Create(bool isFromPool = false)
         {
@@ -424,19 +357,82 @@ namespace ET
         }
     }
 
+    [MemoryPackable]
+    [Message(OuterMessage.C2M_Cast)]
+    [ResponseType(nameof(M2C_Cast))]
+    public partial class C2M_Cast : MessageObject, ILocationRequest
+    {
+        public static C2M_Cast Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_Cast), isFromPool) as C2M_Cast;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int CastConfigId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.CastConfigId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_Cast)]
+    public partial class M2C_Cast : MessageObject, ILocationResponse
+    {
+        public static M2C_Cast Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_Cast), isFromPool) as M2C_Cast;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
     public static partial class OuterMessage
     {
-        public const ushort C2M_CastSkill = 13002;
-        public const ushort M2C_CastSkill = 13003;
-        public const ushort M2C_CastStart = 13004;
-        public const ushort M2C_CastHit = 13005;
-        public const ushort M2C_CastFinish = 13006;
-        public const ushort M2C_CastBreak = 13007;
-        public const ushort BuffInfo = 13008;
-        public const ushort M2C_BuffAdd = 13009;
-        public const ushort M2C_BuffRemove = 13010;
-        public const ushort M2C_BuffTick = 13011;
-        public const ushort M2C_BuffUpdate = 13012;
-        public const ushort M2C_BattleResult = 13013;
+        public const ushort M2C_CastStart = 13002;
+        public const ushort M2C_CastHit = 13003;
+        public const ushort M2C_CastFinish = 13004;
+        public const ushort M2C_CastBreak = 13005;
+        public const ushort BuffInfo = 13006;
+        public const ushort M2C_BuffAdd = 13007;
+        public const ushort M2C_BuffRemove = 13008;
+        public const ushort M2C_BuffTick = 13009;
+        public const ushort M2C_BuffUpdate = 13010;
+        public const ushort M2C_BattleResult = 13011;
+        public const ushort C2M_Cast = 13012;
+        public const ushort M2C_Cast = 13013;
     }
 }

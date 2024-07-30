@@ -8,6 +8,7 @@ namespace ET.Server
     [FriendOf(typeof(UnitPlayerIdComponent))]
     [FriendOfAttribute(typeof(ET.Server.LocationComponent))]
     [FriendOfAttribute(typeof(ET.Server.LotteryComponent))]
+    [FriendOfAttribute(typeof(ET.Server.BulletComponent))]
     public static partial class UnitFactory
     {
         public static Unit CreateCharacter(Scene scene, long id, CharacterType character, RaceType race)
@@ -32,6 +33,12 @@ namespace ET.Server
 
             // 移动组件
             unit.AddComponent<MoveComponent>();
+            
+            // 技能释放组件
+            unit.AddComponent<CastComponent>();
+            
+            // 选择目标组件
+            unit.AddComponent<SelectTargetComponent>();
 
             // 背包组件
             BagComponent bagComponent = unit.AddComponentWithId<BagComponent>(unit.Id);
@@ -91,6 +98,9 @@ namespace ET.Server
             // 宝箱组件
             LotteryComponent lotteryComponent = unit.AddComponentWithId<LotteryComponent>(unit.Id);
             lotteryComponent.Level = 1;
+            
+            // buff组件
+            unit.AddComponentWithId<BuffComponent>(unit.Id);
 
             unitComponent.Add(unit);
 
@@ -110,10 +120,12 @@ namespace ET.Server
             unitDBSaveComponent.AddChange(typeof(PayComponent));
             unitDBSaveComponent.AddChange(typeof(VipComponent));
             unitDBSaveComponent.AddChange(typeof(LotteryComponent));
+            unitDBSaveComponent.AddChange(typeof(BuffComponent));
             unitDBSaveComponent.SaveChanged();
-
+            
             // 加入aoi
             unit.AddComponent<AOIEntity, int, float3>(9 * 1000, unit.Position);
+            
             return unit;
         }
 
@@ -156,11 +168,45 @@ namespace ET.Server
             }
 
             unit.AddComponent<MoveComponent>();
+            unit.AddComponent<CastComponent>();
+            unit.AddComponent<SelectTargetComponent>();
 
             // 加入aoi
             unit.AddComponent<AOIEntity, int, float3>(9 * 1000, unit.Position);
 
             return unit;
+        }
+
+        public static Unit CreateBullet(Scene scene, long ownerId, int unitConfigId, int bulletId, float3 pos)
+        {
+            UnitComponent unitComponent = scene.GetComponent<UnitComponent>();
+            Unit bullet = unitComponent.AddChild<Unit, int>(unitConfigId);
+            bullet.Position = pos;
+            BulletComponent bulletComponent = bullet.AddComponent<BulletComponent, int>(bulletId);
+            bulletComponent.OwnerId = ownerId;
+            unitComponent.Add(bullet);
+
+            return bullet;
+        }
+
+        public static Unit CreateMonster(Scene scene, int unitConfigId, float3 pos)
+        {
+            UnitComponent unitComponent = scene.GetComponent<UnitComponent>();
+            Unit monster = unitComponent.AddChild<Unit, int>(unitConfigId);
+            monster.AddComponent<MoveComponent>();
+            monster.Position = pos;
+
+            NumericComponent numericComponent = monster.AddComponent<NumericComponent>();
+            numericComponent.Set(GamePropertyType.GamePropertyType_Speed, 6.0f);
+            numericComponent.Set(GamePropertyType.GamePropertyType_AOI, 15000);
+            numericComponent.Set(GamePropertyType.GamePropertyType_MaxHp, 1000);
+            numericComponent.Set(GamePropertyType.GamePropertyType_Hp, 1000);
+
+            monster.AddComponent<ReliveComponent>();
+
+            unitComponent.Add(monster);
+
+            return monster;
         }
     }
 }

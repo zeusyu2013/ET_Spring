@@ -19,7 +19,11 @@
                 return;
             }
             
-            EventSystem.Instance.Publish(scene, new CastFinish(){});
+            EventSystem.Instance.Publish(scene, new CastFinish()
+            {
+                CasterId = message.CasterId,
+                CastId = message.CastId
+            });
 
             caster.GetComponent<ClientCastComponent>().Remove(message.CastId);
 

@@ -6,5 +6,8 @@
         BuffTick,
         BuffRemove,
         CastHit,
+        BulletStart,
+        BulletTick,
+        BulletDestroy,
     }
 }

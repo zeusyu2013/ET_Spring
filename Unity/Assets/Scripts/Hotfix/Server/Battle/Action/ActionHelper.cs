@@ -10,6 +10,22 @@
             return self.AddChild<Action, int>(configId);
         }
 
+        public static Action Create(this BulletComponent self, int configId, Unit owner, Unit caster, ActionTriggerType type, bool autoAction = true, bool autoDestroy = true)
+        {
+            Action action = self.GetComponent<ActionTempComponent>().Create(configId);
+            action.Caster = caster;
+            action.Owner = owner;
+            
+            DoAction(action, type, autoAction, autoDestroy);
+
+            if (action.IsDisposed)
+            {
+                return null;
+            }
+
+            return action;
+        }
+
         public static Action Create(this Buff buff, int configId, ActionTriggerType type, bool autoAction = true, bool autoDestroy = true)
         {
             Action action = buff.GetComponent<ActionTempComponent>().Create(configId);

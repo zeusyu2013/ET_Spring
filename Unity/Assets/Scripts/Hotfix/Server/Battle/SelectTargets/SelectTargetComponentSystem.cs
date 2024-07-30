@@ -14,7 +14,7 @@ namespace ET.Server
         {
             CastConfig config = CastConfigCategory.Instance.Get(configId);
 
-            ASelectTargetHandler handler = SelectTargetDispatcherComponent.Instance.Get(config.SelectTargetType.ToString());
+            ASelectTargetHandler handler = SelectTargetDispatcherComponent.Instance.Get(config.SelectTargetType);
             if (handler == null)
             {
                 return ErrorCode.ERR_NotFoundSkillSelectHandler;

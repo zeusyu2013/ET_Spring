@@ -12,12 +12,16 @@ namespace ET.Server
         {
             UnitInfo unitInfo = UnitInfo.Create();
             NumericComponent nc = unit.GetComponent<NumericComponent>();
-            unitInfo.PlayerId = unit.GetComponent<UnitPlayerIdComponent>().PlayerId;
             unitInfo.UnitId = unit.Id;
             unitInfo.ConfigId = unit.ConfigId;
             unitInfo.Type = (int)unit.Type();
             unitInfo.Position = unit.Position;
             unitInfo.Forward = unit.Forward;
+
+            if (unit.Type() == UnitType.UnitType_Player)
+            {
+                unitInfo.PlayerId = unit.GetComponent<UnitPlayerIdComponent>().PlayerId;
+            }
 
             MoveComponent moveComponent = unit.GetComponent<MoveComponent>();
             if (moveComponent != null)

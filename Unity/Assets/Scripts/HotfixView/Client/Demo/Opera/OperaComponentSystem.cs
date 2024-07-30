@@ -62,6 +62,11 @@ namespace ET.Client
                 C2M_TransferMap c2MTransferMap = C2M_TransferMap.Create();
                 self.Root().GetComponent<ClientSenderComponent>().Call(c2MTransferMap).Coroutine();
             }
+
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                ClientCastHelper.CastSkill(self.Scene(), 1001).Coroutine();
+            }
         }
 
         private static async ETTask Test1(this OperaComponent self)

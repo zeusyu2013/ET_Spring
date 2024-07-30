@@ -20,6 +20,7 @@ namespace ET
             Position = vec3.Deserializevec3(_buf);
             RandomRange = _buf.ReadInt();
             Monsters = MonsterCreationInfo.DeserializeMonsterCreationInfo(_buf);
+            ReliveTime = _buf.ReadInt();
 
             PostInit();
         }
@@ -49,6 +50,11 @@ namespace ET
         /// </summary>
         public readonly MonsterCreationInfo Monsters;
 
+        /// <summary>
+        /// 死亡复活时间
+        /// </summary>
+        public readonly int ReliveTime;
+
         public const int __ID__ = -1593310544;
 
         public override int GetTypeId() => __ID__;
@@ -60,6 +66,7 @@ namespace ET
             + "Position:" + Position + ","
             + "RandomRange:" + RandomRange + ","
             + "Monsters:" + Monsters + ","
+            + "ReliveTime:" + ReliveTime + ","
             + "}";
         }
 

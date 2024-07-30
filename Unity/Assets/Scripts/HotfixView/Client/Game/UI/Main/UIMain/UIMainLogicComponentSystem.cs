@@ -23,7 +23,10 @@ namespace ET.Client
                 C2M_GetOfflineIncome c2MGetOfflineIncome = C2M_GetOfflineIncome.Create();
                 self.Root().GetComponent<ClientSenderComponent>().Call(c2MGetOfflineIncome).Coroutine();
             });
-            view.GCanvas_Test4.onClick.Set(() => { Log.Info("Click test button 4"); });
+            view.GCanvas_Test4.onClick.Set(() =>
+            {
+                ClientCastHelper.CastSkill(self.Root(), 110001).Coroutine();
+            });
         }
 
         [EntitySystem]

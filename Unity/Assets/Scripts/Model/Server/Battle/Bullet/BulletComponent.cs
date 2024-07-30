@@ -11,5 +11,7 @@ namespace ET.Server
         public BulletConfig Config => BulletConfigCategory.Instance.Get(this.ConfigId);
 
         public long OwnerId;
+
+        public long TickTimer;
     }
 }

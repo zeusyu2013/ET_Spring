@@ -22,5 +22,10 @@ namespace ET
         /// </summary>
         ActionType_Damage = 2,
 
+        /// <summary>
+        /// 子弹行为
+        /// </summary>
+        ActionType_CastBullet = 3,
+
     }
 }

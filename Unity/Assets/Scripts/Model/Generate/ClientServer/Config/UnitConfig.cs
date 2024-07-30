@@ -17,7 +17,8 @@ namespace ET
         public UnitConfig(ByteBuf _buf)
         {
             Id = _buf.ReadInt();
-            Type = (NpcType)_buf.ReadInt();
+            UnitType = (UnitType)_buf.ReadInt();
+            if(_buf.ReadBool()){ Type = (NpcType)_buf.ReadInt(); } else { Type = null; }
             Name = _buf.ReadString();
             Model = _buf.ReadString();
             AI = _buf.ReadInt();
@@ -39,9 +40,14 @@ namespace ET
         public readonly int Id;
 
         /// <summary>
+        /// 单位类型
+        /// </summary>
+        public readonly UnitType UnitType;
+
+        /// <summary>
         /// Npc类型
         /// </summary>
-        public readonly NpcType Type;
+        public readonly NpcType? Type;
 
         /// <summary>
         /// 名字
@@ -91,6 +97,7 @@ namespace ET
         {
             return "{ "
             + "Id:" + Id + ","
+            + "UnitType:" + UnitType + ","
             + "Type:" + Type + ","
             + "Name:" + Name + ","
             + "Model:" + Model + ","

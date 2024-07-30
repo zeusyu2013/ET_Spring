@@ -10,7 +10,8 @@
     "Monsters": {
       "MonsterConfig": 1001,
       "MonsterCount": 5
-    }
+    },
+    "ReliveTime": 3000
   },
   {
     "Id": 10002,
@@ -23,6 +24,7 @@
     "Monsters": {
       "MonsterConfig": 1002,
       "MonsterCount": 5
-    }
+    },
+    "ReliveTime": 3000
   }
 ]

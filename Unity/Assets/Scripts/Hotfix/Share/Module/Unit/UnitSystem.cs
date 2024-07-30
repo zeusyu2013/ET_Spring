@@ -22,7 +22,7 @@ namespace ET
         
         public static UnitType Type(this Unit self)
         {
-            return (UnitType)self.Config().Type;
+            return self.Config().UnitType;
         }
     }
 }

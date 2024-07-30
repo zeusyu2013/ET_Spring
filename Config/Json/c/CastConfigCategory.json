@@ -3,7 +3,7 @@
     "Id": 110001,
     "Name": "技能110001",
     "Desc": "技能110001",
-    "TotalTime": 0,
+    "TotalTime": 2000,
     "SelectTargetType": 1,
     "CastSelectTargetsParam": {
       "$type": "CastSingle"
@@ -24,61 +24,71 @@
         "TargetBuff": 2001,
         "SelfBuff": 2001
       }
-    ]
+    ],
+    "CastStartAnimation": "attack",
+    "CastHitAnimation": "hurt"
   },
   {
     "Id": 110002,
     "Name": "技能110002",
     "Desc": "技能110002",
-    "TotalTime": 0,
+    "TotalTime": 2000,
     "SelectTargetType": 1,
     "CastSelectTargetsParam": {
       "$type": "CastSingle"
     },
     "NotifyType": 2,
-    "HitInfos": []
+    "HitInfos": [],
+    "CastStartAnimation": "",
+    "CastHitAnimation": ""
   },
   {
     "Id": 110003,
     "Name": "技能110003",
     "Desc": "技能110003",
-    "TotalTime": 0,
+    "TotalTime": 2000,
     "SelectTargetType": 1,
     "CastSelectTargetsParam": {
       "$type": "CastSingle"
     },
     "NotifyType": 2,
-    "HitInfos": []
+    "HitInfos": [],
+    "CastStartAnimation": "",
+    "CastHitAnimation": ""
   },
   {
     "Id": 110004,
     "Name": "技能110004",
     "Desc": "技能110004",
-    "TotalTime": 0,
+    "TotalTime": 2000,
     "SelectTargetType": 1,
     "CastSelectTargetsParam": {
       "$type": "CastSingle"
     },
     "NotifyType": 2,
-    "HitInfos": []
+    "HitInfos": [],
+    "CastStartAnimation": "",
+    "CastHitAnimation": ""
   },
   {
     "Id": 110005,
     "Name": "技能110005",
     "Desc": "技能110005",
-    "TotalTime": 0,
+    "TotalTime": 2000,
     "SelectTargetType": 1,
     "CastSelectTargetsParam": {
       "$type": "CastSingle"
     },
     "NotifyType": 2,
-    "HitInfos": []
+    "HitInfos": [],
+    "CastStartAnimation": "",
+    "CastHitAnimation": ""
   },
   {
     "Id": 120001,
     "Name": "技能120001",
     "Desc": "技能120001",
-    "TotalTime": 0,
+    "TotalTime": 2000,
     "SelectTargetType": 2,
     "CastSelectTargetsParam": {
       "$type": "CastTargetCycle",
@@ -87,13 +97,15 @@
       "Counter": 5
     },
     "NotifyType": 2,
-    "HitInfos": []
+    "HitInfos": [],
+    "CastStartAnimation": "",
+    "CastHitAnimation": ""
   },
   {
     "Id": 120002,
     "Name": "技能120002",
     "Desc": "技能120002",
-    "TotalTime": 0,
+    "TotalTime": 2000,
     "SelectTargetType": 2,
     "CastSelectTargetsParam": {
       "$type": "CastTargetCycle",
@@ -102,13 +114,15 @@
       "Counter": 5
     },
     "NotifyType": 2,
-    "HitInfos": []
+    "HitInfos": [],
+    "CastStartAnimation": "",
+    "CastHitAnimation": ""
   },
   {
     "Id": 120003,
     "Name": "技能120003",
     "Desc": "技能120003",
-    "TotalTime": 0,
+    "TotalTime": 2000,
     "SelectTargetType": 2,
     "CastSelectTargetsParam": {
       "$type": "CastTargetCycle",
@@ -117,13 +131,15 @@
       "Counter": 5
     },
     "NotifyType": 2,
-    "HitInfos": []
+    "HitInfos": [],
+    "CastStartAnimation": "",
+    "CastHitAnimation": ""
   },
   {
     "Id": 120004,
     "Name": "技能120004",
     "Desc": "技能120004",
-    "TotalTime": 0,
+    "TotalTime": 2000,
     "SelectTargetType": 2,
     "CastSelectTargetsParam": {
       "$type": "CastTargetCycle",
@@ -132,13 +148,15 @@
       "Counter": 5
     },
     "NotifyType": 2,
-    "HitInfos": []
+    "HitInfos": [],
+    "CastStartAnimation": "",
+    "CastHitAnimation": ""
   },
   {
     "Id": 120005,
     "Name": "技能120005",
     "Desc": "技能120005",
-    "TotalTime": 0,
+    "TotalTime": 2000,
     "SelectTargetType": 2,
     "CastSelectTargetsParam": {
       "$type": "CastTargetCycle",
@@ -147,13 +165,15 @@
       "Counter": 5
     },
     "NotifyType": 2,
-    "HitInfos": []
+    "HitInfos": [],
+    "CastStartAnimation": "",
+    "CastHitAnimation": ""
   },
   {
     "Id": 130001,
     "Name": "技能130001",
     "Desc": "技能130001",
-    "TotalTime": 0,
+    "TotalTime": 2000,
     "SelectTargetType": 3,
     "CastSelectTargetsParam": {
       "$type": "CastForwardRect",
@@ -162,13 +182,15 @@
       "Counter": 5
     },
     "NotifyType": 2,
-    "HitInfos": []
+    "HitInfos": [],
+    "CastStartAnimation": "",
+    "CastHitAnimation": ""
   },
   {
     "Id": 130002,
     "Name": "技能130002",
     "Desc": "技能130002",
-    "TotalTime": 0,
+    "TotalTime": 2000,
     "SelectTargetType": 3,
     "CastSelectTargetsParam": {
       "$type": "CastForwardRect",
@@ -177,13 +199,15 @@
       "Counter": 5
     },
     "NotifyType": 2,
-    "HitInfos": []
+    "HitInfos": [],
+    "CastStartAnimation": "",
+    "CastHitAnimation": ""
   },
   {
     "Id": 130003,
     "Name": "技能130003",
     "Desc": "技能130003",
-    "TotalTime": 0,
+    "TotalTime": 2000,
     "SelectTargetType": 3,
     "CastSelectTargetsParam": {
       "$type": "CastForwardRect",
@@ -192,13 +216,15 @@
       "Counter": 5
     },
     "NotifyType": 2,
-    "HitInfos": []
+    "HitInfos": [],
+    "CastStartAnimation": "",
+    "CastHitAnimation": ""
   },
   {
     "Id": 130004,
     "Name": "技能130004",
     "Desc": "技能130004",
-    "TotalTime": 0,
+    "TotalTime": 2000,
     "SelectTargetType": 3,
     "CastSelectTargetsParam": {
       "$type": "CastForwardRect",
@@ -207,13 +233,15 @@
       "Counter": 5
     },
     "NotifyType": 2,
-    "HitInfos": []
+    "HitInfos": [],
+    "CastStartAnimation": "",
+    "CastHitAnimation": ""
   },
   {
     "Id": 130005,
     "Name": "技能130005",
     "Desc": "技能130005",
-    "TotalTime": 0,
+    "TotalTime": 2000,
     "SelectTargetType": 3,
     "CastSelectTargetsParam": {
       "$type": "CastForwardRect",
@@ -222,6 +250,8 @@
       "Counter": 5
     },
     "NotifyType": 2,
-    "HitInfos": []
+    "HitInfos": [],
+    "CastStartAnimation": "",
+    "CastHitAnimation": ""
   }
 ]

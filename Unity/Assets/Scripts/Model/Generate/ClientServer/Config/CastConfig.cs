@@ -24,6 +24,8 @@ namespace ET
             CastSelectTargetsParam = CastSelectTargetsParams.DeserializeCastSelectTargetsParams(_buf);
             NotifyType = (MessageNotifyType)_buf.ReadInt();
             {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);HitInfos = new System.Collections.Generic.List<CastHitInfo>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { CastHitInfo _e0;  _e0 = CastHitInfo.DeserializeCastHitInfo(_buf); HitInfos.Add(_e0);}}
+            CastStartAnimation = _buf.ReadString();
+            CastHitAnimation = _buf.ReadString();
 
             PostInit();
         }
@@ -70,6 +72,16 @@ namespace ET
         /// </summary>
         public readonly System.Collections.Generic.List<CastHitInfo> HitInfos;
 
+        /// <summary>
+        /// 技能起手动画
+        /// </summary>
+        public readonly string CastStartAnimation;
+
+        /// <summary>
+        /// 技能受击动画
+        /// </summary>
+        public readonly string CastHitAnimation;
+
         public const int __ID__ = 944053121;
 
         public override int GetTypeId() => __ID__;
@@ -85,6 +97,8 @@ namespace ET
             + "CastSelectTargetsParam:" + CastSelectTargetsParam + ","
             + "NotifyType:" + NotifyType + ","
             + "HitInfos:" + Luban.StringUtil.CollectionToString(HitInfos) + ","
+            + "CastStartAnimation:" + CastStartAnimation + ","
+            + "CastHitAnimation:" + CastHitAnimation + ","
             + "}";
         }
 

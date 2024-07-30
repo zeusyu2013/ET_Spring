@@ -86,7 +86,8 @@ namespace ET
         public const int ERR_SkillConsumeNotEnough = 201005;
         public const int ERR_CastNoTarget = 201006;
         public const int ERR_AlreadyAlive = 201007;
-        public const int ERR_CastIsNull = 201008;
-        public const int ERR_CastTargetCounterLessThan1 = 201009;
+        public const int ERR_AlreadyDead = 201008;
+        public const int ERR_CastIsNull = 201009;
+        public const int ERR_CastTargetCounterLessThan1 = 201010;
     }
 }

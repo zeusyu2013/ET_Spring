@@ -2,7 +2,7 @@
 
 namespace ET.Client
 {
-    [ComponentOf]
+    [ComponentOf(typeof(Unit))]
     public class ClientBuffComponent : Entity, IAwake, IDestroy
     {
         public Dictionary<long, EntityRef<ClientBuff>> Buffs = new();

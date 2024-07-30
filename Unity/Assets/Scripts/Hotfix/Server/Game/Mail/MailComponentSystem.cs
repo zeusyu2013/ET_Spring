@@ -71,7 +71,6 @@
             foreach (Entity childrenValue in self.Children.Values)
             {
                 Mail mail = childrenValue as Mail;
-                self.AddChild(mail);
                 self.Mails.Add(mail);
             }
         }

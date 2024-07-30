@@ -13,7 +13,7 @@
                     continue;
                 }
 
-                unit.GetComponent<ShopComponent>().NewDay();
+                unit.GetComponent<ShopComponent>()?.NewDay();
             }
 
             await ETTask.CompletedTask;

@@ -1,21 +1,6 @@
 syntax = "proto3";
 
-// ResponseType M2C_CastSkill
-message C2M_CastSkill // ILocationRequest
-{
-	int32 RpcId = 1;
-    int32 SkillConfigId = 2;
-    int32 SkillLevel = 3;
-}
-
-message M2C_CastSkill // ILocationResponse
-{
-	int32 RpcId = 1;
-	int32 Error = 2;
-	string Message = 3;
-}
-
-message M2C_CastStart // ILocationMessage
+message M2C_CastStart // IMessage
 {
     int32 RpcId = 1;
     int64 CasterId = 2;
@@ -24,7 +9,7 @@ message M2C_CastStart // ILocationMessage
     repeated int64 Targets = 5;
 }
 
-message M2C_CastHit // ILocationMessage
+message M2C_CastHit // IMessage
 {
     int32 RpcId = 1;
     int64 CasterId = 2;
@@ -32,14 +17,14 @@ message M2C_CastHit // ILocationMessage
     repeated int64 Targets = 4;
 }
 
-message M2C_CastFinish // ILocationMessage
+message M2C_CastFinish // IMessage
 {
     int32 RpcId = 1;
     int64 CasterId = 2;
     int64 CastId = 3;
 }
 
-message M2C_CastBreak // ILocationMessage
+message M2C_CastBreak // IMessage
 {
     int32 RpcId = 1;
     int64 CasterId = 2;
@@ -55,38 +40,52 @@ message BuffInfo
     repeated byte ExtraData = 5;
 }
 
-message M2C_BuffAdd // ILocationMessage
+message M2C_BuffAdd // IMessage
 {
     int32 RpcId = 1;
     int64 UnitId = 2;
     BuffInfo BuffInfo = 3;
 }
 
-message M2C_BuffRemove // ILocationMessage
+message M2C_BuffRemove // IMessage
 {
     int32 RpcId = 1;
     int64 UnitId = 2;
     int64 BuffId = 3;
 }
 
-message M2C_BuffTick // ILocationMessage
+message M2C_BuffTick // IMessage
 {
     int32 RpcId = 1;
     int64 UnitId = 2;
     int64 BuffId = 3;
 }
 
-message M2C_BuffUpdate // ILocationMessage
+message M2C_BuffUpdate // IMessage
 {
     int32 RpcId = 1;
     int64 UnitId = 2;
     BuffInfo BuffInfo = 3;
 }
 
-message M2C_BattleResult // ILocationMessage
+message M2C_BattleResult // IMessage
 {
     int32 RpcId = 1;
     int64 AttackerId = 2;
     int64 TargetId = 3;
     int64 Damage = 4;
+}
+
+// ResponseType M2C_Cast
+message C2M_Cast // ILocationRequest
+{
+    int32 RpcId = 1;
+    int32 CastConfigId = 2;
+}
+
+message M2C_Cast // ILocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
 }

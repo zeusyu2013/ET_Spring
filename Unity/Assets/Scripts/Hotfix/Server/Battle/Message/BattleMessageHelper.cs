@@ -4,7 +4,7 @@ namespace ET.Server
 {
     public static class BattleMessageHelper
     {
-        public static void SendClient(Unit unit, ILocationMessage message, MessageNotifyType notifyType)
+        public static void SendClient(Unit unit, IMessage message, MessageNotifyType notifyType)
         {
             if (unit == null || unit.IsDisposed)
             {

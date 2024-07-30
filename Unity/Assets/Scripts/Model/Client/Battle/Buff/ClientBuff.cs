@@ -1,6 +1,6 @@
 ﻿namespace ET.Client
 {
-    [ChildOf]
+    [ChildOf(typeof(ClientBuffComponent))]
     public class ClientBuff : Entity, IAwake<int>, IDestroy
     {
         public int ConfigId;

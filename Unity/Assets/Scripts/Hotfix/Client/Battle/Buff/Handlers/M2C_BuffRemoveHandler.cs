@@ -7,7 +7,7 @@
         {
             Log.Console($"玩家{message.UnitId} 移除了BUFF({message.BuffId})");
 
-            Unit unit = scene.GetComponent<UnitComponent>().Get(message.UnitId);
+            Unit unit = scene.GetUnit(message.UnitId);
             if (unit == null)
             {
                 return;
@@ -24,11 +24,15 @@
             {
                 return;
             }
-            
-            EventSystem.Instance.Publish(scene, new BuffRemove(){});
-            
+
+            EventSystem.Instance.Publish(scene, new BuffRemove()
+            {
+                Unit = unit,
+                BuffId = message.BuffId
+            });
+
             clientBuffComponent.Remove(message.BuffId);
-            
+
             await ETTask.CompletedTask;
         }
     }

@@ -25,7 +25,11 @@
                 return;
             }
             
-            EventSystem.Instance.Publish(scene, new BuffTick(){});
+            EventSystem.Instance.Publish(scene, new BuffTick()
+            {
+                Unit = unit,
+                BuffId = message.BuffId
+            });
             
             await ETTask.CompletedTask;
         }

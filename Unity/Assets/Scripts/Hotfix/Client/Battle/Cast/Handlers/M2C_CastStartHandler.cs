@@ -17,12 +17,17 @@
             {
                 return;
             }
-            
+
             ClientCast clientCast = CastFactory.Create(caster, castId, castConfigId);
             clientCast.Targets.AddRange(message.Targets);
-            
-            EventSystem.Instance.Publish(scene, new CastStart(){});
-            
+
+            EventSystem.Instance.Publish(scene, new CastStart()
+            {
+                CasterId = casterId, 
+                CastConfigId = castConfigId, 
+                CastId = castId
+            });
+
             caster.GetComponent<ClientCastComponent>().Add(clientCast);
 
             await ETTask.CompletedTask;

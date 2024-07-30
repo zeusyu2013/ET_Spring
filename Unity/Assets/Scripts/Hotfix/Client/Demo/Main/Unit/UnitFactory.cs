@@ -35,9 +35,22 @@ namespace ET.Client
             unit.AddComponent<ObjectWait>();
 
             unit.AddComponent<XunLuoPathComponent>();
+            unit.AddComponent<ClientCastComponent>();
+            unit.AddComponent<ClientBuffComponent>();
 
             EventSystem.Instance.Publish(unit.Scene(), new AfterUnitCreate() { Unit = unit });
             return unit;
+        }
+
+        public static Unit CreateFxUnit(Scene currentScene, int fxConfigId)
+        {
+            UnitComponent unitComponent = currentScene.GetComponent<UnitComponent>();
+            Unit fx = unitComponent.AddChild<Unit, int>(fxConfigId);
+            unitComponent.Add(fx);
+
+            fx.AddComponent<ObjectWait>();
+
+            return fx;
         }
     }
 }

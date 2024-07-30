@@ -20,7 +20,14 @@
 
 		public static Unit GetUnit(this Scene scene, long id)
 		{
-			return scene.GetComponent<UnitComponent>().Get(id);
+			UnitComponent unitComponent = scene.GetComponent<UnitComponent>();
+			if (unitComponent == null)
+			{
+				Log.Error($"场景 {scene.Name} 没有UnitComponent组件");
+				return null;
+			}
+			
+			return unitComponent.Get(id);
 		}
 	}
 }

@@ -24,7 +24,7 @@ namespace ET.Server
                 }
                 else
                 {
-                    self.GameRequests.Add(request.UnitId, []);
+                    self.GameRequests.Add(request.UnitId, new List<EntityRef<GameRequest>>());
                 }
             }
         }
@@ -52,7 +52,7 @@ namespace ET.Server
 
             if (!self.GameRequests.TryGetValue(unitId, out List<EntityRef<GameRequest>> _))
             {
-                self.GameRequests.Add(unitId, []);
+                self.GameRequests.Add(unitId, new List<EntityRef<GameRequest>>());
             }
 
             self.GameRequests[unitId].Add(request);

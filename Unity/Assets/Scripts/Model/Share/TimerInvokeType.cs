@@ -21,11 +21,15 @@
         public const int GameBuffTimer = 300;
         public const int FightScoreRankSortTimer = 301;
         public const int DailyCheckTimer = 302;
-        public const int RoomUpdate = 303;
         public const int DungeonTimer = 304;
 
         public const int BuffTimer = 401;
         public const int BuffExpiredTimer = 402;
         public const int BuffTickTimer = 403;
+
+        public const int BulletTickTimer = 404;
+
+        public const int CreateMonsterTimer = 405;
+        public const int MonsterDeadTimer = 406;
     }
 }

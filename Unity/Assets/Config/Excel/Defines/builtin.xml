@@ -13,7 +13,6 @@
         <var name="z" type="float"/>
         <mapper target="all" codeTarget="cs-bin">
             <option name="type" value="Unity.Mathematics.float3"/>
-            <option name="constructor" value="Unity.Mathematics.float3"/>
         </mapper>
     </bean>
     <bean name="vec4" valueType="1" sep=",">

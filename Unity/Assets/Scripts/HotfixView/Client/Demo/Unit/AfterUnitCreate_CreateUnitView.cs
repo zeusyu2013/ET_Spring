@@ -24,7 +24,7 @@ namespace ET.Client
             go.transform.position = unit.Position;
             unit.AddComponent<GameObjectComponent>().GameObject = go;
             unit.AddComponent<AnimatorComponent>();
-            if (unit.Type() == UnitType.Player)
+            if (unit.Type() == UnitType.UnitType_Player)
             {
                 unit.AddComponent<CameraComponent>();
             }

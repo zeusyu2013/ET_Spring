@@ -6,13 +6,26 @@ namespace ET
     [Code]
     public class SelectTargetDispatcherComponent : Singleton<SelectTargetDispatcherComponent>, ISingletonAwake
     {
-        private readonly Dictionary<string, ASelectTargetHandler> selectTargetHandlers = new();
+        private readonly Dictionary<SelectTargetType, ASelectTargetHandler> selectTargetHandlers = new();
 
         public void Awake()
         {
             var types = CodeTypes.Instance.GetTypes(typeof(SelectTargetAttribute));
             foreach (Type type in types)
             {
+                object[] atts = type.GetCustomAttributes(typeof(SelectTargetAttribute), false);
+                if (atts.Length == 0)
+                {
+                    continue;
+                }
+
+                SelectTargetAttribute attribute = atts[0] as SelectTargetAttribute;
+                if (attribute == null)
+                {
+                    continue;
+                }
+
+                SelectTargetType selectTargetType = attribute.Type;
                 ASelectTargetHandler astHandler = Activator.CreateInstance(type) as ASelectTargetHandler;
                 if (astHandler == null)
                 {
@@ -20,13 +33,13 @@ namespace ET
                     continue;
                 }
 
-                this.selectTargetHandlers.Add(type.Name, astHandler);
+                this.selectTargetHandlers.Add(selectTargetType, astHandler);
             }
         }
 
-        public ASelectTargetHandler Get(string key)
+        public ASelectTargetHandler Get(SelectTargetType type)
         {
-            this.selectTargetHandlers.TryGetValue(key, out var handler);
+            this.selectTargetHandlers.TryGetValue(type, out var handler);
             return handler;
         }
     }

@@ -3,6 +3,7 @@ using Unity.Mathematics;
 
 namespace ET.Server
 {
+    [SelectTarget(SelectTargetType.SelectTargetType_Cycle)]
     public class SelectTargetSelfRound : ASelectTargetHandler
     {
         public override int Check(SelectTargetComponent selectTargetComponent, CastConfig castConfig, ref List<long> targets)
@@ -26,7 +27,7 @@ namespace ET.Server
                 counter -= 1;
                 targets.Add(unit.Id);
             }
-            
+
             foreach (EntityRef<AOIEntity> entityRef in unit.GetSeeUnits().Values)
             {
                 if (counter < 1)
@@ -37,6 +38,11 @@ namespace ET.Server
                 AOIEntity aoiEntity = entityRef;
                 Unit target = aoiEntity.GetParent<Unit>();
                 if (target == null || target.IsDisposed)
+                {
+                    continue;
+                }
+
+                if (target.Type() != UnitType.UnitType_Player && target.Type() != UnitType.UnitType_Monster)
                 {
                     continue;
                 }

@@ -18,11 +18,15 @@
             {
                 return;
             }
-            
-            EventSystem.Instance.Publish(scene, new CastBreak(){});
+
+            EventSystem.Instance.Publish(scene, new CastBreak()
+            {
+                CasterId = message.CasterId,
+                CastId = message.CastId
+            });
 
             caster.GetComponent<ClientCastComponent>().Remove(message.CastId);
-            
+
             await ETTask.CompletedTask;
         }
     }

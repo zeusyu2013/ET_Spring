@@ -17,5 +17,10 @@
         {
             return self.AddChild<Cast, int>(configId);
         }
+
+        [EntitySystem]
+        private static void Deserialize(this ET.Server.CastComponent self)
+        {
+        }
     }
 }

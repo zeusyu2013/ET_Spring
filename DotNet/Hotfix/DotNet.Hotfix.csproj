@@ -43,10 +43,5 @@
         <ProjectReference Include="..\Loader\DotNet.Loader.csproj" />
         <ProjectReference Include="..\Model\DotNet.Model.csproj" />
     </ItemGroup>
-    <ItemGroup>
-      <Folder Include="..\..\Unity\Assets\Scripts\Hotfix\Server\Battle\Handlers\">
-        <Link>Server\Battle\Handlers</Link>
-      </Folder>
-    </ItemGroup>
 
 </Project>

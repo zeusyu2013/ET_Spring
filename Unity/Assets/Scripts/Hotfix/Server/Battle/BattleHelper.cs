@@ -3,6 +3,7 @@
 namespace ET.Server
 {
     [FriendOfAttribute(typeof(ET.Server.Action))]
+    [FriendOfAttribute(typeof(ET.Server.ReliveComponent))]
     public static class BattleHelper
     {
         /// <summary>
@@ -58,6 +59,40 @@ namespace ET.Server
         private static void Kill(Unit killer, Unit target)
         {
             // todo 处理击杀事件等
+            
+            OnDead(target);
+        }
+
+        public static void OnDead(Unit deader)
+        {
+            ReliveComponent reliveComponent = deader.GetComponent<ReliveComponent>();
+            if (reliveComponent == null)
+            {
+                return;
+            }
+
+            if (!deader.IsAlive())
+            {
+                return;
+            }
+
+            deader.Stop(0);
+
+            reliveComponent.Alive = false;
+
+            switch (deader.Type())
+            {
+                case UnitType.UnitType_Player:
+                    // todo:死亡后处理
+                    break;
+
+                case UnitType.UnitType_Monster:
+                {
+                    long time = TimeInfo.Instance.ServerNow() + 3000;
+                    deader.Scene().GetComponent<TimerComponent>().NewOnceTimer(time, TimerInvokeType.MonsterDeadTimer, deader);
+                }
+                    break;
+            }
         }
     }
 }

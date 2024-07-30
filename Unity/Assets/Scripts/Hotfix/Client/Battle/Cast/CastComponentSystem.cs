@@ -12,6 +12,13 @@
         [EntitySystem]
         private static void Destroy(this ET.Client.ClientCastComponent self)
         {
+            foreach (var castsValue in self.Casts.Values)
+            {
+                ClientCast cast = castsValue;
+                cast?.Dispose();
+            }
+            
+            self.Casts.Clear();
         }
 
         public static void Add(this ClientCastComponent self, ClientCast clientCast)

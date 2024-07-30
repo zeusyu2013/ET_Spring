@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Animancer;
 using Sirenix.OdinInspector;
 using Sirenix.OdinInspector.Editor;
 using UnityEditor;
@@ -15,6 +16,9 @@ namespace ET
         [LabelText("预设编号"), PropertyOrder(1.2f)]
         public string prefabId;
 
+        [LabelText("是否是主角"), PropertyOrder(1.3f)]
+        public bool isRole;
+        
         [Button("导出Unit预设"), PropertyOrder(1.4f)]
         public void ExportUnit()
         {
@@ -33,7 +37,7 @@ namespace ET
             Animator animator = _previewGo.GetComponent<Animator>();
             if (animator == null)
             {
-                _previewGo.AddComponent<Animator>();
+                animator = _previewGo.AddComponent<Animator>();
             }
 
             CharacterController characterController = _previewGo.AddComponent<CharacterController>();
@@ -51,6 +55,19 @@ namespace ET
             collector.Add("Model", _previewGo);
             collector.Add("Animator", animator);
             collector.Add("CharacterController", characterController);
+            
+            HybridAnimancerComponent animancer = _previewGo.AddComponent<HybridAnimancerComponent>();
+            collector.Add("HybridAnimancer", animancer);
+            
+            // 设置相机焦点
+            if (isRole)
+            {
+                GameObject cameraLookAt = new("CameraLookAt");
+                cameraLookAt.transform.SetParent(_previewGo.transform);
+                cameraLookAt.transform.localPosition = new Vector3(0, 1, 0);
+                
+                collector.Add("CameraLookAt", cameraLookAt);
+            }
 
             string prefabPath = $"Assets/Bundles/Unit/{prefabName}.prefab";
 
