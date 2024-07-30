@@ -80,11 +80,13 @@ namespace ET
 
         // Battle
         public const int ERR_CasterError = 201001;
-        public const int ERR_SkillRangeNotMatch = 201002;
+        public const int ERR_CastTargetTypeNotMatch = 201002;
         public const int ERR_NotFoundSkillSelectHandler = 201003;
         public const int ERR_SkillConfigNotFound = 201004;
         public const int ERR_SkillConsumeNotEnough = 201005;
-        public const int ERR_SkillNotTarget = 201006;
+        public const int ERR_CastNoTarget = 201006;
         public const int ERR_AlreadyAlive = 201007;
+        public const int ERR_CastIsNull = 201008;
+        public const int ERR_CastTargetCounterLessThan1 = 201009;
     }
 }

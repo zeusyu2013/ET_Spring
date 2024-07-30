@@ -17,9 +17,14 @@ namespace ET
         public BuffConfig(ByteBuf _buf)
         {
             Id = _buf.ReadInt();
-            Type = (BuffType)_buf.ReadInt();
+            Name = _buf.ReadString();
+            Desc = _buf.ReadString();
             ContinueTime = _buf.ReadLong();
-            Parameters = BuffParams.DeserializeBuffParams(_buf);
+            NotifyType = (MessageNotifyType)_buf.ReadInt();
+            Tick = _buf.ReadInt();
+            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);AddActions = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); AddActions.Add(_e0);}}
+            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);TickActions = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); TickActions.Add(_e0);}}
+            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);RemoveActions = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); RemoveActions.Add(_e0);}}
 
             PostInit();
         }
@@ -35,9 +40,14 @@ namespace ET
         public readonly int Id;
 
         /// <summary>
-        /// 类型
+        /// buff名称
         /// </summary>
-        public readonly BuffType Type;
+        public readonly string Name;
+
+        /// <summary>
+        /// buff描述
+        /// </summary>
+        public readonly string Desc;
 
         /// <summary>
         /// 持续时长（ms）
@@ -45,9 +55,29 @@ namespace ET
         public readonly long ContinueTime;
 
         /// <summary>
-        /// 参数列表
+        /// 通知客户端方式
         /// </summary>
-        public readonly BuffParams Parameters;
+        public readonly MessageNotifyType NotifyType;
+
+        /// <summary>
+        /// buff生效间隔
+        /// </summary>
+        public readonly int Tick;
+
+        /// <summary>
+        /// buff添加行为
+        /// </summary>
+        public readonly System.Collections.Generic.List<int> AddActions;
+
+        /// <summary>
+        /// buff心跳行为
+        /// </summary>
+        public readonly System.Collections.Generic.List<int> TickActions;
+
+        /// <summary>
+        /// buff移除行为
+        /// </summary>
+        public readonly System.Collections.Generic.List<int> RemoveActions;
 
         public const int __ID__ = -1370631787;
 
@@ -57,9 +87,14 @@ namespace ET
         {
             return "{ "
             + "Id:" + Id + ","
-            + "Type:" + Type + ","
+            + "Name:" + Name + ","
+            + "Desc:" + Desc + ","
             + "ContinueTime:" + ContinueTime + ","
-            + "Parameters:" + Parameters + ","
+            + "NotifyType:" + NotifyType + ","
+            + "Tick:" + Tick + ","
+            + "AddActions:" + Luban.StringUtil.CollectionToString(AddActions) + ","
+            + "TickActions:" + Luban.StringUtil.CollectionToString(TickActions) + ","
+            + "RemoveActions:" + Luban.StringUtil.CollectionToString(RemoveActions) + ","
             + "}";
         }
 

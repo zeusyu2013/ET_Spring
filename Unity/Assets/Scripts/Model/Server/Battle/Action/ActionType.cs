@@ -1,10 +1,10 @@
 ﻿namespace ET.Server
 {
-    public enum ActionType
+    public enum ActionTriggerType
     {
         BuffAdd,
         BuffTick,
         BuffRemove,
-        SkillHit,
+        CastHit,
     }
 }

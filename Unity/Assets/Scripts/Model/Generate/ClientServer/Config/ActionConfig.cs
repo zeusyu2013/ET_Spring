@@ -17,7 +17,8 @@ namespace ET
         public ActionConfig(ByteBuf _buf)
         {
             Id = _buf.ReadInt();
-            Type = _buf.ReadInt();
+            Type = (ActionType)_buf.ReadInt();
+            ActionParams = ActionParam.DeserializeActionParam(_buf);
 
             PostInit();
         }
@@ -35,7 +36,9 @@ namespace ET
         /// <summary>
         /// 行为类型
         /// </summary>
-        public readonly int Type;
+        public readonly ActionType Type;
+
+        public readonly ActionParam ActionParams;
 
         public const int __ID__ = 1209614648;
 
@@ -46,6 +49,7 @@ namespace ET
             return "{ "
             + "Id:" + Id + ","
             + "Type:" + Type + ","
+            + "ActionParams:" + ActionParams + ","
             + "}";
         }
 

@@ -17,6 +17,14 @@ namespace ET
         public BulletConfig(ByteBuf _buf)
         {
             Id = _buf.ReadInt();
+            BulletShape = BulletShape.DeserializeBulletShape(_buf);
+            TotalTime = _buf.ReadInt();
+            Interval = _buf.ReadInt();
+            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);IntervalCasts = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); IntervalCasts.Add(_e0);}}
+            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);IntervalActions = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); IntervalActions.Add(_e0);}}
+            Model = _buf.ReadString();
+            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);CreateActions = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); CreateActions.Add(_e0);}}
+            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);DestroyActions = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); DestroyActions.Add(_e0);}}
 
             PostInit();
         }
@@ -31,6 +39,46 @@ namespace ET
         /// </summary>
         public readonly int Id;
 
+        /// <summary>
+        /// 子弹形状
+        /// </summary>
+        public readonly BulletShape BulletShape;
+
+        /// <summary>
+        /// 子弹持续时长
+        /// </summary>
+        public readonly int TotalTime;
+
+        /// <summary>
+        /// 结算间隔
+        /// </summary>
+        public readonly int Interval;
+
+        /// <summary>
+        /// 结算技能编号
+        /// </summary>
+        public readonly System.Collections.Generic.List<int> IntervalCasts;
+
+        /// <summary>
+        /// 结算时行为
+        /// </summary>
+        public readonly System.Collections.Generic.List<int> IntervalActions;
+
+        /// <summary>
+        /// 子弹模型
+        /// </summary>
+        public readonly string Model;
+
+        /// <summary>
+        /// 创建时触发行为
+        /// </summary>
+        public readonly System.Collections.Generic.List<int> CreateActions;
+
+        /// <summary>
+        /// 销毁前触发行为
+        /// </summary>
+        public readonly System.Collections.Generic.List<int> DestroyActions;
+
         public const int __ID__ = 284876548;
 
         public override int GetTypeId() => __ID__;
@@ -39,6 +87,14 @@ namespace ET
         {
             return "{ "
             + "Id:" + Id + ","
+            + "BulletShape:" + BulletShape + ","
+            + "TotalTime:" + TotalTime + ","
+            + "Interval:" + Interval + ","
+            + "IntervalCasts:" + Luban.StringUtil.CollectionToString(IntervalCasts) + ","
+            + "IntervalActions:" + Luban.StringUtil.CollectionToString(IntervalActions) + ","
+            + "Model:" + Model + ","
+            + "CreateActions:" + Luban.StringUtil.CollectionToString(CreateActions) + ","
+            + "DestroyActions:" + Luban.StringUtil.CollectionToString(DestroyActions) + ","
             + "}";
         }
 

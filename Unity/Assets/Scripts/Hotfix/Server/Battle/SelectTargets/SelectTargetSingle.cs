@@ -2,18 +2,15 @@
 
 namespace ET.Server
 {
+    [SelectTarget]
     public class SelectTargetSingle : ASelectTargetHandler
     {
-        public override int Check(SelectTargetComponent selectTargetComponent, SkillConfig skillConfig, ref List<Unit> targets)
+        public override int Check(SelectTargetComponent selectTargetComponent, CastConfig castConfig, ref List<long> targets)
         {
-            if (skillConfig.SkillRange != SkillRange.SkillRange_Single)
+            if (castConfig.SelectTargetType != SelectTargetType.SelectTargetType_Single)
             {
-                return ErrorCode.ERR_SkillRangeNotMatch;
+                return ErrorCode.ERR_CastTargetTypeNotMatch;
             }
-
-            Unit unit = selectTargetComponent.GetParent<Unit>();
-
-            targets.Add(unit);
 
             return ErrorCode.ERR_Success;
         }

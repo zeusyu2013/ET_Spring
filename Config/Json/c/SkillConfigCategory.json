@@ -2,14 +2,8 @@
   {
     "Id": 111001,
     "Level": 1,
-    "SkillName": "技能111001",
-    "SkillDesc": "技能描述111001",
     "Base": 1100,
     "Ratio": 5,
-    "SkillRange": 1,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetSingle"
-    },
     "SkillHitTime": 0,
     "Consume": 10,
     "LearnCurrencyType": 1,
@@ -18,14 +12,8 @@
   {
     "Id": 111002,
     "Level": 2,
-    "SkillName": "技能111002",
-    "SkillDesc": "技能描述111002",
     "Base": 1200,
     "Ratio": 10,
-    "SkillRange": 1,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetSingle"
-    },
     "SkillHitTime": 0,
     "Consume": 11,
     "LearnCurrencyType": 1,
@@ -34,14 +22,8 @@
   {
     "Id": 111003,
     "Level": 3,
-    "SkillName": "技能111003",
-    "SkillDesc": "技能描述111003",
     "Base": 1300,
     "Ratio": 15,
-    "SkillRange": 1,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetSingle"
-    },
     "SkillHitTime": 0,
     "Consume": 12,
     "LearnCurrencyType": 1,
@@ -50,14 +32,8 @@
   {
     "Id": 111004,
     "Level": 4,
-    "SkillName": "技能111004",
-    "SkillDesc": "技能描述111004",
     "Base": 1400,
     "Ratio": 20,
-    "SkillRange": 1,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetSingle"
-    },
     "SkillHitTime": 0,
     "Consume": 13,
     "LearnCurrencyType": 1,
@@ -66,14 +42,8 @@
   {
     "Id": 111005,
     "Level": 5,
-    "SkillName": "技能111005",
-    "SkillDesc": "技能描述111005",
     "Base": 1500,
     "Ratio": 25,
-    "SkillRange": 1,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetSingle"
-    },
     "SkillHitTime": 0,
     "Consume": 14,
     "LearnCurrencyType": 1,
@@ -82,14 +52,8 @@
   {
     "Id": 111006,
     "Level": 6,
-    "SkillName": "技能111006",
-    "SkillDesc": "技能描述111006",
     "Base": 1600,
     "Ratio": 30,
-    "SkillRange": 1,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetSingle"
-    },
     "SkillHitTime": 0,
     "Consume": 15,
     "LearnCurrencyType": 1,
@@ -98,14 +62,8 @@
   {
     "Id": 111007,
     "Level": 7,
-    "SkillName": "技能111007",
-    "SkillDesc": "技能描述111007",
     "Base": 1700,
     "Ratio": 35,
-    "SkillRange": 1,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetSingle"
-    },
     "SkillHitTime": 0,
     "Consume": 16,
     "LearnCurrencyType": 1,
@@ -114,14 +72,8 @@
   {
     "Id": 111008,
     "Level": 8,
-    "SkillName": "技能111008",
-    "SkillDesc": "技能描述111008",
     "Base": 1800,
     "Ratio": 40,
-    "SkillRange": 1,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetSingle"
-    },
     "SkillHitTime": 0,
     "Consume": 17,
     "LearnCurrencyType": 1,
@@ -130,14 +82,8 @@
   {
     "Id": 111009,
     "Level": 9,
-    "SkillName": "技能111009",
-    "SkillDesc": "技能描述111009",
     "Base": 1900,
     "Ratio": 45,
-    "SkillRange": 1,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetSingle"
-    },
     "SkillHitTime": 0,
     "Consume": 18,
     "LearnCurrencyType": 1,
@@ -146,14 +92,8 @@
   {
     "Id": 111010,
     "Level": 10,
-    "SkillName": "技能111010",
-    "SkillDesc": "技能描述111010",
     "Base": 2000,
     "Ratio": 50,
-    "SkillRange": 1,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetSingle"
-    },
     "SkillHitTime": 0,
     "Consume": 19,
     "LearnCurrencyType": 1,
@@ -162,16 +102,8 @@
   {
     "Id": 112001,
     "Level": 1,
-    "SkillName": "技能112001",
-    "SkillDesc": "技能描述112001",
     "Base": 1650,
     "Ratio": 5,
-    "SkillRange": 2,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetCycle",
-      "IncludeSelf": true,
-      "Radius": 5
-    },
     "SkillHitTime": 0,
     "Consume": 10,
     "LearnCurrencyType": 1,
@@ -180,16 +112,8 @@
   {
     "Id": 112002,
     "Level": 2,
-    "SkillName": "技能112002",
-    "SkillDesc": "技能描述112002",
     "Base": 1800,
     "Ratio": 10,
-    "SkillRange": 2,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetCycle",
-      "IncludeSelf": true,
-      "Radius": 5
-    },
     "SkillHitTime": 0,
     "Consume": 11,
     "LearnCurrencyType": 1,
@@ -198,16 +122,8 @@
   {
     "Id": 112003,
     "Level": 3,
-    "SkillName": "技能112003",
-    "SkillDesc": "技能描述112003",
     "Base": 1950,
     "Ratio": 15,
-    "SkillRange": 2,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetCycle",
-      "IncludeSelf": true,
-      "Radius": 5
-    },
     "SkillHitTime": 0,
     "Consume": 12,
     "LearnCurrencyType": 1,
@@ -216,16 +132,8 @@
   {
     "Id": 112004,
     "Level": 4,
-    "SkillName": "技能112004",
-    "SkillDesc": "技能描述112004",
     "Base": 2100,
     "Ratio": 20,
-    "SkillRange": 2,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetCycle",
-      "IncludeSelf": true,
-      "Radius": 5
-    },
     "SkillHitTime": 0,
     "Consume": 13,
     "LearnCurrencyType": 1,
@@ -234,16 +142,8 @@
   {
     "Id": 112005,
     "Level": 5,
-    "SkillName": "技能112005",
-    "SkillDesc": "技能描述112005",
     "Base": 2250,
     "Ratio": 25,
-    "SkillRange": 2,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetCycle",
-      "IncludeSelf": true,
-      "Radius": 5
-    },
     "SkillHitTime": 0,
     "Consume": 14,
     "LearnCurrencyType": 1,
@@ -252,16 +152,8 @@
   {
     "Id": 112006,
     "Level": 6,
-    "SkillName": "技能112006",
-    "SkillDesc": "技能描述112006",
     "Base": 2400,
     "Ratio": 30,
-    "SkillRange": 2,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetCycle",
-      "IncludeSelf": true,
-      "Radius": 5
-    },
     "SkillHitTime": 0,
     "Consume": 15,
     "LearnCurrencyType": 1,
@@ -270,16 +162,8 @@
   {
     "Id": 112007,
     "Level": 7,
-    "SkillName": "技能112007",
-    "SkillDesc": "技能描述112007",
     "Base": 2550,
     "Ratio": 35,
-    "SkillRange": 2,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetCycle",
-      "IncludeSelf": true,
-      "Radius": 5
-    },
     "SkillHitTime": 0,
     "Consume": 16,
     "LearnCurrencyType": 1,
@@ -288,16 +172,8 @@
   {
     "Id": 112008,
     "Level": 8,
-    "SkillName": "技能112008",
-    "SkillDesc": "技能描述112008",
     "Base": 2700,
     "Ratio": 40,
-    "SkillRange": 2,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetCycle",
-      "IncludeSelf": true,
-      "Radius": 5
-    },
     "SkillHitTime": 0,
     "Consume": 17,
     "LearnCurrencyType": 1,
@@ -306,16 +182,8 @@
   {
     "Id": 112009,
     "Level": 9,
-    "SkillName": "技能112009",
-    "SkillDesc": "技能描述112009",
     "Base": 2850,
     "Ratio": 45,
-    "SkillRange": 2,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetCycle",
-      "IncludeSelf": true,
-      "Radius": 5
-    },
     "SkillHitTime": 0,
     "Consume": 18,
     "LearnCurrencyType": 1,
@@ -324,16 +192,8 @@
   {
     "Id": 112010,
     "Level": 10,
-    "SkillName": "技能112010",
-    "SkillDesc": "技能描述112010",
     "Base": 3000,
     "Ratio": 50,
-    "SkillRange": 2,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetCycle",
-      "IncludeSelf": true,
-      "Radius": 5
-    },
     "SkillHitTime": 0,
     "Consume": 19,
     "LearnCurrencyType": 1,
@@ -342,16 +202,8 @@
   {
     "Id": 113001,
     "Level": 1,
-    "SkillName": "技能113001",
-    "SkillDesc": "技能描述113001",
     "Base": 1650,
     "Ratio": 5,
-    "SkillRange": 3,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetRect",
-      "Width": 3,
-      "Height": 6
-    },
     "SkillHitTime": 0,
     "Consume": 10,
     "LearnCurrencyType": 1,
@@ -360,16 +212,8 @@
   {
     "Id": 113002,
     "Level": 2,
-    "SkillName": "技能113002",
-    "SkillDesc": "技能描述113002",
     "Base": 1800,
     "Ratio": 10,
-    "SkillRange": 3,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetRect",
-      "Width": 3,
-      "Height": 6
-    },
     "SkillHitTime": 0,
     "Consume": 11,
     "LearnCurrencyType": 1,
@@ -378,16 +222,8 @@
   {
     "Id": 113003,
     "Level": 3,
-    "SkillName": "技能113003",
-    "SkillDesc": "技能描述113003",
     "Base": 1950,
     "Ratio": 15,
-    "SkillRange": 3,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetRect",
-      "Width": 3,
-      "Height": 6
-    },
     "SkillHitTime": 0,
     "Consume": 12,
     "LearnCurrencyType": 1,
@@ -396,16 +232,8 @@
   {
     "Id": 113004,
     "Level": 4,
-    "SkillName": "技能113004",
-    "SkillDesc": "技能描述113004",
     "Base": 2100,
     "Ratio": 20,
-    "SkillRange": 3,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetRect",
-      "Width": 3,
-      "Height": 6
-    },
     "SkillHitTime": 0,
     "Consume": 13,
     "LearnCurrencyType": 1,
@@ -414,16 +242,8 @@
   {
     "Id": 113005,
     "Level": 5,
-    "SkillName": "技能113005",
-    "SkillDesc": "技能描述113005",
     "Base": 2250,
     "Ratio": 25,
-    "SkillRange": 3,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetRect",
-      "Width": 3,
-      "Height": 6
-    },
     "SkillHitTime": 0,
     "Consume": 14,
     "LearnCurrencyType": 1,
@@ -432,16 +252,8 @@
   {
     "Id": 113006,
     "Level": 6,
-    "SkillName": "技能113006",
-    "SkillDesc": "技能描述113006",
     "Base": 2400,
     "Ratio": 30,
-    "SkillRange": 3,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetRect",
-      "Width": 3,
-      "Height": 6
-    },
     "SkillHitTime": 0,
     "Consume": 15,
     "LearnCurrencyType": 1,
@@ -450,16 +262,8 @@
   {
     "Id": 113007,
     "Level": 7,
-    "SkillName": "技能113007",
-    "SkillDesc": "技能描述113007",
     "Base": 2550,
     "Ratio": 35,
-    "SkillRange": 3,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetRect",
-      "Width": 3,
-      "Height": 6
-    },
     "SkillHitTime": 0,
     "Consume": 16,
     "LearnCurrencyType": 1,
@@ -468,16 +272,8 @@
   {
     "Id": 113008,
     "Level": 8,
-    "SkillName": "技能113008",
-    "SkillDesc": "技能描述113008",
     "Base": 2700,
     "Ratio": 40,
-    "SkillRange": 3,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetRect",
-      "Width": 3,
-      "Height": 6
-    },
     "SkillHitTime": 0,
     "Consume": 17,
     "LearnCurrencyType": 1,
@@ -486,16 +282,8 @@
   {
     "Id": 113009,
     "Level": 9,
-    "SkillName": "技能113009",
-    "SkillDesc": "技能描述113009",
     "Base": 2850,
     "Ratio": 45,
-    "SkillRange": 3,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetRect",
-      "Width": 3,
-      "Height": 6
-    },
     "SkillHitTime": 0,
     "Consume": 18,
     "LearnCurrencyType": 1,
@@ -504,16 +292,8 @@
   {
     "Id": 113010,
     "Level": 10,
-    "SkillName": "技能113010",
-    "SkillDesc": "技能描述113010",
     "Base": 3000,
     "Ratio": 50,
-    "SkillRange": 3,
-    "SkillTargetRangeParam": {
-      "$type": "SkillTargetRect",
-      "Width": 3,
-      "Height": 6
-    },
     "SkillHitTime": 0,
     "Consume": 19,
     "LearnCurrencyType": 1,

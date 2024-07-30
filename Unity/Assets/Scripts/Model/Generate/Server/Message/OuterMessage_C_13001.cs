@@ -127,12 +127,9 @@ namespace ET
         public long CasterId { get; set; }
 
         [MemoryPackOrder(2)]
-        public int CastConfigId { get; set; }
-
-        [MemoryPackOrder(3)]
         public long CastId { get; set; }
 
-        [MemoryPackOrder(4)]
+        [MemoryPackOrder(3)]
         public List<long> Targets { get; set; } = new();
 
         public override void Dispose()
@@ -144,7 +141,6 @@ namespace ET
 
             this.RpcId = default;
             this.CasterId = default;
-            this.CastConfigId = default;
             this.CastId = default;
             this.Targets.Clear();
 
@@ -168,13 +164,7 @@ namespace ET
         public long CasterId { get; set; }
 
         [MemoryPackOrder(2)]
-        public int CastConfigId { get; set; }
-
-        [MemoryPackOrder(3)]
         public long CastId { get; set; }
-
-        [MemoryPackOrder(4)]
-        public List<long> Targets { get; set; } = new();
 
         public override void Dispose()
         {
@@ -185,9 +175,7 @@ namespace ET
 
             this.RpcId = default;
             this.CasterId = default;
-            this.CastConfigId = default;
             this.CastId = default;
-            this.Targets.Clear();
 
             ObjectPool.Instance.Recycle(this);
         }
@@ -209,13 +197,7 @@ namespace ET
         public long CasterId { get; set; }
 
         [MemoryPackOrder(2)]
-        public int CastConfigId { get; set; }
-
-        [MemoryPackOrder(3)]
         public long CastId { get; set; }
-
-        [MemoryPackOrder(4)]
-        public List<long> Targets { get; set; } = new();
 
         public override void Dispose()
         {
@@ -226,9 +208,7 @@ namespace ET
 
             this.RpcId = default;
             this.CasterId = default;
-            this.CastConfigId = default;
             this.CastId = default;
-            this.Targets.Clear();
 
             ObjectPool.Instance.Recycle(this);
         }
@@ -255,6 +235,9 @@ namespace ET
         [MemoryPackOrder(3)]
         public long ExpiredTime { get; set; }
 
+        [MemoryPackOrder(4)]
+        public List<byte> ExtraData { get; set; } = new();
+
         public override void Dispose()
         {
             if (!this.IsFromPool)
@@ -266,6 +249,7 @@ namespace ET
             this.ConfigId = default;
             this.CreateTime = default;
             this.ExpiredTime = default;
+            this.ExtraData.Clear();
 
             ObjectPool.Instance.Recycle(this);
         }
@@ -403,6 +387,43 @@ namespace ET
         }
     }
 
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_BattleResult)]
+    public partial class M2C_BattleResult : MessageObject, ILocationMessage
+    {
+        public static M2C_BattleResult Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_BattleResult), isFromPool) as M2C_BattleResult;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long AttackerId { get; set; }
+
+        [MemoryPackOrder(2)]
+        public long TargetId { get; set; }
+
+        [MemoryPackOrder(3)]
+        public long Damage { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.AttackerId = default;
+            this.TargetId = default;
+            this.Damage = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
     public static partial class OuterMessage
     {
         public const ushort C2M_CastSkill = 13002;
@@ -416,5 +437,6 @@ namespace ET
         public const ushort M2C_BuffRemove = 13010;
         public const ushort M2C_BuffTick = 13011;
         public const ushort M2C_BuffUpdate = 13012;
+        public const ushort M2C_BattleResult = 13013;
     }
 }

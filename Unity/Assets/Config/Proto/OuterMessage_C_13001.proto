@@ -21,35 +21,29 @@ message M2C_CastStart // ILocationMessage
     int64 CasterId = 2;
     int32 CastConfigId = 3;
     int64 CastId = 4;
-    repeated long Targets = 5;
+    repeated int64 Targets = 5;
 }
 
 message M2C_CastHit // ILocationMessage
 {
     int32 RpcId = 1;
     int64 CasterId = 2;
-    int32 CastConfigId = 3;
-    int64 CastId = 4;
-    repeated long Targets = 5;
-
+    int64 CastId = 3;
+    repeated int64 Targets = 4;
 }
 
 message M2C_CastFinish // ILocationMessage
 {
     int32 RpcId = 1;
     int64 CasterId = 2;
-    int32 CastConfigId = 3;
-    int64 CastId = 4;
-    repeated long Targets = 5;
+    int64 CastId = 3;
 }
 
 message M2C_CastBreak // ILocationMessage
 {
     int32 RpcId = 1;
     int64 CasterId = 2;
-    int32 CastConfigId = 3;
-    int64 CastId = 4;
-    repeated long Targets = 5;
+    int64 CastId = 3;
 }
 
 message BuffInfo
@@ -58,6 +52,7 @@ message BuffInfo
     int32 ConfigId = 2;
     int64 CreateTime = 3;
     int64 ExpiredTime = 4;
+    repeated byte ExtraData = 5;
 }
 
 message M2C_BuffAdd // ILocationMessage
@@ -86,4 +81,12 @@ message M2C_BuffUpdate // ILocationMessage
     int32 RpcId = 1;
     int64 UnitId = 2;
     BuffInfo BuffInfo = 3;
+}
+
+message M2C_BattleResult // ILocationMessage
+{
+    int32 RpcId = 1;
+    int64 AttackerId = 2;
+    int64 TargetId = 3;
+    int64 Damage = 4;
 }

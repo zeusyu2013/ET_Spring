@@ -5,24 +5,35 @@ namespace ET.Server
 {
     public class SelectTargetSelfRound : ASelectTargetHandler
     {
-        public override int Check(SelectTargetComponent selectTargetComponent, SkillConfig skillConfig, ref List<Unit> targets)
+        public override int Check(SelectTargetComponent selectTargetComponent, CastConfig castConfig, ref List<long> targets)
         {
-            if (skillConfig.SkillRange != SkillRange.SkillRange_SelfRound)
+            if (castConfig.SelectTargetType != SelectTargetType.SelectTargetType_Cycle)
             {
-                return ErrorCode.ERR_SkillRangeNotMatch;
+                return ErrorCode.ERR_CastTargetTypeNotMatch;
             }
 
-            SkillTargetCycle cycle = (SkillTargetCycle)skillConfig.SkillTargetRangeParam;
+            CastTargetCycle cycle = (CastTargetCycle)castConfig.CastSelectTargetsParam;
+
+            int counter = cycle.Counter;
+            if (counter < 1)
+            {
+                return ErrorCode.ERR_CastTargetCounterLessThan1;
+            }
 
             Unit unit = selectTargetComponent.GetParent<Unit>();
-
             if (cycle.IncludeSelf)
             {
-                targets.Add(unit);
+                counter -= 1;
+                targets.Add(unit.Id);
             }
-
+            
             foreach (EntityRef<AOIEntity> entityRef in unit.GetSeeUnits().Values)
             {
+                if (counter < 1)
+                {
+                    break;
+                }
+
                 AOIEntity aoiEntity = entityRef;
                 Unit target = aoiEntity.GetParent<Unit>();
                 if (target == null || target.IsDisposed)
@@ -30,12 +41,13 @@ namespace ET.Server
                     continue;
                 }
 
-                if (math.distance(unit.Position, target.Position) > cycle.Radius)
+                if (math.length(unit.Position - target.Position) > cycle.Radius)
                 {
                     continue;
                 }
 
-                targets.Add(target);
+                counter -= 1;
+                targets.Add(target.Id);
             }
 
             return ErrorCode.ERR_Success;

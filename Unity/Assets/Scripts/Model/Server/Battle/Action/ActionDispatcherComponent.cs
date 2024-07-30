@@ -8,6 +8,6 @@ namespace ET.Server
         [StaticField]
         public static ActionDispatcherComponent Instance;
 
-        public Dictionary<int, IAction> Actions = new();
+        public Dictionary<ActionType, IAction> Actions = new();
     }
 }

@@ -2,7 +2,7 @@
 
 namespace ET.Server
 {
-    [ChildOf]
+    [ChildOf(typeof(ActionTempComponent))]
     public class Action : Entity, IAwake<int>, IDestroy, ISerializeToEntity
     {
         public int ConfigId;
@@ -17,9 +17,9 @@ namespace ET.Server
         public EntityRef<Unit> Owner;
 
         [BsonIgnore]
-        public Skill Skill => this.Parent.GetParent<Skill>();
+        public Cast Cast => this.Parent.GetParent<Cast>();
 
         [BsonIgnore]
-        public EntityRef<GameBuff> Buff => this.Parent.GetParent<GameBuff>();
+        public EntityRef<Buff> Buff => this.Parent.GetParent<Buff>();
     }
 }

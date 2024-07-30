@@ -10,11 +10,11 @@ namespace ET.Server
         {
         }
 
-        public static int Check(this SelectTargetComponent self, int configId, int level, ref List<Unit> targets)
+        public static int Check(this SelectTargetComponent self, int configId, ref List<long> targets)
         {
-            SkillConfig config = SkillConfigCategory.Instance.Get(configId, level);
+            CastConfig config = CastConfigCategory.Instance.Get(configId);
 
-            ASelectTargetHandler handler = SelectTargetDispatcherComponent.Instance.Get(config.SkillRange.ToString());
+            ASelectTargetHandler handler = SelectTargetDispatcherComponent.Instance.Get(config.SelectTargetType.ToString());
             if (handler == null)
             {
                 return ErrorCode.ERR_NotFoundSkillSelectHandler;

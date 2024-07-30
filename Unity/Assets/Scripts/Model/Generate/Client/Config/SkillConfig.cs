@@ -18,12 +18,8 @@ namespace ET
         {
             Id = _buf.ReadInt();
             Level = _buf.ReadInt();
-            SkillName = _buf.ReadString();
-            SkillDesc = _buf.ReadString();
             Base = _buf.ReadLong();
             Ratio = _buf.ReadLong();
-            SkillRange = (SkillRange)_buf.ReadInt();
-            SkillTargetRangeParam = SkillTargetRangeParams.DeserializeSkillTargetRangeParams(_buf);
             SkillHitTime = _buf.ReadLong();
             Consume = _buf.ReadLong();
             LearnCurrencyType = (CurrencyType)_buf.ReadInt();
@@ -48,16 +44,6 @@ namespace ET
         public readonly int Level;
 
         /// <summary>
-        /// 技能名称
-        /// </summary>
-        public readonly string SkillName;
-
-        /// <summary>
-        /// 技能描述
-        /// </summary>
-        public readonly string SkillDesc;
-
-        /// <summary>
         /// 基础伤害/治疗值
         /// </summary>
         public readonly long Base;
@@ -66,13 +52,6 @@ namespace ET
         /// 附加百分比值
         /// </summary>
         public readonly long Ratio;
-
-        /// <summary>
-        /// 技能范围
-        /// </summary>
-        public readonly SkillRange SkillRange;
-
-        public readonly SkillTargetRangeParams SkillTargetRangeParam;
 
         /// <summary>
         /// 技能命中时间
@@ -103,12 +82,8 @@ namespace ET
             return "{ "
             + "Id:" + Id + ","
             + "Level:" + Level + ","
-            + "SkillName:" + SkillName + ","
-            + "SkillDesc:" + SkillDesc + ","
             + "Base:" + Base + ","
             + "Ratio:" + Ratio + ","
-            + "SkillRange:" + SkillRange + ","
-            + "SkillTargetRangeParam:" + SkillTargetRangeParam + ","
             + "SkillHitTime:" + SkillHitTime + ","
             + "Consume:" + Consume + ","
             + "LearnCurrencyType:" + LearnCurrencyType + ","

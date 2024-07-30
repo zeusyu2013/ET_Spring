@@ -13,7 +13,7 @@ using System.Collections.Generic;
 namespace ET
 {
     /// <summary>
-    /// 行为配置表
+    /// 技能行为配置表
     /// </summary>
     [Config]
     public partial class ActionConfigCategory : Singleton<ActionConfigCategory>

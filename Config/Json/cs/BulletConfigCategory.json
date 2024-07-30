@@ -1,5 +1,24 @@
 [
   {
-    "Id": 10001
+    "Id": 10001,
+    "BulletShape": {
+      "$type": "BulletCycleShape",
+      "Radius": 5
+    },
+    "TotalTime": 2000,
+    "Interval": 200,
+    "IntervalCasts": [
+      1
+    ],
+    "IntervalActions": [
+      1
+    ],
+    "Model": "fire_ball",
+    "CreateActions": [
+      1
+    ],
+    "DestroyActions": [
+      1
+    ]
   }
 ]

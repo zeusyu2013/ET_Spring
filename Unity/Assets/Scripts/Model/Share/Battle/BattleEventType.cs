@@ -39,4 +39,10 @@
     {
         
     }
+
+    public struct BuffTimeout
+    {
+        public Unit Unit;
+        public long BuffId;
+    }
 }

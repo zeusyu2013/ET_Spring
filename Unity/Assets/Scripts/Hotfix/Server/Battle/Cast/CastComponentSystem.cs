@@ -12,5 +12,10 @@
         private static void Destroy(this ET.Server.CastComponent self)
         {
         }
+
+        public static Cast Create(this CastComponent self, int configId)
+        {
+            return self.AddChild<Cast, int>(configId);
+        }
     }
 }

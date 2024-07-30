@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ET.Server
 {
@@ -48,14 +49,9 @@ namespace ET.Server
             }
         }
 
-        public static IAction Get(this ActionDispatcherComponent self, int type)
+        public static IAction Get(this ActionDispatcherComponent self, ActionType type)
         {
-            if (self.Actions.TryGetValue(type, out IAction action))
-            {
-                return action;
-            }
-
-            return null;
+            return self.Actions.GetValueOrDefault(type);
         }
     }
 }

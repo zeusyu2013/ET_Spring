@@ -2,6 +2,6 @@
 {
     public interface IAction
     {
-        void Run(Action action, ActionType type);
+        void Run(Action action, ActionTriggerType type);
     }
 }

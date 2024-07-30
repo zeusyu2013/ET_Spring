@@ -25,5 +25,7 @@
         public const int DungeonTimer = 304;
 
         public const int BuffTimer = 401;
+        public const int BuffExpiredTimer = 402;
+        public const int BuffTickTimer = 403;
     }
 }

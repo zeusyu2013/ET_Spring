@@ -11,5 +11,18 @@
       "MonsterConfig": 1001,
       "MonsterCount": 5
     }
+  },
+  {
+    "Id": 10002,
+    "Position": {
+      "x": 10,
+      "y": 0,
+      "z": 10
+    },
+    "RandomRange": 10,
+    "Monsters": {
+      "MonsterConfig": 1002,
+      "MonsterCount": 5
+    }
   }
 ]

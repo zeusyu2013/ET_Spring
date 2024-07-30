@@ -1,7 +1,8 @@
 ﻿namespace ET.Server
 {
-    [FriendOfAttribute(typeof(ET.Server.Skill))]
     [FriendOfAttribute(typeof(ET.Server.Action))]
+    [FriendOfAttribute(typeof(ET.Server.Cast))]
+    [FriendOfAttribute(typeof(ET.Server.Buff))]
     public static class ActionHelper
     {
         public static Action Create(this ActionTempComponent self, int configId)
@@ -9,10 +10,20 @@
             return self.AddChild<Action, int>(configId);
         }
 
-        public static Action Create(this Skill skill, int configId, Unit owner, ActionType type, bool autoAction = true, bool autoDestroy = true)
+        public static Action Create(this Buff buff, int configId, ActionTriggerType type, bool autoAction = true, bool autoDestroy = true)
         {
-            Action action = skill.GetComponent<ActionTempComponent>().Create(configId);
-            action.Caster = skill.Caster;
+            Action action = buff.GetComponent<ActionTempComponent>().Create(configId);
+            action.Owner = buff.Owner;
+            
+            DoAction(action, type, autoAction, autoDestroy);
+
+            return action;
+        }
+
+        public static Action Create(this Cast cast, int configId, Unit owner, ActionTriggerType type, bool autoAction = true, bool autoDestroy = true)
+        {
+            Action action = cast.GetComponent<ActionTempComponent>().Create(configId);
+            action.Caster = cast.Caster;
             action.Owner = owner;
 
             DoAction(action, type, autoAction, autoDestroy);
@@ -25,7 +36,7 @@
             return action;
         }
 
-        public static void DoAction(Action action, ActionType type, bool autoAction = true, bool autoDestroy = true)
+        public static void DoAction(Action action, ActionTriggerType type, bool autoAction = true, bool autoDestroy = true)
         {
             if (!autoAction)
             {
@@ -36,21 +47,21 @@
             {
                 using (action)
                 {
-                    DoAction(action, type);
+                    DoActionInner(action, type);
                 }
             }
             else
             {
-                DoAction(action, type);
+                DoActionInner(action, type);
             }
         }
 
-        private static void DoAction(Action action, ActionType type)
+        private static void DoActionInner(Action action, ActionTriggerType type)
         {
             IAction actionHandler = ActionDispatcherComponent.Instance.Get(action.Config.Type);
             if (actionHandler == null)
             {
-                Log.Error($"没找到对应{action.Config.Type}的行为");
+                Log.Error($"没找到{action.ConfigId}对应{action.Config.Type}的行为");
                 action.Dispose();
                 return;
             }
