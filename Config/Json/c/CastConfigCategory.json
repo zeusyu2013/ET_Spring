@@ -12,21 +12,14 @@
     "HitInfos": [
       {
         "Time": 0,
-        "HitSelf": false,
-        "HitAction": 1001,
-        "TargetBuff": 2001,
-        "SelfBuff": 2001
-      },
-      {
-        "Time": 1000,
         "HitSelf": true,
-        "HitAction": 1001,
-        "TargetBuff": 2001,
-        "SelfBuff": 2001
+        "HitAction": 0,
+        "TargetBuff": 0,
+        "SelfBuff": 40005
       }
     ],
     "CastStartAnimation": "attack",
-    "CastHitAnimation": "hurt"
+    "CastHitAnimation": ""
   },
   {
     "Id": 110002,

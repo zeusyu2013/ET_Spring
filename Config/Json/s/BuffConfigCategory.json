@@ -82,5 +82,21 @@
       1001
     ],
     "Fx": "fx4"
+  },
+  {
+    "Id": 40005,
+    "Name": "buff40005",
+    "Desc": "buff描述5",
+    "ContinueTime": 60000,
+    "NotifyType": 2,
+    "Tick": 0,
+    "AddActions": [
+      1002
+    ],
+    "TickActions": [],
+    "RemoveActions": [
+      1002
+    ],
+    "Fx": "fx5"
   }
 ]

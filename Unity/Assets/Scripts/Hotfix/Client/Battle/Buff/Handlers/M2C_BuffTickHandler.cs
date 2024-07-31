@@ -7,7 +7,7 @@
         {
             Log.Console($"玩家{message.UnitId} 的BUFF({message.BuffId}) 触发Tick");
 
-            Unit unit = scene.GetComponent<UnitComponent>().Get(message.UnitId);
+            Unit unit = scene.CurrentScene().GetComponent<UnitComponent>().Get(message.UnitId);
             if (unit == null)
             {
                 return;

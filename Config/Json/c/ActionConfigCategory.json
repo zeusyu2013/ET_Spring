@@ -8,16 +8,25 @@
         {
           "Property": 1004,
           "Value": 6000
-        },
-        {
-          "Property": 1004,
-          "Value": 6000
         }
       ]
     }
   },
   {
     "Id": 1002,
+    "Type": 1,
+    "ActionParams": {
+      "$type": "ModifyPropertyActionParams",
+      "ModifyProperties": [
+        {
+          "Property": 11052,
+          "Value": 200
+        }
+      ]
+    }
+  },
+  {
+    "Id": 2002,
     "Type": 2,
     "ActionParams": {
       "$type": "DamageActionParams",

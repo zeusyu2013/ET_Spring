@@ -12,7 +12,7 @@
 
             Log.Console($"玩家 {casterId} 开始释放 {castConfigId} 技能 {castId}");
 
-            Unit caster = scene.GetComponent<UnitComponent>().Get(casterId);
+            Unit caster = scene.CurrentScene().GetComponent<UnitComponent>().Get(casterId);
             if (caster == null)
             {
                 return;

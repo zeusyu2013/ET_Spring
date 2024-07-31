@@ -5,7 +5,7 @@
     {
         protected override async ETTask Run(Scene scene, CastBreak args)
         {
-            Unit caster = scene.GetUnit(args.CasterId);
+            Unit caster = scene.CurrentScene().GetUnit(args.CasterId);
             if (caster == null)
             {
                 return;

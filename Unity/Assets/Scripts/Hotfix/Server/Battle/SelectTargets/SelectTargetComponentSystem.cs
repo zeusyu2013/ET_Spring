@@ -10,6 +10,12 @@ namespace ET.Server
         {
         }
 
+        [EntitySystem]
+        private static void Destroy(this SelectTargetComponent self)
+        {
+            
+        }
+
         public static int Check(this SelectTargetComponent self, int configId, ref List<long> targets)
         {
             CastConfig config = CastConfigCategory.Instance.Get(configId);

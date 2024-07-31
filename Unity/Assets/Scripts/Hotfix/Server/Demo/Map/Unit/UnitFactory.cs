@@ -33,10 +33,10 @@ namespace ET.Server
 
             // 移动组件
             unit.AddComponent<MoveComponent>();
-            
+
             // 技能释放组件
             unit.AddComponent<CastComponent>();
-            
+
             // 选择目标组件
             unit.AddComponent<SelectTargetComponent>();
 
@@ -98,7 +98,7 @@ namespace ET.Server
             // 宝箱组件
             LotteryComponent lotteryComponent = unit.AddComponentWithId<LotteryComponent>(unit.Id);
             lotteryComponent.Level = 1;
-            
+
             // buff组件
             unit.AddComponentWithId<BuffComponent>(unit.Id);
 
@@ -122,10 +122,10 @@ namespace ET.Server
             unitDBSaveComponent.AddChange(typeof(LotteryComponent));
             unitDBSaveComponent.AddChange(typeof(BuffComponent));
             unitDBSaveComponent.SaveChanged();
-            
+
             // 加入aoi
             unit.AddComponent<AOIEntity, int, float3>(9 * 1000, unit.Position);
-            
+
             return unit;
         }
 

@@ -23,7 +23,7 @@ namespace ET.Client
             Unit unit = UnitHelper.GetMyUnitFromClientScene(self.Root());
 
             // Transposer下只有follow起作用
-            self.CinemachineVirtualCamera.Follow = unit.GetComponent<GameObjectComponent>().CameraLookAt;
+            self.CinemachineVirtualCamera.Follow = unit.GetComponent<GameObjectComponent>().ReferenceCollector.Get<Transform>("CameraLookAt");
 
             self.CameraRotation();
         }

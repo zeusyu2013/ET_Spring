@@ -7,13 +7,13 @@ namespace ET.Client
     {
         protected override async ETTask Run(Scene scene, CastHit args)
         {
-            Unit target = scene.GetUnit(args.TargetId);
+            Unit target = scene.CurrentScene().GetUnit(args.TargetId);
             if (target == null)
             {
                 return;
             }
 
-            Unit caster = scene.GetUnit(args.CasterId);
+            Unit caster = scene.CurrentScene().GetUnit(args.CasterId);
             if (caster == null)
             {
                 return;

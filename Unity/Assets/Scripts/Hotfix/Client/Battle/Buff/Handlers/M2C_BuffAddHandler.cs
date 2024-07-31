@@ -7,7 +7,7 @@
         {
             Log.Console($"玩家{message.UnitId} 添加了 {message.BuffInfo.ConfigId} BUFF({message.BuffInfo.Id})");
 
-            Unit unit = scene.GetUnit(message.UnitId);
+            Unit unit = scene.CurrentScene().GetUnit(message.UnitId);
             if (unit == null)
             {
                 return;

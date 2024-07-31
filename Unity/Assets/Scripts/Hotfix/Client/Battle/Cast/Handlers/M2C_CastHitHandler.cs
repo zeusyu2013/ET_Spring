@@ -8,7 +8,7 @@
         {
             Log.Console($"玩家{message.CasterId} 的技能{message.CastId} 命中 {message.Targets}");
 
-            Unit caster = scene.GetComponent<UnitComponent>().Get(message.CasterId);
+            Unit caster = scene.CurrentScene().GetComponent<UnitComponent>().Get(message.CasterId);
             if (caster == null)
             {
                 return;
@@ -24,7 +24,7 @@
 
             foreach (long tid in message.Targets)
             {
-                Unit target = scene.GetComponent<UnitComponent>().Get(tid);
+                Unit target = scene.CurrentScene().GetComponent<UnitComponent>().Get(tid);
                 if (target == null || target.IsDisposed)
                 {
                     continue;

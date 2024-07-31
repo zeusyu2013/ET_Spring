@@ -7,7 +7,7 @@
         {
             Log.Console($"玩家{message.CasterId} 的技能{message.CastId} 打断");
 
-            Unit caster = scene.GetComponent<UnitComponent>().Get(message.CasterId);
+            Unit caster = scene.CurrentScene().GetComponent<UnitComponent>().Get(message.CasterId);
             if (caster == null)
             {
                 return;

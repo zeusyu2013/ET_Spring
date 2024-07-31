@@ -20,6 +20,11 @@ namespace ET
         {
             public string ConfigName;
         }
+        
+        public struct ReloadOneConfig
+        {
+            public string ConfigName;
+        }
 
         public void Awake()
         {
@@ -27,8 +32,8 @@ namespace ET
 
         public async ETTask Reload(Type configType)
         {
-            GetOneConfigBytes getOneConfigBytes = new() { ConfigName = configType.Name };
-            ByteBuf oneConfigBytes = await EventSystem.Instance.Invoke<GetOneConfigBytes, ETTask<ByteBuf>>(getOneConfigBytes);
+            ReloadOneConfig reloadOneConfig = new() { ConfigName = configType.Name };
+            ByteBuf oneConfigBytes = await EventSystem.Instance.Invoke<ReloadOneConfig, ETTask<ByteBuf>>(reloadOneConfig);
             LoadOneConfig(configType, oneConfigBytes);
         }
 

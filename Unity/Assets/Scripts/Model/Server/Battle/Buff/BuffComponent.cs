@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson.Serialization.Options;
 
 namespace ET.Server
 {
@@ -6,6 +8,7 @@ namespace ET.Server
     [UnitCacheEvent(typeof(BuffComponent))]
     public class BuffComponent : Entity, IAwake, IDestroy, ITransfer, IDeserialize
     {
+        [BsonDictionaryOptions(DictionaryRepresentation.ArrayOfArrays)]
         public Dictionary<int, EntityRef<Buff>> Buffs = new();
     }
 }

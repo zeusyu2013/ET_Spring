@@ -1,7 +1,7 @@
 ﻿namespace ET
 {
     [ComponentOf(typeof(Unit))]
-    public class SelectTargetComponent : Entity, IAwake
+    public class SelectTargetComponent : Entity, IAwake, IDestroy, ITransfer
     {
     }
 }
