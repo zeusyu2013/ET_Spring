@@ -36,6 +36,9 @@ namespace ET.Server
             m2CBattleResult.Damage = damage;
             BattleMessageHelper.SendClient(target, m2CBattleResult, MessageNotifyType.MessageNotifyType_Broadcast);
 
+            // todo:打断被攻击者的施法，或推迟读条时间等
+            target.GetComponent<SkillStatusComponent>()?.BreakCasting();
+
             NumericComponent numericComponent = target.GetComponent<NumericComponent>();
             long hp = numericComponent[GamePropertyType.GamePropertyType_Hp];
             long result = 0;
@@ -93,6 +96,24 @@ namespace ET.Server
                 }
                     break;
             }
+        }
+
+        public static int CanCast(Unit unit, int castConfigId)
+        {
+            CastConfig config = CastConfigCategory.Instance.Get(castConfigId);
+            if (config == null)
+            {
+                return ErrorCode.ERR_CastIsNull;
+            }
+
+            if (!unit.IsAlive())
+            {
+                return ErrorCode.ERR_AlreadyDead;
+            }
+
+            int err = unit.GetComponent<SkillStatusComponent>().CanCast(castConfigId);
+
+            return err;
         }
     }
 }

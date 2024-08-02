@@ -20,6 +20,9 @@ namespace ET.Server
         public Cast Cast => this.Parent.GetParent<Cast>();
 
         [BsonIgnore]
-        public EntityRef<Buff> Buff => this.Parent.GetParent<Buff>();
+        public Buff Buff => this.Parent.GetParent<Buff>();
+
+        [BsonIgnore]
+        public BulletComponent BulletComponent => this.Parent.GetParent<BulletComponent>();
     }
 }

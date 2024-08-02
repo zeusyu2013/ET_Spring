@@ -32,5 +32,40 @@
       "$type": "DamageActionParams",
       "AdditionalDamage": 100
     }
+  },
+  {
+    "Id": 3001,
+    "Type": 4,
+    "ActionParams": {
+      "$type": "MoveToTargetParams",
+      "Speed": 12
+    }
+  },
+  {
+    "Id": 4001,
+    "Type": 5,
+    "ActionParams": {
+      "$type": "SubcastParams",
+      "SubCastConfigId": 110002
+    }
+  },
+  {
+    "Id": 5001,
+    "Type": 6,
+    "ActionParams": {
+      "$type": "AttractParams",
+      "AttractRange": 3,
+      "AttractSpeed": 3
+    }
+  },
+  {
+    "Id": 6001,
+    "Type": 7,
+    "ActionParams": {
+      "$type": "HitFlyParams",
+      "Range": 3,
+      "Direction": 0,
+      "BuffConfigId": 40005
+    }
   }
 ]

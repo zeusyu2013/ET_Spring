@@ -19,8 +19,8 @@ namespace ET
             Id = _buf.ReadInt();
             AIConfigId = _buf.ReadInt();
             Order = _buf.ReadInt();
-            Name = _buf.ReadString();
-            {int __n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);NodeParams = new int[__n0];for(var __index0 = 0 ; __index0 < __n0 ; __index0++) { int __e0;__e0 = _buf.ReadInt(); NodeParams[__index0] = __e0;}}
+            AIType = (AIType)_buf.ReadInt();
+            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);NodeParams = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); NodeParams.Add(_e0);}}
 
             PostInit();
         }
@@ -46,14 +46,14 @@ namespace ET
         public readonly int Order;
 
         /// <summary>
-        /// 节点名字
+        /// AI节点类型
         /// </summary>
-        public readonly string Name;
+        public readonly AIType AIType;
 
         /// <summary>
         /// 节点参数
         /// </summary>
-        public readonly int[] NodeParams;
+        public readonly System.Collections.Generic.List<int> NodeParams;
 
         public const int __ID__ = -294143606;
 
@@ -65,7 +65,7 @@ namespace ET
             + "Id:" + Id + ","
             + "AIConfigId:" + AIConfigId + ","
             + "Order:" + Order + ","
-            + "Name:" + Name + ","
+            + "AIType:" + AIType + ","
             + "NodeParams:" + Luban.StringUtil.CollectionToString(NodeParams) + ","
             + "}";
         }

@@ -3,28 +3,42 @@
     "Id": 101,
     "AIConfigId": 1,
     "Order": 1,
-    "Name": "AI_Attack",
+    "AIType": 2,
     "NodeParams": []
   },
   {
     "Id": 102,
     "AIConfigId": 1,
     "Order": 2,
-    "Name": "AI_XunLuo",
+    "AIType": 1,
     "NodeParams": []
   },
   {
     "Id": 103,
     "AIConfigId": 1,
     "Order": 3,
-    "Name": "AI_Stand",
+    "AIType": 3,
     "NodeParams": []
   },
   {
     "Id": 201,
     "AIConfigId": 2,
     "Order": 1,
-    "Name": "AI_XunLuo",
+    "AIType": 1,
+    "NodeParams": []
+  },
+  {
+    "Id": 301,
+    "AIConfigId": 3,
+    "Order": 1,
+    "AIType": 1,
+    "NodeParams": []
+  },
+  {
+    "Id": 302,
+    "AIConfigId": 3,
+    "Order": 2,
+    "AIType": 2,
     "NodeParams": []
   }
 ]

@@ -21,9 +21,12 @@ namespace ET
             Desc = _buf.ReadString();
             TotalTime = _buf.ReadLong();
             SelectTargetType = (SelectTargetType)_buf.ReadInt();
-            CastSelectTargetsParam = CastSelectTargetsParams.DeserializeCastSelectTargetsParams(_buf);
+            CastCooldown = _buf.ReadInt();
+            if(_buf.ReadBool()){ Casting = _buf.ReadInt(); } else { Casting = null; }
+            SelectTargetsParams = SelectTargetsParams.DeserializeSelectTargetsParams(_buf);
             NotifyType = (MessageNotifyType)_buf.ReadInt();
             {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);HitInfos = new System.Collections.Generic.List<CastHitInfo>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { CastHitInfo _e0;  _e0 = CastHitInfo.DeserializeCastHitInfo(_buf); HitInfos.Add(_e0);}}
+            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);FinishActions = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); FinishActions.Add(_e0);}}
             CastStartAnimation = _buf.ReadString();
             CastHitAnimation = _buf.ReadString();
 
@@ -60,7 +63,17 @@ namespace ET
         /// </summary>
         public readonly SelectTargetType SelectTargetType;
 
-        public readonly CastSelectTargetsParams CastSelectTargetsParam;
+        /// <summary>
+        /// 技能释放CD
+        /// </summary>
+        public readonly int CastCooldown;
+
+        /// <summary>
+        /// 持续施法
+        /// </summary>
+        public readonly int? Casting;
+
+        public readonly SelectTargetsParams SelectTargetsParams;
 
         /// <summary>
         /// 通知客户端方式
@@ -71,6 +84,11 @@ namespace ET
         /// 命中信息
         /// </summary>
         public readonly System.Collections.Generic.List<CastHitInfo> HitInfos;
+
+        /// <summary>
+        /// 结束行为
+        /// </summary>
+        public readonly System.Collections.Generic.List<int> FinishActions;
 
         /// <summary>
         /// 技能起手动画
@@ -94,9 +112,12 @@ namespace ET
             + "Desc:" + Desc + ","
             + "TotalTime:" + TotalTime + ","
             + "SelectTargetType:" + SelectTargetType + ","
-            + "CastSelectTargetsParam:" + CastSelectTargetsParam + ","
+            + "CastCooldown:" + CastCooldown + ","
+            + "Casting:" + Casting + ","
+            + "SelectTargetsParams:" + SelectTargetsParams + ","
             + "NotifyType:" + NotifyType + ","
             + "HitInfos:" + Luban.StringUtil.CollectionToString(HitInfos) + ","
+            + "FinishActions:" + Luban.StringUtil.CollectionToString(FinishActions) + ","
             + "CastStartAnimation:" + CastStartAnimation + ","
             + "CastHitAnimation:" + CastHitAnimation + ","
             + "}";

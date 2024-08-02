@@ -4,12 +4,12 @@ using Unity.Mathematics;
 
 namespace ET
 {
-    [EntitySystemOf(typeof (MoveComponent))]
-    [FriendOf(typeof (MoveComponent))]
+    [EntitySystemOf(typeof(MoveComponent))]
+    [FriendOf(typeof(MoveComponent))]
     public static partial class MoveComponentSystem
     {
         [Invoke(TimerInvokeType.MoveTimer)]
-        public class MoveTimer: ATimer<MoveComponent>
+        public class MoveTimer : ATimer<MoveComponent>
         {
             protected override void Run(MoveComponent self)
             {
@@ -127,7 +127,7 @@ namespace ET
                     unit.Position = self.NextTarget;
                     if (self.TurnTime > 0)
                     {
-                        unit.Rotation = self.To;
+                        unit.SetRotation(self.To);
                     }
                 }
                 else
@@ -150,7 +150,7 @@ namespace ET
                         }
 
                         quaternion q = math.slerp(self.From, self.To, amount);
-                        unit.Rotation = q;
+                        unit.SetRotation(q);
                     }
                 }
 
@@ -168,7 +168,7 @@ namespace ET
                 if (self.N >= self.Targets.Count - 1)
                 {
                     unit.Position = self.NextTarget;
-                    unit.Rotation = self.To;
+                    unit.SetRotation(self.To);
 
                     self.MoveFinish(ret);
                     return;
@@ -239,7 +239,7 @@ namespace ET
                 if (Math.Abs(faceV.x) > 0.01 || Math.Abs(faceV.z) > 0.01)
                 {
                     self.To = quaternion.LookRotation(faceV, math.up());
-                    unit.Rotation = self.To;
+                    unit.SetRotation(self.To);
                 }
             }
         }

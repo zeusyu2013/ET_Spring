@@ -89,5 +89,8 @@ namespace ET
         public const int ERR_AlreadyDead = 201008;
         public const int ERR_CastIsNull = 201009;
         public const int ERR_CastTargetCounterLessThan1 = 201010;
+        public const int ERR_CasterIsNull = 201010;
+        public const int ERR_Silent = 201011;
+        public const int ERR_CastCDing = 201012;
     }
 }

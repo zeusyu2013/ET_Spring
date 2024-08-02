@@ -37,6 +37,21 @@ namespace ET
         GamePropertyType_AOI = 1005,
 
         /// <summary>
+        /// 沉默
+        /// </summary>
+        GamePropertyType_Silent = 1006,
+
+        /// <summary>
+        /// 禁止移动
+        /// </summary>
+        GamePropertyType_CantMove = 1007,
+
+        /// <summary>
+        /// 禁止转向
+        /// </summary>
+        GamePropertyType_CantRotate = 1008,
+
+        /// <summary>
         /// 生命值
         /// </summary>
         GamePropertyType_Hp = 1101,

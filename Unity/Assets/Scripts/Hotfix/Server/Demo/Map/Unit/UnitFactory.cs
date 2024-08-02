@@ -37,9 +37,6 @@ namespace ET.Server
             // 技能释放组件
             unit.AddComponent<CastComponent>();
 
-            // 选择目标组件
-            unit.AddComponent<SelectTargetComponent>();
-
             // 背包组件
             BagComponent bagComponent = unit.AddComponentWithId<BagComponent>(unit.Id);
             foreach ((int itemConfigId, long amount) in config.Items)
@@ -169,7 +166,6 @@ namespace ET.Server
 
             unit.AddComponent<MoveComponent>();
             unit.AddComponent<CastComponent>();
-            unit.AddComponent<SelectTargetComponent>();
 
             // 加入aoi
             unit.AddComponent<AOIEntity, int, float3>(9 * 1000, unit.Position);
@@ -177,14 +173,25 @@ namespace ET.Server
             return unit;
         }
 
-        public static Unit CreateBullet(Scene scene, long ownerId, int unitConfigId, int bulletId, float3 pos)
+        public static Unit CreateBullet(Scene scene, long ownerId, int unitConfigId, int bulletId, float3 pos, quaternion rotation)
         {
             UnitComponent unitComponent = scene.GetComponent<UnitComponent>();
             Unit bullet = unitComponent.AddChild<Unit, int>(unitConfigId);
             bullet.Position = pos;
+            bullet.Rotation = rotation;
+
+            bullet.AddComponent<CastComponent>();
+            bullet.AddComponent<MoveComponent>();
+            bullet.AddComponent<PathfindingComponent, string>(scene.Name);
+            NumericComponent numericComponent = bullet.AddComponent<NumericComponent>();
+            numericComponent.Set(GamePropertyType.GamePropertyType_Speed, 6f);
+            numericComponent.Set(GamePropertyType.GamePropertyType_AOI, 15000);
+            
             BulletComponent bulletComponent = bullet.AddComponent<BulletComponent, int>(bulletId);
             bulletComponent.OwnerId = ownerId;
             unitComponent.Add(bullet);
+
+            bullet.AddComponent<AOIEntity, int, float3>(9 * 1000, bullet.Position);
 
             return bullet;
         }
@@ -194,6 +201,7 @@ namespace ET.Server
             UnitComponent unitComponent = scene.GetComponent<UnitComponent>();
             Unit monster = unitComponent.AddChild<Unit, int>(unitConfigId);
             monster.AddComponent<MoveComponent>();
+            monster.AddComponent<PathfindingComponent, string>(scene.Name);
             monster.Position = pos;
 
             NumericComponent numericComponent = monster.AddComponent<NumericComponent>();
@@ -203,9 +211,11 @@ namespace ET.Server
             numericComponent.Set(GamePropertyType.GamePropertyType_Hp, 1000);
 
             monster.AddComponent<ReliveComponent>();
+            monster.AddComponent<CastComponent>();
+            monster.AddComponent<BuffComponent>();
 
             unitComponent.Add(monster);
-
+            
             return monster;
         }
     }

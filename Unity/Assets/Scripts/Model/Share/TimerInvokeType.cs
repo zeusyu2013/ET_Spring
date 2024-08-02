@@ -28,8 +28,11 @@
         public const int BuffTickTimer = 403;
 
         public const int BulletTickTimer = 404;
+        public const int BulletTickTimer2 = 405;
+        public const int BulletTickTimer3 = 406;
+        public const int BulletTotalTimer = 407;
 
-        public const int CreateMonsterTimer = 405;
-        public const int MonsterDeadTimer = 406;
+        public const int CreateMonsterTimer = 415;
+        public const int MonsterDeadTimer = 416;
     }
 }

@@ -6,7 +6,5 @@ namespace ET.Server
     public class GameRoleComponent : Entity, IAwake, IDestroy
     {
         public List<GameRoleInfo> GameRoles = new();
-
-        public long UnitId;
     }
 }

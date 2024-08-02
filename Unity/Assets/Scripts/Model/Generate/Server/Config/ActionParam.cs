@@ -26,6 +26,10 @@ namespace ET
             {
                 case ModifyPropertyActionParams.__ID__: return new ModifyPropertyActionParams(_buf);
                 case DamageActionParams.__ID__: return new DamageActionParams(_buf);
+                case SubcastParams.__ID__: return new SubcastParams(_buf);
+                case MoveToTargetParams.__ID__: return new MoveToTargetParams(_buf);
+                case AttractParams.__ID__: return new AttractParams(_buf);
+                case HitFlyParams.__ID__: return new HitFlyParams(_buf);
                 default: throw new SerializationException();
             }
         }

@@ -51,5 +51,10 @@ namespace ET.Server
         {
             return self.GetComponent<AOIEntity>().GetBeSeePlayers();
         }
+
+        public static Dictionary<long, EntityRef<AOIEntity>> GetBeSeeUnits(this Unit self)
+        {
+            return self.GetComponent<AOIEntity>().GetBeSeeUnits();
+        }
     }
 }

@@ -1,17 +1,28 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using System.Collections.Generic;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace ET.Server
 {
     [ComponentOf(typeof(Unit))]
     public class BulletComponent : Entity, IAwake<int>, IDestroy
     {
-        public int ConfigId;
+        public int ConfigId = default;
 
         [BsonIgnore]
         public BulletConfig Config => BulletConfigCategory.Instance.Get(this.ConfigId);
 
-        public long OwnerId;
+        public int TickCount = default;
 
-        public long TickTimer;
+        public List<long> Targets = new();
+
+        public long OwnerId = default;
+
+        public long TickTimer = default;
+        
+        public long TickTimer2 = default;
+        
+        public long TickTimer3 = default;
+        
+        public long TotalTimer = default;
     }
 }

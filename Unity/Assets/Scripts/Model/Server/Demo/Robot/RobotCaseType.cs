@@ -7,6 +7,8 @@ namespace ET.Server
 
         public const int SecondCase = 2;
 
+        public const int AutoSkill = 3;
+
         public const int MaxCaseType = 10000;
     }
 }

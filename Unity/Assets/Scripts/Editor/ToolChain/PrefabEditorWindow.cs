@@ -66,11 +66,11 @@ namespace ET
             animator.applyRootMotion = false;
             collector.Add("Animator", animator);
             
-            HybridAnimancerComponent animancer = fbxGo.AddComponent<HybridAnimancerComponent>();
-            collector.Add("HybridAnimancer", animancer);
+            AnimancerComponent animancer = fbxGo.AddComponent<AnimancerComponent>();
+            collector.Add("AnimancerComponent", animancer);
 
             // 设置角色控制器
-            CharacterController characterController = fbxGo.AddComponent<CharacterController>();
+            CharacterController characterController = go.AddComponent<CharacterController>();
             characterController.center = new Vector3(0, 1, 0);
             collector.Add("CharacterController", characterController);
             

@@ -5,16 +5,10 @@
     {
         protected override async ETTask Run(Unit unit, C2M_Cast request, M2C_Cast response)
         {
-            CastConfig config = CastConfigCategory.Instance.Get(request.CastConfigId);
-            if (config == null)
+            int err = BattleHelper.CanCast(unit, request.CastConfigId);
+            if (err != ErrorCode.ERR_Success)
             {
-                response.Error = ErrorCode.ERR_SkillConfigNotFound;
-                return;
-            }
-
-            if (!unit.IsAlive())
-            {
-                response.Error = ErrorCode.ERR_AlreadyDead;
+                response.Error = err;
                 return;
             }
 

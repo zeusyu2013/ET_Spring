@@ -14,6 +14,6 @@ namespace ET
 
     public abstract class ASelectTargetHandler : HandlerObject
     {
-        public abstract int Check(SelectTargetComponent selectTargetComponent, CastConfig castConfig, ref List<long> targets);
+        public abstract int Check(Unit caster, SelectTargetsParams selectTargetsParams, ref List<long> targets);
     }
 }

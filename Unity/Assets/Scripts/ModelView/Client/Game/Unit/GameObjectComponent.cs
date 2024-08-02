@@ -24,21 +24,6 @@ namespace ET.Client
             }
         }
 
-        private ReferenceCollector _collector;
-
-        public ReferenceCollector ReferenceCollector
-        {
-            get
-            {
-                if (_collector == null)
-                {
-                    _collector = this.gameObject.GetComponent<ReferenceCollector>();
-                }
-
-                return this._collector;
-            }
-        }
-
         public Transform Transform { get; private set; }
 
         public Transform CameraLookAt { get; private set; }

@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace ET.Client
+﻿namespace ET.Client
 {
     [Event((SceneType.MainClient))]
     public class CastHit_ClientHandler : AEvent<Scene, CastHit>

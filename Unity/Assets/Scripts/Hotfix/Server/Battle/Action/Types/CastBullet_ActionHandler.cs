@@ -1,4 +1,6 @@
-﻿namespace ET.Server
+﻿using Unity.Mathematics;
+
+namespace ET.Server
 {
     [Action(ActionType.ActionType_CastBullet)]
     [FriendOfAttribute(typeof(ET.Server.Cast))]
@@ -12,12 +14,20 @@
                 return;
             }
 
+            Unit caster = cast.Caster;
+            if (caster == null || caster.IsDisposed)
+            {
+                return;
+            }
+
             if (cast.Targets.Count < 1)
             {
                 return;
             }
 
             ActionConfig config = action.Config;
+
+            float3 bulletPosition = caster.Position + (caster.Forward * 1.2f);
             
             UnitComponent unitComponent = action.Scene().GetComponent<UnitComponent>();
             foreach (long id in cast.Targets)
@@ -28,8 +38,7 @@
                     continue;
                 }
 
-                Unit caster = cast.Caster;
-                Unit bullet = UnitFactory.CreateBullet(cast.Scene(), caster.Id, config.Id, config.Id, target.Position);
+                Unit bullet = UnitFactory.CreateBullet(cast.Scene(), caster.Id, config.Id, config.Id, bulletPosition, caster.Rotation);
                 bullet.GetComponent<BulletComponent>().Start();
             }
         }

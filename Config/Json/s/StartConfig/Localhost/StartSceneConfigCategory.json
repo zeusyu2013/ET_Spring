@@ -230,5 +230,13 @@
     "SceneType": "Router",
     "Name": "Router04",
     "Port": 30304
+  },
+  {
+    "Id": 200,
+    "Process": 2,
+    "Zone": 101,
+    "SceneType": "Robot",
+    "Name": "Robot01",
+    "Port": 0
   }
 ]

@@ -27,5 +27,25 @@ namespace ET
         /// </summary>
         ActionType_CastBullet = 3,
 
+        /// <summary>
+        /// 移动到目标行为
+        /// </summary>
+        ActionType_MoveToTarget = 4,
+
+        /// <summary>
+        /// 释放子技能行为
+        /// </summary>
+        ActionType_CastSubcast = 5,
+
+        /// <summary>
+        /// 吸引行为
+        /// </summary>
+        ActionType_Attract = 6,
+
+        /// <summary>
+        /// 击飞行为
+        /// </summary>
+        ActionType_HitFly = 7,
+
     }
 }

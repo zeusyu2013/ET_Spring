@@ -18,6 +18,11 @@ namespace ET.Server
         [EntitySystem]
         private static void Awake(this ET.Server.MonsterMapComponent self)
         {
+            if (self.Scene().Name.Equals("GateMap"))
+            {
+                return;
+            }
+
             foreach (SceneMonsterConfig sceneMonsterConfig in SceneMonsterConfigCategory.Instance.DataList)
             {
                 self.CreateMonsterByGroup(sceneMonsterConfig.Id);

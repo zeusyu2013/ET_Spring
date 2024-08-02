@@ -5,20 +5,14 @@ namespace ET.Server
     [SelectTarget(SelectTargetType.SelectTargetType_Single)]
     public class SelectTargetSingle : ASelectTargetHandler
     {
-        public override int Check(SelectTargetComponent selectTargetComponent, CastConfig castConfig, ref List<long> targets)
+        public override int Check(Unit caster, SelectTargetsParams selectTargetsParams, ref List<long> targets)
         {
-            if (castConfig.SelectTargetType != SelectTargetType.SelectTargetType_Single)
-            {
-                return ErrorCode.ERR_CastTargetTypeNotMatch;
-            }
-            
-            Unit unit = selectTargetComponent.GetParent<Unit>();
-            if (unit == null || unit.IsDisposed)
+            if (caster == null || caster.IsDisposed)
             {
                 return ErrorCode.ERR_CastIsNull;
             }
             
-            targets.Add(unit.Id);
+            targets.Add(caster.Id);
 
             return ErrorCode.ERR_Success;
         }

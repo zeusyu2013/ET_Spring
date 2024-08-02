@@ -60,9 +60,14 @@
         private static void SelectTargets(this Cast self)
         {
             self.Targets.Clear();
-            
+
             Unit caster = self.Caster;
-            caster.GetComponent<SelectTargetComponent>().Check(self.ConfigId, ref self.Targets);
+
+            int errorCode = SelectTargetHelper.Select(caster, self.Config.SelectTargetType, self.Config.SelectTargetsParams, ref self.Targets);
+            if (errorCode != ErrorCode.ERR_Success)
+            {
+                Log.Error($"选择目标时错误，错误码：{errorCode}");
+            }
         }
 
         private static int CastCheckBeforeBegin(this Cast self)
@@ -77,11 +82,20 @@
 
         private static async ETTask CastBeginAsync(this Cast self)
         {
+            Unit caster = self.Caster;
+
+            bool needBreak = caster.GetComponent<SkillStatusComponent>().Casting(self);
+            if (!needBreak)
+            {
+                self.BreakCasting();
+                return;
+            }
+
             self.StartTime = TimeInfo.Instance.ServerNow();
 
             M2C_CastStart m2CCastStart = M2C_CastStart.Create();
             m2CCastStart.CastId = self.Id;
-            Unit caster = self.Caster;
+
             m2CCastStart.CasterId = caster.Id;
             m2CCastStart.CastConfigId = self.ConfigId;
             m2CCastStart.Targets = self.Targets;
@@ -143,9 +157,9 @@
             {
                 return;
             }
-            
+
             Unit caster = self.Caster;
-            
+
             M2C_CastHit m2CCastHit = M2C_CastHit.Create();
             m2CCastHit.CastId = self.Id;
             m2CCastHit.CasterId = caster.Id;
@@ -154,7 +168,7 @@
 
             if (hitInfo.HitAction > 0)
             {
-                self.Create(hitInfo.HitAction, self.Caster, ActionTriggerType.CastHit);    
+                self.Create(hitInfo.HitAction, self.Caster, ActionTriggerType.CastHit);
             }
 
             if (hitInfo.SelfBuff > 0)
@@ -190,7 +204,7 @@
 
                 if (info.HitAction > 0)
                 {
-                    self.Create(info.HitAction, target, ActionTriggerType.CastHit);    
+                    self.Create(info.HitAction, target, ActionTriggerType.CastHit);
                 }
 
                 if (info.TargetBuff > 0)
@@ -202,13 +216,29 @@
 
         private static void CastFinish(this Cast self)
         {
+            Unit caster = self.Caster;
+
+            bool needBreak = caster.GetComponent<SkillStatusComponent>().Finish(self);
+            if (!needBreak)
+            {
+                self.BreakCasting();
+                return;
+            }
+
             if (self.Config.TotalTime > 0)
             {
                 M2C_CastFinish m2CCastFinish = M2C_CastFinish.Create();
                 m2CCastFinish.CastId = self.Id;
-                Unit unit = self.Caster;
-                m2CCastFinish.CasterId = unit.Id;
-                BattleMessageHelper.SendClient(unit, m2CCastFinish, self.Config.NotifyType);
+                m2CCastFinish.CasterId = caster.Id;
+                BattleMessageHelper.SendClient(caster, m2CCastFinish, self.Config.NotifyType);
+            }
+
+            if (self.Config.FinishActions.Count > 0)
+            {
+                foreach (int action in self.Config.FinishActions)
+                {
+                    self.Create(action, caster, ActionTriggerType.CastFinish);
+                }
             }
 
             self?.Dispose();
@@ -228,6 +258,18 @@
             }
 
             return true;
+        }
+
+        private static void BreakCasting(this Cast self)
+        {
+            Unit caster = self.Caster;
+
+            M2C_CastBreak m2CCastBreak = M2C_CastBreak.Create();
+            m2CCastBreak.CastId = self.Id;
+            m2CCastBreak.CasterId = caster.Id;
+            BattleMessageHelper.SendClient(caster, m2CCastBreak, self.Config.NotifyType);
+
+            self.Dispose();
         }
     }
 }

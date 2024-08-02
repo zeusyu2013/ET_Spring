@@ -89,3 +89,26 @@ message M2C_Cast // ILocationResponse
 	int32 Error = 2;
 	string Message = 3;
 }
+
+message M2C_CooldownChange // ILocationMessage
+{
+    int32 RpcId = 1;
+    repeated int32 CastConfigId = 2;
+    repeated int64 CooldownCD = 3;
+    repeated int64 CooldownStartTime = 4;
+}
+
+message M2C_SetPosition // ILocationMessage
+{
+    int32 RpcId = 1;
+    int64 UnitId = 2;
+    Unity.Mathematics.float3 Position = 3;
+    Unity.Mathematics.quaternion Rotation = 4;
+}
+
+message M2C_NumericChange // ILocationMessage
+{
+    int32 RpcId = 1;
+    int64 UnitId = 2;
+    map<int32, int64> KV = 3;
+}

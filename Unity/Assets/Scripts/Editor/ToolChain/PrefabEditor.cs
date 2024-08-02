@@ -40,7 +40,7 @@ namespace ET
                 animator = _previewGo.AddComponent<Animator>();
             }
 
-            CharacterController characterController = _previewGo.AddComponent<CharacterController>();
+            CharacterController characterController = instance.AddComponent<CharacterController>();
             characterController.center = Vector3.up;
 
             string prefabName = fbx.name;
@@ -56,14 +56,14 @@ namespace ET
             collector.Add("Animator", animator);
             collector.Add("CharacterController", characterController);
             
-            HybridAnimancerComponent animancer = _previewGo.AddComponent<HybridAnimancerComponent>();
-            collector.Add("HybridAnimancer", animancer);
+            AnimancerComponent animancer = _previewGo.AddComponent<AnimancerComponent>();
+            collector.Add("AnimancerComponent", animancer);
             
             // 设置相机焦点
             if (isRole)
             {
                 GameObject cameraLookAt = new("CameraLookAt");
-                cameraLookAt.transform.SetParent(_previewGo.transform);
+                cameraLookAt.transform.SetParent(instance.transform);
                 cameraLookAt.transform.localPosition = new Vector3(0, 1, 0);
                 
                 collector.Add("CameraLookAt", cameraLookAt);

@@ -6,14 +6,9 @@ namespace ET.Server
     [SelectTarget(SelectTargetType.SelectTargetType_Cycle)]
     public class SelectTargetSelfRound : ASelectTargetHandler
     {
-        public override int Check(SelectTargetComponent selectTargetComponent, CastConfig castConfig, ref List<long> targets)
+        public override int Check(Unit caster, SelectTargetsParams selectTargetsParams, ref List<long> targets)
         {
-            if (castConfig.SelectTargetType != SelectTargetType.SelectTargetType_Cycle)
-            {
-                return ErrorCode.ERR_CastTargetTypeNotMatch;
-            }
-
-            CastTargetCycle cycle = (CastTargetCycle)castConfig.CastSelectTargetsParam;
+            Cycle cycle = (Cycle)selectTargetsParams;
 
             int counter = cycle.Counter;
             if (counter < 1)
@@ -21,14 +16,13 @@ namespace ET.Server
                 return ErrorCode.ERR_CastTargetCounterLessThan1;
             }
 
-            Unit unit = selectTargetComponent.GetParent<Unit>();
             if (cycle.IncludeSelf)
             {
                 counter -= 1;
-                targets.Add(unit.Id);
+                targets.Add(caster.Id);
             }
 
-            foreach (EntityRef<AOIEntity> entityRef in unit.GetSeeUnits().Values)
+            foreach (EntityRef<AOIEntity> entityRef in caster.GetSeeUnits().Values)
             {
                 if (counter < 1)
                 {
@@ -47,7 +41,7 @@ namespace ET.Server
                     continue;
                 }
 
-                if (math.length(unit.Position - target.Position) > cycle.Radius)
+                if (math.length(caster.Position - target.Position) > cycle.Radius)
                 {
                     continue;
                 }

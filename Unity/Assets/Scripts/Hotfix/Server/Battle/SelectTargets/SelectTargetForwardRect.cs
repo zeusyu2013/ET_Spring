@@ -6,25 +6,17 @@ namespace ET.Server
     [SelectTarget(SelectTargetType.SelectTargetType_ForwardRect)]
     public class SelectTargetForwardRect : ASelectTargetHandler
     {
-        public override int Check(SelectTargetComponent selectTargetComponent, CastConfig castConfig, ref List<long> targets)
+        public override int Check(Unit caster, SelectTargetsParams selectTargetsParams, ref List<long> targets)
         {
-            List<Unit> units = new();
-            if (castConfig.SelectTargetType != SelectTargetType.SelectTargetType_ForwardRect)
-            {
-                return ErrorCode.ERR_CastTargetTypeNotMatch;
-            }
-
-            CastForwardRect rect = (CastForwardRect)castConfig.CastSelectTargetsParam;
+            ForwardRect rect = (ForwardRect)selectTargetsParams;
 
             int counter = rect.Counter;
             if (counter < 1)
             {
                 return ErrorCode.ERR_CastTargetCounterLessThan1;
             }
-
-            Unit unit = selectTargetComponent.GetParent<Unit>();
-
-            foreach (EntityRef<AOIEntity> entityRef in unit.GetSeeUnits().Values)
+            
+            foreach (EntityRef<AOIEntity> entityRef in caster.GetSeeUnits().Values)
             {
                 if (counter < 1)
                 {
@@ -43,14 +35,14 @@ namespace ET.Server
                     continue;
                 }
 
-                float3 dir = math.normalize(unit.Position - target.Position);
-                float dot = math.dot(dir, unit.Forward);
+                float3 dir = math.normalize(caster.Position - target.Position);
+                float dot = math.dot(dir, caster.Forward);
                 if (dot > 90)
                 {
                     continue;
                 }
 
-                float distance = math.distance(target.Position, unit.Position);
+                float distance = math.distance(target.Position, caster.Position);
                 float z = distance * math.cos(dot * math.PI * 2 / 360);
                 float x = distance * math.sin(dot * math.PI * 2 / 360);
                 if (x > rect.Width * 0.5f || z > rect.Height)

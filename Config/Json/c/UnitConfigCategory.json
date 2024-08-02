@@ -17745,5 +17745,15 @@
       10001,
       10003
     ]
+  },
+  {
+    "Id": 30001,
+    "UnitType": 4,
+    "Name": "",
+    "Model": "huoqiu",
+    "AI": 0,
+    "Property": 0,
+    "Skills": [],
+    "Drops": []
   }
 ]

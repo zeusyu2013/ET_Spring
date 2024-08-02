@@ -7,7 +7,7 @@ namespace ET.Client
 	[ComponentOf]
 	public class AnimatorComponent : Entity, IAwake, IUpdate, IDestroy
 	{
-		public Dictionary<string, AnimancerState> animancerStates = new();
+		public Dictionary<string, AnimationClip> AnimancerStates = new();
 
 		public bool isStop;
 		public float stopSpeed;
@@ -15,6 +15,6 @@ namespace ET.Client
 		public bool isGrounded;
 		
 		public Animator Animator;
-		public NamedAnimancerComponent Animancer;
+		public AnimancerComponent Animancer;
 	}
 }

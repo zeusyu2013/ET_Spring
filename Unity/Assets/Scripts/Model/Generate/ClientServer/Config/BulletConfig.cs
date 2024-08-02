@@ -17,14 +17,18 @@ namespace ET
         public BulletConfig(ByteBuf _buf)
         {
             Id = _buf.ReadInt();
-            BulletShape = BulletShape.DeserializeBulletShape(_buf);
+            SelectTargetType = (SelectTargetType)_buf.ReadInt();
+            SelectTargetsParam = SelectTargetsParams.DeserializeSelectTargetsParams(_buf);
             TotalTime = _buf.ReadInt();
             Interval = _buf.ReadInt();
             {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);IntervalCasts = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); IntervalCasts.Add(_e0);}}
             {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);IntervalActions = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); IntervalActions.Add(_e0);}}
             {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);CreateActions = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); CreateActions.Add(_e0);}}
             {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);DestroyActions = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); DestroyActions.Add(_e0);}}
-            Model = _buf.ReadString();
+            TargetCount = _buf.ReadInt();
+            TickLimit = _buf.ReadInt();
+            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);Tick1 = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); Tick1.Add(_e0);}}
+            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);Tick2 = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); Tick2.Add(_e0);}}
 
             PostInit();
         }
@@ -40,9 +44,11 @@ namespace ET
         public readonly int Id;
 
         /// <summary>
-        /// 子弹形状
+        /// 子弹目标选择类型
         /// </summary>
-        public readonly BulletShape BulletShape;
+        public readonly SelectTargetType SelectTargetType;
+
+        public readonly SelectTargetsParams SelectTargetsParam;
 
         /// <summary>
         /// 子弹持续时长
@@ -75,9 +81,24 @@ namespace ET
         public readonly System.Collections.Generic.List<int> DestroyActions;
 
         /// <summary>
-        /// 子弹模型
+        /// 目标个数
         /// </summary>
-        public readonly string Model;
+        public readonly int TargetCount;
+
+        /// <summary>
+        /// 结算次数限制
+        /// </summary>
+        public readonly int TickLimit;
+
+        /// <summary>
+        /// 100ms执行
+        /// </summary>
+        public readonly System.Collections.Generic.List<int> Tick1;
+
+        /// <summary>
+        /// 1000ms执行
+        /// </summary>
+        public readonly System.Collections.Generic.List<int> Tick2;
 
         public const int __ID__ = 284876548;
 
@@ -87,14 +108,18 @@ namespace ET
         {
             return "{ "
             + "Id:" + Id + ","
-            + "BulletShape:" + BulletShape + ","
+            + "SelectTargetType:" + SelectTargetType + ","
+            + "SelectTargetsParam:" + SelectTargetsParam + ","
             + "TotalTime:" + TotalTime + ","
             + "Interval:" + Interval + ","
             + "IntervalCasts:" + Luban.StringUtil.CollectionToString(IntervalCasts) + ","
             + "IntervalActions:" + Luban.StringUtil.CollectionToString(IntervalActions) + ","
             + "CreateActions:" + Luban.StringUtil.CollectionToString(CreateActions) + ","
             + "DestroyActions:" + Luban.StringUtil.CollectionToString(DestroyActions) + ","
-            + "Model:" + Model + ","
+            + "TargetCount:" + TargetCount + ","
+            + "TickLimit:" + TickLimit + ","
+            + "Tick1:" + Luban.StringUtil.CollectionToString(Tick1) + ","
+            + "Tick2:" + Luban.StringUtil.CollectionToString(Tick2) + ","
             + "}";
         }
 

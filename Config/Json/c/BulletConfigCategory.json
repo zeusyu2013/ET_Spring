@@ -1,9 +1,9 @@
 [
   {
     "Id": 10001,
-    "BulletShape": {
-      "$type": "BulletCycleShape",
-      "Radius": 5
+    "SelectTargetType": 1,
+    "SelectTargetsParam": {
+      "$type": "Single"
     },
     "TotalTime": 2000,
     "Interval": 200,
@@ -19,6 +19,9 @@
     "DestroyActions": [
       1
     ],
-    "Model": "fire_ball"
+    "TargetCount": 0,
+    "TickLimit": 0,
+    "Tick1": [],
+    "Tick2": []
   }
 ]

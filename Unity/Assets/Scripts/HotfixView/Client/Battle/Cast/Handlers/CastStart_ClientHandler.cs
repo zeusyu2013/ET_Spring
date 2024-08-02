@@ -1,6 +1,6 @@
 ﻿namespace ET.Client
 {
-    [Event(SceneType.Current)]
+    [Event(SceneType.MainClient)]
     public class CastStart_ClientHandler : AEvent<Scene, CastStart>
     {
         protected override async ETTask Run(Scene scene, CastStart args)

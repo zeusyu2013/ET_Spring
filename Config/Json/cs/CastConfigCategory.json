@@ -5,8 +5,9 @@
     "Desc": "castdesc_110001",
     "TotalTime": 2000,
     "SelectTargetType": 1,
-    "CastSelectTargetsParam": {
-      "$type": "CastSingle"
+    "CastCooldown": 10000,
+    "SelectTargetsParams": {
+      "$type": "Single"
     },
     "NotifyType": 2,
     "HitInfos": [
@@ -18,6 +19,7 @@
         "SelfBuff": 40005
       }
     ],
+    "FinishActions": [],
     "CastStartAnimation": "attack",
     "CastHitAnimation": ""
   },
@@ -27,11 +29,13 @@
     "Desc": "castdesc_110002",
     "TotalTime": 2000,
     "SelectTargetType": 1,
-    "CastSelectTargetsParam": {
-      "$type": "CastSingle"
+    "CastCooldown": 10000,
+    "SelectTargetsParams": {
+      "$type": "Single"
     },
     "NotifyType": 2,
     "HitInfos": [],
+    "FinishActions": [],
     "CastStartAnimation": "",
     "CastHitAnimation": ""
   },
@@ -41,11 +45,13 @@
     "Desc": "castdesc_110003",
     "TotalTime": 2000,
     "SelectTargetType": 1,
-    "CastSelectTargetsParam": {
-      "$type": "CastSingle"
+    "CastCooldown": 10000,
+    "SelectTargetsParams": {
+      "$type": "Single"
     },
     "NotifyType": 2,
     "HitInfos": [],
+    "FinishActions": [],
     "CastStartAnimation": "",
     "CastHitAnimation": ""
   },
@@ -55,11 +61,13 @@
     "Desc": "castdesc_110004",
     "TotalTime": 2000,
     "SelectTargetType": 1,
-    "CastSelectTargetsParam": {
-      "$type": "CastSingle"
+    "CastCooldown": 10000,
+    "SelectTargetsParams": {
+      "$type": "Single"
     },
     "NotifyType": 2,
     "HitInfos": [],
+    "FinishActions": [],
     "CastStartAnimation": "",
     "CastHitAnimation": ""
   },
@@ -69,11 +77,13 @@
     "Desc": "castdesc_110005",
     "TotalTime": 2000,
     "SelectTargetType": 1,
-    "CastSelectTargetsParam": {
-      "$type": "CastSingle"
+    "CastCooldown": 10000,
+    "SelectTargetsParams": {
+      "$type": "Single"
     },
     "NotifyType": 2,
     "HitInfos": [],
+    "FinishActions": [],
     "CastStartAnimation": "",
     "CastHitAnimation": ""
   },
@@ -83,14 +93,16 @@
     "Desc": "castdesc_120001",
     "TotalTime": 2000,
     "SelectTargetType": 2,
-    "CastSelectTargetsParam": {
-      "$type": "CastTargetCycle",
+    "CastCooldown": 10000,
+    "SelectTargetsParams": {
+      "$type": "Cycle",
       "IncludeSelf": false,
       "Radius": 5,
       "Counter": 5
     },
     "NotifyType": 2,
     "HitInfos": [],
+    "FinishActions": [],
     "CastStartAnimation": "",
     "CastHitAnimation": ""
   },
@@ -100,14 +112,16 @@
     "Desc": "castdesc_120002",
     "TotalTime": 2000,
     "SelectTargetType": 2,
-    "CastSelectTargetsParam": {
-      "$type": "CastTargetCycle",
+    "CastCooldown": 10000,
+    "SelectTargetsParams": {
+      "$type": "Cycle",
       "IncludeSelf": false,
       "Radius": 5,
       "Counter": 5
     },
     "NotifyType": 2,
     "HitInfos": [],
+    "FinishActions": [],
     "CastStartAnimation": "",
     "CastHitAnimation": ""
   },
@@ -117,14 +131,16 @@
     "Desc": "castdesc_120003",
     "TotalTime": 2000,
     "SelectTargetType": 2,
-    "CastSelectTargetsParam": {
-      "$type": "CastTargetCycle",
+    "CastCooldown": 10000,
+    "SelectTargetsParams": {
+      "$type": "Cycle",
       "IncludeSelf": false,
       "Radius": 5,
       "Counter": 5
     },
     "NotifyType": 2,
     "HitInfos": [],
+    "FinishActions": [],
     "CastStartAnimation": "",
     "CastHitAnimation": ""
   },
@@ -134,14 +150,16 @@
     "Desc": "castdesc_120004",
     "TotalTime": 2000,
     "SelectTargetType": 2,
-    "CastSelectTargetsParam": {
-      "$type": "CastTargetCycle",
+    "CastCooldown": 10000,
+    "SelectTargetsParams": {
+      "$type": "Cycle",
       "IncludeSelf": false,
       "Radius": 5,
       "Counter": 5
     },
     "NotifyType": 2,
     "HitInfos": [],
+    "FinishActions": [],
     "CastStartAnimation": "",
     "CastHitAnimation": ""
   },
@@ -151,14 +169,16 @@
     "Desc": "castdesc_120005",
     "TotalTime": 2000,
     "SelectTargetType": 2,
-    "CastSelectTargetsParam": {
-      "$type": "CastTargetCycle",
+    "CastCooldown": 10000,
+    "SelectTargetsParams": {
+      "$type": "Cycle",
       "IncludeSelf": false,
       "Radius": 5,
       "Counter": 5
     },
     "NotifyType": 2,
     "HitInfos": [],
+    "FinishActions": [],
     "CastStartAnimation": "",
     "CastHitAnimation": ""
   },
@@ -168,14 +188,16 @@
     "Desc": "castdesc_130001",
     "TotalTime": 2000,
     "SelectTargetType": 3,
-    "CastSelectTargetsParam": {
-      "$type": "CastForwardRect",
+    "CastCooldown": 10000,
+    "SelectTargetsParams": {
+      "$type": "ForwardRect",
       "Width": 3,
       "Height": 6,
       "Counter": 5
     },
     "NotifyType": 2,
     "HitInfos": [],
+    "FinishActions": [],
     "CastStartAnimation": "",
     "CastHitAnimation": ""
   },
@@ -185,14 +207,16 @@
     "Desc": "castdesc_130002",
     "TotalTime": 2000,
     "SelectTargetType": 3,
-    "CastSelectTargetsParam": {
-      "$type": "CastForwardRect",
+    "CastCooldown": 10000,
+    "SelectTargetsParams": {
+      "$type": "ForwardRect",
       "Width": 3,
       "Height": 6,
       "Counter": 5
     },
     "NotifyType": 2,
     "HitInfos": [],
+    "FinishActions": [],
     "CastStartAnimation": "",
     "CastHitAnimation": ""
   },
@@ -202,14 +226,16 @@
     "Desc": "castdesc_130003",
     "TotalTime": 2000,
     "SelectTargetType": 3,
-    "CastSelectTargetsParam": {
-      "$type": "CastForwardRect",
+    "CastCooldown": 10000,
+    "SelectTargetsParams": {
+      "$type": "ForwardRect",
       "Width": 3,
       "Height": 6,
       "Counter": 5
     },
     "NotifyType": 2,
     "HitInfos": [],
+    "FinishActions": [],
     "CastStartAnimation": "",
     "CastHitAnimation": ""
   },
@@ -219,14 +245,16 @@
     "Desc": "castdesc_130004",
     "TotalTime": 2000,
     "SelectTargetType": 3,
-    "CastSelectTargetsParam": {
-      "$type": "CastForwardRect",
+    "CastCooldown": 10000,
+    "SelectTargetsParams": {
+      "$type": "ForwardRect",
       "Width": 3,
       "Height": 6,
       "Counter": 5
     },
     "NotifyType": 2,
     "HitInfos": [],
+    "FinishActions": [],
     "CastStartAnimation": "",
     "CastHitAnimation": ""
   },
@@ -236,14 +264,16 @@
     "Desc": "castdesc_130005",
     "TotalTime": 2000,
     "SelectTargetType": 3,
-    "CastSelectTargetsParam": {
-      "$type": "CastForwardRect",
+    "CastCooldown": 10000,
+    "SelectTargetsParams": {
+      "$type": "ForwardRect",
       "Width": 3,
       "Height": 6,
       "Counter": 5
     },
     "NotifyType": 2,
     "HitInfos": [],
+    "FinishActions": [],
     "CastStartAnimation": "",
     "CastHitAnimation": ""
   }

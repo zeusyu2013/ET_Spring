@@ -14,7 +14,7 @@
             }
             
             // 发送断线消息
-            long unitId = self.GetParent<Session>().GetComponent<GameRoleComponent>().UnitId;
+            long unitId = self.GetParent<Session>().GetComponent<SessionPlayerComponent>().Player.GetComponent<GateUnitComponent>().UnitId;
             root.GetComponent<MessageLocationSenderComponent>().Get(LocationType.Unit).Send(unitId, G2M_SessionDisconnect.Create());
         }
 

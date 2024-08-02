@@ -2,17 +2,34 @@ using Unity.Mathematics;
 
 namespace ET.Client
 {
+    [AIHandler(AIType.AIType_XunLuo)]
+    [FriendOfAttribute(typeof(ET.Client.XunLuoPathComponent))]
     public class AI_XunLuo : AAIHandler
     {
         public override int Check(AIComponent aiComponent, AIConfig aiConfig)
         {
-            long sec = TimeInfo.Instance.ClientNow() / 1000 % 15;
-            if (sec < 10)
+            Scene clientScene = aiComponent.Scene().CurrentScene();
+            Unit unit = UnitHelper.GetMyUnitFromCurrentScene(clientScene);
+
+            if (unit == null)
             {
-                return 0;
+                return 1;
             }
 
-            return 1;
+            XunLuoPathComponent xunLuoPathComponent = unit.GetComponent<XunLuoPathComponent>();
+            if (TimeInfo.Instance.ServerNow() < xunLuoPathComponent.NextMoveTime)
+            {
+                return 1;
+            }
+
+            if (unit.GetInt(GamePropertyType.GamePropertyType_CantMove) > 0)
+            {
+                return 1;
+            }
+
+            xunLuoPathComponent.NextMoveTime = TimeInfo.Instance.ServerNow() + RandomGenerator.RandomNumber(8 * 1000, 15 * 1000);
+
+            return 0;
         }
 
         public override async ETTask Execute(AIComponent aiComponent, AIConfig aiConfig, ETCancellationToken cancellationToken)

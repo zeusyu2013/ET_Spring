@@ -17,7 +17,6 @@ namespace ET.Server
         private static void Destroy(this ET.Server.GameRoleComponent self)
         {
             self.GameRoles.Clear();
-            self.UnitId = 0;
         }
 
         public static async ETTask<List<GameRoleInfo>> Query(this GameRoleComponent self)

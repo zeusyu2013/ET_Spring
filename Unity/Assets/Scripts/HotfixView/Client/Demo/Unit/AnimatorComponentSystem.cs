@@ -18,17 +18,22 @@ namespace ET.Client
         [EntitySystem]
         private static void Awake(this AnimatorComponent self)
         {
-            Animator animator = self.GetParent<Unit>().GetComponent<GameObjectComponent>().GameObject.GetComponent<Animator>();
-
+            GameObject go = self.GetParent<Unit>().GetComponent<GameObjectComponent>().GameObject;
+            Animator animator = go.Get<Animator>("Animator");
             if (animator == null)
             {
-                Log.Warning($"{self.GetParent<Unit>().ConfigId} 缺少Animator组件");
-                return;
+                Log.Error($"{self.GetParent<Unit>().ConfigId} 缺少Animator组件");
             }
 
             self.Animator = animator;
 
-            self.Animancer = self.GetParent<Unit>().GetComponent<GameObjectComponent>().GameObject.Get<NamedAnimancerComponent>("Animancer");
+            self.Animancer = go.Get<AnimancerComponent>("AnimancerComponent");
+            if (self.Animancer == null)
+            {
+                Log.Error($"{self.GetParent<Unit>().ConfigId} 缺少AnimancerComponent组件");
+            }
+
+            self.Play("idle").Coroutine();
         }
 
         [EntitySystem]
@@ -38,7 +43,7 @@ namespace ET.Client
             {
                 return;
             }
-            
+
             if (self.isStop)
             {
                 return;
@@ -62,19 +67,27 @@ namespace ET.Client
                 return;
             }
 
-            if (!self.Animancer.States.TryGet(action, out var state))
+            if (!self.AnimancerStates.TryGetValue(action, out var state))
             {
-                AnimationClip clip = await self.Root().GetComponent<ResourcesLoaderComponent>().LoadAssetAsync<AnimationClip>($"{action}.anim");
-                self.Animancer.States.Create(clip);
+                AnimationClip clip = await self.Root().GetComponent<ResourcesLoaderComponent>()
+                        .LoadAssetAsync<AnimationClip>($"Assets/Bundles/Animations/{action}.anim");
+                if (clip == null)
+                {
+                    Log.Error($"角色【{self.GetParent<Unit>().ConfigId}】动画【{action}】加载失败");
+                }
+                else
+                {
+                    self.AnimancerStates.Add(action, clip);
+                }
             }
 
-            self.Animancer.Play(state, fade);
-            state.Events.OnEnd = self.OnEnd;
+            AnimancerState animancerState = self.Animancer.Play(self.AnimancerStates[action]);
+            animancerState.Events.OnEnd = self.OnEnd;
         }
 
         private static void OnEnd(this AnimatorComponent self)
         {
-            self.Animancer.Play(self.Animancer.States[0]);
+            self.Animancer.Play(self.AnimancerStates["idle"]);
         }
 
         public static void PauseAnimator(this AnimatorComponent self)

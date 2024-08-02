@@ -1,13 +1,14 @@
 namespace ET.Server
 {
-    // 这里为什么能定义class呢？因为这里只有逻辑，热重载后新的handler替换旧的，仍然没有问题
-    public abstract class ARobotCase: AInvokeHandler<RobotInvokeArgs, ETTask>
+    [FriendOfAttribute(typeof(ET.Server.RobotCase))]    // 这里为什么能定义class呢？因为这里只有逻辑，热重载后新的handler替换旧的，仍然没有问题
+    public abstract class ARobotCase : AInvokeHandler<RobotInvokeArgs, ETTask>
     {
         protected abstract ETTask Run(RobotCase robotCase);
 
-        public override async ETTask Handle(RobotInvokeArgs a)
+        public override async ETTask Handle(RobotInvokeArgs args)
         {
-            using RobotCase robotCase = await a.Fiber.Root.GetComponent<RobotCaseComponent>().New();
+            using RobotCase robotCase = await args.Fiber.Root.GetComponent<RobotCaseComponent>().New();
+            robotCase.CommandLine = args.Content;
             try
             {
                 await this.Run(robotCase);

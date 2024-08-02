@@ -52,11 +52,11 @@ namespace ET
 
             foreach (AIConfig aiConfig in oneAI.Values)
             {
-                AAIHandler aaiHandler = AIDispatcherComponent.Instance.Get(aiConfig.Name);
+                AAIHandler aaiHandler = AIDispatcherComponent.Instance.Get(aiConfig.AIType);
 
                 if (aaiHandler == null)
                 {
-                    Log.Error($"not found aihandler: {aiConfig.Name}");
+                    Log.Error($"not found aihandler: {aiConfig.AIType}");
                     continue;
                 }
 

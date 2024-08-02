@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace ET.Client
 {
-    [FriendOf(typeof (CameraComponent))]
-    [EntitySystemOf(typeof (CameraComponent))]
+    [FriendOf(typeof(CameraComponent))]
+    [EntitySystemOf(typeof(CameraComponent))]
     public static partial class CameraComponentSystem
     {
         [EntitySystem]
@@ -22,8 +22,12 @@ namespace ET.Client
 
             Unit unit = UnitHelper.GetMyUnitFromClientScene(self.Root());
 
-            // Transposer下只有follow起作用
-            self.CinemachineVirtualCamera.Follow = unit.GetComponent<GameObjectComponent>().ReferenceCollector.Get<Transform>("CameraLookAt");
+            GameObjectComponent gameObjectComponent = unit.GetComponent<GameObjectComponent>();
+            if (gameObjectComponent != null)
+            {
+                // Transposer下只有follow起作用
+                self.CinemachineVirtualCamera.Follow = gameObjectComponent.GameObject.Get<GameObject>("CameraLookAt").transform;
+            }
 
             self.CameraRotation();
         }
@@ -62,7 +66,7 @@ namespace ET.Client
 
             Quaternion targetRotation = Quaternion.Euler(self.CinemachineTargetPitch, self.CinemachineTargetYaw, 0);
             self.MainCamera.transform.rotation = targetRotation;
-            
+
             Unit unit = UnitHelper.GetMyUnitFromClientScene(self.Root());
             unit.Rotation = Quaternion.Euler(0, self.CinemachineTargetYaw, 0);
         }

@@ -41,7 +41,6 @@
             UnitPlayerIdComponent unitPlayerIdComponent = unit.AddComponent<UnitPlayerIdComponent>();
             unitPlayerIdComponent.PlayerId = player.Id;
             unitPlayerIdComponent.PlayerIdSting = player.Id.ToString();
-            session.GetComponent<GameRoleComponent>().UnitId = unit.Id;
 
             TDUserAdd userAdd = TDUserAdd.Create();
             userAdd.AccountId = player.Id.ToString();

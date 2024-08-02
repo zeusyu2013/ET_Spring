@@ -2,12 +2,17 @@ using System;
 
 namespace ET
 {
-    public class AIHandlerAttribute: BaseAttribute
+    public class AIHandlerAttribute : BaseAttribute
     {
+        public AIType AIType;
+
+        public AIHandlerAttribute(AIType aiType)
+        {
+            this.AIType = aiType;
+        }
     }
-    
-    [AIHandler]
-    public abstract class AAIHandler: HandlerObject
+
+    public abstract class AAIHandler : HandlerObject
     {
         // 检查是否满足条件
         public abstract int Check(AIComponent aiComponent, AIConfig aiConfig);

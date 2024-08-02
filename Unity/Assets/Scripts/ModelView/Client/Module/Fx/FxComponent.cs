@@ -1,7 +1,7 @@
 ﻿namespace ET.Client
 {
-    [ComponentOf]
-    public class FxComponent : Entity, IAwake
+    [ComponentOf(typeof(Unit))]
+    public class FxComponent : Entity, IAwake, IDestroy
     {
     }
 }
