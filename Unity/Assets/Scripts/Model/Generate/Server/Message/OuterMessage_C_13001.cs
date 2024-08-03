@@ -422,7 +422,7 @@ namespace ET
 
     [MemoryPackable]
     [Message(OuterMessage.M2C_CooldownChange)]
-    public partial class M2C_CooldownChange : MessageObject, ILocationMessage
+    public partial class M2C_CooldownChange : MessageObject, IMessage
     {
         public static M2C_CooldownChange Create(bool isFromPool = false)
         {
@@ -459,7 +459,7 @@ namespace ET
 
     [MemoryPackable]
     [Message(OuterMessage.M2C_SetPosition)]
-    public partial class M2C_SetPosition : MessageObject, ILocationMessage
+    public partial class M2C_SetPosition : MessageObject, IMessage
     {
         public static M2C_SetPosition Create(bool isFromPool = false)
         {
@@ -496,7 +496,7 @@ namespace ET
 
     [MemoryPackable]
     [Message(OuterMessage.M2C_NumericChange)]
-    public partial class M2C_NumericChange : MessageObject, ILocationMessage
+    public partial class M2C_NumericChange : MessageObject, IMessage
     {
         public static M2C_NumericChange Create(bool isFromPool = false)
         {

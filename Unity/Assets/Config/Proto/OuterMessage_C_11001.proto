@@ -383,3 +383,8 @@ message M2C_UpgradeLottery // ILocationResponse
 	int32 Error = 2;
 	string Message = 3;
 }
+
+message TaskInfo
+{
+
+}

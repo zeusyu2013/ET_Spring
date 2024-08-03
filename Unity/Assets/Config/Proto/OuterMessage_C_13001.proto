@@ -90,7 +90,7 @@ message M2C_Cast // ILocationResponse
 	string Message = 3;
 }
 
-message M2C_CooldownChange // ILocationMessage
+message M2C_CooldownChange // IMessage
 {
     int32 RpcId = 1;
     repeated int32 CastConfigId = 2;
@@ -98,7 +98,7 @@ message M2C_CooldownChange // ILocationMessage
     repeated int64 CooldownStartTime = 4;
 }
 
-message M2C_SetPosition // ILocationMessage
+message M2C_SetPosition // IMessage
 {
     int32 RpcId = 1;
     int64 UnitId = 2;
@@ -106,7 +106,7 @@ message M2C_SetPosition // ILocationMessage
     Unity.Mathematics.quaternion Rotation = 4;
 }
 
-message M2C_NumericChange // ILocationMessage
+message M2C_NumericChange // IMessage
 {
     int32 RpcId = 1;
     int64 UnitId = 2;

@@ -17,10 +17,7 @@ namespace ET
         public AIConfig(ByteBuf _buf)
         {
             Id = _buf.ReadInt();
-            AIConfigId = _buf.ReadInt();
-            Order = _buf.ReadInt();
-            AIType = (AIType)_buf.ReadInt();
-            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);NodeParams = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); NodeParams.Add(_e0);}}
+            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);AIInfos = new System.Collections.Generic.Dictionary<int, AIType>(n0 * 3 / 2);for(var i0 = 0 ; i0 < n0 ; i0++) { int _k0;  _k0 = _buf.ReadInt(); AIType _v0;  _v0 = (AIType)_buf.ReadInt();     AIInfos.Add(_k0, _v0);}}
 
             PostInit();
         }
@@ -31,29 +28,14 @@ namespace ET
         }
 
         /// <summary>
-        /// Id
+        /// AI编号
         /// </summary>
         public readonly int Id;
 
         /// <summary>
-        /// 所属ai
+        /// AI节点信息
         /// </summary>
-        public readonly int AIConfigId;
-
-        /// <summary>
-        /// 此ai中的顺序
-        /// </summary>
-        public readonly int Order;
-
-        /// <summary>
-        /// AI节点类型
-        /// </summary>
-        public readonly AIType AIType;
-
-        /// <summary>
-        /// 节点参数
-        /// </summary>
-        public readonly System.Collections.Generic.List<int> NodeParams;
+        public readonly System.Collections.Generic.Dictionary<int, AIType> AIInfos;
 
         public const int __ID__ = -294143606;
 
@@ -63,10 +45,7 @@ namespace ET
         {
             return "{ "
             + "Id:" + Id + ","
-            + "AIConfigId:" + AIConfigId + ","
-            + "Order:" + Order + ","
-            + "AIType:" + AIType + ","
-            + "NodeParams:" + Luban.StringUtil.CollectionToString(NodeParams) + ","
+            + "AIInfos:" + Luban.StringUtil.CollectionToString(AIInfos) + ","
             + "}";
         }
 

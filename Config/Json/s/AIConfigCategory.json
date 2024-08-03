@@ -1,44 +1,19 @@
 [
   {
-    "Id": 101,
-    "AIConfigId": 1,
-    "Order": 1,
-    "AIType": 2,
-    "NodeParams": []
-  },
-  {
-    "Id": 102,
-    "AIConfigId": 1,
-    "Order": 2,
-    "AIType": 1,
-    "NodeParams": []
-  },
-  {
-    "Id": 103,
-    "AIConfigId": 1,
-    "Order": 3,
-    "AIType": 3,
-    "NodeParams": []
-  },
-  {
-    "Id": 201,
-    "AIConfigId": 2,
-    "Order": 1,
-    "AIType": 1,
-    "NodeParams": []
-  },
-  {
-    "Id": 301,
-    "AIConfigId": 3,
-    "Order": 1,
-    "AIType": 1,
-    "NodeParams": []
-  },
-  {
-    "Id": 302,
-    "AIConfigId": 3,
-    "Order": 2,
-    "AIType": 2,
-    "NodeParams": []
+    "Id": 1,
+    "AIInfos": [
+      [
+        101,
+        2
+      ],
+      [
+        102,
+        1
+      ],
+      [
+        103,
+        3
+      ]
+    ]
   }
 ]

@@ -22,9 +22,9 @@ namespace ET
         UnitType_Monster = 2,
 
         /// <summary>
-        /// Npc
+        /// NPC
         /// </summary>
-        UnitType_Npc = 3,
+        UnitType_NPC = 3,
 
         /// <summary>
         /// 子弹

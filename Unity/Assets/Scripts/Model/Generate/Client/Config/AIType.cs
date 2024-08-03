@@ -26,5 +26,10 @@ namespace ET
         /// </summary>
         AIType_Stand = 3,
 
+        /// <summary>
+        /// 自动任务
+        /// </summary>
+        AIType_AutoTask = 4,
+
     }
 }

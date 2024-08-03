@@ -431,6 +431,20 @@ message M2C_AcceptTask // ILocationResponse
 	string Message = 3;
 }
 
+// ResponseType M2C_CompleteTask
+message C2M_CompleteTask // ILocationRequest
+{
+	int32 RpcId = 1;
+	int32 TaskId = 2;
+}
+
+message M2C_CompleteTask // ILocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}
+
 message GameBuffInfo
 {
 	int32 ConfigId = 1;

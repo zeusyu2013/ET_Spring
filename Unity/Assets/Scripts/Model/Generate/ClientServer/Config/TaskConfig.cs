@@ -24,6 +24,8 @@ namespace ET
             PreTask = _buf.ReadInt();
             NextTask = _buf.ReadInt();
             TaskReward = _buf.ReadInt();
+            AcceptNpcConfig = _buf.ReadInt();
+            CompleteNpcConfig = _buf.ReadInt();
 
             PostInit();
         }
@@ -78,6 +80,26 @@ namespace ET
         /// </summary>
         public RewardConfig TaskRewardConfig => RewardConfigCategory.Instance.GetOrDefault(TaskReward);
 
+        /// <summary>
+        /// 接取任务NPC
+        /// </summary>
+        public readonly int AcceptNpcConfig;
+
+        /// <summary>
+        /// 接取任务NPC
+        /// </summary>
+        public UnitConfig AcceptNpcConfigConfig => UnitConfigCategory.Instance.GetOrDefault(AcceptNpcConfig);
+
+        /// <summary>
+        /// 交付任务NPC
+        /// </summary>
+        public readonly int CompleteNpcConfig;
+
+        /// <summary>
+        /// 交付任务NPC
+        /// </summary>
+        public UnitConfig CompleteNpcConfigConfig => UnitConfigCategory.Instance.GetOrDefault(CompleteNpcConfig);
+
         public const int __ID__ = -1794275001;
 
         public override int GetTypeId() => __ID__;
@@ -93,6 +115,8 @@ namespace ET
             + "PreTask:" + PreTask + ","
             + "NextTask:" + NextTask + ","
             + "TaskReward:" + TaskReward + ","
+            + "AcceptNpcConfig:" + AcceptNpcConfig + ","
+            + "CompleteNpcConfig:" + CompleteNpcConfig + ","
             + "}";
         }
 

@@ -36,6 +36,7 @@ namespace ET.Server
 
             // 技能释放组件
             unit.AddComponent<CastComponent>();
+            unit.AddComponent<SkillStatusComponent>();
 
             // 背包组件
             BagComponent bagComponent = unit.AddComponentWithId<BagComponent>(unit.Id);
@@ -146,12 +147,13 @@ namespace ET.Server
 
             unit.AddComponent<UnitDBSaveComponent>();
 
-            NumericComponent numericComponent = unit.AddComponent<NumericComponent>();
-            UnitConfig config = UnitConfigCategory.Instance.Get(unit.ConfigId);
-            foreach (var kv in config.PropertyConfig.Properties)
-            {
-                numericComponent.Set((int)kv.Key, kv.Value);
-            }
+            // todo:角色属性应该在加载所有组件后再计算一次并存入数值组件
+            // NumericComponent numericComponent = unit.AddComponent<NumericComponent>();
+            // UnitConfig config = UnitConfigCategory.Instance.Get(unit.ConfigId);
+            // foreach (var kv in config.PropertyConfig.Properties)
+            // {
+            //     numericComponent.Set((int)kv.Key, kv.Value);
+            // }
 
             // 从缓存服拉去玩家相关组件数据，过期被清除的数据从数据库中拉取并存储在缓存服上
             List<byte[]> entities = await DBCacheHelper.GetCache(scene, unitId);
@@ -205,10 +207,8 @@ namespace ET.Server
             monster.Position = pos;
 
             NumericComponent numericComponent = monster.AddComponent<NumericComponent>();
-            numericComponent.Set(GamePropertyType.GamePropertyType_Speed, 6.0f);
-            numericComponent.Set(GamePropertyType.GamePropertyType_AOI, 15000);
-            numericComponent.Set(GamePropertyType.GamePropertyType_MaxHp, 1000);
-            numericComponent.Set(GamePropertyType.GamePropertyType_Hp, 1000);
+            MonsterConfig config = MonsterConfigCategory.Instance.Get(unitConfigId);
+            numericComponent.AddPropertyPack(config.PropertyPack);
 
             monster.AddComponent<ReliveComponent>();
             monster.AddComponent<CastComponent>();

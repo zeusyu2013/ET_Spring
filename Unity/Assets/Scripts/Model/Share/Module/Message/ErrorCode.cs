@@ -92,5 +92,10 @@ namespace ET
         public const int ERR_CasterIsNull = 201010;
         public const int ERR_Silent = 201011;
         public const int ERR_CastCDing = 201012;
+        
+        // Task
+        public const int ERR_AlreadyAcceptTask = 203001;
+        public const int ERR_CantAcceptAgain = 203002;
+        public const int ERR_TaskNotAccepted = 203003;
     }
 }

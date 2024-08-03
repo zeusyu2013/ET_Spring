@@ -9,12 +9,12 @@
         {
         }
 
-        public static void AcceptTask(this GameTaskComponent self, int taskId)
+        public static int AcceptTask(this GameTaskComponent self, int taskId)
         {
             // 已经接取的任务，不处理
             if (self.AcceptedTasks.Contains(taskId))
             {
-                return;
+                return ErrorCode.ERR_AlreadyAcceptTask;
             }
 
             TaskConfig config = TaskConfigCategory.Instance.Get(taskId);
@@ -22,10 +22,12 @@
             // 已完成且非日常任务，不处理
             if (self.CompletedTasks.Contains(taskId) && config.Type != TaskType.TaskType_Daily)
             {
-                return;
+                return ErrorCode.ERR_CantAcceptAgain;
             }
 
             self.AcceptedTasks.Add(taskId);
+
+            return ErrorCode.ERR_Success;
         }
 
         public static void UpdateTaskSchdule(this GameTaskComponent self, SubTaskType type, params object[] args)
@@ -59,15 +61,15 @@
             }
         }
 
-        public static void CommitTask(this GameTaskComponent self, int taskId)
+        public static int CommitTask(this GameTaskComponent self, int taskId)
         {
             // 不在接取任务列表里，不处理
             if (!self.AcceptedTasks.Contains(taskId))
             {
-                return;
+                return ErrorCode.ERR_TaskNotAccepted;
             }
 
-            // 判断任务条件是否完成
+            // todo:判断任务条件是否完成
             TaskConfig config = TaskConfigCategory.Instance.Get(taskId);
 
             // 完成任务
@@ -78,6 +80,8 @@
 
             // 给奖励
             self.GetParent<Unit>().GetComponent<RewardComponent>().Reward(config.TaskReward);
+
+            return ErrorCode.ERR_Success;
         }
     }
 }

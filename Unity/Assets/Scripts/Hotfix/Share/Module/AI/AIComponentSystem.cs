@@ -48,25 +48,25 @@ namespace ET
                 return;
             }
 
-            var oneAI = AIConfigCategory.Instance.GetAI(self.AIConfigId);
+            AIConfig config = AIConfigCategory.Instance.Get(self.AIConfigId);
 
-            foreach (AIConfig aiConfig in oneAI.Values)
+            foreach ((int nodeId, AIType type) in config.AIInfos)
             {
-                AAIHandler aaiHandler = AIDispatcherComponent.Instance.Get(aiConfig.AIType);
+                AAIHandler aaiHandler = AIDispatcherComponent.Instance.Get(type);
 
                 if (aaiHandler == null)
                 {
-                    Log.Error($"not found aihandler: {aiConfig.AIType}");
+                    Log.Error($"not found aihandler: {type}");
                     continue;
                 }
 
-                int ret = aaiHandler.Check(self, aiConfig);
+                int ret = aaiHandler.Check(self, self.AIConfigId, nodeId);
                 if (ret != 0)
                 {
                     continue;
                 }
 
-                if (self.Current == aiConfig.Id)
+                if (self.Current == nodeId)
                 {
                     break;
                 }
@@ -74,9 +74,9 @@ namespace ET
                 self.Cancel(); // 取消之前的行为
                 ETCancellationToken cancellationToken = new();
                 self.CancellationToken = cancellationToken;
-                self.Current = aiConfig.Id;
+                self.Current = nodeId;
 
-                aaiHandler.Execute(self, aiConfig, cancellationToken).Coroutine();
+                aaiHandler.Execute(self, self.AIConfigId, nodeId, cancellationToken).Coroutine();
                 return;
             }
         }

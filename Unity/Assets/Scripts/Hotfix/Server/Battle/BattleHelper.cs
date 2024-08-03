@@ -66,7 +66,7 @@ namespace ET.Server
             OnDead(target);
         }
 
-        public static void OnDead(Unit deader)
+        private static void OnDead(Unit deader)
         {
             ReliveComponent reliveComponent = deader.GetComponent<ReliveComponent>();
             if (reliveComponent == null)

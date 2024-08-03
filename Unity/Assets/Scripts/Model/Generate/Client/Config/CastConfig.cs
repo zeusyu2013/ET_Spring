@@ -25,8 +25,6 @@ namespace ET
             if(_buf.ReadBool()){ Casting = _buf.ReadInt(); } else { Casting = null; }
             SelectTargetsParams = SelectTargetsParams.DeserializeSelectTargetsParams(_buf);
             NotifyType = (MessageNotifyType)_buf.ReadInt();
-            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);HitInfos = new System.Collections.Generic.List<CastHitInfo>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { CastHitInfo _e0;  _e0 = CastHitInfo.DeserializeCastHitInfo(_buf); HitInfos.Add(_e0);}}
-            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);FinishActions = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); FinishActions.Add(_e0);}}
             CastStartAnimation = _buf.ReadString();
             CastHitAnimation = _buf.ReadString();
 
@@ -81,16 +79,6 @@ namespace ET
         public readonly MessageNotifyType NotifyType;
 
         /// <summary>
-        /// 命中信息
-        /// </summary>
-        public readonly System.Collections.Generic.List<CastHitInfo> HitInfos;
-
-        /// <summary>
-        /// 结束行为
-        /// </summary>
-        public readonly System.Collections.Generic.List<int> FinishActions;
-
-        /// <summary>
         /// 技能起手动画
         /// </summary>
         public readonly string CastStartAnimation;
@@ -116,8 +104,6 @@ namespace ET
             + "Casting:" + Casting + ","
             + "SelectTargetsParams:" + SelectTargetsParams + ","
             + "NotifyType:" + NotifyType + ","
-            + "HitInfos:" + Luban.StringUtil.CollectionToString(HitInfos) + ","
-            + "FinishActions:" + Luban.StringUtil.CollectionToString(FinishActions) + ","
             + "CastStartAnimation:" + CastStartAnimation + ","
             + "CastHitAnimation:" + CastHitAnimation + ","
             + "}";

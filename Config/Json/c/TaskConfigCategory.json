@@ -10,7 +10,9 @@
       10004
     ],
     "PreTask": 0,
-    "NextTask": 1002
+    "NextTask": 1002,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1002,
@@ -23,7 +25,9 @@
       10004
     ],
     "PreTask": 1001,
-    "NextTask": 1003
+    "NextTask": 1003,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1003,
@@ -36,7 +40,9 @@
       10005
     ],
     "PreTask": 1002,
-    "NextTask": 1004
+    "NextTask": 1004,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1004,
@@ -49,7 +55,9 @@
       10006
     ],
     "PreTask": 1003,
-    "NextTask": 1005
+    "NextTask": 1005,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1005,
@@ -62,7 +70,9 @@
       10007
     ],
     "PreTask": 1004,
-    "NextTask": 1006
+    "NextTask": 1006,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1006,
@@ -75,7 +85,9 @@
       10008
     ],
     "PreTask": 1005,
-    "NextTask": 1007
+    "NextTask": 1007,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1007,
@@ -88,7 +100,9 @@
       10009
     ],
     "PreTask": 1006,
-    "NextTask": 1008
+    "NextTask": 1008,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1008,
@@ -101,7 +115,9 @@
       10010
     ],
     "PreTask": 1007,
-    "NextTask": 1009
+    "NextTask": 1009,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1009,
@@ -114,7 +130,9 @@
       10011
     ],
     "PreTask": 1008,
-    "NextTask": 1010
+    "NextTask": 1010,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1010,
@@ -127,7 +145,9 @@
       10012
     ],
     "PreTask": 1009,
-    "NextTask": 1011
+    "NextTask": 1011,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1011,
@@ -141,7 +161,9 @@
       10013
     ],
     "PreTask": 1010,
-    "NextTask": 1012
+    "NextTask": 1012,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1012,
@@ -156,7 +178,9 @@
       10014
     ],
     "PreTask": 1011,
-    "NextTask": 1013
+    "NextTask": 1013,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1013,
@@ -172,7 +196,9 @@
       10015
     ],
     "PreTask": 1012,
-    "NextTask": 1014
+    "NextTask": 1014,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1014,
@@ -188,7 +214,9 @@
       10015
     ],
     "PreTask": 1013,
-    "NextTask": 1015
+    "NextTask": 1015,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1015,
@@ -204,7 +232,9 @@
       10015
     ],
     "PreTask": 1014,
-    "NextTask": 1016
+    "NextTask": 1016,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1016,
@@ -220,7 +250,9 @@
       10015
     ],
     "PreTask": 1015,
-    "NextTask": 1017
+    "NextTask": 1017,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1017,
@@ -236,7 +268,9 @@
       10015
     ],
     "PreTask": 1016,
-    "NextTask": 1018
+    "NextTask": 1018,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1018,
@@ -252,7 +286,9 @@
       10015
     ],
     "PreTask": 1017,
-    "NextTask": 1019
+    "NextTask": 1019,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1019,
@@ -268,7 +304,9 @@
       10015
     ],
     "PreTask": 1018,
-    "NextTask": 1020
+    "NextTask": 1020,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1020,
@@ -284,7 +322,9 @@
       10015
     ],
     "PreTask": 1019,
-    "NextTask": 1021
+    "NextTask": 1021,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1021,
@@ -299,7 +339,9 @@
       10014
     ],
     "PreTask": 1020,
-    "NextTask": 1022
+    "NextTask": 1022,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1022,
@@ -308,7 +350,9 @@
     "Desc": "子任务1022描述",
     "SubTask": [],
     "PreTask": 1021,
-    "NextTask": 1023
+    "NextTask": 1023,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1023,
@@ -317,7 +361,9 @@
     "Desc": "子任务1023描述",
     "SubTask": [],
     "PreTask": 1022,
-    "NextTask": 1024
+    "NextTask": 1024,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1024,
@@ -326,7 +372,9 @@
     "Desc": "子任务1024描述",
     "SubTask": [],
     "PreTask": 1023,
-    "NextTask": 1025
+    "NextTask": 1025,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1025,
@@ -335,6 +383,8 @@
     "Desc": "子任务1025描述",
     "SubTask": [],
     "PreTask": 1024,
-    "NextTask": 0
+    "NextTask": 0,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   }
 ]

@@ -1975,6 +1975,69 @@ namespace ET
     }
 
     [MemoryPackable]
+    [Message(OuterMessage.C2M_CompleteTask)]
+    [ResponseType(nameof(M2C_CompleteTask))]
+    public partial class C2M_CompleteTask : MessageObject, ILocationRequest
+    {
+        public static C2M_CompleteTask Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_CompleteTask), isFromPool) as C2M_CompleteTask;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int TaskId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.TaskId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_CompleteTask)]
+    public partial class M2C_CompleteTask : MessageObject, ILocationResponse
+    {
+        public static M2C_CompleteTask Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_CompleteTask), isFromPool) as M2C_CompleteTask;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
     [Message(OuterMessage.GameBuffInfo)]
     public partial class GameBuffInfo : MessageObject
     {
@@ -2587,22 +2650,24 @@ namespace ET
         public const ushort M2C_UseItem = 10059;
         public const ushort C2M_AcceptTask = 10060;
         public const ushort M2C_AcceptTask = 10061;
-        public const ushort GameBuffInfo = 10062;
-        public const ushort C2M_GetAllBuffs = 10063;
-        public const ushort M2C_GetAllBuffs = 10064;
-        public const ushort C2M_Equip = 10065;
-        public const ushort M2C_Equip = 10066;
-        public const ushort GamePropertyInfo = 10067;
-        public const ushort M2C_PropertyRefresh = 10068;
-        public const ushort FightScoreRankEntityInfo = 10069;
-        public const ushort C2Main_GetFightScoreRank = 10070;
-        public const ushort Main2C_GetFightScoreRank = 10071;
-        public const ushort MailInfo = 10072;
-        public const ushort C2M_CheckMails = 10073;
-        public const ushort M2C_CheckMails = 10074;
-        public const ushort C2M_CheckMail = 10075;
-        public const ushort M2C_CheckMail = 10076;
-        public const ushort C2M_ReceiveAttachments = 10077;
-        public const ushort M2C_ReceiveAttachments = 10078;
+        public const ushort C2M_CompleteTask = 10062;
+        public const ushort M2C_CompleteTask = 10063;
+        public const ushort GameBuffInfo = 10064;
+        public const ushort C2M_GetAllBuffs = 10065;
+        public const ushort M2C_GetAllBuffs = 10066;
+        public const ushort C2M_Equip = 10067;
+        public const ushort M2C_Equip = 10068;
+        public const ushort GamePropertyInfo = 10069;
+        public const ushort M2C_PropertyRefresh = 10070;
+        public const ushort FightScoreRankEntityInfo = 10071;
+        public const ushort C2Main_GetFightScoreRank = 10072;
+        public const ushort Main2C_GetFightScoreRank = 10073;
+        public const ushort MailInfo = 10074;
+        public const ushort C2M_CheckMails = 10075;
+        public const ushort M2C_CheckMails = 10076;
+        public const ushort C2M_CheckMail = 10077;
+        public const ushort M2C_CheckMail = 10078;
+        public const ushort C2M_ReceiveAttachments = 10079;
+        public const ushort M2C_ReceiveAttachments = 10080;
     }
 }

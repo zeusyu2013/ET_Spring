@@ -23,6 +23,8 @@ namespace ET
             {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);SubTask = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); SubTask.Add(_e0);}}
             PreTask = _buf.ReadInt();
             NextTask = _buf.ReadInt();
+            AcceptNpcConfig = _buf.ReadInt();
+            CompleteNpcConfig = _buf.ReadInt();
 
             PostInit();
         }
@@ -67,6 +69,26 @@ namespace ET
         /// </summary>
         public readonly int NextTask;
 
+        /// <summary>
+        /// 接取任务NPC
+        /// </summary>
+        public readonly int AcceptNpcConfig;
+
+        /// <summary>
+        /// 接取任务NPC
+        /// </summary>
+        public UnitConfig AcceptNpcConfigConfig => UnitConfigCategory.Instance.GetOrDefault(AcceptNpcConfig);
+
+        /// <summary>
+        /// 交付任务NPC
+        /// </summary>
+        public readonly int CompleteNpcConfig;
+
+        /// <summary>
+        /// 交付任务NPC
+        /// </summary>
+        public UnitConfig CompleteNpcConfigConfig => UnitConfigCategory.Instance.GetOrDefault(CompleteNpcConfig);
+
         public const int __ID__ = -1794275001;
 
         public override int GetTypeId() => __ID__;
@@ -81,6 +103,8 @@ namespace ET
             + "SubTask:" + Luban.StringUtil.CollectionToString(SubTask) + ","
             + "PreTask:" + PreTask + ","
             + "NextTask:" + NextTask + ","
+            + "AcceptNpcConfig:" + AcceptNpcConfig + ","
+            + "CompleteNpcConfig:" + CompleteNpcConfig + ","
             + "}";
         }
 

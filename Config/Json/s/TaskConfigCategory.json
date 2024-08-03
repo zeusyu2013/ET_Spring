@@ -11,7 +11,9 @@
     ],
     "PreTask": 0,
     "NextTask": 1002,
-    "TaskReward": 30001
+    "TaskReward": 30001,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1002,
@@ -25,7 +27,9 @@
     ],
     "PreTask": 1001,
     "NextTask": 1003,
-    "TaskReward": 30002
+    "TaskReward": 30002,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1003,
@@ -39,7 +43,9 @@
     ],
     "PreTask": 1002,
     "NextTask": 1004,
-    "TaskReward": 30003
+    "TaskReward": 30003,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1004,
@@ -53,7 +59,9 @@
     ],
     "PreTask": 1003,
     "NextTask": 1005,
-    "TaskReward": 30004
+    "TaskReward": 30004,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1005,
@@ -67,7 +75,9 @@
     ],
     "PreTask": 1004,
     "NextTask": 1006,
-    "TaskReward": 30005
+    "TaskReward": 30005,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1006,
@@ -81,7 +91,9 @@
     ],
     "PreTask": 1005,
     "NextTask": 1007,
-    "TaskReward": 30006
+    "TaskReward": 30006,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1007,
@@ -95,7 +107,9 @@
     ],
     "PreTask": 1006,
     "NextTask": 1008,
-    "TaskReward": 30007
+    "TaskReward": 30007,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1008,
@@ -109,7 +123,9 @@
     ],
     "PreTask": 1007,
     "NextTask": 1009,
-    "TaskReward": 30008
+    "TaskReward": 30008,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1009,
@@ -123,7 +139,9 @@
     ],
     "PreTask": 1008,
     "NextTask": 1010,
-    "TaskReward": 30009
+    "TaskReward": 30009,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1010,
@@ -137,7 +155,9 @@
     ],
     "PreTask": 1009,
     "NextTask": 1011,
-    "TaskReward": 30010
+    "TaskReward": 30010,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1011,
@@ -152,7 +172,9 @@
     ],
     "PreTask": 1010,
     "NextTask": 1012,
-    "TaskReward": 30011
+    "TaskReward": 30011,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1012,
@@ -168,7 +190,9 @@
     ],
     "PreTask": 1011,
     "NextTask": 1013,
-    "TaskReward": 30012
+    "TaskReward": 30012,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1013,
@@ -185,7 +209,9 @@
     ],
     "PreTask": 1012,
     "NextTask": 1014,
-    "TaskReward": 30013
+    "TaskReward": 30013,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1014,
@@ -202,7 +228,9 @@
     ],
     "PreTask": 1013,
     "NextTask": 1015,
-    "TaskReward": 30014
+    "TaskReward": 30014,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1015,
@@ -219,7 +247,9 @@
     ],
     "PreTask": 1014,
     "NextTask": 1016,
-    "TaskReward": 30015
+    "TaskReward": 30015,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1016,
@@ -236,7 +266,9 @@
     ],
     "PreTask": 1015,
     "NextTask": 1017,
-    "TaskReward": 30016
+    "TaskReward": 30016,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1017,
@@ -253,7 +285,9 @@
     ],
     "PreTask": 1016,
     "NextTask": 1018,
-    "TaskReward": 30017
+    "TaskReward": 30017,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1018,
@@ -270,7 +304,9 @@
     ],
     "PreTask": 1017,
     "NextTask": 1019,
-    "TaskReward": 30018
+    "TaskReward": 30018,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1019,
@@ -287,7 +323,9 @@
     ],
     "PreTask": 1018,
     "NextTask": 1020,
-    "TaskReward": 30019
+    "TaskReward": 30019,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1020,
@@ -304,7 +342,9 @@
     ],
     "PreTask": 1019,
     "NextTask": 1021,
-    "TaskReward": 30020
+    "TaskReward": 30020,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1021,
@@ -320,7 +360,9 @@
     ],
     "PreTask": 1020,
     "NextTask": 1022,
-    "TaskReward": 30020
+    "TaskReward": 30020,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1022,
@@ -330,7 +372,9 @@
     "SubTask": [],
     "PreTask": 1021,
     "NextTask": 1023,
-    "TaskReward": 30020
+    "TaskReward": 30020,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1023,
@@ -340,7 +384,9 @@
     "SubTask": [],
     "PreTask": 1022,
     "NextTask": 1024,
-    "TaskReward": 30020
+    "TaskReward": 30020,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1024,
@@ -350,7 +396,9 @@
     "SubTask": [],
     "PreTask": 1023,
     "NextTask": 1025,
-    "TaskReward": 30020
+    "TaskReward": 30020,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   },
   {
     "Id": 1025,
@@ -360,6 +408,8 @@
     "SubTask": [],
     "PreTask": 1024,
     "NextTask": 0,
-    "TaskReward": 30020
+    "TaskReward": 30020,
+    "AcceptNpcConfig": 40001,
+    "CompleteNpcConfig": 40001
   }
 ]

@@ -1,5 +1,13 @@
 [
   {
+    "Id": 0,
+    "Type": 1,
+    "ActionParams": {
+      "$type": "ModifyPropertyActionParams",
+      "ModifyProperties": []
+    }
+  },
+  {
     "Id": 1001,
     "Type": 1,
     "ActionParams": {
@@ -46,7 +54,7 @@
     "Type": 5,
     "ActionParams": {
       "$type": "SubcastParams",
-      "SubCastConfigId": 110002
+      "SubCastConfigId": 120001
     }
   },
   {

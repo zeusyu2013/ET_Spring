@@ -32,7 +32,7 @@ namespace ET.Server
             }
         }
 
-        public static BuffCreateInfo Create(this BuffComponent self, int configId)
+        private static BuffCreateInfo Create(this BuffComponent self, int configId)
         {
             return self.GetComponent<BuffTempComponent>().AddChild<BuffCreateInfo, int>(configId);
         }
@@ -45,7 +45,7 @@ namespace ET.Server
             }
         }
 
-        public static bool Add(this BuffComponent self, BuffCreateInfo info)
+        private static bool Add(this BuffComponent self, BuffCreateInfo info)
         {
             if (info == null || info.IsDisposed)
             {

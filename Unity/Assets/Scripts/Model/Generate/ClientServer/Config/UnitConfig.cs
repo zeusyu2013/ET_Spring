@@ -17,14 +17,9 @@ namespace ET
         public UnitConfig(ByteBuf _buf)
         {
             Id = _buf.ReadInt();
-            UnitType = (UnitType)_buf.ReadInt();
-            if(_buf.ReadBool()){ Type = (NpcType)_buf.ReadInt(); } else { Type = null; }
+            Type = (UnitType)_buf.ReadInt();
             Name = _buf.ReadString();
             Model = _buf.ReadString();
-            AI = _buf.ReadInt();
-            Property = _buf.ReadInt();
-            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);Skills = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); Skills.Add(_e0);}}
-            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);Drops = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); Drops.Add(_e0);}}
 
             PostInit();
         }
@@ -42,12 +37,7 @@ namespace ET
         /// <summary>
         /// 单位类型
         /// </summary>
-        public readonly UnitType UnitType;
-
-        /// <summary>
-        /// Npc类型
-        /// </summary>
-        public readonly NpcType? Type;
+        public readonly UnitType Type;
 
         /// <summary>
         /// 名字
@@ -59,36 +49,6 @@ namespace ET
         /// </summary>
         public readonly string Model;
 
-        /// <summary>
-        /// Ref测试
-        /// </summary>
-        public readonly int AI;
-
-        /// <summary>
-        /// Ref测试
-        /// </summary>
-        public AIConfig AIConfig => AIConfigCategory.Instance.GetOrDefault(AI);
-
-        /// <summary>
-        /// 属性包id
-        /// </summary>
-        public readonly int Property;
-
-        /// <summary>
-        /// 属性包id
-        /// </summary>
-        public PropertyConfig PropertyConfig => PropertyConfigCategory.Instance.GetOrDefault(Property);
-
-        /// <summary>
-        /// 技能列表
-        /// </summary>
-        public readonly System.Collections.Generic.List<int> Skills;
-
-        /// <summary>
-        /// 死亡掉落包
-        /// </summary>
-        public readonly System.Collections.Generic.List<int> Drops;
-
         public const int __ID__ = -568528378;
 
         public override int GetTypeId() => __ID__;
@@ -97,14 +57,9 @@ namespace ET
         {
             return "{ "
             + "Id:" + Id + ","
-            + "UnitType:" + UnitType + ","
             + "Type:" + Type + ","
             + "Name:" + Name + ","
             + "Model:" + Model + ","
-            + "AI:" + AI + ","
-            + "Property:" + Property + ","
-            + "Skills:" + Luban.StringUtil.CollectionToString(Skills) + ","
-            + "Drops:" + Luban.StringUtil.CollectionToString(Drops) + ","
             + "}";
         }
 

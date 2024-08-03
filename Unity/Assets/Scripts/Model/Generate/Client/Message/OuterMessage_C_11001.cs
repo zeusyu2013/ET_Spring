@@ -1752,6 +1752,27 @@ namespace ET
         }
     }
 
+    [MemoryPackable]
+    [Message(OuterMessage.TaskInfo)]
+    public partial class TaskInfo : MessageObject
+    {
+        public static TaskInfo Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(TaskInfo), isFromPool) as TaskInfo;
+        }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
     public static partial class OuterMessage
     {
         public const ushort C2M_GMCommand = 11002;
@@ -1810,5 +1831,6 @@ namespace ET
         public const ushort M2C_Lottery = 11055;
         public const ushort C2M_UpgradeLottery = 11056;
         public const ushort M2C_UpgradeLottery = 11057;
+        public const ushort TaskInfo = 11058;
     }
 }
