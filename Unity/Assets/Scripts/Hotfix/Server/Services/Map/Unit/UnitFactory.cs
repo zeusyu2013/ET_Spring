@@ -186,8 +186,8 @@ namespace ET.Server
             bullet.AddComponent<MoveComponent>();
             bullet.AddComponent<PathfindingComponent, string>(scene.Name);
             NumericComponent numericComponent = bullet.AddComponent<NumericComponent>();
-            numericComponent.Set(GamePropertyType.GamePropertyType_Speed, 6f);
-            numericComponent.Set(GamePropertyType.GamePropertyType_AOI, 15000);
+            numericComponent.Set(GamePropertyType.GP_Speed, 6f);
+            numericComponent.Set(GamePropertyType.GP_AOI, 15000);
             
             BulletComponent bulletComponent = bullet.AddComponent<BulletComponent, int>(bulletId);
             bulletComponent.OwnerId = ownerId;

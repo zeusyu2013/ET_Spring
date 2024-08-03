@@ -12,7 +12,7 @@ namespace ET
                 return;
             }
 
-            int cantRotate = numericComponent.GetAsInt(GamePropertyType.GamePropertyType_CantRotate);
+            int cantRotate = numericComponent.GetAsInt(GamePropertyType.GP_CantRotate);
             if (cantRotate > 0)
             {
                 return;

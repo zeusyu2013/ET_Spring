@@ -1,6 +1,6 @@
 ﻿namespace ET.Server
 {
-    [NumericWatcher(SceneType.Current, (int)GamePropertyType.GamePropertyType_Level)]
+    [NumericWatcher(SceneType.Current, (int)GamePropertyType.GP_Level)]
     public class NumericWatcher_Achievement_UnitLevel : INumericWatcher
     {
         public void Run(Unit unit, NumbericChange args)

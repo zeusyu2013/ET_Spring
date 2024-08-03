@@ -22,7 +22,7 @@ namespace ET.Client
                 return 1;
             }
 
-            if (unit.GetInt(GamePropertyType.GamePropertyType_CantMove) > 0)
+            if (unit.GetInt(GamePropertyType.GP_CantMove) > 0)
             {
                 return 1;
             }

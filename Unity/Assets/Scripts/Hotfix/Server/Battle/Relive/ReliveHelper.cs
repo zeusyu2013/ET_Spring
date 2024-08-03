@@ -46,9 +46,7 @@ namespace ET.Server
             NumericComponent numericComponent = unit.GetComponent<NumericComponent>();
             if (numericComponent != null)
             {
-                numericComponent[GamePropertyType.GamePropertyType_Hp] = math.clamp(
-                    (int)(numericComponent[GamePropertyType.GamePropertyType_MaxHp] * hpRatio), 1,
-                    numericComponent[GamePropertyType.GamePropertyType_MaxHp]);
+                numericComponent[GamePropertyType.GP_Hp] = math.clamp((int)(numericComponent[GamePropertyType.GP_MaxHp] * hpRatio), 1, numericComponent[GamePropertyType.GP_MaxHp]);
             }
 
             unit.GetComponent<ReliveComponent>().Alive = true;

@@ -40,7 +40,7 @@ namespace ET.Server
             target.GetComponent<SkillStatusComponent>()?.BreakCasting();
 
             NumericComponent numericComponent = target.GetComponent<NumericComponent>();
-            long hp = numericComponent[GamePropertyType.GamePropertyType_Hp];
+            long hp = numericComponent[GamePropertyType.GP_Hp];
             long result = 0;
             if (hp > damage)
             {
@@ -51,7 +51,7 @@ namespace ET.Server
                 result = 0;
             }
 
-            numericComponent[GamePropertyType.GamePropertyType_Hp] = result;
+            numericComponent[GamePropertyType.GP_Hp] = result;
 
             if (result < 1)
             {

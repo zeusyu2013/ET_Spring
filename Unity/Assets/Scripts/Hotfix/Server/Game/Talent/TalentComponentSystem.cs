@@ -57,7 +57,6 @@ namespace ET.Server
                 return;
             }
 
-            // TODO:检查重置天赋消耗
             int currencyType = GlobalDataConfigCategory.Instance.ResetTalentCurrency;
             long currencyValue = GlobalDataConfigCategory.Instance.ResetTalentCurrencyValue;
             Unit unit = self.GetParent<Unit>();

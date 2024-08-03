@@ -48,6 +48,7 @@ namespace ET.Client
                 return;
             }
 
+            // todo:技能来源
             int castConfigId = 0;
 
             Unit target = FindTarget(robot);

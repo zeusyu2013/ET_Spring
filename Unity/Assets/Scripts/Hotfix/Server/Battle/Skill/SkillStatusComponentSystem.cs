@@ -33,7 +33,7 @@
                 return ErrorCode.ERR_NotFoundComponent;
             }
 
-            if (numericComponent[GamePropertyType.GamePropertyType_Silent] > 0)
+            if (numericComponent[GamePropertyType.GP_Silent] > 0)
             {
                 return ErrorCode.ERR_Silent;
             }

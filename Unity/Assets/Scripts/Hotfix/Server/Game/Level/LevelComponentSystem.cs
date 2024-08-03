@@ -53,8 +53,8 @@
         {
             Unit unit = self.GetParent<Unit>();
 
-            unit.SetInt(GamePropertyType.GamePropertyType_Level, self.Level);
-            unit.SetLong(GamePropertyType.GamePropertyType_Exp, self.Exp);
+            unit.SetInt(GamePropertyType.GP_Level, self.Level);
+            unit.SetLong(GamePropertyType.GP_Exp, self.Exp);
         }
     }
 }
