@@ -1,4 +1,6 @@
-﻿namespace ET.Client
+﻿using UnityEngine;
+
+namespace ET.Client
 {
     public struct MoveDelta
     {
@@ -10,5 +12,6 @@
     public struct KeyDown
     {
         public Unit Unit;
+        public KeyCode KeyCode;
     }
 }

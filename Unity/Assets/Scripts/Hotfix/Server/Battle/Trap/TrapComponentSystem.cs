@@ -32,6 +32,13 @@
         [EntitySystem]
         private static void Destroy(this ET.Server.TrapComponent self)
         {
+            self.ConfigId = default;
+            self.TickCount = default;
+            self.Targets.Clear();
+            self.OwnerId = default;
+
+            self.Root().GetComponent<TimerComponent>().Remove(ref self.TickTimer);
+            self.Root().GetComponent<TimerComponent>().Remove(ref self.TotalTimer);
         }
 
         public static void Start(this TrapComponent self)

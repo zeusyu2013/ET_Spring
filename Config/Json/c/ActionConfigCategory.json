@@ -14,8 +14,8 @@
       "$type": "ModifyPropertyActionParams",
       "ModifyProperties": [
         {
-          "Property": 1004,
-          "Value": 6000
+          "Property": 10043,
+          "Value": 50000
         }
       ]
     }
@@ -47,6 +47,19 @@
     }
   },
   {
+    "Id": 1004,
+    "Type": 1,
+    "ActionParams": {
+      "$type": "ModifyPropertyActionParams",
+      "ModifyProperties": [
+        {
+          "Property": 10043,
+          "Value": -50000
+        }
+      ]
+    }
+  },
+  {
     "Id": 2002,
     "Type": 2,
     "ActionParams": {
@@ -56,6 +69,14 @@
   },
   {
     "Id": 2003,
+    "Type": 2,
+    "ActionParams": {
+      "$type": "DamageActionParams",
+      "AdditionalDamage": 200
+    }
+  },
+  {
+    "Id": 2004,
     "Type": 2,
     "ActionParams": {
       "$type": "DamageActionParams",

@@ -27,11 +27,6 @@ namespace ET
         GP_MaxExp = 1003,
 
         /// <summary>
-        /// 移动速度
-        /// </summary>
-        GP_Speed = 1004,
-
-        /// <summary>
         /// 视野范围
         /// </summary>
         GP_AOI = 1005,
@@ -70,6 +65,36 @@ namespace ET
         /// 最大魔法值
         /// </summary>
         GP_MaxMp = 1104,
+
+        /// <summary>
+        /// 移动速度
+        /// </summary>
+        GP_Speed = 1004,
+
+        /// <summary>
+        /// 移动速度基础值
+        /// </summary>
+        GP_SpeedBase = 10041,
+
+        /// <summary>
+        /// 移动速度附加值
+        /// </summary>
+        GP_SpeedAdd = 10042,
+
+        /// <summary>
+        /// 移动速度百分比
+        /// </summary>
+        GP_SpeedPct = 10043,
+
+        /// <summary>
+        /// 移动速度最终附加值
+        /// </summary>
+        GP_SpeedFinalAdd = 10044,
+
+        /// <summary>
+        /// 移动速度最终百分比
+        /// </summary>
+        GP_SpeedFinalPct = 10045,
 
         /// <summary>
         /// 攻击

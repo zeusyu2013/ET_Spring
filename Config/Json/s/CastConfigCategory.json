@@ -94,6 +94,36 @@
     "CastHitAnimation": ""
   },
   {
+    "Id": 210002,
+    "Name": "castname_210002",
+    "Desc": "castdesc_210002",
+    "TotalTime": 6000,
+    "CastCooldown": 0,
+    "Casting": true,
+    "SelectTargetType": 4,
+    "CastTargetType": 2,
+    "SelectTargetsParams": {
+      "$type": "SelectCycle",
+      "IncludeSelf": false,
+      "Distance": 10,
+      "Radius": 5,
+      "Counter": 10
+    },
+    "NotifyType": 2,
+    "HitInfos": [
+      {
+        "Time": 0,
+        "HitSelf": false,
+        "HitAction": 2004,
+        "TargetBuff": 1004,
+        "SelfBuff": 0
+      }
+    ],
+    "FinishActions": [],
+    "CastStartAnimation": "sing",
+    "CastHitAnimation": ""
+  },
+  {
     "Id": 310001,
     "Name": "castname_310001",
     "Desc": "castdesc_310001",

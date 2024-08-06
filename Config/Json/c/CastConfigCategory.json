@@ -70,6 +70,26 @@
     "CastHitAnimation": ""
   },
   {
+    "Id": 210002,
+    "Name": "技能210002",
+    "Desc": "技能210002",
+    "TotalTime": 6000,
+    "CastCooldown": 0,
+    "Casting": true,
+    "SelectTargetType": 4,
+    "CastTargetType": 2,
+    "SelectTargetsParams": {
+      "$type": "SelectCycle",
+      "IncludeSelf": false,
+      "Distance": 10,
+      "Radius": 5,
+      "Counter": 10
+    },
+    "NotifyType": 2,
+    "CastStartAnimation": "sing",
+    "CastHitAnimation": ""
+  },
+  {
     "Id": 310001,
     "Name": "技能310001",
     "Desc": "技能310001",

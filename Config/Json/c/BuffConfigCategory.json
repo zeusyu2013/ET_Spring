@@ -98,5 +98,17 @@
       1002
     ],
     "Fx": "fx5"
+  },
+  {
+    "Id": 40006,
+    "Name": "buff40006",
+    "Desc": "buff描述6",
+    "ContinueTime": 3000,
+    "NotifyType": 2,
+    "Tick": 0,
+    "AddActions": [],
+    "TickActions": [],
+    "RemoveActions": [],
+    "Fx": ""
   }
 ]

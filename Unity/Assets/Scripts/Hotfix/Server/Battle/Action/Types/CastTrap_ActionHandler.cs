@@ -22,6 +22,7 @@ namespace ET.Server
 
             ActionConfig config = action.Config;
 
+            // todo 位置朝向由客户端上报
             Unit trap = UnitFactory.CreateTrap(action.Scene(), caster.Id, config.Id, config.Id, float3.zero, quaternion.identity);
             trap.GetComponent<TrapComponent>().Start();
         }

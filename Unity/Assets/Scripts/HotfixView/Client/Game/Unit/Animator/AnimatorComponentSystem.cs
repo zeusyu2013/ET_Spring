@@ -82,12 +82,18 @@ namespace ET.Client
             }
 
             AnimancerState animancerState = self.Animancer.Play(self.AnimancerStates[action]);
-            animancerState.Events.OnEnd = self.OnEnd;
+            animancerState.Events.OnEnd -= self.OnEnd;
+            animancerState.Events.OnEnd += self.OnEnd;
         }
 
         private static void OnEnd(this AnimatorComponent self)
         {
             self.Animancer.Play(self.AnimancerStates["idle"]);
+        }
+
+        public static AnimancerState PlayingState(this AnimatorComponent self)
+        {
+            return self.Animancer.States.Current;
         }
 
         public static void PauseAnimator(this AnimatorComponent self)
@@ -106,17 +112,20 @@ namespace ET.Client
 
             self.stopSpeed = self.Animancer.States.Current.Speed;
             self.Animancer.States.Current.Speed = 0;
+            self.Animancer.Playable.PauseGraph();
         }
 
         public static void SetAnimatorSpeed(this AnimatorComponent self, float speed)
         {
             self.stopSpeed = self.Animancer.States.Current.Speed;
             self.Animancer.States.Current.Speed = speed;
+            self.Animancer.Playable.UnpauseGraph();
         }
 
         public static void ResetAnimatorSpeed(this AnimatorComponent self)
         {
             self.Animancer.States.Current.Speed = self.stopSpeed;
+            self.Animancer.Playable.UnpauseGraph();
         }
     }
 }

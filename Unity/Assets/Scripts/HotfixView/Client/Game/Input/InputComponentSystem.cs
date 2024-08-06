@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace ET.Client
 {
-    [FriendOf(typeof (InputComponent))]
-    [EntitySystemOf(typeof (InputComponent))]
+    [FriendOf(typeof(InputComponent))]
+    [EntitySystemOf(typeof(InputComponent))]
     public static partial class InputComponentSystem
     {
         [EntitySystem]
@@ -46,7 +46,7 @@ namespace ET.Client
 
             foreach (KeyCode keyCode in self.KeyCodes.Where(Input.GetKeyDown))
             {
-                EventSystem.Instance.Publish(self.Root(), new KeyDown() { Unit = self.GetParent<Unit>() });
+                EventSystem.Instance.Publish(self.Root(), new KeyDown() { Unit = self.GetParent<Unit>(), KeyCode = keyCode });
             }
         }
     }
