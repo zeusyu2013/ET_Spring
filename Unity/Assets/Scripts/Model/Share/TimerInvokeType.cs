@@ -32,6 +32,9 @@
         public const int BulletTickTimer3 = 406;
         public const int BulletTotalTimer = 407;
 
+        public const int TrapTickTimer = 408;
+        public const int TrapTotalTimer = 409;
+
         public const int CreateMonsterTimer = 415;
         public const int MonsterDeadTimer = 416;
     }

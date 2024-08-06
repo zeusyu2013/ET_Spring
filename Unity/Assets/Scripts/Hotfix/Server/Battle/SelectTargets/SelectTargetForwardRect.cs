@@ -16,6 +16,8 @@ namespace ET.Server
                 return ErrorCode.ERR_CastTargetCounterLessThan1;
             }
             
+            targets.Clear();
+            
             foreach (EntityRef<AOIEntity> entityRef in caster.GetSeeUnits().Values)
             {
                 if (counter < 1)

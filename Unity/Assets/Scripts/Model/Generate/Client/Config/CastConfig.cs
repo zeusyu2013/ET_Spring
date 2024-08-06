@@ -20,9 +20,10 @@ namespace ET
             Name = _buf.ReadString();
             Desc = _buf.ReadString();
             TotalTime = _buf.ReadLong();
-            SelectTargetType = (SelectTargetType)_buf.ReadInt();
             CastCooldown = _buf.ReadInt();
-            if(_buf.ReadBool()){ Casting = _buf.ReadInt(); } else { Casting = null; }
+            Casting = _buf.ReadBool();
+            SelectTargetType = (SelectTargetType)_buf.ReadInt();
+            CastTargetType = (CastTargetType)_buf.ReadInt();
             SelectTargetsParams = SelectTargetsParams.DeserializeSelectTargetsParams(_buf);
             NotifyType = (MessageNotifyType)_buf.ReadInt();
             CastStartAnimation = _buf.ReadString();
@@ -57,11 +58,6 @@ namespace ET
         public readonly long TotalTime;
 
         /// <summary>
-        /// 选择目标类型
-        /// </summary>
-        public readonly SelectTargetType SelectTargetType;
-
-        /// <summary>
         /// 技能释放CD
         /// </summary>
         public readonly int CastCooldown;
@@ -69,7 +65,17 @@ namespace ET
         /// <summary>
         /// 持续施法
         /// </summary>
-        public readonly int? Casting;
+        public readonly bool Casting;
+
+        /// <summary>
+        /// 技能选择目标类型
+        /// </summary>
+        public readonly SelectTargetType SelectTargetType;
+
+        /// <summary>
+        /// 技能释放阵营
+        /// </summary>
+        public readonly CastTargetType CastTargetType;
 
         public readonly SelectTargetsParams SelectTargetsParams;
 
@@ -99,9 +105,10 @@ namespace ET
             + "Name:" + Name + ","
             + "Desc:" + Desc + ","
             + "TotalTime:" + TotalTime + ","
-            + "SelectTargetType:" + SelectTargetType + ","
             + "CastCooldown:" + CastCooldown + ","
             + "Casting:" + Casting + ","
+            + "SelectTargetType:" + SelectTargetType + ","
+            + "CastTargetType:" + CastTargetType + ","
             + "SelectTargetsParams:" + SelectTargetsParams + ","
             + "NotifyType:" + NotifyType + ","
             + "CastStartAnimation:" + CastStartAnimation + ","

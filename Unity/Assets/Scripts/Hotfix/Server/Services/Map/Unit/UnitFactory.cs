@@ -9,6 +9,7 @@ namespace ET.Server
     [FriendOfAttribute(typeof(ET.Server.LocationComponent))]
     [FriendOfAttribute(typeof(ET.Server.LotteryComponent))]
     [FriendOfAttribute(typeof(ET.Server.BulletComponent))]
+    [FriendOfAttribute(typeof(ET.Server.TrapComponent))]
     public static partial class UnitFactory
     {
         public static Unit CreateCharacter(Scene scene, long id, CharacterType character, RaceType race)
@@ -188,7 +189,7 @@ namespace ET.Server
             NumericComponent numericComponent = bullet.AddComponent<NumericComponent>();
             numericComponent.Set(GamePropertyType.GP_Speed, 6f);
             numericComponent.Set(GamePropertyType.GP_AOI, 15000);
-            
+
             BulletComponent bulletComponent = bullet.AddComponent<BulletComponent, int>(bulletId);
             bulletComponent.OwnerId = ownerId;
             unitComponent.Add(bullet);
@@ -215,8 +216,29 @@ namespace ET.Server
             monster.AddComponent<BuffComponent>();
 
             unitComponent.Add(monster);
-            
+
             return monster;
+        }
+
+        public static Unit CreateTrap(Scene scene, long ownerId, int unitConfigId, int trapConfigId, float3 pos, quaternion rotation)
+        {
+            UnitComponent unitComponent = scene.GetComponent<UnitComponent>();
+            Unit trap = unitComponent.AddChild<Unit, int>(unitConfigId);
+            trap.Position = pos;
+            trap.Rotation = rotation;
+
+            trap.AddComponent<CastComponent>();
+
+            NumericComponent numericComponent = trap.AddComponent<NumericComponent>();
+            numericComponent.Set(GamePropertyType.GP_AOI, 15000);
+
+            TrapComponent trapComponent = trap.AddComponent<TrapComponent, int>(trapConfigId);
+            trapComponent.OwnerId = ownerId;
+            unitComponent.Add(trap);
+
+            trap.AddComponent<AOIEntity, int, float3>(9 * 1000, trap.Position);
+
+            return trap;
         }
     }
 }

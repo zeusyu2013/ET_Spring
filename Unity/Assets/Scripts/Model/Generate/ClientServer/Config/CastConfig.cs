@@ -20,9 +20,10 @@ namespace ET
             Name = _buf.ReadString();
             Desc = _buf.ReadString();
             TotalTime = _buf.ReadLong();
-            SelectTargetType = (SelectTargetType)_buf.ReadInt();
             CastCooldown = _buf.ReadInt();
-            if(_buf.ReadBool()){ Casting = _buf.ReadInt(); } else { Casting = null; }
+            Casting = _buf.ReadBool();
+            SelectTargetType = (SelectTargetType)_buf.ReadInt();
+            CastTargetType = (CastTargetType)_buf.ReadInt();
             SelectTargetsParams = SelectTargetsParams.DeserializeSelectTargetsParams(_buf);
             NotifyType = (MessageNotifyType)_buf.ReadInt();
             {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);HitInfos = new System.Collections.Generic.List<CastHitInfo>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { CastHitInfo _e0;  _e0 = CastHitInfo.DeserializeCastHitInfo(_buf); HitInfos.Add(_e0);}}
@@ -59,11 +60,6 @@ namespace ET
         public readonly long TotalTime;
 
         /// <summary>
-        /// 选择目标类型
-        /// </summary>
-        public readonly SelectTargetType SelectTargetType;
-
-        /// <summary>
         /// 技能释放CD
         /// </summary>
         public readonly int CastCooldown;
@@ -71,7 +67,17 @@ namespace ET
         /// <summary>
         /// 持续施法
         /// </summary>
-        public readonly int? Casting;
+        public readonly bool Casting;
+
+        /// <summary>
+        /// 技能选择目标类型
+        /// </summary>
+        public readonly SelectTargetType SelectTargetType;
+
+        /// <summary>
+        /// 技能释放阵营
+        /// </summary>
+        public readonly CastTargetType CastTargetType;
 
         public readonly SelectTargetsParams SelectTargetsParams;
 
@@ -111,9 +117,10 @@ namespace ET
             + "Name:" + Name + ","
             + "Desc:" + Desc + ","
             + "TotalTime:" + TotalTime + ","
-            + "SelectTargetType:" + SelectTargetType + ","
             + "CastCooldown:" + CastCooldown + ","
             + "Casting:" + Casting + ","
+            + "SelectTargetType:" + SelectTargetType + ","
+            + "CastTargetType:" + CastTargetType + ","
             + "SelectTargetsParams:" + SelectTargetsParams + ","
             + "NotifyType:" + NotifyType + ","
             + "HitInfos:" + Luban.StringUtil.CollectionToString(HitInfos) + ","

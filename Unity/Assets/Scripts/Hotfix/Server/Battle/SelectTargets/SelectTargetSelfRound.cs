@@ -3,7 +3,7 @@ using Unity.Mathematics;
 
 namespace ET.Server
 {
-    [SelectTarget(SelectTargetType.SelectTargetType_Cycle)]
+    [SelectTarget(SelectTargetType.SelectTargetType_AroundCycle)]
     public class SelectTargetSelfRound : ASelectTargetHandler
     {
         public override int Check(Unit caster, SelectTargetsParams selectTargetsParams, ref List<long> targets)
@@ -15,6 +15,8 @@ namespace ET.Server
             {
                 return ErrorCode.ERR_CastTargetCounterLessThan1;
             }
+            
+            targets.Clear();
 
             if (cycle.IncludeSelf)
             {

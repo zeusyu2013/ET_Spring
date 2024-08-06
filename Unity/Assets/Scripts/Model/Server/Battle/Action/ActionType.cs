@@ -12,5 +12,8 @@
         BulletStart,
         BulletTick,
         BulletDestroy,
+        
+        TrapTick,
+        TrapDestroy,
     }
 }

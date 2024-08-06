@@ -15,17 +15,22 @@ namespace ET
         /// <summary>
         /// 单体
         /// </summary>
-        SelectTargetType_Single = 1,
+        SelectTargetType_SelectSingle = 1,
 
         /// <summary>
-        /// 自身周围圆形
+        /// 自身圆形范围
         /// </summary>
-        SelectTargetType_Cycle = 2,
+        SelectTargetType_AroundCycle = 2,
 
         /// <summary>
-        /// 自身前方矩形
+        /// 前方矩形范围
         /// </summary>
         SelectTargetType_ForwardRect = 3,
+
+        /// <summary>
+        /// 指定圆形范围
+        /// </summary>
+        SelectTargetType_SelectCycle = 4,
 
     }
 }

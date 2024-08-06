@@ -44,7 +44,7 @@ namespace ET
         public readonly int Id;
 
         /// <summary>
-        /// 子弹目标选择类型
+        /// 选择目标类型
         /// </summary>
         public readonly SelectTargetType SelectTargetType;
 

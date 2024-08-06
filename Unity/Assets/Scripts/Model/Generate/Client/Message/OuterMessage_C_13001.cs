@@ -373,6 +373,9 @@ namespace ET
         [MemoryPackOrder(1)]
         public int CastConfigId { get; set; }
 
+        [MemoryPackOrder(2)]
+        public long TargetId { get; set; }
+
         public override void Dispose()
         {
             if (!this.IsFromPool)
@@ -382,6 +385,7 @@ namespace ET
 
             this.RpcId = default;
             this.CastConfigId = default;
+            this.TargetId = default;
 
             ObjectPool.Instance.Recycle(this);
         }

@@ -57,7 +57,7 @@
                 return false;
             }
 
-            if (cast.Config.Casting == 0)
+            if (cast.Config.Casting)
             {
                 return true;
             }
@@ -87,7 +87,7 @@
 
         public static bool Casting(this SkillStatusComponent self, Cast cast)
         {
-            if (cast.Config.Casting == 0)
+            if (cast.Config.Casting)
             {
                 return true;
             }
@@ -104,7 +104,7 @@
 
         public static bool Finish(this SkillStatusComponent self, Cast cast)
         {
-            if (cast.Config.Casting == 0)
+            if (cast.Config.Casting)
             {
                 return true;
             }

@@ -34,11 +34,32 @@
     }
   },
   {
+    "Id": 1003,
+    "Type": 1,
+    "ActionParams": {
+      "$type": "ModifyPropertyActionParams",
+      "ModifyProperties": [
+        {
+          "Property": 11052,
+          "Value": 308
+        }
+      ]
+    }
+  },
+  {
     "Id": 2002,
     "Type": 2,
     "ActionParams": {
       "$type": "DamageActionParams",
       "AdditionalDamage": 100
+    }
+  },
+  {
+    "Id": 2003,
+    "Type": 2,
+    "ActionParams": {
+      "$type": "DamageActionParams",
+      "AdditionalDamage": 200
     }
   },
   {
@@ -73,6 +94,15 @@
       "$type": "HitFlyParams",
       "Range": 3,
       "Direction": 0,
+      "BuffConfigId": 40005
+    }
+  },
+  {
+    "Id": 7001,
+    "Type": 8,
+    "ActionParams": {
+      "$type": "TrapParams",
+      "Range": 5,
       "BuffConfigId": 40005
     }
   }

@@ -1,0 +1,20 @@
+[
+  {
+    "Id": 70001,
+    "SelectTargetType": 2,
+    "SelectTargetsParam": {
+      "$type": "Cycle",
+      "IncludeSelf": true,
+      "Radius": 5,
+      "Counter": 10
+    },
+    "TotalTime": 8000,
+    "Interval": 1000,
+    "CreateActions": [],
+    "IntervalActions": [
+      2003
+    ],
+    "DestroyActions": [],
+    "TickLimit": 8
+  }
+]

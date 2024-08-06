@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ET
+namespace ET.Server
 {
     [Code]
     public class SelectTargetDispatcherComponent : Singleton<SelectTargetDispatcherComponent>, ISingletonAwake

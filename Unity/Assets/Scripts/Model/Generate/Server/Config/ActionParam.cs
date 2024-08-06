@@ -30,6 +30,7 @@ namespace ET
                 case MoveToTargetParams.__ID__: return new MoveToTargetParams(_buf);
                 case AttractParams.__ID__: return new AttractParams(_buf);
                 case HitFlyParams.__ID__: return new HitFlyParams(_buf);
+                case TrapParams.__ID__: return new TrapParams(_buf);
                 default: throw new SerializationException();
             }
         }

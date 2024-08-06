@@ -47,5 +47,10 @@ namespace ET
         /// </summary>
         ActionType_HitFly = 7,
 
+        /// <summary>
+        /// 陷阱行为
+        /// </summary>
+        ActionType_CastTrap = 8,
+
     }
 }

@@ -27,6 +27,7 @@ namespace ET
                 case Single.__ID__: return new Single(_buf);
                 case Cycle.__ID__: return new Cycle(_buf);
                 case ForwardRect.__ID__: return new ForwardRect(_buf);
+                case SelectCycle.__ID__: return new SelectCycle(_buf);
                 default: throw new SerializationException();
             }
         }

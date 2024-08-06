@@ -10,7 +10,7 @@ namespace ET.Server
             {
                 return ErrorCode.ERR_CasterIsNull;
             }
-
+            
             ASelectTargetHandler handler = SelectTargetDispatcherComponent.Instance.Get(type);
             if (handler == null)
             {

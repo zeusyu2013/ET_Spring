@@ -59,7 +59,7 @@
 
         private static void SelectTargets(this Cast self)
         {
-            self.Targets.Clear();
+            //self.Targets.Clear();
 
             Unit caster = self.Caster;
 

@@ -31,5 +31,10 @@ namespace ET
         /// </summary>
         UnitType_Bullet = 4,
 
+        /// <summary>
+        /// 陷阱
+        /// </summary>
+        UnitType_Trap = 5,
+
     }
 }

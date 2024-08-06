@@ -4,8 +4,10 @@
     "Name": "castname_110001",
     "Desc": "castdesc_110001",
     "TotalTime": 2000,
-    "SelectTargetType": 1,
     "CastCooldown": 10000,
+    "Casting": false,
+    "SelectTargetType": 1,
+    "CastTargetType": 1,
     "SelectTargetsParams": {
       "$type": "Single"
     },
@@ -28,8 +30,10 @@
     "Name": "castname_120001",
     "Desc": "castdesc_120001",
     "TotalTime": 2000,
-    "SelectTargetType": 2,
     "CastCooldown": 10000,
+    "Casting": false,
+    "SelectTargetType": 2,
+    "CastTargetType": 1,
     "SelectTargetsParams": {
       "$type": "Cycle",
       "IncludeSelf": false,
@@ -37,9 +41,17 @@
       "Counter": 5
     },
     "NotifyType": 2,
-    "HitInfos": [],
+    "HitInfos": [
+      {
+        "Time": 0,
+        "HitSelf": true,
+        "HitAction": 1003,
+        "TargetBuff": 0,
+        "SelfBuff": 0
+      }
+    ],
     "FinishActions": [],
-    "CastStartAnimation": "",
+    "CastStartAnimation": "attack",
     "CastHitAnimation": ""
   },
   {
@@ -47,8 +59,10 @@
     "Name": "castname_130001",
     "Desc": "castdesc_130001",
     "TotalTime": 2000,
-    "SelectTargetType": 3,
     "CastCooldown": 10000,
+    "Casting": false,
+    "SelectTargetType": 3,
+    "CastTargetType": 2,
     "SelectTargetsParams": {
       "$type": "ForwardRect",
       "Width": 3,
@@ -59,6 +73,42 @@
     "HitInfos": [],
     "FinishActions": [],
     "CastStartAnimation": "",
+    "CastHitAnimation": ""
+  },
+  {
+    "Id": 210001,
+    "Name": "castname_210001",
+    "Desc": "castdesc_210001",
+    "TotalTime": 2000,
+    "CastCooldown": 0,
+    "Casting": true,
+    "SelectTargetType": 1,
+    "CastTargetType": 2,
+    "SelectTargetsParams": {
+      "$type": "Single"
+    },
+    "NotifyType": 2,
+    "HitInfos": [],
+    "FinishActions": [],
+    "CastStartAnimation": "sing",
+    "CastHitAnimation": ""
+  },
+  {
+    "Id": 310001,
+    "Name": "castname_310001",
+    "Desc": "castdesc_310001",
+    "TotalTime": 2000,
+    "CastCooldown": 0,
+    "Casting": true,
+    "SelectTargetType": 1,
+    "CastTargetType": 1,
+    "SelectTargetsParams": {
+      "$type": "Single"
+    },
+    "NotifyType": 2,
+    "HitInfos": [],
+    "FinishActions": [],
+    "CastStartAnimation": "sing",
     "CastHitAnimation": ""
   }
 ]

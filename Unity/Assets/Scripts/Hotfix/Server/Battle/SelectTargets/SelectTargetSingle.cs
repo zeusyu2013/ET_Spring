@@ -2,7 +2,7 @@
 
 namespace ET.Server
 {
-    [SelectTarget(SelectTargetType.SelectTargetType_Single)]
+    [SelectTarget(SelectTargetType.SelectTargetType_SelectCycle)]
     public class SelectTargetSingle : ASelectTargetHandler
     {
         public override int Check(Unit caster, SelectTargetsParams selectTargetsParams, ref List<long> targets)
@@ -11,8 +11,11 @@ namespace ET.Server
             {
                 return ErrorCode.ERR_CastIsNull;
             }
-            
-            targets.Add(caster.Id);
+
+            if (targets.Count < 1)
+            {
+                targets.Add(caster.Id);
+            }
 
             return ErrorCode.ERR_Success;
         }
