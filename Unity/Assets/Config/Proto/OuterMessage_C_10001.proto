@@ -96,8 +96,7 @@ message C2M_Stop // ILocationMessage
 message M2C_PathfindingResult // IMessage
 {
 	int64 Id = 1;
-	Unity.Mathematics.float3 Position = 2;
-	repeated Unity.Mathematics.float3 Points = 3;
+	repeated Unity.Mathematics.float3 Points = 2;
 }
 
 message M2C_Stop // IMessage

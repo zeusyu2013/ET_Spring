@@ -31,28 +31,63 @@ namespace ET.Client
             // 如果是当前玩家，以客户端为准
             if (unit.IsMyUnit())
             {
-                return;
-            }
-            
-            unit.GetComponent<MoveComponent>().StopForce();
+                long movedTime = TimeInfo.Instance.ServerNow() - unit.GetComponent<MoveComponent>().BeginTime;
+                long needTime = 0;
+                long totalTime = 0;
+                int N = 0;
 
-            using (ListComponent<float3> list = ListComponent<float3>.Create())
-            {
-                list.Add(unit.Position);
-                foreach (float3 messagePoint in message.Points)
+                float3 prePosition = message.Points[0];
+                for (int i = 1; i < message.Points.Count; i++)
                 {
-                    list.Add(messagePoint);
+                    float3 nextPosition = message.Points[i];
+                    float distance = math.distance(nextPosition, prePosition);
+                    needTime = (long)(distance / speed * 1000);
+
+                    totalTime += needTime;
+                    N += 1;
+
+                    if (totalTime >= movedTime)
+                    {
+                        N += 1;
+                        break;
+                    }
                 }
+
+                if (totalTime < movedTime)
+                {
+                    return;
+                }
+
+                using (var list = ListComponent<float3>.Create())
+                {
+                    list.Add(unit.Position);
+
+                    for (int i = N; i < message.Points.Count; i++)
+                    {
+                        list.Add(message.Points[i]);
+                    }
+
+                    if (list.Count < 2)
+                    {
+                        list.Clear();
+                        return;
+                    }
+                    
+                    unit.GetComponent<MoveComponent>().MoveToAsync(list, speed).Coroutine();
+                }
+            }
+            else
+            {
+                unit.GetComponent<MoveComponent>().StopForce();
+
+                using ListComponent<float3> list = ListComponent<float3>.Create();
+                list.Add(unit.Position);
+                list.AddRange(message.Points);
 
                 unit.GetComponent<MoveComponent>().MoveToAsync(list, speed).Coroutine();
             }
-
+            
             await ETTask.CompletedTask;
-        }
-
-        private float magnitude(float3 value)
-        {
-            return (float)Math.Sqrt((double)value.x * value.x + (double)value.y * value.y + (double)value.z * value.z);
         }
     }
 }

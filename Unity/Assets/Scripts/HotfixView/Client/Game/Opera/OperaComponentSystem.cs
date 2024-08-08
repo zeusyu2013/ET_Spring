@@ -58,8 +58,6 @@ namespace ET.Client
             float3 unitPosition = unit.Position;
             unitPosition.y = unit.GetComponent<HeightSyncComponent>().Height;
             float3 nextPosition = unitPosition + (direction * 1.0f);
-
-            Log.Info($"pos:{unitPosition}, next:{nextPosition}");
             
             using (var list = ListComponent<float3>.Create())
             {

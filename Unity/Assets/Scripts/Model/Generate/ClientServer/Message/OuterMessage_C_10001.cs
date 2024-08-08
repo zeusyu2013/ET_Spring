@@ -448,9 +448,6 @@ namespace ET
         public long Id { get; set; }
 
         [MemoryPackOrder(1)]
-        public Unity.Mathematics.float3 Position { get; set; }
-
-        [MemoryPackOrder(2)]
         public List<Unity.Mathematics.float3> Points { get; set; } = new();
 
         public override void Dispose()
@@ -461,7 +458,6 @@ namespace ET
             }
 
             this.Id = default;
-            this.Position = default;
             this.Points.Clear();
 
             ObjectPool.Instance.Recycle(this);

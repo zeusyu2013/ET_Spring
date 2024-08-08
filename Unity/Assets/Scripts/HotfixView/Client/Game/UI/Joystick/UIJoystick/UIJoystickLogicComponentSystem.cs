@@ -119,7 +119,7 @@ namespace ET.Client
             self.Thumb.SetXY(thumbCenterX + deltaX - self.Thumb.width * 0.5f, thumbCenterY + deltaY - self.Thumb.height * 0.5f);
 
             float3 direction = new float3(deltaX, 0, deltaY);
-            Log.Info($"摇杆方向：{direction}");
+            
             self.Scene().CurrentScene().GetComponent<OperaComponent>().JoyMove(math.normalize(direction));
             
             return degree;
