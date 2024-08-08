@@ -37,5 +37,7 @@
 
         public const int CreateMonsterTimer = 415;
         public const int MonsterDeadTimer = 416;
+
+        public const int HeightSyncTimer = 420;
     }
 }

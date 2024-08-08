@@ -10,7 +10,7 @@ namespace ET
     {
         [LabelText("预设名")]
         public string prefabName;
-        
+
         [LabelText("模型")]
         public GameObject fbx;
 
@@ -45,17 +45,24 @@ namespace ET
             // 设置模型
             ReferenceCollector collector = go.AddComponent<ReferenceCollector>();
             collector.Add("Model", fbxGo);
-            
+
             // 设置相机焦点
             if (isRole)
             {
                 GameObject cameraLookAt = new("CameraLookAt");
                 cameraLookAt.transform.SetParent(go.transform);
                 cameraLookAt.transform.localPosition = new Vector3(0, 2, 0);
-                
+
                 collector.Add("CameraLookAt", cameraLookAt);
             }
-            
+
+            // 设置碰撞检测发射点
+            GameObject rayPoint = new("RayPoint");
+            rayPoint.transform.SetParent(go.transform);
+            rayPoint.transform.localPosition = new Vector3(0, 2, 0);
+
+            collector.Add("RayPoint", rayPoint);
+
             // 设置动画组件
             Animator animator = fbxGo.GetComponent<Animator>();
             if (animator == null)
@@ -65,7 +72,7 @@ namespace ET
 
             animator.applyRootMotion = false;
             collector.Add("Animator", animator);
-            
+
             AnimancerComponent animancer = fbxGo.AddComponent<AnimancerComponent>();
             collector.Add("AnimancerComponent", animancer);
 
@@ -73,7 +80,7 @@ namespace ET
             CharacterController characterController = go.AddComponent<CharacterController>();
             characterController.center = new Vector3(0, 1, 0);
             collector.Add("CharacterController", characterController);
-            
+
             // 设置层级
             go.layer = LayerMask.NameToLayer("Unit");
 

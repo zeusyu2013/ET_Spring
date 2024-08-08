@@ -148,6 +148,8 @@ namespace ET.Server
 
             unit.AddComponent<UnitDBSaveComponent>();
 
+            NumericComponent numericComponent = unit.AddComponent<NumericComponent>();
+            numericComponent.Set(GamePropertyType.GP_Speed, 6.0f);
             // todo:角色属性应该在加载所有组件后再计算一次并存入数值组件
             // NumericComponent numericComponent = unit.AddComponent<NumericComponent>();
             // UnitConfig config = UnitConfigCategory.Instance.Get(unit.ConfigId);
@@ -169,6 +171,7 @@ namespace ET.Server
 
             unit.AddComponent<MoveComponent>();
             unit.AddComponent<CastComponent>();
+            unit.AddComponent<SkillStatusComponent>();
 
             // 加入aoi
             unit.AddComponent<AOIEntity, int, float3>(9 * 1000, unit.Position);

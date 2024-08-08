@@ -40,6 +40,11 @@ namespace ET.Server
                 // 可能是短线重连，也可能是顶号
                 session.AddComponent<SessionPlayerComponent>().Player = player;
                 PlayerSessionComponent playerSessionComponent = player.GetComponent<PlayerSessionComponent>();
+                if (playerSessionComponent.Session != null)
+                {
+                    playerSessionComponent.Session.Dispose();
+                }
+                
                 playerSessionComponent.Session = session;
 
                 GateUnitComponent gateUnitComponent = player.GetComponent<GateUnitComponent>();

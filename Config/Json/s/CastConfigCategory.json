@@ -45,7 +45,7 @@
       {
         "Time": 0,
         "HitSelf": true,
-        "HitAction": 1003,
+        "HitAction": 2005,
         "TargetBuff": 0,
         "SelfBuff": 0
       }

@@ -11,7 +11,7 @@ namespace ET.Server
         {
             protected override void Run(CreateMonsterInfo self)
             {
-                self.GetParent<MonsterMapComponent>().CreateMonsterByGroup(self.MonsterConfigId);
+                self.GetParent<MonsterMapComponent>().CreateMonster(self.MonsterConfigId);
             }
         }
 
@@ -35,6 +35,23 @@ namespace ET.Server
             int range = config.RandomRange / 2;
 
             for (int i = 0; i < config.Monsters.MonsterCount; i++)
+            {
+                float3 pos = new float3(config.Position.X, config.Position.Y, config.Position.Z) +
+                        new float3(RandomGenerator.RandomNumber(-range, range), 0, RandomGenerator.RandomNumber(-range, range));
+
+                Unit monster = UnitFactory.CreateMonster(self.Scene(), config.Monsters.MonsterConfig, pos);
+                monster.AddComponent<MonsterComponent, int>(config.Id);
+
+                monster.AddComponent<AOIEntity, int, float3>(9 * 1000, monster.Position);
+            }
+        }
+
+        private static void CreateMonster(this MonsterMapComponent self, int groupId)
+        {
+            SceneMonsterConfig config = SceneMonsterConfigCategory.Instance.Get(groupId);
+            int range = config.RandomRange / 2;
+
+            //for (int i = 0; i < config.Monsters.MonsterCount; i++)
             {
                 float3 pos = new float3(config.Position.X, config.Position.Y, config.Position.Z) +
                         new float3(RandomGenerator.RandomNumber(-range, range), 0, RandomGenerator.RandomNumber(-range, range));

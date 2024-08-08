@@ -68,6 +68,13 @@ namespace ET
                 
                 collector.Add("CameraLookAt", cameraLookAt);
             }
+            
+            // 设置碰撞检测发射点
+            GameObject rayPoint = new("RayPoint");
+            rayPoint.transform.SetParent(instance.transform);
+            rayPoint.transform.localPosition = new Vector3(0, 2, 0);
+
+            collector.Add("RayPoint", rayPoint);
 
             string prefabPath = $"Assets/Bundles/Unit/{prefabName}.prefab";
 

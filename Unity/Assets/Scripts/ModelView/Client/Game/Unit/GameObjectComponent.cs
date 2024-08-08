@@ -25,9 +25,5 @@ namespace ET.Client
         }
 
         public Transform Transform { get; private set; }
-
-        public Transform CameraLookAt { get; private set; }
-
-        public Transform RayPoint { get; private set; }
     }
 }

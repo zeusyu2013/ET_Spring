@@ -506,6 +506,43 @@ namespace ET
     }
 
     [MemoryPackable]
+    [Message(OuterMessage.C2M_JoyStop)]
+    public partial class C2M_JoyStop : MessageObject, ILocationMessage
+    {
+        public static C2M_JoyStop Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_JoyStop), isFromPool) as C2M_JoyStop;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long UnitId { get; set; }
+
+        [MemoryPackOrder(2)]
+        public Unity.Mathematics.float3 Position { get; set; }
+
+        [MemoryPackOrder(3)]
+        public Unity.Mathematics.float3 Direction { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.UnitId = default;
+            this.Position = default;
+            this.Direction = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
     [Message(OuterMessage.C2G_Ping)]
     [ResponseType(nameof(G2C_Ping))]
     public partial class C2G_Ping : MessageObject, ISessionRequest
@@ -2606,68 +2643,69 @@ namespace ET
         public const ushort C2M_Stop = 10015;
         public const ushort M2C_PathfindingResult = 10016;
         public const ushort M2C_Stop = 10017;
-        public const ushort C2G_Ping = 10018;
-        public const ushort G2C_Ping = 10019;
-        public const ushort G2C_Test = 10020;
-        public const ushort C2M_Reload = 10021;
-        public const ushort M2C_Reload = 10022;
-        public const ushort C2R_Login = 10023;
-        public const ushort R2C_Login = 10024;
-        public const ushort C2G_LoginGate = 10025;
-        public const ushort G2C_LoginGate = 10026;
-        public const ushort G2C_TestHotfixMessage = 10027;
-        public const ushort C2M_TestRobotCase = 10028;
-        public const ushort M2C_TestRobotCase = 10029;
-        public const ushort C2M_TestRobotCase2 = 10030;
-        public const ushort M2C_TestRobotCase2 = 10031;
-        public const ushort C2M_TransferMap = 10032;
-        public const ushort M2C_TransferMap = 10033;
-        public const ushort C2M_CreateDungeon = 10034;
-        public const ushort M2C_CreateDungeon = 10035;
-        public const ushort C2M_TransferDungeon = 10036;
-        public const ushort M2C_TransferDungeon = 10037;
-        public const ushort C2M_ExitDungeon = 10038;
-        public const ushort M2C_ExitDungeon = 10039;
-        public const ushort M2C_DungeonTimeout = 10040;
-        public const ushort C2G_Benchmark = 10041;
-        public const ushort G2C_Benchmark = 10042;
-        public const ushort GameRoleInfo = 10043;
-        public const ushort C2G_GetRoles = 10044;
-        public const ushort G2C_GetRoles = 10045;
-        public const ushort C2G_CreateRole = 10046;
-        public const ushort G2C_CreateRole = 10047;
-        public const ushort C2G_DeleteRole = 10048;
-        public const ushort G2C_DeleteRole = 10049;
-        public const ushort C2G_ChooseRole = 10050;
-        public const ushort G2C_ChooseRole = 10051;
-        public const ushort GameItemInfo = 10052;
-        public const ushort C2M_GetAllItems = 10053;
-        public const ushort M2C_GetAllItems = 10054;
-        public const ushort C2M_ExtendBag = 10055;
-        public const ushort M2C_ExtendBag = 10056;
-        public const ushort M2C_GetNewItem = 10057;
-        public const ushort C2M_UseItem = 10058;
-        public const ushort M2C_UseItem = 10059;
-        public const ushort C2M_AcceptTask = 10060;
-        public const ushort M2C_AcceptTask = 10061;
-        public const ushort C2M_CompleteTask = 10062;
-        public const ushort M2C_CompleteTask = 10063;
-        public const ushort GameBuffInfo = 10064;
-        public const ushort C2M_GetAllBuffs = 10065;
-        public const ushort M2C_GetAllBuffs = 10066;
-        public const ushort C2M_Equip = 10067;
-        public const ushort M2C_Equip = 10068;
-        public const ushort GamePropertyInfo = 10069;
-        public const ushort M2C_PropertyRefresh = 10070;
-        public const ushort FightScoreRankEntityInfo = 10071;
-        public const ushort C2Main_GetFightScoreRank = 10072;
-        public const ushort Main2C_GetFightScoreRank = 10073;
-        public const ushort MailInfo = 10074;
-        public const ushort C2M_CheckMails = 10075;
-        public const ushort M2C_CheckMails = 10076;
-        public const ushort C2M_CheckMail = 10077;
-        public const ushort M2C_CheckMail = 10078;
-        public const ushort C2M_ReceiveAttachments = 10079;
-        public const ushort M2C_ReceiveAttachments = 10080;
+        public const ushort C2M_JoyStop = 10018;
+        public const ushort C2G_Ping = 10019;
+        public const ushort G2C_Ping = 10020;
+        public const ushort G2C_Test = 10021;
+        public const ushort C2M_Reload = 10022;
+        public const ushort M2C_Reload = 10023;
+        public const ushort C2R_Login = 10024;
+        public const ushort R2C_Login = 10025;
+        public const ushort C2G_LoginGate = 10026;
+        public const ushort G2C_LoginGate = 10027;
+        public const ushort G2C_TestHotfixMessage = 10028;
+        public const ushort C2M_TestRobotCase = 10029;
+        public const ushort M2C_TestRobotCase = 10030;
+        public const ushort C2M_TestRobotCase2 = 10031;
+        public const ushort M2C_TestRobotCase2 = 10032;
+        public const ushort C2M_TransferMap = 10033;
+        public const ushort M2C_TransferMap = 10034;
+        public const ushort C2M_CreateDungeon = 10035;
+        public const ushort M2C_CreateDungeon = 10036;
+        public const ushort C2M_TransferDungeon = 10037;
+        public const ushort M2C_TransferDungeon = 10038;
+        public const ushort C2M_ExitDungeon = 10039;
+        public const ushort M2C_ExitDungeon = 10040;
+        public const ushort M2C_DungeonTimeout = 10041;
+        public const ushort C2G_Benchmark = 10042;
+        public const ushort G2C_Benchmark = 10043;
+        public const ushort GameRoleInfo = 10044;
+        public const ushort C2G_GetRoles = 10045;
+        public const ushort G2C_GetRoles = 10046;
+        public const ushort C2G_CreateRole = 10047;
+        public const ushort G2C_CreateRole = 10048;
+        public const ushort C2G_DeleteRole = 10049;
+        public const ushort G2C_DeleteRole = 10050;
+        public const ushort C2G_ChooseRole = 10051;
+        public const ushort G2C_ChooseRole = 10052;
+        public const ushort GameItemInfo = 10053;
+        public const ushort C2M_GetAllItems = 10054;
+        public const ushort M2C_GetAllItems = 10055;
+        public const ushort C2M_ExtendBag = 10056;
+        public const ushort M2C_ExtendBag = 10057;
+        public const ushort M2C_GetNewItem = 10058;
+        public const ushort C2M_UseItem = 10059;
+        public const ushort M2C_UseItem = 10060;
+        public const ushort C2M_AcceptTask = 10061;
+        public const ushort M2C_AcceptTask = 10062;
+        public const ushort C2M_CompleteTask = 10063;
+        public const ushort M2C_CompleteTask = 10064;
+        public const ushort GameBuffInfo = 10065;
+        public const ushort C2M_GetAllBuffs = 10066;
+        public const ushort M2C_GetAllBuffs = 10067;
+        public const ushort C2M_Equip = 10068;
+        public const ushort M2C_Equip = 10069;
+        public const ushort GamePropertyInfo = 10070;
+        public const ushort M2C_PropertyRefresh = 10071;
+        public const ushort FightScoreRankEntityInfo = 10072;
+        public const ushort C2Main_GetFightScoreRank = 10073;
+        public const ushort Main2C_GetFightScoreRank = 10074;
+        public const ushort MailInfo = 10075;
+        public const ushort C2M_CheckMails = 10076;
+        public const ushort M2C_CheckMails = 10077;
+        public const ushort C2M_CheckMail = 10078;
+        public const ushort M2C_CheckMail = 10079;
+        public const ushort C2M_ReceiveAttachments = 10080;
+        public const ushort M2C_ReceiveAttachments = 10081;
     }
 }

@@ -84,6 +84,14 @@
     }
   },
   {
+    "Id": 2005,
+    "Type": 2,
+    "ActionParams": {
+      "$type": "DamageActionParams",
+      "AdditionalDamage": 500
+    }
+  },
+  {
     "Id": 3001,
     "Type": 4,
     "ActionParams": {

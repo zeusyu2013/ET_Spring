@@ -108,6 +108,14 @@ message M2C_Stop // IMessage
 	Unity.Mathematics.quaternion Rotation = 4;
 }
 
+message C2M_JoyStop // ILocationMessage
+{
+	int32 RpcId = 1;
+	int64 UnitId = 2;
+	Unity.Mathematics.float3 Position = 3;
+	Unity.Mathematics.float3 Direction = 4;
+}
+
 // ResponseType G2C_Ping
 message C2G_Ping // ISessionRequest
 {

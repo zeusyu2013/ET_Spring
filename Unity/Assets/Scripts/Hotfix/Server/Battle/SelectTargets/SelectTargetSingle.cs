@@ -2,7 +2,7 @@
 
 namespace ET.Server
 {
-    [SelectTarget(SelectTargetType.SelectTargetType_SelectCycle)]
+    [SelectTarget(SelectTargetType.SelectTargetType_SelectSingle)]
     public class SelectTargetSingle : ASelectTargetHandler
     {
         public override int Check(Unit caster, SelectTargetsParams selectTargetsParams, ref List<long> targets)

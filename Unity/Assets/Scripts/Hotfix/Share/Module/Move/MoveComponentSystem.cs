@@ -264,7 +264,7 @@ namespace ET
         // ret: 停止的时候，移动协程的返回值
         public static void Stop(this MoveComponent self, bool ret)
         {
-            if (self.Targets.Count > 0)
+            if (self.Targets.Count > 1)
             {
                 self.MoveForward(ret);
             }

@@ -82,8 +82,12 @@ namespace ET.Client
             }
 
             AnimancerState animancerState = self.Animancer.Play(self.AnimancerStates[action]);
-            animancerState.Events.OnEnd -= self.OnEnd;
-            animancerState.Events.OnEnd += self.OnEnd;
+
+            if (!animancerState.IsLooping)
+            {
+                animancerState.Events.OnEnd -= self.OnEnd;
+                animancerState.Events.OnEnd += self.OnEnd;
+            }
         }
 
         private static void OnEnd(this AnimatorComponent self)

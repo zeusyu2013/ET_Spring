@@ -4,5 +4,11 @@
     "PropertyPack": 1001,
     "AI": 1,
     "DropConfig": 10001
+  },
+  {
+    "Id": 1002,
+    "PropertyPack": 1001,
+    "AI": 1,
+    "DropConfig": 10001
   }
 ]

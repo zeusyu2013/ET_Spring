@@ -7,40 +7,18 @@ namespace ET.Client
     [FriendOf(typeof(OperaComponent))]
     [FriendOfAttribute(typeof(ET.Client.InputComponent))]
     [FriendOfAttribute(typeof(ET.Client.CameraComponent))]
+    [FriendOfAttribute(typeof(ET.Client.HeightSyncComponent))]
     public static partial class OperaComponentSystem
     {
         [EntitySystem]
         private static void Awake(this OperaComponent self)
         {
-            self.mapMask = LayerMask.GetMask("Map");
-            self.InputComponent = self.Root().GetComponent<InputComponent>();
+            self.Result = C2M_PathfindingResult.Create();
         }
 
         [EntitySystem]
         private static void Update(this OperaComponent self)
         {
-            InputComponent inputComponent = self.Root().GetComponent<InputComponent>();
-            if (inputComponent.MoveDirection.x != 0 || inputComponent.MoveDirection.z != 0 || 
-                inputComponent.JoystickMoveDirection.x != 0 || inputComponent.JoystickMoveDirection.y != 0)
-            {
-                Vector3 moveDir = inputComponent.JoystickMoveDirection is { x: 0, z: 0 } ? inputComponent.MoveDirection : inputComponent.JoystickMoveDirection;
-              
-                Unit unit = UnitHelper.GetMyUnitFromClientScene(self.Root());
-                Quaternion rotation = Quaternion.Euler(0, unit.GetComponent<CameraComponent>().CinemachineTargetYaw, 0);
-                Vector3 unitPos = unit.Position;
-                unitPos.y = 0;
-                Vector3 newPos = unitPos + (rotation * moveDir.normalized * 4f);
-
-                using ListComponent<float3> list = ListComponent<float3>.Create();
-                list.Add(unit.Position);
-                list.Add(newPos);
-                unit.MoveToAsync(list).Coroutine();
-                Log.Info($"move to {moveDir}   {unitPos}  {newPos}");
-                C2M_PathfindingResult c2MPathfindingResult = C2M_PathfindingResult.Create();
-                c2MPathfindingResult.Position = newPos;
-                self.Root().GetComponent<ClientSenderComponent>().Send(c2MPathfindingResult);
-            }
-
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 self.Test1().Coroutine();
@@ -65,8 +43,46 @@ namespace ET.Client
 
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                ClientCastHelper.CastSkill(self.Scene(), 1001).Coroutine();
+                ClientCastHelper.CastSkill(self.Scene(), 120001).Coroutine();
             }
+        }
+
+        public static void JoyMove(this OperaComponent self, float3 direction)
+        {
+            Unit unit = UnitHelper.GetMyUnitFromCurrentScene(self.Scene());
+            if (unit == null || unit.IsDisposed)
+            {
+                return;
+            }
+
+            float3 unitPosition = unit.Position;
+            unitPosition.y = unit.GetComponent<HeightSyncComponent>().Height;
+            float3 nextPosition = unitPosition + (direction * 1.0f);
+
+            Log.Info($"pos:{unitPosition}, next:{nextPosition}");
+            
+            using (var list = ListComponent<float3>.Create())
+            {
+                list.Add(unitPosition);
+                list.Add(nextPosition);
+                unit.MoveToAsync(list).Coroutine();
+            }
+            
+            self.Result.Position = nextPosition;
+            self.Root().GetComponent<ClientSenderComponent>().Send(self.Result);
+        }
+
+        public static void Stop(this OperaComponent self)
+        {
+            Unit unit = UnitHelper.GetMyUnitFromCurrentScene(self.Scene());
+
+            unit.GetComponent<MoveComponent>().StopForce();
+
+            C2M_JoyStop c2MJoyStop = C2M_JoyStop.Create();
+            c2MJoyStop.UnitId = unit.Id;
+            c2MJoyStop.Position = unit.Position;
+            c2MJoyStop.Direction = unit.Forward;
+            self.Root().GetComponent<ClientSenderComponent>().Send(c2MJoyStop);
         }
 
         private static async ETTask Test1(this OperaComponent self)

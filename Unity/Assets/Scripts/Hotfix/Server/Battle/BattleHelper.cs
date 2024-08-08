@@ -1,4 +1,5 @@
-﻿using Unity.Mathematics;
+﻿using System.Collections.Generic;
+using Unity.Mathematics;
 
 namespace ET.Server
 {
@@ -62,11 +63,11 @@ namespace ET.Server
         private static void Kill(Unit killer, Unit target)
         {
             // todo 处理击杀事件等
-            
-            OnDead(target);
+
+            OnDead(killer, target);
         }
 
-        private static void OnDead(Unit deader)
+        private static void OnDead(Unit killer, Unit deader)
         {
             ReliveComponent reliveComponent = deader.GetComponent<ReliveComponent>();
             if (reliveComponent == null)
@@ -93,6 +94,20 @@ namespace ET.Server
                 {
                     long time = TimeInfo.Instance.ServerNow() + 3000;
                     deader.Scene().GetComponent<TimerComponent>().NewOnceTimer(time, TimerInvokeType.MonsterDeadTimer, deader);
+
+                    if (killer.Type() == UnitType.UnitType_Player)
+                    {
+                        MonsterConfig config = MonsterConfigCategory.Instance.Get(deader.ConfigId);
+                        List<DropItem> items = new();
+                        deader.Scene().GetComponent<DropComponent>().Drop(config.DropConfig, ref items);
+                        if (items.Count > 0)
+                        {
+                            foreach (DropItem item in items)
+                            {
+                                killer.GetComponent<BagComponent>().AddItem(item.ItemConfig, item.ItemAmount);
+                            }
+                        }
+                    }
                 }
                     break;
             }

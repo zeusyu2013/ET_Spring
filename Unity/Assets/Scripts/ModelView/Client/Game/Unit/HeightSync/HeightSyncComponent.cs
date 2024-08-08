@@ -3,14 +3,16 @@
 namespace ET.Client
 {
     [ComponentOf(typeof (Unit))]
-    public class HeightSyncComponent: Entity, IAwake, IUpdate
+    public class HeightSyncComponent: Entity, IAwake, IDestroy
     {
-        public Transform RayPoint;
-
         public float MaxDistance;
 
         public int LayerMask;
 
+        public RaycastHit[] Results;
+
         public float Height;
+
+        public long Timer;
     }
 }

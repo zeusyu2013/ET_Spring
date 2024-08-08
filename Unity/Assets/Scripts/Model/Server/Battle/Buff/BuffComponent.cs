@@ -8,7 +8,7 @@ namespace ET.Server
     [UnitCacheEvent(typeof(BuffComponent))]
     public class BuffComponent : Entity, IAwake, IDestroy, ITransfer, IDeserialize
     {
-        [BsonDictionaryOptions(DictionaryRepresentation.ArrayOfArrays)]
+        [BsonIgnore]
         public Dictionary<int, EntityRef<Buff>> Buffs = new();
     }
 }

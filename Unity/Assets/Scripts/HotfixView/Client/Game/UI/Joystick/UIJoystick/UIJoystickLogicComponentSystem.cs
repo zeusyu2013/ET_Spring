@@ -1,5 +1,6 @@
 
 using FairyGUI;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace ET.Client
@@ -79,9 +80,9 @@ namespace ET.Client
             var view = self.GetParent<UI>().GetComponent<UIJoystickComponent>();
 
             view.GCanvas_Joystick.selected = false;
-            EventSystem.Instance.Publish(self.Root(), new JoystickMove(){IsMove = false, DeltaX = 0, DeltaY = 0});
+            
+            self.Scene().CurrentScene().GetComponent<OperaComponent>().Stop();
         }
-
 
         public static float SetObjectPostion(this UIJoystickLogicComponent self, Vector2 position)
         {
@@ -116,8 +117,11 @@ namespace ET.Client
             float thumbCenterY = view.GCanvas_Joystick.height * 0.5f;
             
             self.Thumb.SetXY(thumbCenterX + deltaX - self.Thumb.width * 0.5f, thumbCenterY + deltaY - self.Thumb.height * 0.5f);
+
+            float3 direction = new float3(deltaX, 0, deltaY);
+            Log.Info($"摇杆方向：{direction}");
+            self.Scene().CurrentScene().GetComponent<OperaComponent>().JoyMove(math.normalize(direction));
             
-            EventSystem.Instance.Publish(self.Root(), new JoystickMove(){IsMove = true, DeltaX = deltaX, DeltaY = deltaY});
             return degree;
         }
         
