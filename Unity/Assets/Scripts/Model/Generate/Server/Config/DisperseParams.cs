@@ -16,7 +16,8 @@ namespace ET
     {
         public DisperseParams(ByteBuf _buf) : base(_buf) 
         {
-            Type = _buf.ReadInt();
+            IncludeSelf = _buf.ReadBool();
+            Type = (BuffProperty)_buf.ReadInt();
             Count = _buf.ReadInt();
 
             PostInit();
@@ -27,7 +28,9 @@ namespace ET
             return new DisperseParams(_buf);
         }
 
-        public readonly int Type;
+        public readonly bool IncludeSelf;
+
+        public readonly BuffProperty Type;
 
         public readonly int Count;
 
@@ -38,6 +41,7 @@ namespace ET
         public override string ToString()
         {
             return "{ "
+            + "IncludeSelf:" + IncludeSelf + ","
             + "Type:" + Type + ","
             + "Count:" + Count + ","
             + "}";

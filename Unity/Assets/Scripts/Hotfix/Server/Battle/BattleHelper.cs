@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using Unity.Mathematics;
 
 namespace ET.Server
 {
     [FriendOfAttribute(typeof(ET.Server.Action))]
     [FriendOfAttribute(typeof(ET.Server.ReliveComponent))]
+    [FriendOfAttribute(typeof(ET.Server.BuffComponent))]
     public static class BattleHelper
     {
         /// <summary>
@@ -121,6 +121,41 @@ namespace ET.Server
             }
         }
 
+        public static void Disperse(Unit caster, Unit target, Action action)
+        {
+            DisperseParams disperseParams = (DisperseParams)action.Config.ActionParams;
+            if (disperseParams == null)
+            {
+                Log.Error($"驱散类行为配置错误，行为编号：{action.ConfigId}");
+                return;
+            }
+
+            int count = 0;
+            foreach (EntityRef<Buff> value in target.GetComponent<BuffComponent>().Buffs.Values)
+            {
+                Buff buff = value;
+                if (buff == null || buff.IsDisposed)
+                {
+                    continue;
+                }
+                
+                if (buff.Config.BuffProperty != disperseParams.Type)
+                {
+                    continue;
+                }
+
+                // todo 简单设置为过期，移除效果根据配置是否触发
+                buff.Timeout();
+                
+                count += 1;
+
+                if (count >= disperseParams.Count)
+                {
+                    break;
+                }
+            }
+        }
+
         private static void Kill(Unit killer, Unit target)
         {
             // todo 处理击杀事件等
@@ -152,24 +187,24 @@ namespace ET.Server
                     break;
 
                 case UnitType.UnitType_Monster:
-                {
-                    long time = TimeInfo.Instance.ServerNow() + 3000;
-                    deader.Scene().GetComponent<TimerComponent>().NewOnceTimer(time, TimerInvokeType.MonsterDeadTimer, deader);
-
-                    if (killer.Type() == UnitType.UnitType_Player)
                     {
-                        MonsterConfig config = MonsterConfigCategory.Instance.Get(deader.ConfigId);
-                        List<DropItem> items = new();
-                        deader.Scene().GetComponent<DropComponent>().Drop(config.DropConfig, ref items);
-                        if (items.Count > 0)
+                        long time = TimeInfo.Instance.ServerNow() + 3000;
+                        deader.Scene().GetComponent<TimerComponent>().NewOnceTimer(time, TimerInvokeType.MonsterDeadTimer, deader);
+
+                        if (killer.Type() == UnitType.UnitType_Player)
                         {
-                            foreach (DropItem item in items)
+                            MonsterConfig config = MonsterConfigCategory.Instance.Get(deader.ConfigId);
+                            List<DropItem> items = new();
+                            deader.Scene().GetComponent<DropComponent>().Drop(config.DropConfig, ref items);
+                            if (items.Count > 0)
                             {
-                                killer.GetComponent<BagComponent>().AddItem(item.ItemConfig, item.ItemAmount);
+                                foreach (DropItem item in items)
+                                {
+                                    killer.GetComponent<BagComponent>().AddItem(item.ItemConfig, item.ItemAmount);
+                                }
                             }
                         }
                     }
-                }
                     break;
             }
         }

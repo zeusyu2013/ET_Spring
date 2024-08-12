@@ -19,6 +19,7 @@ namespace ET
             Id = _buf.ReadInt();
             Name = _buf.ReadString();
             Desc = _buf.ReadString();
+            BuffProperty = (BuffProperty)_buf.ReadInt();
             ContinueTime = _buf.ReadLong();
             NotifyType = (MessageNotifyType)_buf.ReadInt();
             Tick = _buf.ReadInt();
@@ -49,6 +50,11 @@ namespace ET
         /// buff描述
         /// </summary>
         public readonly string Desc;
+
+        /// <summary>
+        /// buff类型属性
+        /// </summary>
+        public readonly BuffProperty BuffProperty;
 
         /// <summary>
         /// 持续时长（ms）
@@ -95,6 +101,7 @@ namespace ET
             + "Id:" + Id + ","
             + "Name:" + Name + ","
             + "Desc:" + Desc + ","
+            + "BuffProperty:" + BuffProperty + ","
             + "ContinueTime:" + ContinueTime + ","
             + "NotifyType:" + NotifyType + ","
             + "Tick:" + Tick + ","

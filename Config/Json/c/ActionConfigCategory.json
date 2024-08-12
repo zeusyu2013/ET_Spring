@@ -92,6 +92,14 @@
     }
   },
   {
+    "Id": 2006,
+    "Type": 2,
+    "ActionParams": {
+      "$type": "DamageActionParams",
+      "AdditionalDamage": 225
+    }
+  },
+  {
     "Id": 3001,
     "Type": 4,
     "ActionParams": {
@@ -157,7 +165,8 @@
     "Type": 11,
     "ActionParams": {
       "$type": "DisperseParams",
-      "Type": 1,
+      "IncludeSelf": true,
+      "Type": 2,
       "Count": 1
     }
   }
