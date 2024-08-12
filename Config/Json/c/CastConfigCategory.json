@@ -9,7 +9,8 @@
     "SelectTargetType": 1,
     "CastTargetType": 1,
     "SelectTargetsParams": {
-      "$type": "Single"
+      "$type": "Single",
+      "IncludeSelf": true
     },
     "NotifyType": 2,
     "CastStartAnimation": "attack",
@@ -63,7 +64,8 @@
     "SelectTargetType": 1,
     "CastTargetType": 2,
     "SelectTargetsParams": {
-      "$type": "Single"
+      "$type": "Single",
+      "IncludeSelf": false
     },
     "NotifyType": 2,
     "CastStartAnimation": "sing",
@@ -99,7 +101,42 @@
     "SelectTargetType": 1,
     "CastTargetType": 1,
     "SelectTargetsParams": {
-      "$type": "Single"
+      "$type": "Single",
+      "IncludeSelf": true
+    },
+    "NotifyType": 2,
+    "CastStartAnimation": "sing",
+    "CastHitAnimation": ""
+  },
+  {
+    "Id": 310002,
+    "Name": "技能310002",
+    "Desc": "技能310002",
+    "TotalTime": 8000,
+    "CastCooldown": 0,
+    "Casting": true,
+    "SelectTargetType": 1,
+    "CastTargetType": 1,
+    "SelectTargetsParams": {
+      "$type": "Single",
+      "IncludeSelf": false
+    },
+    "NotifyType": 2,
+    "CastStartAnimation": "sing",
+    "CastHitAnimation": ""
+  },
+  {
+    "Id": 310003,
+    "Name": "技能310003",
+    "Desc": "技能310003",
+    "TotalTime": 1500,
+    "CastCooldown": 0,
+    "Casting": false,
+    "SelectTargetType": 1,
+    "CastTargetType": 1,
+    "SelectTargetsParams": {
+      "$type": "Single",
+      "IncludeSelf": true
     },
     "NotifyType": 2,
     "CastStartAnimation": "sing",

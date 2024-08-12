@@ -52,5 +52,20 @@ namespace ET
         /// </summary>
         ActionType_CastTrap = 8,
 
+        /// <summary>
+        /// 治疗行为
+        /// </summary>
+        ActionType_Treatment = 9,
+
+        /// <summary>
+        /// 复活行为
+        /// </summary>
+        ActionType_Relive = 10,
+
+        /// <summary>
+        /// 驱散行为
+        /// </summary>
+        ActionType_Disperse = 11,
+
     }
 }

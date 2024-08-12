@@ -12,7 +12,7 @@
                 return;
             }
 
-            response.Error = unit.CreateAndCast(request.CastConfigId);
+            response.Error = unit.CreateAndCast(request.CastConfigId, request.TargetId);
 
             await ETTask.CompletedTask;
         }

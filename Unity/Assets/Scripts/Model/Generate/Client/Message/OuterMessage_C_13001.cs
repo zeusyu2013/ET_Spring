@@ -321,12 +321,12 @@ namespace ET
     }
 
     [MemoryPackable]
-    [Message(OuterMessage.M2C_BattleResult)]
-    public partial class M2C_BattleResult : MessageObject, IMessage
+    [Message(OuterMessage.M2C_DamageResult)]
+    public partial class M2C_DamageResult : MessageObject, IMessage
     {
-        public static M2C_BattleResult Create(bool isFromPool = false)
+        public static M2C_DamageResult Create(bool isFromPool = false)
         {
-            return ObjectPool.Instance.Fetch(typeof(M2C_BattleResult), isFromPool) as M2C_BattleResult;
+            return ObjectPool.Instance.Fetch(typeof(M2C_DamageResult), isFromPool) as M2C_DamageResult;
         }
 
         [MemoryPackOrder(0)]
@@ -352,6 +352,43 @@ namespace ET
             this.AttackerId = default;
             this.TargetId = default;
             this.Damage = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_TreatResult)]
+    public partial class M2C_TreatResult : MessageObject, IMessage
+    {
+        public static M2C_TreatResult Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_TreatResult), isFromPool) as M2C_TreatResult;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long CasterId { get; set; }
+
+        [MemoryPackOrder(2)]
+        public long TargetId { get; set; }
+
+        [MemoryPackOrder(3)]
+        public long TreatValue { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.CasterId = default;
+            this.TargetId = default;
+            this.TreatValue = default;
 
             ObjectPool.Instance.Recycle(this);
         }
@@ -542,11 +579,12 @@ namespace ET
         public const ushort M2C_BuffRemove = 13008;
         public const ushort M2C_BuffTick = 13009;
         public const ushort M2C_BuffUpdate = 13010;
-        public const ushort M2C_BattleResult = 13011;
-        public const ushort C2M_Cast = 13012;
-        public const ushort M2C_Cast = 13013;
-        public const ushort M2C_CooldownChange = 13014;
-        public const ushort M2C_SetPosition = 13015;
-        public const ushort M2C_NumericChange = 13016;
+        public const ushort M2C_DamageResult = 13011;
+        public const ushort M2C_TreatResult = 13012;
+        public const ushort C2M_Cast = 13013;
+        public const ushort M2C_Cast = 13014;
+        public const ushort M2C_CooldownChange = 13015;
+        public const ushort M2C_SetPosition = 13016;
+        public const ushort M2C_NumericChange = 13017;
     }
 }

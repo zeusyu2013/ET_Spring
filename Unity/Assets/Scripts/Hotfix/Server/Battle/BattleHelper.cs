@@ -31,7 +31,7 @@ namespace ET.Server
             }
 
             // 伤害可以溢出，直接广播
-            M2C_BattleResult m2CBattleResult = M2C_BattleResult.Create();
+            M2C_DamageResult m2CBattleResult = M2C_DamageResult.Create();
             m2CBattleResult.AttackerId = attacker.Id;
             m2CBattleResult.TargetId = target.Id;
             m2CBattleResult.Damage = damage;
@@ -57,6 +57,67 @@ namespace ET.Server
             if (result < 1)
             {
                 Kill(attacker, target);
+            }
+        }
+
+        public static void CalcTreatment(Unit caster, Unit target, Action action)
+        {
+            TreatmentParams treatmentParams = (TreatmentParams)action.Config.ActionParams;
+            if (treatmentParams == null)
+            {
+                Log.Error($"治疗行为配置错误，行为编号：{action.ConfigId}");
+                return;
+            }
+
+            long treatment = treatmentParams.TreatValue;
+            if (treatment < 1)
+            {
+                Log.Error($"治疗行为配置错误，恢复生命值为0，行为编号：{action.ConfigId}");
+                return;
+            }
+
+            // 治疗可以溢出，直接广播
+            M2C_TreatResult m2CTreatResult = M2C_TreatResult.Create();
+            m2CTreatResult.CasterId = caster.Id;
+            m2CTreatResult.TargetId = target.Id;
+            m2CTreatResult.TreatValue = treatment;
+            BattleMessageHelper.SendClient(target, m2CTreatResult, MessageNotifyType.MessageNotifyType_Broadcast);
+
+            NumericComponent numericComponent = target.GetComponent<NumericComponent>();
+            long hp = numericComponent[GamePropertyType.GP_Hp];
+            long maxHp = numericComponent[GamePropertyType.GP_MaxHp];
+            long result = hp + treatment;
+            if (result > maxHp)
+            {
+                numericComponent[GamePropertyType.GP_Hp] = maxHp;
+            }
+            else
+            {
+                numericComponent[GamePropertyType.GP_Hp] = result;
+            }
+        }
+
+        public static void Relive(Unit caster, Unit target, Action action)
+        {
+            ReliveParams reliveParams = (ReliveParams)action.Config.ActionParams;
+            if (reliveParams == null)
+            {
+                Log.Error($"复活类行为配置错误，行为编号：{action.ConfigId}");
+                return;
+            }
+
+            long hp = reliveParams.Hp;
+            long mp = reliveParams.Mp;
+            if (hp < 1)
+            {
+                Log.Error($"复活类行为配置错误，复活后生命值为0，行为编号：{action.ConfigId}");
+                return;
+            }
+
+            int err = target.SetRelive(hp, mp);
+            if (err != ErrorCode.ERR_Success)
+            {
+                Log.Error($"复活行为失败，错误信息：{err}");
             }
         }
 

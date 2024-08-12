@@ -3,7 +3,8 @@
     "Id": 10001,
     "SelectTargetType": 1,
     "SelectTargetsParam": {
-      "$type": "Single"
+      "$type": "Single",
+      "IncludeSelf": false
     },
     "TotalTime": 2000,
     "Interval": 200,

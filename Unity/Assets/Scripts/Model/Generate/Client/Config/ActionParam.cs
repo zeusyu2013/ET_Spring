@@ -31,6 +31,9 @@ namespace ET
                 case AttractParams.__ID__: return new AttractParams(_buf);
                 case HitFlyParams.__ID__: return new HitFlyParams(_buf);
                 case TrapParams.__ID__: return new TrapParams(_buf);
+                case TreatmentParams.__ID__: return new TreatmentParams(_buf);
+                case ReliveParams.__ID__: return new ReliveParams(_buf);
+                case DisperseParams.__ID__: return new DisperseParams(_buf);
                 default: throw new SerializationException();
             }
         }

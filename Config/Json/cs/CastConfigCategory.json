@@ -9,7 +9,8 @@
     "SelectTargetType": 1,
     "CastTargetType": 1,
     "SelectTargetsParams": {
-      "$type": "Single"
+      "$type": "Single",
+      "IncludeSelf": true
     },
     "NotifyType": 2,
     "HitInfos": [
@@ -85,7 +86,8 @@
     "SelectTargetType": 1,
     "CastTargetType": 2,
     "SelectTargetsParams": {
-      "$type": "Single"
+      "$type": "Single",
+      "IncludeSelf": false
     },
     "NotifyType": 2,
     "HitInfos": [],
@@ -133,10 +135,67 @@
     "SelectTargetType": 1,
     "CastTargetType": 1,
     "SelectTargetsParams": {
-      "$type": "Single"
+      "$type": "Single",
+      "IncludeSelf": true
+    },
+    "NotifyType": 2,
+    "HitInfos": [
+      {
+        "Time": 2000,
+        "HitSelf": false,
+        "HitAction": 8001,
+        "TargetBuff": 0,
+        "SelfBuff": 0
+      }
+    ],
+    "FinishActions": [],
+    "CastStartAnimation": "sing",
+    "CastHitAnimation": ""
+  },
+  {
+    "Id": 310002,
+    "Name": "castname_310002",
+    "Desc": "castdesc_310002",
+    "TotalTime": 8000,
+    "CastCooldown": 0,
+    "Casting": true,
+    "SelectTargetType": 1,
+    "CastTargetType": 1,
+    "SelectTargetsParams": {
+      "$type": "Single",
+      "IncludeSelf": false
     },
     "NotifyType": 2,
     "HitInfos": [],
+    "FinishActions": [
+      9001
+    ],
+    "CastStartAnimation": "sing",
+    "CastHitAnimation": ""
+  },
+  {
+    "Id": 310003,
+    "Name": "castname_310003",
+    "Desc": "castdesc_310003",
+    "TotalTime": 1500,
+    "CastCooldown": 0,
+    "Casting": false,
+    "SelectTargetType": 1,
+    "CastTargetType": 1,
+    "SelectTargetsParams": {
+      "$type": "Single",
+      "IncludeSelf": true
+    },
+    "NotifyType": 2,
+    "HitInfos": [
+      {
+        "Time": 0,
+        "HitSelf": false,
+        "HitAction": 10001,
+        "TargetBuff": 0,
+        "SelfBuff": 0
+      }
+    ],
     "FinishActions": [],
     "CastStartAnimation": "sing",
     "CastHitAnimation": ""

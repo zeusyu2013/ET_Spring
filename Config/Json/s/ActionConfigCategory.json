@@ -134,5 +134,31 @@
       "Range": 5,
       "BuffConfigId": 40005
     }
+  },
+  {
+    "Id": 8001,
+    "Type": 9,
+    "ActionParams": {
+      "$type": "TreatmentParams",
+      "TreatValue": 150
+    }
+  },
+  {
+    "Id": 9001,
+    "Type": 10,
+    "ActionParams": {
+      "$type": "ReliveParams",
+      "Hp": 1100,
+      "Mp": 1150
+    }
+  },
+  {
+    "Id": 10001,
+    "Type": 11,
+    "ActionParams": {
+      "$type": "DisperseParams",
+      "Type": 1,
+      "Count": 1
+    }
   }
 ]

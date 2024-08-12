@@ -2,7 +2,6 @@
   "dependencies": {
     "com.code-philosophy.hybridclr": "https://gitee.com/focus-creative-games/hybridclr_unity.git",
     "com.cysharp.memorypack": "https://github.com/Cysharp/MemoryPack.git?path=src/MemoryPack.Unity/Assets/Plugins/MemoryPack#1.10.0",
-    "com.tuyoogame.yooasset": "2.1.2",
     "com.unity.ai.navigation": "1.1.5",
     "com.unity.cinemachine": "2.9.7",
     "com.unity.entities": "1.0.16",
@@ -44,13 +43,5 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.wind": "1.0.0"
   },
-  "scopedRegistries": [
-    {
-      "name": "package.openupm.com",
-      "url": "https://package.openupm.com",
-      "scopes": [
-        "com.tuyoogame.yooasset"
-      ]
-    }
-  ]
+  "scopedRegistries": []
 }

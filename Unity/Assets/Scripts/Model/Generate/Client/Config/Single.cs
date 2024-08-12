@@ -16,6 +16,7 @@ namespace ET
     {
         public Single(ByteBuf _buf) : base(_buf) 
         {
+            IncludeSelf = _buf.ReadBool();
 
             PostInit();
         }
@@ -25,6 +26,8 @@ namespace ET
             return new Single(_buf);
         }
 
+        public readonly bool IncludeSelf;
+
         public const int __ID__ = -1818398616;
 
         public override int GetTypeId() => __ID__;
@@ -32,6 +35,7 @@ namespace ET
         public override string ToString()
         {
             return "{ "
+            + "IncludeSelf:" + IncludeSelf + ","
             + "}";
         }
 

@@ -68,12 +68,20 @@ message M2C_BuffUpdate // IMessage
     BuffInfo BuffInfo = 3;
 }
 
-message M2C_BattleResult // IMessage
+message M2C_DamageResult // IMessage
 {
     int32 RpcId = 1;
     int64 AttackerId = 2;
     int64 TargetId = 3;
     int64 Damage = 4;
+}
+
+message M2C_TreatResult // IMessage
+{
+    int32 RpcId = 1;
+    int64 CasterId = 2;
+    int64 TargetId = 3;
+    int64 TreatValue = 4;
 }
 
 // ResponseType M2C_Cast

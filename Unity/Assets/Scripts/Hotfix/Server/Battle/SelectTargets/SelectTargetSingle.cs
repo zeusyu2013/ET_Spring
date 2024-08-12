@@ -12,7 +12,9 @@ namespace ET.Server
                 return ErrorCode.ERR_CastIsNull;
             }
 
-            if (targets.Count < 1)
+            Single param = selectTargetsParams as Single;
+            
+            if (targets.Count < 1 && param.IncludeSelf)
             {
                 targets.Add(caster.Id);
             }
