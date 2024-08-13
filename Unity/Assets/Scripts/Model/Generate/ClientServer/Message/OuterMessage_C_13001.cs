@@ -413,6 +413,9 @@ namespace ET
         [MemoryPackOrder(2)]
         public long TargetId { get; set; }
 
+        [MemoryPackOrder(3)]
+        public Unity.Mathematics.float3 Position { get; set; }
+
         public override void Dispose()
         {
             if (!this.IsFromPool)
@@ -423,6 +426,7 @@ namespace ET
             this.RpcId = default;
             this.CastConfigId = default;
             this.TargetId = default;
+            this.Position = default;
 
             ObjectPool.Instance.Recycle(this);
         }

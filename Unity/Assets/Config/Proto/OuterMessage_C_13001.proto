@@ -90,6 +90,7 @@ message C2M_Cast // ILocationRequest
     int32 RpcId = 1;
     int32 CastConfigId = 2;
     int64 TargetId = 3;
+    Unity.Mathematics.float3 Position = 4;
 }
 
 message M2C_Cast // ILocationResponse

@@ -12,6 +12,9 @@
                 return;
             }
 
+            // todo 指定释放范围技能，例如：法师暴风雪
+            //request.Position
+            
             response.Error = unit.CreateAndCast(request.CastConfigId, request.TargetId);
 
             await ETTask.CompletedTask;

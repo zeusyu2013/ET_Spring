@@ -55,6 +55,24 @@
     "CastHitAnimation": ""
   },
   {
+    "Id": 140001,
+    "Name": "castname_140001",
+    "Desc": "castdesc_140001",
+    "TotalTime": 1500,
+    "CastCooldown": 6000,
+    "Casting": false,
+    "SelectTargetType": 5,
+    "CastTargetType": 2,
+    "SelectTargetsParams": {
+      "$type": "ForwardSector180",
+      "Radius": 3,
+      "Count": 6
+    },
+    "NotifyType": 2,
+    "CastStartAnimation": "attack",
+    "CastHitAnimation": ""
+  },
+  {
     "Id": 210001,
     "Name": "技能210001",
     "Desc": "技能210001",

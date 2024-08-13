@@ -111,7 +111,7 @@ namespace ET.Server
             if (hp < 1)
             {
                 Log.Error($"复活类行为配置错误，复活后生命值为0，行为编号：{action.ConfigId}");
-                return;
+                hp = 1;
             }
 
             int err = target.SetRelive(hp, mp);

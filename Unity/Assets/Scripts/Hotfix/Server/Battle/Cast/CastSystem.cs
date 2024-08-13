@@ -142,7 +142,7 @@
 
                 if (!self.CheckAsyncInvalid(castInstanceId, casterInstanceId))
                 {
-                    Log.Error("");
+                    Log.Error($"异步检测失败，{castInstanceId} {casterInstanceId}");
                     return;
                 }
             }

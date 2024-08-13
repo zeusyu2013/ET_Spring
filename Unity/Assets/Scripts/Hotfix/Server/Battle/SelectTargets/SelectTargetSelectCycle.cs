@@ -7,6 +7,8 @@ namespace ET.Server
     {
         public override int Check(Unit caster, SelectTargetsParams selectTargetsParams, ref List<long> targets)
         {
+            SelectCycle cycle = (SelectCycle)selectTargetsParams;
+            
             return ErrorCode.ERR_Success;
         }
     }

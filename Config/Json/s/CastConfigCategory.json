@@ -77,6 +77,34 @@
     "CastHitAnimation": ""
   },
   {
+    "Id": 140001,
+    "Name": "castname_140001",
+    "Desc": "castdesc_140001",
+    "TotalTime": 1500,
+    "CastCooldown": 6000,
+    "Casting": false,
+    "SelectTargetType": 5,
+    "CastTargetType": 2,
+    "SelectTargetsParams": {
+      "$type": "ForwardSector180",
+      "Radius": 3,
+      "Count": 6
+    },
+    "NotifyType": 2,
+    "HitInfos": [
+      {
+        "Time": 800,
+        "HitSelf": false,
+        "HitAction": 2007,
+        "TargetBuff": 0,
+        "SelfBuff": 0
+      }
+    ],
+    "FinishActions": [],
+    "CastStartAnimation": "attack",
+    "CastHitAnimation": ""
+  },
+  {
     "Id": 210001,
     "Name": "castname_210001",
     "Desc": "castdesc_210001",

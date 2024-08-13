@@ -32,5 +32,10 @@ namespace ET
         /// </summary>
         SelectTargetType_SelectCycle = 4,
 
+        /// <summary>
+        /// 自身前方180度扇形
+        /// </summary>
+        SelectTargetType_ForwardSector180 = 5,
+
     }
 }
