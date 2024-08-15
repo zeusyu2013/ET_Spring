@@ -60,6 +60,27 @@
     }
   },
   {
+    "Id": 1005,
+    "Type": 1,
+    "ActionParams": {
+      "$type": "ModifyPropertyActionParams",
+      "ModifyProperties": [
+        {
+          "Property": 1007,
+          "Value": 1
+        },
+        {
+          "Property": 1008,
+          "Value": 1
+        },
+        {
+          "Property": 1006,
+          "Value": 1
+        }
+      ]
+    }
+  },
+  {
     "Id": 2002,
     "Type": 2,
     "ActionParams": {

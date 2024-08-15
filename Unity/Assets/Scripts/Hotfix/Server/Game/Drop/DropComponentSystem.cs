@@ -41,7 +41,7 @@ namespace ET.Server
                 rate += dropItem.ItemRate;
             }
 
-            if (rate >= 10000)
+            if (rate > 10000)
             {
                 Log.Error($"掉落列表总概率大于10000，请检查配置 掉落编号: {dropConfig}");
                 return;
@@ -66,7 +66,7 @@ namespace ET.Server
             }
 
             int dropCount = 0;
-            while (dropCount >= config.DropCount)
+            while (dropCount < config.DropCount)
             {
                 int random = RandomGenerator.RandomNumber(0, 10000);
                 foreach ((DropRange range, DropItem item) in ranges)

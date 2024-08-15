@@ -19,6 +19,17 @@ namespace ET.Client
         [EntitySystem]
         private static void Update(this OperaComponent self)
         {
+            InputComponent inputComponent = self.Root().GetComponent<InputComponent>();
+            if (inputComponent.MoveDirection.x != 0 || inputComponent.MoveDirection.z != 0 || 
+                inputComponent.JoystickMoveDirection.x != 0 || inputComponent.JoystickMoveDirection.y != 0)
+            {
+                Vector3 moveDir = inputComponent.JoystickMoveDirection is { x: 0, z: 0 } ? inputComponent.MoveDirection : inputComponent.JoystickMoveDirection;
+                Unit unit = UnitHelper.GetMyUnitFromClientScene(self.Root());
+                Quaternion rotation = Quaternion.Euler(0, unit.GetComponent<CameraComponent>().CinemachineTargetYaw, 0);
+                
+                self.JoyMove( rotation * moveDir.normalized);
+            }
+            
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 self.Test1().Coroutine();

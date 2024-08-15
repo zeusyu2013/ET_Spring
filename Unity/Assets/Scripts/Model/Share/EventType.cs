@@ -1,4 +1,5 @@
-﻿namespace ET.Client
+﻿
+namespace ET.Client
 {
     public struct SceneChangeStart
     {
@@ -68,5 +69,16 @@
     public struct OnItemUsed
     {
         
+    }
+    
+    public struct GetAllItems
+    {
+        public M2C_GetAllItems message;
+    }
+
+    public struct JoystickMove
+    {
+        public float DeltaX;
+        public float DeltaY;
     }
 }

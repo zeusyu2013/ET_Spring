@@ -234,6 +234,21 @@ message T2C_GetTeams // IResponse
 	repeated TeamInfo TeamInfos = 4;
 }
 
+// ResponseType T2M_GetTeamInfo
+message M2T_GetTeamInfo // IRequest
+{
+	int32 RpcId = 1;
+	int64 TeamId = 2;
+}
+
+message T2M_GetTeamInfo // IResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+	TeamInfo TeamInfo = 4;
+}
+
 message ShopItemInfo
 {
 	int32 ItemConfig = 1;
@@ -387,4 +402,22 @@ message M2C_UpgradeLottery // ILocationResponse
 message TaskInfo
 {
 
+}
+
+// ResponseType M2C_PickupDrop
+message C2M_PickupDrop // ILocationRequest
+{
+	int32 RpcId = 1;
+	int32 DeadUnitId = 2;
+	int64 UnitId = 3;
+	int64 TeamId = 4;
+	int64 AssignmentUnitId = 5;
+	int32 GameItemConfigId = 6;
+}
+
+message M2C_PickupDrop // ILocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
 }

@@ -1073,6 +1073,73 @@ namespace ET
     }
 
     [MemoryPackable]
+    [Message(OuterMessage.M2T_GetTeamInfo)]
+    [ResponseType(nameof(T2M_GetTeamInfo))]
+    public partial class M2T_GetTeamInfo : MessageObject, IRequest
+    {
+        public static M2T_GetTeamInfo Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2T_GetTeamInfo), isFromPool) as M2T_GetTeamInfo;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long TeamId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.TeamId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.T2M_GetTeamInfo)]
+    public partial class T2M_GetTeamInfo : MessageObject, IResponse
+    {
+        public static T2M_GetTeamInfo Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(T2M_GetTeamInfo), isFromPool) as T2M_GetTeamInfo;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        [MemoryPackOrder(3)]
+        public TeamInfo TeamInfo { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+            this.TeamInfo = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
     [Message(OuterMessage.ShopItemInfo)]
     public partial class ShopItemInfo : MessageObject
     {
@@ -1773,6 +1840,85 @@ namespace ET
         }
     }
 
+    [MemoryPackable]
+    [Message(OuterMessage.C2M_PickupDrop)]
+    [ResponseType(nameof(M2C_PickupDrop))]
+    public partial class C2M_PickupDrop : MessageObject, ILocationRequest
+    {
+        public static C2M_PickupDrop Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_PickupDrop), isFromPool) as C2M_PickupDrop;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int DeadUnitId { get; set; }
+
+        [MemoryPackOrder(2)]
+        public long UnitId { get; set; }
+
+        [MemoryPackOrder(3)]
+        public long TeamId { get; set; }
+
+        [MemoryPackOrder(4)]
+        public long AssignmentUnitId { get; set; }
+
+        [MemoryPackOrder(5)]
+        public int GameItemConfigId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.DeadUnitId = default;
+            this.UnitId = default;
+            this.TeamId = default;
+            this.AssignmentUnitId = default;
+            this.GameItemConfigId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_PickupDrop)]
+    public partial class M2C_PickupDrop : MessageObject, ILocationResponse
+    {
+        public static M2C_PickupDrop Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_PickupDrop), isFromPool) as M2C_PickupDrop;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
     public static partial class OuterMessage
     {
         public const ushort C2M_GMCommand = 11002;
@@ -1809,28 +1955,32 @@ namespace ET
         public const ushort T2C_QuitTeam = 11033;
         public const ushort C2T_GetTeams = 11034;
         public const ushort T2C_GetTeams = 11035;
-        public const ushort ShopItemInfo = 11036;
-        public const ushort C2M_ShopItems = 11037;
-        public const ushort M2C_ShopItems = 11038;
-        public const ushort C2M_BuyItem = 11039;
-        public const ushort M2C_BuyItem = 11040;
-        public const ushort FriendInfo = 11041;
-        public const ushort C2M_AddFriend = 11042;
-        public const ushort M2C_AddFriend = 11043;
-        public const ushort C2M_DeleteFriend = 11044;
-        public const ushort M2C_DeleteFriend = 11045;
-        public const ushort C2M_GetMounts = 11046;
-        public const ushort M2C_GetMounts = 11047;
-        public const ushort C2M_ActivationMount = 11048;
-        public const ushort M2C_ActivationMount = 11049;
-        public const ushort C2M_RideMount = 11050;
-        public const ushort M2C_RideMount = 11051;
-        public const ushort C2M_DownMount = 11052;
-        public const ushort M2C_DownMount = 11053;
-        public const ushort C2M_Lottery = 11054;
-        public const ushort M2C_Lottery = 11055;
-        public const ushort C2M_UpgradeLottery = 11056;
-        public const ushort M2C_UpgradeLottery = 11057;
-        public const ushort TaskInfo = 11058;
+        public const ushort M2T_GetTeamInfo = 11036;
+        public const ushort T2M_GetTeamInfo = 11037;
+        public const ushort ShopItemInfo = 11038;
+        public const ushort C2M_ShopItems = 11039;
+        public const ushort M2C_ShopItems = 11040;
+        public const ushort C2M_BuyItem = 11041;
+        public const ushort M2C_BuyItem = 11042;
+        public const ushort FriendInfo = 11043;
+        public const ushort C2M_AddFriend = 11044;
+        public const ushort M2C_AddFriend = 11045;
+        public const ushort C2M_DeleteFriend = 11046;
+        public const ushort M2C_DeleteFriend = 11047;
+        public const ushort C2M_GetMounts = 11048;
+        public const ushort M2C_GetMounts = 11049;
+        public const ushort C2M_ActivationMount = 11050;
+        public const ushort M2C_ActivationMount = 11051;
+        public const ushort C2M_RideMount = 11052;
+        public const ushort M2C_RideMount = 11053;
+        public const ushort C2M_DownMount = 11054;
+        public const ushort M2C_DownMount = 11055;
+        public const ushort C2M_Lottery = 11056;
+        public const ushort M2C_Lottery = 11057;
+        public const ushort C2M_UpgradeLottery = 11058;
+        public const ushort M2C_UpgradeLottery = 11059;
+        public const ushort TaskInfo = 11060;
+        public const ushort C2M_PickupDrop = 11061;
+        public const ushort M2C_PickupDrop = 11062;
     }
 }

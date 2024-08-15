@@ -121,7 +121,7 @@
     "Id": 40007,
     "Name": "buff名称40007",
     "Desc": "buff描述40007",
-    "BuffProperty": 1,
+    "BuffProperty": 3,
     "ContinueTime": 210000,
     "NotifyType": 2,
     "Tick": 3000,
@@ -131,5 +131,20 @@
     ],
     "RemoveActions": [],
     "Fx": ""
+  },
+  {
+    "Id": 40008,
+    "Name": "buffname_40008",
+    "Desc": "buffdesc_40008",
+    "BuffProperty": 4,
+    "ContinueTime": 2000,
+    "NotifyType": 2,
+    "Tick": 0,
+    "AddActions": [
+      1005
+    ],
+    "TickActions": [],
+    "RemoveActions": [],
+    "Fx": "fx8"
   }
 ]

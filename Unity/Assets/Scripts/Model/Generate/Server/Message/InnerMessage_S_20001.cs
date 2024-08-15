@@ -665,6 +665,85 @@ namespace ET
     }
 
     [MemoryPackable]
+    [Message(InnerMessage.G2QueueHall_Enqueue)]
+    [ResponseType(nameof(QueueHall2G_Enqueue))]
+    public partial class G2QueueHall_Enqueue : MessageObject, IRequest
+    {
+        public static G2QueueHall_Enqueue Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(G2QueueHall_Enqueue), isFromPool) as G2QueueHall_Enqueue;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long UnitId { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Account { get; set; }
+
+        [MemoryPackOrder(3)]
+        public long GateActorId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.UnitId = default;
+            this.Account = default;
+            this.GateActorId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(InnerMessage.QueueHall2G_Enqueue)]
+    public partial class QueueHall2G_Enqueue : MessageObject, IResponse
+    {
+        public static QueueHall2G_Enqueue Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(QueueHall2G_Enqueue), isFromPool) as QueueHall2G_Enqueue;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        [MemoryPackOrder(3)]
+        public bool NeedQueue { get; set; }
+
+        [MemoryPackOrder(4)]
+        public int Index { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+            this.NeedQueue = default;
+            this.Index = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
     [Message(InnerMessage.G2M_SessionDisconnect)]
     public partial class G2M_SessionDisconnect : MessageObject, ILocationMessage
     {
@@ -1680,35 +1759,37 @@ namespace ET
         public const ushort ObjectGetResponse = 20018;
         public const ushort R2G_GetLoginKey = 20019;
         public const ushort G2R_GetLoginKey = 20020;
-        public const ushort G2M_SessionDisconnect = 20021;
-        public const ushort ObjectQueryResponse = 20022;
-        public const ushort M2M_UnitTransferRequest = 20023;
-        public const ushort M2M_UnitTransferResponse = 20024;
-        public const ushort Other2DBCache_AddOrUpdateUnitCache = 20025;
-        public const ushort Other2DBCache_GetEntities = 20026;
-        public const ushort DBCache2Other_GetEntities = 20027;
-        public const ushort Rank_FightScore = 20028;
-        public const ushort Map2Rank_UpdateScore = 20029;
-        public const ushort M2M_ChatBroadcast = 20030;
-        public const ushort GuildInfo = 20031;
-        public const ushort GuildMemberInfo = 20032;
-        public const ushort M2G_CreateGuild = 20033;
-        public const ushort G2M_CreateGuild = 20034;
-        public const ushort M2G_GetAllGuilds = 20035;
-        public const ushort G2M_GetAllGuilds = 20036;
-        public const ushort M2G_RequestJoinGuild = 20037;
-        public const ushort G2M_RequestJoinGuild = 20038;
-        public const ushort M2G_RequestQuitGuild = 20039;
-        public const ushort G2M_RequestQuitGuild = 20040;
-        public const ushort NewDayNotify = 20041;
-        public const ushort DailyNotify = 20042;
-        public const ushort GameRequestInfo = 20043;
-        public const ushort Manager2Request_ShutDown = 20044;
-        public const ushort Request2Manager_ShutDown = 20045;
-        public const ushort M2Request_AddRequest = 20046;
-        public const ushort Request2M_AddRequest = 20047;
-        public const ushort M2Request_GetRequests = 20048;
-        public const ushort Request2M_GetRequests = 20049;
-        public const ushort Pay2M_Pay = 20050;
+        public const ushort G2QueueHall_Enqueue = 20021;
+        public const ushort QueueHall2G_Enqueue = 20022;
+        public const ushort G2M_SessionDisconnect = 20023;
+        public const ushort ObjectQueryResponse = 20024;
+        public const ushort M2M_UnitTransferRequest = 20025;
+        public const ushort M2M_UnitTransferResponse = 20026;
+        public const ushort Other2DBCache_AddOrUpdateUnitCache = 20027;
+        public const ushort Other2DBCache_GetEntities = 20028;
+        public const ushort DBCache2Other_GetEntities = 20029;
+        public const ushort Rank_FightScore = 20030;
+        public const ushort Map2Rank_UpdateScore = 20031;
+        public const ushort M2M_ChatBroadcast = 20032;
+        public const ushort GuildInfo = 20033;
+        public const ushort GuildMemberInfo = 20034;
+        public const ushort M2G_CreateGuild = 20035;
+        public const ushort G2M_CreateGuild = 20036;
+        public const ushort M2G_GetAllGuilds = 20037;
+        public const ushort G2M_GetAllGuilds = 20038;
+        public const ushort M2G_RequestJoinGuild = 20039;
+        public const ushort G2M_RequestJoinGuild = 20040;
+        public const ushort M2G_RequestQuitGuild = 20041;
+        public const ushort G2M_RequestQuitGuild = 20042;
+        public const ushort NewDayNotify = 20043;
+        public const ushort DailyNotify = 20044;
+        public const ushort GameRequestInfo = 20045;
+        public const ushort Manager2Request_ShutDown = 20046;
+        public const ushort Request2Manager_ShutDown = 20047;
+        public const ushort M2Request_AddRequest = 20048;
+        public const ushort Request2M_AddRequest = 20049;
+        public const ushort M2Request_GetRequests = 20050;
+        public const ushort Request2M_GetRequests = 20051;
+        public const ushort Pay2M_Pay = 20052;
     }
 }

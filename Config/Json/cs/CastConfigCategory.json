@@ -105,6 +105,33 @@
     "CastHitAnimation": ""
   },
   {
+    "Id": 150001,
+    "Name": "castname_150001",
+    "Desc": "castdesc_150001",
+    "TotalTime": 1500,
+    "CastCooldown": 12000,
+    "Casting": false,
+    "SelectTargetType": 1,
+    "CastTargetType": 2,
+    "SelectTargetsParams": {
+      "$type": "Single",
+      "IncludeSelf": false
+    },
+    "NotifyType": 2,
+    "HitInfos": [
+      {
+        "Time": 0,
+        "HitSelf": false,
+        "HitAction": 0,
+        "TargetBuff": 0,
+        "SelfBuff": 0
+      }
+    ],
+    "FinishActions": [],
+    "CastStartAnimation": "",
+    "CastHitAnimation": ""
+  },
+  {
     "Id": 210001,
     "Name": "castname_210001",
     "Desc": "castdesc_210001",

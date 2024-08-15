@@ -81,11 +81,13 @@ namespace ET.Client
 
             view.GCanvas_Joystick.selected = false;
             
+            EventSystem.Instance.Publish(self.Root(), new JoystickMove(){ DeltaX = 0, DeltaY = 0});
             self.Scene().CurrentScene().GetComponent<OperaComponent>().Stop();
         }
 
         public static float SetObjectPostion(this UIJoystickLogicComponent self, Vector2 position)
         {
+          
             var view = self.GetParent<UI>().GetComponent<UIJoystickComponent>();
             float centerX = view.GCanvas_Joystick.x + view.GCanvas_Joystick.width * 0.5f;
             float centerY = view.GCanvas_Joystick.y + view.GCanvas_Joystick.height * 0.5f;
@@ -118,10 +120,9 @@ namespace ET.Client
             
             self.Thumb.SetXY(thumbCenterX + deltaX - self.Thumb.width * 0.5f, thumbCenterY + deltaY - self.Thumb.height * 0.5f);
 
-            float3 direction = new float3(deltaX, 0, deltaY);
-            
-            self.Scene().CurrentScene().GetComponent<OperaComponent>().JoyMove(math.normalize(direction));
-            
+            //float3 direction = new float3(deltaX, 0, deltaY);
+            //self.Scene().CurrentScene().GetComponent<OperaComponent>().JoyMove(math.normalize(direction));
+            EventSystem.Instance.Publish(self.Root(), new JoystickMove(){ DeltaX = deltaX, DeltaY = deltaY});
             return degree;
         }
         

@@ -13,5 +13,6 @@ namespace ET.Client
         public GButton GCanvas_Test3 { get; set; }
         public GButton GCanvas_Test4 { get; set; }
         public GTextField GCanvas_PingText { get; set; }
+        public GButton GCanvas_BagBtn { get; set; }
     }
 }

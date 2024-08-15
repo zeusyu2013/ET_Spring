@@ -52,5 +52,14 @@
     "FullScreen": true,
     "RefitH": false,
     "ChangeSceneRemove": true
+  },
+  {
+    "Id": 2004,
+    "Name": "UIBag",
+    "UIType": 2,
+    "Layer": 2,
+    "FullScreen": true,
+    "RefitH": false,
+    "ChangeSceneRemove": true
   }
 ]

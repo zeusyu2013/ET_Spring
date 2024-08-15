@@ -418,5 +418,65 @@
     "Exp": 700,
     "Gold": 7000,
     "MaxTime": 86400
+  },
+  {
+    "Level": 71,
+    "Exp": 710,
+    "Gold": 7100,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 72,
+    "Exp": 720,
+    "Gold": 7200,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 73,
+    "Exp": 730,
+    "Gold": 7300,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 74,
+    "Exp": 740,
+    "Gold": 7400,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 75,
+    "Exp": 750,
+    "Gold": 7500,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 76,
+    "Exp": 760,
+    "Gold": 7600,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 77,
+    "Exp": 770,
+    "Gold": 7700,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 78,
+    "Exp": 780,
+    "Gold": 7800,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 79,
+    "Exp": 790,
+    "Gold": 7900,
+    "MaxTime": 86400
+  },
+  {
+    "Level": 80,
+    "Exp": 800,
+    "Gold": 8000,
+    "MaxTime": 86400
   }
 ]

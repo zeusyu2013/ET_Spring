@@ -424,6 +424,39 @@ message M2C_UseItem // ILocationResponse
 	repeated GameItemInfo GameItemInfos = 4;
 }
 
+// ResponseType M2C_GetDropItems
+message C2M_GetDropItems // ILocationRequest
+{
+    int32 RpcId = 1;
+    int64 UnitId = 2;
+}
+
+message M2C_GetDropItems // ILocationResponse
+{
+    int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+    repeated GameItemInfo GameItemInfos = 4;
+}
+
+// ResponseType M2C_AssignmentDropItem
+message C2M_AssignmentDropItem // ILocationRequest
+{
+    int32 RpcId = 1;
+	int64 MonsterId = 2;
+    int64 UnitId = 3;
+	int64 TeamId = 4;
+	int64 AssignmentUnitId = 5;
+	int32 ItemConfigId = 6;
+}
+
+message M2C_AssignmentDropItem // ILocationResponse
+{
+    int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}
+
 // ResponseType M2C_AcceptTask
 message C2M_AcceptTask // ILocationRequest
 {

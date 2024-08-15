@@ -18,6 +18,7 @@ namespace ET.Client
             self.GCanvas_Test3 = self.GCanvas.GetChildAt(2) as GButton;
             self.GCanvas_Test4 = self.GCanvas.GetChildAt(3) as GButton;
             self.GCanvas_PingText = self.GCanvas.GetChildAt(4) as GTextField;
+            self.GCanvas_BagBtn = self.GCanvas.GetChildAt(5) as GButton;
         }
         [EntitySystem]
         private static void Destroy(this UIMainComponent self)
@@ -28,6 +29,7 @@ namespace ET.Client
             self.GCanvas_Test3 = null;
             self.GCanvas_Test4 = null;
             self.GCanvas_PingText = null;
+            self.GCanvas_BagBtn = null;
         }
     }
 }

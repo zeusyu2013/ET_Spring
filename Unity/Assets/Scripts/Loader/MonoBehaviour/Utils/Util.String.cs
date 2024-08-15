@@ -1,4 +1,5 @@
-﻿namespace ET
+﻿
+namespace ET
 {
     public static partial class Util
     {
@@ -25,6 +26,93 @@
             }
 
             return Number100[value];
+        }
+
+        public static bool IsNullOrEmpty(this string value)
+        {
+            return string.IsNullOrEmpty(value);
+        }
+        
+        /// <summary>
+        /// 字符串转换到int
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
+        public static int ToInt(this string value, int defaultValue = 0)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return defaultValue;
+            }
+            int.TryParse(value, out var result);
+            return result;
+        }
+        
+        /// <summary>
+        /// 字符串转byte
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static byte ToByte(this string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return 0;
+            }
+            byte.TryParse(value, out var result);
+            return result;
+        }
+
+        /// <summary>
+        /// 字符串转换到long
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static long ToLong(this string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return 0;
+            }
+            long.TryParse(value, out var result);
+            return result;
+        }
+        
+        public static double ToDouble(this string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return 0;
+            }
+            
+            double.TryParse(value, out var result);
+            return result;
+        }
+
+        /// <summary>
+        /// 字符串转换到float
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static float ToFloat(this string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return 0;
+            }
+            float.TryParse(value, out var result);
+            return result;
+        }
+        
+        /// <summary>
+        /// 字符串转bool值
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static bool ToBool(this string value)
+        {
+            return !string.IsNullOrEmpty(value) && value.ToLower().Equals("true");
         }
     }
 }

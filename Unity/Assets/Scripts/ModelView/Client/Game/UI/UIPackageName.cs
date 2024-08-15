@@ -10,6 +10,7 @@ namespace ET.Client
         public const string ChatMini = "ChatMini";
         public const string Common = "Common";
         public const string CreateRole = "CreateRole";
+        public const string ItemIconAtlas = "ItemIconAtlas";
         public const string Joystick = "Joystick";
         public const string Language = "Language";
         public const string Login = "Login";

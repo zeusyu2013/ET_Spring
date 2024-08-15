@@ -18,6 +18,16 @@ namespace ET.Server
         {
         }
 
+        public static TeamInfo GetTeam(this TeamHallComponent self, long teamId)
+        {
+            if (self.Children.TryGetValue(teamId, out Entity team))
+            {
+                return ((Team)team).ToMessage();
+            }
+
+            return null;
+        }
+
         public static List<TeamInfo> GetTeams(this TeamHallComponent self)
         {
             List<TeamInfo> infos = new();
@@ -28,7 +38,7 @@ namespace ET.Server
                 {
                     continue;
                 }
-                
+
                 infos.Add(team.ToMessage());
             }
 
@@ -52,7 +62,7 @@ namespace ET.Server
             self.TeamMembers.Add(leaderUnitId);
 
             teamId = team.TeamId;
-            
+
             return ErrorCode.ERR_Success;
         }
 
@@ -74,9 +84,9 @@ namespace ET.Server
             {
                 return ErrorCode.ERR_TeamMemberFull;
             }
-            
+
             team.TeamMemberIds.Add(unitId);
-            
+
             self.TeamMembers.Add(unitId);
 
             return ErrorCode.ERR_Success;
@@ -115,7 +125,7 @@ namespace ET.Server
             }
 
             self.TeamMembers.Remove(unitId);
-            
+
             return ErrorCode.ERR_Success;
         }
     }

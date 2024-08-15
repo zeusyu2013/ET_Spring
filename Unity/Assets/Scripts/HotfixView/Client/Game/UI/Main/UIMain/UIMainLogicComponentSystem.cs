@@ -27,6 +27,10 @@ namespace ET.Client
             {
                 ClientCastHelper.CastSkill(self.Root(), 110001).Coroutine();
             });
+            view.GCanvas_BagBtn.onClick.Set(() =>
+            {
+                UIHelper.Create(self.Root(), UIName.UIBag).Coroutine();
+            });
         }
 
         [EntitySystem]

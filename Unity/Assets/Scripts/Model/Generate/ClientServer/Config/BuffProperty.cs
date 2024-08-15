@@ -26,5 +26,10 @@ namespace ET
         /// </summary>
         BuffProperty_Curse = 3,
 
+        /// <summary>
+        /// 普通
+        /// </summary>
+        BuffProperty_Normal = 4,
+
     }
 }

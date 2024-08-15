@@ -97,5 +97,12 @@ namespace ET
         public const int ERR_AlreadyAcceptTask = 203001;
         public const int ERR_CantAcceptAgain = 203002;
         public const int ERR_TaskNotAccepted = 203003;
+        
+        // Drop
+        public const int ERR_DropUnitNotFound = 200401;
+        public const int ERR_DropNotBelong = 200402;
+        public const int ERR_DropItemNotFound = 200403;
+        public const int ERR_DropItemAssignmentUnitNotFound = 200404;
+        public const int ERR_DropItemAssignmentNoPermission = 200405;
     }
 }

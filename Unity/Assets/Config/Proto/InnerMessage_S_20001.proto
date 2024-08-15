@@ -147,6 +147,24 @@ message G2R_GetLoginKey // IResponse
 	int64 GateId = 5;
 }
 
+// ResponseType QueueHall2G_Enqueue
+message G2QueueHall_Enqueue // IRequest
+{
+	int32 RpcId = 1;
+	int64 UnitId = 2;
+	string Account = 3;
+	int64 GateActorId = 4;
+}
+
+message QueueHall2G_Enqueue // IResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+	bool NeedQueue = 4;
+	int32 Index = 5;
+}
+
 message G2M_SessionDisconnect // ILocationMessage
 {
 	int32 RpcId = 1;
