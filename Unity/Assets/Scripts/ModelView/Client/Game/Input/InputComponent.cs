@@ -7,6 +7,7 @@ namespace ET.Client
     [ComponentOf(typeof(Scene))]
     public class InputComponent: Entity, IAwake, IUpdate
     {
+        public float3 PreMoveDirection;
         public float3 MoveDirection;
 
         public float3 JoystickMoveDirection;

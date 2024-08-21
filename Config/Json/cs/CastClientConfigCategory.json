@@ -1,0 +1,52 @@
+[
+  {
+    "Id": 110001,
+    "CastStartAnimation": "attack",
+    "CastHitAnimation": ""
+  },
+  {
+    "Id": 120001,
+    "CastStartAnimation": "attack",
+    "CastHitAnimation": ""
+  },
+  {
+    "Id": 130001,
+    "CastStartAnimation": "",
+    "CastHitAnimation": ""
+  },
+  {
+    "Id": 140001,
+    "CastStartAnimation": "attack",
+    "CastHitAnimation": ""
+  },
+  {
+    "Id": 150001,
+    "CastStartAnimation": "",
+    "CastHitAnimation": ""
+  },
+  {
+    "Id": 210001,
+    "CastStartAnimation": "sing",
+    "CastHitAnimation": ""
+  },
+  {
+    "Id": 210002,
+    "CastStartAnimation": "sing",
+    "CastHitAnimation": ""
+  },
+  {
+    "Id": 310001,
+    "CastStartAnimation": "sing",
+    "CastHitAnimation": ""
+  },
+  {
+    "Id": 310002,
+    "CastStartAnimation": "sing",
+    "CastHitAnimation": ""
+  },
+  {
+    "Id": 310003,
+    "CastStartAnimation": "sing",
+    "CastHitAnimation": ""
+  }
+]

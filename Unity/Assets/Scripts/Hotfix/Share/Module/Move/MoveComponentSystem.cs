@@ -82,10 +82,7 @@ namespace ET
         {
             self.Stop(false);
 
-            foreach (float3 v in target)
-            {
-                self.Targets.Add(v);
-            }
+            self.Targets.AddRange(target);
 
             self.IsTurnHorizontal = true;
             self.TurnTime = turnTime;
@@ -257,14 +254,14 @@ namespace ET
         }
 
         public static void StopForce(this MoveComponent self)
-        {
+        {   
             EventSystem.Instance.Publish(self.Scene(), new MoveStop() { Unit = self.GetParent<Unit>() });
         }
 
         // ret: 停止的时候，移动协程的返回值
         public static void Stop(this MoveComponent self, bool ret)
         {
-            if (self.Targets.Count > 1)
+            if (self.Targets.Count > 0)
             {
                 self.MoveForward(ret);
             }

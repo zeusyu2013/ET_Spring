@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b02dfa7aa9d4545b3417a18477fbee, type: 3}
+  m_Name: BuildinFileManifest
+  m_EditorClassIdentifier: 
+  BuildinFiles:
+  - PackageName: DefaultPackage
+    FileName: defaultpackage_assets_bundles_animations_6d3120202aeccc50a8ed716140d3e221.bundle
+    FileCRC32: fee17b31
+  - PackageName: DefaultPackage
+    FileName: defaultpackage_assets_bundles_aotdlls_e62077b23c32048a0f7feb10414ad69d.bundle
+    FileCRC32: f00eb96b
+  - PackageName: DefaultPackage
+    FileName: defaultpackage_assets_bundles_code_b45ec87136ed4704e8e2ecfca733d327.bundle
+    FileCRC32: fd8c6c2b
+  - PackageName: DefaultPackage
+    FileName: defaultpackage_assets_bundles_config_aee07ad94cce9346b3d5c8604cc894e3.bundle
+    FileCRC32: 688bf73e
+  - PackageName: DefaultPackage
+    FileName: defaultpackage_assets_bundles_fairygui_71f7308ae60781fd0a1c9e5fc9c38b73.bundle
+    FileCRC32: 5387a20a
+  - PackageName: DefaultPackage
+    FileName: defaultpackage_assets_bundles_scenes_159ecb5db42be332573d8bc27920cc2d.bundle
+    FileCRC32: 3fc47b91
+  - PackageName: DefaultPackage
+    FileName: defaultpackage_assets_bundles_unit_8f63b1ef20ea59e4d22b53be3901a7e6.bundle
+    FileCRC32: 117564f5
+  - PackageName: DefaultPackage
+    FileName: defaultpackage_share_assets_bundles_scenes_map1_1efdb53648132f16241958b6c27f86fd.bundle
+    FileCRC32: 1f7a2a32
+  - PackageName: DefaultPackage
+    FileName: defaultpackage_share_assets_bundles_scenes_map2_0db82ef108379d20d30cb7818a4d3635.bundle
+    FileCRC32: b3a50f0e
+  - PackageName: DefaultPackage
+    FileName: "defaultpackage_share_assets_bundles_scenes_\u827E\u5C14\u6587\u68EE\u6797_a9214dcfeaefda6835beb823eef6823f.bundle"
+    FileCRC32: f0cc4132
+  - PackageName: DefaultPackage
+    FileName: defaultpackage_share_assets_res_scenes_materials_55deab73eeae0a4e27c70e3a5b9be815.bundle
+    FileCRC32: a4bb309f
+  - PackageName: DefaultPackage
+    FileName: defaultpackage_share_assets_res_scenes_models_0e66156aef4ade5f6dfc94df8014b737.bundle
+    FileCRC32: 4bc093c8
+  - PackageName: DefaultPackage
+    FileName: defaultpackage_share_assets_res_scenes_prefabs_569f35965a0061f236e221a357655987.bundle
+    FileCRC32: f8accaca
+  - PackageName: DefaultPackage
+    FileName: defaultpackage_share_assets_res_scenes_textures_bfc6fe4c070f25f8a61273e498ef172f.bundle
+    FileCRC32: 93b2c81d
+  - PackageName: DefaultPackage
+    FileName: defaultpackage_share_assets_res_unit_models_4a108a3d02552200d4e9cc293d1d72a5.bundle
+    FileCRC32: 9ad05463
+  - PackageName: DefaultPackage
+    FileName: defaultpackage_share_packages_com_unity_render-pipelines_universal_runtime_materials_a6a7079eee757f3b1e3b41e3c0184d0b.bundle
+    FileCRC32: 591f210f
+  - PackageName: DefaultPackage
+    FileName: defaultpackage_unityshaders_ebb3d4abde57c1522a3c447a76e2a4a7.bundle
+    FileCRC32: 8d20e87c

@@ -82,6 +82,7 @@ namespace ET.Client
             view.GCanvas_Joystick.selected = false;
             
             EventSystem.Instance.Publish(self.Root(), new JoystickMove(){ DeltaX = 0, DeltaY = 0});
+            
             self.Scene().CurrentScene().GetComponent<OperaComponent>().Stop();
         }
 

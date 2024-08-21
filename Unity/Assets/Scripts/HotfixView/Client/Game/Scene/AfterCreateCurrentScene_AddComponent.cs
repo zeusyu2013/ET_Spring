@@ -7,6 +7,10 @@ namespace ET.Client
         {
             //scene.AddComponent<UIComponent>();
             scene.AddComponent<ResourcesLoaderComponent>();
+            scene.AddComponent<PoolComponent>();
+            scene.AddComponent<FxComponent>();
+            scene.AddComponent<SoundComponent>();
+            
             await ETTask.CompletedTask;
         }
     }

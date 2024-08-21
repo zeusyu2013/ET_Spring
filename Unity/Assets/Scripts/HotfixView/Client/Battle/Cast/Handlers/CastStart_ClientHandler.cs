@@ -11,7 +11,7 @@
                 return;
             }
 
-            CastConfig config = CastConfigCategory.Instance.Get(args.CastConfigId);
+            CastClientConfig config = CastClientConfigCategory.Instance.Get(args.CastConfigId);
             
             // 播放动画
             await unit.GetComponent<AnimatorComponent>()?.Play(config.CastStartAnimation);

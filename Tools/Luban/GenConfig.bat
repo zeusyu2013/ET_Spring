@@ -19,8 +19,8 @@ dotnet %LUBAN_DLL% ^
     -x l10n.provider=default ^
     -x l10n.textFile.languageFieldName=Text_CN ^
     -x l10n.textFile.keyFieldName=Id ^
-    -x l10n.convertTextKeyToValue=1
-    
+    -x l10n.convertTextKeyToValue=1 ^
+    -x pathValidator.rootDir=%WORKSPACE%\Unity
 
 echo ==================== FuncConfig : GenClientFinish ====================
 
@@ -42,8 +42,8 @@ dotnet %LUBAN_DLL% ^
     -x bin.outputDataDir=%WORKSPACE%\Config\Excel\s ^
     -x json.outputDataDir=%WORKSPACE%\Config\Json\s ^
     -x lineEnding=CRLF ^
+    -x pathValidator.rootDir=%WORKSPACE%\Unity
     
-
 echo ==================== FuncConfig : GenServerFinish ====================
 
 if %ERRORLEVEL% NEQ 0 (

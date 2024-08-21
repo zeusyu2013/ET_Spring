@@ -26,7 +26,6 @@ namespace ET
             {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);AddActions = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); AddActions.Add(_e0);}}
             {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);TickActions = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); TickActions.Add(_e0);}}
             {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);RemoveActions = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); RemoveActions.Add(_e0);}}
-            Fx = _buf.ReadString();
 
             PostInit();
         }
@@ -86,11 +85,6 @@ namespace ET
         /// </summary>
         public readonly System.Collections.Generic.List<int> RemoveActions;
 
-        /// <summary>
-        /// buff特效
-        /// </summary>
-        public readonly string Fx;
-
         public const int __ID__ = -1370631787;
 
         public override int GetTypeId() => __ID__;
@@ -108,7 +102,6 @@ namespace ET
             + "AddActions:" + Luban.StringUtil.CollectionToString(AddActions) + ","
             + "TickActions:" + Luban.StringUtil.CollectionToString(TickActions) + ","
             + "RemoveActions:" + Luban.StringUtil.CollectionToString(RemoveActions) + ","
-            + "Fx:" + Fx + ","
             + "}";
         }
 

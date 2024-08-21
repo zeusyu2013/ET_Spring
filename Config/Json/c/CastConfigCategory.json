@@ -12,9 +12,7 @@
       "$type": "Single",
       "IncludeSelf": true
     },
-    "NotifyType": 2,
-    "CastStartAnimation": "attack",
-    "CastHitAnimation": ""
+    "NotifyType": 2
   },
   {
     "Id": 120001,
@@ -31,9 +29,7 @@
       "Radius": 5,
       "Counter": 5
     },
-    "NotifyType": 2,
-    "CastStartAnimation": "attack",
-    "CastHitAnimation": ""
+    "NotifyType": 2
   },
   {
     "Id": 130001,
@@ -50,14 +46,12 @@
       "Height": 6,
       "Counter": 5
     },
-    "NotifyType": 2,
-    "CastStartAnimation": "",
-    "CastHitAnimation": ""
+    "NotifyType": 2
   },
   {
     "Id": 140001,
-    "Name": "castname_140001",
-    "Desc": "castdesc_140001",
+    "Name": "技能140001",
+    "Desc": "技能140001",
     "TotalTime": 1500,
     "CastCooldown": 6000,
     "Casting": false,
@@ -68,14 +62,12 @@
       "Radius": 3,
       "Count": 6
     },
-    "NotifyType": 2,
-    "CastStartAnimation": "attack",
-    "CastHitAnimation": ""
+    "NotifyType": 2
   },
   {
     "Id": 150001,
-    "Name": "castname_150001",
-    "Desc": "castdesc_150001",
+    "Name": "技能150001",
+    "Desc": "技能150001",
     "TotalTime": 1500,
     "CastCooldown": 12000,
     "Casting": false,
@@ -85,9 +77,7 @@
       "$type": "Single",
       "IncludeSelf": false
     },
-    "NotifyType": 2,
-    "CastStartAnimation": "",
-    "CastHitAnimation": ""
+    "NotifyType": 2
   },
   {
     "Id": 210001,
@@ -102,9 +92,7 @@
       "$type": "Single",
       "IncludeSelf": false
     },
-    "NotifyType": 2,
-    "CastStartAnimation": "sing",
-    "CastHitAnimation": ""
+    "NotifyType": 2
   },
   {
     "Id": 210002,
@@ -122,9 +110,7 @@
       "Radius": 5,
       "Counter": 10
     },
-    "NotifyType": 2,
-    "CastStartAnimation": "sing",
-    "CastHitAnimation": ""
+    "NotifyType": 2
   },
   {
     "Id": 310001,
@@ -139,9 +125,7 @@
       "$type": "Single",
       "IncludeSelf": true
     },
-    "NotifyType": 2,
-    "CastStartAnimation": "sing",
-    "CastHitAnimation": ""
+    "NotifyType": 2
   },
   {
     "Id": 310002,
@@ -156,9 +140,7 @@
       "$type": "Single",
       "IncludeSelf": false
     },
-    "NotifyType": 2,
-    "CastStartAnimation": "sing",
-    "CastHitAnimation": ""
+    "NotifyType": 2
   },
   {
     "Id": 310003,
@@ -173,8 +155,6 @@
       "$type": "Single",
       "IncludeSelf": true
     },
-    "NotifyType": 2,
-    "CastStartAnimation": "sing",
-    "CastHitAnimation": ""
+    "NotifyType": 2
   }
 ]

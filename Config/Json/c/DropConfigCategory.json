@@ -54,5 +54,17 @@
         "ItemRate": 5000
       }
     ]
+  },
+  {
+    "Id": 10004,
+    "DropCount": 1,
+    "DropCertainty": 5000,
+    "DropList": [
+      {
+        "ItemConfig": 60015,
+        "ItemAmount": 1,
+        "ItemRate": 10000
+      }
+    ]
   }
 ]

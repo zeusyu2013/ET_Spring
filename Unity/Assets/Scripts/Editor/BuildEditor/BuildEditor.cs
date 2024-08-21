@@ -72,6 +72,31 @@ namespace ET
 
             GUILayout.Space(5);
 
+            if (GUILayout.Button("Build Bundles"))
+            {
+                BuildTarget buildTarget = BuildTarget.StandaloneWindows64;
+                switch (this.platformType)
+                {
+                    case PlatformType.Windows:
+                        buildTarget = BuildTarget.StandaloneWindows64;
+                        break;
+                    case PlatformType.Android:
+                        buildTarget = BuildTarget.Android;
+                        break;
+                    case PlatformType.IOS:
+                        buildTarget = BuildTarget.iOS;
+                        break;
+                    case PlatformType.MacOS:
+                        buildTarget = BuildTarget.StandaloneOSX;
+                        break;
+                    case PlatformType.Linux:
+                        buildTarget = BuildTarget.StandaloneLinux64;
+                        break;
+                }
+
+                BuildHelper.BuildBundles(buildTarget);
+            }
+
             if (GUILayout.Button("BuildPackage"))
             {
                 if (this.platformType == PlatformType.None)
@@ -94,7 +119,9 @@ namespace ET
 
                 if (platformType != activePlatform)
                 {
-                    switch (EditorUtility.DisplayDialogComplex("Warning!", $"current platform is {activePlatform}, if change to {platformType}, may be take a long time", "change", "cancel", "no change"))
+                    switch (EditorUtility.DisplayDialogComplex("Warning!",
+                                $"current platform is {activePlatform}, if change to {platformType}, may be take a long time", "change", "cancel",
+                                "no change"))
                     {
                         case 0:
                             activePlatform = platformType;

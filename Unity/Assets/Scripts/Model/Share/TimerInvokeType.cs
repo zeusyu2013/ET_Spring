@@ -35,6 +35,8 @@
         public const int TrapTickTimer = 408;
         public const int TrapTotalTimer = 409;
 
+        public const int FxTimer = 410;
+
         public const int CreateMonsterTimer = 415;
         public const int MonsterDeadTimer = 416;
 

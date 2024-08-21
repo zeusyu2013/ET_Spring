@@ -1,0 +1,82 @@
+[
+  {
+    "Id": 40001,
+    "AddFx": "Assets/Bundles/Fx/fx1.prefab",
+    "AddFxBindPoint": 4,
+    "AddFxTime": 3000,
+    "TickFx": "",
+    "TickFxBindPoint": 4,
+    "RemoveFx": "",
+    "RemoveFxBindPoint": 4
+  },
+  {
+    "Id": 40002,
+    "AddFx": "Assets/Bundles/Fx/fx2.prefab",
+    "AddFxBindPoint": 4,
+    "AddFxTime": 3000,
+    "TickFx": "",
+    "TickFxBindPoint": 4,
+    "RemoveFx": "",
+    "RemoveFxBindPoint": 4
+  },
+  {
+    "Id": 40003,
+    "AddFx": "Assets/Bundles/Fx/fx3.prefab",
+    "AddFxBindPoint": 4,
+    "AddFxTime": 3000,
+    "TickFx": "",
+    "TickFxBindPoint": 4,
+    "RemoveFx": "",
+    "RemoveFxBindPoint": 4
+  },
+  {
+    "Id": 40004,
+    "AddFx": "Assets/Bundles/Fx/fx4.prefab",
+    "AddFxBindPoint": 4,
+    "AddFxTime": 3000,
+    "TickFx": "",
+    "TickFxBindPoint": 4,
+    "RemoveFx": "",
+    "RemoveFxBindPoint": 4
+  },
+  {
+    "Id": 40005,
+    "AddFx": "Assets/Bundles/Fx/fx5.prefab",
+    "AddFxBindPoint": 4,
+    "AddFxTime": 3000,
+    "TickFx": "",
+    "TickFxBindPoint": 4,
+    "RemoveFx": "",
+    "RemoveFxBindPoint": 4
+  },
+  {
+    "Id": 40006,
+    "AddFx": "",
+    "AddFxBindPoint": 4,
+    "AddFxTime": 3000,
+    "TickFx": "",
+    "TickFxBindPoint": 4,
+    "RemoveFx": "",
+    "RemoveFxBindPoint": 4
+  },
+  {
+    "Id": 40007,
+    "AddFx": "",
+    "AddFxBindPoint": 4,
+    "AddFxTime": 3000,
+    "TickFx": "",
+    "TickFxBindPoint": 4,
+    "RemoveFx": "",
+    "RemoveFxBindPoint": 4
+  },
+  {
+    "Id": 40008,
+    "AddFx": "Assets/Bundles/Fx/fx8.prefab",
+    "AddFxBindPoint": 4,
+    "AddFxTime": 3000,
+    "TickFx": "",
+    "TickFxBindPoint": 4,
+    "RemoveFx": "",
+    "RemoveFxBindPoint": 4
+  }
+]

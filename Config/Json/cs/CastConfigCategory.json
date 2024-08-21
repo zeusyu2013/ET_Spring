@@ -22,9 +22,7 @@
         "SelfBuff": 40005
       }
     ],
-    "FinishActions": [],
-    "CastStartAnimation": "attack",
-    "CastHitAnimation": ""
+    "FinishActions": []
   },
   {
     "Id": 120001,
@@ -51,9 +49,7 @@
         "SelfBuff": 0
       }
     ],
-    "FinishActions": [],
-    "CastStartAnimation": "attack",
-    "CastHitAnimation": ""
+    "FinishActions": []
   },
   {
     "Id": 130001,
@@ -72,9 +68,7 @@
     },
     "NotifyType": 2,
     "HitInfos": [],
-    "FinishActions": [],
-    "CastStartAnimation": "",
-    "CastHitAnimation": ""
+    "FinishActions": []
   },
   {
     "Id": 140001,
@@ -100,9 +94,7 @@
         "SelfBuff": 0
       }
     ],
-    "FinishActions": [],
-    "CastStartAnimation": "attack",
-    "CastHitAnimation": ""
+    "FinishActions": []
   },
   {
     "Id": 150001,
@@ -127,9 +119,7 @@
         "SelfBuff": 0
       }
     ],
-    "FinishActions": [],
-    "CastStartAnimation": "",
-    "CastHitAnimation": ""
+    "FinishActions": []
   },
   {
     "Id": 210001,
@@ -146,9 +136,7 @@
     },
     "NotifyType": 2,
     "HitInfos": [],
-    "FinishActions": [],
-    "CastStartAnimation": "sing",
-    "CastHitAnimation": ""
+    "FinishActions": []
   },
   {
     "Id": 210002,
@@ -176,9 +164,7 @@
         "SelfBuff": 0
       }
     ],
-    "FinishActions": [],
-    "CastStartAnimation": "sing",
-    "CastHitAnimation": ""
+    "FinishActions": []
   },
   {
     "Id": 310001,
@@ -203,9 +189,7 @@
         "SelfBuff": 0
       }
     ],
-    "FinishActions": [],
-    "CastStartAnimation": "sing",
-    "CastHitAnimation": ""
+    "FinishActions": []
   },
   {
     "Id": 310002,
@@ -224,9 +208,7 @@
     "HitInfos": [],
     "FinishActions": [
       9001
-    ],
-    "CastStartAnimation": "sing",
-    "CastHitAnimation": ""
+    ]
   },
   {
     "Id": 310003,
@@ -251,8 +233,6 @@
         "SelfBuff": 0
       }
     ],
-    "FinishActions": [],
-    "CastStartAnimation": "sing",
-    "CastHitAnimation": ""
+    "FinishActions": []
   }
 ]

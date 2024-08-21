@@ -26,8 +26,6 @@ namespace ET
             CastTargetType = (CastTargetType)_buf.ReadInt();
             SelectTargetsParams = SelectTargetsParams.DeserializeSelectTargetsParams(_buf);
             NotifyType = (MessageNotifyType)_buf.ReadInt();
-            CastStartAnimation = _buf.ReadString();
-            CastHitAnimation = _buf.ReadString();
 
             PostInit();
         }
@@ -84,16 +82,6 @@ namespace ET
         /// </summary>
         public readonly MessageNotifyType NotifyType;
 
-        /// <summary>
-        /// 技能起手动画
-        /// </summary>
-        public readonly string CastStartAnimation;
-
-        /// <summary>
-        /// 技能受击动画
-        /// </summary>
-        public readonly string CastHitAnimation;
-
         public const int __ID__ = 944053121;
 
         public override int GetTypeId() => __ID__;
@@ -111,8 +99,6 @@ namespace ET
             + "CastTargetType:" + CastTargetType + ","
             + "SelectTargetsParams:" + SelectTargetsParams + ","
             + "NotifyType:" + NotifyType + ","
-            + "CastStartAnimation:" + CastStartAnimation + ","
-            + "CastHitAnimation:" + CastHitAnimation + ","
             + "}";
         }
 

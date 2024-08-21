@@ -3,42 +3,42 @@
     "Id": 25001,
     "Type": 1,
     "Name": "米克尔",
-    "Model": "25001"
+    "Model": "Assets/Bundles/Unit/25001.prefab"
   },
   {
     "Id": 1001,
     "Type": 2,
     "Name": "米克尔3",
-    "Model": "1001"
+    "Model": "Assets/Bundles/Unit/1001.prefab"
   },
   {
     "Id": 1002,
     "Type": 2,
     "Name": "米克尔4",
-    "Model": "1002"
+    "Model": "Assets/Bundles/Unit/1002.prefab"
   },
   {
     "Id": 40001,
     "Type": 3,
     "Name": "",
-    "Model": "40001"
+    "Model": "Assets\\Bundles\\Unit\\40001.prefab"
   },
   {
     "Id": 30001,
     "Type": 4,
     "Name": "",
-    "Model": "huoqiu"
+    "Model": "Assets\\Bundles\\Unit\\huoqiu.prefab"
   },
   {
     "Id": 50001,
     "Type": 5,
     "Name": "",
-    "Model": "fx_fengxian"
+    "Model": "Assets\\Bundles\\Unit\\fx_fengxian.prefab"
   },
   {
     "Id": 50002,
     "Type": 5,
     "Name": "",
-    "Model": "fx_baofengxue"
+    "Model": "Assets\\Bundles\\Unit\\fx_baofengxue.prefab"
   }
 ]

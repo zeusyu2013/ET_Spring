@@ -1,90 +1,105 @@
 [
   {
     "Id": 60010,
+    "EquipmentType": 1,
     "Base": 1003,
     "Random": 2001,
     "CharacterFlag": 1023
   },
   {
     "Id": 60011,
+    "EquipmentType": 2,
     "Base": 1004,
     "Random": 2001,
     "CharacterFlag": 1023
   },
   {
     "Id": 60012,
+    "EquipmentType": 3,
     "Base": 1005,
     "Random": 2001,
     "CharacterFlag": 1023
   },
   {
     "Id": 60013,
+    "EquipmentType": 4,
     "Base": 1003,
     "Random": 2001,
     "CharacterFlag": 1023
   },
   {
     "Id": 60014,
+    "EquipmentType": 5,
     "Base": 1004,
     "Random": 2001,
     "CharacterFlag": 1023
   },
   {
     "Id": 60015,
+    "EquipmentType": 6,
     "Base": 1005,
     "Random": 2001,
     "CharacterFlag": 1023
   },
   {
     "Id": 60016,
+    "EquipmentType": 7,
     "Base": 1003,
     "Random": 2001,
     "CharacterFlag": 1023
   },
   {
     "Id": 60017,
+    "EquipmentType": 8,
     "Base": 1004,
     "Random": 2001,
     "CharacterFlag": 1023
   },
   {
     "Id": 60018,
+    "EquipmentType": 9,
     "Base": 1005,
     "Random": 2001,
     "CharacterFlag": 1023
   },
   {
     "Id": 60019,
+    "EquipmentType": 1,
     "Base": 1003,
     "Random": 2001,
     "CharacterFlag": 883
   },
   {
     "Id": 60020,
+    "EquipmentType": 3,
     "Base": 1004,
     "Random": 2001,
     "CharacterFlag": 883
   },
   {
     "Id": 60021,
+    "EquipmentType": 4,
     "Base": 1005,
     "Random": 2001,
     "CharacterFlag": 883
   },
   {
     "Id": 60022,
+    "EquipmentType": 5,
     "Base": 1003,
     "Random": 2001,
     "CharacterFlag": 883
   },
   {
     "Id": 60023,
+    "EquipmentType": 6,
     "Base": 1004,
     "Random": 2001,
     "CharacterFlag": 883
   },
   {
     "Id": 60024,
+    "EquipmentType": 7,
     "Base": 1005,
     "Random": 2001,
     "CharacterFlag": 883

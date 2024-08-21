@@ -237,7 +237,6 @@
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "EquipmentType": 1,
     "Icon": "itemicon_60010"
   },
   {
@@ -246,7 +245,6 @@
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "EquipmentType": 2,
     "Icon": "itemicon_60011"
   },
   {
@@ -255,7 +253,6 @@
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "EquipmentType": 3,
     "Icon": "itemicon_60012"
   },
   {
@@ -264,7 +261,6 @@
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "EquipmentType": 4,
     "Icon": "itemicon_60013"
   },
   {
@@ -273,7 +269,6 @@
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "EquipmentType": 5,
     "Icon": "itemicon_60014"
   },
   {
@@ -282,7 +277,6 @@
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "EquipmentType": 6,
     "Icon": "itemicon_60015"
   },
   {
@@ -291,7 +285,6 @@
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "EquipmentType": 7,
     "Icon": "itemicon_60016"
   },
   {
@@ -300,7 +293,6 @@
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "EquipmentType": 8,
     "Icon": "itemicon_60017"
   },
   {
@@ -309,7 +301,6 @@
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "EquipmentType": 9,
     "Icon": "itemicon_60018"
   },
   {
@@ -318,7 +309,6 @@
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "EquipmentType": 1,
     "Icon": "itemicon_60019"
   },
   {
@@ -327,7 +317,6 @@
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "EquipmentType": 3,
     "Icon": "itemicon_60020"
   },
   {
@@ -336,7 +325,6 @@
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "EquipmentType": 4,
     "Icon": "itemicon_60021"
   },
   {
@@ -345,7 +333,6 @@
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "EquipmentType": 5,
     "Icon": "itemicon_60022"
   },
   {
@@ -354,7 +341,6 @@
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "EquipmentType": 6,
     "Icon": "itemicon_60023"
   },
   {
@@ -363,7 +349,6 @@
     "Type": 3,
     "Quality": 1,
     "UseLevel": 1,
-    "EquipmentType": 7,
     "Icon": "itemicon_60024"
   },
   {
@@ -372,7 +357,6 @@
     "Type": 3,
     "Quality": 2,
     "UseLevel": 1,
-    "EquipmentType": 1,
     "Icon": "itemicon_60025"
   },
   {
@@ -381,7 +365,6 @@
     "Type": 3,
     "Quality": 2,
     "UseLevel": 1,
-    "EquipmentType": 2,
     "Icon": "itemicon_60026"
   },
   {
@@ -390,7 +373,6 @@
     "Type": 3,
     "Quality": 2,
     "UseLevel": 1,
-    "EquipmentType": 3,
     "Icon": "itemicon_60027"
   },
   {
@@ -399,7 +381,6 @@
     "Type": 3,
     "Quality": 2,
     "UseLevel": 1,
-    "EquipmentType": 4,
     "Icon": "itemicon_60028"
   },
   {
@@ -408,7 +389,6 @@
     "Type": 3,
     "Quality": 2,
     "UseLevel": 1,
-    "EquipmentType": 5,
     "Icon": "itemicon_60029"
   },
   {
@@ -417,7 +397,6 @@
     "Type": 3,
     "Quality": 2,
     "UseLevel": 1,
-    "EquipmentType": 6,
     "Icon": "itemicon_60030"
   },
   {
@@ -426,7 +405,6 @@
     "Type": 3,
     "Quality": 3,
     "UseLevel": 1,
-    "EquipmentType": 1,
     "Icon": "itemicon_60031"
   },
   {
@@ -435,7 +413,6 @@
     "Type": 3,
     "Quality": 3,
     "UseLevel": 1,
-    "EquipmentType": 2,
     "Icon": "itemicon_60032"
   },
   {
@@ -444,7 +421,6 @@
     "Type": 3,
     "Quality": 3,
     "UseLevel": 1,
-    "EquipmentType": 3,
     "Icon": "itemicon_60033"
   },
   {
@@ -453,7 +429,6 @@
     "Type": 3,
     "Quality": 3,
     "UseLevel": 1,
-    "EquipmentType": 4,
     "Icon": "itemicon_60034"
   },
   {
@@ -462,7 +437,6 @@
     "Type": 3,
     "Quality": 3,
     "UseLevel": 1,
-    "EquipmentType": 5,
     "Icon": "itemicon_60035"
   },
   {
@@ -471,7 +445,6 @@
     "Type": 3,
     "Quality": 3,
     "UseLevel": 1,
-    "EquipmentType": 6,
     "Icon": "itemicon_60036"
   },
   {
@@ -480,7 +453,6 @@
     "Type": 3,
     "Quality": 4,
     "UseLevel": 1,
-    "EquipmentType": 1,
     "Icon": "itemicon_60037"
   },
   {
@@ -489,7 +461,6 @@
     "Type": 3,
     "Quality": 4,
     "UseLevel": 1,
-    "EquipmentType": 2,
     "Icon": "itemicon_60038"
   },
   {
@@ -498,7 +469,6 @@
     "Type": 3,
     "Quality": 4,
     "UseLevel": 1,
-    "EquipmentType": 3,
     "Icon": "itemicon_60039"
   },
   {
@@ -507,7 +477,6 @@
     "Type": 3,
     "Quality": 4,
     "UseLevel": 1,
-    "EquipmentType": 4,
     "Icon": "itemicon_60040"
   },
   {
@@ -516,7 +485,6 @@
     "Type": 3,
     "Quality": 4,
     "UseLevel": 1,
-    "EquipmentType": 5,
     "Icon": "itemicon_60041"
   },
   {
@@ -525,7 +493,6 @@
     "Type": 3,
     "Quality": 4,
     "UseLevel": 1,
-    "EquipmentType": 6,
     "Icon": "itemicon_60042"
   },
   {
@@ -534,7 +501,6 @@
     "Type": 3,
     "Quality": 5,
     "UseLevel": 1,
-    "EquipmentType": 1,
     "Icon": "itemicon_60043"
   },
   {
@@ -543,7 +509,6 @@
     "Type": 3,
     "Quality": 5,
     "UseLevel": 1,
-    "EquipmentType": 2,
     "Icon": "itemicon_60044"
   },
   {
@@ -552,7 +517,6 @@
     "Type": 3,
     "Quality": 5,
     "UseLevel": 1,
-    "EquipmentType": 3,
     "Icon": "itemicon_60045"
   },
   {
@@ -561,7 +525,6 @@
     "Type": 3,
     "Quality": 5,
     "UseLevel": 1,
-    "EquipmentType": 4,
     "Icon": "itemicon_60046"
   },
   {
@@ -570,7 +533,6 @@
     "Type": 3,
     "Quality": 5,
     "UseLevel": 1,
-    "EquipmentType": 5,
     "Icon": "itemicon_60047"
   },
   {
@@ -579,7 +541,6 @@
     "Type": 3,
     "Quality": 5,
     "UseLevel": 1,
-    "EquipmentType": 6,
     "Icon": "itemicon_60048"
   },
   {
@@ -588,7 +549,6 @@
     "Type": 3,
     "Quality": 6,
     "UseLevel": 1,
-    "EquipmentType": 1,
     "Icon": "itemicon_60049"
   },
   {
@@ -597,7 +557,6 @@
     "Type": 3,
     "Quality": 6,
     "UseLevel": 1,
-    "EquipmentType": 2,
     "Icon": "itemicon_60050"
   },
   {
@@ -606,7 +565,6 @@
     "Type": 3,
     "Quality": 6,
     "UseLevel": 1,
-    "EquipmentType": 3,
     "Icon": "itemicon_60051"
   },
   {
@@ -615,7 +573,6 @@
     "Type": 3,
     "Quality": 6,
     "UseLevel": 1,
-    "EquipmentType": 4,
     "Icon": "itemicon_60052"
   },
   {
@@ -624,7 +581,6 @@
     "Type": 3,
     "Quality": 6,
     "UseLevel": 1,
-    "EquipmentType": 5,
     "Icon": "itemicon_60053"
   },
   {
@@ -633,7 +589,6 @@
     "Type": 3,
     "Quality": 6,
     "UseLevel": 1,
-    "EquipmentType": 6,
     "Icon": "itemicon_60054"
   },
   {

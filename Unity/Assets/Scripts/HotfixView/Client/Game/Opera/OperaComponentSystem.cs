@@ -20,16 +20,17 @@ namespace ET.Client
         private static void Update(this OperaComponent self)
         {
             InputComponent inputComponent = self.Root().GetComponent<InputComponent>();
-            if (inputComponent.MoveDirection.x != 0 || inputComponent.MoveDirection.z != 0 || 
+            if (inputComponent.MoveDirection.x != 0 || inputComponent.MoveDirection.z != 0 ||
                 inputComponent.JoystickMoveDirection.x != 0 || inputComponent.JoystickMoveDirection.y != 0)
             {
-                Vector3 moveDir = inputComponent.JoystickMoveDirection is { x: 0, z: 0 } ? inputComponent.MoveDirection : inputComponent.JoystickMoveDirection;
+                Vector3 moveDir = inputComponent.JoystickMoveDirection is { x: 0, y: 0 } ? inputComponent.MoveDirection
+                        : inputComponent.JoystickMoveDirection;
                 Unit unit = UnitHelper.GetMyUnitFromClientScene(self.Root());
                 Quaternion rotation = Quaternion.Euler(0, unit.GetComponent<CameraComponent>().CinemachineTargetYaw, 0);
-                
-                self.JoyMove( rotation * moveDir.normalized);
+
+                self.JoyMove(rotation * moveDir.normalized);
             }
-            
+
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 self.Test1().Coroutine();
@@ -58,7 +59,7 @@ namespace ET.Client
             }
         }
 
-        public static void JoyMove(this OperaComponent self, float3 direction)
+        private static void JoyMove(this OperaComponent self, float3 direction)
         {
             Unit unit = UnitHelper.GetMyUnitFromCurrentScene(self.Scene());
             if (unit == null || unit.IsDisposed)
@@ -68,15 +69,15 @@ namespace ET.Client
 
             float3 unitPosition = unit.Position;
             unitPosition.y = unit.GetComponent<HeightSyncComponent>().Height;
-            float3 nextPosition = unitPosition + (direction * 1.0f);
-            
+            float3 nextPosition = unitPosition + (direction * 4.0f);
+
             using (var list = ListComponent<float3>.Create())
             {
                 list.Add(unitPosition);
                 list.Add(nextPosition);
                 unit.MoveToAsync(list).Coroutine();
             }
-            
+
             self.Result.Position = nextPosition;
             self.Root().GetComponent<ClientSenderComponent>().Send(self.Result);
         }

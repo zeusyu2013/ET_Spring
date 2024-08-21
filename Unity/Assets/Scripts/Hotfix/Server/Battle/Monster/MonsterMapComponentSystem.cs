@@ -29,7 +29,7 @@ namespace ET.Server
             }
         }
 
-        public static void CreateMonsterByGroup(this MonsterMapComponent self, int groupId)
+        private static void CreateMonsterByGroup(this MonsterMapComponent self, int groupId)
         {
             SceneMonsterConfig config = SceneMonsterConfigCategory.Instance.Get(groupId);
             int range = config.RandomRange / 2;

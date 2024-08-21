@@ -16,13 +16,14 @@
             foreach (Entity entity in self.Children.Values)
             {
                 GameItem item = entity as GameItem;
-                if (item.Config.EquipmentType == null)
+                EquipmentConfig config = EquipmentConfigCategory.Instance.Get(item.ConfigId);
+                if (config == null)
                 {
                     item.Dispose();
                     continue;
                 }
 
-                int type = (int)item.Config.EquipmentType;
+                int type = (int)config.EquipmentType;
                 self.Equipments.Add(type, item);
             }
         }
@@ -41,12 +42,13 @@
                 return;
             }
 
-            if (item.Config.EquipmentType == null)
+            EquipmentConfig config = EquipmentConfigCategory.Instance.Get(item.ConfigId);
+            if (config == null)
             {
                 return;
             }
-            
-            int type = (int)item.Config.EquipmentType;
+
+            int type = (int)config.EquipmentType;
             GameItem old = null;
             if (self.Equipments.ContainsKey(type))
             {

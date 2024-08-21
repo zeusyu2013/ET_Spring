@@ -14,7 +14,7 @@ namespace ET.Client
         {
             self.AddPackage(UIPackageName.Common).Coroutine();
         }
-        
+
         [EntitySystem]
         private static void Destroy(this UIPackageComponent self)
         {
@@ -32,12 +32,13 @@ namespace ET.Client
             {
                 self.PackageDic[packageName] += 1;
                 return;
-            } 
+            }
+
             self.PackageDic.Add(packageName, 1);
 
             string path = $"Assets/Bundles/FairyGUI/{packageName}_fui.bytes";
             TextAsset asset = await self.Root().GetComponent<ResourcesLoaderComponent>().LoadAssetAsync<TextAsset>(path);
-            self.AddLoadInfo(packageName, path); 
+            self.AddLoadInfo(packageName, path);
             if (asset == null)
             {
                 return;
@@ -56,7 +57,6 @@ namespace ET.Client
             self.PackageDic[packageName] -= 1;
         }
 
-        
         public static void RemoveUselessPackage(this UIPackageComponent self)
         {
             var keys = self.PackageDic.Keys.ToList();
@@ -81,6 +81,7 @@ namespace ET.Client
             {
                 return;
             }
+
             self.MutiLoadKey.Add(packageName, path);
         }
 
@@ -88,13 +89,14 @@ namespace ET.Client
         {
             if (!self.MutiLoadKey.TryGetValue(packageName, out var value))
             {
-                return;   
+                return;
             }
 
             foreach (var key in value)
             {
                 self.Scene().GetComponent<ResourcesLoaderComponent>().RemoveHandler(key);
             }
+
             value.Clear();
             self.MutiLoadKey.Remove(packageName);
         }
@@ -109,10 +111,11 @@ namespace ET.Client
                     self.Scene().GetComponent<ResourcesLoaderComponent>().RemoveHandler(key);
                 }
             }
+
             self.PackageDic.Clear();
             self.MutiLoadKey.Clear();
         }
-        
+
         /// <summary>
         /// 包加载资源回调函数
         /// </summary>
@@ -127,7 +130,7 @@ namespace ET.Client
         }
 
         // 自定义包加载函数
-        public static async ETTask PackageLoad(this UIPackageComponent self, string name, string extension,  Type type, PackageItem item)
+        public static async ETTask PackageLoad(this UIPackageComponent self, string name, string extension, Type type, PackageItem item)
         {
             string path = $"Assets/Bundles/FairyGUI/{item.owner.name}_{name}{extension}";
             self.AddLoadInfo(item.owner.name, path);
@@ -136,7 +139,8 @@ namespace ET.Client
             {
                 return;
             }
-            item.owner.SetItemAsset(item, o,  DestroyMethod.Unload);
+
+            item.owner.SetItemAsset(item, o, DestroyMethod.Unload);
         }
     }
 }

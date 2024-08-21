@@ -8,18 +8,10 @@
     "NotifyType": 2,
     "Tick": 1000,
     "AddActions": [
-      1001,
       1001
     ],
-    "TickActions": [
-      1001,
-      1001
-    ],
-    "RemoveActions": [
-      1001,
-      1001
-    ],
-    "Fx": "fx1"
+    "TickActions": [],
+    "RemoveActions": []
   },
   {
     "Id": 40002,
@@ -30,18 +22,10 @@
     "NotifyType": 2,
     "Tick": 1000,
     "AddActions": [
-      1001,
       1001
     ],
-    "TickActions": [
-      1001,
-      1001
-    ],
-    "RemoveActions": [
-      1001,
-      1001
-    ],
-    "Fx": "fx2"
+    "TickActions": [],
+    "RemoveActions": []
   },
   {
     "Id": 40003,
@@ -52,18 +36,10 @@
     "NotifyType": 2,
     "Tick": 1000,
     "AddActions": [
-      1001,
       1001
     ],
-    "TickActions": [
-      1001,
-      1001
-    ],
-    "RemoveActions": [
-      1001,
-      1001
-    ],
-    "Fx": "fx3"
+    "TickActions": [],
+    "RemoveActions": []
   },
   {
     "Id": 40004,
@@ -74,18 +50,10 @@
     "NotifyType": 2,
     "Tick": 1000,
     "AddActions": [
-      1001,
       1001
     ],
-    "TickActions": [
-      1001,
-      1001
-    ],
-    "RemoveActions": [
-      1001,
-      1001
-    ],
-    "Fx": "fx4"
+    "TickActions": [],
+    "RemoveActions": []
   },
   {
     "Id": 40005,
@@ -101,8 +69,7 @@
     "TickActions": [],
     "RemoveActions": [
       1002
-    ],
-    "Fx": "fx5"
+    ]
   },
   {
     "Id": 40006,
@@ -114,8 +81,7 @@
     "Tick": 0,
     "AddActions": [],
     "TickActions": [],
-    "RemoveActions": [],
-    "Fx": ""
+    "RemoveActions": []
   },
   {
     "Id": 40007,
@@ -129,8 +95,7 @@
     "TickActions": [
       2006
     ],
-    "RemoveActions": [],
-    "Fx": ""
+    "RemoveActions": []
   },
   {
     "Id": 40008,
@@ -144,7 +109,6 @@
       1005
     ],
     "TickActions": [],
-    "RemoveActions": [],
-    "Fx": "fx8"
+    "RemoveActions": []
   }
 ]

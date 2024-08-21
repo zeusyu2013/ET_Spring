@@ -1,5 +1,7 @@
 ﻿using System.Linq;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace ET.Client
 {
@@ -43,6 +45,13 @@ namespace ET.Client
             self.MoveDirection.x = Input.GetAxis("Horizontal");
             self.MoveDirection.y = 0;
             self.MoveDirection.z = Input.GetAxis("Vertical");
+            bool3 preZero = self.PreMoveDirection != float3.zero;
+            if (math.length(self.MoveDirection) < 0.1f && (preZero.x & preZero.z))
+            {
+                self.Scene().CurrentScene().GetComponent<OperaComponent>().Stop();
+            }
+
+            self.PreMoveDirection = self.MoveDirection;
 
             foreach (KeyCode keyCode in self.KeyCodes.Where(Input.GetKeyDown))
             {

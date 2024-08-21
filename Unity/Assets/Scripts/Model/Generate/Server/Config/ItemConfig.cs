@@ -22,7 +22,6 @@ namespace ET
             Quality = (GameItemQualityType)_buf.ReadInt();
             UseLevel = _buf.ReadInt();
             MaxCount = _buf.ReadLong();
-            if(_buf.ReadBool()){ EquipmentType = (EquipmentType)_buf.ReadInt(); } else { EquipmentType = null; }
             Icon = _buf.ReadString();
 
             PostInit();
@@ -64,11 +63,6 @@ namespace ET
         public readonly long MaxCount;
 
         /// <summary>
-        /// 装备位置
-        /// </summary>
-        public readonly EquipmentType? EquipmentType;
-
-        /// <summary>
         /// 道具图标
         /// </summary>
         public readonly string Icon;
@@ -86,7 +80,6 @@ namespace ET
             + "Quality:" + Quality + ","
             + "UseLevel:" + UseLevel + ","
             + "MaxCount:" + MaxCount + ","
-            + "EquipmentType:" + EquipmentType + ","
             + "Icon:" + Icon + ","
             + "}";
         }

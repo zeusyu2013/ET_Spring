@@ -17,8 +17,7 @@ namespace ET.Client
             }
 
             // Unit View层
-            string assetsName = $"Assets/Bundles/Unit/{config.Model}.prefab";
-            GameObject bundleGameObject = await scene.GetComponent<ResourcesLoaderComponent>().LoadAssetAsync<GameObject>(assetsName);
+            GameObject bundleGameObject = await scene.GetComponent<ResourcesLoaderComponent>().LoadAssetAsync<GameObject>(config.Model);
 
             GlobalComponent globalComponent = scene.Root().GetComponent<GlobalComponent>();
             GameObject go = UnityEngine.Object.Instantiate(bundleGameObject, globalComponent.Unit, true);
@@ -32,7 +31,7 @@ namespace ET.Client
                 unit.AddComponent<AnimatorComponent>();
             }
 
-            if (unit.Type() == UnitType.UnitType_Player)
+            if (unit.IsMyUnit())
             {
                 unit.AddComponent<CameraComponent>();
             }

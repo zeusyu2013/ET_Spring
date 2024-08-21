@@ -115,3 +115,16 @@ MonoBehaviour:
         FilterRuleName: CollectPrefab
         AssetTags: 
         UserData: 
+    - GroupName: Fx
+      GroupDesc: "\u7279\u6548"
+      AssetTags: Fx
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/Bundles/Fx
+        CollectorGUID: 090cea879cc9af14ba215562f01bb75b
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectPrefab
+        AssetTags: 
+        UserData: 

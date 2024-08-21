@@ -15,6 +15,7 @@ namespace ET.Client
         [EntitySystem]
         private static void Destroy(this ET.Client.PoolComponent self)
         {
+            self.DespawnAll();
         }
 
         public static SpawnPool GetPool(this PoolComponent self, string poolName, Transform prefab)
@@ -50,6 +51,11 @@ namespace ET.Client
             return self.GetPool(poolName, prefab).Spawn(prefab, Vector3.zero, Quaternion.identity, parent);
         }
 
+        public static Transform Spawn(this PoolComponent self, string poolName, Transform prefab, Transform parent, Vector3 position, Quaternion quaternion)
+        {
+            return self.GetPool(poolName, prefab).Spawn(prefab, position, quaternion, parent);
+        }
+
         public static void Despawn(this PoolComponent self, string poolName, Transform prefab)
         {
             self.GetPool(poolName, prefab).Despawn(prefab);
@@ -58,6 +64,14 @@ namespace ET.Client
         public static void DespawnAll(this PoolComponent self, string poolName, Transform prefab)
         {
             self.GetPool(poolName, prefab).DespawnAll();
+        }
+
+        private static void DespawnAll(this PoolComponent self)
+        {
+            foreach ((string _, SpawnPool value) in self.Pools)
+            {
+                value.DespawnAll();
+            }
         }
     }
 }

@@ -17,6 +17,7 @@ namespace ET
         public EquipmentConfig(ByteBuf _buf)
         {
             Id = _buf.ReadInt();
+            EquipmentType = (EquipmentType)_buf.ReadInt();
             Base = _buf.ReadInt();
             Random = _buf.ReadInt();
             CharacterFlag = (CharacterType)_buf.ReadInt();
@@ -38,6 +39,11 @@ namespace ET
         /// 道具id
         /// </summary>
         public ItemConfig IdConfig => ItemConfigCategory.Instance.GetOrDefault(Id);
+
+        /// <summary>
+        /// 装备位置
+        /// </summary>
+        public readonly EquipmentType EquipmentType;
 
         /// <summary>
         /// 基础属性包
@@ -72,6 +78,7 @@ namespace ET
         {
             return "{ "
             + "Id:" + Id + ","
+            + "EquipmentType:" + EquipmentType + ","
             + "Base:" + Base + ","
             + "Random:" + Random + ","
             + "CharacterFlag:" + CharacterFlag + ","
