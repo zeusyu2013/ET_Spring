@@ -19,6 +19,12 @@ namespace ET
             Id = _buf.ReadInt();
             CastStartAnimation = _buf.ReadString();
             CastHitAnimation = _buf.ReadString();
+            if(_buf.ReadBool()){ CastStartFx = _buf.ReadString(); } else { CastStartFx = null; }
+            CastStartFxBindPoint = (ModelBindPoint)_buf.ReadInt();
+            CastStartFxTime = _buf.ReadLong();
+            if(_buf.ReadBool()){ CastHitFx = _buf.ReadString(); } else { CastHitFx = null; }
+            CastHitFxBindPoint = (ModelBindPoint)_buf.ReadInt();
+            CastHitFxTime = _buf.ReadLong();
 
             PostInit();
         }
@@ -48,6 +54,36 @@ namespace ET
         /// </summary>
         public readonly string CastHitAnimation;
 
+        /// <summary>
+        /// 技能起手特效
+        /// </summary>
+        public readonly string CastStartFx;
+
+        /// <summary>
+        /// 技能起手特效绑点
+        /// </summary>
+        public readonly ModelBindPoint CastStartFxBindPoint;
+
+        /// <summary>
+        /// 技能起手特效时长
+        /// </summary>
+        public readonly long CastStartFxTime;
+
+        /// <summary>
+        /// 技能命中特效
+        /// </summary>
+        public readonly string CastHitFx;
+
+        /// <summary>
+        /// 技能命中特效绑点
+        /// </summary>
+        public readonly ModelBindPoint CastHitFxBindPoint;
+
+        /// <summary>
+        /// 技能命中特效时长
+        /// </summary>
+        public readonly long CastHitFxTime;
+
         public const int __ID__ = 941771756;
 
         public override int GetTypeId() => __ID__;
@@ -58,6 +94,12 @@ namespace ET
             + "Id:" + Id + ","
             + "CastStartAnimation:" + CastStartAnimation + ","
             + "CastHitAnimation:" + CastHitAnimation + ","
+            + "CastStartFx:" + CastStartFx + ","
+            + "CastStartFxBindPoint:" + CastStartFxBindPoint + ","
+            + "CastStartFxTime:" + CastStartFxTime + ","
+            + "CastHitFx:" + CastHitFx + ","
+            + "CastHitFxBindPoint:" + CastHitFxBindPoint + ","
+            + "CastHitFxTime:" + CastHitFxTime + ","
             + "}";
         }
 

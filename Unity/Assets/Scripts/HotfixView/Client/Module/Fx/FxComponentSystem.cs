@@ -58,17 +58,17 @@ namespace ET.Client
                 {
                     continue;
                 }
-                
+
                 self.RemoveFxes.Add(transform);
             }
-            
+
             foreach (Transform removeFx in self.RemoveFxes)
             {
                 self.Fxes.Remove(removeFx);
-                
+
                 self.Scene().GetComponent<PoolComponent>().Despawn(removeFx.name, removeFx);
             }
-            
+
             self.RemoveFxes.Clear();
         }
 
@@ -79,6 +79,86 @@ namespace ET.Client
             Transform transform = self.Scene().GetComponent<PoolComponent>().Spawn(fxPath, go.transform, parent);
 
             return transform;
+        }
+
+        public static async ETTask PlayCastFx(this FxComponent self, Unit unit, int castConfigId)
+        {
+            if (unit == null || unit.IsDisposed)
+            {
+                return;
+            }
+
+            CastClientConfig config = CastClientConfigCategory.Instance.Get(castConfigId);
+            string fxName = config.CastStartFx;
+            if (string.IsNullOrEmpty(fxName))
+            {
+                return;
+            }
+
+            GameObjectComponent gameObjectComponent = unit.GetComponent<GameObjectComponent>();
+            Transform bindPoint = gameObjectComponent.GetBindPoint(config.CastStartFxBindPoint);
+            if (bindPoint == null)
+            {
+                bindPoint = gameObjectComponent.Transform;
+            }
+
+            // 播放特效
+            Transform fx = await self.Spwan(fxName, bindPoint);
+
+            self.Add(fx, TimeInfo.Instance.ClientNow() + config.CastStartFxTime);
+        }
+
+        public static async ETTask PlayBuffFx(this FxComponent self, Unit unit, int buffConfigId)
+        {
+            if (unit == null || unit.IsDisposed)
+            {
+                return;
+            }
+
+            BuffClientConfig config = BuffClientConfigCategory.Instance.Get(buffConfigId);
+            string fxName = config.AddFx;
+            if (string.IsNullOrEmpty(fxName))
+            {
+                return;
+            }
+
+            GameObjectComponent gameObjectComponent = unit.GetComponent<GameObjectComponent>();
+            Transform bindPoint = gameObjectComponent.GetBindPoint(config.AddFxBindPoint);
+            if (bindPoint == null)
+            {
+                bindPoint = gameObjectComponent.Transform;
+            }
+
+            // 播放特效
+            Transform fx = await self.Spwan(fxName, bindPoint);
+
+            self.Add(fx, TimeInfo.Instance.ClientNow() + config.AddFxTime);
+        }
+
+        public static async ETTask PlayFx(this FxComponent self, Unit unit, string fxPath, ModelBindPoint point, long time)
+        {
+            if (unit == null || unit.IsDisposed)
+            {
+                return;
+            }
+
+            string fxName = fxPath;
+            if (string.IsNullOrEmpty(fxName))
+            {
+                return;
+            }
+
+            GameObjectComponent gameObjectComponent = unit.GetComponent<GameObjectComponent>();
+            Transform bindPoint = gameObjectComponent.GetBindPoint(point);
+            if (bindPoint == null)
+            {
+                bindPoint = gameObjectComponent.Transform;
+            }
+
+            // 播放特效
+            Transform fx = await self.Spwan(fxName, bindPoint);
+
+            self.Add(fx, TimeInfo.Instance.ClientNow() + time);
         }
     }
 }

@@ -13,12 +13,10 @@
             }
 
             BuffClientConfig config = BuffClientConfigCategory.Instance.Get(buff.ConfigId);
-            string fxName = config.TickFx;
-            if (!string.IsNullOrEmpty(fxName))
-            {
-                // 播放特效
-                await scene.CurrentScene().GetComponent<FxComponent>().Spwan(fxName, args.Unit.GetComponent<GameObjectComponent>().Transform);
-            }
+            
+            // 播放特效
+            await scene.CurrentScene().GetComponent<FxComponent>()
+                    .PlayFx(args.Unit, config.TickFx, config.TickFxBindPoint, config.TickFxTime);
         }
     }
 }

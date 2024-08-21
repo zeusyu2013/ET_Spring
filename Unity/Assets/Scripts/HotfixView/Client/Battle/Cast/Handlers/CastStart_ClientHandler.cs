@@ -12,12 +12,13 @@
             }
 
             CastClientConfig config = CastClientConfigCategory.Instance.Get(args.CastConfigId);
-            
+
             // 播放动画
             await unit.GetComponent<AnimatorComponent>()?.Play(config.CastStartAnimation);
-            
+
             // 播放特效
-            
+            await scene.CurrentScene().GetComponent<FxComponent>()
+                    .PlayFx(unit, config.CastStartFx, config.CastStartFxBindPoint, config.CastStartFxTime);
         }
     }
 }

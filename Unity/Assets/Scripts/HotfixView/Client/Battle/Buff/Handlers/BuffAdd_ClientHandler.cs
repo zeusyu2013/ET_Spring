@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace ET.Client
+﻿namespace ET.Client
 {
     [Event(SceneType.MainClient)]
     [FriendOfAttribute(typeof(ET.Client.ClientBuff))]
@@ -15,26 +13,10 @@ namespace ET.Client
             }
 
             BuffClientConfig config = BuffClientConfigCategory.Instance.Get(buff.ConfigId);
-            string fxName = config.AddFx;
-            if (string.IsNullOrEmpty(fxName))
-            {
-                return;
-            }
-
-            GameObjectComponent gameObjectComponent = args.Unit.GetComponent<GameObjectComponent>();
-            Transform bindPoint = gameObjectComponent.GetBindPoint(config.AddFxBindPoint);
-            if (bindPoint == null)
-            {
-                bindPoint = gameObjectComponent.Transform;
-            }
-
-            FxComponent fxComponent = scene.CurrentScene().GetComponent<FxComponent>();
-
+            
             // 播放特效
-            Transform fx = await fxComponent.Spwan(fxName, bindPoint);
-            fx.name = fxName;
-
-            fxComponent.Add(fx, TimeInfo.Instance.ClientNow() + config.AddFxTime);
+            await scene.CurrentScene().GetComponent<FxComponent>()
+                    .PlayFx(args.Unit, config.AddFx, config.AddFxBindPoint, config.AddFxTime);
         }
     }
 }

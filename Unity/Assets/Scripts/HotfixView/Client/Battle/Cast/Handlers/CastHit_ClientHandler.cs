@@ -28,9 +28,9 @@
 
             target.GetComponent<AnimatorComponent>()?.Play(config.CastHitAnimation);
 
-            // todo 播放受击特效
-
-            await ETTask.CompletedTask;
+            // 播放受击特效
+            await scene.CurrentScene().GetComponent<FxComponent>()
+                    .PlayFx(target, config.CastHitFx, config.CastHitFxBindPoint, config.CastHitFxTime);
         }
     }
 }

@@ -6,8 +6,10 @@
     "AddFxTime": 3000,
     "TickFx": "",
     "TickFxBindPoint": 4,
+    "TickFxTime": 3000,
     "RemoveFx": "",
-    "RemoveFxBindPoint": 4
+    "RemoveFxBindPoint": 4,
+    "RemoveFxTime": 3000
   },
   {
     "Id": 40002,
@@ -16,8 +18,10 @@
     "AddFxTime": 3000,
     "TickFx": "",
     "TickFxBindPoint": 4,
+    "TickFxTime": 3000,
     "RemoveFx": "",
-    "RemoveFxBindPoint": 4
+    "RemoveFxBindPoint": 4,
+    "RemoveFxTime": 3000
   },
   {
     "Id": 40003,
@@ -26,8 +30,10 @@
     "AddFxTime": 3000,
     "TickFx": "",
     "TickFxBindPoint": 4,
+    "TickFxTime": 3000,
     "RemoveFx": "",
-    "RemoveFxBindPoint": 4
+    "RemoveFxBindPoint": 4,
+    "RemoveFxTime": 3000
   },
   {
     "Id": 40004,
@@ -36,8 +42,10 @@
     "AddFxTime": 3000,
     "TickFx": "",
     "TickFxBindPoint": 4,
+    "TickFxTime": 3000,
     "RemoveFx": "",
-    "RemoveFxBindPoint": 4
+    "RemoveFxBindPoint": 4,
+    "RemoveFxTime": 3000
   },
   {
     "Id": 40005,
@@ -46,8 +54,10 @@
     "AddFxTime": 3000,
     "TickFx": "",
     "TickFxBindPoint": 4,
+    "TickFxTime": 3000,
     "RemoveFx": "",
-    "RemoveFxBindPoint": 4
+    "RemoveFxBindPoint": 4,
+    "RemoveFxTime": 3000
   },
   {
     "Id": 40006,
@@ -56,8 +66,10 @@
     "AddFxTime": 3000,
     "TickFx": "",
     "TickFxBindPoint": 4,
+    "TickFxTime": 3000,
     "RemoveFx": "",
-    "RemoveFxBindPoint": 4
+    "RemoveFxBindPoint": 4,
+    "RemoveFxTime": 3000
   },
   {
     "Id": 40007,
@@ -66,8 +78,10 @@
     "AddFxTime": 3000,
     "TickFx": "",
     "TickFxBindPoint": 4,
+    "TickFxTime": 3000,
     "RemoveFx": "",
-    "RemoveFxBindPoint": 4
+    "RemoveFxBindPoint": 4,
+    "RemoveFxTime": 3000
   },
   {
     "Id": 40008,
@@ -76,7 +90,9 @@
     "AddFxTime": 3000,
     "TickFx": "",
     "TickFxBindPoint": 4,
+    "TickFxTime": 3000,
     "RemoveFx": "",
-    "RemoveFxBindPoint": 4
+    "RemoveFxBindPoint": 4,
+    "RemoveFxTime": 3000
   }
 ]

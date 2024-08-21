@@ -22,8 +22,10 @@ namespace ET
             AddFxTime = _buf.ReadLong();
             if(_buf.ReadBool()){ TickFx = _buf.ReadString(); } else { TickFx = null; }
             TickFxBindPoint = (ModelBindPoint)_buf.ReadInt();
+            TickFxTime = _buf.ReadLong();
             if(_buf.ReadBool()){ RemoveFx = _buf.ReadString(); } else { RemoveFx = null; }
             RemoveFxBindPoint = (ModelBindPoint)_buf.ReadInt();
+            RemoveFxTime = _buf.ReadLong();
 
             PostInit();
         }
@@ -69,6 +71,11 @@ namespace ET
         public readonly ModelBindPoint TickFxBindPoint;
 
         /// <summary>
+        /// bufftick特效时长
+        /// </summary>
+        public readonly long TickFxTime;
+
+        /// <summary>
         /// buff移除特效
         /// </summary>
         public readonly string RemoveFx;
@@ -77,6 +84,11 @@ namespace ET
         /// buff移除特效绑点
         /// </summary>
         public readonly ModelBindPoint RemoveFxBindPoint;
+
+        /// <summary>
+        /// buff移除特效时长
+        /// </summary>
+        public readonly long RemoveFxTime;
 
         public const int __ID__ = -666426624;
 
@@ -91,8 +103,10 @@ namespace ET
             + "AddFxTime:" + AddFxTime + ","
             + "TickFx:" + TickFx + ","
             + "TickFxBindPoint:" + TickFxBindPoint + ","
+            + "TickFxTime:" + TickFxTime + ","
             + "RemoveFx:" + RemoveFx + ","
             + "RemoveFxBindPoint:" + RemoveFxBindPoint + ","
+            + "RemoveFxTime:" + RemoveFxTime + ","
             + "}";
         }
 

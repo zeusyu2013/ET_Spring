@@ -2,51 +2,111 @@
   {
     "Id": 110001,
     "CastStartAnimation": "attack",
-    "CastHitAnimation": ""
+    "CastHitAnimation": "hurt",
+    "CastStartFx": "Assets/Bundles/Fx/fx5.prefab",
+    "CastStartFxBindPoint": 4,
+    "CastStartFxTime": 3000,
+    "CastHitFx": "Assets/Bundles/Fx/fx5.prefab",
+    "CastHitFxBindPoint": 4,
+    "CastHitFxTime": 3000
   },
   {
     "Id": 120001,
     "CastStartAnimation": "attack",
-    "CastHitAnimation": ""
+    "CastHitAnimation": "hurt",
+    "CastStartFx": "Assets/Bundles/Fx/fx5.prefab",
+    "CastStartFxBindPoint": 4,
+    "CastStartFxTime": 3000,
+    "CastHitFx": "Assets/Bundles/Fx/fx5.prefab",
+    "CastHitFxBindPoint": 4,
+    "CastHitFxTime": 3000
   },
   {
     "Id": 130001,
     "CastStartAnimation": "",
-    "CastHitAnimation": ""
+    "CastHitAnimation": "",
+    "CastStartFx": "",
+    "CastStartFxBindPoint": 4,
+    "CastStartFxTime": 0,
+    "CastHitFx": "",
+    "CastHitFxBindPoint": 4,
+    "CastHitFxTime": 0
   },
   {
     "Id": 140001,
     "CastStartAnimation": "attack",
-    "CastHitAnimation": ""
+    "CastHitAnimation": "hurt",
+    "CastStartFx": "Assets/Bundles/Fx/fx5.prefab",
+    "CastStartFxBindPoint": 4,
+    "CastStartFxTime": 3000,
+    "CastHitFx": "Assets/Bundles/Fx/fx5.prefab",
+    "CastHitFxBindPoint": 4,
+    "CastHitFxTime": 3000
   },
   {
     "Id": 150001,
     "CastStartAnimation": "",
-    "CastHitAnimation": ""
+    "CastHitAnimation": "",
+    "CastStartFx": "",
+    "CastStartFxBindPoint": 4,
+    "CastStartFxTime": 0,
+    "CastHitFx": "",
+    "CastHitFxBindPoint": 4,
+    "CastHitFxTime": 0
   },
   {
     "Id": 210001,
     "CastStartAnimation": "sing",
-    "CastHitAnimation": ""
+    "CastHitAnimation": "",
+    "CastStartFx": "Assets/Bundles/Fx/fx5.prefab",
+    "CastStartFxBindPoint": 4,
+    "CastStartFxTime": 3000,
+    "CastHitFx": "Assets/Bundles/Fx/fx5.prefab",
+    "CastHitFxBindPoint": 4,
+    "CastHitFxTime": 3000
   },
   {
     "Id": 210002,
     "CastStartAnimation": "sing",
-    "CastHitAnimation": ""
+    "CastHitAnimation": "",
+    "CastStartFx": "Assets/Bundles/Fx/fx5.prefab",
+    "CastStartFxBindPoint": 4,
+    "CastStartFxTime": 3000,
+    "CastHitFx": "Assets/Bundles/Fx/fx5.prefab",
+    "CastHitFxBindPoint": 4,
+    "CastHitFxTime": 3000
   },
   {
     "Id": 310001,
     "CastStartAnimation": "sing",
-    "CastHitAnimation": ""
+    "CastHitAnimation": "",
+    "CastStartFx": "Assets/Bundles/Fx/fx5.prefab",
+    "CastStartFxBindPoint": 4,
+    "CastStartFxTime": 3000,
+    "CastHitFx": "Assets/Bundles/Fx/fx5.prefab",
+    "CastHitFxBindPoint": 4,
+    "CastHitFxTime": 3000
   },
   {
     "Id": 310002,
     "CastStartAnimation": "sing",
-    "CastHitAnimation": ""
+    "CastHitAnimation": "",
+    "CastStartFx": "Assets/Bundles/Fx/fx5.prefab",
+    "CastStartFxBindPoint": 4,
+    "CastStartFxTime": 3000,
+    "CastHitFx": "Assets/Bundles/Fx/fx5.prefab",
+    "CastHitFxBindPoint": 4,
+    "CastHitFxTime": 3000
   },
   {
     "Id": 310003,
     "CastStartAnimation": "sing",
-    "CastHitAnimation": ""
+    "CastHitAnimation": "",
+    "CastStartFx": "Assets/Bundles/Fx/fx5.prefab",
+    "CastStartFxBindPoint": 4,
+    "CastStartFxTime": 3000,
+    "CastHitFx": "Assets/Bundles/Fx/fx5.prefab",
+    "CastHitFxBindPoint": 4,
+    "CastHitFxTime": 3000
   }
 ]
