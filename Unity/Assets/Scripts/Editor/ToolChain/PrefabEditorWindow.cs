@@ -17,6 +17,9 @@ namespace ET
         [LabelText("是否是主角")]
         public bool isRole;
 
+        [LabelText("是否参与战斗")]
+        public bool isFightNpc;
+
         private const string PrefabPath = "Assets/Bundles/Unit";
 
         [Button("生成预设")]
@@ -80,11 +83,40 @@ namespace ET
             CharacterController characterController = go.AddComponent<CharacterController>();
             characterController.center = new Vector3(0, 1, 0);
             collector.Add("CharacterController", characterController);
+            
+            // 设置角色绑点信息
+            if (this.isFightNpc)
+            {
+                AddBindPoint("Head", go);
+                AddBindPoint("Neck", go);
+                AddBindPoint("Shoulder", go);
+                AddBindPoint("Chest", go);
+                AddBindPoint("LeftLeg", go);
+                AddBindPoint("RightLeg", go);
+                AddBindPoint("LeftFoot", go);
+                AddBindPoint("RightFoot", go);
+            }
 
             // 设置层级
             go.layer = LayerMask.NameToLayer("Unit");
 
             PrefabUtility.SaveAsPrefabAsset(go, prefabFilePath);
+        }
+
+        private void AddBindPoint(string bindPointName, GameObject parent)
+        {
+            GameObject go = GameObject.Find($"{parent.name}/{bindPointName}");
+            if (go != null)
+            {
+                GameObject.Destroy(go);
+            }
+            
+            GameObject bindPoint = new(bindPointName);
+            bindPoint.transform.SetParent(parent.transform);
+            bindPoint.transform.localPosition = new Vector3(0, 2, 0);
+            
+            ReferenceCollector collector = parent.GetComponent<ReferenceCollector>();
+            collector.Add(bindPointName, bindPoint.transform);
         }
     }
 }

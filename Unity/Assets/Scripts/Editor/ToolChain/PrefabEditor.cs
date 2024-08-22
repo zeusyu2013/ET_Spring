@@ -19,6 +19,9 @@ namespace ET
         [LabelText("是否是主角"), PropertyOrder(1.3f)]
         public bool isRole;
         
+        [LabelText("是否参与战斗"), PropertyOrder(1.35f)]
+        public bool isFightNpc;
+        
         [Button("导出Unit预设"), PropertyOrder(1.4f)]
         public void ExportUnit()
         {
@@ -75,6 +78,19 @@ namespace ET
             rayPoint.transform.localPosition = new Vector3(0, 2, 0);
 
             collector.Add("RayPoint", rayPoint);
+            
+            // 设置角色绑点信息
+            if (this.isFightNpc)
+            {
+                AddBindPoint("Head", instance);
+                AddBindPoint("Neck", instance);
+                AddBindPoint("Shoulder", instance);
+                AddBindPoint("Chest", instance);
+                AddBindPoint("LeftLeg", instance);
+                AddBindPoint("RightLeg", instance);
+                AddBindPoint("LeftFoot", instance);
+                AddBindPoint("RightFoot", instance);
+            }
 
             string prefabPath = $"Assets/Bundles/Unit/{prefabName}.prefab";
 
@@ -85,6 +101,22 @@ namespace ET
             UnityEngine.Object.DestroyImmediate(instance);
 
             EditorHelper.Log("导出Unit成功！");
+        }
+        
+        private void AddBindPoint(string bindPointName, GameObject parent)
+        {
+            GameObject go = GameObject.Find($"{parent.name}/{bindPointName}");
+            if (go != null)
+            {
+                GameObject.Destroy(go);
+            }
+            
+            GameObject bindPoint = new(bindPointName);
+            bindPoint.transform.SetParent(parent.transform);
+            bindPoint.transform.localPosition = new Vector3(0, 2, 0);
+            
+            ReferenceCollector collector = parent.GetComponent<ReferenceCollector>();
+            collector.Add(bindPointName, bindPoint.transform);
         }
 
         private const string BodyParentPath = "";
