@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace ET.Client
 {
@@ -29,18 +30,31 @@ namespace ET.Client
             self.RemoveFxes.Clear();
         }
 
-        public static void Add(this FxComponent self, Transform fx, long time)
+        private static void Add(this FxComponent self, string poolName, Transform fx, long time)
         {
-            self.AddFxes.TryAdd(fx, time);
+            if (!self.AddFxes.ContainsKey(poolName))
+            {
+                self.AddFxes.Add(poolName, new Dictionary<Transform, long>());
+            }
+
+            self.AddFxes[poolName].Add(fx, time);
         }
 
         private static void Check(this FxComponent self)
         {
             if (self.AddFxes.Count > 0)
             {
-                foreach ((Transform transform, long time) in self.AddFxes)
+                foreach (KeyValuePair<string, Dictionary<Transform, long>> kv in self.AddFxes)
                 {
-                    self.Fxes[transform] = time;
+                    if (!self.Fxes.ContainsKey(kv.Key))
+                    {
+                        self.Fxes.Add(kv.Key, new Dictionary<Transform, long>());
+                    }
+
+                    foreach ((Transform transform, long time) in kv.Value)
+                    {
+                        self.Fxes[kv.Key].Add(transform, time);
+                    }
                 }
 
                 self.AddFxes.Clear();
@@ -52,87 +66,49 @@ namespace ET.Client
             }
 
             long now = TimeInfo.Instance.ClientNow();
-            foreach ((Transform transform, long time) in self.Fxes)
+            foreach ((string poolName, Dictionary<Transform, long> dict) in self.Fxes)
             {
-                if (time < now)
+                foreach ((Transform transform, long time) in dict)
+                {
+                    if (time < now)
+                    {
+                        continue;
+                    }
+
+                    if (!self.RemoveFxes.ContainsKey(poolName))
+                    {
+                        self.RemoveFxes.Add(poolName, new List<Transform>());
+                    }
+
+                    self.RemoveFxes[poolName].Add(transform);
+                }
+            }
+
+            foreach ((string poolName, List<Transform> transforms) in self.RemoveFxes)
+            {
+                if (!self.Fxes.ContainsKey(poolName))
                 {
                     continue;
                 }
 
-                self.RemoveFxes.Add(transform);
-            }
+                foreach (Transform transform in transforms)
+                {
+                    self.Fxes[poolName].Remove(transform);
 
-            foreach (Transform removeFx in self.RemoveFxes)
-            {
-                self.Fxes.Remove(removeFx);
-
-                self.Scene().GetComponent<PoolComponent>().Despawn(removeFx.name, removeFx);
+                    self.Scene().GetComponent<PoolComponent>().Despawn(poolName, transform);
+                }
             }
 
             self.RemoveFxes.Clear();
         }
 
-        public static async ETTask<Transform> Spwan(this FxComponent self, string fxPath, Transform parent)
+        private static async ETTask<Transform> Spwan(this FxComponent self, string fxPath, Transform parent)
         {
             GameObject go = await self.Scene().GetComponent<ResourcesLoaderComponent>().LoadAssetAsync<GameObject>(fxPath);
 
             Transform transform = self.Scene().GetComponent<PoolComponent>().Spawn(fxPath, go.transform, parent);
 
             return transform;
-        }
-
-        public static async ETTask PlayCastFx(this FxComponent self, Unit unit, int castConfigId)
-        {
-            if (unit == null || unit.IsDisposed)
-            {
-                return;
-            }
-
-            CastClientConfig config = CastClientConfigCategory.Instance.Get(castConfigId);
-            string fxName = config.CastStartFx;
-            if (string.IsNullOrEmpty(fxName))
-            {
-                return;
-            }
-
-            GameObjectComponent gameObjectComponent = unit.GetComponent<GameObjectComponent>();
-            Transform bindPoint = gameObjectComponent.GetBindPoint(config.CastStartFxBindPoint);
-            if (bindPoint == null)
-            {
-                bindPoint = gameObjectComponent.Transform;
-            }
-
-            // 播放特效
-            Transform fx = await self.Spwan(fxName, bindPoint);
-
-            self.Add(fx, TimeInfo.Instance.ClientNow() + config.CastStartFxTime);
-        }
-
-        public static async ETTask PlayBuffFx(this FxComponent self, Unit unit, int buffConfigId)
-        {
-            if (unit == null || unit.IsDisposed)
-            {
-                return;
-            }
-
-            BuffClientConfig config = BuffClientConfigCategory.Instance.Get(buffConfigId);
-            string fxName = config.AddFx;
-            if (string.IsNullOrEmpty(fxName))
-            {
-                return;
-            }
-
-            GameObjectComponent gameObjectComponent = unit.GetComponent<GameObjectComponent>();
-            Transform bindPoint = gameObjectComponent.GetBindPoint(config.AddFxBindPoint);
-            if (bindPoint == null)
-            {
-                bindPoint = gameObjectComponent.Transform;
-            }
-
-            // 播放特效
-            Transform fx = await self.Spwan(fxName, bindPoint);
-
-            self.Add(fx, TimeInfo.Instance.ClientNow() + config.AddFxTime);
         }
 
         public static async ETTask PlayFx(this FxComponent self, Unit unit, string fxPath, ModelBindPoint point, long time)
@@ -142,8 +118,7 @@ namespace ET.Client
                 return;
             }
 
-            string fxName = fxPath;
-            if (string.IsNullOrEmpty(fxName))
+            if (string.IsNullOrEmpty(fxPath))
             {
                 return;
             }
@@ -156,9 +131,9 @@ namespace ET.Client
             }
 
             // 播放特效
-            Transform fx = await self.Spwan(fxName, bindPoint);
+            Transform fx = await self.Spwan(fxPath, bindPoint);
 
-            self.Add(fx, TimeInfo.Instance.ClientNow() + time);
+            self.Add(fxPath, fx, TimeInfo.Instance.ClientNow() + time);
         }
     }
 }

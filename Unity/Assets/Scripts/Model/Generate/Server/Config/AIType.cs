@@ -31,5 +31,10 @@ namespace ET
         /// </summary>
         AIType_AutoTask = 4,
 
+        /// <summary>
+        /// 巡逻1
+        /// </summary>
+        AIType_Patrol = 5,
+
     }
 }

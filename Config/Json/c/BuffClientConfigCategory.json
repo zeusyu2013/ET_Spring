@@ -1,6 +1,8 @@
 [
   {
     "Id": 40001,
+    "Name": "buff名称40001",
+    "Desc": "buff描述40001",
     "AddFx": "Assets/Bundles/Fx/fx1.prefab",
     "AddFxBindPoint": 4,
     "AddFxTime": 3000,
@@ -13,6 +15,8 @@
   },
   {
     "Id": 40002,
+    "Name": "buff名称40002",
+    "Desc": "buff描述40002",
     "AddFx": "Assets/Bundles/Fx/fx2.prefab",
     "AddFxBindPoint": 4,
     "AddFxTime": 3000,
@@ -25,6 +29,8 @@
   },
   {
     "Id": 40003,
+    "Name": "buff名称40003",
+    "Desc": "buff描述40003",
     "AddFx": "Assets/Bundles/Fx/fx3.prefab",
     "AddFxBindPoint": 4,
     "AddFxTime": 3000,
@@ -37,6 +43,8 @@
   },
   {
     "Id": 40004,
+    "Name": "buff名称40004",
+    "Desc": "buff描述40004",
     "AddFx": "Assets/Bundles/Fx/fx4.prefab",
     "AddFxBindPoint": 4,
     "AddFxTime": 3000,
@@ -49,7 +57,9 @@
   },
   {
     "Id": 40005,
-    "AddFx": "Assets/Bundles/Fx/fx5.prefab",
+    "Name": "buff名称40005",
+    "Desc": "buff描述40005",
+    "AddFx": "Assets/Bundles/Fx/fx2.prefab",
     "AddFxBindPoint": 4,
     "AddFxTime": 3000,
     "TickFx": "",
@@ -61,6 +71,8 @@
   },
   {
     "Id": 40006,
+    "Name": "buff名称40006",
+    "Desc": "buff描述40006",
     "AddFx": "",
     "AddFxBindPoint": 4,
     "AddFxTime": 3000,
@@ -73,6 +85,8 @@
   },
   {
     "Id": 40007,
+    "Name": "buff名称40007",
+    "Desc": "buff描述40007",
     "AddFx": "",
     "AddFxBindPoint": 4,
     "AddFxTime": 3000,
@@ -85,7 +99,51 @@
   },
   {
     "Id": 40008,
+    "Name": "buff名称40008",
+    "Desc": "buff描述40008",
     "AddFx": "Assets/Bundles/Fx/fx8.prefab",
+    "AddFxBindPoint": 4,
+    "AddFxTime": 3000,
+    "TickFx": "",
+    "TickFxBindPoint": 4,
+    "TickFxTime": 3000,
+    "RemoveFx": "",
+    "RemoveFxBindPoint": 4,
+    "RemoveFxTime": 3000
+  },
+  {
+    "Id": 40009,
+    "Name": "buff名称40009",
+    "Desc": "buff描述40009",
+    "AddFx": "Assets/Bundles/Fx/fx1.prefab",
+    "AddFxBindPoint": 4,
+    "AddFxTime": 3000,
+    "TickFx": "",
+    "TickFxBindPoint": 4,
+    "TickFxTime": 3000,
+    "RemoveFx": "",
+    "RemoveFxBindPoint": 4,
+    "RemoveFxTime": 3000
+  },
+  {
+    "Id": 40010,
+    "Name": "buff名称40010",
+    "Desc": "buff描述40010",
+    "AddFx": "Assets/Bundles/Fx/fx2.prefab",
+    "AddFxBindPoint": 4,
+    "AddFxTime": 3000,
+    "TickFx": "",
+    "TickFxBindPoint": 4,
+    "TickFxTime": 3000,
+    "RemoveFx": "",
+    "RemoveFxBindPoint": 4,
+    "RemoveFxTime": 3000
+  },
+  {
+    "Id": 40011,
+    "Name": "buff名称40011",
+    "Desc": "buff描述40011",
+    "AddFx": "Assets/Bundles/Fx/fx3.prefab",
     "AddFxBindPoint": 4,
     "AddFxTime": 3000,
     "TickFx": "",

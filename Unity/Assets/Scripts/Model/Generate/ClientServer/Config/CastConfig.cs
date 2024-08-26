@@ -17,8 +17,6 @@ namespace ET
         public CastConfig(ByteBuf _buf)
         {
             Id = _buf.ReadInt();
-            Name = _buf.ReadString();
-            Desc = _buf.ReadString();
             TotalTime = _buf.ReadLong();
             CastCooldown = _buf.ReadInt();
             Casting = _buf.ReadBool();
@@ -41,16 +39,6 @@ namespace ET
         /// 技能编号
         /// </summary>
         public readonly int Id;
-
-        /// <summary>
-        /// 技能名称
-        /// </summary>
-        public readonly string Name;
-
-        /// <summary>
-        /// 技能描述
-        /// </summary>
-        public readonly string Desc;
 
         /// <summary>
         /// 技能总时长
@@ -102,8 +90,6 @@ namespace ET
         {
             return "{ "
             + "Id:" + Id + ","
-            + "Name:" + Name + ","
-            + "Desc:" + Desc + ","
             + "TotalTime:" + TotalTime + ","
             + "CastCooldown:" + CastCooldown + ","
             + "Casting:" + Casting + ","

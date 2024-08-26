@@ -47,6 +47,21 @@ namespace ET
         GP_CantRotate = 1008,
 
         /// <summary>
+        /// 禁止选择
+        /// </summary>
+        GP_CantBeSelected = 1009,
+
+        /// <summary>
+        /// 护盾
+        /// </summary>
+        GP_Shield = 1010,
+
+        /// <summary>
+        /// 施法速度
+        /// </summary>
+        GP_CastSpeed = 1011,
+
+        /// <summary>
         /// 生命值
         /// </summary>
         GP_Hp = 1101,

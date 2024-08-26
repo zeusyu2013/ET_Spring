@@ -1,8 +1,6 @@
 [
   {
     "Id": 110001,
-    "Name": "castname_110001",
-    "Desc": "castdesc_110001",
     "TotalTime": 2000,
     "CastCooldown": 10000,
     "Casting": false,
@@ -18,16 +16,14 @@
         "Time": 0,
         "HitSelf": true,
         "HitAction": 0,
-        "TargetBuff": 0,
-        "SelfBuff": 40005
+        "SelfBuff": 0,
+        "TargetBuff": 0
       }
     ],
     "FinishActions": []
   },
   {
     "Id": 120001,
-    "Name": "castname_120001",
-    "Desc": "castdesc_120001",
     "TotalTime": 2000,
     "CastCooldown": 10000,
     "Casting": false,
@@ -45,16 +41,14 @@
         "Time": 0,
         "HitSelf": true,
         "HitAction": 2005,
-        "TargetBuff": 0,
-        "SelfBuff": 0
+        "SelfBuff": 0,
+        "TargetBuff": 0
       }
     ],
     "FinishActions": []
   },
   {
     "Id": 130001,
-    "Name": "castname_130001",
-    "Desc": "castdesc_130001",
     "TotalTime": 2000,
     "CastCooldown": 10000,
     "Casting": false,
@@ -72,8 +66,6 @@
   },
   {
     "Id": 140001,
-    "Name": "castname_140001",
-    "Desc": "castdesc_140001",
     "TotalTime": 1500,
     "CastCooldown": 6000,
     "Casting": false,
@@ -90,16 +82,14 @@
         "Time": 800,
         "HitSelf": false,
         "HitAction": 2007,
-        "TargetBuff": 0,
-        "SelfBuff": 0
+        "SelfBuff": 0,
+        "TargetBuff": 0
       }
     ],
     "FinishActions": []
   },
   {
     "Id": 150001,
-    "Name": "castname_150001",
-    "Desc": "castdesc_150001",
     "TotalTime": 1500,
     "CastCooldown": 12000,
     "Casting": false,
@@ -115,16 +105,14 @@
         "Time": 0,
         "HitSelf": false,
         "HitAction": 0,
-        "TargetBuff": 0,
-        "SelfBuff": 0
+        "SelfBuff": 0,
+        "TargetBuff": 0
       }
     ],
     "FinishActions": []
   },
   {
     "Id": 210001,
-    "Name": "castname_210001",
-    "Desc": "castdesc_210001",
     "TotalTime": 2000,
     "CastCooldown": 0,
     "Casting": true,
@@ -140,8 +128,6 @@
   },
   {
     "Id": 210002,
-    "Name": "castname_210002",
-    "Desc": "castdesc_210002",
     "TotalTime": 6000,
     "CastCooldown": 0,
     "Casting": true,
@@ -160,16 +146,14 @@
         "Time": 0,
         "HitSelf": false,
         "HitAction": 2004,
-        "TargetBuff": 1004,
-        "SelfBuff": 0
+        "SelfBuff": 0,
+        "TargetBuff": 0
       }
     ],
     "FinishActions": []
   },
   {
     "Id": 310001,
-    "Name": "castname_310001",
-    "Desc": "castdesc_310001",
     "TotalTime": 2000,
     "CastCooldown": 0,
     "Casting": true,
@@ -185,16 +169,14 @@
         "Time": 2000,
         "HitSelf": false,
         "HitAction": 8001,
-        "TargetBuff": 0,
-        "SelfBuff": 0
+        "SelfBuff": 0,
+        "TargetBuff": 0
       }
     ],
     "FinishActions": []
   },
   {
     "Id": 310002,
-    "Name": "castname_310002",
-    "Desc": "castdesc_310002",
     "TotalTime": 8000,
     "CastCooldown": 0,
     "Casting": true,
@@ -212,8 +194,6 @@
   },
   {
     "Id": 310003,
-    "Name": "castname_310003",
-    "Desc": "castdesc_310003",
     "TotalTime": 1500,
     "CastCooldown": 0,
     "Casting": false,
@@ -229,8 +209,54 @@
         "Time": 0,
         "HitSelf": false,
         "HitAction": 10001,
-        "TargetBuff": 0,
-        "SelfBuff": 0
+        "SelfBuff": 0,
+        "TargetBuff": 0
+      }
+    ],
+    "FinishActions": []
+  },
+  {
+    "Id": 310004,
+    "TotalTime": 1500,
+    "CastCooldown": 0,
+    "Casting": false,
+    "SelectTargetType": 1,
+    "CastTargetType": 1,
+    "SelectTargetsParams": {
+      "$type": "Single",
+      "IncludeSelf": false
+    },
+    "NotifyType": 2,
+    "HitInfos": [
+      {
+        "Time": 0,
+        "HitSelf": false,
+        "HitAction": 0,
+        "SelfBuff": 40010,
+        "TargetBuff": 40011
+      }
+    ],
+    "FinishActions": []
+  },
+  {
+    "Id": 410001,
+    "TotalTime": 1500,
+    "CastCooldown": 600000,
+    "Casting": false,
+    "SelectTargetType": 1,
+    "CastTargetType": 1,
+    "SelectTargetsParams": {
+      "$type": "Single",
+      "IncludeSelf": true
+    },
+    "NotifyType": 2,
+    "HitInfos": [
+      {
+        "Time": 0,
+        "HitSelf": true,
+        "HitAction": 0,
+        "SelfBuff": 40009,
+        "TargetBuff": 0
       }
     ],
     "FinishActions": []

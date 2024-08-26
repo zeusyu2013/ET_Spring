@@ -81,6 +81,45 @@
     }
   },
   {
+    "Id": 1006,
+    "Type": 1,
+    "ActionParams": {
+      "$type": "ModifyPropertyActionParams",
+      "ModifyProperties": [
+        {
+          "Property": 1009,
+          "Value": 1
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1007,
+    "Type": 1,
+    "ActionParams": {
+      "$type": "ModifyPropertyActionParams",
+      "ModifyProperties": [
+        {
+          "Property": 1011,
+          "Value": 1500
+        }
+      ]
+    }
+  },
+  {
+    "Id": 1008,
+    "Type": 1,
+    "ActionParams": {
+      "$type": "ModifyPropertyActionParams",
+      "ModifyProperties": [
+        {
+          "Property": 1010,
+          "Value": 1000
+        }
+      ]
+    }
+  },
+  {
     "Id": 2002,
     "Type": 2,
     "ActionParams": {

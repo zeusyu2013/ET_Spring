@@ -1,12 +1,24 @@
 [
   {
+    "Id": 0,
+    "Name": "",
+    "Desc": "",
+    "BuffProperty": 1,
+    "ContinueTime": 0,
+    "NotifyType": 0,
+    "Tick": 0,
+    "AddActions": [],
+    "TickActions": [],
+    "RemoveActions": []
+  },
+  {
     "Id": 40001,
     "Name": "buffname_40001",
     "Desc": "buffdesc_40001",
     "BuffProperty": 1,
     "ContinueTime": 5000,
     "NotifyType": 2,
-    "Tick": 1000,
+    "Tick": 0,
     "AddActions": [
       1001
     ],
@@ -20,7 +32,7 @@
     "BuffProperty": 2,
     "ContinueTime": 3600000,
     "NotifyType": 2,
-    "Tick": 1000,
+    "Tick": 0,
     "AddActions": [
       1001
     ],
@@ -34,7 +46,7 @@
     "BuffProperty": 3,
     "ContinueTime": 300000,
     "NotifyType": 2,
-    "Tick": 1000,
+    "Tick": 0,
     "AddActions": [
       1001
     ],
@@ -48,7 +60,7 @@
     "BuffProperty": 1,
     "ContinueTime": 15000,
     "NotifyType": 2,
-    "Tick": 1000,
+    "Tick": 0,
     "AddActions": [
       1001
     ],
@@ -108,6 +120,46 @@
     "AddActions": [
       1005
     ],
+    "TickActions": [],
+    "RemoveActions": []
+  },
+  {
+    "Id": 40009,
+    "Name": "buffname_40009",
+    "Desc": "buffdesc_40009",
+    "BuffProperty": 1,
+    "ContinueTime": 15000,
+    "NotifyType": 2,
+    "Tick": 0,
+    "AddActions": [
+      1006
+    ],
+    "TickActions": [],
+    "RemoveActions": []
+  },
+  {
+    "Id": 40010,
+    "Name": "buffname_40010",
+    "Desc": "buffdesc_40010",
+    "BuffProperty": 1,
+    "ContinueTime": 15000,
+    "NotifyType": 2,
+    "Tick": 0,
+    "AddActions": [
+      1007
+    ],
+    "TickActions": [],
+    "RemoveActions": []
+  },
+  {
+    "Id": 40011,
+    "Name": "buffname_40011",
+    "Desc": "buffdesc_40011",
+    "BuffProperty": 1,
+    "ContinueTime": 15000,
+    "NotifyType": 2,
+    "Tick": 0,
+    "AddActions": [],
     "TickActions": [],
     "RemoveActions": []
   }

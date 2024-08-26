@@ -19,8 +19,8 @@ namespace ET
             Time = _buf.ReadInt();
             HitSelf = _buf.ReadBool();
             HitAction = _buf.ReadInt();
-            TargetBuff = _buf.ReadInt();
             SelfBuff = _buf.ReadInt();
+            TargetBuff = _buf.ReadInt();
 
             PostInit();
         }
@@ -38,9 +38,13 @@ namespace ET
 
         public ActionConfig HitActionConfig => ActionConfigCategory.Instance.GetOrDefault(HitAction);
 
+        public readonly int SelfBuff;
+
+        public BuffConfig SelfBuffConfig => BuffConfigCategory.Instance.GetOrDefault(SelfBuff);
+
         public readonly int TargetBuff;
 
-        public readonly int SelfBuff;
+        public BuffConfig TargetBuffConfig => BuffConfigCategory.Instance.GetOrDefault(TargetBuff);
 
         public const int __ID__ = -823666046;
 
@@ -52,8 +56,8 @@ namespace ET
             + "Time:" + Time + ","
             + "HitSelf:" + HitSelf + ","
             + "HitAction:" + HitAction + ","
-            + "TargetBuff:" + TargetBuff + ","
             + "SelfBuff:" + SelfBuff + ","
+            + "TargetBuff:" + TargetBuff + ","
             + "}";
         }
 

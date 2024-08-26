@@ -17,6 +17,8 @@ namespace ET
         public BuffClientConfig(ByteBuf _buf)
         {
             Id = _buf.ReadInt();
+            Name = _buf.ReadString();
+            Desc = _buf.ReadString();
             if(_buf.ReadBool()){ AddFx = _buf.ReadString(); } else { AddFx = null; }
             AddFxBindPoint = (ModelBindPoint)_buf.ReadInt();
             AddFxTime = _buf.ReadLong();
@@ -44,6 +46,16 @@ namespace ET
         /// 编号
         /// </summary>
         public BuffConfig IdConfig => BuffConfigCategory.Instance.GetOrDefault(Id);
+
+        /// <summary>
+        /// buff名称
+        /// </summary>
+        public readonly string Name;
+
+        /// <summary>
+        /// buff描述
+        /// </summary>
+        public readonly string Desc;
 
         /// <summary>
         /// buff添加特效
@@ -98,6 +110,8 @@ namespace ET
         {
             return "{ "
             + "Id:" + Id + ","
+            + "Name:" + Name + ","
+            + "Desc:" + Desc + ","
             + "AddFx:" + AddFx + ","
             + "AddFxBindPoint:" + AddFxBindPoint + ","
             + "AddFxTime:" + AddFxTime + ","

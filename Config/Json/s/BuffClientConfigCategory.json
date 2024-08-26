@@ -1,6 +1,8 @@
 [
   {
     "Id": 40001,
+    "Name": "buffname_40001",
+    "Desc": "buffdesc_40001",
     "AddFx": "Assets/Bundles/Fx/fx1.prefab",
     "AddFxBindPoint": 4,
     "AddFxTime": 3000,
@@ -13,6 +15,8 @@
   },
   {
     "Id": 40002,
+    "Name": "buffname_40002",
+    "Desc": "buffdesc_40002",
     "AddFx": "Assets/Bundles/Fx/fx2.prefab",
     "AddFxBindPoint": 4,
     "AddFxTime": 3000,
@@ -25,6 +29,8 @@
   },
   {
     "Id": 40003,
+    "Name": "buffname_40003",
+    "Desc": "buffdesc_40003",
     "AddFx": "Assets/Bundles/Fx/fx3.prefab",
     "AddFxBindPoint": 4,
     "AddFxTime": 3000,
@@ -37,6 +43,8 @@
   },
   {
     "Id": 40004,
+    "Name": "buffname_40004",
+    "Desc": "buffdesc_40004",
     "AddFx": "Assets/Bundles/Fx/fx4.prefab",
     "AddFxBindPoint": 4,
     "AddFxTime": 3000,
@@ -49,7 +57,9 @@
   },
   {
     "Id": 40005,
-    "AddFx": "Assets/Bundles/Fx/fx5.prefab",
+    "Name": "buffname_40005",
+    "Desc": "buffdesc_40005",
+    "AddFx": "Assets/Bundles/Fx/fx2.prefab",
     "AddFxBindPoint": 4,
     "AddFxTime": 3000,
     "TickFx": "",
@@ -61,6 +71,8 @@
   },
   {
     "Id": 40006,
+    "Name": "buffname_40006",
+    "Desc": "buffdesc_40006",
     "AddFx": "",
     "AddFxBindPoint": 4,
     "AddFxTime": 3000,
@@ -73,6 +85,8 @@
   },
   {
     "Id": 40007,
+    "Name": "buffname_40007",
+    "Desc": "buffdesc_40007",
     "AddFx": "",
     "AddFxBindPoint": 4,
     "AddFxTime": 3000,
@@ -85,7 +99,51 @@
   },
   {
     "Id": 40008,
+    "Name": "buffname_40008",
+    "Desc": "buffdesc_40008",
     "AddFx": "Assets/Bundles/Fx/fx8.prefab",
+    "AddFxBindPoint": 4,
+    "AddFxTime": 3000,
+    "TickFx": "",
+    "TickFxBindPoint": 4,
+    "TickFxTime": 3000,
+    "RemoveFx": "",
+    "RemoveFxBindPoint": 4,
+    "RemoveFxTime": 3000
+  },
+  {
+    "Id": 40009,
+    "Name": "buffname_40009",
+    "Desc": "buffdesc_40009",
+    "AddFx": "Assets/Bundles/Fx/fx1.prefab",
+    "AddFxBindPoint": 4,
+    "AddFxTime": 3000,
+    "TickFx": "",
+    "TickFxBindPoint": 4,
+    "TickFxTime": 3000,
+    "RemoveFx": "",
+    "RemoveFxBindPoint": 4,
+    "RemoveFxTime": 3000
+  },
+  {
+    "Id": 40010,
+    "Name": "buffname_40010",
+    "Desc": "buffdesc_40010",
+    "AddFx": "Assets/Bundles/Fx/fx2.prefab",
+    "AddFxBindPoint": 4,
+    "AddFxTime": 3000,
+    "TickFx": "",
+    "TickFxBindPoint": 4,
+    "TickFxTime": 3000,
+    "RemoveFx": "",
+    "RemoveFxBindPoint": 4,
+    "RemoveFxTime": 3000
+  },
+  {
+    "Id": 40011,
+    "Name": "buffname_40011",
+    "Desc": "buffdesc_40011",
+    "AddFx": "Assets/Bundles/Fx/fx3.prefab",
     "AddFxBindPoint": 4,
     "AddFxTime": 3000,
     "TickFx": "",

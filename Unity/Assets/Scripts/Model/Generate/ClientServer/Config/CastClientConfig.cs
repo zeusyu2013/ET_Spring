@@ -17,6 +17,8 @@ namespace ET
         public CastClientConfig(ByteBuf _buf)
         {
             Id = _buf.ReadInt();
+            Name = _buf.ReadString();
+            Desc = _buf.ReadString();
             CastStartAnimation = _buf.ReadString();
             CastHitAnimation = _buf.ReadString();
             if(_buf.ReadBool()){ CastStartFx = _buf.ReadString(); } else { CastStartFx = null; }
@@ -45,12 +47,22 @@ namespace ET
         public CastConfig IdConfig => CastConfigCategory.Instance.GetOrDefault(Id);
 
         /// <summary>
+        /// 技能名称
+        /// </summary>
+        public readonly string Name;
+
+        /// <summary>
+        /// 技能描述
+        /// </summary>
+        public readonly string Desc;
+
+        /// <summary>
         /// 技能起手动画
         /// </summary>
         public readonly string CastStartAnimation;
 
         /// <summary>
-        /// 技能受击动画
+        /// 技能命中动画
         /// </summary>
         public readonly string CastHitAnimation;
 
@@ -92,6 +104,8 @@ namespace ET
         {
             return "{ "
             + "Id:" + Id + ","
+            + "Name:" + Name + ","
+            + "Desc:" + Desc + ","
             + "CastStartAnimation:" + CastStartAnimation + ","
             + "CastHitAnimation:" + CastHitAnimation + ","
             + "CastStartFx:" + CastStartFx + ","

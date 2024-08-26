@@ -202,6 +202,12 @@
                     continue;
                 }
 
+                // 处于不能被选择状态
+                if (target.GetInt(GamePropertyType.GP_CantBeSelected) > 0)
+                {
+                    continue;
+                }
+
                 if (info.HitAction > 0)
                 {
                     self.Create(info.HitAction, target, ActionTriggerType.CastHit);
