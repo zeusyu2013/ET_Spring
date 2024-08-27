@@ -5,6 +5,7 @@
     <component id="m1et1" name="BagCanvas.xml" path="/Bag/"/>
     <component id="qjfe2" name="ListCom.xml" path="/Bag/"/>
     <component id="f7kj3" name="TabButton.xml" path="/Component/" exported="true"/>
+    <component id="k2he4" name="BagPanel.xml" path="/" exported="true"/>
   </resources>
-  <publish name=""/>
+  <publish name="" genCode="true"/>
 </packageDescription>

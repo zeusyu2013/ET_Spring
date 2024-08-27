@@ -1,6 +1,6 @@
 {
-  "font": "",
-  "fontSize": 20,
+  "font": "ui://6qczg918k2hers",
+  "fontSize": 22,
   "textColor": "#ffffff",
   "fontAdjustment": false,
   "colorScheme": [
@@ -20,5 +20,6 @@
   "tipsRes": "",
   "buttonClickSound": "",
   "pivot": "default",
+  "listClearOnPublish": false,
   "fileName": "Common"
 }

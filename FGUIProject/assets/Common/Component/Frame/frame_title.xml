@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="420,150">
+  <displayList>
+    <image id="n0_k2he" name="n0" src="f7kj8r" fileName="Res/Frame/frame_iconframe_square_01_n.png" xy="0,0" size="420,150"/>
+    <text id="n1_k2he" name="n1" xy="15,16" size="390,114" fontSize="60" color="#ffffff" align="center" vAlign="middle" autoSize="none" autoClearText="true" text="Bag"/>
+  </displayList>
+</component>
