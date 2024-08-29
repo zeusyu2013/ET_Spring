@@ -5,12 +5,16 @@
     {
         public override int Check(AIComponent aiComponent, int aiConfig, int nodeId)
         {
-            throw new System.NotImplementedException();
+            Unit unit = aiComponent.GetParent<Unit>();
+            
+            return 0;
         }
 
-        public override ETTask Execute(AIComponent aiComponent, int aiConfig, int nodeId, ETCancellationToken cancellationToken)
+        public override async ETTask Execute(AIComponent aiComponent, int aiConfig, int nodeId, ETCancellationToken cancellationToken)
         {
-            throw new System.NotImplementedException();
+            Unit unit = aiComponent.GetParent<Unit>();
+            
+            await ETTask.CompletedTask;
         }
     }
 }

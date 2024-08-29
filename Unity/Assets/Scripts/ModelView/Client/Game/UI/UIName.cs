@@ -6,6 +6,7 @@ namespace ET.Client
     {
         public const string UIBackground = "UIBackground";
         public const string UIBag = "UIBag";
+        public const string UIBagPanel = "UIBagPanel";
         public const string UIChatBig = "UIChatBig";
         public const string UIChatMini = "UIChatMini";
         public const string UICreateRole = "UICreateRole";

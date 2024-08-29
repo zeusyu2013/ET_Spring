@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="165,170">
+  <displayList>
+    <image id="n0_k2he" name="n0" src="f7kjad" fileName="Res/Frame/frame_stageframe_00_s1.png" xy="0,0" size="165,170" aspect="true"/>
+    <loader id="n1_k2he" name="equipment" xy="13,16" size="138,130" aspect="true" url="ui://6qczg918f7kjbv" fill="scale" clearOnPublish="true"/>
+  </displayList>
+</component>

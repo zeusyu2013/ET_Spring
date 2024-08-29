@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="890,770">
+  <displayList>
+    <component id="n2_k2he" name="weapon" src="k2hes3" fileName="Component/Frame/equipment_frame.xml" pkg="6qczg918" xy="0,4"/>
+    <component id="n3_k2he" name="neck" src="k2hes3" fileName="Component/Frame/equipment_frame.xml" pkg="6qczg918" xy="0,193"/>
+    <component id="n4_k2he" name="shoulder" src="k2hes3" fileName="Component/Frame/equipment_frame.xml" pkg="6qczg918" xy="0,396"/>
+    <component id="n5_k2he" name="chest" src="k2hes3" fileName="Component/Frame/equipment_frame.xml" pkg="6qczg918" xy="0,600"/>
+    <component id="n6_k2he" name="hand" src="k2hes3" fileName="Component/Frame/equipment_frame.xml" pkg="6qczg918" xy="725,0"/>
+    <component id="n7_k2he" name="leg" src="k2hes3" fileName="Component/Frame/equipment_frame.xml" pkg="6qczg918" xy="725,193"/>
+    <component id="n8_k2he" name="shoe" src="k2hes3" fileName="Component/Frame/equipment_frame.xml" pkg="6qczg918" xy="725,396"/>
+    <component id="n9_k2he" name="ring" src="k2hes3" fileName="Component/Frame/equipment_frame.xml" pkg="6qczg918" xy="725,600"/>
+  </displayList>
+</component>

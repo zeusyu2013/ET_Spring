@@ -2,9 +2,9 @@
 <component size="1920,1080">
   <displayList>
     <component id="n1_k2he" name="n1" src="k2herw" fileName="Component/Frame/full_screen_frame.xml" pkg="6qczg918" xy="0,0"/>
-    <loader id="n2_k2he" name="model_viewer" xy="128,213" size="507,762" fill="scale" clearOnPublish="true"/>
+    <loader id="n2_k2he" name="model_viewer" xy="217,228" size="507,762" fill="scale" clearOnPublish="true"/>
     <image id="n4_k2he" name="n4" src="f7kjap" fileName="Res/Frame/frame_stageframe_04_d.png" pkg="6qczg918" xy="967,320" size="851,705"/>
-    <list id="n3_k2he" name="bag_list" xy="975,332" size="832,669" layout="flow_hz" overflow="scroll" scrollBarFlags="128" colGap="9" autoItemSize="true" autoClearItems="true" foldInvisibleItems="true">
+    <list id="n3_k2he" name="bag_list" xy="975,332" size="832,669" layout="flow_hz" overflow="scroll" scrollBarFlags="128" colGap="9" autoItemSize="true" autoClearItems="true" scrollItemToViewOnClick="false" foldInvisibleItems="true">
       <item url="ui://6qczg918k2hert"/>
       <item url="ui://6qczg918k2hert"/>
       <item url="ui://6qczg918k2hert"/>
@@ -50,5 +50,6 @@
       <item url="ui://6qczg918k2hert"/>
       <item url="ui://6qczg918k2hert"/>
     </list>
+    <component id="n15_k2he" name="equip_list" src="k2he6" fileName="Component/equip_list.xml" xy="25,256"/>
   </displayList>
 </component>
