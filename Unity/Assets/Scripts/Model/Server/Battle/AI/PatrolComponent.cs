@@ -4,7 +4,7 @@ using Unity.Mathematics;
 namespace ET.Server
 {
     [ComponentOf]
-    public class XunluoPathComponent : Entity, IAwake, IDestroy
+    public class PatrolComponent : Entity, IAwake, IDestroy
     {
         public List<float3> Path = new();
         

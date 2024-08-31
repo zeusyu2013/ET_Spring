@@ -572,6 +572,102 @@ namespace ET
         }
     }
 
+    [MemoryPackable]
+    [Message(OuterMessage.HatredInfo)]
+    public partial class HatredInfo : MessageObject
+    {
+        public static HatredInfo Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(HatredInfo), isFromPool) as HatredInfo;
+        }
+
+        [MemoryPackOrder(0)]
+        public long UnitId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long Hatred { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.UnitId = default;
+            this.Hatred = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.C2M_GetHatred)]
+    [ResponseType(nameof(M2C_GetHatred))]
+    public partial class C2M_GetHatred : MessageObject, ILocationRequest
+    {
+        public static C2M_GetHatred Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_GetHatred), isFromPool) as C2M_GetHatred;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long UnitId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.UnitId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_GetHatred)]
+    public partial class M2C_GetHatred : MessageObject, ILocationResponse
+    {
+        public static M2C_GetHatred Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_GetHatred), isFromPool) as M2C_GetHatred;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        [MongoDB.Bson.Serialization.Attributes.BsonDictionaryOptions(MongoDB.Bson.Serialization.Options.DictionaryRepresentation.ArrayOfArrays)]
+        [MemoryPackOrder(3)]
+        public Dictionary<long, long> HatredInfos { get; set; } = new();
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+            this.HatredInfos.Clear();
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
     public static partial class OuterMessage
     {
         public const ushort M2C_CastStart = 13002;
@@ -590,5 +686,8 @@ namespace ET
         public const ushort M2C_CooldownChange = 13015;
         public const ushort M2C_SetPosition = 13016;
         public const ushort M2C_NumericChange = 13017;
+        public const ushort HatredInfo = 13018;
+        public const ushort C2M_GetHatred = 13019;
+        public const ushort M2C_GetHatred = 13020;
     }
 }

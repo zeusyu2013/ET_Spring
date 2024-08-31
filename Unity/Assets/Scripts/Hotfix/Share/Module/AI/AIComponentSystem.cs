@@ -50,8 +50,12 @@ namespace ET
 
             AIConfig config = AIConfigCategory.Instance.Get(self.AIConfigId);
 
-            foreach ((int nodeId, AIType type) in config.AIInfos)
+            foreach (int nodeId in config.AIInfo)
             {
+                AINodeConfig nodeConfig = AINodeConfigCategory.Instance.Get(nodeId);
+
+                AIType type = nodeConfig.Type;
+                
                 AAIHandler aaiHandler = AIDispatcherComponent.Instance.Get(type);
 
                 if (aaiHandler == null)

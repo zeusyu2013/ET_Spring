@@ -122,3 +122,24 @@ message M2C_NumericChange // IMessage
     int64 UnitId = 2;
     map<int32, int64> KV = 3;
 }
+
+message HatredInfo
+{
+    int64 UnitId = 1;
+    int64 Hatred = 2;
+}
+
+// ResponseType M2C_GetHatred
+message C2M_GetHatred // ILocationRequest
+{
+    int32 RpcId = 1;
+    int64 UnitId = 2;
+}
+
+message M2C_GetHatred // ILocationResponse
+{
+    int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+    map<int64, int64> HatredInfos = 4;
+}

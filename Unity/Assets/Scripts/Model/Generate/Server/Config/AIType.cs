@@ -9,6 +9,7 @@
 
 namespace ET
 {
+    [System.Flags]
     public enum AIType
     {
         /// <summary>
@@ -35,6 +36,11 @@ namespace ET
         /// 巡逻1
         /// </summary>
         AIType_Patrol = 5,
+
+        /// <summary>
+        /// 释放技能
+        /// </summary>
+        AIType_Cast = 6,
 
     }
 }

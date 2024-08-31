@@ -1,0 +1,21 @@
+[
+  {
+    "Id": 1001,
+    "Type": 5,
+    "AIParams": {
+      "$type": "AIPatrolParam",
+      "StayTimeMin": 2000,
+      "StayTimeMax": 5000
+    }
+  },
+  {
+    "Id": 2002,
+    "Type": 6,
+    "AIParams": {
+      "$type": "AICastParam",
+      "CastConfigIds": [
+        1001
+      ]
+    }
+  }
+]

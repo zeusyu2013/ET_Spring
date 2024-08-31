@@ -17,7 +17,7 @@ namespace ET
         public AIConfig(ByteBuf _buf)
         {
             Id = _buf.ReadInt();
-            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);AIInfos = new System.Collections.Generic.Dictionary<int, AIType>(n0 * 3 / 2);for(var i0 = 0 ; i0 < n0 ; i0++) { int _k0;  _k0 = _buf.ReadInt(); AIType _v0;  _v0 = (AIType)_buf.ReadInt();     AIInfos.Add(_k0, _v0);}}
+            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);AIInfo = new System.Collections.Generic.List<int>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { int _e0;  _e0 = _buf.ReadInt(); AIInfo.Add(_e0);}}
 
             PostInit();
         }
@@ -33,9 +33,9 @@ namespace ET
         public readonly int Id;
 
         /// <summary>
-        /// AI节点信息
+        /// AI节点
         /// </summary>
-        public readonly System.Collections.Generic.Dictionary<int, AIType> AIInfos;
+        public readonly System.Collections.Generic.List<int> AIInfo;
 
         public const int __ID__ = -294143606;
 
@@ -45,7 +45,7 @@ namespace ET
         {
             return "{ "
             + "Id:" + Id + ","
-            + "AIInfos:" + Luban.StringUtil.CollectionToString(AIInfos) + ","
+            + "AIInfo:" + Luban.StringUtil.CollectionToString(AIInfo) + ","
             + "}";
         }
 

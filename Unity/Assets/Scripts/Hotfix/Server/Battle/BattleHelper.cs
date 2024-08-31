@@ -30,6 +30,9 @@ namespace ET.Server
                 return;
             }
 
+            // 伤害事件抛出
+            EventSystem.Instance.Publish(attacker.Scene(), new OnDamageEvent() { Caster = attacker, Target = target, DamageValue = damage });
+
             // 伤害可以溢出，直接广播
             M2C_DamageResult m2CBattleResult = M2C_DamageResult.Create();
             m2CBattleResult.AttackerId = attacker.Id;
@@ -138,7 +141,7 @@ namespace ET.Server
                 {
                     continue;
                 }
-                
+
                 if (buff.Config.BuffProperty != disperseParams.Type)
                 {
                     continue;
@@ -146,7 +149,7 @@ namespace ET.Server
 
                 // todo 简单设置为过期，移除效果根据配置是否触发
                 buff.Timeout();
-                
+
                 count += 1;
 
                 if (count >= disperseParams.Count)
@@ -159,6 +162,9 @@ namespace ET.Server
         private static void Kill(Unit killer, Unit target)
         {
             // todo 处理击杀事件等
+
+            // 死亡事件抛出
+            EventSystem.Instance.Publish(killer.Scene(), new OnDeadEvent() { Caster = killer, Target = target });
 
             OnDead(killer, target);
         }
@@ -187,24 +193,24 @@ namespace ET.Server
                     break;
 
                 case UnitType.UnitType_Monster:
-                    {
-                        long time = TimeInfo.Instance.ServerNow() + 3000;
-                        deader.Scene().GetComponent<TimerComponent>().NewOnceTimer(time, TimerInvokeType.MonsterDeadTimer, deader);
+                {
+                    long time = TimeInfo.Instance.ServerNow() + 3000;
+                    deader.Scene().GetComponent<TimerComponent>().NewOnceTimer(time, TimerInvokeType.MonsterDeadTimer, deader);
 
-                        if (killer.Type() == UnitType.UnitType_Player)
+                    if (killer.Type() == UnitType.UnitType_Player)
+                    {
+                        MonsterConfig config = MonsterConfigCategory.Instance.Get(deader.ConfigId);
+                        List<DropItem> items = new();
+                        deader.Scene().GetComponent<DropComponent>().Drop(config.DropConfig, ref items);
+                        if (items.Count > 0)
                         {
-                            MonsterConfig config = MonsterConfigCategory.Instance.Get(deader.ConfigId);
-                            List<DropItem> items = new();
-                            deader.Scene().GetComponent<DropComponent>().Drop(config.DropConfig, ref items);
-                            if (items.Count > 0)
+                            foreach (DropItem item in items)
                             {
-                                foreach (DropItem item in items)
-                                {
-                                    killer.GetComponent<BagComponent>().AddItem(item.ItemConfig, item.ItemAmount);
-                                }
+                                killer.GetComponent<BagComponent>().AddItem(item.ItemConfig, item.ItemAmount);
                             }
                         }
                     }
+                }
                     break;
             }
         }

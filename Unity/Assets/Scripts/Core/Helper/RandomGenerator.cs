@@ -30,7 +30,7 @@ namespace ET
 
         public static uint RandUInt32()
         {
-            return (uint) GetRandom().Next();
+            return (uint)GetRandom().Next();
         }
 
         public static long RandInt64()

@@ -2,6 +2,11 @@
 {
     public static partial class UnitHelper
     {
+        public static bool IsNull(this Unit self)
+        {
+            return self == null || self.IsDisposed;
+        }
+
         public static void Send2Unit(this Scene root, long unitId, IMessage message)
         {
             root.GetComponent<MessageLocationSenderComponent>().Get(LocationType.Unit).Send(unitId, message);
