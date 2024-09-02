@@ -1,1 +1,8 @@
 syntax = "proto3";
+
+message SoulInfo
+{
+    int32 ConfigId = 1;
+    int32 Level = 2;
+    int32 Star = 3;
+}

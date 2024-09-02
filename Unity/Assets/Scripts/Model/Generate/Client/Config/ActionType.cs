@@ -67,5 +67,10 @@ namespace ET
         /// </summary>
         ActionType_Disperse = 11,
 
+        /// <summary>
+        /// 嘲讽行为
+        /// </summary>
+        ActionType_Taunt = 12,
+
     }
 }

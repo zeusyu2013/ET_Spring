@@ -100,6 +100,9 @@ namespace ET.Server
 
             // buff组件
             unit.AddComponentWithId<BuffComponent>(unit.Id);
+            
+            // 灵组件
+            unit.AddComponentWithId<SoulComponent>(unit.Id);
 
             unitComponent.Add(unit);
 
@@ -120,6 +123,7 @@ namespace ET.Server
             unitDBSaveComponent.AddChange(typeof(VipComponent));
             unitDBSaveComponent.AddChange(typeof(LotteryComponent));
             unitDBSaveComponent.AddChange(typeof(BuffComponent));
+            unitDBSaveComponent.AddChange(typeof(SoulComponent));
             unitDBSaveComponent.SaveChanged();
 
             // 加入aoi

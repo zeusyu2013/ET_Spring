@@ -237,5 +237,13 @@
       "Type": 2,
       "Count": 1
     }
+  },
+  {
+    "Id": 11001,
+    "Type": 12,
+    "ActionParams": {
+      "$type": "TauntParams",
+      "Hatred": 100
+    }
   }
 ]

@@ -34,6 +34,7 @@ namespace ET
                 case TreatmentParams.__ID__: return new TreatmentParams(_buf);
                 case ReliveParams.__ID__: return new ReliveParams(_buf);
                 case DisperseParams.__ID__: return new DisperseParams(_buf);
+                case TauntParams.__ID__: return new TauntParams(_buf);
                 default: throw new SerializationException();
             }
         }
