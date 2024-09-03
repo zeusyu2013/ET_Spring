@@ -17,8 +17,8 @@
                 response.Error = ErrorCode.ERR_SoulNotFound;
                 return;
             }
-
-            response.Error = soul.Uplevel(0);
+            
+            response.Error = soul.Uplevel();
             
             await ETTask.CompletedTask;
         }

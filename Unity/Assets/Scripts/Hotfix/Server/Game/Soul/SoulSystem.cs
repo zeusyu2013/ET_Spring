@@ -8,6 +8,8 @@
         private static void Awake(this ET.Server.Soul self, int configId)
         {
             self.ConfigId = configId;
+            self.Level = 1;
+            self.Star = 1;
         }
 
         [EntitySystem]
@@ -33,7 +35,7 @@
         public static void Initialization(this Soul self)
         {
             NumericComponent numericComponent = self.AddComponent<NumericComponent>();
-            
+
             // 等级属性
             SoulLevelConfig levelConfig = SoulLevelConfigCategory.Instance.Get(self.ConfigId, self.Level);
             if (levelConfig != null)
@@ -51,8 +53,29 @@
 
         #region 升级
 
-        public static int Uplevel(this Soul self, long exp)
+        public static int Uplevel(this Soul self)
         {
+            Unit unit = self.GetParent<SoulComponent>().GetParent<Unit>();
+
+            SoulLevelConfig config = SoulLevelConfigCategory.Instance.Get(self.ConfigId, self.Level);
+            if (config == null)
+            {
+                return ErrorCode.ERR_SoulLevelConfigNotFound;
+            }
+
+            if (config.CurrencyValue < 1)
+            {
+                return ErrorCode.ERR_SoulLevelLimit;
+            }
+
+            bool ret = unit.GetComponent<CurrencyComponent>().Dec(config.CurrencyType, config.CurrencyValue, "灵升级");
+            if (!ret)
+            {
+                return ErrorCode.ERR_CurrencyNotEnough;
+            }
+
+            self.Level += 1;
+
             return ErrorCode.ERR_Success;
         }
 

@@ -27,6 +27,11 @@ namespace ET.Server
             }
         }
 
+        public static void Add(this SoulComponent self, int configId)
+        {
+            self.AddChild<Soul, int>(configId);
+        }
+
         public static Soul Get(this SoulComponent self, int configId)
         {
             foreach (Soul soul in self.Children.Values.Cast<Soul>())

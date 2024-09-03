@@ -107,5 +107,7 @@ namespace ET
         
         // Soul
         public const int ERR_SoulNotFound = 200501;
+        public const int ERR_SoulLevelConfigNotFound = 200502;
+        public const int ERR_SoulLevelLimit = 200503;
     }
 }
