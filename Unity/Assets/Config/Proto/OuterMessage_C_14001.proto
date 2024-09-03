@@ -35,3 +35,17 @@ message M2C_SoulUpstar // ILocationResponse
 	int32 Error = 2;
 	string Message = 3;
 }
+
+// ResponseType M2C_SoulChooseTalent
+message C2M_SoulChooseTalent // ILocationRequest
+{
+    int32 RpcId = 1;
+    int64 SoulId = 2;
+}
+
+message M2C_SoulChooseTalent // ILocationResponse
+{
+    int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}
