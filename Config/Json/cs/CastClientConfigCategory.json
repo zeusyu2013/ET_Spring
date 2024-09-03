@@ -31,10 +31,8 @@
     "Desc": "castdesc_130001",
     "CastStartAnimation": "",
     "CastHitAnimation": "",
-    "CastStartFx": "",
     "CastStartFxBindPoint": 4,
     "CastStartFxTime": 0,
-    "CastHitFx": "",
     "CastHitFxBindPoint": 4,
     "CastHitFxTime": 0
   },
@@ -57,10 +55,8 @@
     "Desc": "castdesc_150001",
     "CastStartAnimation": "",
     "CastHitAnimation": "",
-    "CastStartFx": "",
     "CastStartFxBindPoint": 4,
     "CastStartFxTime": 0,
-    "CastHitFx": "",
     "CastHitFxBindPoint": 4,
     "CastHitFxTime": 0
   },

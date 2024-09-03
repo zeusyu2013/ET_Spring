@@ -3,6 +3,7 @@
 namespace ET.Server
 {
     [EntitySystemOf(typeof(SoulComponent))]
+    [FriendOfAttribute(typeof(ET.Server.Soul))]
     public static partial class SoulComponentSystem
     {
         [EntitySystem]
@@ -21,7 +22,27 @@ namespace ET.Server
             foreach (Soul soul in self.Children.Values.Cast<Soul>())
             {
                 self.AddChild(soul);
+
+                soul.Initialization();
             }
+        }
+
+        public static Soul Get(this SoulComponent self, int configId)
+        {
+            foreach (Soul soul in self.Children.Values.Cast<Soul>())
+            {
+                if (soul == null)
+                {
+                    continue;
+                }
+
+                if (soul.ConfigId == configId)
+                {
+                    return soul;
+                }
+            }
+
+            return null;
         }
     }
 }

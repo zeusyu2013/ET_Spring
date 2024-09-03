@@ -1,0 +1,72 @@
+[
+  {
+    "Id": 800001,
+    "Level": 1,
+    "CurrencyType": 4,
+    "CurrencyValue": 100,
+    "PropertyPack": 1001
+  },
+  {
+    "Id": 800001,
+    "Level": 2,
+    "CurrencyType": 4,
+    "CurrencyValue": 200,
+    "PropertyPack": 1001
+  },
+  {
+    "Id": 800001,
+    "Level": 3,
+    "CurrencyType": 4,
+    "CurrencyValue": 300,
+    "PropertyPack": 1001
+  },
+  {
+    "Id": 800001,
+    "Level": 4,
+    "CurrencyType": 4,
+    "CurrencyValue": 400,
+    "PropertyPack": 1001
+  },
+  {
+    "Id": 800001,
+    "Level": 5,
+    "CurrencyType": 4,
+    "CurrencyValue": 500,
+    "PropertyPack": 1001
+  },
+  {
+    "Id": 800001,
+    "Level": 6,
+    "CurrencyType": 4,
+    "CurrencyValue": 600,
+    "PropertyPack": 1001
+  },
+  {
+    "Id": 800001,
+    "Level": 7,
+    "CurrencyType": 4,
+    "CurrencyValue": 700,
+    "PropertyPack": 1001
+  },
+  {
+    "Id": 800001,
+    "Level": 8,
+    "CurrencyType": 4,
+    "CurrencyValue": 800,
+    "PropertyPack": 1001
+  },
+  {
+    "Id": 800001,
+    "Level": 9,
+    "CurrencyType": 4,
+    "CurrencyValue": 900,
+    "PropertyPack": 1001
+  },
+  {
+    "Id": 800001,
+    "Level": 10,
+    "CurrencyType": 4,
+    "CurrencyValue": 1000,
+    "PropertyPack": 1001
+  }
+]

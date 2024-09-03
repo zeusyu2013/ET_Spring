@@ -18,11 +18,35 @@
         public static SoulInfo ToMessage(this Soul self)
         {
             SoulInfo info = SoulInfo.Create();
+            info.Id = self.Id;
             info.ConfigId = self.ConfigId;
             info.Level = self.Level;
             info.Star = self.Star;
 
             return info;
+        }
+
+        /// <summary>
+        /// 初始化灵相关属性
+        /// </summary>
+        /// <param name="self"></param>
+        public static void Initialization(this Soul self)
+        {
+            NumericComponent numericComponent = self.AddComponent<NumericComponent>();
+            
+            // 等级属性
+            SoulLevelConfig levelConfig = SoulLevelConfigCategory.Instance.Get(self.ConfigId, self.Level);
+            if (levelConfig != null)
+            {
+                numericComponent.AddPropertyPack(levelConfig.PropertyPack);
+            }
+
+            // 星级属性
+            SoulStarConfig starConfig = SoulStarConfigCategory.Instance.Get(self.ConfigId, self.Star);
+            if (starConfig != null)
+            {
+                numericComponent.AddPropertyPack(starConfig.PropertyPack);
+            }
         }
 
         #region 升级

@@ -104,5 +104,8 @@ namespace ET
         public const int ERR_DropItemNotFound = 200403;
         public const int ERR_DropItemAssignmentUnitNotFound = 200404;
         public const int ERR_DropItemAssignmentNoPermission = 200405;
+        
+        // Soul
+        public const int ERR_SoulNotFound = 200501;
     }
 }

@@ -31,10 +31,8 @@
     "Desc": "技能130001",
     "CastStartAnimation": "",
     "CastHitAnimation": "",
-    "CastStartFx": "",
     "CastStartFxBindPoint": 4,
     "CastStartFxTime": 0,
-    "CastHitFx": "",
     "CastHitFxBindPoint": 4,
     "CastHitFxTime": 0
   },
@@ -57,10 +55,8 @@
     "Desc": "技能150001",
     "CastStartAnimation": "",
     "CastHitAnimation": "",
-    "CastStartFx": "",
     "CastStartFxBindPoint": 4,
     "CastStartFxTime": 0,
-    "CastHitFx": "",
     "CastHitFxBindPoint": 4,
     "CastHitFxTime": 0
   },

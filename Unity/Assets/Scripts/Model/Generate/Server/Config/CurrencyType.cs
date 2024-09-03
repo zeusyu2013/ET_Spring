@@ -26,7 +26,12 @@ namespace ET
         /// </summary>
         CurrencyType_Diamond = 3,
 
-        CurrencyType_Max = 4,
+        /// <summary>
+        /// 灵蕴
+        /// </summary>
+        CurrencyType_SoulExp = 4,
+
+        CurrencyType_Max = 5,
 
     }
 }

@@ -2,7 +2,36 @@ syntax = "proto3";
 
 message SoulInfo
 {
-    int32 ConfigId = 1;
-    int32 Level = 2;
-    int32 Star = 3;
+    int64 Id = 1;
+    int32 ConfigId = 2;
+    int32 Level = 3;
+    int32 Star = 4;
+}
+
+// ResponseType M2C_SoulUplevel
+message C2M_SoulUplevel // ILocationRequest
+{
+    int32 RpcId = 1;
+    int64 SoulId = 2;
+}
+
+message M2C_SoulUplevel // ILocationResponse
+{
+    int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}
+
+// ResponseType M2C_SoulUpstar
+message C2M_SoulUpstar // ILocationRequest
+{
+    int32 RpcId = 1;
+    int64 SoulId = 2;
+}
+
+message M2C_SoulUpstar // ILocationResponse
+{
+    int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
 }
