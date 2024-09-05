@@ -12,32 +12,37 @@ using Luban;
 namespace ET
 {
     [EnableClass]
-    public sealed partial class RewardConfig : BeanBase
+    public sealed partial class SevenDayConfig : BeanBase
     {
-        public RewardConfig(ByteBuf _buf)
+        public SevenDayConfig(ByteBuf _buf)
         {
             Id = _buf.ReadInt();
-            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);Reward = new System.Collections.Generic.List<GameItemBean>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { GameItemBean _e0;  _e0 = GameItemBean.DeserializeGameItemBean(_buf); Reward.Add(_e0);}}
+            Reward = _buf.ReadInt();
 
             PostInit();
         }
 
-        public static RewardConfig DeserializeRewardConfig(ByteBuf _buf)
+        public static SevenDayConfig DeserializeSevenDayConfig(ByteBuf _buf)
         {
-            return new RewardConfig(_buf);
+            return new SevenDayConfig(_buf);
         }
 
         /// <summary>
-        /// 奖励包id
+        /// 天数
         /// </summary>
         public readonly int Id;
 
         /// <summary>
-        /// 奖励包内容
+        /// 奖励
         /// </summary>
-        public readonly System.Collections.Generic.List<GameItemBean> Reward;
+        public readonly int Reward;
 
-        public const int __ID__ = 1443672945;
+        /// <summary>
+        /// 奖励
+        /// </summary>
+        public RewardConfig RewardConfig => RewardConfigCategory.Instance.GetOrDefault(Reward);
+
+        public const int __ID__ = -834979695;
 
         public override int GetTypeId() => __ID__;
 
@@ -45,7 +50,7 @@ namespace ET
         {
             return "{ "
             + "Id:" + Id + ","
-            + "Reward:" + Luban.StringUtil.CollectionToString(Reward) + ","
+            + "Reward:" + Reward + ","
             + "}";
         }
 

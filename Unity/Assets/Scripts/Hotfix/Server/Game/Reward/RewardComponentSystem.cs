@@ -17,10 +17,10 @@
                 return;
             }
 
-            foreach (var kv in config.Reward)
+            foreach (var bean in config.Reward)
             {
-                int itemId = kv.Key;
-                long itemAmount = kv.Value;
+                int itemId = bean.ItemConfig;
+                long itemAmount = bean.ItemAmount;
 
                 self.GetParent<Unit>().GetComponent<BagComponent>().AddItem(itemId, itemAmount);
             }

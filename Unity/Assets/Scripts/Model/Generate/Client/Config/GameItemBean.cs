@@ -12,20 +12,19 @@ using Luban;
 namespace ET
 {
     [EnableClass]
-    public sealed partial class DropItem : BeanBase
+    public sealed partial class GameItemBean : BeanBase
     {
-        public DropItem(ByteBuf _buf)
+        public GameItemBean(ByteBuf _buf)
         {
             ItemConfig = _buf.ReadInt();
             ItemAmount = _buf.ReadLong();
-            ItemRate = _buf.ReadInt();
 
             PostInit();
         }
 
-        public static DropItem DeserializeDropItem(ByteBuf _buf)
+        public static GameItemBean DeserializeGameItemBean(ByteBuf _buf)
         {
-            return new DropItem(_buf);
+            return new GameItemBean(_buf);
         }
 
         public readonly int ItemConfig;
@@ -34,9 +33,7 @@ namespace ET
 
         public readonly long ItemAmount;
 
-        public readonly int ItemRate;
-
-        public const int __ID__ = -368217406;
+        public const int __ID__ = 1496527765;
 
         public override int GetTypeId() => __ID__;
 
@@ -45,7 +42,6 @@ namespace ET
             return "{ "
             + "ItemConfig:" + ItemConfig + ","
             + "ItemAmount:" + ItemAmount + ","
-            + "ItemRate:" + ItemRate + ","
             + "}";
         }
 

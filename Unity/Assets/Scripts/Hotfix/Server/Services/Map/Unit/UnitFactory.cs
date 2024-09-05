@@ -104,6 +104,9 @@ namespace ET.Server
             // 灵组件
             unit.AddComponentWithId<SoulComponent>(unit.Id);
 
+            // 7日奖励组件
+            unit.AddComponentWithId<SevenDayComponent>(unit.Id);
+
             unitComponent.Add(unit);
 
             UnitDBSaveComponent unitDBSaveComponent = unit.AddComponent<UnitDBSaveComponent>();
@@ -124,6 +127,7 @@ namespace ET.Server
             unitDBSaveComponent.AddChange(typeof(LotteryComponent));
             unitDBSaveComponent.AddChange(typeof(BuffComponent));
             unitDBSaveComponent.AddChange(typeof(SoulComponent));
+            unitDBSaveComponent.AddChange(typeof(SevenDayComponent));
             unitDBSaveComponent.SaveChanged();
 
             // 加入aoi

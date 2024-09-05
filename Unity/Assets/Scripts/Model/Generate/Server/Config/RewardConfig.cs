@@ -17,8 +17,7 @@ namespace ET
         public RewardConfig(ByteBuf _buf)
         {
             Id = _buf.ReadInt();
-            Name = _buf.ReadString();
-            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);Reward = new System.Collections.Generic.Dictionary<int, long>(n0 * 3 / 2);for(var i0 = 0 ; i0 < n0 ; i0++) { int _k0;  _k0 = _buf.ReadInt(); long _v0;  _v0 = _buf.ReadLong();     Reward.Add(_k0, _v0);}}
+            {int n0 = System.Math.Min(_buf.ReadSize(), _buf.Size);Reward = new System.Collections.Generic.List<GameItemBean>(n0);for(var i0 = 0 ; i0 < n0 ; i0++) { GameItemBean _e0;  _e0 = GameItemBean.DeserializeGameItemBean(_buf); Reward.Add(_e0);}}
 
             PostInit();
         }
@@ -34,14 +33,9 @@ namespace ET
         public readonly int Id;
 
         /// <summary>
-        /// 奖励包名字
-        /// </summary>
-        public readonly string Name;
-
-        /// <summary>
         /// 奖励包内容
         /// </summary>
-        public readonly System.Collections.Generic.Dictionary<int, long> Reward;
+        public readonly System.Collections.Generic.List<GameItemBean> Reward;
 
         public const int __ID__ = 1443672945;
 
@@ -51,7 +45,6 @@ namespace ET
         {
             return "{ "
             + "Id:" + Id + ","
-            + "Name:" + Name + ","
             + "Reward:" + Luban.StringUtil.CollectionToString(Reward) + ","
             + "}";
         }

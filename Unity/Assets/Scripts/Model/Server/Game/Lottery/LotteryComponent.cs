@@ -2,7 +2,7 @@
 {
     [ComponentOf]
     [UnitCacheEvent(typeof(LotteryComponent))]
-    public class LotteryComponent : Entity, IAwake, IDestroy
+    public class LotteryComponent : Entity, IAwake, IDestroy, ITransfer
     {
         public int Level;
     }

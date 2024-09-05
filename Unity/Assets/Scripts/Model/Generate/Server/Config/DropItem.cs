@@ -30,6 +30,8 @@ namespace ET
 
         public readonly int ItemConfig;
 
+        public ItemConfig ItemConfigConfig => ItemConfigCategory.Instance.GetOrDefault(ItemConfig);
+
         public readonly long ItemAmount;
 
         public readonly int ItemRate;
