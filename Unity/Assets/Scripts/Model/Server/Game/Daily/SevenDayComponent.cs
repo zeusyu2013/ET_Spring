@@ -7,5 +7,7 @@
         public int BeginDay;
 
         public int GetDay;
+
+        public int GetCount;
     }
 }

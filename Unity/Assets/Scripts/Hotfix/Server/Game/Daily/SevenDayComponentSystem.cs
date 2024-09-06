@@ -24,17 +24,17 @@
                 return;
             }
 
-            int day = self.GetDay - self.BeginDay;
-            if (day >= 7)
+            if (self.GetCount >= 7)
             {
                 return;
             }
 
-            SevenDayConfig config = SevenDayConfigCategory.Instance.Get(day);
+            SevenDayConfig config = SevenDayConfigCategory.Instance.Get(self.GetCount);
 
             self.GetParent<Unit>().GetComponent<RewardComponent>().Reward(config.Reward);
 
             self.GetDay = today;
+            self.GetCount += 1;
         }
     }
 }
