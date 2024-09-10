@@ -28,6 +28,9 @@
             
             // 累加充值金额
             self.PayAmount += config.Price;
+            
+            // 立即保存组件信息，确保充值数据安全
+            DBCacheHelper.SaveImmediately(self.Scene(), self);
 
             // 发放礼包
             self.GetParent<Unit>().GetComponent<BagComponent>().AddItem(config.Pack, 1);

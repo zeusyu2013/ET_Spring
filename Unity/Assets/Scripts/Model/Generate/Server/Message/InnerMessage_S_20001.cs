@@ -914,6 +914,39 @@ namespace ET
     }
 
     [MemoryPackable]
+    [Message(InnerMessage.Other2DBCache_SaveImmediately)]
+    public partial class Other2DBCache_SaveImmediately : MessageObject, IMessage
+    {
+        public static Other2DBCache_SaveImmediately Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(Other2DBCache_SaveImmediately), isFromPool) as Other2DBCache_SaveImmediately;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long UnitId { get; set; }
+
+        [MemoryPackOrder(2)]
+        public byte[] EntityBytes { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.UnitId = default;
+            this.EntityBytes = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
     [Message(InnerMessage.Other2DBCache_GetEntities)]
     [ResponseType(nameof(DBCache2Other_GetEntities))]
     public partial class Other2DBCache_GetEntities : MessageObject, IRequest
@@ -1766,30 +1799,31 @@ namespace ET
         public const ushort M2M_UnitTransferRequest = 20025;
         public const ushort M2M_UnitTransferResponse = 20026;
         public const ushort Other2DBCache_AddOrUpdateUnitCache = 20027;
-        public const ushort Other2DBCache_GetEntities = 20028;
-        public const ushort DBCache2Other_GetEntities = 20029;
-        public const ushort Rank_FightScore = 20030;
-        public const ushort Map2Rank_UpdateScore = 20031;
-        public const ushort M2M_ChatBroadcast = 20032;
-        public const ushort GuildInfo = 20033;
-        public const ushort GuildMemberInfo = 20034;
-        public const ushort M2G_CreateGuild = 20035;
-        public const ushort G2M_CreateGuild = 20036;
-        public const ushort M2G_GetAllGuilds = 20037;
-        public const ushort G2M_GetAllGuilds = 20038;
-        public const ushort M2G_RequestJoinGuild = 20039;
-        public const ushort G2M_RequestJoinGuild = 20040;
-        public const ushort M2G_RequestQuitGuild = 20041;
-        public const ushort G2M_RequestQuitGuild = 20042;
-        public const ushort NewDayNotify = 20043;
-        public const ushort DailyNotify = 20044;
-        public const ushort GameRequestInfo = 20045;
-        public const ushort Manager2Request_ShutDown = 20046;
-        public const ushort Request2Manager_ShutDown = 20047;
-        public const ushort M2Request_AddRequest = 20048;
-        public const ushort Request2M_AddRequest = 20049;
-        public const ushort M2Request_GetRequests = 20050;
-        public const ushort Request2M_GetRequests = 20051;
-        public const ushort Pay2M_Pay = 20052;
+        public const ushort Other2DBCache_SaveImmediately = 20028;
+        public const ushort Other2DBCache_GetEntities = 20029;
+        public const ushort DBCache2Other_GetEntities = 20030;
+        public const ushort Rank_FightScore = 20031;
+        public const ushort Map2Rank_UpdateScore = 20032;
+        public const ushort M2M_ChatBroadcast = 20033;
+        public const ushort GuildInfo = 20034;
+        public const ushort GuildMemberInfo = 20035;
+        public const ushort M2G_CreateGuild = 20036;
+        public const ushort G2M_CreateGuild = 20037;
+        public const ushort M2G_GetAllGuilds = 20038;
+        public const ushort G2M_GetAllGuilds = 20039;
+        public const ushort M2G_RequestJoinGuild = 20040;
+        public const ushort G2M_RequestJoinGuild = 20041;
+        public const ushort M2G_RequestQuitGuild = 20042;
+        public const ushort G2M_RequestQuitGuild = 20043;
+        public const ushort NewDayNotify = 20044;
+        public const ushort DailyNotify = 20045;
+        public const ushort GameRequestInfo = 20046;
+        public const ushort Manager2Request_ShutDown = 20047;
+        public const ushort Request2Manager_ShutDown = 20048;
+        public const ushort M2Request_AddRequest = 20049;
+        public const ushort Request2M_AddRequest = 20050;
+        public const ushort M2Request_GetRequests = 20051;
+        public const ushort Request2M_GetRequests = 20052;
+        public const ushort Pay2M_Pay = 20053;
     }
 }

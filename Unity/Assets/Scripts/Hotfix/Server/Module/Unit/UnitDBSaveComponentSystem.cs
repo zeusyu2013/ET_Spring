@@ -46,7 +46,6 @@ namespace ET.Server
 
         public static void AddChange(this UnitDBSaveComponent self, string collections)
         {
-            
         }
 
         public static void SaveChanged(this UnitDBSaveComponent self)
@@ -78,6 +77,24 @@ namespace ET.Server
 
             StartSceneConfig config = StartSceneConfigCategory.Instance.DBCache;
             self.Root().GetComponent<ProcessInnerSender>().Send(config.ActorId, message);
+        }
+
+        public static void SaveOnce(this UnitDBSaveComponent self)
+        {
+            Unit unit = self.GetParent<Unit>();
+            foreach (Entity child in unit.Children.Values)
+            {
+                Type type = child.GetType();
+                var attr = type.GetCustomAttributes(typeof(UnitCacheEventAttribute), false);
+                if (attr.Length < 1)
+                {
+                    continue;
+                }
+
+                self.EntityChangeTypes.Add(type);
+            }
+            
+            self.SaveChanged();
         }
     }
 }

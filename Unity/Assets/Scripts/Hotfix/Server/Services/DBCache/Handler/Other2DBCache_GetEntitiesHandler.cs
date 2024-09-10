@@ -8,7 +8,7 @@ namespace ET.Server
         protected override async ETTask Run(Scene scene, Other2DBCache_GetEntities request, DBCache2Other_GetEntities response)
         {
             List<Entity> entities = await scene.GetComponent<DBCacheComponent>().QueryUnitComponents(request.UnitId);
-            List<byte[]> entityBytesLis= new ();
+            List<byte[]> entityBytesLis = new();
             foreach (var entity in entities)
             {
                 entityBytesLis.Add(entity.ToBson());

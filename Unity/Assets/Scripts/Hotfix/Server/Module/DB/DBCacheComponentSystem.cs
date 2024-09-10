@@ -59,6 +59,17 @@ namespace ET.Server
         public static async ETTask<List<Entity>> QueryUnitComponents(this DBCacheComponent self, long id)
         {
             List<Entity> entities = new();
+
+            if (self.CacheDict.TryGetValue(id, out var value))
+            {
+                foreach (var entityRef in value.Values)
+                {
+                    entities.Add(entityRef);
+                }
+
+                return entities;
+            }
+
             List<string> collectionNames = self.Root().GetComponent<UnitCacheEventComponent>().CollectionNames;
             await self.Root().GetComponent<DBManagerComponent>().GetZoneDB(self.Zone()).Query(id, collectionNames, entities);
 
@@ -92,7 +103,7 @@ namespace ET.Server
             await self.Root().GetComponent<DBManagerComponent>().GetZoneDB(self.Zone()).Save(id, entities);
         }
 
-        public static void UpdateCache<T>(this DBCacheComponent self, long playerId, T entity) where T : Entity
+        private static void UpdateCache<T>(this DBCacheComponent self, long playerId, T entity) where T : Entity
         {
             if (self.LRUDict.ContainsKey(playerId))
             {
@@ -116,6 +127,14 @@ namespace ET.Server
             {
                 self.CacheDict[playerId].Add(typeof(T), entity);
             }
+        }
+
+        public static async ETTask SaveImmediately(this DBCacheComponent self, long id, byte[] bytes)
+        {
+            Entity entity = MongoHelper.Deserialize<Entity>(bytes);
+            self.UpdateCache(id, entity);
+
+            await self.Root().GetComponent<DBManagerComponent>().GetZoneDB(self.Zone()).Save(entity);
         }
 
         private static void RemoveCache(this DBCacheComponent self, long playerId)

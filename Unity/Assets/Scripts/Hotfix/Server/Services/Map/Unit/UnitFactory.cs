@@ -100,7 +100,7 @@ namespace ET.Server
 
             // buff组件
             unit.AddComponentWithId<BuffComponent>(unit.Id);
-            
+
             // 灵组件
             unit.AddComponentWithId<SoulComponent>(unit.Id);
 
@@ -110,25 +110,7 @@ namespace ET.Server
             unitComponent.Add(unit);
 
             UnitDBSaveComponent unitDBSaveComponent = unit.AddComponent<UnitDBSaveComponent>();
-            unitDBSaveComponent.AddChange(typeof(LevelComponent));
-            unitDBSaveComponent.AddChange(typeof(BagComponent));
-            unitDBSaveComponent.AddChange(typeof(EquipmentContainerComponent));
-            unitDBSaveComponent.AddChange(typeof(MailComponent));
-            unitDBSaveComponent.AddChange(typeof(AvocationComponent));
-            unitDBSaveComponent.AddChange(typeof(BuildingComponent));
-            unitDBSaveComponent.AddChange(typeof(CurrencyComponent));
-            unitDBSaveComponent.AddChange(typeof(OfflineIncomeComponent));
-            unitDBSaveComponent.AddChange(typeof(GameTaskComponent));
-            unitDBSaveComponent.AddChange(typeof(AchievementComponent));
-            unitDBSaveComponent.AddChange(typeof(LocationComponent));
-            unitDBSaveComponent.AddChange(typeof(MountComponent));
-            unitDBSaveComponent.AddChange(typeof(PayComponent));
-            unitDBSaveComponent.AddChange(typeof(VipComponent));
-            unitDBSaveComponent.AddChange(typeof(LotteryComponent));
-            unitDBSaveComponent.AddChange(typeof(BuffComponent));
-            unitDBSaveComponent.AddChange(typeof(SoulComponent));
-            unitDBSaveComponent.AddChange(typeof(SevenDayComponent));
-            unitDBSaveComponent.SaveChanged();
+            unitDBSaveComponent.SaveOnce();
 
             // 加入aoi
             unit.AddComponent<AOIEntity, int, float3>(9 * 1000, unit.Position);

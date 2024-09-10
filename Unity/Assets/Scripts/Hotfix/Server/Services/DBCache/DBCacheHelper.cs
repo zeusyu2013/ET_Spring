@@ -13,5 +13,20 @@ namespace ET.Server
                     (DBCache2Other_GetEntities)await scene.GetComponent<MessageSender>().Call(dbCacheConfig.ActorId, request);
             return response.EntityBytes;
         }
+
+        /// <summary>
+        /// 立即存储指定组件
+        /// </summary>
+        /// <param name="scene"></param>
+        /// <param name="unitId"></param>
+        /// <param name="entity"></param>
+        public static void SaveImmediately(Scene scene, Entity entity)
+        {
+            Other2DBCache_SaveImmediately request = Other2DBCache_SaveImmediately.Create();
+            request.UnitId = entity.Id;
+            request.EntityBytes = entity.ToBson();
+            StartSceneConfig dbCacheConfig = StartSceneConfigCategory.Instance.DBCache;
+            scene.GetComponent<MessageSender>().Send(dbCacheConfig.ActorId, request);
+        }
     }
 }
