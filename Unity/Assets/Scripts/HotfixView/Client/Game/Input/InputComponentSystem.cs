@@ -53,9 +53,12 @@ namespace ET.Client
 
             self.PreMoveDirection = self.MoveDirection;
 
-            foreach (KeyCode keyCode in self.KeyCodes.Where(Input.GetKeyDown))
+            foreach (KeyCode keyCode in self.KeyCodes)
             {
-                EventSystem.Instance.Publish(self.Root(), new KeyDown() { Unit = self.GetParent<Unit>(), KeyCode = keyCode });
+                if (Input.GetKeyDown(keyCode))
+                {
+                    EventSystem.Instance.Publish(self.Root(), new KeyDown() { Unit = self.GetParent<Unit>(), KeyCode = keyCode });
+                }
             }
         }
     }

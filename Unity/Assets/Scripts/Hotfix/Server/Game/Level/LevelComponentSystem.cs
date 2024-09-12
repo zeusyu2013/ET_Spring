@@ -11,6 +11,7 @@
 
         private static void Destroy(this LevelComponent self)
         {
+            self.Level = default;
         }
 
         public static void AddExp(this LevelComponent self, long exp)
