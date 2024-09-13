@@ -1,5 +1,7 @@
 fileFormatVersion: 2
-guid: 464aa3695ebc0f441b95b2ed10844349
+guid: eaff0d2b1a77d8e4db8b46fa404461ab
+labels:
+- Example
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

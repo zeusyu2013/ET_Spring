@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1fb4ceb86a94524580bbc98917d72c4, type: 3}
+  m_Name: Olberic
+  m_EditorClassIdentifier: 
+  SpriteName: Olberic
+  spriteAnimationInfos:
+  - AnimationName: idle
+    Frame: 2
+    Sprites:
+    - 001
+    - 002
+  - AnimationName: walk
+    Frame: 6
+    Sprites:
+    - 012
+    - 013
+    - 014
+    - 015
+    - 016
+    - 017
+  - AnimationName: run
+    Frame: 6
+    Sprites:
+    - 024
+    - 025
+    - 026
+    - 027
+    - 028
+    - 029
+  - AnimationName: die
+    Frame: 1
+    Sprites:
+    - 052
