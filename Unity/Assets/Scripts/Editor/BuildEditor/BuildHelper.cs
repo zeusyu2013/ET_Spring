@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
@@ -105,7 +106,7 @@ namespace ET
             EditorUtility.OpenWithDefaultApp(relativeDirPrefix);
         }
 
-        public static void BuildBundles(BuildTarget buildTarget)
+        public static void BuildBundles(BuildTarget buildTarget, bool upload = false)
         {
             Debug.Log("开始构建资源");
 
@@ -118,8 +119,10 @@ namespace ET
             buildParameters.BuildPipeline = EBuildPipeline.ScriptableBuildPipeline.ToString();
             buildParameters.BuildTarget = buildTarget;
             buildParameters.BuildMode = EBuildMode.IncrementalBuild;
-            buildParameters.PackageName = "DefaultPackage";
-            buildParameters.PackageVersion = Application.version;
+            buildParameters.PackageName = "zz";
+            DateTime now = DateTime.Now;
+            string version = $"{now.Year}{now.Month}{now.Day}{now.Hour}{now.Minute}{now.Second}";
+            buildParameters.PackageVersion = $"{Application.version}_{version}";
             buildParameters.VerifyBuildingResult = true;
             buildParameters.EnableSharePackRule = true;
             buildParameters.FileNameStyle = EFileNameStyle.BundleName_HashName;
@@ -131,6 +134,17 @@ namespace ET
             ScriptableBuildPipeline buildPipeline = new ScriptableBuildPipeline();
             var result = buildPipeline.Run(buildParameters, true);
             Debug.Log(result.Success ? "构建成功" : $"构建失败，失败原因：{result.ErrorInfo}");
+
+            if (result.Success && upload)
+            {
+                string outputDirectory = result.OutputPackageDirectory;
+                if (string.IsNullOrEmpty(outputDirectory))
+                {
+                    return;
+                }
+                
+                // todo 上传目录内文件到oss
+            }
         }
 
         private static string GetPackageName()

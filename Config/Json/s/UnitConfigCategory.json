@@ -6,6 +6,12 @@
     "Model": "Assets/Bundles/Unit/25001.prefab"
   },
   {
+    "Id": 25002,
+    "Type": 1,
+    "Name": "unitname_25002",
+    "Model": "Assets/Bundles/Unit/Olberic.prefab"
+  },
+  {
     "Id": 1001,
     "Type": 2,
     "Name": "unitname_1001",

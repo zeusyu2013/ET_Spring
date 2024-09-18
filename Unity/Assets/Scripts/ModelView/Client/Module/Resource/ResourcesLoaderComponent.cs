@@ -12,7 +12,7 @@ namespace ET.Client
         [EntitySystem]
         private static void Awake(this ResourcesLoaderComponent self)
         {
-            self.package = YooAssets.GetPackage("DefaultPackage");
+            self.package = YooAssets.GetPackage("zz");
         }
 
         [EntitySystem]

@@ -33,7 +33,7 @@ namespace ET
 			World.Instance.AddSingleton<TimeInfo>();
 			World.Instance.AddSingleton<FiberManager>();
 
-			await World.Instance.AddSingleton<ResourcesComponent>().CreatePackageAsync("DefaultPackage", true);
+			await World.Instance.AddSingleton<ResourcesComponent>().CreatePackageAsync("zz", true);
 			
 			CodeLoader codeLoader = World.Instance.AddSingleton<CodeLoader>();
 			await codeLoader.DownloadAsync();

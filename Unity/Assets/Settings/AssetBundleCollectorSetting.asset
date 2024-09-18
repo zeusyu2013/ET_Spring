@@ -16,7 +16,7 @@ MonoBehaviour:
   ShowEditorAlias: 1
   UniqueBundleName: 1
   Packages:
-  - PackageName: DefaultPackage
+  - PackageName: zz
     PackageDesc: 
     EnableAddressable: 0
     LocationToLower: 0

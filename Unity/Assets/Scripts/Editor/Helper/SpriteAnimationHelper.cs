@@ -100,7 +100,7 @@ namespace ET
                 importer.SaveAndReimport();
 
                 // Use the UV coordinates to set up sprites for the new texture.
-                EditorUtility.DisplayProgressBar(ProgressTitle, "Generating Sprites", 0.7f);
+                EditorUtility.DisplayProgressBar(ProgressTitle, "生成图集……", 0.7f);
 
                 data.SpriteCount = tightSprites.Count;
                 index = 0;
@@ -131,7 +131,7 @@ namespace ET
                     index++;
                 }
 
-                EditorUtility.DisplayProgressBar(ProgressTitle, "Saving", 0.9f);
+                EditorUtility.DisplayProgressBar(ProgressTitle, "保存图集……", 0.9f);
 
                 data.Apply();
 
@@ -146,7 +146,7 @@ namespace ET
             }
         }
 
-        public static void MakeTextureReadable(string path)
+        private static void MakeTextureReadable(string path)
         {
             if (string.IsNullOrEmpty(path))
             {
@@ -289,9 +289,9 @@ namespace ET
             }
         }
 
-        public static string GetUnsupportedMessage<T>(T value) => $"Unsupported {typeof(T).FullName}: {value}";
+        private static string GetUnsupportedMessage<T>(T value) => $"Unsupported {typeof(T).FullName}: {value}";
 
-        public static ArgumentException CreateUnsupportedArgumentException<T>(T value) => new ArgumentException(GetUnsupportedMessage(value));
+        private static ArgumentException CreateUnsupportedArgumentException<T>(T value) => new ArgumentException(GetUnsupportedMessage(value));
 
         private static SpriteAlignment GetAlignment(Vector2 pivot)
         {
