@@ -10,16 +10,13 @@ namespace ET.Client
         [EntitySystem]
         private static void Awake(this ET.Client.SpriteAnimatorComponent self)
         {
-            self.Animator = self.GetParent<Unit>().GetComponent<GameObjectComponent>().GameObject.Get<Animator>("Animator");
             self.Animancer = self.GetParent<Unit>().GetComponent<GameObjectComponent>().GameObject.Get<AnimancerComponent>("AnimancerComponent");
         }
 
         [EntitySystem]
         private static void Destroy(this ET.Client.SpriteAnimatorComponent self)
         {
-            self.Animator = null;
             self.Animancer = null;
-            self.DirectionalAnimationSet8 = null;
             self.CurrentAnimationSet = null;
             self.Facing = Vector2.zero;
             self.MovementSynchronization.Clear();
