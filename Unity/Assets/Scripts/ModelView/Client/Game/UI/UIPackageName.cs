@@ -19,5 +19,6 @@ namespace ET.Client
         public const string MapMini = "MapMini";
         public const string MapWorld = "MapWorld";
         public const string Template = "Template";
+        public const string Update = "Update";
     }
 }

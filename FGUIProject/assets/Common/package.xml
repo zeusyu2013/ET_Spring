@@ -13,7 +13,7 @@
     <image id="102j7a" name="select.png" path="/Res/Item/" exported="true"/>
     <image id="f7kj7b" name="btn_circle_02.png" path="/Res/Button/"/>
     <image id="f7kj7c" name="btn_rectangle_01_d.png" path="/Res/Button/"/>
-    <image id="f7kj7d" name="btn_rectangle_01_n_blue.png" path="/Res/Button/"/>
+    <image id="f7kj7d" name="btn_rectangle_01_n_blue.png" path="/Res/Button/" exported="true"/>
     <image id="f7kj7e" name="btn_rectangle_01_n_bluegray.png" path="/Res/Button/"/>
     <image id="f7kj7f" name="btn_rectangle_01_n_brown.png" path="/Res/Button/"/>
     <image id="f7kj7g" name="btn_rectangle_01_n_dark.png" path="/Res/Button/"/>
@@ -675,8 +675,8 @@
     <image id="f7kjpo" name="slider_edgetype_01_icon1.png" path="/Res/Slider/"/>
     <image id="f7kjpp" name="slider_edgetype_01_icon2.png" path="/Res/Slider/"/>
     <image id="f7kjpq" name="slider_edgetype_02_fill.png" path="/Res/Slider/"/>
-    <image id="f7kjpr" name="slider_edgetype_02_frame_back.png" path="/Res/Slider/"/>
-    <image id="f7kjps" name="slider_edgetype_02_frame_front.png" path="/Res/Slider/"/>
+    <image id="f7kjpr" name="slider_edgetype_02_frame_back.png" path="/Res/Slider/" exported="true"/>
+    <image id="f7kjps" name="slider_edgetype_02_frame_front.png" path="/Res/Slider/" exported="true" scale="9grid" scale9grid="17,0,0,32"/>
     <image id="f7kjpt" name="slider_edgetype_03_fill.png" path="/Res/Slider/"/>
     <image id="f7kjpu" name="slider_edgetype_03_fill_area.png" path="/Res/Slider/"/>
     <image id="f7kjpv" name="slider_edgetype_03_frame.png" path="/Res/Slider/"/>
@@ -748,7 +748,7 @@
     <image id="f7kjrp" name="switch_on_handle.png" path="/Res/UIEtc/"/>
     <image id="f7kjrq" name="toggle_checkbox_off.png" path="/Res/UIEtc/"/>
     <image id="f7kjrr" name="toggle_checkbox_on.png" path="/Res/UIEtc/"/>
-    <font id="k2hers" name="Expressway.ttf" path="/Fonts/" renderMode="smooth" samplePointSize="16"/>
+    <font id="k2hers" name="Expressway.ttf" path="/Fonts/" exported="true" renderMode="smooth" samplePointSize="16"/>
     <component id="k2hert" name="green_item_frame.xml" path="/Component/Item/" exported="true"/>
     <component id="k2herv" name="close_button.xml" path="/Component/Button/" exported="true"/>
     <component id="k2herw" name="full_screen_frame.xml" path="/Component/Frame/" exported="true"/>
@@ -758,6 +758,10 @@
     <component id="k2hes0" name="orange_item_frame.xml" path="/Component/Item/" exported="true"/>
     <component id="k2hes1" name="purple_item_frame.xml" path="/Component/Item/" exported="true"/>
     <component id="k2hes3" name="equipment_frame.xml" path="/Component/Frame/" exported="true"/>
+    <component id="v48ds5" name="progressbar_1.xml" path="/Component/ProgressBar/" exported="true"/>
+    <component id="v48ds6" name="message_box.xml" path="/Component/Frame/" exported="true"/>
+    <component id="v48ds7" name="common_btn_1.xml" path="/Component/Button/" exported="true"/>
+    <component id="v48ds9" name="common_btn_2.xml" path="/Component/Button/" exported="true"/>
   </resources>
   <publish name=""/>
 </packageDescription>

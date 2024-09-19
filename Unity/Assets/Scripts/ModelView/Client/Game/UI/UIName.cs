@@ -19,5 +19,6 @@ namespace ET.Client
         public const string UIMapMini = "UIMapMini";
         public const string UIMapWorld = "UIMapWorld";
         public const string UI = "UI";
+        public const string UIUpdate = "UIUpdate";
     }
 }

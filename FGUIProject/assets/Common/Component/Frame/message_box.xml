@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="960,450">
+  <displayList>
+    <image id="n1_v48d" name="n1" src="f7kj8f" fileName="Res/Frame/frame_cardframe_00_s_inner.png" xy="0,0" size="960,450"/>
+    <image id="n0_v48d" name="n0" src="f7kj8b" fileName="Res/Frame/frame_cardframe_00_n_front1.png" xy="0,0" size="960,450"/>
+    <image id="n2_v48d" name="n2" src="f7kj8r" fileName="Res/Frame/frame_iconframe_square_01_n.png" xy="367,32" size="225,73"/>
+    <text id="n3_v48d" name="n3" xy="381,36" size="198,56" fontSize="41" color="#ffffff" align="center" autoSize="none" text="Infomation"/>
+    <text id="n4_v48d" name="n4" xy="88,112" size="783,189" fontSize="41" color="#ffffff" align="center" autoSize="none" autoClearText="true" text="Infomation Content Test,Infomation Content Test,Infomation Content Test,Infomation Content Test,Infomation Content Test"/>
+    <component id="n5_v48d" name="n5" src="v48ds7" fileName="Component/Button/common_btn_1.xml" xy="157,308"/>
+    <component id="n6_v48d" name="n6" src="v48ds9" fileName="Component/Button/common_btn_2.xml" xy="604,308"/>
+  </displayList>
+</component>
