@@ -12,7 +12,7 @@ PresetManager:
     second:
     - m_Preset: {fileID: 2655988077585873504, guid: ca4a642dc5d9cf146b9065e12b0d485a,
         type: 2}
-      m_Filter: glob:"Assets/Bundles/FairyGUI/*.png"
+      m_Filter: glob:"Assets/Bundles/FairyGUI/**/*.png"
       m_Disabled: 0
     - m_Preset: {fileID: 2655988077585873504, guid: 538cbda6fe16f4040b8315527fd2f464,
         type: 2}

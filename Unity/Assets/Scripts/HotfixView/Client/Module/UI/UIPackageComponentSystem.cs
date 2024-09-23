@@ -75,7 +75,7 @@ namespace ET.Client
         /// <summary>
         /// 添加加载的信息
         /// </summary>
-        public static void AddLoadInfo(this UIPackageComponent self, string packageName, string path)
+        private static void AddLoadInfo(this UIPackageComponent self, string packageName, string path)
         {
             if (self.MutiLoadKey.Contains(packageName, path))
             {
@@ -85,7 +85,7 @@ namespace ET.Client
             self.MutiLoadKey.Add(packageName, path);
         }
 
-        public static void RemoveLoadInfo(this UIPackageComponent self, string packageName)
+        private static void RemoveLoadInfo(this UIPackageComponent self, string packageName)
         {
             if (!self.MutiLoadKey.TryGetValue(packageName, out var value))
             {
@@ -101,7 +101,7 @@ namespace ET.Client
             self.MutiLoadKey.Remove(packageName);
         }
 
-        public static void RemoveAll(this UIPackageComponent self)
+        private static void RemoveAll(this UIPackageComponent self)
         {
             UIPackage.RemoveAllPackages();
             foreach (var kv in self.MutiLoadKey)
@@ -124,13 +124,13 @@ namespace ET.Client
         /// <param name="extension">后缀</param>
         /// <param name="type">资源类型</param>
         /// <param name="item">包Item</param>
-        public static void PackageLoadFunc(this UIPackageComponent self, string name, string extension, Type type, PackageItem item)
+        private static void PackageLoadFunc(this UIPackageComponent self, string name, string extension, Type type, PackageItem item)
         {
             self.PackageLoad(name, extension, type, item).Coroutine();
         }
 
         // 自定义包加载函数
-        public static async ETTask PackageLoad(this UIPackageComponent self, string name, string extension, Type type, PackageItem item)
+        private static async ETTask PackageLoad(this UIPackageComponent self, string name, string extension, Type type, PackageItem item)
         {
             string path = $"Assets/Bundles/FairyGUI/{item.owner.name}/{item.owner.name}_{name}{extension}";
             self.AddLoadInfo(item.owner.name, path);

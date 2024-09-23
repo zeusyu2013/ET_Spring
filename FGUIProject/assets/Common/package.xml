@@ -108,7 +108,7 @@
     <image id="f7kj9x" name="frame_linetextframe_04_White3.png" path="/Res/Frame/"/>
     <image id="f7kj9y" name="frame_linetextframe_05_Demo.png" path="/Res/Frame/"/>
     <image id="f7kj9z" name="frame_linetextframe_05_White1.png" path="/Res/Frame/"/>
-    <image id="f7kja0" name="frame_linetextframe_05_White2.png" path="/Res/Frame/" exported="true"/>
+    <image id="f7kja0" name="frame_linetextframe_05_White2.png" path="/Res/Frame/"/>
     <image id="f7kja1" name="frame_linetextframe_06_1.png" path="/Res/Frame/"/>
     <image id="f7kja2" name="frame_linetextframe_06_2.png" path="/Res/Frame/" exported="true"/>
     <image id="f7kja3" name="frame_linetextframe_07_1.png" path="/Res/Frame/"/>

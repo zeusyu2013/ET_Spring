@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
   <displayList>
-    <image id="n1_k2he" name="n1" src="f7kj8f" fileName="Res/Frame/frame_cardframe_00_s_inner.png" xy="0,0" size="1920,1080"/>
+    <image id="n1_k2he" name="n1" src="f7kj8f" fileName="Res/Frame/frame_cardframe_00_s_inner.png" xy="12,14" size="1893,1050"/>
     <image id="n0_k2he" name="n0" src="f7kj8b" fileName="Res/Frame/frame_cardframe_00_n_front1.png" xy="0,0" size="1920,1080"/>
     <component id="n9_k2he" name="n9" src="k2herx" fileName="Component/Frame/frame_title.xml" xy="750,36"/>
     <component id="n10_k2he" name="n10" src="k2herv" fileName="Component/Button/close_button.xml" xy="1754,17"/>
