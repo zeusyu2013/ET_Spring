@@ -12,16 +12,14 @@ namespace ET.Client
         private static void Awake(this UIUpdateComponent self)
         {
             UI ui = self.Parent as UI;
-            self.Gupdate_progressbar = ui.Component.GetChildAt(0) as GProgressBar;
-            self.Gtips1 = ui.Component.GetChildAt(1) as GTextField;
-            self.Gtips2 = ui.Component.GetChildAt(2) as GTextField;
+            self.Gupdate_progressbar = ui.Component.GetChildAt(1) as GProgressBar;
+            self.Gupdate_progress_text = ui.Component.GetChildAt(3) as GTextField;
         }
         [EntitySystem]
         private static void Destroy(this UIUpdateComponent self)
         {
             self.Gupdate_progressbar = null;
-            self.Gtips1 = null;
-            self.Gtips2 = null;
+            self.Gupdate_progress_text = null;
         }
     }
 }

@@ -5,5 +5,5 @@
     <component id="mdp91" name="MainCanvas.xml" path="/Main/"/>
     <component id="f7kj2" name="Button.xml" path="/Component/" exported="true"/>
   </resources>
-  <publish name="" genCode="true"/>
+  <publish name="" path="../Unity/Assets/Bundles/FairyGUI/Main" packageCount="2" genCode="true"/>
 </packageDescription>

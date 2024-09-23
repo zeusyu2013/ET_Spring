@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="374,65">
+  <displayList>
+    <image id="n3_v48d" name="n3" src="f7kj8r" fileName="Res/Frame/frame_iconframe_square_01_n.png" xy="0,0" size="374,65"/>
+    <text id="n1_v48d" name="input" xy="25,8" size="332,42" fontSize="30" color="#ffffff" autoSize="none" autoClearText="true" text="account12345" input="true"/>
+  </displayList>
+</component>

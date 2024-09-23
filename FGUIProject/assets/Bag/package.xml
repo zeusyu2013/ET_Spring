@@ -8,5 +8,5 @@
     <component id="k2he4" name="UIBagPanel.xml" path="/" exported="true"/>
     <component id="k2he6" name="equip_list.xml" path="/Component/" exported="true"/>
   </resources>
-  <publish name="" genCode="true"/>
+  <publish name="" path="../Unity/Assets/Bundles/FairyGUI/Bag" packageCount="2" genCode="true"/>
 </packageDescription>

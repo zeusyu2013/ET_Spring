@@ -36,7 +36,7 @@ namespace ET.Client
 
             self.PackageDic.Add(packageName, 1);
 
-            string path = $"Assets/Bundles/FairyGUI/{packageName}_fui.bytes";
+            string path = $"Assets/Bundles/FairyGUI/{packageName}/{packageName}_fui.bytes";
             TextAsset asset = await self.Root().GetComponent<ResourcesLoaderComponent>().LoadAssetAsync<TextAsset>(path);
             self.AddLoadInfo(packageName, path);
             if (asset == null)
@@ -132,7 +132,7 @@ namespace ET.Client
         // 自定义包加载函数
         public static async ETTask PackageLoad(this UIPackageComponent self, string name, string extension, Type type, PackageItem item)
         {
-            string path = $"Assets/Bundles/FairyGUI/{item.owner.name}_{name}{extension}";
+            string path = $"Assets/Bundles/FairyGUI/{item.owner.name}/{item.owner.name}_{name}{extension}";
             self.AddLoadInfo(item.owner.name, path);
             var o = await self.Scene().GetComponent<ResourcesLoaderComponent>().LoadAssetAsync(type, path);
             if (o == null)

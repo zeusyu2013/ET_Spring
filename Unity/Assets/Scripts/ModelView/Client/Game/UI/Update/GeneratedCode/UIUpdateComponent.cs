@@ -8,7 +8,6 @@ namespace ET.Client
     public class UIUpdateComponent: Entity, IAwake, IDestroy
     {
         public GProgressBar Gupdate_progressbar { get; set; }
-        public GTextField Gtips1 { get; set; }
-        public GTextField Gtips2 { get; set; }
+        public GTextField Gupdate_progress_text { get; set; }
     }
 }

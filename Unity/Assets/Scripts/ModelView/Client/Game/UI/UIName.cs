@@ -14,6 +14,7 @@ namespace ET.Client
         public const string UIJoystick = "UIJoystick";
         public const string UILogin = "UILogin";
         public const string UIServerList = "UIServerList";
+        public const string UILoginPanel = "UILoginPanel";
         public const string UIMain = "UIMain";
         public const string UIMapBig = "UIMapBig";
         public const string UIMapMini = "UIMapMini";

@@ -2,6 +2,7 @@
 <packageDescription id="zxcxeyya">
   <resources>
     <component id="v48d0" name="UIUpdate.xml" path="/" exported="true"/>
+    <image id="v48dso" name="background_00_title_1920.png" path="/Res/" exported="true" qualityOption="source" atlas="alone_npot"/>
   </resources>
-  <publish name="" genCode="true"/>
+  <publish name="" path="../Unity/Assets/Bundles/FairyGUI/Update" packageCount="2" genCode="true"/>
 </packageDescription>

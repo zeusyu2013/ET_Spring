@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="960,32" extention="ProgressBar" designImageLayer="1">
+<component size="1500,32" extention="ProgressBar" designImageLayer="1">
   <displayList>
-    <image id="n1_v48d" name="bar" src="f7kjpr" fileName="Res/Slider/slider_edgetype_02_frame_back.png" xy="8,4" size="4,18"/>
-    <image id="n0_v48d" name="n0" src="f7kjps" fileName="Res/Slider/slider_edgetype_02_frame_front.png" xy="0,0" size="960,32">
+    <image id="n2_v48d" name="bar" src="f7kjp9" fileName="Res/Slider/slider_basictype_00_fill.png" xy="6,5" size="1487,16"/>
+    <image id="n0_v48d" name="n0" src="f7kjps" fileName="Res/Slider/slider_edgetype_02_frame_front.png" xy="0,0" size="1500,32">
       <relation target="" sidePair="width-width,height-height"/>
     </image>
   </displayList>
-  <ProgressBar titleType="valueAndmax"/>
+  <ProgressBar/>
 </component>

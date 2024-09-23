@@ -5,5 +5,5 @@
     <component id="qvj91" name="JoystickCanvas.xml" path="/"/>
     <component id="n7al2" name="CircleBtn.xml" path="/"/>
   </resources>
-  <publish name="" genCode="true"/>
+  <publish name="" path="../Unity/Assets/Bundles/FairyGUI/Joystick" packageCount="2" genCode="true"/>
 </packageDescription>

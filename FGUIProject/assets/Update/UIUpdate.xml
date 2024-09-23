@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
   <displayList>
-    <component id="n2_v48d" name="update_progressbar" src="v48ds5" fileName="Component/ProgressBar/progressbar_1.xml" pkg="6qczg918" xy="540,937">
-      <ProgressBar value="50" max="100"/>
+    <image id="n8_v48d" name="n8" src="v48dso" fileName="Res/background_00_title_1920.png" xy="0,0"/>
+    <component id="n2_v48d" name="update_progressbar" src="v48ds5" fileName="Component/ProgressBar/progressbar_1.xml" pkg="6qczg918" xy="210,937" touchable="false">
+      <ProgressBar value="100" max="100"/>
     </component>
-    <text id="n3_v48d" name="tips1" xy="558,898" size="240,32" fontSize="22" color="#ffffff" text="check resources updating"/>
-    <text id="n4_v48d" name="tips2" xy="540,983" size="619,32" fontSize="22" color="#ffffff" autoSize="none" text="updating 50/100 15mb/s"/>
+    <text id="n3_v48d" name="n3" xy="210,892" size="417,39" fontSize="28" color="#ffffff" autoSize="none" text="check resources updating......"/>
+    <text id="n4_v48d" name="update_progress_text" xy="210,978" size="814,55" fontSize="28" color="#ffffff" autoSize="none" autoClearText="true" text="updating 50/100 15mb/s"/>
   </displayList>
 </component>

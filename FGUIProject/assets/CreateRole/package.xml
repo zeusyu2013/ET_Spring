@@ -17,5 +17,5 @@
     <component id="jf9rp" name="UIChooseRole.xml" path="/ChooseRole/" exported="true"/>
     <component id="jf9rq" name="Canvas.xml" path="/ChooseRole/"/>
   </resources>
-  <publish name="" genCode="true"/>
+  <publish name="" path="../Unity/Assets/Bundles/FairyGUI/CreateRole" packageCount="2" genCode="true"/>
 </packageDescription>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="72,48">
+  <controller name="battery_controller" alias="电池显示控制" exported="true" pages="0,,1,,2,,3," selected="1"/>
+  <displayList>
+    <image id="n2_v48d" name="n2" src="f7kjfp" fileName="Res/IocnPicto/btn_icon_battery_full.png" xy="0,0">
+      <gearDisplay controller="battery_controller" pages="0"/>
+    </image>
+    <image id="n3_v48d" name="n3" src="f7kjfq" fileName="Res/IocnPicto/btn_icon_battery_half.png" xy="0,0">
+      <gearDisplay controller="battery_controller" pages="1"/>
+    </image>
+    <image id="n1_v48d" name="n1" src="f7kjfo" fileName="Res/IocnPicto/btn_icon_battery_empty.png" xy="0,0">
+      <gearDisplay controller="battery_controller" pages="2"/>
+    </image>
+    <image id="n0_v48d" name="n0" src="f7kjfn" fileName="Res/IocnPicto/btn_icon_battery_charging.png" xy="0,0">
+      <gearDisplay controller="battery_controller" pages="3"/>
+    </image>
+  </displayList>
+</component>

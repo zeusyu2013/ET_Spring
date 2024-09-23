@@ -7,12 +7,15 @@ namespace ET.Client
         [EntitySystem]
         private static void Awake(this UIUpdateLogicComponent self)
         {
+            self.Scene().AddComponent<ResourcesUpdaterComponent>();
+            
             self.UpdatePackageVersion().Coroutine();
         }
 
         [EntitySystem]
         private static void Destroy(this UIUpdateLogicComponent self)
         {
+            
         }
 
         private static async ETTask UpdatePackageVersion(this UIUpdateLogicComponent self)

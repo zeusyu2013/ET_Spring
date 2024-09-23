@@ -16,7 +16,7 @@
     <image id="f7kj7d" name="btn_rectangle_01_n_blue.png" path="/Res/Button/" exported="true"/>
     <image id="f7kj7e" name="btn_rectangle_01_n_bluegray.png" path="/Res/Button/"/>
     <image id="f7kj7f" name="btn_rectangle_01_n_brown.png" path="/Res/Button/"/>
-    <image id="f7kj7g" name="btn_rectangle_01_n_dark.png" path="/Res/Button/"/>
+    <image id="f7kj7g" name="btn_rectangle_01_n_dark.png" path="/Res/Button/" scale="9grid" scale9grid="45,27,90,54"/>
     <image id="f7kj7h" name="btn_rectangle_01_n_darkgray.png" path="/Res/Button/"/>
     <image id="f7kj7i" name="btn_rectangle_01_n_gray.png" path="/Res/Button/"/>
     <image id="f7kj7j" name="btn_rectangle_01_n_green.png" path="/Res/Button/"/>
@@ -63,7 +63,7 @@
     <image id="f7kj8o" name="frame_iconframe_square_00_frame_red.png" path="/Res/Frame/"/>
     <image id="f7kj8p" name="frame_iconframe_square_00_inner.png" path="/Res/Frame/" scale="9grid" scale9grid="41,0,8,26"/>
     <image id="f7kj8q" name="frame_iconframe_square_01_d.png" path="/Res/Frame/"/>
-    <image id="f7kj8r" name="frame_iconframe_square_01_n.png" path="/Res/Frame/" scale="9grid" scale9grid="22,19,4,7"/>
+    <image id="f7kj8r" name="frame_iconframe_square_01_n.png" path="/Res/Frame/" exported="true" scale="9grid" scale9grid="22,19,4,7"/>
     <image id="f7kj8s" name="frame_item_reward_daily_s1.png" path="/Res/Frame/"/>
     <image id="f7kj8t" name="frame_itemframe_00_back.png" path="/Res/Frame/"/>
     <image id="f7kj8u" name="frame_itemframe_00_Inner.png" path="/Res/Frame/"/>
@@ -108,9 +108,9 @@
     <image id="f7kj9x" name="frame_linetextframe_04_White3.png" path="/Res/Frame/"/>
     <image id="f7kj9y" name="frame_linetextframe_05_Demo.png" path="/Res/Frame/"/>
     <image id="f7kj9z" name="frame_linetextframe_05_White1.png" path="/Res/Frame/"/>
-    <image id="f7kja0" name="frame_linetextframe_05_White2.png" path="/Res/Frame/"/>
+    <image id="f7kja0" name="frame_linetextframe_05_White2.png" path="/Res/Frame/" exported="true"/>
     <image id="f7kja1" name="frame_linetextframe_06_1.png" path="/Res/Frame/"/>
-    <image id="f7kja2" name="frame_linetextframe_06_2.png" path="/Res/Frame/"/>
+    <image id="f7kja2" name="frame_linetextframe_06_2.png" path="/Res/Frame/" exported="true"/>
     <image id="f7kja3" name="frame_linetextframe_07_1.png" path="/Res/Frame/"/>
     <image id="f7kja4" name="frame_linetextframe_07_2.png" path="/Res/Frame/"/>
     <image id="f7kja5" name="frame_listframe_00_dd.png" path="/Res/Frame/"/>
@@ -311,10 +311,10 @@
     <image id="f7kjfk" name="btn_icon_bag_1.png" path="/Res/IocnPicto/"/>
     <image id="f7kjfl" name="btn_icon_bag_2.png" path="/Res/IocnPicto/"/>
     <image id="f7kjfm" name="btn_icon_bank.png" path="/Res/IocnPicto/"/>
-    <image id="f7kjfn" name="btn_icon_battery_charging.png" path="/Res/IocnPicto/"/>
-    <image id="f7kjfo" name="btn_icon_battery_empty.png" path="/Res/IocnPicto/"/>
-    <image id="f7kjfp" name="btn_icon_battery_full.png" path="/Res/IocnPicto/"/>
-    <image id="f7kjfq" name="btn_icon_battery_half.png" path="/Res/IocnPicto/"/>
+    <image id="f7kjfn" name="btn_icon_battery_charging.png" path="/Res/IocnPicto/" exported="true"/>
+    <image id="f7kjfo" name="btn_icon_battery_empty.png" path="/Res/IocnPicto/" exported="true"/>
+    <image id="f7kjfp" name="btn_icon_battery_full.png" path="/Res/IocnPicto/" exported="true"/>
+    <image id="f7kjfq" name="btn_icon_battery_half.png" path="/Res/IocnPicto/" exported="true"/>
     <image id="f7kjfr" name="btn_icon_battle.png" path="/Res/IocnPicto/"/>
     <image id="f7kjfs" name="btn_icon_blast.png" path="/Res/IocnPicto/"/>
     <image id="f7kjft" name="btn_icon_block.png" path="/Res/IocnPicto/"/>
@@ -627,7 +627,7 @@
     <image id="f7kjoc" name="btn_icon_undo.png" path="/Res/IocnPicto/"/>
     <image id="f7kjod" name="btn_icon_user_1.png" path="/Res/IocnPicto/"/>
     <image id="f7kjoe" name="btn_icon_user_2.png" path="/Res/IocnPicto/"/>
-    <image id="f7kjof" name="btn_icon_user_3.png" path="/Res/IocnPicto/"/>
+    <image id="f7kjof" name="btn_icon_user_3.png" path="/Res/IocnPicto/" exported="true"/>
     <image id="f7kjog" name="btn_icon_video.png" path="/Res/IocnPicto/"/>
     <image id="f7kjoh" name="btn_icon_view_1.png" path="/Res/IocnPicto/"/>
     <image id="f7kjoi" name="btn_icon_view_2.png" path="/Res/IocnPicto/"/>
@@ -657,7 +657,7 @@
     <image id="f7kjp6" name="popup_02_frame2.png" path="/Res/Popup/"/>
     <image id="f7kjp7" name="popup_02_frame3.png" path="/Res/Popup/"/>
     <image id="f7kjp8" name="slider_basictype_00_back.png" path="/Res/Slider/"/>
-    <image id="f7kjp9" name="slider_basictype_00_fill.png" path="/Res/Slider/"/>
+    <image id="f7kjp9" name="slider_basictype_00_fill.png" path="/Res/Slider/" scale="9grid" scale9grid="2,4,0,8"/>
     <image id="f7kjpa" name="slider_basictype_00_fill_area.png" path="/Res/Slider/"/>
     <image id="f7kjpb" name="slider_basictype_00_frame_front.png" path="/Res/Slider/"/>
     <image id="f7kjpc" name="slider_basictype_01_frame.png" path="/Res/Slider/"/>
@@ -675,7 +675,7 @@
     <image id="f7kjpo" name="slider_edgetype_01_icon1.png" path="/Res/Slider/"/>
     <image id="f7kjpp" name="slider_edgetype_01_icon2.png" path="/Res/Slider/"/>
     <image id="f7kjpq" name="slider_edgetype_02_fill.png" path="/Res/Slider/"/>
-    <image id="f7kjpr" name="slider_edgetype_02_frame_back.png" path="/Res/Slider/" exported="true"/>
+    <image id="f7kjpr" name="slider_edgetype_02_frame_back.png" path="/Res/Slider/" exported="true" scale="9grid" scale9grid="2,4,-1,8"/>
     <image id="f7kjps" name="slider_edgetype_02_frame_front.png" path="/Res/Slider/" exported="true" scale="9grid" scale9grid="17,0,0,32"/>
     <image id="f7kjpt" name="slider_edgetype_03_fill.png" path="/Res/Slider/"/>
     <image id="f7kjpu" name="slider_edgetype_03_fill_area.png" path="/Res/Slider/"/>
@@ -727,7 +727,7 @@
     <image id="f7kjr4" name="InputField_icon_error.png" path="/Res/UIEtc/"/>
     <image id="f7kjr5" name="InputField_icon_lock.png" path="/Res/UIEtc/"/>
     <image id="f7kjr6" name="InputField_icon_mail.png" path="/Res/UIEtc/"/>
-    <image id="f7kjr7" name="InputField_icon_user.png" path="/Res/UIEtc/"/>
+    <image id="f7kjr7" name="InputField_icon_user.png" path="/Res/UIEtc/" duplicatePadding="true"/>
     <image id="f7kjr8" name="InputField_required_circle.png" path="/Res/UIEtc/"/>
     <image id="f7kjr9" name="notify_frame_green.png" path="/Res/UIEtc/"/>
     <image id="f7kjra" name="notify_frame_red.png" path="/Res/UIEtc/"/>
@@ -762,6 +762,30 @@
     <component id="v48ds6" name="message_box.xml" path="/Component/Frame/" exported="true"/>
     <component id="v48ds7" name="common_btn_1.xml" path="/Component/Button/" exported="true"/>
     <component id="v48ds9" name="common_btn_2.xml" path="/Component/Button/" exported="true"/>
+    <image id="v48dsa" name="loading_rotate_11.png" path="/Res/Loading/"/>
+    <image id="v48dsb" name="loading_rotate_04.png" path="/Res/Loading/"/>
+    <image id="v48dsc" name="loading_rotate_10.png" path="/Res/Loading/"/>
+    <image id="v48dsd" name="loading_rotate_05.png" path="/Res/Loading/"/>
+    <image id="v48dse" name="loading_rotate_06.png" path="/Res/Loading/"/>
+    <image id="v48dsf" name="loading_rotate_08.png" path="/Res/Loading/"/>
+    <image id="v48dsg" name="loading_rotate_00.png" path="/Res/Loading/"/>
+    <image id="v48dsh" name="loading_rotate_03.png" path="/Res/Loading/"/>
+    <image id="v48dsi" name="loading_rotate_07.png" path="/Res/Loading/"/>
+    <image id="v48dsj" name="loading_rotate_01.png" path="/Res/Loading/"/>
+    <image id="v48dsk" name="loading_rotate_09.png" path="/Res/Loading/"/>
+    <image id="v48dsm" name="loading_rotate_02.png" path="/Res/Loading/"/>
+    <movieclip id="v48dsn" name="loading_anim.jta" path="/Component/Loading/" exported="true"/>
+    <image id="v48dsp" name="background_01_loading_1920.png" path="/Res/Background/" qualityOption="source" atlas="alone_npot"/>
+    <image id="v48dsq" name="background_02_home_1920.png" path="/Res/Background/" qualityOption="source" atlas="alone_npot"/>
+    <image id="v48dsr" name="background_03_character_1920.png" path="/Res/Background/" qualityOption="source" atlas="alone_npot"/>
+    <image id="v48dst" name="background_05_sample_00_1920.png" path="/Res/Background/" qualityOption="source" atlas="alone_npot"/>
+    <image id="v48dsu" name="background_05_sample_01.png" path="/Res/Background/" qualityOption="source" atlas="alone_npot"/>
+    <component id="v48dsw" name="login_input_account.xml" path="/Component/Input/" exported="true"/>
+    <component id="v48dsx" name="login_input_password.xml" path="/Component/Input/" exported="true"/>
+    <component id="v48dsz" name="login_loginbtn.xml" path="/Component/Button/" exported="true"/>
+    <component id="v48dt0" name="login_notice.xml" path="/Component/Button/" exported="true"/>
+    <component id="v48dt1" name="login_user.xml" path="/Component/Button/" exported="true"/>
+    <component id="v48dt2" name="battery.xml" path="/Component/Item/" exported="true"/>
   </resources>
-  <publish name=""/>
+  <publish name="" path="../Unity/Assets/Bundles/FairyGUI/Common" packageCount="2" maxAtlasSize="2048"/>
 </packageDescription>

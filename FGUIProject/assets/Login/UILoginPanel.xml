@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n0_v48d" name="n0" src="v48dss" fileName="Res/background_04_reward_1920.png" xy="0,0"/>
+    <component id="n1_v48d" name="input_account" src="v48dsw" fileName="Component/Input/login_input_account.xml" pkg="6qczg918" xy="773,500"/>
+    <component id="n2_v48d" name="account_password" src="v48dsx" fileName="Component/Input/login_input_password.xml" pkg="6qczg918" xy="773,599"/>
+    <component id="n3_v48d" name="login_btn" src="v48dsz" fileName="Component/Button/login_loginbtn.xml" pkg="6qczg918" xy="870,710"/>
+    <component id="n4_v48d" name="notice_btn" src="v48dt0" fileName="Component/Button/login_notice.xml" pkg="6qczg918" xy="1672,38" size="100,120"/>
+    <component id="n5_v48d" name="user_btn" src="v48dt1" fileName="Component/Button/login_user.xml" pkg="6qczg918" xy="1672,158" size="100,120"/>
+    <image id="n6_v48d" name="n6" src="f7kja2" fileName="Res/Frame/frame_linetextframe_06_2.png" pkg="6qczg918" xy="234,951" size="1450,33"/>
+    <image id="n7_v48d" name="n7" src="f7kja0" fileName="Res/Frame/frame_linetextframe_05_White2.png" pkg="6qczg918" xy="416,120"/>
+    <text id="n8_v48d" name="n8" xy="514,171" size="892,175" fontSize="60" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="Game Title"/>
+  </displayList>
+</component>
