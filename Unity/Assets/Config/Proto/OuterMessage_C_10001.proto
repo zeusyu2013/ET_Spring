@@ -401,27 +401,11 @@ message M2C_ExtendBag // ILocationResponse
 	int32 MaxCapacity = 4;
 }
 
-message M2C_GetNewItem // ILocationMessage
+message C2M_UseItem // ILocationMessage
 {
 	int32 RpcId = 1;
 	int32 ConfigId = 2;
 	int64 Amount = 3;
-}
-
-// ResponseType M2C_UseItem
-message C2M_UseItem // ILocationRequest
-{
-	int32 RpcId = 1;
-	int32 ConfigId = 4;
-	int64 Amount = 5;
-}
-
-message M2C_UseItem // ILocationResponse
-{
-	int32 RpcId = 1;
-	int32 Error = 2;
-	string Message = 3;
-	repeated GameItemInfo GameItemInfos = 4;
 }
 
 // ResponseType M2C_GetDropItems

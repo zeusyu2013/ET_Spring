@@ -1841,42 +1841,8 @@ namespace ET
     }
 
     [MemoryPackable]
-    [Message(OuterMessage.M2C_GetNewItem)]
-    public partial class M2C_GetNewItem : MessageObject, ILocationMessage
-    {
-        public static M2C_GetNewItem Create(bool isFromPool = false)
-        {
-            return ObjectPool.Instance.Fetch(typeof(M2C_GetNewItem), isFromPool) as M2C_GetNewItem;
-        }
-
-        [MemoryPackOrder(0)]
-        public int RpcId { get; set; }
-
-        [MemoryPackOrder(1)]
-        public int ConfigId { get; set; }
-
-        [MemoryPackOrder(2)]
-        public long Amount { get; set; }
-
-        public override void Dispose()
-        {
-            if (!this.IsFromPool)
-            {
-                return;
-            }
-
-            this.RpcId = default;
-            this.ConfigId = default;
-            this.Amount = default;
-
-            ObjectPool.Instance.Recycle(this);
-        }
-    }
-
-    [MemoryPackable]
     [Message(OuterMessage.C2M_UseItem)]
-    [ResponseType(nameof(M2C_UseItem))]
-    public partial class C2M_UseItem : MessageObject, ILocationRequest
+    public partial class C2M_UseItem : MessageObject, ILocationMessage
     {
         public static C2M_UseItem Create(bool isFromPool = false)
         {
@@ -1886,10 +1852,10 @@ namespace ET
         [MemoryPackOrder(0)]
         public int RpcId { get; set; }
 
-        [MemoryPackOrder(3)]
+        [MemoryPackOrder(1)]
         public int ConfigId { get; set; }
 
-        [MemoryPackOrder(4)]
+        [MemoryPackOrder(2)]
         public long Amount { get; set; }
 
         public override void Dispose()
@@ -1902,43 +1868,6 @@ namespace ET
             this.RpcId = default;
             this.ConfigId = default;
             this.Amount = default;
-
-            ObjectPool.Instance.Recycle(this);
-        }
-    }
-
-    [MemoryPackable]
-    [Message(OuterMessage.M2C_UseItem)]
-    public partial class M2C_UseItem : MessageObject, ILocationResponse
-    {
-        public static M2C_UseItem Create(bool isFromPool = false)
-        {
-            return ObjectPool.Instance.Fetch(typeof(M2C_UseItem), isFromPool) as M2C_UseItem;
-        }
-
-        [MemoryPackOrder(0)]
-        public int RpcId { get; set; }
-
-        [MemoryPackOrder(1)]
-        public int Error { get; set; }
-
-        [MemoryPackOrder(2)]
-        public string Message { get; set; }
-
-        [MemoryPackOrder(3)]
-        public List<GameItemInfo> GameItemInfos { get; set; } = new();
-
-        public override void Dispose()
-        {
-            if (!this.IsFromPool)
-            {
-                return;
-            }
-
-            this.RpcId = default;
-            this.Error = default;
-            this.Message = default;
-            this.GameItemInfos.Clear();
 
             ObjectPool.Instance.Recycle(this);
         }
@@ -2825,33 +2754,31 @@ namespace ET
         public const ushort M2C_GetAllItems = 10055;
         public const ushort C2M_ExtendBag = 10056;
         public const ushort M2C_ExtendBag = 10057;
-        public const ushort M2C_GetNewItem = 10058;
-        public const ushort C2M_UseItem = 10059;
-        public const ushort M2C_UseItem = 10060;
-        public const ushort C2M_GetDropItems = 10061;
-        public const ushort M2C_GetDropItems = 10062;
-        public const ushort C2M_AssignmentDropItem = 10063;
-        public const ushort M2C_AssignmentDropItem = 10064;
-        public const ushort C2M_AcceptTask = 10065;
-        public const ushort M2C_AcceptTask = 10066;
-        public const ushort C2M_CompleteTask = 10067;
-        public const ushort M2C_CompleteTask = 10068;
-        public const ushort GameBuffInfo = 10069;
-        public const ushort C2M_GetAllBuffs = 10070;
-        public const ushort M2C_GetAllBuffs = 10071;
-        public const ushort C2M_Equip = 10072;
-        public const ushort M2C_Equip = 10073;
-        public const ushort GamePropertyInfo = 10074;
-        public const ushort M2C_PropertyRefresh = 10075;
-        public const ushort FightScoreRankEntityInfo = 10076;
-        public const ushort C2Main_GetFightScoreRank = 10077;
-        public const ushort Main2C_GetFightScoreRank = 10078;
-        public const ushort MailInfo = 10079;
-        public const ushort C2M_CheckMails = 10080;
-        public const ushort M2C_CheckMails = 10081;
-        public const ushort C2M_CheckMail = 10082;
-        public const ushort M2C_CheckMail = 10083;
-        public const ushort C2M_ReceiveAttachments = 10084;
-        public const ushort M2C_ReceiveAttachments = 10085;
+        public const ushort C2M_UseItem = 10058;
+        public const ushort C2M_GetDropItems = 10059;
+        public const ushort M2C_GetDropItems = 10060;
+        public const ushort C2M_AssignmentDropItem = 10061;
+        public const ushort M2C_AssignmentDropItem = 10062;
+        public const ushort C2M_AcceptTask = 10063;
+        public const ushort M2C_AcceptTask = 10064;
+        public const ushort C2M_CompleteTask = 10065;
+        public const ushort M2C_CompleteTask = 10066;
+        public const ushort GameBuffInfo = 10067;
+        public const ushort C2M_GetAllBuffs = 10068;
+        public const ushort M2C_GetAllBuffs = 10069;
+        public const ushort C2M_Equip = 10070;
+        public const ushort M2C_Equip = 10071;
+        public const ushort GamePropertyInfo = 10072;
+        public const ushort M2C_PropertyRefresh = 10073;
+        public const ushort FightScoreRankEntityInfo = 10074;
+        public const ushort C2Main_GetFightScoreRank = 10075;
+        public const ushort Main2C_GetFightScoreRank = 10076;
+        public const ushort MailInfo = 10077;
+        public const ushort C2M_CheckMails = 10078;
+        public const ushort M2C_CheckMails = 10079;
+        public const ushort C2M_CheckMail = 10080;
+        public const ushort M2C_CheckMail = 10081;
+        public const ushort C2M_ReceiveAttachments = 10082;
+        public const ushort M2C_ReceiveAttachments = 10083;
     }
 }

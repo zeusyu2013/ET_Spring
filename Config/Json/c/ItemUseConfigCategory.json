@@ -1,0 +1,127 @@
+[
+  {
+    "Id": 720001,
+    "GameItemUseType": 1,
+    "GameItemUseParam": {
+      "$type": "GameItemUseCurrency",
+      "CurrencyType": 1,
+      "CurrencyValue": 100000
+    }
+  },
+  {
+    "Id": 720002,
+    "GameItemUseType": 1,
+    "GameItemUseParam": {
+      "$type": "GameItemUseCurrency",
+      "CurrencyType": 1,
+      "CurrencyValue": 200000
+    }
+  },
+  {
+    "Id": 720003,
+    "GameItemUseType": 1,
+    "GameItemUseParam": {
+      "$type": "GameItemUseCurrency",
+      "CurrencyType": 1,
+      "CurrencyValue": 300000
+    }
+  },
+  {
+    "Id": 720004,
+    "GameItemUseType": 1,
+    "GameItemUseParam": {
+      "$type": "GameItemUseCurrency",
+      "CurrencyType": 1,
+      "CurrencyValue": 400000
+    }
+  },
+  {
+    "Id": 720005,
+    "GameItemUseType": 1,
+    "GameItemUseParam": {
+      "$type": "GameItemUseCurrency",
+      "CurrencyType": 1,
+      "CurrencyValue": 500000
+    }
+  },
+  {
+    "Id": 730001,
+    "GameItemUseType": 2,
+    "GameItemUseParam": {
+      "$type": "GameItemUseTask",
+      "TaskConfigId": 1001
+    }
+  },
+  {
+    "Id": 730002,
+    "GameItemUseType": 2,
+    "GameItemUseParam": {
+      "$type": "GameItemUseTask",
+      "TaskConfigId": 1002
+    }
+  },
+  {
+    "Id": 730003,
+    "GameItemUseType": 2,
+    "GameItemUseParam": {
+      "$type": "GameItemUseTask",
+      "TaskConfigId": 1003
+    }
+  },
+  {
+    "Id": 730004,
+    "GameItemUseType": 2,
+    "GameItemUseParam": {
+      "$type": "GameItemUseTask",
+      "TaskConfigId": 1004
+    }
+  },
+  {
+    "Id": 730005,
+    "GameItemUseType": 2,
+    "GameItemUseParam": {
+      "$type": "GameItemUseTask",
+      "TaskConfigId": 1005
+    }
+  },
+  {
+    "Id": 740001,
+    "GameItemUseType": 3,
+    "GameItemUseParam": {
+      "$type": "GameItemUseBuff",
+      "BuffConfigId": 40001
+    }
+  },
+  {
+    "Id": 740002,
+    "GameItemUseType": 3,
+    "GameItemUseParam": {
+      "$type": "GameItemUseBuff",
+      "BuffConfigId": 40002
+    }
+  },
+  {
+    "Id": 740003,
+    "GameItemUseType": 3,
+    "GameItemUseParam": {
+      "$type": "GameItemUseBuff",
+      "BuffConfigId": 40003
+    }
+  },
+  {
+    "Id": 740004,
+    "GameItemUseType": 3,
+    "GameItemUseParam": {
+      "$type": "GameItemUseBuff",
+      "BuffConfigId": 40004
+    }
+  },
+  {
+    "Id": 740005,
+    "GameItemUseType": 3,
+    "GameItemUseParam": {
+      "$type": "GameItemUseBuff",
+      "BuffConfigId": 40005
+    }
+  }
+]

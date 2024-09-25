@@ -21,6 +21,7 @@ namespace ET
             Type = (GameItemType)_buf.ReadInt();
             Quality = (GameItemQualityType)_buf.ReadInt();
             UseLevel = _buf.ReadInt();
+            MaxCount = _buf.ReadLong();
             Icon = _buf.ReadString();
 
             PostInit();
@@ -57,6 +58,11 @@ namespace ET
         public readonly int UseLevel;
 
         /// <summary>
+        /// 最大堆叠数
+        /// </summary>
+        public readonly long MaxCount;
+
+        /// <summary>
         /// 道具图标
         /// </summary>
         public readonly string Icon;
@@ -73,6 +79,7 @@ namespace ET
             + "Type:" + Type + ","
             + "Quality:" + Quality + ","
             + "UseLevel:" + UseLevel + ","
+            + "MaxCount:" + MaxCount + ","
             + "Icon:" + Icon + ","
             + "}";
         }

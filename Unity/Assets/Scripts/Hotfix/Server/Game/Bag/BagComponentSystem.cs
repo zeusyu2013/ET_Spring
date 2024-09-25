@@ -140,5 +140,41 @@ namespace ET.Server
         {
             return self.GameItems;
         }
+
+        public static void UseItem(this BagComponent self, int itemConfigId, long amount)
+        {
+            GameItem item = self.GetGameItemByConfig(itemConfigId);
+            if (item == null || item.IsDisposed)
+            {
+                return;
+            }
+
+            if (item.Amount < amount)
+            {
+                return;
+            }
+            
+            ItemUseConfig config = ItemUseConfigCategory.Instance.Get(itemConfigId);
+            if (config == null)
+            {
+                return;
+            }
+
+            IGameItemUse handler = GameItemUseDispatcherComponent.Instance.Get(config.GameItemUseType);
+            if (handler == null)
+            {
+                Log.Error($"没找到{itemConfigId}对应{config.GameItemUseType}的行为");
+                return;
+            }
+            
+            bool ret = handler.Run(item, amount, config);
+
+            if (!ret)
+            {
+                return;
+            }
+            
+            self.RemoveItem(itemConfigId, amount);
+        }
     }
 }

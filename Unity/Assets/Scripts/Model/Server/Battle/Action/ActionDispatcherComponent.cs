@@ -34,12 +34,7 @@ namespace ET.Server
 
         public IAction Get(ActionType type)
         {
-            if (this.Actions.TryGetValue(type, out IAction handler))
-            {
-                return handler;
-            }
-
-            return null;
+            return this.Actions.GetValueOrDefault(type);
         }
     }
 }

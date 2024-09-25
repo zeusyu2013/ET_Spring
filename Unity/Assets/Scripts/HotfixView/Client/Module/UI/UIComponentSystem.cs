@@ -2,7 +2,7 @@
 
 namespace ET.Client
 {
-    [EntitySystemOf(typeof (UIComponent))]
+    [EntitySystemOf(typeof(UIComponent))]
     [FriendOf(typeof(UIComponent))]
     public static partial class UIComponentSystem
     {
@@ -15,8 +15,7 @@ namespace ET.Client
             self.AddComponent<UIGroupComponent>();
             self.AddComponent<UIExtraDataComponent>();
             // 
-            GRoot.inst.SetContentScaleFactor(1280, 720, UIContentScaler.ScreenMatchMode.MatchWidthOrHeight);
-            
+            GRoot.inst.SetContentScaleFactor(1920, 1080, UIContentScaler.ScreenMatchMode.MatchWidthOrHeight);
         }
 
         public static UI CreateUI(this UIComponent self, string packageName, string panelname)
@@ -29,23 +28,24 @@ namespace ET.Client
         public static async ETTask CreatePanel(this UIComponent self, string panelName)
         {
             // 如果界面存在就不创建爱了
-            if(self.HasPanel(panelName))
+            if (self.HasPanel(panelName))
             {
                 return;
             }
-         
+
             //没有配置就不加载
             UIConfig config = UIConfigCategory.Instance.GetConfigByName(panelName);
             if (config == null)
             {
                 return;
             }
-            
+
             UIEventComponent.Instance.UIEvents.TryGetValue(panelName, out var uiEvent);
             if (uiEvent == null)
             {
                 return;
             }
+
             // 创建UI，加载脚本
             UI ui = await uiEvent.OnCreate(self);
             ui.UIConfig = config;
@@ -65,12 +65,12 @@ namespace ET.Client
             {
                 return;
             }
-            
+
             if (!ui.Component.onStage)
             {
                 self.AddOnStage(ui);
             }
-            
+
             ui.IsShowing = true;
             UIEventComponent.Instance.UIEvents[panelName].OnShow(self, ui);
             ui.GetComponent<UIRedComponent>().ShowRedPoint();
@@ -89,7 +89,7 @@ namespace ET.Client
             ui.IsShowing = false;
             UIEventComponent.Instance.UIEvents[panelName].OnHide(self, ui);
             self.GetComponent<UIExtraDataComponent>().ClearUIData(panelName);
-            
+
             await self.RealHide(panelName);
         }
 
@@ -105,9 +105,10 @@ namespace ET.Client
             {
                 return;
             }
+
             // 增加退场动画 退场动画结束后将界面隐藏
             await ui.GetComponent<UITweenComponent>().PlayExistTween();
-            
+
             ui.Component.RemoveFromParent();
         }
 
@@ -118,8 +119,9 @@ namespace ET.Client
             {
                 return;
             }
+
             await self.HidePanel(panelName);
-            
+
             self.GetComponent<UIPackageComponent>().RemovePackage(panelName);
             self.UIs.Remove(panelName);
             self.RemoveChild(ui.Id);
@@ -147,7 +149,7 @@ namespace ET.Client
         {
             return self.UIs.ContainsKey(panelName);
         }
-        
+
         /// <summary>
         /// 加载界面组件
         /// </summary>
