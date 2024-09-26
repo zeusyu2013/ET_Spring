@@ -401,11 +401,21 @@ message M2C_ExtendBag // ILocationResponse
 	int32 MaxCapacity = 4;
 }
 
-message C2M_UseItem // ILocationMessage
+// ResponseType M2C_UseItem
+message C2M_UseItem // ILocationRequest
 {
 	int32 RpcId = 1;
 	int32 ConfigId = 2;
 	int64 Amount = 3;
+}
+
+message M2C_UseItem // ILocationResponse
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+	int32 ConfigId = 4;
+	int64 Amount = 5;
 }
 
 // ResponseType M2C_GetDropItems

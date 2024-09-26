@@ -8,6 +8,8 @@
             //await root.GetComponent<RemoteConfigComponent>().GetRemoteConfig();
 
             //await UIHelper.Create(root, UIName.UIUpdate);
+
+            await ETTask.CompletedTask;
         }
     }
 }
