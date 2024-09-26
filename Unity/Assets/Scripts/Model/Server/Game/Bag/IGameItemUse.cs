@@ -2,6 +2,6 @@
 {
     public interface IGameItemUse
     {
-        bool Run(GameItem item, long useAmount, ItemUseConfig config);
+        int Run(GameItem item, long useAmount);
     }
 }

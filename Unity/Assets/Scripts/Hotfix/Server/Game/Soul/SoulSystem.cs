@@ -68,10 +68,10 @@
                 return ErrorCode.ERR_SoulLevelLimit;
             }
 
-            bool ret = unit.GetComponent<CurrencyComponent>().Dec(config.CurrencyType, config.CurrencyValue, "灵升级");
-            if (!ret)
+            int ret = unit.GetComponent<CurrencyComponent>().Dec(config.CurrencyType, config.CurrencyValue, "灵升级");
+            if (ret != ErrorCode.ERR_Success)
             {
-                return ErrorCode.ERR_CurrencyNotEnough;
+                return ret;
             }
 
             self.Level += 1;

@@ -71,8 +71,8 @@ namespace ET.Server
                 }
             }
 
-            bool ret = self.GetParent<Unit>().GetComponent<CurrencyComponent>().Dec(info.UpgradeCurrencyType, info.UpgradeCurrencyValue, "建筑升级");
-            if (!ret)
+            int ret = self.GetParent<Unit>().GetComponent<CurrencyComponent>().Dec(info.UpgradeCurrencyType, info.UpgradeCurrencyValue, "建筑升级");
+            if (ret != ErrorCode.ERR_Success)
             {
                 return;
             }

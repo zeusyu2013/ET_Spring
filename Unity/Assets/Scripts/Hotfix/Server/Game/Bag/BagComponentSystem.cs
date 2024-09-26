@@ -141,40 +141,42 @@ namespace ET.Server
             return self.GameItems;
         }
 
-        public static void UseItem(this BagComponent self, int itemConfigId, long amount)
+        public static int UseItem(this BagComponent self, int itemConfigId, long amount)
         {
             GameItem item = self.GetGameItemByConfig(itemConfigId);
             if (item == null || item.IsDisposed)
             {
-                return;
+                return ErrorCode.ERR_ItemNotFound;
             }
 
             if (item.Amount < amount)
             {
-                return;
+                return ErrorCode.ERR_ItemNotEnough;
             }
             
             ItemUseConfig config = ItemUseConfigCategory.Instance.Get(itemConfigId);
             if (config == null)
             {
-                return;
+                return ErrorCode.ERR_ItemCantUse;
             }
 
             IGameItemUse handler = GameItemUseDispatcherComponent.Instance.Get(config.GameItemUseType);
             if (handler == null)
             {
                 Log.Error($"没找到{itemConfigId}对应{config.GameItemUseType}的行为");
-                return;
+                return ErrorCode.ERR_ItemUseTypeNotFound;
             }
             
-            bool ret = handler.Run(item, amount, config);
+            int ret = handler.Run(item, amount);
 
-            if (!ret)
+            if (ret != ErrorCode.ERR_Success)
             {
-                return;
+                return ret;
             }
             
             self.RemoveItem(itemConfigId, amount);
+            
+            return ErrorCode.ERR_Success;
         }
     }
 }

@@ -23,10 +23,10 @@
                 return;
             }
 
-            bool ret = self.GetParent<Unit>().
+            int ret = self.GetParent<Unit>().
                     GetComponent<CurrencyComponent>().
                     Dec(config.LearnCurrencyType, config.LearnCurrencyValue, "学习技能");
-            if (!ret)
+            if (ret != ErrorCode.ERR_Success)
             {
                 return;
             }

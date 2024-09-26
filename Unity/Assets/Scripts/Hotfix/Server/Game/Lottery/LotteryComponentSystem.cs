@@ -88,10 +88,10 @@ namespace ET.Server
                 return ErrorCode.ERR_BuildingLevelNotMatch;
             }
 
-            ret = self.GetParent<Unit>().GetComponent<CurrencyComponent>().Dec(config.UpgradeCurrencyType, config.UpgradeCurrencyValue, "升级宝箱");
-            if (!ret)
+            int result = self.GetParent<Unit>().GetComponent<CurrencyComponent>().Dec(config.UpgradeCurrencyType, config.UpgradeCurrencyValue, "升级宝箱");
+            if (result != ErrorCode.ERR_Success)
             {
-                return ErrorCode.ERR_CurrencyNotEnough;
+                return result;
             }
 
             self.Level += 1;

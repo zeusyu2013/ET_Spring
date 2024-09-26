@@ -54,6 +54,9 @@ namespace ET
         public const int ERR_ExtendBagItemConfigError = 200301;
         public const int ERR_ItemNotEnough = 200302;
         public const int ERR_BagCapacityMaxLimit = 200303;
+        public const int ERR_ItemNotFound = 200304;
+        public const int ERR_ItemCantUse = 200305;
+        public const int ERR_ItemUseTypeNotFound = 200306;
 
         // Team
         public const int ERR_AlreadyHasTeam = 200401;
@@ -77,6 +80,8 @@ namespace ET
 
         // Currency
         public const int ERR_CurrencyNotEnough = 200901;
+        public const int ERR_CurrencyTypeNotMatch = 200902;
+        public const int ERR_DecCurrencyValueLessThan1 = 200903;
 
         // Battle
         public const int ERR_CasterError = 201001;
@@ -92,6 +97,7 @@ namespace ET
         public const int ERR_CasterIsNull = 201010;
         public const int ERR_Silent = 201011;
         public const int ERR_CastCDing = 201012;
+        public const int ERR_AddBuffFailed = 201013;
         
         // Task
         public const int ERR_AlreadyAcceptTask = 203001;

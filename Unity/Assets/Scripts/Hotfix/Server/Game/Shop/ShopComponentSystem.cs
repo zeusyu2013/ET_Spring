@@ -37,8 +37,8 @@ namespace ET.Server
                 }
             }
 
-            bool ret = self.GetParent<Unit>().GetComponent<CurrencyComponent>().Dec(config.CurrencyType, config.CurrencyValue, "商店购买");
-            if (!ret)
+            int ret = self.GetParent<Unit>().GetComponent<CurrencyComponent>().Dec(config.CurrencyType, config.CurrencyValue, "商店购买");
+            if (ret != ErrorCode.ERR_Success)
             {
                 return;
             }
