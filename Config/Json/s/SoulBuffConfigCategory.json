@@ -1,0 +1,24 @@
+[
+  {
+    "Id": 0,
+    "Name": "",
+    "Desc": "",
+    "BuffProperty": 1,
+    "ContinueRound": 0,
+    "AddActions": [],
+    "NewRoundActions": [],
+    "RemoveActions": []
+  },
+  {
+    "Id": 40001,
+    "Name": "buffname_40001",
+    "Desc": "buffdesc_40001",
+    "BuffProperty": 1,
+    "ContinueRound": 3,
+    "AddActions": [
+      1001
+    ],
+    "NewRoundActions": [],
+    "RemoveActions": []
+  }
+]

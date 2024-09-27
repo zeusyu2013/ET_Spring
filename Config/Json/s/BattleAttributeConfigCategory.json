@@ -1,0 +1,127 @@
+[
+  {
+    "Id": 1,
+    "DestAttribute": 1,
+    "DamageRatio": 0
+  },
+  {
+    "Id": 1,
+    "DestAttribute": 2,
+    "DamageRatio": -2000
+  },
+  {
+    "Id": 1,
+    "DestAttribute": 3,
+    "DamageRatio": 2000
+  },
+  {
+    "Id": 1,
+    "DestAttribute": 4,
+    "DamageRatio": 0
+  },
+  {
+    "Id": 1,
+    "DestAttribute": 5,
+    "DamageRatio": 0
+  },
+  {
+    "Id": 2,
+    "DestAttribute": 1,
+    "DamageRatio": 2000
+  },
+  {
+    "Id": 2,
+    "DestAttribute": 2,
+    "DamageRatio": 0
+  },
+  {
+    "Id": 2,
+    "DestAttribute": 3,
+    "DamageRatio": 0
+  },
+  {
+    "Id": 2,
+    "DestAttribute": 4,
+    "DamageRatio": 0
+  },
+  {
+    "Id": 2,
+    "DestAttribute": 5,
+    "DamageRatio": 0
+  },
+  {
+    "Id": 3,
+    "DestAttribute": 1,
+    "DamageRatio": -2000
+  },
+  {
+    "Id": 3,
+    "DestAttribute": 2,
+    "DamageRatio": 2000
+  },
+  {
+    "Id": 3,
+    "DestAttribute": 3,
+    "DamageRatio": 0
+  },
+  {
+    "Id": 3,
+    "DestAttribute": 4,
+    "DamageRatio": 0
+  },
+  {
+    "Id": 3,
+    "DestAttribute": 5,
+    "DamageRatio": -2000
+  },
+  {
+    "Id": 4,
+    "DestAttribute": 1,
+    "DamageRatio": 2000
+  },
+  {
+    "Id": 4,
+    "DestAttribute": 2,
+    "DamageRatio": 2000
+  },
+  {
+    "Id": 4,
+    "DestAttribute": 3,
+    "DamageRatio": 2000
+  },
+  {
+    "Id": 4,
+    "DestAttribute": 4,
+    "DamageRatio": 0
+  },
+  {
+    "Id": 4,
+    "DestAttribute": 5,
+    "DamageRatio": 5000
+  },
+  {
+    "Id": 5,
+    "DestAttribute": 1,
+    "DamageRatio": 2000
+  },
+  {
+    "Id": 5,
+    "DestAttribute": 2,
+    "DamageRatio": 2000
+  },
+  {
+    "Id": 5,
+    "DestAttribute": 3,
+    "DamageRatio": 2000
+  },
+  {
+    "Id": 5,
+    "DestAttribute": 4,
+    "DamageRatio": 5000
+  },
+  {
+    "Id": 5,
+    "DestAttribute": 5,
+    "DamageRatio": 0
+  }
+]

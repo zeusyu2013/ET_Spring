@@ -1,0 +1,9 @@
+[
+  {
+    "Id": 210001,
+    "TotalTime": 2000,
+    "CastCooldown": 10000,
+    "SelectTargetType": 1,
+    "CastTargetType": 1
+  }
+]

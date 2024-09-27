@@ -115,5 +115,14 @@ namespace ET
         public const int ERR_SoulNotFound = 200501;
         public const int ERR_SoulLevelConfigNotFound = 200502;
         public const int ERR_SoulLevelLimit = 200503;
+        public const int ERR_SoulAlreadyOnBattle = 200504;
+        public const int ERR_NoSoulOnBattle = 200505;
+        
+        // SoulBattle
+        public const int ERR_SoulCastIsNull = 206001;
+        public const int ERR_SoulCasterIsNull = 206002;
+        public const int ERR_SoulCastTargetCounterLessThan1 = 206003;
+        public const int ERR_SoulBuffOwnerIsNull = 206004;
+        public const int ERR_SoulCastComponentIsNull = 206005;
     }
 }

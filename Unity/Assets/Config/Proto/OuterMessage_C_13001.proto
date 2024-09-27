@@ -143,3 +143,33 @@ message M2C_GetHatred // ILocationResponse
 	string Message = 3;
     map<int64, int64> HatredInfos = 4;
 }
+
+// ResponseType M2C_BattlePVE
+message C2M_BattlePVE // ILocationRequest
+{
+    int32 RpcId = 1;
+    int32 PVEConfigId = 2;
+}
+
+message M2C_BattlePVE // ILocationResponse
+{
+    int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}
+
+// ResponseType B2C_Command
+message C2B_Command // ILocationRequest
+{
+    int32 RpcId = 1;
+    int64 SoulId = 2;
+    int32 SoulCastConfigId = 3;
+    int64 TargetId = 4;
+}
+
+message B2C_Command // ILocationResponse
+{
+    int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}

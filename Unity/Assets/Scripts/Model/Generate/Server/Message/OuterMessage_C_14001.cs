@@ -229,6 +229,136 @@ namespace ET
         }
     }
 
+    [MemoryPackable]
+    [Message(OuterMessage.C2M_GetSoulOnBattle)]
+    [ResponseType(nameof(M2C_GetSoulOnBattle))]
+    public partial class C2M_GetSoulOnBattle : MessageObject, ILocationRequest
+    {
+        public static C2M_GetSoulOnBattle Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_GetSoulOnBattle), isFromPool) as C2M_GetSoulOnBattle;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_GetSoulOnBattle)]
+    public partial class M2C_GetSoulOnBattle : MessageObject, ILocationResponse
+    {
+        public static M2C_GetSoulOnBattle Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_GetSoulOnBattle), isFromPool) as M2C_GetSoulOnBattle;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        [MongoDB.Bson.Serialization.Attributes.BsonDictionaryOptions(MongoDB.Bson.Serialization.Options.DictionaryRepresentation.ArrayOfArrays)]
+        [MemoryPackOrder(3)]
+        public Dictionary<int, int> Battles { get; set; } = new();
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+            this.Battles.Clear();
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.C2M_SoulOnBattle)]
+    [ResponseType(nameof(M2C_SoulOnBattle))]
+    public partial class C2M_SoulOnBattle : MessageObject, ILocationRequest
+    {
+        public static C2M_SoulOnBattle Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_SoulOnBattle), isFromPool) as C2M_SoulOnBattle;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int SoulConfigId { get; set; }
+
+        [MemoryPackOrder(2)]
+        public int Position { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.SoulConfigId = default;
+            this.Position = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_SoulOnBattle)]
+    public partial class M2C_SoulOnBattle : MessageObject, ILocationResponse
+    {
+        public static M2C_SoulOnBattle Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_SoulOnBattle), isFromPool) as M2C_SoulOnBattle;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
     public static partial class OuterMessage
     {
         public const ushort SoulInfo = 14002;
@@ -238,5 +368,9 @@ namespace ET
         public const ushort M2C_SoulUpstar = 14006;
         public const ushort C2M_SoulChooseTalent = 14007;
         public const ushort M2C_SoulChooseTalent = 14008;
+        public const ushort C2M_GetSoulOnBattle = 14009;
+        public const ushort M2C_GetSoulOnBattle = 14010;
+        public const ushort C2M_SoulOnBattle = 14011;
+        public const ushort M2C_SoulOnBattle = 14012;
     }
 }

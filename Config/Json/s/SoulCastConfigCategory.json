@@ -1,0 +1,19 @@
+[
+  {
+    "Id": 210001,
+    "TotalTime": 2000,
+    "CastCooldown": 10000,
+    "SelectTargetType": 1,
+    "CastTargetType": 1,
+    "HitInfos": [
+      {
+        "Time": 0,
+        "HitSelf": true,
+        "HitAction": 0,
+        "SelfBuff": 0,
+        "TargetBuff": 0
+      }
+    ],
+    "FinishActions": []
+  }
+]

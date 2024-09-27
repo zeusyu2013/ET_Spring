@@ -1,4 +1,5 @@
 syntax = "proto3";
+package ET;
 
 message SoulInfo
 {
@@ -44,6 +45,35 @@ message C2M_SoulChooseTalent // ILocationRequest
 }
 
 message M2C_SoulChooseTalent // ILocationResponse
+{
+    int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}
+
+// ResponseType M2C_GetSoulOnBattle
+message C2M_GetSoulOnBattle // ILocationRequest
+{
+    int32 RpcId = 1;
+}
+
+message M2C_GetSoulOnBattle // ILocationResponse
+{
+    int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+    map<int32, int32> Battles = 4;
+}
+
+// ResponseType M2C_SoulOnBattle
+message C2M_SoulOnBattle // ILocationRequest
+{
+    int32 RpcId = 1;
+    int32 SoulConfigId = 2;
+    int32 Position = 3;
+}
+
+message M2C_SoulOnBattle // ILocationResponse
 {
     int32 RpcId = 1;
 	int32 Error = 2;

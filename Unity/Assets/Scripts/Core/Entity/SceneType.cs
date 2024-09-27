@@ -29,6 +29,7 @@ namespace ET
         RequestHall = 1 << 21,
         PayHall = 1 << 22,
         QueueHall = 1 << 23,
+        RoundBattle = 1 << 24,
 
         // 客户端
         MainClient = 1 << 30,

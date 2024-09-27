@@ -233,5 +233,18 @@ namespace ET.Server
 
             return trap;
         }
+
+        public static Unit CreateRoundBattleUnit(Scene scene, int configId, int position)
+        {
+            UnitComponent unitComponent = scene.GetComponent<UnitComponent>();
+            Unit unit = unitComponent.AddChild<Unit, int>(configId);
+            unit.AddComponent<NumericComponent>();
+            unit.AddComponent<CastComponent>();
+            unit.AddComponent<BuffComponent>();
+
+            unitComponent.Add(unit);
+
+            return unit;
+        }
     }
 }

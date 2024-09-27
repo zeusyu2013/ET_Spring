@@ -1,9 +1,11 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace ET.Server
 {
     [EntitySystemOf(typeof(SoulComponent))]
     [FriendOfAttribute(typeof(ET.Server.Soul))]
+    [FriendOfAttribute(typeof(ET.Server.SoulComponent))]
     public static partial class SoulComponentSystem
     {
         [EntitySystem]
@@ -48,6 +50,30 @@ namespace ET.Server
             }
 
             return null;
+        }
+
+        public static Dictionary<int, int> GetBattle(this SoulComponent self)
+        {
+            return self.Battles;
+        }
+
+        public static int Battle(this SoulComponent self, int battleId, int configId, int position)
+        {
+            Soul soul = self.Get(configId);
+            if (soul == null)
+            {
+                return ErrorCode.ERR_SoulNotFound;
+            }
+            
+            KeyValuePair<int, int> kvp = new KeyValuePair<int, int>(soul.ConfigId, position);
+            if (self.Battles.Contains(kvp))
+            {
+                return ErrorCode.ERR_SoulAlreadyOnBattle;
+            }
+            
+            self.Battles.Add(configId, position);
+            
+            return ErrorCode.ERR_Success;
         }
     }
 }

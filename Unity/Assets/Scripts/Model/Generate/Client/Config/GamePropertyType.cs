@@ -231,5 +231,35 @@ namespace ET
         /// </summary>
         GP_CritFinalPct = 11085,
 
+        /// <summary>
+        /// 战场速度
+        /// </summary>
+        GP_BattleSpeed = 1109,
+
+        /// <summary>
+        /// 战场速度基础值
+        /// </summary>
+        GP_BattleSpeedBase = 11091,
+
+        /// <summary>
+        /// 战场速度附加值
+        /// </summary>
+        GP_BattleSpeedAdd = 11092,
+
+        /// <summary>
+        /// 战场速度百分比
+        /// </summary>
+        GP_BattleSpeedPct = 11093,
+
+        /// <summary>
+        /// 战场速度最终附加值
+        /// </summary>
+        GP_BattleSpeedFinalAdd = 11094,
+
+        /// <summary>
+        /// 战场速度最终百分比
+        /// </summary>
+        GP_BattleSpeedFinalPct = 11095,
+
     }
 }

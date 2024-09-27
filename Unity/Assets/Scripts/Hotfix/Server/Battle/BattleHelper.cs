@@ -5,6 +5,7 @@ namespace ET.Server
     [FriendOfAttribute(typeof(ET.Server.Action))]
     [FriendOfAttribute(typeof(ET.Server.ReliveComponent))]
     [FriendOfAttribute(typeof(ET.Server.BuffComponent))]
+    [FriendOfAttribute(typeof(ET.Server.SoulAction))]
     public static class BattleHelper
     {
         /// <summary>
@@ -42,6 +43,50 @@ namespace ET.Server
 
             // todo:打断被攻击者的施法，或推迟读条时间等
             target.GetComponent<SkillStatusComponent>()?.BreakCasting();
+
+            NumericComponent numericComponent = target.GetComponent<NumericComponent>();
+            long hp = numericComponent[GamePropertyType.GP_Hp];
+            long result = 0;
+            if (hp > damage)
+            {
+                result = hp - damage;
+            }
+            else
+            {
+                result = 0;
+            }
+
+            numericComponent[GamePropertyType.GP_Hp] = result;
+
+            if (result < 1)
+            {
+                Kill(attacker, target);
+            }
+        }
+
+        public static void CalcDamage(Soul attacker, Soul target, SoulAction action)
+        {
+            DamageActionParams actionParams = (DamageActionParams)action.Config.ActionParams;
+            if (actionParams == null)
+            {
+                return;
+            }
+
+            // todo 伤害公式
+
+            long damage = actionParams.AdditionalDamage;
+            if (damage < 1)
+            {
+                Log.Error($"附加伤害配置错误，action:{action.ConfigId}");
+                return;
+            }
+
+            // 伤害可以溢出，直接广播
+            M2C_DamageResult m2CBattleResult = M2C_DamageResult.Create();
+            m2CBattleResult.AttackerId = attacker.Id;
+            m2CBattleResult.TargetId = target.Id;
+            m2CBattleResult.Damage = damage;
+            //BattleMessageHelper.SendClient(target, m2CBattleResult, MessageNotifyType.MessageNotifyType_Broadcast);
 
             NumericComponent numericComponent = target.GetComponent<NumericComponent>();
             long hp = numericComponent[GamePropertyType.GP_Hp];
@@ -169,6 +214,11 @@ namespace ET.Server
             OnDead(killer, target);
         }
 
+        private static void Kill(Soul killer, Soul deader)
+        {
+            
+        }
+
         private static void OnDead(Unit killer, Unit deader)
         {
             ReliveComponent reliveComponent = deader.GetComponent<ReliveComponent>();
@@ -193,24 +243,24 @@ namespace ET.Server
                     break;
 
                 case UnitType.UnitType_Monster:
-                {
-                    long time = TimeInfo.Instance.ServerNow() + 3000;
-                    deader.Scene().GetComponent<TimerComponent>().NewOnceTimer(time, TimerInvokeType.MonsterDeadTimer, deader);
-
-                    if (killer.Type() == UnitType.UnitType_Player)
                     {
-                        MonsterConfig config = MonsterConfigCategory.Instance.Get(deader.ConfigId);
-                        List<DropItem> items = new();
-                        deader.Scene().GetComponent<DropComponent>().Drop(config.DropConfig, ref items);
-                        if (items.Count > 0)
+                        long time = TimeInfo.Instance.ServerNow() + 3000;
+                        deader.Scene().GetComponent<TimerComponent>().NewOnceTimer(time, TimerInvokeType.MonsterDeadTimer, deader);
+
+                        if (killer.Type() == UnitType.UnitType_Player)
                         {
-                            foreach (DropItem item in items)
+                            MonsterConfig config = MonsterConfigCategory.Instance.Get(deader.ConfigId);
+                            List<DropItem> items = new();
+                            deader.Scene().GetComponent<DropComponent>().Drop(config.DropConfig, ref items);
+                            if (items.Count > 0)
                             {
-                                killer.GetComponent<BagComponent>().AddItem(item.ItemConfig, item.ItemAmount);
+                                foreach (DropItem item in items)
+                                {
+                                    killer.GetComponent<BagComponent>().AddItem(item.ItemConfig, item.ItemAmount);
+                                }
                             }
                         }
                     }
-                }
                     break;
             }
         }

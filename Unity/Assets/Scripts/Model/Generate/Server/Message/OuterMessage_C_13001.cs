@@ -668,6 +668,140 @@ namespace ET
         }
     }
 
+    [MemoryPackable]
+    [Message(OuterMessage.C2M_BattlePVE)]
+    [ResponseType(nameof(M2C_BattlePVE))]
+    public partial class C2M_BattlePVE : MessageObject, ILocationRequest
+    {
+        public static C2M_BattlePVE Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_BattlePVE), isFromPool) as C2M_BattlePVE;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int PVEConfigId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.PVEConfigId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_BattlePVE)]
+    public partial class M2C_BattlePVE : MessageObject, ILocationResponse
+    {
+        public static M2C_BattlePVE Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_BattlePVE), isFromPool) as M2C_BattlePVE;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.C2B_Command)]
+    [ResponseType(nameof(B2C_Command))]
+    public partial class C2B_Command : MessageObject, ILocationRequest
+    {
+        public static C2B_Command Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2B_Command), isFromPool) as C2B_Command;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public long SoulId { get; set; }
+
+        [MemoryPackOrder(2)]
+        public int SoulCastConfigId { get; set; }
+
+        [MemoryPackOrder(3)]
+        public long TargetId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.SoulId = default;
+            this.SoulCastConfigId = default;
+            this.TargetId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.B2C_Command)]
+    public partial class B2C_Command : MessageObject, ILocationResponse
+    {
+        public static B2C_Command Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(B2C_Command), isFromPool) as B2C_Command;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
     public static partial class OuterMessage
     {
         public const ushort M2C_CastStart = 13002;
@@ -689,5 +823,9 @@ namespace ET
         public const ushort HatredInfo = 13018;
         public const ushort C2M_GetHatred = 13019;
         public const ushort M2C_GetHatred = 13020;
+        public const ushort C2M_BattlePVE = 13021;
+        public const ushort M2C_BattlePVE = 13022;
+        public const ushort C2B_Command = 13023;
+        public const ushort B2C_Command = 13024;
     }
 }

@@ -43,5 +43,7 @@
         public const int HeightSyncTimer = 420;
 
         public const int DropBagTimer = 421;
+        
+        public const int BattleSpeedTimer = 422;
     }
 }

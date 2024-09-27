@@ -46,6 +46,13 @@
                     unit.GetComponent<GameTaskComponent>().AcceptTask(taskConfig);
                     break;
                 }
+
+                case "AddSoul":
+                {
+                    int soulConfig = int.Parse(commands[1]);
+                    unit.GetComponent<SoulComponent>().Add(soulConfig);
+                    break;
+                }
             }
         }
     }

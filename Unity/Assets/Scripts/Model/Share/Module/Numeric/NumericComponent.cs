@@ -225,7 +225,7 @@ namespace ET
             
             numericComponent.DecLong(type, value);
         }
-
+        
         public static void SetNoEvent(this NumericComponent self, int numericType, long value)
         {
             self.Insert(numericType, value, false);

@@ -136,6 +136,14 @@
     "Port": 0
   },
   {
+    "Id": 18,
+    "Process": 1,
+    "Zone": 1,
+    "SceneType": "RoundBattle",
+    "Name": "RoundBattle",
+    "Port": 0
+  },
+  {
     "Id": 100,
     "Process": 1,
     "Zone": 1,
