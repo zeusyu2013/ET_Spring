@@ -10,6 +10,10 @@
     "ResetTalentCurrencyValue": 50000,
     "ExtendBagItemConfig": 60006,
     "ExtendBagCapacity": 5,
-    "TeamMemberLimit": 4
+    "TeamMemberLimit": 4,
+    "DungeonConsumeMax": 100,
+    "DungeonConsumeRecoverInterval": 360000,
+    "DungeonConsumeRecoverValue": 1,
+    "BattleTotalProgress": 10000
   }
 ]

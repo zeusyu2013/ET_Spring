@@ -1609,5 +1609,50 @@
     "UseLevel": 1,
     "MaxCount": 20,
     "Icon": "itemicon_740005"
+  },
+  {
+    "Id": 810001,
+    "Name": "itemname_810001",
+    "Type": 1,
+    "Quality": 1,
+    "UseLevel": 1,
+    "MaxCount": 999,
+    "Icon": "itemicon_810001"
+  },
+  {
+    "Id": 810002,
+    "Name": "itemname_810002",
+    "Type": 1,
+    "Quality": 1,
+    "UseLevel": 1,
+    "MaxCount": 999,
+    "Icon": "itemicon_810002"
+  },
+  {
+    "Id": 810003,
+    "Name": "itemname_810003",
+    "Type": 1,
+    "Quality": 1,
+    "UseLevel": 1,
+    "MaxCount": 999,
+    "Icon": "itemicon_810003"
+  },
+  {
+    "Id": 810004,
+    "Name": "itemname_810004",
+    "Type": 1,
+    "Quality": 1,
+    "UseLevel": 1,
+    "MaxCount": 999,
+    "Icon": "itemicon_810004"
+  },
+  {
+    "Id": 810005,
+    "Name": "itemname_810005",
+    "Type": 1,
+    "Quality": 1,
+    "UseLevel": 1,
+    "MaxCount": 999,
+    "Icon": "itemicon_810005"
   }
 ]

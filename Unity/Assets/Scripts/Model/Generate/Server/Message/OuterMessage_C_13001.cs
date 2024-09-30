@@ -748,9 +748,12 @@ namespace ET
         public long SoulId { get; set; }
 
         [MemoryPackOrder(2)]
-        public int SoulCastConfigId { get; set; }
+        public int SoulConfigId { get; set; }
 
         [MemoryPackOrder(3)]
+        public int SoulCastConfigId { get; set; }
+
+        [MemoryPackOrder(4)]
         public long TargetId { get; set; }
 
         public override void Dispose()
@@ -762,6 +765,7 @@ namespace ET
 
             this.RpcId = default;
             this.SoulId = default;
+            this.SoulConfigId = default;
             this.SoulCastConfigId = default;
             this.TargetId = default;
 
@@ -802,6 +806,35 @@ namespace ET
         }
     }
 
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_EnterBattle)]
+    public partial class M2C_EnterBattle : MessageObject, ILocationMessage
+    {
+        public static M2C_EnterBattle Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_EnterBattle), isFromPool) as M2C_EnterBattle;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int SceneConfigId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.SceneConfigId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
     public static partial class OuterMessage
     {
         public const ushort M2C_CastStart = 13002;
@@ -827,5 +860,6 @@ namespace ET
         public const ushort M2C_BattlePVE = 13022;
         public const ushort C2B_Command = 13023;
         public const ushort B2C_Command = 13024;
+        public const ushort M2C_EnterBattle = 13025;
     }
 }

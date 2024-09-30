@@ -45,5 +45,7 @@
         public const int DropBagTimer = 421;
         
         public const int BattleSpeedTimer = 422;
+        
+        public const int ConsumeRecoverTimer = 423;
     }
 }

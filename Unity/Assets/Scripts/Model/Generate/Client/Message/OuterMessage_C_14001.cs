@@ -104,6 +104,69 @@ namespace ET
     }
 
     [MemoryPackable]
+    [Message(OuterMessage.C2M_SoulLevelBreak)]
+    [ResponseType(nameof(M2C_SoulLevelBreak))]
+    public partial class C2M_SoulLevelBreak : MessageObject, ILocationRequest
+    {
+        public static C2M_SoulLevelBreak Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(C2M_SoulLevelBreak), isFromPool) as C2M_SoulLevelBreak;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int SoulConfigId { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.SoulConfigId = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
+    [Message(OuterMessage.M2C_SoulLevelBreak)]
+    public partial class M2C_SoulLevelBreak : MessageObject, ILocationResponse
+    {
+        public static M2C_SoulLevelBreak Create(bool isFromPool = false)
+        {
+            return ObjectPool.Instance.Fetch(typeof(M2C_SoulLevelBreak), isFromPool) as M2C_SoulLevelBreak;
+        }
+
+        [MemoryPackOrder(0)]
+        public int RpcId { get; set; }
+
+        [MemoryPackOrder(1)]
+        public int Error { get; set; }
+
+        [MemoryPackOrder(2)]
+        public string Message { get; set; }
+
+        public override void Dispose()
+        {
+            if (!this.IsFromPool)
+            {
+                return;
+            }
+
+            this.RpcId = default;
+            this.Error = default;
+            this.Message = default;
+
+            ObjectPool.Instance.Recycle(this);
+        }
+    }
+
+    [MemoryPackable]
     [Message(OuterMessage.C2M_SoulUpstar)]
     [ResponseType(nameof(M2C_SoulUpstar))]
     public partial class C2M_SoulUpstar : MessageObject, ILocationRequest
@@ -364,13 +427,15 @@ namespace ET
         public const ushort SoulInfo = 14002;
         public const ushort C2M_SoulUplevel = 14003;
         public const ushort M2C_SoulUplevel = 14004;
-        public const ushort C2M_SoulUpstar = 14005;
-        public const ushort M2C_SoulUpstar = 14006;
-        public const ushort C2M_SoulChooseTalent = 14007;
-        public const ushort M2C_SoulChooseTalent = 14008;
-        public const ushort C2M_GetSoulOnBattle = 14009;
-        public const ushort M2C_GetSoulOnBattle = 14010;
-        public const ushort C2M_SoulOnBattle = 14011;
-        public const ushort M2C_SoulOnBattle = 14012;
+        public const ushort C2M_SoulLevelBreak = 14005;
+        public const ushort M2C_SoulLevelBreak = 14006;
+        public const ushort C2M_SoulUpstar = 14007;
+        public const ushort M2C_SoulUpstar = 14008;
+        public const ushort C2M_SoulChooseTalent = 14009;
+        public const ushort M2C_SoulChooseTalent = 14010;
+        public const ushort C2M_GetSoulOnBattle = 14011;
+        public const ushort M2C_GetSoulOnBattle = 14012;
+        public const ushort C2M_SoulOnBattle = 14013;
+        public const ushort M2C_SoulOnBattle = 14014;
     }
 }

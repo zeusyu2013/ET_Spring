@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <component id="n0_f3qq" name="n0" src="k2herw" fileName="Component/Frame/full_screen_frame.xml" pkg="6qczg918" xy="0,0"/>
+    <component id="n3_f3qq" name="n3" src="f3qqtb" fileName="Components/hero_name.xml" xy="249,259"/>
+    <image id="n4_f3qq" name="n4" src="f7kj9e" fileName="Res/Frame/frame_lineframe_01.png" pkg="6qczg918" xy="255,340"/>
+    <component id="n5_f3qq" name="n5" src="f3qq3" fileName="Components/hero_level.xml" xy="255,357"/>
+    <component id="n6_f3qq" name="n6" src="f3qq5" fileName="Components/hero_exp_progress.xml" xy="255,417">
+      <ProgressBar value="50" max="100"/>
+    </component>
+  </displayList>
+</component>

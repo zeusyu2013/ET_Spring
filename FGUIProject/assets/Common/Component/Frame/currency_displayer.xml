@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="254,33">
+  <displayList>
+    <image id="n0_f3qq" name="n0" src="f7kjq5" fileName="Res/Slider/slider_icontype_00_color_yellow_frame.png" xy="0,0" size="254,33"/>
+    <text id="n1_f3qq" name="currency_value" xy="-9,-8" size="229,47" fontSize="32" color="#cccccc" align="right" autoSize="none" autoClearText="true" text="999999999"/>
+    <component id="n3_f3qq" name="n3" src="f3qqt5" fileName="Component/Frame/add_btn.xml" xy="221,2">
+      <Button sound=""/>
+    </component>
+  </displayList>
+</component>

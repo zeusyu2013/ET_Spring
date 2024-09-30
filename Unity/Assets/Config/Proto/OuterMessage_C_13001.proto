@@ -163,8 +163,9 @@ message C2B_Command // ILocationRequest
 {
     int32 RpcId = 1;
     int64 SoulId = 2;
-    int32 SoulCastConfigId = 3;
-    int64 TargetId = 4;
+    int32 SoulConfigId = 3;
+    int32 SoulCastConfigId = 4;
+    int64 TargetId = 5;
 }
 
 message B2C_Command // ILocationResponse
@@ -172,4 +173,10 @@ message B2C_Command // ILocationResponse
     int32 RpcId = 1;
 	int32 Error = 2;
 	string Message = 3;
+}
+
+message M2C_EnterBattle // ILocationMessage
+{
+    int32 RpcId = 1;
+    int32 SceneConfigId = 2;
 }

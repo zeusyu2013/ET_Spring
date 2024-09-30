@@ -69,6 +69,8 @@ namespace ET
         // Dungeon
         public const int ERR_CreateDungeonFailed = 200601;
         public const int ERR_TransferDungeonFailed = 200602;
+        public const int ERR_ConsumeNotEnough = 200603;
+        public const int ERR_DecConsumeInvalid = 200604;
 
         // Mount
         public const int ERR_HasMount = 200701;
@@ -98,6 +100,8 @@ namespace ET
         public const int ERR_Silent = 201011;
         public const int ERR_CastCDing = 201012;
         public const int ERR_AddBuffFailed = 201013;
+        public const int ERR_SoulNotOnBattle = 201014;
+        public const int ERR_SoulNotFoundOnBattle = 201015;
         
         // Task
         public const int ERR_AlreadyAcceptTask = 203001;
@@ -117,6 +121,7 @@ namespace ET
         public const int ERR_SoulLevelLimit = 200503;
         public const int ERR_SoulAlreadyOnBattle = 200504;
         public const int ERR_NoSoulOnBattle = 200505;
+        public const int ERR_SoulBreakItemNotEnough = 200506;
         
         // SoulBattle
         public const int ERR_SoulCastIsNull = 206001;

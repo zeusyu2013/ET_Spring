@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="5qt32f8r">
+  <resources>
+    <component id="f3qq0" name="UIHeroPanel.xml" path="/" exported="true"/>
+    <component id="f3qqtb" name="hero_name.xml" path="/Components/" exported="true"/>
+    <component id="f3qq1" name="hero_star.xml" path="/Components/" exported="true"/>
+    <component id="f3qq2" name="hero_job.xml" path="/Components/" exported="true"/>
+    <component id="f3qq3" name="hero_level.xml" path="/Components/" exported="true"/>
+    <component id="f3qq5" name="hero_exp_progress.xml" path="/Components/" exported="true"/>
+    <component id="f3qq6" name="hero_skills.xml" path="/Components/"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

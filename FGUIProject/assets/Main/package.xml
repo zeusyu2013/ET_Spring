@@ -4,6 +4,7 @@
     <component id="mdp90" name="UIMain.xml" path="/Main/" exported="true"/>
     <component id="mdp91" name="MainCanvas.xml" path="/Main/"/>
     <component id="f7kj2" name="Button.xml" path="/Component/" exported="true"/>
+    <component id="f3qq3" name="UIMainPanel.xml" path="/" exported="true"/>
   </resources>
   <publish name="" path="../Unity/Assets/Bundles/FairyGUI/Main" packageCount="2" genCode="true"/>
 </packageDescription>

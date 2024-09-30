@@ -79,6 +79,32 @@
             return ErrorCode.ERR_Success;
         }
 
+        public static int LevelBreak(this Soul self)
+        {
+            SoulLevelConfig config = SoulLevelConfigCategory.Instance.Get(self.ConfigId, self.Level);
+            if (config == null)
+            {
+                return ErrorCode.ERR_SoulLevelConfigNotFound;
+            }
+
+            if (config.BreakItem == null || config.BreakItemAmount == null)
+            {
+                return ErrorCode.ERR_Success;
+            }
+
+            Unit unit = self.GetParent<SoulComponent>().GetParent<Unit>();
+
+            bool ret = unit.GetComponent<BagComponent>().RemoveItem(config.BreakItem.Value, config.BreakItemAmount.Value);
+            if (ret)
+            {
+                return ErrorCode.ERR_SoulBreakItemNotEnough;
+            }
+
+            self.Level += 1;
+
+            return ErrorCode.ERR_Success;
+        }
+
         #endregion
 
         #region 升星

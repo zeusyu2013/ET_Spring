@@ -62,6 +62,11 @@ namespace ET
         GP_CastSpeed = 1011,
 
         /// <summary>
+        /// 死亡
+        /// </summary>
+        GP_Dead = 1012,
+
+        /// <summary>
         /// 生命值
         /// </summary>
         GP_Hp = 1101,

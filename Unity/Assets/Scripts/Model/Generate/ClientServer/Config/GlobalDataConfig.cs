@@ -27,6 +27,10 @@ namespace ET
             ExtendBagItemConfig = _buf.ReadInt();
             ExtendBagCapacity = _buf.ReadInt();
             TeamMemberLimit = _buf.ReadInt();
+            DungeonConsumeMax = _buf.ReadInt();
+            DungeonConsumeRecoverInterval = _buf.ReadLong();
+            DungeonConsumeRecoverValue = _buf.ReadInt();
+            BattleTotalProgress = _buf.ReadInt();
 
             PostInit();
         }
@@ -91,6 +95,26 @@ namespace ET
         /// </summary>
         public readonly int TeamMemberLimit;
 
+        /// <summary>
+        /// 体力上限
+        /// </summary>
+        public readonly int DungeonConsumeMax;
+
+        /// <summary>
+        /// 体力恢复间隔
+        /// </summary>
+        public readonly long DungeonConsumeRecoverInterval;
+
+        /// <summary>
+        /// 体力恢复值
+        /// </summary>
+        public readonly int DungeonConsumeRecoverValue;
+
+        /// <summary>
+        /// 战斗条最大长度
+        /// </summary>
+        public readonly int BattleTotalProgress;
+
         public const int __ID__ = 394046383;
 
         public override int GetTypeId() => __ID__;
@@ -109,6 +133,10 @@ namespace ET
             + "ExtendBagItemConfig:" + ExtendBagItemConfig + ","
             + "ExtendBagCapacity:" + ExtendBagCapacity + ","
             + "TeamMemberLimit:" + TeamMemberLimit + ","
+            + "DungeonConsumeMax:" + DungeonConsumeMax + ","
+            + "DungeonConsumeRecoverInterval:" + DungeonConsumeRecoverInterval + ","
+            + "DungeonConsumeRecoverValue:" + DungeonConsumeRecoverValue + ","
+            + "BattleTotalProgress:" + BattleTotalProgress + ","
             + "}";
         }
 

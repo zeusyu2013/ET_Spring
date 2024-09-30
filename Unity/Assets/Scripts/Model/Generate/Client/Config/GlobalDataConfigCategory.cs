@@ -73,6 +73,22 @@ namespace ET
         /// 小队队员最大数量
         /// </summary>
         public int TeamMemberLimit => _data.TeamMemberLimit;
+        /// <summary>
+        /// 体力上限
+        /// </summary>
+        public int DungeonConsumeMax => _data.DungeonConsumeMax;
+        /// <summary>
+        /// 体力恢复间隔
+        /// </summary>
+        public long DungeonConsumeRecoverInterval => _data.DungeonConsumeRecoverInterval;
+        /// <summary>
+        /// 体力恢复值
+        /// </summary>
+        public int DungeonConsumeRecoverValue => _data.DungeonConsumeRecoverValue;
+        /// <summary>
+        /// 战斗条最大长度
+        /// </summary>
+        public int BattleTotalProgress => _data.BattleTotalProgress;
 
 
         partial void PostInit();

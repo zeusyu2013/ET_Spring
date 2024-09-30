@@ -61,7 +61,7 @@
     <image id="f7kj8m" name="frame_iconframe_circle_01_s.png" path="/Res/Frame/"/>
     <image id="f7kj8n" name="frame_iconframe_square_00_frame_blue.png" path="/Res/Frame/"/>
     <image id="f7kj8o" name="frame_iconframe_square_00_frame_red.png" path="/Res/Frame/"/>
-    <image id="f7kj8p" name="frame_iconframe_square_00_inner.png" path="/Res/Frame/" scale="9grid" scale9grid="41,0,8,26"/>
+    <image id="f7kj8p" name="frame_iconframe_square_00_inner.png" path="/Res/Frame/" exported="true" scale="9grid" scale9grid="47,0,0,26"/>
     <image id="f7kj8q" name="frame_iconframe_square_01_d.png" path="/Res/Frame/"/>
     <image id="f7kj8r" name="frame_iconframe_square_01_n.png" path="/Res/Frame/" exported="true" scale="9grid" scale9grid="22,19,4,7"/>
     <image id="f7kj8s" name="frame_item_reward_daily_s1.png" path="/Res/Frame/"/>
@@ -86,7 +86,7 @@
     <image id="f7kj9b" name="frame_itemframe_02_purple.png" path="/Res/Frame/"/>
     <image id="f7kj9c" name="frame_itemframe_02_red.png" path="/Res/Frame/"/>
     <image id="f7kj9d" name="frame_lineframe_00.png" path="/Res/Frame/"/>
-    <image id="f7kj9e" name="frame_lineframe_01.png" path="/Res/Frame/"/>
+    <image id="f7kj9e" name="frame_lineframe_01.png" path="/Res/Frame/" exported="true"/>
     <image id="f7kj9f" name="frame_lineframe_02.png" path="/Res/Frame/"/>
     <image id="f7kj9g" name="frame_lineframe_03.png" path="/Res/Frame/"/>
     <image id="f7kj9h" name="frame_lineframe_04.png" path="/Res/Frame/"/>
@@ -94,7 +94,7 @@
     <image id="f7kj9j" name="frame_linetextframe_00_2.png" path="/Res/Frame/"/>
     <image id="f7kj9k" name="frame_linetextframe_01.png" path="/Res/Frame/"/>
     <image id="f7kj9l" name="frame_linetextframe_02_1.png" path="/Res/Frame/"/>
-    <image id="f7kj9m" name="frame_linetextframe_02_2.png" path="/Res/Frame/"/>
+    <image id="f7kj9m" name="frame_linetextframe_02_2.png" path="/Res/Frame/" exported="true" scale9grid="345,5,288,11"/>
     <image id="f7kj9n" name="frame_linetextframe_03_Demo1.png" path="/Res/Frame/"/>
     <image id="f7kj9o" name="frame_linetextframe_03_Demo2.png" path="/Res/Frame/"/>
     <image id="f7kj9p" name="frame_linetextframe_03_Whie1.png" path="/Res/Frame/"/>
@@ -220,13 +220,13 @@
     <image id="f7kjd1" name="icon_itemicon_gift1_Purple.png" path="/Res/ItemIocn/"/>
     <image id="f7kjd2" name="icon_itemicon_gift1_red.png" path="/Res/ItemIocn/"/>
     <image id="f7kjd3" name="icon_itemicon_gift2.png" path="/Res/ItemIocn/"/>
-    <image id="f7kjd4" name="icon_itemicon_gold.png" path="/Res/ItemIocn/"/>
+    <image id="f7kjd4" name="icon_itemicon_gold.png" path="/Res/ItemIocn/" exported="true"/>
     <image id="f7kjd5" name="icon_itemicon_guild.png" path="/Res/ItemIocn/"/>
     <image id="f7kjd6" name="icon_itemicon_guild_flag.png" path="/Res/ItemIocn/"/>
     <image id="f7kjd7" name="icon_itemicon_hammer.png" path="/Res/ItemIocn/"/>
     <image id="f7kjd8" name="icon_itemicon_hand.png" path="/Res/ItemIocn/"/>
     <image id="f7kjd9" name="icon_itemicon_helmet.png" path="/Res/ItemIocn/"/>
-    <image id="f7kjda" name="icon_itemicon_hero.png" path="/Res/ItemIocn/"/>
+    <image id="f7kjda" name="icon_itemicon_hero.png" path="/Res/ItemIocn/" exported="true"/>
     <image id="f7kjdb" name="icon_itemicon_hourglass.png" path="/Res/ItemIocn/"/>
     <image id="f7kjdc" name="icon_itemicon_inventory.png" path="/Res/ItemIocn/"/>
     <image id="f7kjdd" name="icon_itemicon_jewel1_blue.png" path="/Res/ItemIocn/"/>
@@ -237,7 +237,7 @@
     <image id="f7kjdi" name="icon_itemicon_jewel2_green.png" path="/Res/ItemIocn/"/>
     <image id="f7kjdj" name="icon_itemicon_jewel2_purple.png" path="/Res/ItemIocn/"/>
     <image id="f7kjdk" name="icon_itemicon_jewel2_red.png" path="/Res/ItemIocn/"/>
-    <image id="f7kjdl" name="icon_itemicon_jewel3_blue.png" path="/Res/ItemIocn/"/>
+    <image id="f7kjdl" name="icon_itemicon_jewel3_blue.png" path="/Res/ItemIocn/" exported="true"/>
     <image id="f7kjdm" name="icon_itemicon_jewel3_green.png" path="/Res/ItemIocn/"/>
     <image id="f7kjdn" name="icon_itemicon_jewel3_purple.png" path="/Res/ItemIocn/"/>
     <image id="f7kjdo" name="icon_itemicon_jewel3_red.png" path="/Res/ItemIocn/"/>
@@ -309,7 +309,7 @@
     <image id="f7kjfi" name="btn_icon_back.png" path="/Res/IocnPicto/"/>
     <image id="f7kjfj" name="btn_icon_badge.png" path="/Res/IocnPicto/"/>
     <image id="f7kjfk" name="btn_icon_bag_1.png" path="/Res/IocnPicto/"/>
-    <image id="f7kjfl" name="btn_icon_bag_2.png" path="/Res/IocnPicto/"/>
+    <image id="f7kjfl" name="btn_icon_bag_2.png" path="/Res/IocnPicto/" exported="true"/>
     <image id="f7kjfm" name="btn_icon_bank.png" path="/Res/IocnPicto/"/>
     <image id="f7kjfn" name="btn_icon_battery_charging.png" path="/Res/IocnPicto/" exported="true"/>
     <image id="f7kjfo" name="btn_icon_battery_empty.png" path="/Res/IocnPicto/" exported="true"/>
@@ -499,7 +499,7 @@
     <image id="f7kjks" name="btn_icon_medal.png" path="/Res/IocnPicto/"/>
     <image id="f7kjkt" name="btn_icon_megaphone.png" path="/Res/IocnPicto/"/>
     <image id="f7kjku" name="btn_icon_menu_1.png" path="/Res/IocnPicto/"/>
-    <image id="f7kjkv" name="btn_icon_menu_2.png" path="/Res/IocnPicto/"/>
+    <image id="f7kjkv" name="btn_icon_menu_2.png" path="/Res/IocnPicto/" exported="true"/>
     <image id="f7kjkw" name="btn_icon_mic.png" path="/Res/IocnPicto/"/>
     <image id="f7kjkx" name="btn_icon_mic_mute.png" path="/Res/IocnPicto/"/>
     <image id="f7kjky" name="btn_icon_minus.png" path="/Res/IocnPicto/"/>
@@ -661,8 +661,8 @@
     <image id="f7kjpa" name="slider_basictype_00_fill_area.png" path="/Res/Slider/"/>
     <image id="f7kjpb" name="slider_basictype_00_frame_front.png" path="/Res/Slider/"/>
     <image id="f7kjpc" name="slider_basictype_01_frame.png" path="/Res/Slider/"/>
-    <image id="f7kjpd" name="slider_basictype_02_Frame.png" path="/Res/Slider/"/>
-    <image id="f7kjpe" name="slider_batteary_fill.png" path="/Res/Slider/"/>
+    <image id="f7kjpd" name="slider_basictype_02_Frame.png" path="/Res/Slider/" exported="true"/>
+    <image id="f7kjpe" name="slider_batteary_fill.png" path="/Res/Slider/" exported="true" scale="9grid" scale9grid="1,4,2,8"/>
     <image id="f7kjpf" name="slider_batteary_frame.png" path="/Res/Slider/"/>
     <image id="f7kjpg" name="slider_edgetype_00_fill.png" path="/Res/Slider/"/>
     <image id="f7kjph" name="slider_edgetype_00_frame_back.png" path="/Res/Slider/"/>
@@ -689,7 +689,7 @@
     <image id="f7kjq2" name="slider_icontype_00_color_blue_frame_back.png" path="/Res/Slider/"/>
     <image id="f7kjq3" name="slider_icontype_00_color_blue_frame_front.png" path="/Res/Slider/"/>
     <image id="f7kjq4" name="slider_icontype_00_color_yellow_fill.png" path="/Res/Slider/"/>
-    <image id="f7kjq5" name="slider_icontype_00_color_yellow_frame.png" path="/Res/Slider/"/>
+    <image id="f7kjq5" name="slider_icontype_00_color_yellow_frame.png" path="/Res/Slider/" exported="true" scale="9grid" scale9grid="10,14,2,0"/>
     <image id="f7kjq6" name="slider_icontype_00_icon1.png" path="/Res/Slider/"/>
     <image id="f7kjq7" name="slider_icontype_00_icon2.png" path="/Res/Slider/"/>
     <image id="f7kjq8" name="slider_icontype_00_icon3.png" path="/Res/Slider/"/>
@@ -705,8 +705,8 @@
     <image id="f7kjqi" name="slider_icontype_02_icon3.png" path="/Res/Slider/"/>
     <image id="f7kjqj" name="slider_icontype_03_fill_0.png" path="/Res/Slider/"/>
     <image id="f7kjqk" name="slider_icontype_03_fill_1.png" path="/Res/Slider/"/>
-    <image id="f7kjql" name="slider_icontype_03_fill_area.png" path="/Res/Slider/"/>
-    <image id="f7kjqm" name="slider_icontype_03_frame.png" path="/Res/Slider/"/>
+    <image id="f7kjql" name="slider_icontype_03_fill_area.png" path="/Res/Slider/" exported="true" scale="9grid" scale9grid="1,9,2,18"/>
+    <image id="f7kjqm" name="slider_icontype_03_frame.png" path="/Res/Slider/" exported="true" scale="9grid" scale9grid="20,24,4,0"/>
     <image id="f7kjqn" name="slider_icontype_03_icon_l.png" path="/Res/Slider/"/>
     <image id="f7kjqo" name="slider_icontype_03_icon_s.png" path="/Res/Slider/"/>
     <image id="f7kjqp" name="slider_icontype_04_fill_1.png" path="/Res/Slider/"/>
@@ -736,19 +736,18 @@
     <image id="f7kjrd" name="pagenavi_frame_middle.png" path="/Res/UIEtc/"/>
     <image id="f7kjre" name="pagenavi_frame_right.png" path="/Res/UIEtc/"/>
     <image id="f7kjrf" name="pagenavi_point.png" path="/Res/UIEtc/"/>
-    <image id="f7kjrg" name="status_btn_add.png" path="/Res/UIEtc/"/>
+    <image id="f7kjrg" name="status_btn_add.png" path="/Res/UIEtc/" exported="true"/>
     <image id="f7kjrh" name="status_frame.png" path="/Res/UIEtc/"/>
     <image id="f7kjri" name="status_icon_energy.png" path="/Res/UIEtc/"/>
     <image id="f7kjrj" name="status_icon_gem.png" path="/Res/UIEtc/"/>
     <image id="f7kjrk" name="status_icon_gold.png" path="/Res/UIEtc/"/>
-    <image id="f7kjrl" name="status_icon_star.png" path="/Res/UIEtc/"/>
+    <image id="f7kjrl" name="status_icon_star.png" path="/Res/UIEtc/" exported="true"/>
     <image id="f7kjrm" name="switch_off_frame.png" path="/Res/UIEtc/"/>
     <image id="f7kjrn" name="switch_off_handle.png" path="/Res/UIEtc/"/>
     <image id="f7kjro" name="switch_on_frame.png" path="/Res/UIEtc/"/>
     <image id="f7kjrp" name="switch_on_handle.png" path="/Res/UIEtc/"/>
     <image id="f7kjrq" name="toggle_checkbox_off.png" path="/Res/UIEtc/"/>
     <image id="f7kjrr" name="toggle_checkbox_on.png" path="/Res/UIEtc/"/>
-    <font id="k2hers" name="Expressway.ttf" path="/Fonts/" exported="true" renderMode="smooth" samplePointSize="16"/>
     <component id="k2hert" name="green_item_frame.xml" path="/Component/Item/" exported="true"/>
     <component id="k2herv" name="close_button.xml" path="/Component/Button/" exported="true"/>
     <component id="k2herw" name="full_screen_frame.xml" path="/Component/Frame/" exported="true"/>
@@ -786,6 +785,14 @@
     <component id="v48dt0" name="login_notice.xml" path="/Component/Button/" exported="true"/>
     <component id="v48dt1" name="login_user.xml" path="/Component/Button/" exported="true"/>
     <component id="v48dt2" name="battery.xml" path="/Component/Item/" exported="true"/>
+    <component id="f3qqt3" name="currency_displayer.xml" path="/Component/Frame/" exported="true"/>
+    <component id="f3qqt5" name="add_btn.xml" path="/Component/Button/" exported="true"/>
+    <component id="f3qqt6" name="bag_btn.xml" path="/Component/Button/" exported="true"/>
+    <component id="f3qqt7" name="menu_btn.xml" path="/Component/Button/" exported="true"/>
+    <component id="f3qqt8" name="hero_btn.xml" path="/Component/Button/" exported="true"/>
+    <component id="f3qqt9" name="page_left_1.xml" path="/Component/Button/" exported="true"/>
+    <component id="f3qqta" name="page_right_1.xml" path="/Component/Button/" exported="true"/>
+    <font id="f3qqtc" name="AlimamaFangYuanTiVF-Thin.ttf" path="/Fonts/" exported="true" renderMode="" samplePointSize="16"/>
   </resources>
   <publish name="" path="../Unity/Assets/Bundles/FairyGUI/Common" packageCount="2" maxAtlasSize="2048"/>
 </packageDescription>

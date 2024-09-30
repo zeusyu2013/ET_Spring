@@ -20,6 +20,8 @@ namespace ET
             Level = _buf.ReadInt();
             CurrencyType = (CurrencyType)_buf.ReadInt();
             CurrencyValue = _buf.ReadLong();
+            if(_buf.ReadBool()){ BreakItem = _buf.ReadInt(); } else { BreakItem = null; }
+            if(_buf.ReadBool()){ BreakItemAmount = _buf.ReadLong(); } else { BreakItemAmount = null; }
             PropertyPack = _buf.ReadInt();
 
             PostInit();
@@ -51,6 +53,16 @@ namespace ET
         public readonly long CurrencyValue;
 
         /// <summary>
+        /// 突破道具编号
+        /// </summary>
+        public readonly int? BreakItem;
+
+        /// <summary>
+        /// 突破道具个数
+        /// </summary>
+        public readonly long? BreakItemAmount;
+
+        /// <summary>
         /// 等级属性包
         /// </summary>
         public readonly int PropertyPack;
@@ -71,6 +83,8 @@ namespace ET
             + "Level:" + Level + ","
             + "CurrencyType:" + CurrencyType + ","
             + "CurrencyValue:" + CurrencyValue + ","
+            + "BreakItem:" + BreakItem + ","
+            + "BreakItemAmount:" + BreakItemAmount + ","
             + "PropertyPack:" + PropertyPack + ","
             + "}";
         }

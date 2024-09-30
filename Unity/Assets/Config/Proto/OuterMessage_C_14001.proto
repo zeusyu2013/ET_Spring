@@ -23,6 +23,20 @@ message M2C_SoulUplevel // ILocationResponse
 	string Message = 3;
 }
 
+// ResponseType M2C_SoulLevelBreak
+message C2M_SoulLevelBreak // ILocationRequest
+{
+    int32 RpcId = 1;
+    int32 SoulConfigId = 2;
+}
+
+message M2C_SoulLevelBreak // ILocationResponse
+{
+    int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+}
+
 // ResponseType M2C_SoulUpstar
 message C2M_SoulUpstar // ILocationRequest
 {

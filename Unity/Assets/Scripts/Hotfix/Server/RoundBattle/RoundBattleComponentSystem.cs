@@ -11,33 +11,41 @@ namespace ET.Server
         {
             protected override void Run(RoundBattleComponent self)
             {
-                self.UpdateSpeed();
+                self.BattleSpeedProgress();
             }
         }
 
         [EntitySystem]
-        private static void Awake(this ET.Server.RoundBattleComponent self)
+        private static void Awake(this ET.Server.RoundBattleComponent self, int configId)
         {
+            self.ConfigId = configId;
+            self.Pause = false;
         }
 
         [EntitySystem]
         private static void Destroy(this ET.Server.RoundBattleComponent self)
         {
+            self.ConfigId = default;
+            self.Owner = default;
+            self.Pause = default;
+
+            self.Units.Clear();
         }
 
         public static void Start(this ET.Server.RoundBattleComponent self)
         {
             // 创建敌方单位
-            BattlePVEConfig config = BattlePVEConfigCategory.Instance.Get(self.PVEConfig);
+            BattlePVEConfig config = BattlePVEConfigCategory.Instance.Get(self.ConfigId);
             if (config == null)
             {
-                Log.Error($"创建敌方单位失败，{self.PVEConfig}");
+                Log.Error($"创建敌方单位失败，{self.ConfigId}");
                 return;
             }
 
             foreach ((int configId, BattlePosition position) in config.Monsters)
             {
-                UnitFactory.CreateRoundBattleUnit(self.Scene(), configId, (int)position);
+                Unit battleUnit = UnitFactory.CreateRoundBattleUnit(self.Scene(), configId, (int)position);
+                self.Units.Add(battleUnit);
             }
 
             Unit unit = self.Owner;
@@ -46,14 +54,37 @@ namespace ET.Server
             // 创建我方单位
             foreach ((int configId, int position) in battle)
             {
-                UnitFactory.CreateRoundBattleUnit(self.Scene(), configId, position);
+                Unit battleUnit = UnitFactory.CreateRoundBattleUnit(self.Scene(), configId, position);
+                self.Units.Add(battleUnit);
             }
 
-            self.Scene().GetComponent<TimerComponent>().NewRepeatedTimer(1000, TimerInvokeType.BattleSpeedTimer, self);
+            self.Scene().GetComponent<TimerComponent>().NewFrameTimer(TimerInvokeType.BattleSpeedTimer, self);
         }
 
-        private static void UpdateSpeed(this RoundBattleComponent self)
+        public static void Pause(this RoundBattleComponent self, bool pause)
         {
+            self.Pause = pause;
+        }
+
+        private static void BattleSpeedProgress(this ET.Server.RoundBattleComponent self)
+        {
+            if (self.Pause)
+            {
+                return;
+            }
+            
+            long now = TimeInfo.Instance.ServerNow();
+
+            foreach (EntityRef<Unit> entityRef in self.Units)
+            {
+                Unit unit = entityRef;
+                if (!unit.IsAlive())
+                {
+                    continue;
+                }
+
+                unit.GetComponent<BattleProgressComponent>().Progress();
+            }
         }
     }
 }

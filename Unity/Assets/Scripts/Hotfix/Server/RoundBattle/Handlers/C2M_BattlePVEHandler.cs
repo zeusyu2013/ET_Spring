@@ -19,10 +19,13 @@ namespace ET.Server
             scene.AddComponent<UnitComponent>();
             scene.AddComponent<TimerComponent>();
 
-            RoundBattleComponent component = scene.AddComponent<RoundBattleComponent>();
-            component.PVEConfig = request.PVEConfigId;
+            M2C_EnterBattle m2CEnterBattle = M2C_EnterBattle.Create();
+            m2CEnterBattle.SceneConfigId = request.PVEConfigId;
+            MapMessageHelper.SendToClient(unit, m2CEnterBattle);
+            
+            RoundBattleComponent component = scene.AddComponent<RoundBattleComponent, int>(request.PVEConfigId);
             component.Owner = unit;
-
+            
             component.Start();
 
             await ETTask.CompletedTask;

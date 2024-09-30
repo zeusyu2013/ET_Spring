@@ -241,6 +241,7 @@ namespace ET.Server
             unit.AddComponent<NumericComponent>();
             unit.AddComponent<CastComponent>();
             unit.AddComponent<BuffComponent>();
+            unit.AddComponent<BattleProgressComponent>();
 
             unitComponent.Add(unit);
 

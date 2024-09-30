@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="311,53" extention="ProgressBar" designImageAlpha="100">
+  <displayList>
+    <image id="n1_f3qq" name="bar" src="f7kjql" fileName="Res/Slider/slider_icontype_03_fill_area.png" pkg="6qczg918" xy="15,6" size="282,36"/>
+    <image id="n0_f3qq" name="n0" src="f7kjqm" fileName="Res/Slider/slider_icontype_03_frame.png" pkg="6qczg918" xy="0,0" size="311,53">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+  </displayList>
+  <ProgressBar titleType="valueAndmax"/>
+</component>

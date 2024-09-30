@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="360,80">
+  <displayList>
+    <text id="n0_f3qq" name="hero_name" xy="4,31" size="58,38" font="ui://6qczg918f3qqtc" fontSize="27" color="#cccccc" shadowColor="#000000" shadowOffset="1,1" autoClearText="true" text="拉斯"/>
+    <list id="n1_f3qq" name="hero_stars" xy="68,36" size="204,43" layout="row" overflow="scroll" colGap="-15">
+      <relation target="n0_f3qq" sidePair="left-right"/>
+      <item url="ui://5qt32f8rf3qq1"/>
+      <item url="ui://5qt32f8rf3qq1"/>
+      <item url="ui://5qt32f8rf3qq1"/>
+      <item url="ui://5qt32f8rf3qq1"/>
+      <item url="ui://5qt32f8rf3qq1"/>
+      <item url="ui://5qt32f8rf3qq1"/>
+    </list>
+    <component id="n4_f3qq" name="n4" src="f3qq2" fileName="Components/hero_job.xml" xy="4,-17"/>
+  </displayList>
+</component>

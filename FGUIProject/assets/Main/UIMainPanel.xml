@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n4_f3qq" name="n4" src="f7kjd4" fileName="Res/ItemIocn/icon_itemicon_gold.png" pkg="6qczg918" xy="1381,28" size="38,38" aspect="true"/>
+    <image id="n5_f3qq" name="n5" src="f7kjdl" fileName="Res/ItemIocn/icon_itemicon_jewel3_blue.png" pkg="6qczg918" xy="1042,29" size="45,39" aspect="true"/>
+    <component id="n15_f3qq" name="n15" src="f3qqt3" fileName="Component/Frame/currency_displayer.xml" pkg="6qczg918" xy="1093,35"/>
+    <component id="n16_f3qq" name="n16" src="f3qqt3" fileName="Component/Frame/currency_displayer.xml" pkg="6qczg918" xy="1428,34"/>
+    <component id="n18_f3qq" name="n18" src="f3qqt6" fileName="Component/Button/bag_btn.xml" pkg="6qczg918" xy="1729,18"/>
+    <component id="n19_f3qq" name="n19" src="f3qqt7" fileName="Component/Button/menu_btn.xml" pkg="6qczg918" xy="1818,17"/>
+    <component id="n21_f3qq" name="n21" src="f3qqt8" fileName="Component/Button/hero_btn.xml" pkg="6qczg918" xy="152,890"/>
+  </displayList>
+</component>
